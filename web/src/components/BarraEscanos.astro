@@ -95,26 +95,31 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
     </div>
   </div>
 
-  <ul class="reparto__leyenda">
+  <div class="reparto__comparativa">
+    <div class="reparto__fila reparto__fila--cabecera" aria-hidden="true">
+      <span class="reparto__col reparto__col--partido">Partido</span>
+      <span class="reparto__col">Esc. 29N</span>
+      <span class="reparto__col">Esc. 23J</span>
+      <span class="reparto__col">Δ esc.</span>
+      <span class="reparto__col">% 29N</span>
+      <span class="reparto__col">% 23J</span>
+    </div>
     {orden.map((f) => (
-      <li>
-        <span class="reparto__muestra" style={`background:${colorPartido(f.partido)}`} aria-hidden="true"></span>
-        <div class="reparto__stats">
-          <span class="reparto__partido">{f.partido}</span>
-          <span class="mono reparto__nums">
-            <strong>{num(f.estimacionEscanos, 1)}</strong> esc · <strong>{num(f.estimacionPct, 1)}</strong> %
-            <span class="reparto__sep">|</span>
-            23J: {entero(f.realEscanos)} esc · {num(f.realPct, 1)} %
-            {conDelta && (
-              <span class={`reparto__delta ${clase(delta(f))}`}>
-                {flecha(delta(f))} {signado(delta(f))} esc
-              </span>
-            )}
-          </span>
-        </div>
-      </li>
+      <div class="reparto__fila">
+        <span class="reparto__col reparto__col--partido">
+          <span class="reparto__muestra" style={`background:${colorPartido(f.partido)}`} aria-hidden="true"></span>
+          {f.partido}
+        </span>
+        <span class="reparto__col mono reparto__num">{num(f.estimacionEscanos, 1)}</span>
+        <span class="reparto__col mono reparto__num">{entero(f.realEscanos)}</span>
+        <span class="reparto__col mono reparto__num">
+          {conDelta && <span class={`reparto__delta ${clase(delta(f))}`}>{flecha(delta(f))} {signado(delta(f))}</span>}
+        </span>
+        <span class="reparto__col mono reparto__num">{num(f.estimacionPct, 1)}</span>
+        <span class="reparto__col mono reparto__num">{num(f.realPct, 1)}</span>
+      </div>
     ))}
-  </ul>
+  </div>
 
   {pie && <p class="reparto__pie mono">{pie}</p>}
   {lectura && <p class="reparto__lectura">{lectura}</p>}
@@ -179,35 +184,42 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
   /* los últimos tramos anclan la ficha a la derecha: sin desbordamiento */
   .reparto__tramo:nth-last-child(-n+3) .reparto__tip { left: auto; right: 0; transform: none; }
 
-  .reparto__leyenda {
-    list-style: none;
+  .reparto__comparativa {
     margin: var(--s-4) 0 0;
-    padding: 0;
+    border-top: var(--borde-regla);
+  }
+  .reparto__fila {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: var(--s-2) var(--s-4);
-  }
-  .reparto__leyenda li {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--s-2);
-    font-size: var(--t-small);
+    grid-template-columns: minmax(72px, 1.3fr) repeat(5, minmax(46px, 0.65fr));
+    gap: var(--s-1) var(--s-2);
+    align-items: baseline;
+    padding: var(--s-1) 0;
     border-bottom: var(--borde-regla);
-    padding-bottom: var(--s-2);
   }
+  .reparto__fila--cabecera {
+    font-family: var(--f-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--tinta-2);
+    border-bottom: var(--borde-tinta);
+  }
+  .reparto__col--partido {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    font-weight: 600;
+    min-width: 0;
+  }
+  .reparto__fila--cabecera .reparto__col { text-align: right; }
+  .reparto__fila--cabecera .reparto__col--partido { text-align: left; }
+  .reparto__num { text-align: right; }
   .reparto__muestra {
     inline-size: 12px;
     block-size: 12px;
     border-radius: 2px;
     flex: 0 0 auto;
-    margin-top: 0.2em;
   }
-  .reparto__stats { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-  .reparto__partido { font-weight: 600; }
-  .reparto__nums { color: var(--tinta-2); font-size: 0.8125rem; }
-  .reparto__nums strong { color: var(--tinta); font-weight: 600; }
-  .reparto__sep { color: var(--tinta-3); }
-  .reparto__delta { margin-left: 0.25em; }
   .reparto__delta.sube { color: var(--ok); }
   .reparto__delta.baja { color: var(--alerta); }
   .reparto__delta.plano { color: var(--tinta-3); }

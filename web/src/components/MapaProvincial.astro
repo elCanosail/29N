@@ -61,6 +61,9 @@ const grupos = [...new Set(filas.map((p) => p.ganador))].sort();
         <a
           class="celda"
           href={`#prov-${p.codigo}`}
+          data-prov={p.codigo}
+          data-c={colorPartido(p.ganador)}
+          data-gan={sigla(p.ganador)}
           style={`grid-column:${col};grid-row:${row};--c:${colorPartido(p.ganador)}`}
           aria-label={`${p.nombre}: ${p.ganador}, ${p.escanos} escaños en juego`}
         >

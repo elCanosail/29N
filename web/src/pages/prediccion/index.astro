@@ -14,6 +14,16 @@ const filasNacional = nacional
   .filter((p) => p.media > 0 || p.ic95[1] > 0)
   .map((p) => ({ etiqueta: p.partido, punto: p.media, p10: p.ic95[0], p90: p.ic95[1], color: colorPartido(p.partido) }));
 
+const datosMapa = Object.fromEntries(
+  provincias.map((p) => [
+    String(p.codigo),
+    Object.fromEntries(p.partidos.filter((x) => x.media > 0).map((x) => [x.partido, x.media])),
+  ]),
+);
+const partidosMapa = Object.fromEntries(
+  nacional.map((p) => [p.partido, { color: colorPartido(p.partido) }]),
+);
+
 const limites = [
   'Qué predecimos: los escaños por provincia del 29N, con su intervalo del 95 % sobre 10 000 simulaciones D\'Hondt.',
   'Qué no predecimos: el escaño exacto de un partido en una provincia, ni el desenlace de una provincia sin encuestas propias.',
@@ -63,21 +73,28 @@ function filasProvincia(p: (typeof provincias)[number]) {
     <section class="controles" aria-labelledby="controles-titulo">
       <h2 class="visualmente-oculto" id="controles-titulo">Controles del mapa</h2>
       <div class="campo">
-        <label for="p-nivel">Nivel de agregación</label>
-        <select id="p-nivel" disabled>
-          <option selected>Provincia</option>
-          <option>Autonomía</option>
-          <option>Estatal</option>
+        <label for="p-provincia">Provincia</label>
+        <select id="p-provincia">
+          <option value="">Elige una provincia</option>
+          {provincias.map((p) => (
+            <option value={p.codigo}>{p.nombre}</option>
+          ))}
         </select>
       </div>
       <div class="campo">
         <label for="p-partido">Partido</label>
-        <select id="p-partido" disabled><option>Todos</option></select>
+        <select id="p-partido">
+          <option value="">Ganador esperado</option>
+          {nacional.map((p) => (
+            <option value={p.partido}>{p.partido}</option>
+          ))}
+        </select>
       </div>
       <p class="nota controles__aviso">
-        Los datos provinciales están completos y publicados; el selector interactivo de
-        nivel y partido (que reordenaría el mapa en cliente) llega con JavaScript en una
-        fase posterior. Se muestran inactivos para no aparentar una función que aún no existe.
+        Provincia: abre el panel de esa provincia. Partido: recolorea el cartograma con
+        los escaños esperados de ese partido en cada provincia (0 = sin expectativa).
+        Funciona con JavaScript; sin él, los paneles siguen accesibles desde el
+        cartograma y la tabla paralela.
       </p>
     </section>
 
@@ -88,6 +105,7 @@ function filasProvincia(p: (typeof provincias)[number]) {
           provincias={provincias}
           descripcion="Cartograma de las 52 provincias con el partido de más escaños esperados el 29N."
         />
+        <p class="nota mono" id="mapa-partido-actual" hidden></p>
       </div>
 
       <aside class="panel-provincia" aria-labelledby="provincia-titulo">
@@ -198,6 +216,47 @@ function filasProvincia(p: (typeof provincias)[number]) {
       </p>
     </section>
   </div>
+  <script type="application/json" id="datos-mapa" set:html={JSON.stringify(datosMapa)} />
+  <script type="application/json" id="partidos-mapa" set:html={JSON.stringify(partidosMapa)} />
+  <script is:inline>
+  (function () {
+    var datos = JSON.parse(document.getElementById('datos-mapa').textContent);
+    var partidos = JSON.parse(document.getElementById('partidos-mapa').textContent);
+    var selProv = document.getElementById('p-provincia');
+    var selPart = document.getElementById('p-partido');
+    if (!selProv || !selPart) return;
+
+    selProv.addEventListener('change', function () {
+      if (selProv.value) location.hash = '#prov-' + selProv.value;
+    });
+
+    function recolor(partido) {
+      document.querySelectorAll('.celda[data-prov]').forEach(function (celda) {
+        var codigo = celda.getAttribute('data-prov');
+        var prov = datos[codigo] || {};
+        if (!partido) {
+          celda.style.setProperty('--c', celda.getAttribute('data-c'));
+          celda.querySelector('.celda__gan').textContent = celda.getAttribute('data-gan');
+          return;
+        }
+        var info = partidos[partido] || {};
+        celda.style.setProperty('--c', info.color || 'var(--p-otros)');
+        var media = prov[partido] || 0;
+        celda.querySelector('.celda__gan').textContent =
+          media > 0 ? (Math.round(media * 10) / 10).toString().replace('.', ',') : '0';
+      });
+      var pie = document.getElementById('mapa-partido-actual');
+      if (pie) {
+        pie.hidden = !partido;
+        pie.textContent = partido
+          ? 'Mapa coloreado por: ' + partido + ' — escaños esperados por provincia'
+          : '';
+      }
+    }
+
+    selPart.addEventListener('change', function () { recolor(selPart.value); });
+  })();
+  </script>
 </Base>
 
 <style>
