@@ -47,10 +47,11 @@ Web que expone el histórico completo de encuestas electorales españolas (CIS e
 
 ## Fases
 
-### Fase 0 — Scaffold (semana 1)
-- [ ] Repo `29N` creado con estructura `pipeline/` + `web/`
-- [ ] Python env + TimesFM instalado y smoke test (forecast de serie juguete)
-- [ ] Descarga manual de 3 estudios CIS preelectorales recientes (3496, 3486 o equivalentes 23J/10N) + parse del CSV
+### Fase 0 — Scaffold (semana 1) — CERRADA 15-10-2026
+- [x] Repo público creado: github.com/elCanosail/29N (esqueleto, CONTRIBUTING, licencia MIT, guardas de secretos)
+- [x] TimesFM verificado: timesfm 3.0.2 (checkpoint 2.5-200m PyTorch) en CPU, intervalos nativos; 10 series × 600 pts en 1,64 s / 2,23 GiB (evidencia: docs/notes/timesfm-smoke.md). Hallazgo clave: quantiles devuelve 10 columnas (punto = col 5) y per_core_batch_size=1 serializa; fijar ≥ n_series (×5,6).
+- [x] Descarga de 3 estudios CIS (3411 · 23J-2023, 3263 · 10N-2019, 3141 · 26J-2016) con parse y validación ≤0,05 pp contra tablas publicadas. Descarga directa por URL sin formulario; 429 → backoff obligatorio (evidencia: docs/notes/cis-probe.md)
+- [x] DESIGN.md (formato Stitch) con referencias GOV.UK / EU Design System / portales nórdicos / The Pudding
 
 ### Fase 1 — Ingesta CIS completa (semanas 1-2)
 - [ ] Catálogo de estudios CIS electorales/preelectorales (nº de estudio, fechas, ámbito)
