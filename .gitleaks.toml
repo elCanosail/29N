@@ -1,0 +1,10 @@
+[extend]
+# Reglas base de gitleaks + personalizaciones del proyecto
+useDefault = true
+
+[allowlist]
+paths = [
+  '''(^|/)credentials\.example''',
+  '''(^|/)docs/''',
+]
+description = "29N: ejemplos y documentación"
