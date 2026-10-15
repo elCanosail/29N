@@ -16,7 +16,7 @@
  * mejora de puntero, no el único camino).
  */
 import { num, entero } from '../lib/format';
-import { colorPartido } from '../lib/partidos';
+import { colorPartido, sigla } from '../lib/partidos';
 
 export interface FilaReparto {
   partido: string;
@@ -51,6 +51,8 @@ const {
 const orden = [...filas].sort((a, b) => b.estimacionEscanos - a.estimacionEscanos);
 const delta = (f: (typeof orden)[number]) => f.estimacionEscanos - f.realEscanos;
 const conDelta = orden.some((f) => Math.abs(delta(f)) > 0.05);
+const anchoPct = (v: number) => (v / 350) * 100;
+const TEXTO_TINTA: Record<string, boolean> = { ERC: true, JXCAT: true, BNG: true, CUP: true, PACMA: true };
 const flecha = (v: number) => (v > 0.05 ? '▲' : v < -0.05 ? '▼' : '＝');
 const clase = (v: number) => (v > 0.05 ? 'sube' : v < -0.05 ? 'baja' : 'plano');
 const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
@@ -63,17 +65,26 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
       <span>estimación del modelo</span>
       <span class="reparto__fecha mono">{fechaObjetivo}</span>
     </p>
-    <div class="reparto__barra" aria-hidden="true">
-      {orden.map((f) => (
-        <span
-          class="reparto__tramo"
-          style={`flex:${Math.max(f.estimacionEscanos, 0.001)};background:${colorPartido(f.partido)}`}
-        >
-          <span class="reparto__tip mono">
-            <strong>{f.partido}</strong> · 29N: {num(f.estimacionEscanos, 1)} escaños ({num(f.estimacionPct, 1)} %)
+    <div class="reparto__barra-marco">
+      <div class="reparto__barra" aria-hidden="true">
+        {orden.map((f) => (
+          <span
+            class="reparto__tramo"
+            style={`flex:${Math.max(f.estimacionEscanos, 0.001)};background:${colorPartido(f.partido)}`}
+          >
+            {anchoPct(f.estimacionEscanos) >= 8.5 && (
+              <span class={`reparto__tramo__texto ${TEXTO_TINTA[f.partido] ? 'reparto__tramo__texto--tinta' : ''}`}>{sigla(f.partido)}</span>
+            )}
+            {anchoPct(f.estimacionEscanos) >= 9 && (
+              <span class={`reparto__tramo__texto reparto__tramo__num ${TEXTO_TINTA[f.partido] ? 'reparto__tramo__texto--tinta' : ''}`}>{entero(f.estimacionEscanos)}</span>
+            )}
+            <span class="reparto__tip mono">
+              <strong>{f.partido}</strong> · 29N: {num(f.estimacionEscanos, 1)} escaños ({num(f.estimacionPct, 1)} %)
+            </span>
           </span>
-        </span>
-      ))}
+        ))}
+      </div>
+      <span class="reparto__mayoria" aria-hidden="true"></span>
     </div>
 
     <p class="reparto__rotulo reparto__rotulo--segundo">
@@ -81,17 +92,27 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
       <span>resultado real</span>
       <span class="reparto__fecha mono">{fechaReal}</span>
     </p>
-    <div class="reparto__barra" aria-hidden="true">
-      {orden.map((f) => (
-        <span
-          class="reparto__tramo"
-          style={`flex:${Math.max(f.realEscanos, 0.001)};background:${colorPartido(f.partido)}`}
-        >
-          <span class="reparto__tip mono">
-            <strong>{f.partido}</strong> · 23J: {entero(f.realEscanos)} escaños ({num(f.realPct, 1)} %)
+    <div class="reparto__barra-marco">
+      <div class="reparto__barra" aria-hidden="true">
+        {orden.map((f) => (
+          <span
+            class="reparto__tramo"
+            style={`flex:${Math.max(f.realEscanos, 0.001)};background:${colorPartido(f.partido)}`}
+          >
+            {anchoPct(f.realEscanos) >= 8.5 && (
+              <span class={`reparto__tramo__texto ${TEXTO_TINTA[f.partido] ? 'reparto__tramo__texto--tinta' : ''}`}>{sigla(f.partido)}</span>
+            )}
+            {anchoPct(f.realEscanos) >= 9 && (
+              <span class={`reparto__tramo__texto reparto__tramo__num ${TEXTO_TINTA[f.partido] ? 'reparto__tramo__texto--tinta' : ''}`}>{entero(f.realEscanos)}</span>
+            )}
+            <span class="reparto__tip mono">
+              <strong>{f.partido}</strong> · 23J: {entero(f.realEscanos)} escaños ({num(f.realPct, 1)} %)
+            </span>
           </span>
-        </span>
-      ))}
+        ))}
+      </div>
+      <span class="reparto__mayoria" aria-hidden="true"></span>
+      <span class="reparto__mayoria__etiqueta mono" aria-hidden="true">mayoría absoluta · 176</span>
     </div>
   </div>
 
@@ -146,18 +167,50 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
   .reparto__eleccion { font-weight: 700; font-size: 1rem; color: var(--tinta); }
   .reparto__fecha { margin-left: auto; color: var(--tinta-3); }
 
+  .reparto__barra-marco { position: relative; }
   .reparto__barra {
     display: flex;
     width: 100%;
-    height: 44px;
+    height: 56px;
     border: 1px solid var(--tinta);
+  }
+  .reparto__mayoria {
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: 50.29%;
+    width: 2px;
+    background: var(--tinta);
+  }
+  .reparto__mayoria__etiqueta {
+    position: absolute;
+    bottom: -17px;
+    left: 50.29%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    color: var(--tinta-2);
+    white-space: nowrap;
   }
   .reparto__tramo {
     position: relative;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
     min-width: 2px;
+    overflow: hidden;
   }
   .reparto__tramo + .reparto__tramo { border-left: 2px solid var(--papel); }
+  .reparto__tramo__texto {
+    color: var(--papel);
+    font-family: var(--f-mono);
+    font-size: 0.62rem;
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+  .reparto__tramo__texto--tinta { color: var(--tinta); }
+  .reparto__tramo__num { font-size: 0.7rem; font-weight: 600; }
 
   /* Ficha al pasar el puntero: CSS puro, sin JavaScript.
      display:none fuera de hover: un tooltip invisible NO puede ensanchar

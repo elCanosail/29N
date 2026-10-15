@@ -198,11 +198,12 @@ No hay más de un primario visible por vista. Radio global: 4 px (nada pill, nad
 
 **Regla general de jerarquía (Chema, 15-10-2026):** en la zona hero y la parte alta de cada página manda la información visual (gráficos, mapas, barras, tablas). Las explicaciones, aclaraciones y prosa bajan a la zona inferior. La cabecera de página se limita a eyebrow + titular + una sola línea de entrada; los párrafos largos de contexto, abajo.
 
-**Home — "el resultado, luego el desglose":**
-1. Cabecera: titular "29N, estimación de resultados" (Newsreader grande) + intro corta: proyección del resultado del 29N con intervalos; el desglose completo debajo y en secciones. Lenguaje de todo el sitio: estimación, proyección o predicción con intervalos — nunca "datos electorales" como propuesta de valor; el dato es el medio, la estimación es el producto.
-2. Bloque héroe 1 — **el resultado en escaños y porcentaje**: escaños estimados por partido (sumas del modelo provincial, 10.000 simulaciones D'Hondt) con su porcentaje de voto, y ficha de cada segmento al pasar el puntero (CSS puro, sin JavaScript). Intervalo al 95 % plegable debajo. Línea mono: "Objetivo 29N · método: media ponderada + swing proporcional · backtest MAE publicado".
-3. Bloque héroe 2 — el detalle en voto: estimación estatal de intención de voto con intervalo del 80 % (cuantiles del backtest) y, debajo, la serie ponderada que alimenta el modelo.
-4. Tres entradas asimétricas (no grid de tarjetas) — **el desglose**: **Explorador de encuestas** (contador mono de encuestas indexadas), **Resultados 1977–2023**, **Proyección provincial** (mapa en miniatura). Composición 2/3 + 1/3 con desplazamiento vertical escalonado.
+**Home — "el gráfico es la portada":**
+0. **Sin cabecera editorial**: la home abre directamente con el gráfico de reparto de escaños enriquecido (Chema, 15-10-2026). El h1 va oculto para accesibilidad; el gráfico es el titular.
+1. Bloque héroe — **el gráfico de reparto enriquecido**: barra apilada de 350 escaños (29N estimación) con siglas y recuento dentro de los segmentos anchos, línea de mayoría absoluta (176) sobre ambas barras, y la barra del 23J real debajo para la comparación inmediata. Tabla comparativa alineada (Esc. 29N · Esc. 23J · Δ · % 29N · % 23J). La precisión (p10–p90) plegable debajo. Línea mono: "Objetivo 29N · método: media ponderada + swing proporcional · backtest MAE publicado".
+2. Bloque héroe 2 — el detalle en voto: estimación estatal de intención de voto con intervalo del 80 % (cuantiles del backtest) y, debajo, la serie ponderada que alimenta el modelo.
+3. Tres entradas asimétricas (no grid de tarjetas) — **el desglose**: **Explorador de encuestas** (contador mono de encuestas indexadas), **Resultados 1977–2023**, **Proyección provincial** (mapa en miniatura). Composición 2/3 + 1/3 con desplazamiento vertical escalonado.
+4. Zona de aclaraciones al pie: los avisos metodológicos que estaban en el héroe, abajo (regla de jerarquía).
 5. Banda de metodología: fondo `--papel-2`, borde superior 2 px `--tinta`, los 5 compromisos metodológicos y enlace a la página completa. Firma de confianza del sitio.
 
 **Explorador de encuestas:**

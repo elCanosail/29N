@@ -84,26 +84,9 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
 ---
 
 <Base titulo="Portada">
-  <!-- 1. Cabecera editorial: titular + la «una» del día -------------------- -->
-  <section class="contenedor portada">
-    <p class="eyebrow entrada">Estimación de resultados · elecciones generales de España</p>
-
-    <h1 class="display medida entrada entrada--1">29N, estimación de resultados</h1>
-
-    <p class="titular-intro medida entrada entrada--2">
-      Proyección del resultado del 29N con intervalos. El desglose, debajo.
-    </p>
-
-    <p class="portada__una entrada entrada--3">
-      <a href="/prediccion/">
-        El desglose completo: los 350 escaños provincia a provincia, con su intervalo
-        del 95 % <span class="mono">{fechaLarga('2026-11-29')}</span> →
-      </a>
-    </p>
-  </section>
-
-  <!-- 1b. Bloque héroe: el resultado en escaños ----------------------------- -->
-  <section class="contenedor seccion seccion--compacta" aria-labelledby="resultado-titulo">
+  <!-- 1. Bloque héroe: el resultado en escaños — la home abre con el gráfico -->
+  <section class="contenedor seccion seccion--compacta heroe-apertura" aria-labelledby="resultado-titulo">
+    <h1 class="visualmente-oculto">Estimación de resultados del 29N</h1>
     <div class="heroe__cabecera">
       <div>
         <p class="eyebrow" id="resultado-titulo">El resultado · reparto de escaños estimado</p>
@@ -294,17 +277,7 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
   }
   .aclaraciones__inner .aviso-metodo { margin: 0; }
 
-  .portada { padding-block: var(--s-6) var(--s-5); }
-  .portada__una {
-    font-family: var(--f-titular);
-    font-size: 1.15rem;
-    margin: var(--s-5) 0 0;
-    padding-top: var(--s-3);
-    border-top: var(--borde-regla);
-    max-width: var(--medida);
-  }
-  .portada__una a { color: var(--enlace); }
-  .portada__una .mono { font-size: 0.95em; }
+  .heroe-apertura { padding-top: var(--s-4); }
 
   .heroe__cabecera {
     display: flex;
