@@ -354,16 +354,27 @@ FAMILIAS = {
 
 
 def gen_reparto23() -> int:
-    """Escaños de la última general agregados por familia política."""
+    """Escaños, votos y porcentaje de la última general agregados por familia."""
     src = leer_json(os.path.join(P_INTERIOR, "elections.json"))
     ultima = max(src["elecciones"], key=lambda e: e["fecha"])
-    familias: dict[str, int] = {}
+    validos = sum(p.get("votos_validos", 0) for p in ultima["provincias"])
+    familias: dict[str, dict] = {}
     for c in ultima["partidos"]:
         familia = FAMILIAS.get(c["partido_id"])
         if familia is None:
             continue
-        familias[familia] = familias.get(familia, 0) + c["escanos"]
-    filas = [{"partido": k, "escanos": v} for k, v in familias.items()]
+        reg = familias.setdefault(familia, {"escanos": 0, "votos": 0})
+        reg["escanos"] += c["escanos"]
+        reg["votos"] += c.get("votos", 0)
+    filas = [
+        {
+            "partido": k,
+            "escanos": v["escanos"],
+            "votos": v["votos"],
+            "pct": round(100.0 * v["votos"] / validos, 2) if validos else 0.0,
+        }
+        for k, v in familias.items()
+    ]
     filas.sort(key=lambda x: -x["escanos"])
     total = sum(f["escanos"] for f in filas)
     if total != ultima["escanos_totales"]:
@@ -378,11 +389,13 @@ def gen_reparto23() -> int:
             "eleccion": ultima["id"],
             "fecha": ultima["fecha"],
             "total": total,
+            "votos_validos": validos,
             "nota": (
-                "Escaños de la última elección agregados por familia política para ser "
-                "comparables con el universo modelado: PSOE incluye PSC, PSE-EE, PSdeG, "
-                "PSIB-PSOE y PSN-PSOE; SUMAR incluye ECP, Compromís, Sumar Aragón y Més "
-                "per Mallorca-Ménorca. Candidaturas sin escaños no aparecen."
+                "Escaños, votos y porcentaje (sobre votos válidos) de la última elección "
+                "agregados por familia política para ser comparables con el universo "
+                "modelado: PSOE incluye PSC, PSE-EE, PSdeG, PSIB-PSOE y PSN-PSOE; SUMAR "
+                "incluye ECP, Compromís, Sumar Aragón y Més per Mallorca-Ménorca. "
+                "Candidaturas sin escaños no aparecen."
             ),
         },
         "familias": filas,

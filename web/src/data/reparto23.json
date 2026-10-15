@@ -3,52 +3,75 @@
   "eleccion": "2023-07-23",
   "fecha": "2023-07-23",
   "total": 350,
-  "nota": "Escaños de la última elección agregados por familia política para ser comparables con el universo modelado: PSOE incluye PSC, PSE-EE, PSdeG, PSIB-PSOE y PSN-PSOE; SUMAR incluye ECP, Compromís, Sumar Aragón y Més per Mallorca-Ménorca. Candidaturas sin escaños no aparecen."
+  "votos_validos": 24688087,
+  "nota": "Escaños, votos y porcentaje (sobre votos válidos) de la última elección agregados por familia política para ser comparables con el universo modelado: PSOE incluye PSC, PSE-EE, PSdeG, PSIB-PSOE y PSN-PSOE; SUMAR incluye ECP, Compromís, Sumar Aragón y Més per Mallorca-Ménorca. Candidaturas sin escaños no aparecen."
  },
  "familias": [
   {
    "partido": "PP",
-   "escanos": 137
+   "escanos": 137,
+   "votos": 8160837,
+   "pct": 33.06
   },
   {
    "partido": "PSOE",
-   "escanos": 121
+   "escanos": 121,
+   "votos": 7821718,
+   "pct": 31.68
   },
   {
    "partido": "VOX",
-   "escanos": 33
+   "escanos": 33,
+   "votos": 3057000,
+   "pct": 12.38
   },
   {
    "partido": "SUMAR",
-   "escanos": 31
+   "escanos": 31,
+   "votos": 3044996,
+   "pct": 12.33
   },
   {
    "partido": "ERC",
-   "escanos": 7
+   "escanos": 7,
+   "votos": 466020,
+   "pct": 1.89
   },
   {
    "partido": "JXCAT",
-   "escanos": 7
+   "escanos": 7,
+   "votos": 395429,
+   "pct": 1.6
   },
   {
    "partido": "EH BILDU",
-   "escanos": 6
+   "escanos": 6,
+   "votos": 335129,
+   "pct": 1.36
   },
   {
    "partido": "PNV",
-   "escanos": 5
+   "escanos": 5,
+   "votos": 277289,
+   "pct": 1.12
   },
   {
    "partido": "BNG",
-   "escanos": 1
+   "escanos": 1,
+   "votos": 153995,
+   "pct": 0.62
   },
   {
    "partido": "CC",
-   "escanos": 1
+   "escanos": 1,
+   "votos": 116363,
+   "pct": 0.47
   },
   {
    "partido": "NA+",
-   "escanos": 1
+   "escanos": 1,
+   "votos": 52188,
+   "pct": 0.21
   }
  ]
 }
