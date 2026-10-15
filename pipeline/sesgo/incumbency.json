@@ -1,0 +1,39 @@
+{
+  "descripcion": "Gobierno de turno (partido/s en el ejecutivo) el día de cada elección general del Congreso cubierta por el proyecto 29N. Dato público; se usa para el análisis de sesgo de incumbencia (fase 4-bis).",
+  "fuentes": [
+    {
+      "id": "lamoncloa",
+      "titulo": "La Moncloa — Presidentes del Gobierno desde 1977 (listado oficial)",
+      "url": "https://www.lamoncloa.gob.es/presidente/presidentes/Paginas/index.aspx"
+    },
+    {
+      "id": "congreso",
+      "titulo": "Congreso de los Diputados — Historia y legislaturas",
+      "url": "https://www.congreso.es/es/cem/historia"
+    },
+    {
+      "id": "wikipedia_presidentes",
+      "titulo": "Wikipedia (es) — Anexo:Presidentes del Gobierno de España",
+      "url": "https://es.wikipedia.org/wiki/Anexo:Presidentes_del_Gobierno_de_Espa%C3%B1a"
+    }
+  ],
+  "nota_metodologica": "Se codifica el partido del presidente del Gobierno en funciones en la fecha de la votación. Para las elecciones de 2015, 2016, abril de 2019 y noviembre de 2019, el Gobierno estaba en funciones (disolución de Cortes / investidura fallida): se marca 'gobierno_en_funciones': true y se conserva el partido del presidente en funciones, porque la literatura de sesgo de incumbencia trata igual al incumbente saliente. En 2019-11 y 2023 se registra además la coalición (PSOE-UP).",
+  "elecciones": {
+    "1977-06-15": {"partidos_gobierno": ["UCD"], "presidente": "Adolfo Suárez", "gobierno_en_funciones": false, "nota": "Gobierno preconstituyente (Suárez, UCD, desde julio de 1976); elecciones constituyentes."},
+    "1979-03-01": {"partidos_gobierno": ["UCD"], "presidente": "Adolfo Suárez", "gobierno_en_funciones": false, "nota": ""},
+    "1982-10-28": {"partidos_gobierno": ["UCD"], "presidente": "Leopoldo Calvo-Sotelo", "gobierno_en_funciones": false, "nota": "UCD en el Gobierno; el PSOE gana."},
+    "1986-06-22": {"partidos_gobierno": ["PSOE"], "presidente": "Felipe González", "gobierno_en_funciones": false, "nota": ""},
+    "1989-10-29": {"partidos_gobierno": ["PSOE"], "presidente": "Felipe González", "gobierno_en_funciones": false, "nota": ""},
+    "1993-06-06": {"partidos_gobierno": ["PSOE"], "presidente": "Felipe González", "gobierno_en_funciones": false, "nota": ""},
+    "1996-03-03": {"partidos_gobierno": ["PSOE"], "presidente": "Felipe González", "gobierno_en_funciones": false, "nota": "González gobierna hasta la investidura de Aznar (mayo 1996)."},
+    "2000-03-12": {"partidos_gobierno": ["PP"], "presidente": "José María Aznar", "gobierno_en_funciones": false, "nota": ""},
+    "2004-03-14": {"partidos_gobierno": ["PP"], "presidente": "José María Aznar", "gobierno_en_funciones": false, "nota": "Atentados del 11-M tres días antes."},
+    "2008-03-09": {"partidos_gobierno": ["PSOE"], "presidente": "José Luis Rodríguez Zapatero", "gobierno_en_funciones": false, "nota": ""},
+    "2011-11-20": {"partidos_gobierno": ["PSOE"], "presidente": "José Luis Rodríguez Zapatero", "gobierno_en_funciones": false, "nota": ""},
+    "2015-12-20": {"partidos_gobierno": ["PP"], "presidente": "Mariano Rajoy", "gobierno_en_funciones": false, "nota": ""},
+    "2016-06-26": {"partidos_gobierno": ["PP"], "presidente": "Mariano Rajoy", "gobierno_en_funciones": true, "nota": "Repetición electoral; Rajoy en funciones desde diciembre de 2015."},
+    "2019-04-28": {"partidos_gobierno": ["PSOE"], "presidente": "Pedro Sánchez", "gobierno_en_funciones": false, "nota": ""},
+    "2019-11-10": {"partidos_gobierno": ["PSOE"], "presidente": "Pedro Sánchez", "gobierno_en_funciones": true, "nota": "Repetición electoral; Sánchez en funciones."},
+    "2023-07-23": {"partidos_gobierno": ["PSOE", "UNIDAS PODEMOS"], "presidente": "Pedro Sánchez", "gobierno_en_funciones": false, "nota": "Gobierno de coalición PSOE-Unidas Podemos."}
+  }
+}

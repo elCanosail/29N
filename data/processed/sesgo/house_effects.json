@@ -1,0 +1,6162 @@
+{
+ "generado": "2026-10-15",
+ "definiciones": {
+  "encuesta_final_estricta": "fin de campo dentro de los 7 días naturales previos a la votación",
+  "encuesta_final_operativa": "última encuesta preelectoral de la casa con campo terminado antes de la votación (fallback documentado)",
+  "error_firmado": "pct_encuesta - pct_real (misma base de porcentaje)",
+  "k_encogimiento_eb": 5
+ },
+ "n_series": 224,
+ "series": [
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "1979-03-01",
+   "estudio": "1181",
+   "partido": "IU",
+   "encuesta": 4.35,
+   "real": 7.223325405073465,
+   "err": -2.873,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "1979-03-01",
+   "estudio": "1181",
+   "partido": "JXCAT",
+   "encuesta": 0.732,
+   "real": 1.8011036465648078,
+   "err": -1.069,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "1979-03-01",
+   "estudio": "1181",
+   "partido": "PNV",
+   "encuesta": 0.756,
+   "real": 1.1052004192798686,
+   "err": -0.349,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "1979-03-01",
+   "estudio": "1181",
+   "partido": "PSOE",
+   "encuesta": 14.44,
+   "real": 20.880830540804702,
+   "err": -6.441,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "1979-03-01",
+   "estudio": "1181",
+   "partido": "UCD",
+   "encuesta": 14.27,
+   "real": 21.23096202223167,
+   "err": -6.961,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "1979-03-01",
+   "estudio": "1181",
+   "partido": "IU",
+   "encuesta": 12.58,
+   "real": 10.774810508526109,
+   "err": 1.805,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "1979-03-01",
+   "estudio": "1181",
+   "partido": "JXCAT",
+   "encuesta": 2.117,
+   "real": 2.6866504566332505,
+   "err": -0.57,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "1979-03-01",
+   "estudio": "1181",
+   "partido": "PNV",
+   "encuesta": 2.186,
+   "real": 1.6485931927308868,
+   "err": 0.538,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "1979-03-01",
+   "estudio": "1181",
+   "partido": "PSOE",
+   "encuesta": 41.759,
+   "real": 31.147287394776754,
+   "err": 10.612,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "1979-03-01",
+   "estudio": "1181",
+   "partido": "UCD",
+   "encuesta": 41.268,
+   "real": 31.669567667903493,
+   "err": 9.598,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "1982-10-28",
+   "estudio": "1326",
+   "partido": "IU",
+   "encuesta": 3.279,
+   "real": 3.3715239055177237,
+   "err": -0.093,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "1982-10-28",
+   "estudio": "1326",
+   "partido": "JXCAT",
+   "encuesta": 1.677,
+   "real": 2.8782647109875463,
+   "err": -1.201,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "1982-10-28",
+   "estudio": "1326",
+   "partido": "PNV",
+   "encuesta": 1.227,
+   "real": 1.4737471011593872,
+   "err": -0.247,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "1982-10-28",
+   "estudio": "1326",
+   "partido": "PSOE",
+   "encuesta": 20.056,
+   "real": 30.031456098907363,
+   "err": -9.975,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "1982-10-28",
+   "estudio": "1326",
+   "partido": "UCD",
+   "encuesta": 23.464,
+   "real": 5.046601214142096,
+   "err": 18.417,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "1982-10-28",
+   "estudio": "1326",
+   "partido": "IU",
+   "encuesta": 6.518,
+   "real": 4.299996988128952,
+   "err": 2.218,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "1982-10-28",
+   "estudio": "1326",
+   "partido": "JXCAT",
+   "encuesta": 3.333,
+   "real": 3.6709007366162476,
+   "err": -0.337,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "1982-10-28",
+   "estudio": "1326",
+   "partido": "PNV",
+   "encuesta": 2.439,
+   "real": 1.8795975570210373,
+   "err": 0.559,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "1982-10-28",
+   "estudio": "1326",
+   "partido": "PSOE",
+   "encuesta": 39.866,
+   "real": 38.30172183062092,
+   "err": 1.565,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "1982-10-28",
+   "estudio": "1326",
+   "partido": "UCD",
+   "encuesta": 46.641,
+   "real": 6.436368428408538,
+   "err": 40.204,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "1986-06-22",
+   "estudio": "1533",
+   "partido": "BNG",
+   "encuesta": 2.359,
+   "real": 0.09289566421533249,
+   "err": 2.266,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "1986-06-22",
+   "estudio": "1533",
+   "partido": "CDS",
+   "encuesta": 2.66,
+   "real": 6.394452732097236,
+   "err": -3.734,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "1986-06-22",
+   "estudio": "1533",
+   "partido": "PP",
+   "encuesta": 40.343,
+   "real": 18.024942497862032,
+   "err": 22.318,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "1986-06-22",
+   "estudio": "1533",
+   "partido": "PSOE",
+   "encuesta": 33.727,
+   "real": 30.623104304600794,
+   "err": 3.104,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "1986-06-22",
+   "estudio": "1533",
+   "partido": "BNG",
+   "encuesta": 2.919,
+   "real": 0.13388659331851996,
+   "err": 2.785,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "1986-06-22",
+   "estudio": "1533",
+   "partido": "CDS",
+   "encuesta": 3.291,
+   "real": 9.216054373132913,
+   "err": -5.925,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "1986-06-22",
+   "estudio": "1533",
+   "partido": "PP",
+   "encuesta": 49.918,
+   "real": 25.978587549650623,
+   "err": 23.939,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "1986-06-22",
+   "estudio": "1533",
+   "partido": "PSOE",
+   "encuesta": 41.732,
+   "real": 44.13578552683402,
+   "err": -2.404,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "CIUDADANOS",
+   "encuesta": 11.628,
+   "real": 9.625719300759577,
+   "err": 2.002,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "EH BILDU",
+   "encuesta": 0.738,
+   "real": 0.6264706185236091,
+   "err": 0.112,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "ERC",
+   "encuesta": 1.668,
+   "real": 1.6481828035655715,
+   "err": 0.02,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "GEROA BAI",
+   "encuesta": 0.081,
+   "real": 0.0839234431519325,
+   "err": -0.003,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "IU",
+   "encuesta": 2.648,
+   "real": 2.303244141463341,
+   "err": 0.345,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "JXCAT",
+   "encuesta": 1.193,
+   "real": 1.5536135010202716,
+   "err": -0.361,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "PNV",
+   "encuesta": 0.733,
+   "real": 0.8279942444983885,
+   "err": -0.095,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "PP",
+   "encuesta": 16.168,
+   "real": 19.82086746198111,
+   "err": -3.653,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "PSOE",
+   "encuesta": 14.866,
+   "real": 15.18771386208663,
+   "err": -0.322,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "UNIDAS PODEMOS",
+   "encuesta": 4.908,
+   "real": 14.51736433609167,
+   "err": -9.609,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "UPYD",
+   "encuesta": 0.203,
+   "real": 0.4249387760378494,
+   "err": -0.222,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "CIUDADANOS",
+   "encuesta": 17.97,
+   "real": 13.94028149188422,
+   "err": 4.029,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "EH BILDU",
+   "encuesta": 1.14,
+   "real": 0.907275237906094,
+   "err": 0.233,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "ERC",
+   "encuesta": 2.578,
+   "real": 2.386952238465327,
+   "err": 0.191,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "GEROA BAI",
+   "encuesta": 0.125,
+   "real": 0.12154067501363376,
+   "err": 0.004,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "IU",
+   "encuesta": 4.092,
+   "real": 3.3356334912029375,
+   "err": 0.757,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "JXCAT",
+   "encuesta": 1.844,
+   "real": 2.2499938817149268,
+   "err": -0.406,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "PNV",
+   "encuesta": 1.133,
+   "real": 1.1991283436923734,
+   "err": -0.066,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "PP",
+   "encuesta": 24.986,
+   "real": 28.70522848215006,
+   "err": -3.72,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "PSOE",
+   "encuesta": 22.974,
+   "real": 21.995343915646124,
+   "err": 0.978,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "UNIDAS PODEMOS",
+   "encuesta": 7.585,
+   "real": 21.02452180891967,
+   "err": -13.44,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "UPYD",
+   "encuesta": 0.314,
+   "real": 0.6154102326998995,
+   "err": -0.302,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "CIUDADANOS",
+   "encuesta": 8.458,
+   "real": 8.602112438974348,
+   "err": -0.144,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "EH BILDU",
+   "encuesta": 0.545,
+   "real": 0.5377247825102291,
+   "err": 0.007,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "ERC",
+   "encuesta": 1.765,
+   "real": 1.7311560639242507,
+   "err": 0.034,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "JXCAT",
+   "encuesta": 1.04,
+   "real": 1.327124543682684,
+   "err": -0.287,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "PNV",
+   "encuesta": 0.75,
+   "real": 0.7858894436729991,
+   "err": -0.036,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "PP",
+   "encuesta": 16.844,
+   "real": 21.744352338617603,
+   "err": -4.9,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "PSOE",
+   "encuesta": 14.647,
+   "real": 14.906105989190358,
+   "err": -0.259,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "UNIDAS PODEMOS",
+   "encuesta": 18.233,
+   "real": 13.930478682173144,
+   "err": 4.303,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "CIUDADANOS",
+   "encuesta": 13.01,
+   "real": 13.06062192784453,
+   "err": -0.05,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "EH BILDU",
+   "encuesta": 0.838,
+   "real": 0.8164297008928544,
+   "err": 0.022,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "ERC",
+   "encuesta": 2.715,
+   "real": 2.628421217394124,
+   "err": 0.087,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "JXCAT",
+   "encuesta": 1.6,
+   "real": 2.0149785345364997,
+   "err": -0.415,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "PNV",
+   "encuesta": 1.154,
+   "real": 1.1932191044599898,
+   "err": -0.04,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "PP",
+   "encuesta": 25.91,
+   "real": 33.014537647032654,
+   "err": -7.105,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "PSOE",
+   "encuesta": 22.53,
+   "real": 22.63200070009859,
+   "err": -0.102,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "UNIDAS PODEMOS",
+   "encuesta": 28.046,
+   "real": 21.15070183428741,
+   "err": 6.896,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "CC",
+   "encuesta": 0.151,
+   "real": 0.3730844643725394,
+   "err": -0.222,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "CIUDADANOS",
+   "encuesta": 7.067,
+   "real": 11.262305690933788,
+   "err": -4.195,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "EH BILDU",
+   "encuesta": 0.711,
+   "real": 0.7228375991761051,
+   "err": -0.012,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "ERC",
+   "encuesta": 2.827,
+   "real": 2.7653736835339977,
+   "err": 0.062,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "JXCAT",
+   "encuesta": 0.622,
+   "real": 1.3571874248876314,
+   "err": -0.735,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "PACMA",
+   "encuesta": 1.008,
+   "real": 0.8897261198936564,
+   "err": 0.118,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "PNV",
+   "encuesta": 0.813,
+   "real": 1.07288884598485,
+   "err": -0.26,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "PP",
+   "encuesta": 8.636,
+   "real": 11.860293982340874,
+   "err": -3.224,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "PSOE",
+   "encuesta": 18.881,
+   "real": 20.361434789231968,
+   "err": -1.48,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "UNIDAS PODEMOS",
+   "encuesta": 6.477,
+   "real": 10.685594466369077,
+   "err": -4.209,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "VOX",
+   "encuesta": 3.789,
+   "real": 7.285022692963362,
+   "err": -3.496,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "CC",
+   "encuesta": 0.282,
+   "real": 0.5254076208454893,
+   "err": -0.243,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "CIUDADANOS",
+   "encuesta": 13.2,
+   "real": 15.86048684246332,
+   "err": -2.661,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "EH BILDU",
+   "encuesta": 1.328,
+   "real": 1.0179581824172483,
+   "err": 0.31,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "ERC",
+   "encuesta": 5.28,
+   "real": 3.8944221659240656,
+   "err": 1.386,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "JXCAT",
+   "encuesta": 1.162,
+   "real": 1.9113007483463365,
+   "err": -0.75,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "PACMA",
+   "encuesta": 1.883,
+   "real": 1.2529840518650723,
+   "err": 0.63,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "PNV",
+   "encuesta": 1.519,
+   "real": 1.5109285693485277,
+   "err": 0.008,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "PP",
+   "encuesta": 16.131,
+   "real": 16.702622164313464,
+   "err": -0.572,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "PSOE",
+   "encuesta": 35.267,
+   "real": 28.67461401161031,
+   "err": 6.592,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "UNIDAS PODEMOS",
+   "encuesta": 12.098,
+   "real": 15.048315601500395,
+   "err": -2.95,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "VOX",
+   "encuesta": 7.077,
+   "real": 10.259356275669697,
+   "err": -3.182,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "BNG",
+   "encuesta": 0.21,
+   "real": 0.3255446236206494,
+   "err": -0.116,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "CC",
+   "encuesta": 0.163,
+   "real": 0.20610312929147856,
+   "err": -0.043,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "CIUDADANOS",
+   "encuesta": 4.194,
+   "real": 4.460152687822797,
+   "err": -0.266,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "CUP",
+   "encuesta": 0.321,
+   "real": 0.6674643126138623,
+   "err": -0.346,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "EH BILDU",
+   "encuesta": 0.858,
+   "real": 0.7664335969748587,
+   "err": 0.092,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "ERC",
+   "encuesta": 2.542,
+   "real": 2.3643956621184308,
+   "err": 0.178,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "GEROA BAI",
+   "encuesta": 0.058,
+   "real": 0.034347368512941095,
+   "err": 0.024,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "JXCAT",
+   "encuesta": 0.827,
+   "real": 1.43298713272281,
+   "err": -0.606,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "MÁS PAÍS",
+   "encuesta": 0.827,
+   "real": 1.0346181962569556,
+   "err": -0.208,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "NA+",
+   "encuesta": 0.203,
+   "real": 0.26776839857779355,
+   "err": -0.065,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "PACMA",
+   "encuesta": 0.604,
+   "real": 0.6185066778186835,
+   "err": -0.015,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "PNV",
+   "encuesta": 0.873,
+   "real": 1.0242915541066726,
+   "err": -0.151,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "PP",
+   "encuesta": 9.1,
+   "real": 13.644102291430814,
+   "err": -4.544,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "PRC",
+   "encuesta": 0.097,
+   "real": 0.18602009400784766,
+   "err": -0.089,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "PSOE",
+   "encuesta": 19.88,
+   "real": 18.356610438762296,
+   "err": 1.523,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "UNIDAS PODEMOS",
+   "encuesta": 7.393,
+   "real": 8.433282986561123,
+   "err": -1.04,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "VOX",
+   "encuesta": 3.984,
+   "real": 9.88335867157816,
+   "err": -5.899,
+   "base": "censo",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "BNG",
+   "encuesta": 0.389,
+   "real": 0.49655729181867697,
+   "err": -0.108,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "CC",
+   "encuesta": 0.302,
+   "real": 0.31437168452699843,
+   "err": -0.013,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "CIUDADANOS",
+   "encuesta": 7.761,
+   "real": 6.803126757651054,
+   "err": 0.958,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "CUP",
+   "encuesta": 0.594,
+   "real": 1.0180916759459924,
+   "err": -0.424,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "EH BILDU",
+   "encuesta": 1.588,
+   "real": 1.169050764961068,
+   "err": 0.419,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "ERC",
+   "encuesta": 4.704,
+   "real": 3.606442317221192,
+   "err": 1.098,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "GEROA BAI",
+   "encuesta": 0.107,
+   "real": 0.052390471389748665,
+   "err": 0.055,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "JXCAT",
+   "encuesta": 1.53,
+   "real": 2.185753221546108,
+   "err": -0.655,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "MÁS PAÍS",
+   "encuesta": 1.53,
+   "real": 1.578116093228244,
+   "err": -0.048,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "NA+",
+   "encuesta": 0.376,
+   "real": 0.4084304921200345,
+   "err": -0.033,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "PACMA",
+   "encuesta": 1.118,
+   "real": 0.9434159824039909,
+   "err": 0.174,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "PNV",
+   "encuesta": 1.616,
+   "real": 1.5623647366163762,
+   "err": 0.053,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "PP",
+   "encuesta": 16.84,
+   "real": 20.811520115978794,
+   "err": -3.971,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "PRC",
+   "encuesta": 0.18,
+   "real": 0.28373877927109925,
+   "err": -0.104,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "PSOE",
+   "encuesta": 36.79,
+   "real": 27.999567816742427,
+   "err": 8.79,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "UNIDAS PODEMOS",
+   "encuesta": 13.681,
+   "real": 12.86339216533046,
+   "err": 0.818,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "VOX",
+   "encuesta": 7.373,
+   "real": 15.075210769723164,
+   "err": -7.702,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "BNG",
+   "encuesta": 0.515,
+   "real": 0.4109880639319629,
+   "err": 0.104,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "CC",
+   "encuesta": 0.267,
+   "real": 0.31055426528987956,
+   "err": -0.044,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "CUP",
+   "encuesta": 0.369,
+   "real": 0.2659339241042665,
+   "err": 0.103,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "EH BILDU",
+   "encuesta": 0.486,
+   "real": 0.8944057851063658,
+   "err": -0.408,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "ERC",
+   "encuesta": 1.445,
+   "real": 1.2437329624570497,
+   "err": 0.201,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "GEROA BAI",
+   "encuesta": 0.026,
+   "real": 0.026522935026175185,
+   "err": -0.001,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "JXCAT",
+   "encuesta": 0.504,
+   "real": 1.144033094900919,
+   "err": -0.64,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PACMA",
+   "encuesta": 0.665,
+   "real": 0.45166652797593176,
+   "err": 0.213,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PAR",
+   "encuesta": 0.022,
+   "real": 0.011137070624293524,
+   "err": 0.011,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PNV",
+   "encuesta": 0.344,
+   "real": 0.7400400614281637,
+   "err": -0.396,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PP",
+   "encuesta": 6.553,
+   "real": 21.779970769793362,
+   "err": -15.227,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PSOE",
+   "encuesta": 10.807,
+   "real": 20.8749163118399,
+   "err": -10.068,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "SUMAR",
+   "encuesta": 15.854,
+   "real": 8.126608076369827,
+   "err": 7.727,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "UNIDAS PODEMOS",
+   "encuesta": 0.062,
+   "real": 0.0006752165990765066,
+   "err": 0.061,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "VOX",
+   "encuesta": 6.501,
+   "real": 8.158644835481741,
+   "err": -1.658,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "BNG",
+   "encuesta": 1.057,
+   "real": 0.6237623838574451,
+   "err": 0.433,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "CC",
+   "encuesta": 0.548,
+   "real": 0.47133259049192433,
+   "err": 0.077,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "CUP",
+   "encuesta": 0.757,
+   "real": 0.4036116690612764,
+   "err": 0.354,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "EH BILDU",
+   "encuesta": 0.998,
+   "real": 1.3574522805270413,
+   "err": -0.36,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "ERC",
+   "encuesta": 2.966,
+   "real": 1.8876310667570153,
+   "err": 1.079,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "GEROA BAI",
+   "encuesta": 0.053,
+   "real": 0.04025423273986356,
+   "err": 0.013,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "JXCAT",
+   "encuesta": 1.035,
+   "real": 1.7363151709567453,
+   "err": -0.702,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PACMA",
+   "encuesta": 1.365,
+   "real": 0.6855006627285459,
+   "err": 0.68,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PAR",
+   "encuesta": 0.045,
+   "real": 0.01690288923560582,
+   "err": 0.028,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PNV",
+   "encuesta": 0.706,
+   "real": 1.1231692435302905,
+   "err": -0.417,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PP",
+   "encuesta": 13.452,
+   "real": 33.05576896257697,
+   "err": -19.604,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PSOE",
+   "encuesta": 22.184,
+   "real": 31.68215504101229,
+   "err": -9.498,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "SUMAR",
+   "encuesta": 32.544,
+   "real": 12.333867747630668,
+   "err": 20.211,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "UNIDAS PODEMOS",
+   "encuesta": 0.127,
+   "real": 0.0010247857600307387,
+   "err": 0.126,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "VOX",
+   "encuesta": 13.345,
+   "real": 12.382490388988018,
+   "err": 0.962,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "PP",
+   "encuesta": 28.6,
+   "real": 28.70522848215006,
+   "err": -0.105,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "PSOE",
+   "encuesta": 20.8,
+   "real": 21.995343915646124,
+   "err": -1.195,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "IU",
+   "encuesta": 3.6,
+   "real": 3.3356334912029375,
+   "err": 0.264,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "UPYD",
+   "encuesta": 0.7,
+   "real": 0.6154102326998995,
+   "err": 0.085,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "CIUDADANOS",
+   "encuesta": 19.0,
+   "real": 13.94028149188422,
+   "err": 5.06,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "ERC",
+   "encuesta": 1.9,
+   "real": 2.386952238465327,
+   "err": -0.487,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "PNV",
+   "encuesta": 1.1,
+   "real": 1.1991283436923734,
+   "err": -0.099,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "EH BILDU",
+   "encuesta": 1.2,
+   "real": 0.907275237906094,
+   "err": 0.293,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "GEROA BAI",
+   "encuesta": 0.1,
+   "real": 0.12154067501363376,
+   "err": -0.022,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2015-12-20",
+   "estudio": "3117",
+   "partido": "CC",
+   "encuesta": 0.3,
+   "real": 0.32492159373056057,
+   "err": -0.025,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "PP",
+   "encuesta": 29.2,
+   "real": 33.014537647032654,
+   "err": -3.815,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "PSOE",
+   "encuesta": 21.2,
+   "real": 22.63200070009859,
+   "err": -1.432,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "UNIDAS PODEMOS",
+   "encuesta": 16.4,
+   "real": 21.15070183428741,
+   "err": -4.751,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "CIUDADANOS",
+   "encuesta": 14.6,
+   "real": 13.06062192784453,
+   "err": 1.539,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "ERC",
+   "encuesta": 2.4,
+   "real": 2.628421217394124,
+   "err": -0.228,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "PNV",
+   "encuesta": 1.2,
+   "real": 1.1932191044599898,
+   "err": 0.007,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "EH BILDU",
+   "encuesta": 0.9,
+   "real": 0.8164297008928544,
+   "err": 0.084,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2016-06-26",
+   "estudio": "3141",
+   "partido": "CC",
+   "encuesta": 0.2,
+   "real": 0.32532550531091714,
+   "err": -0.125,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "PP",
+   "encuesta": 17.2,
+   "real": 16.702622164313464,
+   "err": 0.497,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "PSOE",
+   "encuesta": 30.2,
+   "real": 28.67461401161031,
+   "err": 1.525,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "UNIDAS PODEMOS",
+   "encuesta": 12.3,
+   "real": 15.048315601500395,
+   "err": -2.748,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "CIUDADANOS",
+   "encuesta": 13.6,
+   "real": 15.86048684246332,
+   "err": -2.26,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "ERC",
+   "encuesta": 4.5,
+   "real": 3.8944221659240656,
+   "err": 0.606,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "JXCAT",
+   "encuesta": 1.2,
+   "real": 1.9113007483463365,
+   "err": -0.711,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "PNV",
+   "encuesta": 1.3,
+   "real": 1.5109285693485277,
+   "err": -0.211,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "EH BILDU",
+   "encuesta": 1.1,
+   "real": 1.0179581824172483,
+   "err": 0.082,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "CC",
+   "encuesta": 0.4,
+   "real": 0.5254076208454893,
+   "err": -0.125,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-04-28",
+   "estudio": "3242",
+   "partido": "VOX",
+   "encuesta": 11.9,
+   "real": 10.259356275669697,
+   "err": 1.641,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "PSOE",
+   "encuesta": 32.2,
+   "real": 27.999567816742427,
+   "err": 4.2,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "PP",
+   "encuesta": 18.1,
+   "real": 20.811520115978794,
+   "err": -2.712,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "CIUDADANOS",
+   "encuesta": 10.6,
+   "real": 6.803126757651054,
+   "err": 3.797,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "UNIDAS PODEMOS",
+   "encuesta": 11.1,
+   "real": 12.86339216533046,
+   "err": -1.763,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "VOX",
+   "encuesta": 7.9,
+   "real": 15.075210769723164,
+   "err": -7.175,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "ERC",
+   "encuesta": 4.4,
+   "real": 3.606442317221192,
+   "err": 0.794,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "JXCAT",
+   "encuesta": 1.8,
+   "real": 2.185753221546108,
+   "err": -0.386,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "CUP",
+   "encuesta": 0.6,
+   "real": 1.0180916759459924,
+   "err": -0.418,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "PNV",
+   "encuesta": 1.5,
+   "real": 1.5623647366163762,
+   "err": -0.062,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "EH BILDU",
+   "encuesta": 1.2,
+   "real": 1.169050764961068,
+   "err": 0.031,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "GEROA BAI",
+   "encuesta": 0.1,
+   "real": 0.052390471389748665,
+   "err": 0.048,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "CC",
+   "encuesta": 0.3,
+   "real": 0.31437168452699843,
+   "err": -0.014,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "PRC",
+   "encuesta": 0.2,
+   "real": 0.28373877927109925,
+   "err": -0.084,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2019-11-10",
+   "estudio": "3263",
+   "partido": "BNG",
+   "encuesta": 0.4,
+   "real": 0.49655729181867697,
+   "err": -0.097,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2023-07-23",
+   "estudio": "3415",
+   "partido": "PSOE",
+   "encuesta": 32.2,
+   "real": 31.68215504101229,
+   "err": 0.518,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2023-07-23",
+   "estudio": "3415",
+   "partido": "PP",
+   "encuesta": 30.8,
+   "real": 33.05576896257697,
+   "err": -2.256,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2023-07-23",
+   "estudio": "3415",
+   "partido": "VOX",
+   "encuesta": 11.8,
+   "real": 12.382490388988018,
+   "err": -0.582,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2023-07-23",
+   "estudio": "3415",
+   "partido": "ERC",
+   "encuesta": 2.1,
+   "real": 1.8876310667570153,
+   "err": 0.212,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2023-07-23",
+   "estudio": "3415",
+   "partido": "JXCAT",
+   "encuesta": 1.4,
+   "real": 1.7363151709567453,
+   "err": -0.336,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2023-07-23",
+   "estudio": "3415",
+   "partido": "PNV",
+   "encuesta": 1.1,
+   "real": 1.1231692435302905,
+   "err": -0.023,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2023-07-23",
+   "estudio": "3415",
+   "partido": "EH BILDU",
+   "encuesta": 1.1,
+   "real": 1.3574522805270413,
+   "err": -0.257,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2023-07-23",
+   "estudio": "3415",
+   "partido": "BNG",
+   "encuesta": 0.9,
+   "real": 0.6237623838574451,
+   "err": 0.276,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2023-07-23",
+   "estudio": "3415",
+   "partido": "CUP",
+   "encuesta": 0.6,
+   "real": 0.4036116690612764,
+   "err": 0.196,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "est",
+   "eleccion": "2023-07-23",
+   "estudio": "3415",
+   "partido": "CC",
+   "encuesta": 0.2,
+   "real": 0.47133259049192433,
+   "err": -0.271,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "GAD3",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "gad3-2023-07-17-abc-tracking14",
+   "partido": "PP",
+   "encuesta": 36.9,
+   "real": 33.05576896257697,
+   "err": 3.844,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "GAD3",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "gad3-2023-07-17-abc-tracking14",
+   "partido": "PSOE",
+   "encuesta": 28.6,
+   "real": 31.68215504101229,
+   "err": -3.082,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "GAD3",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "gad3-2023-07-17-abc-tracking14",
+   "partido": "VOX",
+   "encuesta": 11.7,
+   "real": 12.382490388988018,
+   "err": -0.682,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "GAD3",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "gad3-2023-07-17-abc-tracking14",
+   "partido": "SUMAR",
+   "encuesta": 11.5,
+   "real": 12.333867747630668,
+   "err": -0.834,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "Sigma Dos",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "sigmados-2023-07-17-elmundo",
+   "partido": "PP",
+   "encuesta": 35.4,
+   "real": 33.05576896257697,
+   "err": 2.344,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "Sigma Dos",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "sigmados-2023-07-17-elmundo",
+   "partido": "PSOE",
+   "encuesta": 28.0,
+   "real": 31.68215504101229,
+   "err": -3.682,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "Sigma Dos",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "sigmados-2023-07-17-elmundo",
+   "partido": "VOX",
+   "encuesta": 11.2,
+   "real": 12.382490388988018,
+   "err": -1.182,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "Sigma Dos",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "sigmados-2023-07-17-elmundo",
+   "partido": "SUMAR",
+   "encuesta": 13.6,
+   "real": 12.333867747630668,
+   "err": 1.266,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "Sigma Dos",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "sigmados-2023-07-23-rtve",
+   "partido": "PP",
+   "encuesta": 34.2,
+   "real": 33.05576896257697,
+   "err": 1.144,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "Sigma Dos",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "sigmados-2023-07-23-rtve",
+   "partido": "PSOE",
+   "encuesta": 28.9,
+   "real": 31.68215504101229,
+   "err": -2.782,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "Sigma Dos",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "sigmados-2023-07-23-rtve",
+   "partido": "VOX",
+   "encuesta": 11.2,
+   "real": 12.382490388988018,
+   "err": -1.182,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "Sigma Dos",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "sigmados-2023-07-23-rtve",
+   "partido": "SUMAR",
+   "encuesta": 13.3,
+   "real": 12.333867747630668,
+   "err": 0.966,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "NC Report",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "ncreport-2023-07-17-larazon-tracking6",
+   "partido": "PP",
+   "encuesta": 37.2,
+   "real": 33.05576896257697,
+   "err": 4.144,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "NC Report",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "ncreport-2023-07-17-larazon-tracking6",
+   "partido": "PSOE",
+   "encuesta": 28.3,
+   "real": 31.68215504101229,
+   "err": -3.382,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "NC Report",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "ncreport-2023-07-17-larazon-tracking6",
+   "partido": "VOX",
+   "encuesta": 11.1,
+   "real": 12.382490388988018,
+   "err": -1.282,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "NC Report",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "ncreport-2023-07-17-larazon-tracking6",
+   "partido": "SUMAR",
+   "encuesta": 11.3,
+   "real": 12.333867747630668,
+   "err": -1.034,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "Sociometrica",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "sociometrica-2023-07-17-elespanol",
+   "partido": "PP",
+   "encuesta": 33.5,
+   "real": 33.05576896257697,
+   "err": 0.444,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "Sociometrica",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "sociometrica-2023-07-17-elespanol",
+   "partido": "PSOE",
+   "encuesta": 28.3,
+   "real": 31.68215504101229,
+   "err": -3.382,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "Sociometrica",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "sociometrica-2023-07-17-elespanol",
+   "partido": "VOX",
+   "encuesta": 13.7,
+   "real": 12.382490388988018,
+   "err": 1.318,
+   "base": "válido",
+   "calidad": "validada"
+  },
+  {
+   "casa": "Sociometrica",
+   "serie": "privado",
+   "eleccion": "2023-07-23",
+   "estudio": "sociometrica-2023-07-17-elespanol",
+   "partido": "SUMAR",
+   "encuesta": 13.2,
+   "real": 12.333867747630668,
+   "err": 0.866,
+   "base": "válido",
+   "calidad": "validada"
+  }
+ ],
+ "house_effects": {
+  "CIS": {
+   "micro_censo": {
+    "BNG": {
+     "n": 1,
+     "media": -0.116,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.116,
+      -0.116
+     ],
+     "errores": [
+      -0.116
+     ]
+    },
+    "CC": {
+     "n": 2,
+     "media": -0.133,
+     "sd": 0.089,
+     "ic95_bootstrap": [
+      -0.222,
+      -0.043
+     ],
+     "errores": [
+      -0.222,
+      -0.043
+     ]
+    },
+    "CIUDADANOS": {
+     "n": 4,
+     "media": -0.651,
+     "sd": 2.236,
+     "ic95_bootstrap": [
+      -3.182,
+      1.435
+     ],
+     "errores": [
+      2.002,
+      -0.144,
+      -4.195,
+      -0.266
+     ]
+    },
+    "CUP": {
+     "n": 1,
+     "media": -0.346,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.346,
+      -0.346
+     ],
+     "errores": [
+      -0.346
+     ]
+    },
+    "EH BILDU": {
+     "n": 4,
+     "media": 0.05,
+     "sd": 0.053,
+     "ic95_bootstrap": [
+      -0.003,
+      0.102
+     ],
+     "errores": [
+      0.112,
+      0.007,
+      -0.012,
+      0.092
+     ]
+    },
+    "ERC": {
+     "n": 4,
+     "media": 0.073,
+     "sd": 0.062,
+     "ic95_bootstrap": [
+      0.027,
+      0.142
+     ],
+     "errores": [
+      0.02,
+      0.034,
+      0.062,
+      0.178
+     ]
+    },
+    "GEROA BAI": {
+     "n": 2,
+     "media": 0.011,
+     "sd": 0.013,
+     "ic95_bootstrap": [
+      -0.003,
+      0.024
+     ],
+     "errores": [
+      -0.003,
+      0.024
+     ]
+    },
+    "IU": {
+     "n": 1,
+     "media": 0.345,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      0.345,
+      0.345
+     ],
+     "errores": [
+      0.345
+     ]
+    },
+    "JXCAT": {
+     "n": 4,
+     "media": -0.497,
+     "sd": 0.181,
+     "ic95_bootstrap": [
+      -0.67,
+      -0.324
+     ],
+     "errores": [
+      -0.361,
+      -0.287,
+      -0.735,
+      -0.606
+     ]
+    },
+    "MÁS PAÍS": {
+     "n": 1,
+     "media": -0.208,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.208,
+      -0.208
+     ],
+     "errores": [
+      -0.208
+     ]
+    },
+    "NA+": {
+     "n": 1,
+     "media": -0.065,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.065,
+      -0.065
+     ],
+     "errores": [
+      -0.065
+     ]
+    },
+    "PACMA": {
+     "n": 2,
+     "media": 0.051,
+     "sd": 0.067,
+     "ic95_bootstrap": [
+      -0.015,
+      0.118
+     ],
+     "errores": [
+      0.118,
+      -0.015
+     ]
+    },
+    "PNV": {
+     "n": 4,
+     "media": -0.136,
+     "sd": 0.083,
+     "ic95_bootstrap": [
+      -0.219,
+      -0.065
+     ],
+     "errores": [
+      -0.095,
+      -0.036,
+      -0.26,
+      -0.151
+     ]
+    },
+    "PP": {
+     "n": 4,
+     "media": -4.08,
+     "sd": 0.671,
+     "ic95_bootstrap": [
+      -4.722,
+      -3.439
+     ],
+     "errores": [
+      -3.653,
+      -4.9,
+      -3.224,
+      -4.544
+     ]
+    },
+    "PRC": {
+     "n": 1,
+     "media": -0.089,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.089,
+      -0.089
+     ],
+     "errores": [
+      -0.089
+     ]
+    },
+    "PSOE": {
+     "n": 4,
+     "media": -0.135,
+     "sd": 1.073,
+     "ic95_bootstrap": [
+      -1.175,
+      1.062
+     ],
+     "errores": [
+      -0.322,
+      -0.259,
+      -1.48,
+      1.523
+     ]
+    },
+    "UNIDAS PODEMOS": {
+     "n": 4,
+     "media": -2.639,
+     "sd": 5.045,
+     "ic95_bootstrap": [
+      -7.467,
+      2.175
+     ],
+     "errores": [
+      -9.609,
+      4.303,
+      -4.209,
+      -1.04
+     ]
+    },
+    "UPYD": {
+     "n": 1,
+     "media": -0.222,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.222,
+      -0.222
+     ],
+     "errores": [
+      -0.222
+     ]
+    },
+    "VOX": {
+     "n": 2,
+     "media": -4.697,
+     "sd": 1.202,
+     "ic95_bootstrap": [
+      -5.899,
+      -3.496
+     ],
+     "errores": [
+      -3.496,
+      -5.899
+     ]
+    }
+   },
+   "micro_valid": {
+    "BNG": {
+     "n": 1,
+     "media": -0.108,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.108,
+      -0.108
+     ],
+     "errores": [
+      -0.108
+     ]
+    },
+    "CC": {
+     "n": 2,
+     "media": -0.128,
+     "sd": 0.115,
+     "ic95_bootstrap": [
+      -0.243,
+      -0.013
+     ],
+     "errores": [
+      -0.243,
+      -0.013
+     ]
+    },
+    "CIUDADANOS": {
+     "n": 4,
+     "media": 0.569,
+     "sd": 2.395,
+     "ic95_bootstrap": [
+      -1.756,
+      3.009
+     ],
+     "errores": [
+      4.029,
+      -0.05,
+      -2.661,
+      0.958
+     ]
+    },
+    "CUP": {
+     "n": 1,
+     "media": -0.424,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.424,
+      -0.424
+     ],
+     "errores": [
+      -0.424
+     ]
+    },
+    "EH BILDU": {
+     "n": 4,
+     "media": 0.246,
+     "sd": 0.145,
+     "ic95_bootstrap": [
+      0.094,
+      0.372
+     ],
+     "errores": [
+      0.233,
+      0.022,
+      0.31,
+      0.419
+     ]
+    },
+    "ERC": {
+     "n": 4,
+     "media": 0.691,
+     "sd": 0.562,
+     "ic95_bootstrap": [
+      0.139,
+      1.242
+     ],
+     "errores": [
+      0.191,
+      0.087,
+      1.386,
+      1.098
+     ]
+    },
+    "GEROA BAI": {
+     "n": 2,
+     "media": 0.029,
+     "sd": 0.026,
+     "ic95_bootstrap": [
+      0.004,
+      0.055
+     ],
+     "errores": [
+      0.004,
+      0.055
+     ]
+    },
+    "IU": {
+     "n": 1,
+     "media": 0.757,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      0.757,
+      0.757
+     ],
+     "errores": [
+      0.757
+     ]
+    },
+    "JXCAT": {
+     "n": 4,
+     "media": -0.556,
+     "sd": 0.15,
+     "ic95_bootstrap": [
+      -0.703,
+      -0.41
+     ],
+     "errores": [
+      -0.406,
+      -0.415,
+      -0.75,
+      -0.655
+     ]
+    },
+    "MÁS PAÍS": {
+     "n": 1,
+     "media": -0.048,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.048,
+      -0.048
+     ],
+     "errores": [
+      -0.048
+     ]
+    },
+    "NA+": {
+     "n": 1,
+     "media": -0.033,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.033,
+      -0.033
+     ],
+     "errores": [
+      -0.033
+     ]
+    },
+    "PACMA": {
+     "n": 2,
+     "media": 0.402,
+     "sd": 0.228,
+     "ic95_bootstrap": [
+      0.174,
+      0.63
+     ],
+     "errores": [
+      0.63,
+      0.174
+     ]
+    },
+    "PNV": {
+     "n": 4,
+     "media": -0.011,
+     "sd": 0.046,
+     "ic95_bootstrap": [
+      -0.053,
+      0.03
+     ],
+     "errores": [
+      -0.066,
+      -0.04,
+      0.008,
+      0.053
+     ]
+    },
+    "PP": {
+     "n": 4,
+     "media": -3.842,
+     "sd": 2.311,
+     "ic95_bootstrap": [
+      -6.259,
+      -1.422
+     ],
+     "errores": [
+      -3.72,
+      -7.105,
+      -0.572,
+      -3.971
+     ]
+    },
+    "PRC": {
+     "n": 1,
+     "media": -0.104,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.104,
+      -0.104
+     ],
+     "errores": [
+      -0.104
+     ]
+    },
+    "PSOE": {
+     "n": 4,
+     "media": 4.064,
+     "sd": 3.728,
+     "ic95_bootstrap": [
+      0.438,
+      7.691
+     ],
+     "errores": [
+      0.978,
+      -0.102,
+      6.592,
+      8.79
+     ]
+    },
+    "UNIDAS PODEMOS": {
+     "n": 4,
+     "media": -2.169,
+     "sd": 7.395,
+     "ic95_bootstrap": [
+      -9.875,
+      4.434
+     ],
+     "errores": [
+      -13.44,
+      6.896,
+      -2.95,
+      0.818
+     ]
+    },
+    "UPYD": {
+     "n": 1,
+     "media": -0.302,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.302,
+      -0.302
+     ],
+     "errores": [
+      -0.302
+     ]
+    },
+    "VOX": {
+     "n": 2,
+     "media": -5.442,
+     "sd": 2.26,
+     "ic95_bootstrap": [
+      -7.702,
+      -3.182
+     ],
+     "errores": [
+      -3.182,
+      -7.702
+     ]
+    }
+   },
+   "est": {
+    "BNG": {
+     "n": 2,
+     "media": 0.09,
+     "sd": 0.186,
+     "ic95_bootstrap": [
+      -0.097,
+      0.276
+     ],
+     "errores": [
+      -0.097,
+      0.276
+     ]
+    },
+    "CC": {
+     "n": 5,
+     "media": -0.112,
+     "sd": 0.093,
+     "ic95_bootstrap": [
+      -0.193,
+      -0.038
+     ],
+     "errores": [
+      -0.025,
+      -0.125,
+      -0.125,
+      -0.014,
+      -0.271
+     ]
+    },
+    "CIUDADANOS": {
+     "n": 4,
+     "media": 2.034,
+     "sd": 2.782,
+     "ic95_bootstrap": [
+      -0.746,
+      4.428
+     ],
+     "errores": [
+      5.06,
+      1.539,
+      -2.26,
+      3.797
+     ]
+    },
+    "CUP": {
+     "n": 2,
+     "media": -0.111,
+     "sd": 0.307,
+     "ic95_bootstrap": [
+      -0.418,
+      0.196
+     ],
+     "errores": [
+      -0.418,
+      0.196
+     ]
+    },
+    "EH BILDU": {
+     "n": 5,
+     "media": 0.047,
+     "sd": 0.177,
+     "ic95_bootstrap": [
+      -0.121,
+      0.199
+     ],
+     "errores": [
+      0.293,
+      0.084,
+      0.082,
+      0.031,
+      -0.257
+     ]
+    },
+    "ERC": {
+     "n": 5,
+     "media": 0.179,
+     "sd": 0.484,
+     "ic95_bootstrap": [
+      -0.244,
+      0.602
+     ],
+     "errores": [
+      -0.487,
+      -0.228,
+      0.606,
+      0.794,
+      0.212
+     ]
+    },
+    "GEROA BAI": {
+     "n": 2,
+     "media": 0.013,
+     "sd": 0.035,
+     "ic95_bootstrap": [
+      -0.022,
+      0.048
+     ],
+     "errores": [
+      -0.022,
+      0.048
+     ]
+    },
+    "IU": {
+     "n": 1,
+     "media": 0.264,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      0.264,
+      0.264
+     ],
+     "errores": [
+      0.264
+     ]
+    },
+    "JXCAT": {
+     "n": 3,
+     "media": -0.478,
+     "sd": 0.166,
+     "ic95_bootstrap": [
+      -0.711,
+      -0.336
+     ],
+     "errores": [
+      -0.711,
+      -0.386,
+      -0.336
+     ]
+    },
+    "PNV": {
+     "n": 5,
+     "media": -0.078,
+     "sd": 0.076,
+     "ic95_bootstrap": [
+      -0.151,
+      -0.019
+     ],
+     "errores": [
+      -0.099,
+      0.007,
+      -0.211,
+      -0.062,
+      -0.023
+     ]
+    },
+    "PP": {
+     "n": 5,
+     "media": -1.678,
+     "sd": 1.623,
+     "ic95_bootstrap": [
+      -3.062,
+      -0.265
+     ],
+     "errores": [
+      -0.105,
+      -3.815,
+      0.497,
+      -2.712,
+      -2.256
+     ]
+    },
+    "PRC": {
+     "n": 1,
+     "media": -0.084,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.084,
+      -0.084
+     ],
+     "errores": [
+      -0.084
+     ]
+    },
+    "PSOE": {
+     "n": 5,
+     "media": 0.723,
+     "sd": 2.054,
+     "ic95_bootstrap": [
+      -0.947,
+      2.586
+     ],
+     "errores": [
+      -1.195,
+      -1.432,
+      1.525,
+      4.2,
+      0.518
+     ]
+    },
+    "UNIDAS PODEMOS": {
+     "n": 3,
+     "media": -3.087,
+     "sd": 1.243,
+     "ic95_bootstrap": [
+      -4.751,
+      -1.763
+     ],
+     "errores": [
+      -4.751,
+      -2.748,
+      -1.763
+     ]
+    },
+    "UPYD": {
+     "n": 1,
+     "media": 0.085,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      0.085,
+      0.085
+     ],
+     "errores": [
+      0.085
+     ]
+    },
+    "VOX": {
+     "n": 3,
+     "media": -2.039,
+     "sd": 3.744,
+     "ic95_bootstrap": [
+      -7.175,
+      1.641
+     ],
+     "errores": [
+      1.641,
+      -7.175,
+      -0.582
+     ]
+    }
+   }
+  },
+  "GAD3": {
+   "privado": {
+    "PP": {
+     "n": 1,
+     "media": 3.844,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      3.844,
+      3.844
+     ],
+     "errores": [
+      3.844
+     ]
+    },
+    "PSOE": {
+     "n": 1,
+     "media": -3.082,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -3.082,
+      -3.082
+     ],
+     "errores": [
+      -3.082
+     ]
+    },
+    "SUMAR": {
+     "n": 1,
+     "media": -0.834,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.834,
+      -0.834
+     ],
+     "errores": [
+      -0.834
+     ]
+    },
+    "VOX": {
+     "n": 1,
+     "media": -0.682,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.682,
+      -0.682
+     ],
+     "errores": [
+      -0.682
+     ]
+    }
+   }
+  },
+  "Sigma Dos": {
+   "privado": {
+    "PP": {
+     "n": 2,
+     "media": 1.744,
+     "sd": 0.6,
+     "ic95_bootstrap": [
+      1.144,
+      2.344
+     ],
+     "errores": [
+      2.344,
+      1.144
+     ]
+    },
+    "PSOE": {
+     "n": 2,
+     "media": -3.232,
+     "sd": 0.45,
+     "ic95_bootstrap": [
+      -3.682,
+      -2.782
+     ],
+     "errores": [
+      -3.682,
+      -2.782
+     ]
+    },
+    "SUMAR": {
+     "n": 2,
+     "media": 1.116,
+     "sd": 0.15,
+     "ic95_bootstrap": [
+      0.966,
+      1.266
+     ],
+     "errores": [
+      1.266,
+      0.966
+     ]
+    },
+    "VOX": {
+     "n": 2,
+     "media": -1.182,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -1.182,
+      -1.182
+     ],
+     "errores": [
+      -1.182,
+      -1.182
+     ]
+    }
+   }
+  },
+  "NC Report": {
+   "privado": {
+    "PP": {
+     "n": 1,
+     "media": 4.144,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      4.144,
+      4.144
+     ],
+     "errores": [
+      4.144
+     ]
+    },
+    "PSOE": {
+     "n": 1,
+     "media": -3.382,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -3.382,
+      -3.382
+     ],
+     "errores": [
+      -3.382
+     ]
+    },
+    "SUMAR": {
+     "n": 1,
+     "media": -1.034,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -1.034,
+      -1.034
+     ],
+     "errores": [
+      -1.034
+     ]
+    },
+    "VOX": {
+     "n": 1,
+     "media": -1.282,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -1.282,
+      -1.282
+     ],
+     "errores": [
+      -1.282
+     ]
+    }
+   }
+  },
+  "Sociometrica": {
+   "privado": {
+    "PP": {
+     "n": 1,
+     "media": 0.444,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      0.444,
+      0.444
+     ],
+     "errores": [
+      0.444
+     ]
+    },
+    "PSOE": {
+     "n": 1,
+     "media": -3.382,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -3.382,
+      -3.382
+     ],
+     "errores": [
+      -3.382
+     ]
+    },
+    "SUMAR": {
+     "n": 1,
+     "media": 0.866,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      0.866,
+      0.866
+     ],
+     "errores": [
+      0.866
+     ]
+    },
+    "VOX": {
+     "n": 1,
+     "media": 1.318,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      1.318,
+      1.318
+     ],
+     "errores": [
+      1.318
+     ]
+    }
+   }
+  }
+ },
+ "house_effects_serie_completa": {
+  "CIS": {
+   "micro_censo": {
+    "BNG": {
+     "n": 3,
+     "media": 0.751,
+     "sd": 1.075,
+     "ic95_bootstrap": [
+      -0.116,
+      2.266
+     ],
+     "errores": [
+      2.266,
+      -0.116,
+      0.104
+     ]
+    },
+    "CC": {
+     "n": 3,
+     "media": -0.103,
+     "sd": 0.084,
+     "ic95_bootstrap": [
+      -0.222,
+      -0.043
+     ],
+     "errores": [
+      -0.222,
+      -0.043,
+      -0.044
+     ]
+    },
+    "CDS": {
+     "n": 1,
+     "media": -3.734,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -3.734,
+      -3.734
+     ],
+     "errores": [
+      -3.734
+     ]
+    },
+    "CIUDADANOS": {
+     "n": 4,
+     "media": -0.651,
+     "sd": 2.236,
+     "ic95_bootstrap": [
+      -3.182,
+      1.435
+     ],
+     "errores": [
+      2.002,
+      -0.144,
+      -4.195,
+      -0.266
+     ]
+    },
+    "CUP": {
+     "n": 2,
+     "media": -0.121,
+     "sd": 0.224,
+     "ic95_bootstrap": [
+      -0.346,
+      0.103
+     ],
+     "errores": [
+      -0.346,
+      0.103
+     ]
+    },
+    "EH BILDU": {
+     "n": 5,
+     "media": -0.042,
+     "sd": 0.189,
+     "ic95_bootstrap": [
+      -0.229,
+      0.083
+     ],
+     "errores": [
+      0.112,
+      0.007,
+      -0.012,
+      0.092,
+      -0.408
+     ]
+    },
+    "ERC": {
+     "n": 5,
+     "media": 0.099,
+     "sd": 0.075,
+     "ic95_bootstrap": [
+      0.034,
+      0.164
+     ],
+     "errores": [
+      0.02,
+      0.034,
+      0.062,
+      0.178,
+      0.201
+     ]
+    },
+    "GEROA BAI": {
+     "n": 3,
+     "media": 0.007,
+     "sd": 0.012,
+     "ic95_bootstrap": [
+      -0.003,
+      0.024
+     ],
+     "errores": [
+      -0.003,
+      0.024,
+      -0.001
+     ]
+    },
+    "IU": {
+     "n": 3,
+     "media": -0.874,
+     "sd": 1.425,
+     "ic95_bootstrap": [
+      -2.873,
+      0.345
+     ],
+     "errores": [
+      -2.873,
+      -0.093,
+      0.345
+     ]
+    },
+    "JXCAT": {
+     "n": 7,
+     "media": -0.7,
+     "sd": 0.313,
+     "ic95_bootstrap": [
+      -0.936,
+      -0.474
+     ],
+     "errores": [
+      -1.069,
+      -1.201,
+      -0.361,
+      -0.287,
+      -0.735,
+      -0.606,
+      -0.64
+     ]
+    },
+    "MÁS PAÍS": {
+     "n": 1,
+     "media": -0.208,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.208,
+      -0.208
+     ],
+     "errores": [
+      -0.208
+     ]
+    },
+    "NA+": {
+     "n": 1,
+     "media": -0.065,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.065,
+      -0.065
+     ],
+     "errores": [
+      -0.065
+     ]
+    },
+    "PACMA": {
+     "n": 3,
+     "media": 0.105,
+     "sd": 0.094,
+     "ic95_bootstrap": [
+      -0.015,
+      0.213
+     ],
+     "errores": [
+      0.118,
+      -0.015,
+      0.213
+     ]
+    },
+    "PAR": {
+     "n": 1,
+     "media": 0.011,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      0.011,
+      0.011
+     ],
+     "errores": [
+      0.011
+     ]
+    },
+    "PNV": {
+     "n": 7,
+     "media": -0.219,
+     "sd": 0.122,
+     "ic95_bootstrap": [
+      -0.311,
+      -0.129
+     ],
+     "errores": [
+      -0.349,
+      -0.247,
+      -0.095,
+      -0.036,
+      -0.26,
+      -0.151,
+      -0.396
+     ]
+    },
+    "PP": {
+     "n": 6,
+     "media": -1.538,
+     "sd": 11.432,
+     "ic95_bootstrap": [
+      -9.576,
+      9.107
+     ],
+     "errores": [
+      22.318,
+      -3.653,
+      -4.9,
+      -3.224,
+      -4.544,
+      -15.227
+     ]
+    },
+    "PRC": {
+     "n": 1,
+     "media": -0.089,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.089,
+      -0.089
+     ],
+     "errores": [
+      -0.089
+     ]
+    },
+    "PSOE": {
+     "n": 8,
+     "media": -2.99,
+     "sd": 4.811,
+     "ic95_bootstrap": [
+      -6.437,
+      0.141
+     ],
+     "errores": [
+      -6.441,
+      -9.975,
+      3.104,
+      -0.322,
+      -0.259,
+      -1.48,
+      1.523,
+      -10.068
+     ]
+    },
+    "SUMAR": {
+     "n": 1,
+     "media": 7.727,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      7.727,
+      7.727
+     ],
+     "errores": [
+      7.727
+     ]
+    },
+    "UCD": {
+     "n": 2,
+     "media": 5.728,
+     "sd": 12.689,
+     "ic95_bootstrap": [
+      -6.961,
+      18.417
+     ],
+     "errores": [
+      -6.961,
+      18.417
+     ]
+    },
+    "UNIDAS PODEMOS": {
+     "n": 5,
+     "media": -2.099,
+     "sd": 4.64,
+     "ic95_bootstrap": [
+      -6.181,
+      1.752
+     ],
+     "errores": [
+      -9.609,
+      4.303,
+      -4.209,
+      -1.04,
+      0.061
+     ]
+    },
+    "UPYD": {
+     "n": 1,
+     "media": -0.222,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.222,
+      -0.222
+     ],
+     "errores": [
+      -0.222
+     ]
+    },
+    "VOX": {
+     "n": 3,
+     "media": -3.684,
+     "sd": 1.736,
+     "ic95_bootstrap": [
+      -5.899,
+      -1.658
+     ],
+     "errores": [
+      -3.496,
+      -5.899,
+      -1.658
+     ]
+    }
+   },
+   "micro_valid": {
+    "BNG": {
+     "n": 3,
+     "media": 1.037,
+     "sd": 1.256,
+     "ic95_bootstrap": [
+      -0.108,
+      2.785
+     ],
+     "errores": [
+      2.785,
+      -0.108,
+      0.433
+     ]
+    },
+    "CC": {
+     "n": 3,
+     "media": -0.06,
+     "sd": 0.135,
+     "ic95_bootstrap": [
+      -0.243,
+      0.077
+     ],
+     "errores": [
+      -0.243,
+      -0.013,
+      0.077
+     ]
+    },
+    "CDS": {
+     "n": 1,
+     "media": -5.925,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -5.925,
+      -5.925
+     ],
+     "errores": [
+      -5.925
+     ]
+    },
+    "CIUDADANOS": {
+     "n": 4,
+     "media": 0.569,
+     "sd": 2.395,
+     "ic95_bootstrap": [
+      -1.756,
+      3.009
+     ],
+     "errores": [
+      4.029,
+      -0.05,
+      -2.661,
+      0.958
+     ]
+    },
+    "CUP": {
+     "n": 2,
+     "media": -0.035,
+     "sd": 0.389,
+     "ic95_bootstrap": [
+      -0.424,
+      0.354
+     ],
+     "errores": [
+      -0.424,
+      0.354
+     ]
+    },
+    "EH BILDU": {
+     "n": 5,
+     "media": 0.125,
+     "sd": 0.275,
+     "ic95_bootstrap": [
+      -0.131,
+      0.338
+     ],
+     "errores": [
+      0.233,
+      0.022,
+      0.31,
+      0.419,
+      -0.36
+     ]
+    },
+    "ERC": {
+     "n": 5,
+     "media": 0.768,
+     "sd": 0.526,
+     "ic95_bootstrap": [
+      0.31,
+      1.209
+     ],
+     "errores": [
+      0.191,
+      0.087,
+      1.386,
+      1.098,
+      1.079
+     ]
+    },
+    "GEROA BAI": {
+     "n": 3,
+     "media": 0.024,
+     "sd": 0.022,
+     "ic95_bootstrap": [
+      0.004,
+      0.055
+     ],
+     "errores": [
+      0.004,
+      0.055,
+      0.013
+     ]
+    },
+    "IU": {
+     "n": 3,
+     "media": 1.593,
+     "sd": 0.615,
+     "ic95_bootstrap": [
+      0.757,
+      2.218
+     ],
+     "errores": [
+      1.805,
+      2.218,
+      0.757
+     ]
+    },
+    "JXCAT": {
+     "n": 7,
+     "media": -0.548,
+     "sd": 0.151,
+     "ic95_bootstrap": [
+      -0.658,
+      -0.437
+     ],
+     "errores": [
+      -0.57,
+      -0.337,
+      -0.406,
+      -0.415,
+      -0.75,
+      -0.655,
+      -0.702
+     ]
+    },
+    "MÁS PAÍS": {
+     "n": 1,
+     "media": -0.048,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.048,
+      -0.048
+     ],
+     "errores": [
+      -0.048
+     ]
+    },
+    "NA+": {
+     "n": 1,
+     "media": -0.033,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.033,
+      -0.033
+     ],
+     "errores": [
+      -0.033
+     ]
+    },
+    "PACMA": {
+     "n": 3,
+     "media": 0.495,
+     "sd": 0.228,
+     "ic95_bootstrap": [
+      0.174,
+      0.68
+     ],
+     "errores": [
+      0.63,
+      0.174,
+      0.68
+     ]
+    },
+    "PAR": {
+     "n": 1,
+     "media": 0.028,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      0.028,
+      0.028
+     ],
+     "errores": [
+      0.028
+     ]
+    },
+    "PNV": {
+     "n": 7,
+     "media": 0.091,
+     "sd": 0.322,
+     "ic95_bootstrap": [
+      -0.142,
+      0.323
+     ],
+     "errores": [
+      0.538,
+      0.559,
+      -0.066,
+      -0.04,
+      0.008,
+      0.053,
+      -0.417
+     ]
+    },
+    "PP": {
+     "n": 6,
+     "media": -1.839,
+     "sd": 13.023,
+     "ic95_bootstrap": [
+      -11.662,
+      10.028
+     ],
+     "errores": [
+      23.939,
+      -3.72,
+      -7.105,
+      -0.572,
+      -3.971,
+      -19.604
+     ]
+    },
+    "PRC": {
+     "n": 1,
+     "media": -0.104,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.104,
+      -0.104
+     ],
+     "errores": [
+      -0.104
+     ]
+    },
+    "PSOE": {
+     "n": 8,
+     "media": 2.067,
+     "sd": 6.109,
+     "ic95_bootstrap": [
+      -2.304,
+      6.115
+     ],
+     "errores": [
+      10.612,
+      1.565,
+      -2.404,
+      0.978,
+      -0.102,
+      6.592,
+      8.79,
+      -9.498
+     ]
+    },
+    "SUMAR": {
+     "n": 1,
+     "media": 20.211,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      20.211,
+      20.211
+     ],
+     "errores": [
+      20.211
+     ]
+    },
+    "UCD": {
+     "n": 2,
+     "media": 24.901,
+     "sd": 15.303,
+     "ic95_bootstrap": [
+      9.598,
+      40.204
+     ],
+     "errores": [
+      9.598,
+      40.204
+     ]
+    },
+    "UNIDAS PODEMOS": {
+     "n": 5,
+     "media": -1.71,
+     "sd": 6.678,
+     "ic95_bootstrap": [
+      -7.875,
+      3.573
+     ],
+     "errores": [
+      -13.44,
+      6.896,
+      -2.95,
+      0.818,
+      0.126
+     ]
+    },
+    "UPYD": {
+     "n": 1,
+     "media": -0.302,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.302,
+      -0.302
+     ],
+     "errores": [
+      -0.302
+     ]
+    },
+    "VOX": {
+     "n": 3,
+     "media": -3.307,
+     "sd": 3.538,
+     "ic95_bootstrap": [
+      -7.702,
+      0.962
+     ],
+     "errores": [
+      -3.182,
+      -7.702,
+      0.962
+     ]
+    }
+   },
+   "est": {
+    "BNG": {
+     "n": 2,
+     "media": 0.09,
+     "sd": 0.186,
+     "ic95_bootstrap": [
+      -0.097,
+      0.276
+     ],
+     "errores": [
+      -0.097,
+      0.276
+     ]
+    },
+    "CC": {
+     "n": 5,
+     "media": -0.112,
+     "sd": 0.093,
+     "ic95_bootstrap": [
+      -0.193,
+      -0.038
+     ],
+     "errores": [
+      -0.025,
+      -0.125,
+      -0.125,
+      -0.014,
+      -0.271
+     ]
+    },
+    "CIUDADANOS": {
+     "n": 4,
+     "media": 2.034,
+     "sd": 2.782,
+     "ic95_bootstrap": [
+      -0.746,
+      4.428
+     ],
+     "errores": [
+      5.06,
+      1.539,
+      -2.26,
+      3.797
+     ]
+    },
+    "CUP": {
+     "n": 2,
+     "media": -0.111,
+     "sd": 0.307,
+     "ic95_bootstrap": [
+      -0.418,
+      0.196
+     ],
+     "errores": [
+      -0.418,
+      0.196
+     ]
+    },
+    "EH BILDU": {
+     "n": 5,
+     "media": 0.047,
+     "sd": 0.177,
+     "ic95_bootstrap": [
+      -0.121,
+      0.199
+     ],
+     "errores": [
+      0.293,
+      0.084,
+      0.082,
+      0.031,
+      -0.257
+     ]
+    },
+    "ERC": {
+     "n": 5,
+     "media": 0.179,
+     "sd": 0.484,
+     "ic95_bootstrap": [
+      -0.244,
+      0.602
+     ],
+     "errores": [
+      -0.487,
+      -0.228,
+      0.606,
+      0.794,
+      0.212
+     ]
+    },
+    "GEROA BAI": {
+     "n": 2,
+     "media": 0.013,
+     "sd": 0.035,
+     "ic95_bootstrap": [
+      -0.022,
+      0.048
+     ],
+     "errores": [
+      -0.022,
+      0.048
+     ]
+    },
+    "IU": {
+     "n": 1,
+     "media": 0.264,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      0.264,
+      0.264
+     ],
+     "errores": [
+      0.264
+     ]
+    },
+    "JXCAT": {
+     "n": 3,
+     "media": -0.478,
+     "sd": 0.166,
+     "ic95_bootstrap": [
+      -0.711,
+      -0.336
+     ],
+     "errores": [
+      -0.711,
+      -0.386,
+      -0.336
+     ]
+    },
+    "PNV": {
+     "n": 5,
+     "media": -0.078,
+     "sd": 0.076,
+     "ic95_bootstrap": [
+      -0.151,
+      -0.019
+     ],
+     "errores": [
+      -0.099,
+      0.007,
+      -0.211,
+      -0.062,
+      -0.023
+     ]
+    },
+    "PP": {
+     "n": 5,
+     "media": -1.678,
+     "sd": 1.623,
+     "ic95_bootstrap": [
+      -3.062,
+      -0.265
+     ],
+     "errores": [
+      -0.105,
+      -3.815,
+      0.497,
+      -2.712,
+      -2.256
+     ]
+    },
+    "PRC": {
+     "n": 1,
+     "media": -0.084,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.084,
+      -0.084
+     ],
+     "errores": [
+      -0.084
+     ]
+    },
+    "PSOE": {
+     "n": 5,
+     "media": 0.723,
+     "sd": 2.054,
+     "ic95_bootstrap": [
+      -0.947,
+      2.586
+     ],
+     "errores": [
+      -1.195,
+      -1.432,
+      1.525,
+      4.2,
+      0.518
+     ]
+    },
+    "UNIDAS PODEMOS": {
+     "n": 3,
+     "media": -3.087,
+     "sd": 1.243,
+     "ic95_bootstrap": [
+      -4.751,
+      -1.763
+     ],
+     "errores": [
+      -4.751,
+      -2.748,
+      -1.763
+     ]
+    },
+    "UPYD": {
+     "n": 1,
+     "media": 0.085,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      0.085,
+      0.085
+     ],
+     "errores": [
+      0.085
+     ]
+    },
+    "VOX": {
+     "n": 3,
+     "media": -2.039,
+     "sd": 3.744,
+     "ic95_bootstrap": [
+      -7.175,
+      1.641
+     ],
+     "errores": [
+      1.641,
+      -7.175,
+      -0.582
+     ]
+    }
+   }
+  },
+  "GAD3": {
+   "privado": {
+    "PP": {
+     "n": 1,
+     "media": 3.844,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      3.844,
+      3.844
+     ],
+     "errores": [
+      3.844
+     ]
+    },
+    "PSOE": {
+     "n": 1,
+     "media": -3.082,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -3.082,
+      -3.082
+     ],
+     "errores": [
+      -3.082
+     ]
+    },
+    "SUMAR": {
+     "n": 1,
+     "media": -0.834,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.834,
+      -0.834
+     ],
+     "errores": [
+      -0.834
+     ]
+    },
+    "VOX": {
+     "n": 1,
+     "media": -0.682,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -0.682,
+      -0.682
+     ],
+     "errores": [
+      -0.682
+     ]
+    }
+   }
+  },
+  "Sigma Dos": {
+   "privado": {
+    "PP": {
+     "n": 2,
+     "media": 1.744,
+     "sd": 0.6,
+     "ic95_bootstrap": [
+      1.144,
+      2.344
+     ],
+     "errores": [
+      2.344,
+      1.144
+     ]
+    },
+    "PSOE": {
+     "n": 2,
+     "media": -3.232,
+     "sd": 0.45,
+     "ic95_bootstrap": [
+      -3.682,
+      -2.782
+     ],
+     "errores": [
+      -3.682,
+      -2.782
+     ]
+    },
+    "SUMAR": {
+     "n": 2,
+     "media": 1.116,
+     "sd": 0.15,
+     "ic95_bootstrap": [
+      0.966,
+      1.266
+     ],
+     "errores": [
+      1.266,
+      0.966
+     ]
+    },
+    "VOX": {
+     "n": 2,
+     "media": -1.182,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -1.182,
+      -1.182
+     ],
+     "errores": [
+      -1.182,
+      -1.182
+     ]
+    }
+   }
+  },
+  "NC Report": {
+   "privado": {
+    "PP": {
+     "n": 1,
+     "media": 4.144,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      4.144,
+      4.144
+     ],
+     "errores": [
+      4.144
+     ]
+    },
+    "PSOE": {
+     "n": 1,
+     "media": -3.382,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -3.382,
+      -3.382
+     ],
+     "errores": [
+      -3.382
+     ]
+    },
+    "SUMAR": {
+     "n": 1,
+     "media": -1.034,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -1.034,
+      -1.034
+     ],
+     "errores": [
+      -1.034
+     ]
+    },
+    "VOX": {
+     "n": 1,
+     "media": -1.282,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -1.282,
+      -1.282
+     ],
+     "errores": [
+      -1.282
+     ]
+    }
+   }
+  },
+  "Sociometrica": {
+   "privado": {
+    "PP": {
+     "n": 1,
+     "media": 0.444,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      0.444,
+      0.444
+     ],
+     "errores": [
+      0.444
+     ]
+    },
+    "PSOE": {
+     "n": 1,
+     "media": -3.382,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -3.382,
+      -3.382
+     ],
+     "errores": [
+      -3.382
+     ]
+    },
+    "SUMAR": {
+     "n": 1,
+     "media": 0.866,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      0.866,
+      0.866
+     ],
+     "errores": [
+      0.866
+     ]
+    },
+    "VOX": {
+     "n": 1,
+     "media": 1.318,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      1.318,
+      1.318
+     ],
+     "errores": [
+      1.318
+     ]
+    }
+   }
+  }
+ },
+ "incumbencia": {
+  "CIS": {
+   "micro_censo": {
+    "in": {
+     "n": 4,
+     "media": -2.127,
+     "sd": 2.437,
+     "ic95_bootstrap": [
+      -4.277,
+      0.229
+     ],
+     "errores": [
+      -3.653,
+      -4.9,
+      -1.48,
+      1.523
+     ]
+    },
+    "out": {
+     "n": 43,
+     "media": -0.786,
+     "sd": 2.182,
+     "ic95_bootstrap": [
+      -1.48,
+      -0.176
+     ],
+     "errores": [
+      2.002,
+      0.112,
+      0.02,
+      -0.003,
+      0.345,
+      -0.361,
+      -0.095,
+      -0.322,
+      -9.609,
+      -0.222,
+      -0.144,
+      0.007,
+      0.034,
+      -0.287,
+      -0.036,
+      -0.259,
+      4.303,
+      -0.222,
+      -4.195,
+      -0.012,
+      0.062,
+      -0.735,
+      0.118,
+      -0.26,
+      -3.224,
+      -4.209,
+      -3.496,
+      -0.116,
+      -0.043,
+      -0.266,
+      -0.346,
+      0.092,
+      0.178,
+      0.024,
+      -0.606,
+      -0.208,
+      -0.065,
+      -0.015,
+      -0.151,
+      -4.544,
+      -0.089,
+      -1.04,
+      -5.899
+     ]
+    },
+    "diferencia_in_menos_out": -1.341,
+    "diferencia_ic95_bootstrap": [
+     -3.66,
+     1.148
+    ]
+   },
+   "micro_valid": {
+    "in": {
+     "n": 4,
+     "media": 1.139,
+     "sd": 6.705,
+     "ic95_bootstrap": [
+      -5.413,
+      7.691
+     ],
+     "errores": [
+      -3.72,
+      -7.105,
+      6.592,
+      8.79
+     ]
+    },
+    "out": {
+     "n": 43,
+     "media": -0.445,
+     "sd": 2.837,
+     "ic95_bootstrap": [
+      -1.356,
+      0.334
+     ],
+     "errores": [
+      4.029,
+      0.233,
+      0.191,
+      0.004,
+      0.757,
+      -0.406,
+      -0.066,
+      0.978,
+      -13.44,
+      -0.302,
+      -0.05,
+      0.022,
+      0.087,
+      -0.415,
+      -0.04,
+      -0.102,
+      6.896,
+      -0.243,
+      -2.661,
+      0.31,
+      1.386,
+      -0.75,
+      0.63,
+      0.008,
+      -0.572,
+      -2.95,
+      -3.182,
+      -0.108,
+      -0.013,
+      0.958,
+      -0.424,
+      0.419,
+      1.098,
+      0.055,
+      -0.655,
+      -0.048,
+      -0.033,
+      0.174,
+      0.053,
+      -3.971,
+      -0.104,
+      0.818,
+      -7.702
+     ]
+    },
+    "diferencia_in_menos_out": 1.584,
+    "diferencia_ic95_bootstrap": [
+     -5.27,
+     8.235
+    ]
+   },
+   "est": {
+    "in": {
+     "n": 5,
+     "media": 0.465,
+     "sd": 2.597,
+     "ic95_bootstrap": [
+      -2.005,
+      2.603
+     ],
+     "errores": [
+      -0.105,
+      -3.815,
+      1.525,
+      4.2,
+      0.518
+     ]
+    },
+    "out": {
+     "n": 47,
+     "media": -0.326,
+     "sd": 1.782,
+     "ic95_bootstrap": [
+      -0.869,
+      0.165
+     ],
+     "errores": [
+      -1.195,
+      0.264,
+      0.085,
+      5.06,
+      -0.487,
+      -0.099,
+      0.293,
+      -0.022,
+      -0.025,
+      -1.432,
+      -4.751,
+      1.539,
+      -0.228,
+      0.007,
+      0.084,
+      -0.125,
+      0.497,
+      -2.748,
+      -2.26,
+      0.606,
+      -0.711,
+      -0.211,
+      0.082,
+      -0.125,
+      1.641,
+      -2.712,
+      3.797,
+      -1.763,
+      -7.175,
+      0.794,
+      -0.386,
+      -0.418,
+      -0.062,
+      0.031,
+      0.048,
+      -0.014,
+      -0.084,
+      -0.097,
+      -2.256,
+      -0.582,
+      0.212,
+      -0.336,
+      -0.023,
+      -0.257,
+      0.276,
+      0.196,
+      -0.271
+     ]
+    },
+    "diferencia_in_menos_out": 0.791,
+    "diferencia_ic95_bootstrap": [
+     -1.529,
+     3.045
+    ]
+   }
+  },
+  "GAD3": {
+   "privado": {
+    "in": {
+     "n": 1,
+     "media": -3.082,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -3.082,
+      -3.082
+     ],
+     "errores": [
+      -3.082
+     ]
+    },
+    "out": {
+     "n": 3,
+     "media": 0.776,
+     "sd": 2.17,
+     "ic95_bootstrap": [
+      -0.834,
+      3.844
+     ],
+     "errores": [
+      3.844,
+      -0.682,
+      -0.834
+     ]
+    },
+    "diferencia_in_menos_out": -3.858,
+    "diferencia_ic95_bootstrap": [
+     -6.926,
+     -2.248
+    ]
+   }
+  },
+  "Sigma Dos": {
+   "privado": {
+    "in": {
+     "n": 2,
+     "media": -3.232,
+     "sd": 0.45,
+     "ic95_bootstrap": [
+      -3.682,
+      -2.782
+     ],
+     "errores": [
+      -3.682,
+      -2.782
+     ]
+    },
+    "out": {
+     "n": 6,
+     "media": 0.559,
+     "sd": 1.307,
+     "ic95_bootstrap": [
+      -0.436,
+      1.556
+     ],
+     "errores": [
+      2.344,
+      -1.182,
+      1.266,
+      1.144,
+      -1.182,
+      0.966
+     ]
+    },
+    "diferencia_in_menos_out": -3.791,
+    "diferencia_ic95_bootstrap": [
+     -4.987,
+     -2.575
+    ]
+   }
+  },
+  "NC Report": {
+   "privado": {
+    "in": {
+     "n": 1,
+     "media": -3.382,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -3.382,
+      -3.382
+     ],
+     "errores": [
+      -3.382
+     ]
+    },
+    "out": {
+     "n": 3,
+     "media": 0.609,
+     "sd": 2.501,
+     "ic95_bootstrap": [
+      -1.282,
+      4.144
+     ],
+     "errores": [
+      4.144,
+      -1.282,
+      -1.034
+     ]
+    },
+    "diferencia_in_menos_out": -3.991,
+    "diferencia_ic95_bootstrap": [
+     -7.526,
+     -2.1
+    ]
+   }
+  },
+  "Sociometrica": {
+   "privado": {
+    "in": {
+     "n": 1,
+     "media": -3.382,
+     "sd": 0.0,
+     "ic95_bootstrap": [
+      -3.382,
+      -3.382
+     ],
+     "errores": [
+      -3.382
+     ]
+    },
+    "out": {
+     "n": 3,
+     "media": 0.876,
+     "sd": 0.357,
+     "ic95_bootstrap": [
+      0.444,
+      1.318
+     ],
+     "errores": [
+      0.444,
+      1.318,
+      0.866
+     ]
+    },
+    "diferencia_in_menos_out": -4.258,
+    "diferencia_ic95_bootstrap": [
+     -4.7,
+     -3.826
+    ]
+   }
+  }
+ },
+ "correcciones_eb": {
+  "CIS": {
+   "micro_censo": {
+    "CIUDADANOS": {
+     "n": 4,
+     "media_error": -0.651,
+     "correccion": -0.289
+    },
+    "EH BILDU": {
+     "n": 4,
+     "media_error": 0.05,
+     "correccion": 0.022
+    },
+    "ERC": {
+     "n": 4,
+     "media_error": 0.073,
+     "correccion": 0.033
+    },
+    "GEROA BAI": {
+     "n": 2,
+     "media_error": 0.011,
+     "correccion": 0.003
+    },
+    "IU": {
+     "n": 1,
+     "media_error": 0.345,
+     "correccion": 0.057
+    },
+    "JXCAT": {
+     "n": 4,
+     "media_error": -0.497,
+     "correccion": -0.221
+    },
+    "PNV": {
+     "n": 4,
+     "media_error": -0.136,
+     "correccion": -0.06
+    },
+    "PP": {
+     "n": 4,
+     "media_error": -4.08,
+     "correccion": -1.813
+    },
+    "PSOE": {
+     "n": 4,
+     "media_error": -0.135,
+     "correccion": -0.06
+    },
+    "UNIDAS PODEMOS": {
+     "n": 4,
+     "media_error": -2.639,
+     "correccion": -1.173
+    },
+    "UPYD": {
+     "n": 1,
+     "media_error": -0.222,
+     "correccion": -0.037
+    },
+    "CC": {
+     "n": 2,
+     "media_error": -0.133,
+     "correccion": -0.038
+    },
+    "PACMA": {
+     "n": 2,
+     "media_error": 0.051,
+     "correccion": 0.015
+    },
+    "VOX": {
+     "n": 2,
+     "media_error": -4.697,
+     "correccion": -1.342
+    },
+    "BNG": {
+     "n": 1,
+     "media_error": -0.116,
+     "correccion": -0.019
+    },
+    "CUP": {
+     "n": 1,
+     "media_error": -0.346,
+     "correccion": -0.058
+    },
+    "MÁS PAÍS": {
+     "n": 1,
+     "media_error": -0.208,
+     "correccion": -0.035
+    },
+    "NA+": {
+     "n": 1,
+     "media_error": -0.065,
+     "correccion": -0.011
+    },
+    "PRC": {
+     "n": 1,
+     "media_error": -0.089,
+     "correccion": -0.015
+    }
+   },
+   "micro_valid": {
+    "CIUDADANOS": {
+     "n": 4,
+     "media_error": 0.569,
+     "correccion": 0.253
+    },
+    "EH BILDU": {
+     "n": 4,
+     "media_error": 0.246,
+     "correccion": 0.109
+    },
+    "ERC": {
+     "n": 4,
+     "media_error": 0.691,
+     "correccion": 0.307
+    },
+    "GEROA BAI": {
+     "n": 2,
+     "media_error": 0.029,
+     "correccion": 0.008
+    },
+    "IU": {
+     "n": 1,
+     "media_error": 0.757,
+     "correccion": 0.126
+    },
+    "JXCAT": {
+     "n": 4,
+     "media_error": -0.556,
+     "correccion": -0.247
+    },
+    "PNV": {
+     "n": 4,
+     "media_error": -0.011,
+     "correccion": -0.005
+    },
+    "PP": {
+     "n": 4,
+     "media_error": -3.842,
+     "correccion": -1.708
+    },
+    "PSOE": {
+     "n": 4,
+     "media_error": 4.064,
+     "correccion": 1.806
+    },
+    "UNIDAS PODEMOS": {
+     "n": 4,
+     "media_error": -2.169,
+     "correccion": -0.964
+    },
+    "UPYD": {
+     "n": 1,
+     "media_error": -0.302,
+     "correccion": -0.05
+    },
+    "CC": {
+     "n": 2,
+     "media_error": -0.128,
+     "correccion": -0.037
+    },
+    "PACMA": {
+     "n": 2,
+     "media_error": 0.402,
+     "correccion": 0.115
+    },
+    "VOX": {
+     "n": 2,
+     "media_error": -5.442,
+     "correccion": -1.555
+    },
+    "BNG": {
+     "n": 1,
+     "media_error": -0.108,
+     "correccion": -0.018
+    },
+    "CUP": {
+     "n": 1,
+     "media_error": -0.424,
+     "correccion": -0.071
+    },
+    "MÁS PAÍS": {
+     "n": 1,
+     "media_error": -0.048,
+     "correccion": -0.008
+    },
+    "NA+": {
+     "n": 1,
+     "media_error": -0.033,
+     "correccion": -0.006
+    },
+    "PRC": {
+     "n": 1,
+     "media_error": -0.104,
+     "correccion": -0.017
+    }
+   },
+   "est": {
+    "PP": {
+     "n": 5,
+     "media_error": -1.678,
+     "correccion": -0.839
+    },
+    "PSOE": {
+     "n": 5,
+     "media_error": 0.723,
+     "correccion": 0.362
+    },
+    "IU": {
+     "n": 1,
+     "media_error": 0.264,
+     "correccion": 0.044
+    },
+    "UPYD": {
+     "n": 1,
+     "media_error": 0.085,
+     "correccion": 0.014
+    },
+    "CIUDADANOS": {
+     "n": 4,
+     "media_error": 2.034,
+     "correccion": 0.904
+    },
+    "ERC": {
+     "n": 5,
+     "media_error": 0.179,
+     "correccion": 0.09
+    },
+    "PNV": {
+     "n": 5,
+     "media_error": -0.078,
+     "correccion": -0.039
+    },
+    "EH BILDU": {
+     "n": 5,
+     "media_error": 0.047,
+     "correccion": 0.023
+    },
+    "GEROA BAI": {
+     "n": 2,
+     "media_error": 0.013,
+     "correccion": 0.004
+    },
+    "CC": {
+     "n": 5,
+     "media_error": -0.112,
+     "correccion": -0.056
+    },
+    "UNIDAS PODEMOS": {
+     "n": 3,
+     "media_error": -3.087,
+     "correccion": -1.158
+    },
+    "JXCAT": {
+     "n": 3,
+     "media_error": -0.478,
+     "correccion": -0.179
+    },
+    "VOX": {
+     "n": 3,
+     "media_error": -2.039,
+     "correccion": -0.764
+    },
+    "CUP": {
+     "n": 2,
+     "media_error": -0.111,
+     "correccion": -0.032
+    },
+    "PRC": {
+     "n": 1,
+     "media_error": -0.084,
+     "correccion": -0.014
+    },
+    "BNG": {
+     "n": 2,
+     "media_error": 0.09,
+     "correccion": 0.026
+    }
+   }
+  },
+  "GAD3": {
+   "privado": {
+    "PP": {
+     "n": 1,
+     "media_error": 3.844,
+     "correccion": 0.641
+    },
+    "PSOE": {
+     "n": 1,
+     "media_error": -3.082,
+     "correccion": -0.514
+    },
+    "VOX": {
+     "n": 1,
+     "media_error": -0.682,
+     "correccion": -0.114
+    },
+    "SUMAR": {
+     "n": 1,
+     "media_error": -0.834,
+     "correccion": -0.139
+    }
+   }
+  },
+  "Sigma Dos": {
+   "privado": {
+    "PP": {
+     "n": 2,
+     "media_error": 1.744,
+     "correccion": 0.498
+    },
+    "PSOE": {
+     "n": 2,
+     "media_error": -3.232,
+     "correccion": -0.923
+    },
+    "VOX": {
+     "n": 2,
+     "media_error": -1.182,
+     "correccion": -0.338
+    },
+    "SUMAR": {
+     "n": 2,
+     "media_error": 1.116,
+     "correccion": 0.319
+    }
+   }
+  },
+  "NC Report": {
+   "privado": {
+    "PP": {
+     "n": 1,
+     "media_error": 4.144,
+     "correccion": 0.691
+    },
+    "PSOE": {
+     "n": 1,
+     "media_error": -3.382,
+     "correccion": -0.564
+    },
+    "VOX": {
+     "n": 1,
+     "media_error": -1.282,
+     "correccion": -0.214
+    },
+    "SUMAR": {
+     "n": 1,
+     "media_error": -1.034,
+     "correccion": -0.172
+    }
+   }
+  },
+  "Sociometrica": {
+   "privado": {
+    "PP": {
+     "n": 1,
+     "media_error": 0.444,
+     "correccion": 0.074
+    },
+    "PSOE": {
+     "n": 1,
+     "media_error": -3.382,
+     "correccion": -0.564
+    },
+    "VOX": {
+     "n": 1,
+     "media_error": 1.318,
+     "correccion": 0.22
+    },
+    "SUMAR": {
+     "n": 1,
+     "media_error": 0.866,
+     "correccion": 0.144
+    }
+   }
+  }
+ },
+ "resumen": {
+  "CIS": {
+   "micro_censo": {
+    "n": 47,
+    "mae": 1.275,
+    "sesgo_medio": -0.9
+   },
+   "micro_valid": {
+    "n": 47,
+    "mae": 1.778,
+    "sesgo_medio": -0.31
+   },
+   "est": {
+    "n": 52,
+    "mae": 1.087,
+    "sesgo_medio": -0.25
+   }
+  },
+  "GAD3": {
+   "privado": {
+    "n": 4,
+    "mae": 2.111,
+    "sesgo_medio": -0.189
+   }
+  },
+  "Sigma Dos": {
+   "privado": {
+    "n": 8,
+    "mae": 1.819,
+    "sesgo_medio": -0.389
+   }
+  },
+  "NC Report": {
+   "privado": {
+    "n": 4,
+    "mae": 2.461,
+    "sesgo_medio": -0.389
+   }
+  },
+  "Sociometrica": {
+   "privado": {
+    "n": 4,
+    "mae": 1.502,
+    "sesgo_medio": -0.189
+   }
+  },
+  "CIS_comparacion_mismo_conjunto": {
+   "elecciones": [
+    "2015-12-20",
+    "2016-06-26",
+    "2019-04-28",
+    "2019-11-10",
+    "2023-07-23"
+   ],
+   "n_micro_valid": 47,
+   "n_est": 52,
+   "mae_micro_valid": 1.778,
+   "mae_est": 1.087,
+   "sesgo_medio_micro_valid": -0.31,
+   "sesgo_medio_est": -0.25
+  }
+ },
+ "observaciones_estricta_7d": [
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "BNG",
+   "encuesta": 0.515,
+   "real": 0.4109880639319629,
+   "err": 0.104,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "CC",
+   "encuesta": 0.267,
+   "real": 0.31055426528987956,
+   "err": -0.044,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "CUP",
+   "encuesta": 0.369,
+   "real": 0.2659339241042665,
+   "err": 0.103,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "EH BILDU",
+   "encuesta": 0.486,
+   "real": 0.8944057851063658,
+   "err": -0.408,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "ERC",
+   "encuesta": 1.445,
+   "real": 1.2437329624570497,
+   "err": 0.201,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "GEROA BAI",
+   "encuesta": 0.026,
+   "real": 0.026522935026175185,
+   "err": -0.001,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "JXCAT",
+   "encuesta": 0.504,
+   "real": 1.144033094900919,
+   "err": -0.64,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PACMA",
+   "encuesta": 0.665,
+   "real": 0.45166652797593176,
+   "err": 0.213,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PAR",
+   "encuesta": 0.022,
+   "real": 0.011137070624293524,
+   "err": 0.011,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PNV",
+   "encuesta": 0.344,
+   "real": 0.7400400614281637,
+   "err": -0.396,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PP",
+   "encuesta": 6.553,
+   "real": 21.779970769793362,
+   "err": -15.227,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PSOE",
+   "encuesta": 10.807,
+   "real": 20.8749163118399,
+   "err": -10.068,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "SUMAR",
+   "encuesta": 15.854,
+   "real": 8.126608076369827,
+   "err": 7.727,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "UNIDAS PODEMOS",
+   "encuesta": 0.062,
+   "real": 0.0006752165990765066,
+   "err": 0.061,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_censo",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "VOX",
+   "encuesta": 6.501,
+   "real": 8.158644835481741,
+   "err": -1.658,
+   "base": "censo",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "BNG",
+   "encuesta": 1.057,
+   "real": 0.6237623838574451,
+   "err": 0.433,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "CC",
+   "encuesta": 0.548,
+   "real": 0.47133259049192433,
+   "err": 0.077,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "CUP",
+   "encuesta": 0.757,
+   "real": 0.4036116690612764,
+   "err": 0.354,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "EH BILDU",
+   "encuesta": 0.998,
+   "real": 1.3574522805270413,
+   "err": -0.36,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "ERC",
+   "encuesta": 2.966,
+   "real": 1.8876310667570153,
+   "err": 1.079,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "GEROA BAI",
+   "encuesta": 0.053,
+   "real": 0.04025423273986356,
+   "err": 0.013,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "JXCAT",
+   "encuesta": 1.035,
+   "real": 1.7363151709567453,
+   "err": -0.702,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PACMA",
+   "encuesta": 1.365,
+   "real": 0.6855006627285459,
+   "err": 0.68,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PAR",
+   "encuesta": 0.045,
+   "real": 0.01690288923560582,
+   "err": 0.028,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PNV",
+   "encuesta": 0.706,
+   "real": 1.1231692435302905,
+   "err": -0.417,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PP",
+   "encuesta": 13.452,
+   "real": 33.05576896257697,
+   "err": -19.604,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "PSOE",
+   "encuesta": 22.184,
+   "real": 31.68215504101229,
+   "err": -9.498,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "SUMAR",
+   "encuesta": 32.544,
+   "real": 12.333867747630668,
+   "err": 20.211,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "UNIDAS PODEMOS",
+   "encuesta": 0.127,
+   "real": 0.0010247857600307387,
+   "err": 0.126,
+   "base": "válido",
+   "calidad": "no_validada"
+  },
+  {
+   "casa": "CIS",
+   "serie": "micro_valid",
+   "eleccion": "2023-07-23",
+   "estudio": "3416",
+   "partido": "VOX",
+   "encuesta": 13.345,
+   "real": 12.382490388988018,
+   "err": 0.962,
+   "base": "válido",
+   "calidad": "no_validada"
+  }
+ ],
+ "estudios_cis": {
+  "1135": {
+   "estudio": "1135",
+   "eleccion": "1977-06-15",
+   "fecha_end": null,
+   "end_source": "sin FT",
+   "n": 27260,
+   "valid_base_censo": 20.997,
+   "calidad": "no_validada",
+   "cobertura_partidos_censo": 20.28,
+   "ns_nc_censo": 44.25
+  },
+  "1181": {
+   "estudio": "1181",
+   "eleccion": "1979-03-01",
+   "fecha_end": "1979-02-03",
+   "end_source": "FT (ficha técnica)",
+   "n": 25516,
+   "valid_base_censo": 34.579,
+   "calidad": "no_validada",
+   "cobertura_partidos_censo": 34.548,
+   "ns_nc_censo": 55.564
+  },
+  "1183": {
+   "estudio": "1183",
+   "eleccion": "1979-03-01",
+   "fecha_end": null,
+   "end_source": "sin FT",
+   "n": 24395,
+   "valid_base_censo": 0.522,
+   "calidad": "no_validada",
+   "cobertura_partidos_censo": 0.516,
+   "ns_nc_censo": 0.805
+  },
+  "1324": {
+   "estudio": "1324",
+   "eleccion": "1982-10-28",
+   "fecha_end": "1982-10-01",
+   "end_source": "FT (ficha técnica)",
+   "n": 24793,
+   "valid_base_censo": 51.154,
+   "calidad": "no_validada",
+   "cobertura_partidos_censo": 50.381,
+   "ns_nc_censo": 21.931
+  },
+  "1326": {
+   "estudio": "1326",
+   "eleccion": "1982-10-28",
+   "fecha_end": "1982-10-20",
+   "end_source": "FT (ficha técnica)",
+   "n": 24832,
+   "valid_base_censo": 50.308,
+   "calidad": "no_validada",
+   "cobertura_partidos_censo": 49.703,
+   "ns_nc_censo": 24.015
+  },
+  "1533": {
+   "estudio": "1533",
+   "eleccion": "1986-06-22",
+   "fecha_end": "1986-05-16",
+   "end_source": "FT (ficha técnica)",
+   "n": 1800,
+   "valid_base_censo": 80.819,
+   "calidad": "no_validada",
+   "cobertura_partidos_censo": 80.819,
+   "ns_nc_censo": 0.0
+  },
+  "7789": {
+   "estudio": "7789",
+   "eleccion": "1989-10-29",
+   "fecha_end": null,
+   "end_source": "sin FT",
+   "n": 27421,
+   "valid_base_censo": 58.695,
+   "calidad": "no_validada",
+   "cobertura_partidos_censo": 58.695,
+   "ns_nc_censo": 27.433
+  },
+  "2207": {
+   "estudio": "2207",
+   "eleccion": "1996-03-03",
+   "fecha_end": null,
+   "end_source": "sin FT",
+   "n": 6642,
+   "valid_base_censo": 67.291,
+   "calidad": "no_validada",
+   "cobertura_partidos_censo": 65.156,
+   "ns_nc_censo": 24.111
+  },
+  "7715": {
+   "estudio": "7715",
+   "eleccion": "2015-12-20",
+   "fecha_end": "2015-11-16",
+   "end_source": "FT (ficha técnica)",
+   "n": 6242,
+   "valid_base_censo": 77.431,
+   "calidad": "no_validada",
+   "cobertura_partidos_censo": 76.107,
+   "ns_nc_censo": 9.63
+  },
+  "3117": {
+   "estudio": "3117",
+   "eleccion": "2015-12-20",
+   "fecha_end": "2015-11-16",
+   "end_source": "FT (ficha técnica)",
+   "n": 17452,
+   "valid_base_censo": 64.709,
+   "calidad": "validada",
+   "cobertura_partidos_censo": 61.909,
+   "ns_nc_censo": 25.209
+  },
+  "3141": {
+   "estudio": "3141",
+   "eleccion": "2016-06-26",
+   "fecha_end": "2016-05-22",
+   "end_source": "FT (ficha técnica)",
+   "n": 17488,
+   "valid_base_censo": 65.01,
+   "calidad": "validada",
+   "cobertura_partidos_censo": 62.282,
+   "ns_nc_censo": 22.037
+  },
+  "3242": {
+   "estudio": "3242",
+   "eleccion": "2019-04-28",
+   "fecha_end": "2019-03-18",
+   "end_source": "FT (ficha técnica)",
+   "n": 16194,
+   "valid_base_censo": 53.538,
+   "calidad": "validada",
+   "cobertura_partidos_censo": 51.33,
+   "ns_nc_censo": 38.071
+  },
+  "3263": {
+   "estudio": "3263",
+   "eleccion": "2019-11-10",
+   "fecha_end": "2019-10-13",
+   "end_source": "FT (ficha técnica)",
+   "n": 17650,
+   "valid_base_censo": 54.037,
+   "calidad": "validada",
+   "cobertura_partidos_censo": 52.635,
+   "ns_nc_censo": 32.753
+  },
+  "3411": {
+   "estudio": "3411",
+   "eleccion": "2023-07-23",
+   "fecha_end": "2023-06-27",
+   "end_source": "FT (ficha técnica)",
+   "n": 29201,
+   "valid_base_censo": 78.818,
+   "calidad": "validada",
+   "cobertura_partidos_censo": 77.568,
+   "ns_nc_censo": 16.97
+  },
+  "3415": {
+   "estudio": "3415",
+   "eleccion": "2023-07-23",
+   "fecha_end": "2023-07-12",
+   "end_source": "FT (ficha técnica)",
+   "n": 8798,
+   "valid_base_censo": 78.292,
+   "calidad": "validada",
+   "cobertura_partidos_censo": 77.503,
+   "ns_nc_censo": 17.65
+  },
+  "3416": {
+   "estudio": "3416",
+   "eleccion": "2023-07-23",
+   "fecha_end": "2023-07-22",
+   "end_source": "FT (ficha técnica)",
+   "n": 27058,
+   "valid_base_censo": 48.715,
+   "calidad": "no_validada",
+   "cobertura_partidos_censo": 44.461,
+   "ns_nc_censo": 4.516
+  }
+ },
+ "conteo": {
+  "n_series": 224,
+  "n_series_validada": 166,
+  "por_casa_serie": {
+   "CIS|micro_censo": 47,
+   "CIS|micro_valid": 47,
+   "CIS|est": 52,
+   "GAD3|privado": 4,
+   "Sigma Dos|privado": 8,
+   "NC Report|privado": 4,
+   "Sociometrica|privado": 4
+  },
+  "elecciones_cis_micro": [
+   "1977-06-15",
+   "1979-03-01",
+   "1982-10-28",
+   "1986-06-22",
+   "1989-10-29",
+   "1996-03-03",
+   "2015-12-20",
+   "2016-06-26",
+   "2019-04-28",
+   "2019-11-10",
+   "2023-07-23"
+  ],
+  "elecciones_cis_est": [
+   "2015-12-20",
+   "2016-06-26",
+   "2019-04-28",
+   "2019-11-10",
+   "2023-07-23"
+  ]
+ }
+}
