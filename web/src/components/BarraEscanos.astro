@@ -154,12 +154,15 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
   }
   .reparto__tramo + .reparto__tramo { border-left: 2px solid var(--papel); }
 
-  /* Ficha al pasar el puntero: CSS puro, sin JavaScript */
+  /* Ficha al pasar el puntero: CSS puro, sin JavaScript.
+     display:none fuera de hover: un tooltip invisible NO puede ensanchar
+     el layout móvil (lección 15-10-2026: opacity:0 desbordaba la página). */
   .reparto__tip {
     position: absolute;
     bottom: calc(100% + 8px);
     left: 50%;
     transform: translateX(-50%);
+    display: none;
     background: var(--tinta);
     color: var(--papel);
     padding: 6px 10px;
@@ -167,16 +170,14 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
     font-size: 0.75rem;
     line-height: 1.5;
     white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 120ms ease-out;
     z-index: 6;
   }
   .reparto__tip strong { color: var(--papel); }
   .reparto__tramo:hover .reparto__tip,
-  .reparto__tramo:focus-visible .reparto__tip { opacity: 1; }
+  .reparto__tramo:focus-visible .reparto__tip { display: block; }
   .reparto__tramo:first-child .reparto__tip { left: 0; transform: none; }
-  .reparto__tramo:last-child .reparto__tip { left: auto; right: 0; transform: none; }
+  /* los últimos tramos anclan la ficha a la derecha: sin desbordamiento */
+  .reparto__tramo:nth-last-child(-n+3) .reparto__tip { left: auto; right: 0; transform: none; }
 
   .reparto__leyenda {
     list-style: none;

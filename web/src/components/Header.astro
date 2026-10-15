@@ -68,6 +68,7 @@ const esActiva = (href: string) =>
     gap: var(--s-4);
     flex-wrap: wrap;
     padding-block: var(--s-2);
+    position: relative;
   }
 
   .marca {
@@ -133,11 +134,13 @@ const esActiva = (href: string) =>
   .nav-movil[open] summary::after { content: ' ▴'; }
   .nav-movil nav {
     position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
     background: var(--papel);
     border-bottom: var(--borde-tinta);
     padding: var(--s-3) var(--s-4) var(--s-4);
+    z-index: 5;
   }
   .nav-movil ul {
     list-style: none;
@@ -159,6 +162,6 @@ const esActiva = (href: string) =>
 
   @media (max-width: 767px) {
     .nav-escritorio { display: none; }
-    .nav-movil { display: block; position: relative; }
+    .nav-movil { display: block; }
   }
 </style>
