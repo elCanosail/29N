@@ -13,12 +13,12 @@ Generado por `pipeline/sesgo/render_report.py` desde `data/processed/sesgo/house
 
 Sobre el mismo conjunto de elecciones (2015-12-20, 2016-06-26, 2019-04-28, 2019-11-10, 2023-07-23):
 
-- Voto directo de microdato reescalado a voto válido: **MAE = 1.78 pp** (sesgo medio -0.31 pp, n=47).
+- Voto directo de microdato reescalado a voto válido: **MAE = 1.79 pp** (sesgo medio -0.29 pp, n=47).
 
 - Estimación publicada del modelo CIS: **MAE = 1.09 pp** (sesgo medio -0.25 pp, n=52).
 
 
-**Lectura:** el modelo del CIS **reduce** el error absoluto medio en **0.69 pp** respecto a la respuesta directa. El sesgo direccional residual del CIS está, pues, **más en la respuesta directa** (infravaloración de PP y VOX y sobrevaloración de PSOE) que en el propio modelo, que corrige buena parte de él. No se observa una *sobrecorrección* sistemática hacia la izquierda mayor que la que ya traía el dato directo.
+**Lectura:** el modelo del CIS **reduce** el error absoluto medio en **0.71 pp** respecto a la respuesta directa. El sesgo direccional residual del CIS está, pues, **más en la respuesta directa** (infravaloración de PP y VOX y sobrevaloración de PSOE) que en el propio modelo, que corrige buena parte de él. No se observa una *sobrecorrección* sistemática hacia la izquierda mayor que la que ya traía el dato directo.
 
 
 ## 1. Error firmado medio por casa × partido
@@ -34,8 +34,8 @@ Sobre el mismo conjunto de elecciones (2015-12-20, 2016-06-26, 2019-04-28, 2019-
 | JXCAT | 4 | -0.50 | 0.18 | [-0.67, -0.32] |
 | CUP | 1 | -0.35 | 0.00 | [-0.35, -0.35] |
 | IU | 1 | +0.34 | 0.00 | [+0.34, +0.34] |
+| MÁS PAÍS | 1 | +0.29 | 0.00 | [+0.29, +0.29] |
 | UPYD | 1 | -0.22 | 0.00 | [-0.22, -0.22] |
-| MÁS PAÍS | 1 | -0.21 | 0.00 | [-0.21, -0.21] |
 | PNV | 4 | -0.14 | 0.08 | [-0.22, -0.07] |
 | PSOE | 4 | -0.14 | 1.07 | [-1.18, +1.06] |
 | CC | 2 | -0.13 | 0.09 | [-0.22, -0.04] |
@@ -56,6 +56,7 @@ Sobre el mismo conjunto de elecciones (2015-12-20, 2016-06-26, 2019-04-28, 2019-
 | PSOE | 4 | +4.06 | 3.73 | [+0.44, +7.69] |
 | PP | 4 | -3.84 | 2.31 | [-6.26, -1.42] |
 | UNIDAS PODEMOS | 4 | -2.17 | 7.39 | [-9.88, +4.43] |
+| MÁS PAÍS | 1 | +0.88 | 0.00 | [+0.88, +0.88] |
 | IU | 1 | +0.76 | 0.00 | [+0.76, +0.76] |
 | ERC | 4 | +0.69 | 0.56 | [+0.14, +1.24] |
 | CIUDADANOS | 4 | +0.57 | 2.40 | [-1.76, +3.01] |
@@ -67,7 +68,6 @@ Sobre el mismo conjunto de elecciones (2015-12-20, 2016-06-26, 2019-04-28, 2019-
 | CC | 2 | -0.13 | 0.12 | [-0.24, -0.01] |
 | BNG | 1 | -0.11 | 0.00 | [-0.11, -0.11] |
 | PRC | 1 | -0.10 | 0.00 | [-0.10, -0.10] |
-| MÁS PAÍS | 1 | -0.05 | 0.00 | [-0.05, -0.05] |
 | NA+ | 1 | -0.03 | 0.00 | [-0.03, -0.03] |
 | GEROA BAI | 2 | +0.03 | 0.03 | [+0.00, +0.06] |
 | PNV | 4 | -0.01 | 0.05 | [-0.05, +0.03] |
@@ -146,11 +146,11 @@ Grupo **EN Gobierno** = partidos del ejecutivo de turno que se presentan (ver `p
 | casa | serie | grupo | n | media | IC95 bootstrap |
 |---|---|---|---:|---:|---|
 | CIS | micro_censo | EN Gobierno | 4 | -2.13 | [-4.28, +0.23] |
-| CIS | micro_censo | FUERA | 43 | -0.79 | [-1.48, -0.18] |
-| CIS | micro_censo | **IN − OUT** | — | -1.34 | [-3.66, +1.15] |
+| CIS | micro_censo | FUERA | 43 | -0.77 | [-1.47, -0.16] |
+| CIS | micro_censo | **IN − OUT** | — | -1.35 | [-3.67, +1.13] |
 | CIS | micro_valid | EN Gobierno | 4 | +1.14 | [-5.41, +7.69] |
-| CIS | micro_valid | FUERA | 43 | -0.45 | [-1.36, +0.33] |
-| CIS | micro_valid | **IN − OUT** | — | +1.58 | [-5.27, +8.23] |
+| CIS | micro_valid | FUERA | 43 | -0.42 | [-1.34, +0.35] |
+| CIS | micro_valid | **IN − OUT** | — | +1.56 | [-5.29, +8.21] |
 | CIS | est | EN Gobierno | 5 | +0.47 | [-2.00, +2.60] |
 | CIS | est | FUERA | 47 | -0.33 | [-0.87, +0.17] |
 | CIS | est | **IN − OUT** | — | +0.79 | [-1.53, +3.04] |
@@ -206,6 +206,7 @@ Grupo **EN Gobierno** = partidos del ejecutivo de turno que se presentan (ver `p
 | ERC | 4 | +0.69 | +0.31 |
 | CIUDADANOS | 4 | +0.57 | +0.25 |
 | JXCAT | 4 | -0.56 | -0.25 |
+| MÁS PAÍS | 1 | +0.88 | +0.15 |
 | IU | 1 | +0.76 | +0.13 |
 | PACMA | 2 | +0.40 | +0.12 |
 | EH BILDU | 4 | +0.25 | +0.11 |
@@ -215,7 +216,6 @@ Grupo **EN Gobierno** = partidos del ejecutivo de turno que se presentan (ver `p
 | BNG | 1 | -0.11 | -0.02 |
 | PRC | 1 | -0.10 | -0.02 |
 | GEROA BAI | 2 | +0.03 | +0.01 |
-| MÁS PAÍS | 1 | -0.05 | -0.01 |
 | NA+ | 1 | -0.03 | -0.01 |
 | PNV | 4 | -0.01 | -0.01 |
 
@@ -288,9 +288,9 @@ Grupo **EN Gobierno** = partidos del ejecutivo de turno que se presentan (ver `p
 | BNG | 3 | +0.75 | 1.07 | [-0.12, +2.27] |
 | JXCAT | 7 | -0.70 | 0.31 | [-0.94, -0.47] |
 | CIUDADANOS | 4 | -0.65 | 2.24 | [-3.18, +1.44] |
+| MÁS PAÍS | 1 | +0.29 | 0.00 | [+0.29, +0.29] |
 | UPYD | 1 | -0.22 | 0.00 | [-0.22, -0.22] |
 | PNV | 7 | -0.22 | 0.12 | [-0.31, -0.13] |
-| MÁS PAÍS | 1 | -0.21 | 0.00 | [-0.21, -0.21] |
 | CUP | 2 | -0.12 | 0.22 | [-0.35, +0.10] |
 | PACMA | 3 | +0.10 | 0.09 | [-0.01, +0.21] |
 | CC | 3 | -0.10 | 0.08 | [-0.22, -0.04] |
