@@ -1,0 +1,585 @@
+---
+/**
+ * Simulador 29N — «¿qué pasaría si…?» (plan de features diferenciales, feature 3).
+ *
+ * Diseño honesto: los escenarios viven DENTRO del error propio del modelo. Cada
+ * control está acotado al intervalo p10–p90 del backtest (forecast.json), no a
+ * fantasías electorales. El motor es el mismo del modelo: swing proporcional
+ * uniforme sobre la base provincial 23J (base23.json) + calibración de punto
+ * fijo + D'Hondt por provincia, todo en JavaScript vanilla.
+ *
+ * La web no calcula nada en el pipeline: aquí el cálculo es del VISITANTE, sobre
+ * datos ya publicados (base 23J + cuantiles del forecast). El resultado es
+ * exploratorio y así se etiqueta de forma permanente.
+ */
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import base23 from '../../data/base23.json';
+import forecast from '../../data/forecast.json';
+import seats from '../../data/seats.json';
+import { num, entero } from '../../lib/format';
+import { colorPartido } from '../../lib/partidos';
+
+const PARTIDOS = base23.partidos;
+
+/** Escenario central del modelo: punto del forecast y escaños de seats.json. */
+const puntoWeb = Object.fromEntries(
+  forecast.partidos.map((p) => [p.partido, p.punto]),
+);
+// El punto exacto (3 decimales) viaja en base23.json: el `forecast.json` público
+// lo redondea a 2 decimales y ese redondeo basta para mover un escaño en la
+// frontera PSOE/PNV. Partiendo del punto preciso, el simulador reproduce el
+// escenario central de `seats.json` sin desviación.
+const punto = Object.fromEntries(
+  PARTIDOS.map((p) => [p, base23.punto_modelo?.[p as keyof typeof base23.punto_modelo] ?? puntoWeb[p] ?? 0]),
+);
+const limites = Object.fromEntries(
+  forecast.partidos.map((p) => [p.partido, { min: p.p10, max: p.p90 }]),
+);
+const central = new Map(seats.nacional.map((p) => [p.partido, p.central_escenario]));
+
+/** Inicial (sin JS): el escenario central del modelo, ordenado por escaños. */
+const inicial = [...PARTIDOS]
+  .map((p) => ({ partido: p, escanos: central.get(p) ?? 0, pct: punto[p] ?? 0 }))
+  .sort((a, b) => b.escanos - a.escanos || a.partido.localeCompare(b.partido));
+const totalInicial = inicial.reduce((s, f) => s + f.escanos, 0);
+
+const colores = Object.fromEntries(PARTIDOS.map((p) => [p, colorPartido(p)]));
+
+const definicion = [
+  ['Swing', 'El voto de cada partido se redistribuye de forma proporcional sobre la base de 23J: cada provincia conserva su geografía de voto. No es un swing aditivo (el mismo ±pp en toda España): ese rompería a los partidos de apoyo concentrado, como documenta el modelo.'],
+  ['Calibración', 'Los ratios del swing se ajustan por punto fijo hasta que el agregado provincial ponderado por votos coincide con la suma de los controles. Es la misma calibración que usa el modelo provincial.'],
+  ['Reparto', "D'Hondt por provincia (52 circunscripciones, 350 escaños), con el umbral legal del 3 % de los votos válidos de cada circunscripción. La base 23J ya incluye los escaños en juego de cada provincia."],
+  ['Renormalización', 'Los controles se renormalizan proporcionalmente a 100 antes de calcular: si subes un partido sin bajar otro, el total se reparte entre todos a escala. La suma declarada se muestra para que nada quede oculto.'],
+];
+---
+
+<Base
+  titulo="Simulador 29N"
+  descripcion="Simulador «¿qué pasaría si…?» del 29N: escenarios dentro del error del modelo (p10–p90 del backtest), swing proporcional sobre la base de 23J y D'Hondt por provincia. Exploratorio, no una predicción nueva."
+>
+  <div class="contenedor">
+    <Breadcrumbs items={[{ label: 'Simulador 29N' }]} />
+
+    <header class="cabecera-pagina">
+      <p class="eyebrow entrada">Explorador · swing + D'Hondt en el navegador</p>
+      <h1 class="medida entrada entrada--1">Simulador 29N</h1>
+      <p class="titular-intro entrada entrada--2">
+        Mueve el voto de los trece partidos del modelo dentro del intervalo que el
+        propio modelo declara y observa cómo cambian los escaños.
+      </p>
+    </header>
+
+    <aside class="aviso-permanente" role="note">
+      <p class="eyebrow">Nota permanente</p>
+      <p>
+        <strong>Exploratorio: escenarios dentro del error del modelo (p10–p90 del
+        backtest). No es una predicción nueva.</strong>
+        Los controles están acotados al intervalo que el modelo se concede a sí
+        mismo; fuera de esa banda el simulador no dejaría moverse.
+        <a href="/metodologia/#modelo">Método y error del backtest →</a>
+      </p>
+    </aside>
+
+    <!-- El dato arriba: el reparto resultante, con las barras de partido -->
+    <section class="resultado" aria-labelledby="resultado-titulo">
+      <p class="eyebrow" id="resultado-titulo">Reparto resultante</p>
+      <h2 class="visualmente-oculto">Escaños y voto del escenario simulado</h2>
+
+      <figure class="reparto">
+        <div class="reparto__cuerpo" id="reparto-cuerpo" role="img" aria-label={`Escenario simulado: PP ${central.get('PP') ?? 0}, PSOE ${central.get('PSOE') ?? 0}, VOX ${central.get('VOX') ?? 0} escaños.`}>
+          <div class="reparto__barra" id="barra" aria-hidden="true">
+            {inicial.filter((f) => f.escanos > 0).map((f) => (
+              <span
+                class="reparto__tramo"
+                style={`flex:${Math.max(f.escanos, 0.001)};background:${colorPartido(f.partido)}`}
+                title={`${f.partido}: ${entero(f.escanos)} escaños`}
+              ></span>
+            ))}
+          </div>
+          <p class="reparto__pie mono" id="barra-pie">
+            {entero(totalInicial)} escaños · escenario central del modelo
+          </p>
+        </div>
+
+        <div class="reparto__tabla">
+          <div class="reparto__fila reparto__fila--cabecera" aria-hidden="true">
+            <span class="reparto__col reparto__col--partido">Partido</span>
+            <span class="reparto__col">Escaños</span>
+            <span class="reparto__col">Δ central</span>
+            <span class="reparto__col">% voto</span>
+            <span class="reparto__col reparto__col--banda">Banda del modelo</span>
+          </div>
+          <div id="filas">
+            {inicial.map((f) => (
+              <div class="reparto__fila">
+                <span class="reparto__col reparto__col--partido">
+                  <span class="reparto__muestra" style={`background:${colorPartido(f.partido)}`} aria-hidden="true"></span>
+                  {f.partido}
+                </span>
+                <span class="reparto__col mono reparto__num">{entero(f.escanos)}</span>
+                <span class="reparto__col mono reparto__num">{num(0, 0)}</span>
+                <span class="reparto__col mono reparto__num">{num(f.pct, 1)}</span>
+                <span class="reparto__col mono reparto__banda">
+                  {num(limites[f.partido]?.min ?? 0, 1)} – {num(limites[f.partido]?.max ?? 0, 1)}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <p class="reparto__lectura">
+          Escenario central del modelo: PP {entero(central.get('PP') ?? 0)},
+          PSOE {entero(central.get('PSOE') ?? 0)}, VOX {entero(central.get('VOX') ?? 0)},
+          SUMAR {entero(central.get('SUMAR') ?? 0)}. Mueve los controles de abajo para
+          explorar dentro de la banda p10–p90.
+        </p>
+      </figure>
+    </section>
+
+    <!-- Controles debajo del dato -->
+    <section class="controles" aria-labelledby="controles-titulo">
+      <div class="controles__cabecera">
+        <p class="eyebrow" id="controles-titulo">Controles · voto por partido sobre válidos</p>
+        <p class="controles__suma mono" id="suma-controles" aria-live="polite">
+          Suma de los controles: {num(totalInicial ? PARTIDOS.reduce((s, p) => s + (punto[p] ?? 0), 0) : 0, 1)} % → renormalizado a 100 %
+        </p>
+      </div>
+
+      <div class="sliders">
+        {PARTIDOS.map((p) => {
+          const l = limites[p];
+          return (
+            <div class="slider">
+              <label for={`sl-${p}`}>
+                <span class="slider__muestra" style={`background:${colorPartido(p)}`} aria-hidden="true"></span>
+                <span class="slider__nombre">{p}</span>
+                <output class="mono slider__valor" for={`sl-${p}`} id={`out-${p}`}>{num(punto[p] ?? 0, 1)} %</output>
+              </label>
+              <input
+                type="range"
+                id={`sl-${p}`}
+                data-partido={p}
+                min={l?.min ?? 0}
+                max={l?.max ?? 100}
+                step="0.001"
+                value={punto[p] ?? 0}
+              />
+              <p class="slider__banda mono">
+                banda {num(l?.min ?? 0, 1)} – {num(l?.max ?? 0, 1)} %
+              </p>
+            </div>
+          );
+        })}
+      </div>
+
+      <div class="controles__acciones">
+        <button type="button" class="boton-secundario" id="reset">
+          Volver al escenario central
+        </button>
+        <p class="nota">
+          Los controles parten del punto del modelo y no pueden salir del
+          intervalo p10–p90 del backtest: la incertidumbre no se esconde, se opera.
+        </p>
+      </div>
+    </section>
+
+    <section class="metodo" aria-labelledby="metodo-titulo">
+      <h2 id="metodo-titulo">Cómo se calcula este escenario</h2>
+      <dl class="definiciones">
+        {definicion.map(([t, d]) => (
+          <div class="definicion">
+            <dt>{t}</dt>
+            <dd>{d}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="nota">
+        Base provincial: {base23.meta.eleccion} (Ministerio del Interior),
+        {base23.meta.n_provincias} provincias y {entero(base23.meta.total_escanos)} escaños,
+        renormalizada al universo modelado de {PARTIDOS.length} partidos
+        ({num(base23.meta.universo_cobertura_23J_pct, 1)} % del voto válido de 23J).
+        El residual no se reparte escaños, igual que en el modelo provincial.
+        <a href="/prediccion/">Predicción provincial →</a>
+      </p>
+      <p class="nota">
+        El simulador corre en tu navegador sobre datos publicados: no enviamos tu
+        escenario a ningún servidor ni queda registrado.
+      </p>
+    </section>
+  </div>
+
+  <script type="application/json" id="d-base23" set:html={JSON.stringify(base23)} />
+  <script type="application/json" id="d-forecast" set:html={JSON.stringify(forecast)} />
+  <script type="application/json" id="d-central" set:html={JSON.stringify(Object.fromEntries(PARTIDOS.map((p) => [p, central.get(p) ?? 0])))} />
+  <script type="application/json" id="d-colores" set:html={JSON.stringify(colores)} />
+
+  <script is:inline>
+  (function () {
+    var base = JSON.parse(document.getElementById('d-base23').textContent);
+    var forecast = JSON.parse(document.getElementById('d-forecast').textContent);
+    var central = JSON.parse(document.getElementById('d-central').textContent);
+    var colores = JSON.parse(document.getElementById('d-colores').textContent);
+
+    var PARTIDOS = base.partidos;
+    var provincias = base.provincias;
+    var cuerpo = document.getElementById('reparto-cuerpo');
+    var barra = document.getElementById('barra');
+    var pie = document.getElementById('barra-pie');
+    var filas = document.getElementById('filas');
+    var sumaTxt = document.getElementById('suma-controles');
+    var reset = document.getElementById('reset');
+    if (!cuerpo || !barra || !filas) return;
+
+    // Punto de partida y banda de cada control (p10-p90 del forecast).
+    var P = {};
+    forecast.partidos.forEach(function (f) {
+      P[f.partido] = { min: f.p10, max: f.p90, punto: f.punto };
+    });
+
+    // Pesos provinciales y base nacional del universo modelado.
+    var totalValidos = provincias.reduce(function (s, p) { return s + p.validos; }, 0);
+    var w = {};
+    provincias.forEach(function (p) { w[p.codigo] = p.validos / totalValidos; });
+    var baseNat = {};
+    PARTIDOS.forEach(function (k) {
+      baseNat[k] = provincias.reduce(function (s, p) {
+        return s + p.pct[k] * p.validos;
+      }, 0) / totalValidos;
+    });
+
+    function renormalizar(raw) {
+      var s = PARTIDOS.reduce(function (a, k) { return a + raw[k]; }, 0);
+      var out = {};
+      PARTIDOS.forEach(function (k) { out[k] = s > 0 ? raw[k] * 100 / s : 0; });
+      return { target: out, suma: s };
+    }
+
+    function provDesdeRatios(r) {
+      var m = {};
+      provincias.forEach(function (p) {
+        var v = {}, s = 0;
+        PARTIDOS.forEach(function (k) {
+          var x = p.pct[k] * (r[k] || 0);
+          v[k] = x; s += x;
+        });
+        var o = {};
+        PARTIDOS.forEach(function (k) { o[k] = s > 0 ? 100 * v[k] / s : 0; });
+        m[p.codigo] = o;
+      });
+      return m;
+    }
+
+    // Misma calibración de punto fijo que pipeline/modelo/provincial.py.
+    function calibrar(target) {
+      var r = {}, prov;
+      PARTIDOS.forEach(function (k) {
+        r[k] = baseNat[k] > 0.001 ? target[k] / baseNat[k] : 0;
+      });
+      prov = provDesdeRatios(r);
+      for (var it = 0; it < 20; it++) {
+        var agg = {}, dev = 0;
+        PARTIDOS.forEach(function (k) {
+          var a = provincias.reduce(function (s, p) {
+            return s + w[p.codigo] * prov[p.codigo][k];
+          }, 0);
+          agg[k] = a;
+          var d = Math.abs(a - target[k]);
+          if (d > dev) dev = d;
+        });
+        if (dev <= 0.02) break;
+        PARTIDOS.forEach(function (k) {
+          if (baseNat[k] > 0.001 && agg[k] > 1e-6) r[k] *= target[k] / agg[k];
+        });
+        prov = provDesdeRatios(r);
+      }
+      return prov;
+    }
+
+    // D'Hondt por circunscripción (LOREG art. 163; umbral 3 % de válidos).
+    function dhondt(votes, escanos, cut) {
+      var res = {}, k;
+      for (k in votes) res[k] = 0;
+      if (escanos <= 0) return res;
+      var q = [];
+      PARTIDOS.forEach(function (p) {
+        var v = votes[p];
+        if (v > 0 && v >= cut) {
+          for (var d = 1; d <= escanos; d++) q.push([v / d, p]);
+        }
+      });
+      if (!q.length) return res;
+      q.sort(function (a, b) {
+        if (b[0] !== a[0]) return b[0] - a[0];
+        return a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0;
+      });
+      for (var i = 0; i < escanos && i < q.length; i++) res[q[i][1]]++;
+      return res;
+    }
+
+    function repartir(target) {
+      var prov = calibrar(target);
+      var total = {};
+      PARTIDOS.forEach(function (k) { total[k] = 0; });
+      provincias.forEach(function (p) {
+        var sh = prov[p.codigo], votes = {}, cut = 0.03 * p.validos;
+        PARTIDOS.forEach(function (k) {
+          votes[k] = Math.max(0, sh[k]) * p.validos / 100;
+        });
+        var s = dhondt(votes, p.escanos, cut);
+        PARTIDOS.forEach(function (k) { total[k] += s[k]; });
+      });
+      return total;
+    }
+
+    function formNum(v, dec) {
+      return v.toFixed(dec).replace('.', ',');
+    }
+
+    function pintar() {
+      var raw = {};
+      PARTIDOS.forEach(function (p) {
+        var el = document.getElementById('sl-' + p);
+        raw[p] = el ? parseFloat(el.value) : 0;
+        var out = document.getElementById('out-' + p);
+        if (out) out.textContent = formNum(raw[p], 1) + ' %';
+      });
+
+      var rn = renormalizar(raw);
+      var escaños = repartir(rn.target);
+      var totalEsc = 0;
+      PARTIDOS.forEach(function (p) { totalEsc += escaños[p]; });
+
+      if (sumaTxt) {
+        sumaTxt.textContent = 'Suma de los controles: ' + formNum(rn.suma, 1) +
+          ' % → renormalizado a 100 %';
+      }
+
+      var orden = PARTIDOS.slice().sort(function (a, b) {
+        if (escaños[b] !== escaños[a]) return escaños[b] - escaños[a];
+        return a < b ? -1 : 1;
+      });
+
+      // Barra apilada del reparto resultante.
+      barra.innerHTML = '';
+      orden.forEach(function (p) {
+        if (escaños[p] <= 0) return;
+        var span = document.createElement('span');
+        span.className = 'reparto__tramo';
+        span.style.flex = String(Math.max(escaños[p], 0.001));
+        span.style.background = colores[p] || 'var(--p-otros)';
+        span.title = p + ': ' + escaños[p] + ' escaños';
+        barra.appendChild(span);
+      });
+      if (pie) pie.textContent = totalEsc + ' escaños · escenario simulado';
+
+      // Tabla: escaños, delta sobre el central del modelo y % de voto.
+      filas.innerHTML = '';
+      orden.forEach(function (p) {
+        var d = escaños[p] - (central[p] || 0);
+        var clase = d > 0 ? 'sube' : d < 0 ? 'baja' : 'plano';
+        var flecha = d > 0 ? '▲' : d < 0 ? '▼' : '＝';
+        var fila = document.createElement('div');
+        fila.className = 'reparto__fila';
+        fila.innerHTML =
+          '<span class="reparto__col reparto__col--partido">' +
+            '<span class="reparto__muestra" style="background:' + (colores[p] || 'var(--p-otros)') + '" aria-hidden="true"></span>' +
+            p +
+          '</span>' +
+          '<span class="reparto__col mono reparto__num">' + escaños[p] + '</span>' +
+          '<span class="reparto__col mono reparto__num"><span class="reparto__delta ' + clase + '">' +
+            flecha + ' ' + (d > 0 ? '+' : '') + d +
+          '</span></span>' +
+          '<span class="reparto__col mono reparto__num">' + formNum(rn.target[p], 1) + '</span>' +
+          '<span class="reparto__col mono reparto__banda">' +
+            formNum(P[p] ? P[p].min : 0, 1) + ' – ' + formNum(P[p] ? P[p].max : 0, 1) +
+          '</span>';
+        filas.appendChild(fila);
+      });
+
+      if (cuerpo) {
+        cuerpo.setAttribute('aria-label',
+          'Escenario simulado: PP ' + escaños['PP'] + ', PSOE ' + escaños['PSOE'] +
+          ', VOX ' + escaños['VOX'] + ' escaños.');
+      }
+    }
+
+    document.querySelectorAll('.sliders input[type="range"]').forEach(function (el) {
+      el.addEventListener('input', pintar);
+    });
+    if (reset) {
+      reset.addEventListener('click', function () {
+        PARTIDOS.forEach(function (p) {
+          var el = document.getElementById('sl-' + p);
+          if (el) el.value = P[p] ? P[p].punto : 0;
+        });
+        pintar();
+      });
+    }
+
+    pintar();
+  })();
+  </script>
+</Base>
+
+<style>
+  .cabecera-pagina { padding-block: var(--s-5) var(--s-4); }
+
+  .aviso-permanente {
+    background: var(--papel-2);
+    border-top: var(--borde-tinta);
+    border-left: 4px solid var(--tinta);
+    padding: var(--s-4);
+    margin-bottom: var(--s-6);
+    max-width: 84ch;
+  }
+  .aviso-permanente p:last-child { margin-bottom: 0; font-size: var(--t-small); line-height: var(--lh-small); }
+
+  /* --- Reparto resultante (el dato arriba) --- */
+  .resultado { padding-bottom: var(--s-6); }
+
+  .reparto {
+    margin: 0;
+    background: var(--papel);
+    border-top: var(--borde-tinta);
+    border-bottom: var(--borde-regla);
+    padding: var(--s-4) 0;
+  }
+  .reparto__barra {
+    display: flex;
+    width: 100%;
+    height: 44px;
+    border: 1px solid var(--tinta);
+  }
+  .reparto__tramo { display: block; min-width: 2px; }
+  .reparto__tramo + .reparto__tramo { border-left: 2px solid var(--papel); }
+  .reparto__pie { margin: var(--s-2) 0 0; color: var(--tinta-2); font-size: 0.8125rem; }
+
+  .reparto__tabla { margin: var(--s-4) 0 0; border-top: var(--borde-tinta); }
+  .reparto__fila {
+    display: grid;
+    grid-template-columns: minmax(84px, 1.4fr) repeat(3, minmax(52px, 0.7fr)) minmax(96px, 1fr);
+    gap: var(--s-1) var(--s-2);
+    align-items: baseline;
+    padding: var(--s-1) 0;
+    border-bottom: var(--borde-regla);
+  }
+  .reparto__fila--cabecera {
+    font-family: var(--f-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--tinta-2);
+    border-bottom: var(--borde-tinta);
+  }
+  .reparto__col { text-align: right; }
+  .reparto__col--partido {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    font-weight: 600;
+    text-align: left;
+    min-width: 0;
+  }
+  .reparto__muestra { inline-size: 12px; block-size: 12px; border-radius: 2px; flex: 0 0 auto; }
+  .reparto__banda { text-align: right; color: var(--tinta-2); }
+  .reparto__delta.sube { color: var(--ok); }
+  .reparto__delta.baja { color: var(--alerta); }
+  .reparto__delta.plano { color: var(--tinta-3); }
+  .reparto__lectura {
+    margin: var(--s-3) 0 0;
+    max-width: var(--medida);
+    font-size: var(--t-small);
+    line-height: var(--lh-small);
+    color: var(--tinta-2);
+  }
+
+  /* --- Controles --- */
+  .controles {
+    border-top: var(--borde-regla);
+    border-bottom: var(--borde-regla);
+    padding-block: var(--s-5);
+    margin-bottom: var(--s-6);
+  }
+  .controles__cabecera {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--s-2) var(--s-4);
+    margin-bottom: var(--s-4);
+  }
+  .controles__cabecera .eyebrow { margin: 0; }
+  .controles__suma { font-size: var(--t-small); color: var(--tinta-2); margin: 0; }
+
+  .sliders {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--s-4) var(--s-5);
+  }
+  .slider { min-width: 0; }
+  .slider label {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    font-weight: 600;
+  }
+  .slider__muestra { inline-size: 12px; block-size: 12px; border-radius: 2px; flex: 0 0 auto; }
+  .slider__nombre { flex: 1 1 auto; }
+  .slider__valor { font-size: var(--t-data); color: var(--tinta); }
+  .slider input[type='range'] {
+    inline-size: 100%;
+    margin: var(--s-2) 0 var(--s-1);
+    accent-color: var(--accion);
+  }
+  .slider input[type='range']:focus-visible {
+    outline: 3px solid var(--foco);
+    outline-offset: 2px;
+  }
+  .slider__banda { margin: 0; font-size: 0.75rem; color: var(--tinta-3); }
+
+  .controles__acciones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--s-4);
+    margin-top: var(--s-5);
+    padding-top: var(--s-4);
+    border-top: var(--borde-regla);
+  }
+  .controles__acciones .nota { margin: 0; flex: 1 1 320px; max-width: 70ch; }
+
+  .boton-secundario {
+    font: inherit;
+    font-weight: 600;
+    color: var(--tinta);
+    background: transparent;
+    border: 2px solid var(--tinta);
+    border-radius: var(--radio);
+    padding: var(--s-2) var(--s-3);
+    cursor: pointer;
+  }
+  .boton-secundario:hover { background: var(--papel-3); }
+  .boton-secundario:focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; }
+
+  /* --- Método --- */
+  .metodo { max-width: 84ch; }
+  .definiciones { margin: 0 0 var(--s-4); }
+  .definicion {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: var(--s-3);
+    padding: var(--s-3) 0;
+    border-bottom: var(--borde-regla);
+  }
+  .definicion dt { font-weight: 700; }
+  .definicion dd { margin: 0; font-size: var(--t-small); line-height: var(--lh-small); color: var(--tinta-2); }
+  @media (max-width: 620px) {
+    .definicion { grid-template-columns: 1fr; gap: var(--s-1); }
+    .reparto__fila { grid-template-columns: minmax(76px, 1.3fr) repeat(2, minmax(44px, 0.6fr)); }
+    .reparto__fila--cabecera .reparto__col:nth-child(4),
+    .reparto__fila--cabecera .reparto__col:nth-child(5),
+    .reparto__fila > .reparto__col:nth-child(4),
+    .reparto__fila > .reparto__col:nth-child(5) { display: none; }
+  }
+</style>

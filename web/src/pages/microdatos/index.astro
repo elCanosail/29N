@@ -1,0 +1,224 @@
+---
+/**
+ * /microdatos/ — Explorador de microdatos CIS 1977-2025 (feature 2, la herramienta única).
+ *
+ * Visual arriba (gráfico + tabla), explicaciones abajo (DESIGN.md §5 regla de jerarquía).
+ * Los filtros operan client-side sobre agregados estáticos precalculados por
+ * pipeline/microdatos/agrega.py: la web no calcula, solo selecciona (docs/plan.md).
+ */
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import porAnio from '../../data/microdatos/por_anio.json';
+import porProvincia from '../../data/microdatos/por_provincia.json';
+import { entero } from '../../lib/format';
+
+const meta = porAnio.meta;
+const nEntrevistas = entero(meta.n_entrevistas);
+const nEstudios = entero(meta.n_estudios);
+const ventanaProv = porProvincia.meta.periodo;
+
+const aniosConDato = porAnio.anios.map((a) => a.anio);
+const rangoAnios = `${aniosConDato[0]}–${aniosConDato[aniosConDato.length - 1]}`;
+const nProvincias = porProvincia.provincias.length;
+---
+
+<Base
+  titulo="Microdatos CIS 1977-2025"
+  descripcion={`Explorador de ${nEntrevistas} entrevistas individuales del CIS (${nEstudios} estudios, 1977-2025): intención de voto, ideología y perfil sociodemográfico. Agregados ponderados, sin microdato reidentificable.`}
+>
+  <div class="contenedor">
+    <Breadcrumbs items={[{ label: 'Microdatos CIS' }]} />
+
+    <header class="cabecera-pagina">
+      <p class="eyebrow entrada">Microdatos CIS · {rangoAnios}</p>
+      <h1 class="medida entrada entrada--1">Microdatos CIS 1977-2025</h1>
+      <p class="titular-intro entrada entrada--2">
+        {nEntrevistas} entrevistas individuales del CIS, consultables por año, provincia
+        y corte. La herramienta que ningún medio ofrece: cruzar el voto con la demografía
+        del electorado, sin servidor y sin instalar nada.
+      </p>
+    </header>
+
+    <div class="explorador">
+      <aside class="filtros" aria-labelledby="filtros-titulo">
+        <h2 class="filtros__titulo" id="filtros-titulo">Filtros</h2>
+        <p class="nota">
+          Filtrado sin servidor sobre agregados precalculados. Cada cifra procede de la
+          ponderación por <span class="mono">peso</span> del estudio.
+        </p>
+
+        <form class="form-filtros" autocomplete="off">
+          <div class="campo" data-campo="corte">
+            <label for="mundo-corte">Corte</label>
+            <select id="mundo-corte"></select>
+          </div>
+          <div class="campo" data-campo="anio">
+            <label for="mundo-anio">Año</label>
+            <select id="mundo-anio"></select>
+          </div>
+          <div class="campo" data-campo="provincia">
+            <label for="mundo-provincia">Provincia</label>
+            <select id="mundo-provincia"></select>
+          </div>
+        </form>
+
+        <noscript>
+          <p class="nota">
+            Los filtros necesitan JavaScript. Los mismos agregados están versionados en el
+            repositorio (<span class="mono">web/src/data/microdatos/</span>) y son descargables.
+          </p>
+        </noscript>
+      </aside>
+
+      <div class="resultados">
+        <p class="mono contador">
+          N = {nEntrevistas} entrevistas · {nEstudios} estudios · {rangoAnios} ·
+          {entero(nProvincias)} provincias · agregados ponderados por peso
+        </p>
+
+        <div id="mundo-visor" class="visor" aria-live="polite"></div>
+        <p class="pie mono" id="mundo-pie"></p>
+        <p class="lectura" id="mundo-lectura"></p>
+        <p class="estado-vacio" id="mundo-vacio" hidden>
+          No hay datos agregados para esta combinación. Prueba otro corte o amplía el año.
+        </p>
+
+        <section class="tabla-envoltorio" aria-labelledby="tabla-titulo">
+          <h2 class="h-tabla" id="tabla-titulo">Los mismos números, en tabla</h2>
+          <div id="mundo-tabla"></div>
+        </section>
+      </div>
+    </div>
+
+    <section class="como-leerlo" aria-labelledby="como-titulo">
+      <p class="eyebrow" id="como-titulo">Cómo leerlo</p>
+      <div class="como-leerlo__cuerpo">
+        <div class="como-leerlo__prosa medida">
+          <p>
+            <strong>Qué es.</strong> Una vista agregada de {nEntrevistas} entrevistas
+            individuales de {nEstudios} estudios del CIS entre {rangoAnios}. Es el mismo
+            material que los investigadores compran a la casa: aquí traducido a cortes
+            consultables y enlazado a su origen. Ninguna celda contiene un microdato
+            reidentificable: solo se publican agregados ponderados.
+          </p>
+          <p>
+            <strong>La base de los porcentajes.</strong> El CIS publica <em>sobre censo</em>:
+            el denominador son todas las entrevistas del estudio. Por eso los partidos suman
+            bastante menos de 100 %: abstención, NS, NC y no declarado entran en el mismo
+            denominador. Estas cifras <em>no</em> son comparables con un % sobre voto válido
+            (el que usan las encuestas privadas y los resultados oficiales). Al cruzar series,
+            comprueba siempre la base.
+          </p>
+          <p>
+            <strong>La ponderación.</strong> Todo va ponderado por el <span class="mono">peso</span>
+            del estudio. Al mezclar varios estudios en un año o una provincia, los pesos se
+            normalizan por estudio (suma = tamaño de la muestra) para no mezclar escalas de
+            ponderación distintas.
+          </p>
+          <p>
+            <strong>Los huecos son datos, no errores.</strong> Los estudios de 2004–2011 no
+            traen la pregunta de intención de voto extraída, así que aparecen como hueco en
+            lugar de como cero. La muestra provincial se agrega para {ventanaProv}; en
+            provincias pequeñas el <span class="mono">n</span> es bajo y el margen es amplio:
+            se publica tal cual.
+          </p>
+          <p>
+            <strong>Partido canónico.</strong> Cada respuesta se agrupa en su familia política
+            (AP y UCD cuentan como PP; Podemos, IU y Compromís, como Sumar), de modo que las
+            series sean continuas entre eras. El detalle por partido original vive en el
+            parquet y en el repositorio.
+          </p>
+          <p class="nota">
+            Fuente: <span class="mono">data/processed/microdatos/individual.parquet</span> ·
+            generado por <a href="https://github.com/elCanosail/29N">pipeline/microdatos/agrega.py</a>.
+            {String(meta.base)}
+          </p>
+        </div>
+
+        <aside class="como-leerlo__aviso" aria-label="Advertencias de base">
+          <p class="eyebrow">Advertencias de base</p>
+          <ul>
+            {(meta.advertencias as string[]).map((a) => <li>{a}</li>)}
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    import type { Datos } from '../../lib/microdatos-explorador';
+    import { montarExplorador } from '../../lib/microdatos-explorador';
+    import mA from '../../data/microdatos/por_anio.json';
+    import mP from '../../data/microdatos/por_provincia.json';
+    import mI from '../../data/microdatos/ideologia_partido.json';
+    import mF from '../../data/microdatos/perfil_partido.json';
+    import mS from '../../data/microdatos/serie_ideologia.json';
+
+    const datos = {
+      porAnio: mA,
+      porProvincia: mP,
+      ideologiaPartido: mI,
+      perfilPartido: mF,
+      serieIdeologia: mS,
+    } as unknown as Datos;
+
+    montarExplorador(datos);
+  </script>
+</Base>
+
+<style>
+  .cabecera-pagina { padding-block: var(--s-5) var(--s-6); }
+
+  .explorador {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: var(--s-6);
+    align-items: start;
+    border-top: var(--borde-tinta);
+    padding-top: var(--s-5);
+  }
+
+  .filtros { position: sticky; top: calc(var(--header-h) + var(--s-3)); }
+  .filtros__titulo { font-family: var(--f-body); font-size: var(--t-h3); }
+  .form-filtros { margin: 0; }
+  .form-filtros .campo[hidden] { display: none; }
+
+  .contador { margin: 0 0 var(--s-4); color: var(--tinta-2); font-size: 0.8125rem; }
+
+  .visor { margin: 0; }
+  .visor :global(.grafico-marco) { margin: 0; }
+  .visor :global(.grafico) { width: 100%; height: auto; display: block; overflow: visible; }
+  .visor :global(.rejilla) { stroke: var(--regla); stroke-width: 1; fill: none; }
+  .visor :global(.linea) { fill: none; stroke-width: 2; stroke-linejoin: round; }
+  .visor :global(.eje) { font-family: var(--f-mono); font-size: 11px; fill: var(--tinta-3); }
+  .visor :global(.etiqueta) { font-family: var(--f-mono); font-size: 12px; font-weight: 500; }
+  .visor :global(.valor) { font-family: var(--f-mono); font-size: 12px; fill: var(--tinta); font-variant-numeric: tabular-nums; }
+
+  .pie { margin: var(--s-3) 0 0; color: var(--tinta-2); font-size: 0.8125rem; }
+  .lectura { margin: var(--s-2) 0 0; max-width: var(--medida); font-size: var(--t-small); line-height: var(--lh-small); color: var(--tinta-2); }
+
+  .tabla-envoltorio { margin-top: var(--s-5); border-top: var(--borde-regla); padding-top: var(--s-4); }
+  .h-tabla { font-family: var(--f-body); font-size: var(--t-h3); }
+
+  :global(.tabla-micro) { width: 100%; border-collapse: collapse; font-size: var(--t-data); }
+  :global(.tabla-micro th),
+  :global(.tabla-micro td) { text-align: left; padding: var(--s-1) var(--s-3) var(--s-1) 0; border-bottom: var(--borde-regla); }
+  :global(.tabla-micro thead th) { font-family: var(--f-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--tinta-2); border-bottom: var(--borde-tinta); }
+  :global(.tabla-micro .der) { text-align: right; padding-right: 0; }
+  :global(.tabla-micro tbody tr:hover) { background: var(--papel-3); }
+
+  .como-leerlo { border-top: var(--borde-tinta); margin-top: var(--s-7); padding-top: var(--s-5); }
+  .como-leerlo__cuerpo { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); gap: var(--s-6); align-items: start; }
+  .como-leerlo__prosa, .como-leerlo__aviso { min-width: 0; }
+  .como-leerlo__prosa p { margin: 0 0 var(--s-3); }
+  .como-leerlo__prosa .mono, .como-leerlo__prosa a { overflow-wrap: anywhere; }
+  .como-leerlo__aviso { background: var(--papel-2); border: var(--borde-regla); border-left: 4px solid var(--tinta); border-radius: var(--radio); padding: var(--s-3) var(--s-4); }
+  .como-leerlo__aviso ul { margin: 0; padding-left: 1.1em; font-size: var(--t-small); line-height: var(--lh-small); color: var(--tinta-2); }
+  .como-leerlo__aviso li { margin-bottom: var(--s-2); }
+
+  @media (max-width: 980px) {
+    .explorador { grid-template-columns: 1fr; }
+    .filtros { position: static; }
+    .como-leerlo__cuerpo { grid-template-columns: 1fr; }
+  }
+</style>

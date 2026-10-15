@@ -1,0 +1,355 @@
+{
+ "meta": {
+  "generacion": "2026-10-15T20:57:46+00:00",
+  "fuente": "data/processed/microdatos/individual.parquet",
+  "dataset": "Microdatos CIS a nivel individual (fase 4-c), estudios 1977-2025",
+  "n_entrevistas": 532498,
+  "n_estudios": 55,
+  "cobertura_temporal": "1977-2025",
+  "ponderacion": "Todos los agregados ponderan por `peso` (ponderador nacional preferente). Los pesos se normalizan por estudio (suma = n del estudio) antes de agrupar, para no mezclar escalas de ponderación distintas.",
+  "base": "CIS = % sobre censo: el denominador es el total de entrevistas del grupo (incluye abstención, NS, NC y no declarado). NO es % sobre voto válido; por eso los partidos suman bastante menos de 100 %.",
+  "advertencias": [
+   "CIS = % sobre censo (todas las entrevistas), no sobre voto válido.",
+   "Intención de voto calculada solo con estudios de cobertura de la pregunta ≥ 50 %; quedan fuera 10 estudios 2004-2011 sin la pregunta extraída (así no se fabrican ceros falsos).",
+   "Ideología autoubicada 1-10 (1 = izquierda, 10 = derecha). Las escalas 1-7 se reescalan a 1-10 en origen; la distribución se agrupa por redondeo al entero.",
+   "Muestras provinciales pequeñas en provincias poco pobladas: cada celda publica su n.",
+   "Solo agregados: ningún microdato reidentificable se publica."
+  ],
+  "corte": "ideología autoubicada por partido votado (intención)",
+  "unidad": "media 1-10 y distribución % sobre electorado del partido",
+  "nota": "Sobre quienes declaran intención de voto y se autoubican en la escala 1-10."
+ },
+ "escala": {
+  "min": 1,
+  "max": 10,
+  "etiquetas": [
+   "1 izquierda",
+   "10 derecha"
+  ]
+ },
+ "total": {
+  "partido": "Total",
+  "n": 315356,
+  "ideologia_media": 4.744,
+  "p25": 3.0,
+  "p75": 6.0,
+  "distribucion": [
+   7.817,
+   7.697,
+   13.995,
+   16.809,
+   18.795,
+   14.9,
+   8.507,
+   6.017,
+   1.719,
+   3.744
+  ]
+ },
+ "partidos": [
+  {
+   "partido": "CUP",
+   "n": 385,
+   "ideologia_media": 2.276,
+   "p25": 1.0,
+   "p75": 3.0,
+   "distribucion": [
+    38.01,
+    23.59,
+    26.816,
+    4.479,
+    3.818,
+    0.71,
+    0.587,
+    1.66,
+    0.0,
+    0.33
+   ]
+  },
+  {
+   "partido": "EH BILDU",
+   "n": 2193,
+   "ideologia_media": 2.301,
+   "p25": 1.0,
+   "p75": 3.0,
+   "distribucion": [
+    35.212,
+    25.979,
+    25.227,
+    6.981,
+    4.1,
+    0.974,
+    0.309,
+    0.642,
+    0.055,
+    0.521
+   ]
+  },
+  {
+   "partido": "SUMAR",
+   "n": 31080,
+   "ideologia_media": 2.921,
+   "p25": 2.0,
+   "p75": 4.0,
+   "distribucion": [
+    21.454,
+    20.201,
+    30.338,
+    13.925,
+    7.505,
+    3.219,
+    1.613,
+    1.083,
+    0.202,
+    0.462
+   ]
+  },
+  {
+   "partido": "ERC",
+   "n": 3227,
+   "ideologia_media": 2.929,
+   "p25": 2.0,
+   "p75": 4.0,
+   "distribucion": [
+    19.929,
+    18.433,
+    33.621,
+    14.798,
+    8.377,
+    2.154,
+    1.269,
+    0.795,
+    0.286,
+    0.338
+   ]
+  },
+  {
+   "partido": "BNG",
+   "n": 1184,
+   "ideologia_media": 3.055,
+   "p25": 2.0,
+   "p75": 4.0,
+   "distribucion": [
+    23.198,
+    16.449,
+    28.259,
+    12.726,
+    12.534,
+    1.912,
+    2.47,
+    0.964,
+    0.247,
+    1.24
+   ]
+  },
+  {
+   "partido": "PSOE",
+   "n": 65965,
+   "ideologia_media": 3.602,
+   "p25": 3.0,
+   "p75": 4.0,
+   "distribucion": [
+    12.026,
+    8.848,
+    26.203,
+    28.936,
+    16.033,
+    3.869,
+    1.793,
+    1.295,
+    0.292,
+    0.705
+   ]
+  },
+  {
+   "partido": "PACMA",
+   "n": 833,
+   "ideologia_media": 4.074,
+   "p25": 3.0,
+   "p75": 5.0,
+   "distribucion": [
+    10.747,
+    7.874,
+    20.196,
+    15.587,
+    32.242,
+    5.445,
+    3.814,
+    1.336,
+    0.882,
+    1.878
+   ]
+  },
+  {
+   "partido": "PNV",
+   "n": 2276,
+   "ideologia_media": 4.731,
+   "p25": 4.0,
+   "p75": 5.5,
+   "distribucion": [
+    4.312,
+    3.463,
+    11.16,
+    20.682,
+    33.426,
+    15.309,
+    7.802,
+    2.347,
+    0.381,
+    1.119
+   ]
+  },
+  {
+   "partido": "OTROS",
+   "n": 45697,
+   "ideologia_media": 4.828,
+   "p25": 4.0,
+   "p75": 5.5,
+   "distribucion": [
+    6.5,
+    10.032,
+    7.068,
+    20.219,
+    12.646,
+    24.794,
+    9.529,
+    5.154,
+    0.792,
+    3.266
+   ]
+  },
+  {
+   "partido": "JXCAT",
+   "n": 3317,
+   "ideologia_media": 4.972,
+   "p25": 4.0,
+   "p75": 6.0,
+   "distribucion": [
+    3.286,
+    2.993,
+    10.045,
+    15.665,
+    31.342,
+    23.311,
+    9.048,
+    3.029,
+    0.624,
+    0.657
+   ]
+  },
+  {
+   "partido": "CDS",
+   "n": 3111,
+   "ideologia_media": 5.494,
+   "p25": 5.0,
+   "p75": 6.0,
+   "distribucion": [
+    0.599,
+    0.235,
+    1.952,
+    6.666,
+    52.201,
+    24.522,
+    7.313,
+    3.669,
+    1.27,
+    1.574
+   ]
+  },
+  {
+   "partido": "CIUDADANOS",
+   "n": 7312,
+   "ideologia_media": 5.507,
+   "p25": 5.0,
+   "p75": 6.0,
+   "distribucion": [
+    0.666,
+    0.738,
+    4.347,
+    10.254,
+    38.417,
+    26.727,
+    11.812,
+    4.918,
+    1.193,
+    0.928
+   ]
+  },
+  {
+   "partido": "CC",
+   "n": 288,
+   "ideologia_media": 5.757,
+   "p25": 5.0,
+   "p75": 7.0,
+   "distribucion": [
+    3.78,
+    1.652,
+    6.002,
+    7.566,
+    35.204,
+    16.097,
+    11.854,
+    5.937,
+    1.852,
+    10.054
+   ]
+  },
+  {
+   "partido": "NA+",
+   "n": 218,
+   "ideologia_media": 6.657,
+   "p25": 6.0,
+   "p75": 8.0,
+   "distribucion": [
+    0.0,
+    0.352,
+    0.332,
+    5.108,
+    17.011,
+    29.612,
+    19.965,
+    14.836,
+    5.46,
+    7.325
+   ]
+  },
+  {
+   "partido": "PP",
+   "n": 53487,
+   "ideologia_media": 6.689,
+   "p25": 5.5,
+   "p75": 8.0,
+   "distribucion": [
+    0.778,
+    2.029,
+    0.74,
+    5.052,
+    15.464,
+    22.887,
+    20.442,
+    17.111,
+    5.774,
+    9.723
+   ]
+  },
+  {
+   "partido": "VOX",
+   "n": 10159,
+   "ideologia_media": 7.619,
+   "p25": 6.0,
+   "p75": 10.0,
+   "distribucion": [
+    0.839,
+    0.219,
+    0.571,
+    1.123,
+    14.951,
+    10.181,
+    17.196,
+    21.43,
+    8.135,
+    25.354
+   ]
+  }
+ ]
+}

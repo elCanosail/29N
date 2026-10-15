@@ -1,0 +1,140 @@
+{
+ "meta": {
+  "generacion": "2026-10-15T20:57:47+00:00",
+  "fuente": "data/processed/microdatos/individual.parquet",
+  "dataset": "Microdatos CIS a nivel individual (fase 4-c), estudios 1977-2025",
+  "n_entrevistas": 532498,
+  "n_estudios": 55,
+  "cobertura_temporal": "1977-2025",
+  "ponderacion": "Todos los agregados ponderan por `peso` (ponderador nacional preferente). Los pesos se normalizan por estudio (suma = n del estudio) antes de agrupar, para no mezclar escalas de ponderación distintas.",
+  "base": "CIS = % sobre censo: el denominador es el total de entrevistas del grupo (incluye abstención, NS, NC y no declarado). NO es % sobre voto válido; por eso los partidos suman bastante menos de 100 %.",
+  "advertencias": [
+   "CIS = % sobre censo (todas las entrevistas), no sobre voto válido.",
+   "Intención de voto calculada solo con estudios de cobertura de la pregunta ≥ 50 %; quedan fuera 10 estudios 2004-2011 sin la pregunta extraída (así no se fabrican ceros falsos).",
+   "Ideología autoubicada 1-10 (1 = izquierda, 10 = derecha). Las escalas 1-7 se reescalan a 1-10 en origen; la distribución se agrupa por redondeo al entero.",
+   "Muestras provinciales pequeñas en provincias poco pobladas: cada celda publica su n.",
+   "Solo agregados: ningún microdato reidentificable se publica."
+  ],
+  "corte": "ideología media autoubicada por año",
+  "unidad": "media 1-10 (1 izquierda, 10 derecha)",
+  "nota": "Evolución del electorado que se autoubica. Los huecos (2004-2011) son estudios sin la variable extraída, no un valor 0."
+ },
+ "escala": {
+  "min": 1,
+  "max": 10
+ },
+ "serie": [
+  {
+   "anio": 1977,
+   "media": 5.049,
+   "p25": 4.0,
+   "p75": 5.5,
+   "n": 16280,
+   "n_estudios": 1
+  },
+  {
+   "anio": 1979,
+   "media": 4.877,
+   "p25": 4.0,
+   "p75": 5.5,
+   "n": 35601,
+   "n_estudios": 2
+  },
+  {
+   "anio": 1986,
+   "media": 4.629,
+   "p25": 3.0,
+   "p75": 6.0,
+   "n": 7876,
+   "n_estudios": 2
+  },
+  {
+   "anio": 1989,
+   "media": 4.593,
+   "p25": 3.0,
+   "p75": 6.0,
+   "n": 44404,
+   "n_estudios": 14
+  },
+  {
+   "anio": 1993,
+   "media": 4.625,
+   "p25": 3.0,
+   "p75": 6.0,
+   "n": 1374,
+   "n_estudios": 1
+  },
+  {
+   "anio": 1994,
+   "media": 4.593,
+   "p25": 3.0,
+   "p75": 6.0,
+   "n": 3113,
+   "n_estudios": 1
+  },
+  {
+   "anio": 1996,
+   "media": 4.686,
+   "p25": 3.0,
+   "p75": 6.0,
+   "n": 9268,
+   "n_estudios": 2
+  },
+  {
+   "anio": 2015,
+   "media": 4.665,
+   "p25": 3.0,
+   "p75": 6.0,
+   "n": 25252,
+   "n_estudios": 3
+  },
+  {
+   "anio": 2016,
+   "media": 4.674,
+   "p25": 3.0,
+   "p75": 6.0,
+   "n": 14489,
+   "n_estudios": 1
+  },
+  {
+   "anio": 2019,
+   "media": 4.598,
+   "p25": 3.0,
+   "p75": 6.0,
+   "n": 47749,
+   "n_estudios": 4
+  },
+  {
+   "anio": 2022,
+   "media": 5.005,
+   "p25": 3.0,
+   "p75": 7.0,
+   "n": 13390,
+   "n_estudios": 3
+  },
+  {
+   "anio": 2023,
+   "media": 4.769,
+   "p25": 3.0,
+   "p75": 7.0,
+   "n": 76858,
+   "n_estudios": 5
+  },
+  {
+   "anio": 2024,
+   "media": 4.93,
+   "p25": 3.0,
+   "p75": 7.0,
+   "n": 18132,
+   "n_estudios": 4
+  },
+  {
+   "anio": 2025,
+   "media": 5.123,
+   "p25": 3.0,
+   "p75": 7.0,
+   "n": 1570,
+   "n_estudios": 1
+  }
+ ]
+}

@@ -1,0 +1,353 @@
+{
+ "meta": {
+  "generacion": "2026-10-15T20:57:47+00:00",
+  "fuente": "data/processed/microdatos/individual.parquet",
+  "dataset": "Microdatos CIS a nivel individual (fase 4-c), estudios 1977-2025",
+  "n_entrevistas": 532498,
+  "n_estudios": 55,
+  "cobertura_temporal": "1977-2025",
+  "ponderacion": "Todos los agregados ponderan por `peso` (ponderador nacional preferente). Los pesos se normalizan por estudio (suma = n del estudio) antes de agrupar, para no mezclar escalas de ponderación distintas.",
+  "base": "CIS = % sobre censo: el denominador es el total de entrevistas del grupo (incluye abstención, NS, NC y no declarado). NO es % sobre voto válido; por eso los partidos suman bastante menos de 100 %.",
+  "advertencias": [
+   "CIS = % sobre censo (todas las entrevistas), no sobre voto válido.",
+   "Intención de voto calculada solo con estudios de cobertura de la pregunta ≥ 50 %; quedan fuera 10 estudios 2004-2011 sin la pregunta extraída (así no se fabrican ceros falsos).",
+   "Ideología autoubicada 1-10 (1 = izquierda, 10 = derecha). Las escalas 1-7 se reescalan a 1-10 en origen; la distribución se agrupa por redondeo al entero.",
+   "Muestras provinciales pequeñas en provincias poco pobladas: cada celda publica su n.",
+   "Solo agregados: ningún microdato reidentificable se publica."
+  ],
+  "corte": "perfil sociodemográfico por partido votado (intención)",
+  "unidad": "edad media (años) y % sobre el electorado de cada partido",
+  "nota": "Edad restringida a 15-100 años (se descartan 0 / fuera de rango). Estudios armonizados a 6 niveles; NC/Otros agrupa no-consta y no-reglados."
+ },
+ "niveles_estudios": [
+  "Sin estudios",
+  "Primaria",
+  "Secundaria",
+  "FP",
+  "Superiores",
+  "NC/Otros"
+ ],
+ "total": {
+  "n": 532498,
+  "edad_media": 47.589,
+  "sexo": {
+   "Hombre": 39.4184,
+   "Mujer": 43.2943,
+   "NC": 17.2873
+  },
+  "estudios": {
+   "Sin estudios": 15.0956,
+   "Primaria": 17.7968,
+   "Secundaria": 18.4046,
+   "FP": 9.1711,
+   "Superiores": 15.944,
+   "NC/Otros": 2.5059
+  }
+ },
+ "partidos": [
+  {
+   "partido": "PACMA",
+   "n": 932,
+   "edad_media": 38.84,
+   "n_edad": 932,
+   "sexo": {
+    "Hombre": 32.3732,
+    "Mujer": 67.6268,
+    "NC": 0.0
+   },
+   "estudios": {
+    "Sin estudios": 1.4968,
+    "Primaria": 3.2016,
+    "Secundaria": 34.359,
+    "FP": 22.1011,
+    "Superiores": 32.9339,
+    "NC/Otros": 5.9076
+   }
+  },
+  {
+   "partido": "CUP",
+   "n": 395,
+   "edad_media": 42.503,
+   "n_edad": 395,
+   "sexo": {
+    "Hombre": 53.581,
+    "Mujer": 46.419,
+    "NC": 0.0
+   },
+   "estudios": {
+    "Sin estudios": 0.2094,
+    "Primaria": 2.6924,
+    "Secundaria": 20.4356,
+    "FP": 20.4827,
+    "Superiores": 56.0092,
+    "NC/Otros": 0.1708
+   }
+  },
+  {
+   "partido": "CDS",
+   "n": 3557,
+   "edad_media": 43.491,
+   "n_edad": 3546,
+   "sexo": {
+    "Hombre": 44.1785,
+    "Mujer": 55.5511,
+    "NC": 0.2704
+   },
+   "estudios": {
+    "Sin estudios": 23.7172,
+    "Primaria": 36.398,
+    "Secundaria": 16.162,
+    "FP": 8.0267,
+    "Superiores": 9.8407,
+    "NC/Otros": 2.5215
+   }
+  },
+  {
+   "partido": "BNG",
+   "n": 1217,
+   "edad_media": 44.09,
+   "n_edad": 1217,
+   "sexo": {
+    "Hombre": 56.8052,
+    "Mujer": 43.1948,
+    "NC": 0.0
+   },
+   "estudios": {
+    "Sin estudios": 1.4399,
+    "Primaria": 6.9922,
+    "Secundaria": 24.8778,
+    "FP": 17.7915,
+    "Superiores": 39.1836,
+    "NC/Otros": 0.603
+   }
+  },
+  {
+   "partido": "SUMAR",
+   "n": 33822,
+   "edad_media": 44.337,
+   "n_edad": 33811,
+   "sexo": {
+    "Hombre": 54.6161,
+    "Mujer": 45.3455,
+    "NC": 0.0383
+   },
+   "estudios": {
+    "Sin estudios": 6.3373,
+    "Primaria": 11.298,
+    "Secundaria": 26.2432,
+    "FP": 16.2714,
+    "Superiores": 32.445,
+    "NC/Otros": 4.4049
+   }
+  },
+  {
+   "partido": "EH BILDU",
+   "n": 2272,
+   "edad_media": 44.699,
+   "n_edad": 2272,
+   "sexo": {
+    "Hombre": 56.1509,
+    "Mujer": 43.8491,
+    "NC": 0.0
+   },
+   "estudios": {
+    "Sin estudios": 2.3534,
+    "Primaria": 8.2358,
+    "Secundaria": 24.4139,
+    "FP": 25.9967,
+    "Superiores": 32.566,
+    "NC/Otros": 3.4606
+   }
+  },
+  {
+   "partido": "CIUDADANOS",
+   "n": 7975,
+   "edad_media": 44.711,
+   "n_edad": 7975,
+   "sexo": {
+    "Hombre": 52.3743,
+    "Mujer": 47.6192,
+    "NC": 0.0065
+   },
+   "estudios": {
+    "Sin estudios": 2.1088,
+    "Primaria": 7.259,
+    "Secundaria": 32.3046,
+    "FP": 20.1294,
+    "Superiores": 29.5905,
+    "NC/Otros": 8.5649
+   }
+  },
+  {
+   "partido": "OTROS",
+   "n": 65689,
+   "edad_media": 45.155,
+   "n_edad": 65389,
+   "sexo": {
+    "Hombre": 45.7462,
+    "Mujer": 54.0768,
+    "NC": 0.1769
+   },
+   "estudios": {
+    "Sin estudios": 24.2964,
+    "Primaria": 26.3111,
+    "Secundaria": 17.9649,
+    "FP": 7.8115,
+    "Superiores": 16.2413,
+    "NC/Otros": 3.5617
+   }
+  },
+  {
+   "partido": "VOX",
+   "n": 10697,
+   "edad_media": 46.182,
+   "n_edad": 10697,
+   "sexo": {
+    "Hombre": 64.2041,
+    "Mujer": 35.7959,
+    "NC": 0.0
+   },
+   "estudios": {
+    "Sin estudios": 2.7457,
+    "Primaria": 8.2731,
+    "Secundaria": 35.8514,
+    "FP": 21.0801,
+    "Superiores": 31.3905,
+    "NC/Otros": 0.6592
+   }
+  },
+  {
+   "partido": "PSOE",
+   "n": 81278,
+   "edad_media": 49.205,
+   "n_edad": 81228,
+   "sexo": {
+    "Hombre": 47.945,
+    "Mujer": 52.0182,
+    "NC": 0.0367
+   },
+   "estudios": {
+    "Sin estudios": 19.1194,
+    "Primaria": 23.6112,
+    "Secundaria": 21.7036,
+    "FP": 10.6261,
+    "Superiores": 16.8997,
+    "NC/Otros": 2.9352
+   }
+  },
+  {
+   "partido": "ERC",
+   "n": 3325,
+   "edad_media": 49.205,
+   "n_edad": 3325,
+   "sexo": {
+    "Hombre": 53.4897,
+    "Mujer": 46.5103,
+    "NC": 0.0
+   },
+   "estudios": {
+    "Sin estudios": 1.3333,
+    "Primaria": 9.0385,
+    "Secundaria": 27.0409,
+    "FP": 19.715,
+    "Superiores": 35.1989,
+    "NC/Otros": 5.0564
+   }
+  },
+  {
+   "partido": "PP",
+   "n": 70850,
+   "edad_media": 51.016,
+   "n_edad": 70822,
+   "sexo": {
+    "Hombre": 48.6665,
+    "Mujer": 51.2938,
+    "NC": 0.0397
+   },
+   "estudios": {
+    "Sin estudios": 16.5066,
+    "Primaria": 22.7155,
+    "Secundaria": 22.1438,
+    "FP": 9.4491,
+    "Superiores": 21.0908,
+    "NC/Otros": 3.0018
+   }
+  },
+  {
+   "partido": "JXCAT",
+   "n": 4053,
+   "edad_media": 51.245,
+   "n_edad": 4047,
+   "sexo": {
+    "Hombre": 48.7773,
+    "Mujer": 51.2227,
+    "NC": 0.0
+   },
+   "estudios": {
+    "Sin estudios": 8.7399,
+    "Primaria": 25.579,
+    "Secundaria": 19.5768,
+    "FP": 10.3648,
+    "Superiores": 21.5271,
+    "NC/Otros": 3.3757
+   }
+  },
+  {
+   "partido": "CC",
+   "n": 321,
+   "edad_media": 51.455,
+   "n_edad": 321,
+   "sexo": {
+    "Hombre": 48.2956,
+    "Mujer": 51.7044,
+    "NC": 0.0
+   },
+   "estudios": {
+    "Sin estudios": 4.6162,
+    "Primaria": 9.1277,
+    "Secundaria": 32.6877,
+    "FP": 16.6086,
+    "Superiores": 35.1107,
+    "NC/Otros": 1.8491
+   }
+  },
+  {
+   "partido": "PNV",
+   "n": 3139,
+   "edad_media": 52.905,
+   "n_edad": 3139,
+   "sexo": {
+    "Hombre": 48.2219,
+    "Mujer": 51.6841,
+    "NC": 0.094
+   },
+   "estudios": {
+    "Sin estudios": 10.4925,
+    "Primaria": 26.4388,
+    "Secundaria": 18.0529,
+    "FP": 16.4861,
+    "Superiores": 20.4722,
+    "NC/Otros": 3.1035
+   }
+  },
+  {
+   "partido": "NA+",
+   "n": 225,
+   "edad_media": 57.009,
+   "n_edad": 225,
+   "sexo": {
+    "Hombre": 52.9264,
+    "Mujer": 47.0736,
+    "NC": 0.0
+   },
+   "estudios": {
+    "Sin estudios": 5.3222,
+    "Primaria": 11.4286,
+    "Secundaria": 25.2395,
+    "FP": 13.5151,
+    "Superiores": 43.1226,
+    "NC/Otros": 1.372
+   }
+  }
+ ]
+}

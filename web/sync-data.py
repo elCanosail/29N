@@ -135,7 +135,7 @@ def gen_forecast() -> int:
         q = d.get("cuantiles", {})
         partidos.append({
             "partido": nombre,
-            "punto": round(d["punto"], 2),
+            "punto": round(d["punto"], 3),
             "p10": round(q.get("0.1", d["punto"]), 2),
             "p20": round(q.get("0.2", d["punto"]), 2),
             "p50": round(q.get("0.5", d["punto"]), 2),
