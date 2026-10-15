@@ -73,11 +73,16 @@ Web que expone el histórico completo de encuestas electorales españolas (CIS e
 - [x] Esquema unificado con CIS (partidos canónicos del diccionario) + log de exclusiones público (8 exclusiones con motivo)
 - [x] Correcciones de sondeo previo: "Hand Research" y "Cercle d'Estudis" no existen como encuestadores de generales (excluidos; homólogo real: CEO, ámbito catalán)
 
-### Fase 4 — Modelo (semana 4-5)
-- [ ] Serie ponderada por partido con pesos de calidad
-- [ ] TimesFM estatal + backtest contra ≥5 elecciones (MAE por partido documentado)
-- [ ] Desagregación provincial por swing + validación backtest provincial
-- [ ] Simulación D'Hondt 10.000 runs → JSON de predicción por provincia con intervalos
+### Fase 4 — Modelo (semana 4-5) — CERRADA 15-10-2026
+- [x] Serie ponderada por partido con pesos de calidad (recencia exponencial, √n, scoring de encuestador, corrección EB de sesgo de casa restada)
+- [x] Backtest contra 5 elecciones (20D-2015, 26J-2016, 28A-2019, 10N-2019, 23J-2023), sin fuga de datos, n=59: **baseline 1,234 pp · ensemble 1,236 · TimesFM 1,272**. Veredicto sin maquillaje: TimesFM NO mejora al baseline ingenuo (empate estadístico); punto primario = baseline, TimesFM publicado como contraste. Documentado en backtest.json y docs/notes/modelo.md
+- [x] Desagregación provincial por swing proporcional con calibración por punto fijo (el aditivo destruía a los partidos concentrados)
+- [x] Simulación D'Hondt 10.000 runs → escaños por provincia con intervalos; coherencia estatal-provincial verificada en fresco (3/3 tests, desviación máx 0,0085 pp)
+- [x] Filtros documentados: CIS no_validada fuera, no estatales fuera, publicación incompleta fuera (incl. 40dB 08-10-2026)
+
+### Fase 4-c — Microdatos/MRP — extracción cerrada 15-10-2026; MRP en curso
+- [x] Dataset individual: 532.498 entrevistas, 55 estudios, 1977-2025 (individual.parquet); validación 35/35 a ±0,1 pp (Δmax 0,0322 pp); censo INE 66600 identificado (MRP viable, con límites documentados)
+- [~] MRP provincial: en construcción (backtest 2015-2019 vs swing uniforme, con Censo 2011 o supuesto documentado)
 
 ### Fase 5 — Web y publicación (semanas 5-6)
 - [ ] `DESIGN.md` (Google Stitch format)
