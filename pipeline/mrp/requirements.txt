@@ -1,0 +1,9 @@
+# Fase 4-c (segundo uso) — MRP provincial
+# Entorno: /root/.venvs/29n-mrp  (creado con --system-site-packages)
+#
+#   python3 -m venv --system-site-packages /root/.venvs/29n-mrp
+#   /root/.venvs/29n-mrp/bin/pip install -r pipeline/mrp/requirements.txt
+#
+# numpy/pandas/pyarrow ya vienen del sistema; aquí solo lo específico del MRP.
+scikit-learn>=1.4
+statsmodels>=0.14

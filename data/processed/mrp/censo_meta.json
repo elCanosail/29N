@@ -1,0 +1,70 @@
+{
+ "tabla": "66600",
+ "fuente": "INEbase",
+ "api": {
+  "bytes": 62,
+  "url": "https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/66600?nult=1",
+  "respuesta_head": "{\"status\" : \"No puede mostrarse por restricciones de volumen\"}",
+  "aceptado": false
+ },
+ "csv_fallback": {
+  "cache": "/root/.openclaw/workspace/projects/29n/data/raw/ine/66600.csv",
+  "bytes": 93501771
+ },
+ "celdas": 8736,
+ "periodos": [
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "poblacion_total_por_periodo": {
+  "2021": 39216107,
+  "2022": 39398109,
+  "2023": 40007177,
+  "2024": 40594509
+ },
+ "poblacion_total_2024": 40594509,
+ "provincias": 52,
+ "grupos_edad": [
+  "18-24",
+  "25-34",
+  "35-44",
+  "45-54",
+  "55-64",
+  "65-74",
+  "75+"
+ ],
+ "grupos_educacion": {
+  "Sin estudios": "BAJO",
+  "Educación primaria": "BAJO",
+  "Primera etapa de Educación Secundaria y similar": "MEDIO",
+  "Segunda etapa de educación secundaria, con orientación general": "MEDIO",
+  "Segunda etapa de educación secundaria con orientación profesional, Educación postsecundaria no superior": "MEDIO",
+  "Enseñanzas de formación profesional, artes plásticas y diseño y deportivas de grado superior y equivalentes": "ALTO",
+  "Grados universitarios de hasta 240 créditos ECTS, diplomados universitarios y equivalentes": "ALTO",
+  "Grados universitarios de más de 240 créditos ECTS, licenciados y equivalentes": "ALTO",
+  "Másteres, especialidades en Ciencias de la Salud por el sistema de residencia y similares": "ALTO",
+  "Doctorado universitario": "ALTO"
+ },
+ "mapeo_educacion": {
+  "BAJO": [
+   "Sin estudios",
+   "Educación primaria"
+  ],
+  "MEDIO": [
+   "Primera etapa de Educación Secundaria y similar",
+   "Segunda etapa de educación secundaria, con orientación general",
+   "Segunda etapa de educación secundaria con orientación profesional, Educación postsecundaria no superior"
+  ],
+  "ALTO": [
+   "Enseñanzas de formación profesional, artes plásticas y diseño y deportivas de grado superior y equivalentes",
+   "Grados universitarios de hasta 240 créditos ECTS, diplomados universitarios y equivalentes",
+   "Grados universitarios de más de 240 créditos ECTS, licenciados y equivalentes",
+   "Másteres, especialidades en Ciencias de la Salud por el sistema de residencia y similares",
+   "Doctorado universitario"
+  ]
+ },
+ "supuesto_backtest": "La serie 66600 con sexo x edad x estudios por provincia arranca en 2021. El Censo 2011 no tiene descarga CSV/API por provincia. El backtest 2015-2023 usa la estructura 2021 como aproximacion (la mas cercana disponible).",
+ "nota_api": "{\"status\" : \"No puede mostrarse por restricciones de volumen\"}"
+}

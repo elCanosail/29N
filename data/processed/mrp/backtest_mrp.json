@@ -1,0 +1,1586 @@
+{
+ "generado": "2026-10-15",
+ "metrica": "MAE provincial en % sobre voto válido, normalizado al universo (13 partidos modelados + Ciudadanos), 52 provincias",
+ "universo": [
+  "PP",
+  "PSOE",
+  "VOX",
+  "SUMAR",
+  "ERC",
+  "JXCAT",
+  "PNV",
+  "EH BILDU",
+  "BNG",
+  "CUP",
+  "CC",
+  "NA+",
+  "PACMA",
+  "CIUDADANOS"
+ ],
+ "ventana_entrenamiento_dias": 1095,
+ "regularizacion_C": 1.0,
+ "swing_floor_pp": 0.1,
+ "elecciones": {
+  "2015-12-20": {
+   "estudios_entrenamiento": [
+    "3117",
+    "7715"
+   ],
+   "filas_entrenamiento": 17403,
+   "filas_entrenamiento_anclado": 17403,
+   "censo_periodo": 2021,
+   "cobertura_muestras_pp": 61.63,
+   "nacional_real": {
+    "PP": 29.54,
+    "PSOE": 22.635,
+    "VOX": 0.237,
+    "SUMAR": 25.069,
+    "ERC": 2.456,
+    "JXCAT": 2.315,
+    "PNV": 1.234,
+    "EH BILDU": 0.934,
+    "BNG": 0.0,
+    "CUP": 0.0,
+    "CC": 0.334,
+    "NA+": 0.0,
+    "PACMA": 0.9,
+    "CIUDADANOS": 14.346
+   },
+   "nacional_encuestas": {
+    "PP": 26.221,
+    "PSOE": 24.133,
+    "VOX": 0.0,
+    "SUMAR": 23.551,
+    "ERC": 2.713,
+    "JXCAT": 1.941,
+    "PNV": 1.18,
+    "EH BILDU": 1.194,
+    "BNG": 0.184,
+    "CUP": 0.0,
+    "CC": 0.0,
+    "NA+": 0.0,
+    "PACMA": 0.0,
+    "CIUDADANOS": 18.884
+   },
+   "nacional_mrp_crudo": {
+    "PP": 26.565,
+    "PSOE": 22.149,
+    "VOX": 0.0,
+    "SUMAR": 24.238,
+    "ERC": 3.101,
+    "JXCAT": 2.038,
+    "PNV": 1.329,
+    "EH BILDU": 1.316,
+    "BNG": 0.188,
+    "CUP": 0.0,
+    "CC": 0.0,
+    "NA+": 0.0,
+    "PACMA": 0.0,
+    "CIUDADANOS": 19.076
+   },
+   "tests": {
+    "A_objetivo_nacional_real": {
+     "mrp": {
+      "mae_global": 1.0986,
+      "mae_partidos_ge1": 1.9798,
+      "mae_ponderado_votos": 1.0385,
+      "mae_por_partido": {
+       "PP": 4.3754,
+       "PSOE": 3.0807,
+       "VOX": 0.1686,
+       "SUMAR": 3.2469,
+       "ERC": 0.3618,
+       "JXCAT": 0.4089,
+       "PNV": 0.3778,
+       "EH BILDU": 0.2191,
+       "BNG": 0.0,
+       "CUP": 0.0,
+       "CC": 0.3294,
+       "NA+": 0.0,
+       "PACMA": 0.8053,
+       "CIUDADANOS": 2.0068
+      }
+     },
+     "mrp_crudo": {
+      "mae_global": 1.3381,
+      "mae_partidos_ge1": 2.3892,
+      "mae_ponderado_votos": 1.3606,
+      "mae_por_partido": {
+       "PP": 4.308,
+       "PSOE": 3.0548,
+       "VOX": 0.1686,
+       "SUMAR": 3.3024,
+       "ERC": 0.4202,
+       "JXCAT": 0.3597,
+       "PNV": 0.3449,
+       "EH BILDU": 0.5175,
+       "BNG": 0.1882,
+       "CUP": 0.0,
+       "CC": 0.3294,
+       "NA+": 0.0,
+       "PACMA": 0.8053,
+       "CIUDADANOS": 4.9346
+      }
+     },
+     "swing": {
+      "mae_global": 2.9279,
+      "mae_partidos_ge1": 5.6854,
+      "mae_ponderado_votos": 2.7441,
+      "mae_por_partido": {
+       "PP": 7.1825,
+       "PSOE": 5.7563,
+       "VOX": 0.1686,
+       "SUMAR": 10.8672,
+       "ERC": 0.8156,
+       "JXCAT": 0.4016,
+       "PNV": 1.2923,
+       "EH BILDU": 0.5017,
+       "BNG": 0.0,
+       "CUP": 0.0,
+       "CC": 0.0565,
+       "NA+": 0.0,
+       "PACMA": 0.4651,
+       "CIUDADANOS": 13.4825
+      }
+     },
+     "swing_fix": {
+      "mae_global": 1.685,
+      "mae_partidos_ge1": 3.2426,
+      "mae_ponderado_votos": 1.4495,
+      "mae_por_partido": {
+       "PP": 4.0495,
+       "PSOE": 4.1927,
+       "VOX": 0.1633,
+       "SUMAR": 8.787,
+       "ERC": 0.7871,
+       "JXCAT": 0.264,
+       "PNV": 1.166,
+       "EH BILDU": 0.3072,
+       "BNG": 0.0,
+       "CUP": 0.0,
+       "CC": 0.1232,
+       "NA+": 0.0,
+       "PACMA": 0.2975,
+       "CIUDADANOS": 3.4519
+      }
+     },
+     "mrp_anclado": {
+      "mae_global": 1.0212,
+      "mae_partidos_ge1": 1.7979,
+      "mae_ponderado_votos": 0.981,
+      "mae_por_partido": {
+       "PP": 2.7688,
+       "PSOE": 2.8143,
+       "VOX": 0.1686,
+       "SUMAR": 3.7197,
+       "ERC": 0.3699,
+       "JXCAT": 0.2814,
+       "PNV": 0.4632,
+       "EH BILDU": 0.4086,
+       "BNG": 0.0,
+       "CUP": 0.0,
+       "CC": 0.3294,
+       "NA+": 0.0,
+       "PACMA": 0.8053,
+       "CIUDADANOS": 2.1681
+      }
+     },
+     "_mejor_swing": 1.685,
+     "_veredicto_global": "MRP gana",
+     "_veredicto_big": "MRP gana"
+    },
+    "B_objetivo_nacional_encuestas": {
+     "mrp": {
+      "mae_global": 1.34,
+      "mae_partidos_ge1": 2.4142,
+      "mae_ponderado_votos": 1.3584,
+      "mae_por_partido": {
+       "PP": 4.4558,
+       "PSOE": 3.1565,
+       "VOX": 0.1686,
+       "SUMAR": 3.5048,
+       "ERC": 0.3353,
+       "JXCAT": 0.3886,
+       "PNV": 0.3597,
+       "EH BILDU": 0.3732,
+       "BNG": 0.1842,
+       "CUP": 0.0,
+       "CC": 0.3294,
+       "NA+": 0.0,
+       "PACMA": 0.8053,
+       "CIUDADANOS": 4.6989
+      }
+     },
+     "mrp_crudo": {
+      "mae_global": 1.3381,
+      "mae_partidos_ge1": 2.3892,
+      "mae_ponderado_votos": 1.3606,
+      "mae_por_partido": {
+       "PP": 4.308,
+       "PSOE": 3.0548,
+       "VOX": 0.1686,
+       "SUMAR": 3.3024,
+       "ERC": 0.4202,
+       "JXCAT": 0.3597,
+       "PNV": 0.3449,
+       "EH BILDU": 0.5175,
+       "BNG": 0.1882,
+       "CUP": 0.0,
+       "CC": 0.3294,
+       "NA+": 0.0,
+       "PACMA": 0.8053,
+       "CIUDADANOS": 4.9346
+      }
+     },
+     "swing": {
+      "mae_global": 3.0839,
+      "mae_partidos_ge1": 5.8208,
+      "mae_ponderado_votos": 2.9164,
+      "mae_por_partido": {
+       "PP": 5.3239,
+       "PSOE": 8.4047,
+       "VOX": 0.1686,
+       "SUMAR": 10.8608,
+       "ERC": 1.0494,
+       "JXCAT": 0.3248,
+       "PNV": 1.2997,
+       "EH BILDU": 0.869,
+       "BNG": 0.2563,
+       "CUP": 0.0,
+       "CC": 0.3294,
+       "NA+": 0.0,
+       "PACMA": 0.8053,
+       "CIUDADANOS": 13.4825
+      }
+     },
+     "swing_fix": {
+      "mae_global": 2.0494,
+      "mae_partidos_ge1": 3.8142,
+      "mae_ponderado_votos": 1.7243,
+      "mae_por_partido": {
+       "PP": 5.1277,
+       "PSOE": 4.3359,
+       "VOX": 0.1686,
+       "SUMAR": 8.2959,
+       "ERC": 0.8587,
+       "JXCAT": 0.3109,
+       "PNV": 1.1254,
+       "EH BILDU": 0.4833,
+       "BNG": 0.2058,
+       "CUP": 0.0,
+       "CC": 0.3294,
+       "NA+": 0.0,
+       "PACMA": 0.8053,
+       "CIUDADANOS": 6.6451
+      }
+     },
+     "mrp_anclado": {
+      "mae_global": 1.3964,
+      "mae_partidos_ge1": 2.5169,
+      "mae_ponderado_votos": 1.36,
+      "mae_por_partido": {
+       "PP": 4.255,
+       "PSOE": 3.2538,
+       "VOX": 0.1686,
+       "SUMAR": 4.0946,
+       "ERC": 0.2943,
+       "JXCAT": 0.1836,
+       "PNV": 0.483,
+       "EH BILDU": 0.4374,
+       "BNG": 0.1901,
+       "CUP": 0.0,
+       "CC": 0.3294,
+       "NA+": 0.0,
+       "PACMA": 0.8053,
+       "CIUDADANOS": 5.054
+      }
+     },
+     "_mejor_swing": 2.0494,
+     "_veredicto_global": "MRP gana",
+     "_veredicto_big": "MRP gana"
+    }
+   }
+  },
+  "2016-06-26": {
+   "estudios_entrenamiento": [
+    "3117",
+    "3141",
+    "7715"
+   ],
+   "filas_entrenamiento": 34864,
+   "filas_entrenamiento_anclado": 34864,
+   "censo_periodo": 2021,
+   "cobertura_muestras_pp": 61.966,
+   "nacional_real": {
+    "PP": 33.547,
+    "PSOE": 22.997,
+    "VOX": 0.199,
+    "SUMAR": 21.492,
+    "ERC": 2.671,
+    "JXCAT": 2.047,
+    "PNV": 1.212,
+    "EH BILDU": 0.83,
+    "BNG": 0.191,
+    "CUP": 0.0,
+    "CC": 0.331,
+    "NA+": 0.0,
+    "PACMA": 1.211,
+    "CIUDADANOS": 13.271
+   },
+   "nacional_encuestas": {
+    "PP": 26.641,
+    "PSOE": 23.822,
+    "VOX": 0.0,
+    "SUMAR": 26.435,
+    "ERC": 2.776,
+    "JXCAT": 1.806,
+    "PNV": 1.193,
+    "EH BILDU": 1.034,
+    "BNG": 0.091,
+    "CUP": 0.0,
+    "CC": 0.0,
+    "NA+": 0.0,
+    "PACMA": 0.0,
+    "CIUDADANOS": 16.202
+   },
+   "nacional_mrp_crudo": {
+    "PP": 27.15,
+    "PSOE": 22.037,
+    "VOX": 0.0,
+    "SUMAR": 26.978,
+    "ERC": 2.982,
+    "JXCAT": 1.888,
+    "PNV": 1.342,
+    "EH BILDU": 1.098,
+    "BNG": 0.097,
+    "CUP": 0.0,
+    "CC": 0.0,
+    "NA+": 0.0,
+    "PACMA": 0.0,
+    "CIUDADANOS": 16.428
+   },
+   "tests": {
+    "A_objetivo_nacional_real": {
+     "mrp": {
+      "mae_global": 0.9325,
+      "mae_partidos_ge1": 1.5176,
+      "mae_ponderado_votos": 0.8789,
+      "mae_por_partido": {
+       "PP": 3.6637,
+       "PSOE": 3.0767,
+       "VOX": 0.1609,
+       "SUMAR": 2.0997,
+       "ERC": 0.3306,
+       "JXCAT": 0.1906,
+       "PNV": 0.2647,
+       "EH BILDU": 0.2242,
+       "BNG": 0.2141,
+       "CUP": 0.0,
+       "CC": 0.3156,
+       "NA+": 0.0,
+       "PACMA": 1.0292,
+       "CIUDADANOS": 1.4853
+      }
+     },
+     "mrp_crudo": {
+      "mae_global": 1.3908,
+      "mae_partidos_ge1": 2.2915,
+      "mae_ponderado_votos": 1.5408,
+      "mae_por_partido": {
+       "PP": 5.7914,
+       "PSOE": 3.1288,
+       "VOX": 0.1609,
+       "SUMAR": 4.019,
+       "ERC": 0.3278,
+       "JXCAT": 0.2385,
+       "PNV": 0.234,
+       "EH BILDU": 0.4513,
+       "BNG": 0.2112,
+       "CUP": 0.0,
+       "CC": 0.3156,
+       "NA+": 0.0,
+       "PACMA": 1.0292,
+       "CIUDADANOS": 3.5634
+      }
+     },
+     "swing": {
+      "mae_global": 0.2795,
+      "mae_partidos_ge1": 0.4431,
+      "mae_ponderado_votos": 0.2699,
+      "mae_por_partido": {
+       "PP": 0.8834,
+       "PSOE": 0.7183,
+       "VOX": 0.0734,
+       "SUMAR": 1.1493,
+       "ERC": 0.0171,
+       "JXCAT": 0.0184,
+       "PNV": 0.0157,
+       "EH BILDU": 0.0631,
+       "BNG": 0.2123,
+       "CUP": 0.0,
+       "CC": 0.0198,
+       "NA+": 0.0,
+       "PACMA": 0.075,
+       "CIUDADANOS": 0.6673
+      }
+     },
+     "swing_fix": {
+      "mae_global": 0.3327,
+      "mae_partidos_ge1": 0.4914,
+      "mae_ponderado_votos": 0.3264,
+      "mae_por_partido": {
+       "PP": 0.9688,
+       "PSOE": 0.7195,
+       "VOX": 0.0792,
+       "SUMAR": 1.0588,
+       "ERC": 0.1303,
+       "JXCAT": 0.1152,
+       "PNV": 0.1547,
+       "EH BILDU": 0.1377,
+       "BNG": 0.3731,
+       "CUP": 0.0,
+       "CC": 0.1365,
+       "NA+": 0.0,
+       "PACMA": 0.0867,
+       "CIUDADANOS": 0.6972
+      }
+     },
+     "mrp_anclado": {
+      "mae_global": 0.7457,
+      "mae_partidos_ge1": 1.183,
+      "mae_ponderado_votos": 0.7206,
+      "mae_por_partido": {
+       "PP": 2.1234,
+       "PSOE": 2.0956,
+       "VOX": 0.1609,
+       "SUMAR": 1.9553,
+       "ERC": 0.1237,
+       "JXCAT": 0.1753,
+       "PNV": 0.3047,
+       "EH BILDU": 0.2959,
+       "BNG": 0.2039,
+       "CUP": 0.0,
+       "CC": 0.3156,
+       "NA+": 0.0,
+       "PACMA": 1.0292,
+       "CIUDADANOS": 1.6568
+      }
+     },
+     "_mejor_swing": 0.2795,
+     "_veredicto_global": "swing gana",
+     "_veredicto_big": "swing gana"
+    },
+    "B_objetivo_nacional_encuestas": {
+     "mrp": {
+      "mae_global": 1.3649,
+      "mae_partidos_ge1": 2.2543,
+      "mae_ponderado_votos": 1.5069,
+      "mae_por_partido": {
+       "PP": 6.2971,
+       "PSOE": 2.9716,
+       "VOX": 0.1609,
+       "SUMAR": 3.5886,
+       "ERC": 0.3143,
+       "JXCAT": 0.2673,
+       "PNV": 0.2518,
+       "EH BILDU": 0.3866,
+       "BNG": 0.2115,
+       "CUP": 0.0,
+       "CC": 0.3156,
+       "NA+": 0.0,
+       "PACMA": 1.0292,
+       "CIUDADANOS": 3.3145
+      }
+     },
+     "mrp_crudo": {
+      "mae_global": 1.3908,
+      "mae_partidos_ge1": 2.2915,
+      "mae_ponderado_votos": 1.5408,
+      "mae_por_partido": {
+       "PP": 5.7914,
+       "PSOE": 3.1288,
+       "VOX": 0.1609,
+       "SUMAR": 4.019,
+       "ERC": 0.3278,
+       "JXCAT": 0.2385,
+       "PNV": 0.234,
+       "EH BILDU": 0.4513,
+       "BNG": 0.2112,
+       "CUP": 0.0,
+       "CC": 0.3156,
+       "NA+": 0.0,
+       "PACMA": 1.0292,
+       "CIUDADANOS": 3.5634
+      }
+     },
+     "swing": {
+      "mae_global": 1.346,
+      "mae_partidos_ge1": 2.2328,
+      "mae_ponderado_votos": 1.3241,
+      "mae_por_partido": {
+       "PP": 7.4039,
+       "PSOE": 1.5374,
+       "VOX": 0.1609,
+       "SUMAR": 4.647,
+       "ERC": 0.1054,
+       "JXCAT": 0.1503,
+       "PNV": 0.0126,
+       "EH BILDU": 0.2926,
+       "BNG": 0.2123,
+       "CUP": 0.0,
+       "CC": 0.3156,
+       "NA+": 0.0,
+       "PACMA": 1.0292,
+       "CIUDADANOS": 2.9764
+      }
+     },
+     "swing_fix": {
+      "mae_global": 1.3636,
+      "mae_partidos_ge1": 2.2595,
+      "mae_ponderado_votos": 1.3442,
+      "mae_por_partido": {
+       "PP": 7.4523,
+       "PSOE": 1.4196,
+       "VOX": 0.1609,
+       "SUMAR": 4.6122,
+       "ERC": 0.1527,
+       "JXCAT": 0.2593,
+       "PNV": 0.1927,
+       "EH BILDU": 0.2479,
+       "BNG": 0.2899,
+       "CUP": 0.0,
+       "CC": 0.3156,
+       "NA+": 0.0,
+       "PACMA": 1.0292,
+       "CIUDADANOS": 2.9579
+      }
+     },
+     "mrp_anclado": {
+      "mae_global": 1.3692,
+      "mae_partidos_ge1": 2.2623,
+      "mae_ponderado_votos": 1.4455,
+      "mae_por_partido": {
+       "PP": 6.9851,
+       "PSOE": 2.5691,
+       "VOX": 0.1609,
+       "SUMAR": 3.2676,
+       "ERC": 0.1297,
+       "JXCAT": 0.1336,
+       "PNV": 0.3033,
+       "EH BILDU": 0.3867,
+       "BNG": 0.2068,
+       "CUP": 0.0,
+       "CC": 0.3156,
+       "NA+": 0.0,
+       "PACMA": 1.0292,
+       "CIUDADANOS": 3.6809
+      }
+     },
+     "_mejor_swing": 1.346,
+     "_veredicto_global": "swing gana",
+     "_veredicto_big": "swing gana"
+    }
+   }
+  },
+  "2019-04-28": {
+   "estudios_entrenamiento": [
+    "3141",
+    "3242",
+    "3245"
+   ],
+   "filas_entrenamiento": 51151,
+   "filas_entrenamiento_anclado": 50910,
+   "censo_periodo": 2021,
+   "cobertura_muestras_pp": 55.179,
+   "nacional_real": {
+    "PP": 17.143,
+    "PSOE": 29.431,
+    "VOX": 10.53,
+    "SUMAR": 15.445,
+    "ERC": 3.997,
+    "JXCAT": 1.962,
+    "PNV": 1.551,
+    "EH BILDU": 1.045,
+    "BNG": 0.37,
+    "CUP": 0.0,
+    "CC": 0.539,
+    "NA+": 0.422,
+    "PACMA": 1.286,
+    "CIUDADANOS": 16.279
+   },
+   "nacional_encuestas": {
+    "PP": 23.827,
+    "PSOE": 32.123,
+    "VOX": 3.291,
+    "SUMAR": 18.593,
+    "ERC": 4.065,
+    "JXCAT": 1.364,
+    "PNV": 1.72,
+    "EH BILDU": 1.365,
+    "BNG": 0.349,
+    "CUP": 0.287,
+    "CC": 0.087,
+    "NA+": 0.0,
+    "PACMA": 0.883,
+    "CIUDADANOS": 12.047
+   },
+   "nacional_mrp_crudo": {
+    "PP": 23.75,
+    "PSOE": 30.701,
+    "VOX": 3.268,
+    "SUMAR": 19.092,
+    "ERC": 4.526,
+    "JXCAT": 1.549,
+    "PNV": 1.783,
+    "EH BILDU": 1.393,
+    "BNG": 0.379,
+    "CUP": 0.335,
+    "CC": 0.086,
+    "NA+": 0.0,
+    "PACMA": 0.858,
+    "CIUDADANOS": 12.279
+   },
+   "tests": {
+    "A_objetivo_nacional_real": {
+     "mrp": {
+      "mae_global": 1.1328,
+      "mae_partidos_ge1": 1.4654,
+      "mae_ponderado_votos": 0.9207,
+      "mae_por_partido": {
+       "PP": 2.547,
+       "PSOE": 3.9139,
+       "VOX": 2.3911,
+       "SUMAR": 2.3473,
+       "ERC": 0.3807,
+       "JXCAT": 0.2532,
+       "PNV": 0.2412,
+       "EH BILDU": 0.1674,
+       "BNG": 0.1946,
+       "CUP": 0.0,
+       "CC": 0.3988,
+       "NA+": 0.6115,
+       "PACMA": 0.4057,
+       "CIUDADANOS": 2.007
+      }
+     },
+     "mrp_crudo": {
+      "mae_global": 2.3075,
+      "mae_partidos_ge1": 3.0826,
+      "mae_ponderado_votos": 2.1462,
+      "mae_por_partido": {
+       "PP": 8.4109,
+       "PSOE": 4.3668,
+       "VOX": 7.8339,
+       "SUMAR": 3.7073,
+       "ERC": 0.4205,
+       "JXCAT": 0.4272,
+       "PNV": 0.3549,
+       "EH BILDU": 0.4632,
+       "BNG": 0.2,
+       "CUP": 0.1755,
+       "CC": 0.4914,
+       "NA+": 0.6115,
+       "PACMA": 0.3923,
+       "CIUDADANOS": 4.4493
+      }
+     },
+     "swing": {
+      "mae_global": 1.1628,
+      "mae_partidos_ge1": 1.5556,
+      "mae_ponderado_votos": 1.0255,
+      "mae_por_partido": {
+       "PP": 2.2772,
+       "PSOE": 3.7331,
+       "VOX": 5.3273,
+       "SUMAR": 1.9105,
+       "ERC": 0.146,
+       "JXCAT": 0.1397,
+       "PNV": 0.0808,
+       "EH BILDU": 0.1247,
+       "BNG": 0.0673,
+       "CUP": 0.0,
+       "CC": 0.0441,
+       "NA+": 0.6115,
+       "PACMA": 0.1716,
+       "CIUDADANOS": 1.6452
+      }
+     },
+     "swing_fix": {
+      "mae_global": 1.0767,
+      "mae_partidos_ge1": 1.359,
+      "mae_ponderado_votos": 0.9127,
+      "mae_por_partido": {
+       "PP": 2.1778,
+       "PSOE": 3.1754,
+       "VOX": 3.7649,
+       "SUMAR": 1.6939,
+       "ERC": 0.2975,
+       "JXCAT": 0.2521,
+       "PNV": 0.2553,
+       "EH BILDU": 0.3061,
+       "BNG": 0.2216,
+       "CUP": 0.0,
+       "CC": 0.2354,
+       "NA+": 1.0268,
+       "PACMA": 0.1629,
+       "CIUDADANOS": 1.5042
+      }
+     },
+     "mrp_anclado": {
+      "mae_global": 0.9948,
+      "mae_partidos_ge1": 1.3002,
+      "mae_ponderado_votos": 0.8717,
+      "mae_por_partido": {
+       "PP": 2.1393,
+       "PSOE": 2.9398,
+       "VOX": 2.3105,
+       "SUMAR": 1.9604,
+       "ERC": 0.2854,
+       "JXCAT": 0.2694,
+       "PNV": 0.2003,
+       "EH BILDU": 0.1675,
+       "BNG": 0.1626,
+       "CUP": 0.0,
+       "CC": 0.1506,
+       "NA+": 0.6115,
+       "PACMA": 0.3864,
+       "CIUDADANOS": 2.3433
+      }
+     },
+     "_mejor_swing": 1.0767,
+     "_veredicto_global": "swing gana",
+     "_veredicto_big": "swing gana"
+    },
+    "B_objetivo_nacional_encuestas": {
+     "mrp": {
+      "mae_global": 2.3314,
+      "mae_partidos_ge1": 3.1187,
+      "mae_ponderado_votos": 2.1505,
+      "mae_por_partido": {
+       "PP": 8.3889,
+       "PSOE": 4.8479,
+       "VOX": 7.8214,
+       "SUMAR": 3.3937,
+       "ERC": 0.3525,
+       "JXCAT": 0.5164,
+       "PNV": 0.323,
+       "EH BILDU": 0.4273,
+       "BNG": 0.2001,
+       "CUP": 0.1491,
+       "CC": 0.4917,
+       "NA+": 0.6115,
+       "PACMA": 0.3902,
+       "CIUDADANOS": 4.7256
+      }
+     },
+     "mrp_crudo": {
+      "mae_global": 2.3075,
+      "mae_partidos_ge1": 3.0826,
+      "mae_ponderado_votos": 2.1462,
+      "mae_por_partido": {
+       "PP": 8.4109,
+       "PSOE": 4.3668,
+       "VOX": 7.8339,
+       "SUMAR": 3.7073,
+       "ERC": 0.4205,
+       "JXCAT": 0.4272,
+       "PNV": 0.3549,
+       "EH BILDU": 0.4632,
+       "BNG": 0.2,
+       "CUP": 0.1755,
+       "CC": 0.4914,
+       "NA+": 0.6115,
+       "PACMA": 0.3923,
+       "CIUDADANOS": 4.4493
+      }
+     },
+     "swing": {
+      "mae_global": 2.1962,
+      "mae_partidos_ge1": 2.9659,
+      "mae_ponderado_votos": 2.0042,
+      "mae_por_partido": {
+       "PP": 6.7972,
+       "PSOE": 4.8651,
+       "VOX": 8.4492,
+       "SUMAR": 3.3756,
+       "ERC": 0.1333,
+       "JXCAT": 0.4659,
+       "PNV": 0.198,
+       "EH BILDU": 0.3836,
+       "BNG": 0.0375,
+       "CUP": 0.0,
+       "CC": 0.4392,
+       "NA+": 0.6115,
+       "PACMA": 0.3459,
+       "CIUDADANOS": 4.6448
+      }
+     },
+     "swing_fix": {
+      "mae_global": 2.1875,
+      "mae_partidos_ge1": 2.9006,
+      "mae_ponderado_votos": 2.038,
+      "mae_por_partido": {
+       "PP": 6.5549,
+       "PSOE": 4.4767,
+       "VOX": 8.2515,
+       "SUMAR": 3.3322,
+       "ERC": 0.2708,
+       "JXCAT": 0.5515,
+       "PNV": 0.1938,
+       "EH BILDU": 0.3277,
+       "BNG": 0.2459,
+       "CUP": 0.2879,
+       "CC": 0.4742,
+       "NA+": 0.6115,
+       "PACMA": 0.3377,
+       "CIUDADANOS": 4.7087
+      }
+     },
+     "mrp_anclado": {
+      "mae_global": 2.1411,
+      "mae_partidos_ge1": 2.8579,
+      "mae_ponderado_votos": 2.0711,
+      "mae_por_partido": {
+       "PP": 7.4369,
+       "PSOE": 4.3549,
+       "VOX": 7.8327,
+       "SUMAR": 2.8526,
+       "ERC": 0.2532,
+       "JXCAT": 0.4798,
+       "PNV": 0.2376,
+       "EH BILDU": 0.4155,
+       "BNG": 0.179,
+       "CUP": 0.1505,
+       "CC": 0.4559,
+       "NA+": 0.6115,
+       "PACMA": 0.3683,
+       "CIUDADANOS": 4.3472
+      }
+     },
+     "_mejor_swing": 2.1875,
+     "_veredicto_global": "swing gana",
+     "_veredicto_big": "swing gana"
+    }
+   }
+  },
+  "2019-11-10": {
+   "estudios_entrenamiento": [
+    "3242",
+    "3245",
+    "3263"
+   ],
+   "filas_entrenamiento": 51279,
+   "filas_entrenamiento_anclado": 51038,
+   "censo_periodo": 2021,
+   "cobertura_muestras_pp": 51.37,
+   "nacional_real": {
+    "PP": 21.848,
+    "PSOE": 29.394,
+    "VOX": 15.826,
+    "SUMAR": 13.504,
+    "ERC": 3.786,
+    "JXCAT": 2.295,
+    "PNV": 1.64,
+    "EH BILDU": 1.227,
+    "BNG": 0.521,
+    "CUP": 1.069,
+    "CC": 0.33,
+    "NA+": 0.429,
+    "PACMA": 0.99,
+    "CIUDADANOS": 7.142
+   },
+   "nacional_encuestas": {
+    "PP": 20.425,
+    "PSOE": 37.998,
+    "VOX": 6.191,
+    "SUMAR": 12.769,
+    "ERC": 4.875,
+    "JXCAT": 1.315,
+    "PNV": 1.922,
+    "EH BILDU": 1.676,
+    "BNG": 0.514,
+    "CUP": 0.522,
+    "CC": 0.202,
+    "NA+": 0.136,
+    "PACMA": 1.351,
+    "CIUDADANOS": 10.105
+   },
+   "nacional_mrp_crudo": {
+    "PP": 20.572,
+    "PSOE": 36.575,
+    "VOX": 6.113,
+    "SUMAR": 13.285,
+    "ERC": 5.299,
+    "JXCAT": 1.469,
+    "PNV": 1.845,
+    "EH BILDU": 1.585,
+    "BNG": 0.574,
+    "CUP": 0.625,
+    "CC": 0.177,
+    "NA+": 0.159,
+    "PACMA": 1.308,
+    "CIUDADANOS": 10.415
+   },
+   "tests": {
+    "A_objetivo_nacional_real": {
+     "mrp": {
+      "mae_global": 1.0796,
+      "mae_partidos_ge1": 1.4009,
+      "mae_ponderado_votos": 0.867,
+      "mae_por_partido": {
+       "PP": 3.3164,
+       "PSOE": 3.5183,
+       "VOX": 2.3112,
+       "SUMAR": 2.1218,
+       "ERC": 0.4069,
+       "JXCAT": 0.2538,
+       "PNV": 0.3243,
+       "EH BILDU": 0.4008,
+       "BNG": 0.2485,
+       "CUP": 0.2563,
+       "CC": 0.3855,
+       "NA+": 0.1622,
+       "PACMA": 0.3092,
+       "CIUDADANOS": 1.0991
+      }
+     },
+     "mrp_crudo": {
+      "mae_global": 2.1953,
+      "mae_partidos_ge1": 2.9218,
+      "mae_ponderado_votos": 2.1671,
+      "mae_por_partido": {
+       "PP": 3.5413,
+       "PSOE": 7.7953,
+       "VOX": 10.2103,
+       "SUMAR": 2.2068,
+       "ERC": 0.7007,
+       "JXCAT": 0.6441,
+       "PNV": 0.3119,
+       "EH BILDU": 0.44,
+       "BNG": 0.2524,
+       "CUP": 0.3491,
+       "CC": 0.3569,
+       "NA+": 0.4336,
+       "PACMA": 0.4739,
+       "CIUDADANOS": 3.0182
+      }
+     },
+     "swing": {
+      "mae_global": 0.475,
+      "mae_partidos_ge1": 0.6406,
+      "mae_ponderado_votos": 0.5047,
+      "mae_por_partido": {
+       "PP": 1.3019,
+       "PSOE": 1.7209,
+       "VOX": 1.0768,
+       "SUMAR": 0.8608,
+       "ERC": 0.0822,
+       "JXCAT": 0.0964,
+       "PNV": 0.075,
+       "EH BILDU": 0.0899,
+       "BNG": 0.0286,
+       "CUP": 0.538,
+       "CC": 0.157,
+       "NA+": 0.0016,
+       "PACMA": 0.0574,
+       "CIUDADANOS": 0.5642
+      }
+     },
+     "swing_fix": {
+      "mae_global": 0.5969,
+      "mae_partidos_ge1": 0.7646,
+      "mae_ponderado_votos": 0.6076,
+      "mae_por_partido": {
+       "PP": 1.1629,
+       "PSOE": 1.9435,
+       "VOX": 1.0701,
+       "SUMAR": 0.8803,
+       "ERC": 0.1344,
+       "JXCAT": 0.1339,
+       "PNV": 0.1564,
+       "EH BILDU": 0.2122,
+       "BNG": 0.2367,
+       "CUP": 1.4062,
+       "CC": 0.2275,
+       "NA+": 0.1841,
+       "PACMA": 0.0624,
+       "CIUDADANOS": 0.5456
+      }
+     },
+     "mrp_anclado": {
+      "mae_global": 0.8739,
+      "mae_partidos_ge1": 1.1512,
+      "mae_ponderado_votos": 0.7956,
+      "mae_por_partido": {
+       "PP": 3.1222,
+       "PSOE": 2.642,
+       "VOX": 1.7225,
+       "SUMAR": 1.6295,
+       "ERC": 0.1522,
+       "JXCAT": 0.1699,
+       "PNV": 0.2021,
+       "EH BILDU": 0.2466,
+       "BNG": 0.1679,
+       "CUP": 0.1794,
+       "CC": 0.2248,
+       "NA+": 0.0284,
+       "PACMA": 0.3013,
+       "CIUDADANOS": 1.4455
+      }
+     },
+     "_mejor_swing": 0.475,
+     "_veredicto_global": "swing gana",
+     "_veredicto_big": "swing gana"
+    },
+    "B_objetivo_nacional_encuestas": {
+     "mrp": {
+      "mae_global": 2.2638,
+      "mae_partidos_ge1": 3.0126,
+      "mae_ponderado_votos": 2.2411,
+      "mae_por_partido": {
+       "PP": 3.6166,
+       "PSOE": 8.9381,
+       "VOX": 10.1469,
+       "SUMAR": 2.2291,
+       "ERC": 0.5151,
+       "JXCAT": 0.7094,
+       "PNV": 0.3422,
+       "EH BILDU": 0.5443,
+       "BNG": 0.2451,
+       "CUP": 0.372,
+       "CC": 0.362,
+       "NA+": 0.4587,
+       "PACMA": 0.5014,
+       "CIUDADANOS": 2.7122
+      }
+     },
+     "mrp_crudo": {
+      "mae_global": 2.1953,
+      "mae_partidos_ge1": 2.9218,
+      "mae_ponderado_votos": 2.1671,
+      "mae_por_partido": {
+       "PP": 3.5413,
+       "PSOE": 7.7953,
+       "VOX": 10.2103,
+       "SUMAR": 2.2068,
+       "ERC": 0.7007,
+       "JXCAT": 0.6441,
+       "PNV": 0.3119,
+       "EH BILDU": 0.44,
+       "BNG": 0.2524,
+       "CUP": 0.3491,
+       "CC": 0.3569,
+       "NA+": 0.4336,
+       "PACMA": 0.4739,
+       "CIUDADANOS": 3.0182
+      }
+     },
+     "swing": {
+      "mae_global": 2.0276,
+      "mae_partidos_ge1": 2.7467,
+      "mae_ponderado_votos": 2.1331,
+      "mae_por_partido": {
+       "PP": 1.5411,
+       "PSOE": 8.5402,
+       "VOX": 9.9629,
+       "SUMAR": 1.3572,
+       "ERC": 0.7156,
+       "JXCAT": 0.5392,
+       "PNV": 0.393,
+       "EH BILDU": 0.6515,
+       "BNG": 0.0245,
+       "CUP": 0.538,
+       "CC": 0.221,
+       "NA+": 0.4116,
+       "PACMA": 0.2631,
+       "CIUDADANOS": 3.228
+      }
+     },
+     "swing_fix": {
+      "mae_global": 2.0516,
+      "mae_partidos_ge1": 2.7468,
+      "mae_ponderado_votos": 2.1502,
+      "mae_por_partido": {
+       "PP": 1.5469,
+       "PSOE": 8.1164,
+       "VOX": 9.9976,
+       "SUMAR": 1.3527,
+       "ERC": 0.7588,
+       "JXCAT": 0.6342,
+       "PNV": 0.3423,
+       "EH BILDU": 0.5664,
+       "BNG": 0.2462,
+       "CUP": 0.972,
+       "CC": 0.264,
+       "NA+": 0.4668,
+       "PACMA": 0.2779,
+       "CIUDADANOS": 3.1804
+      }
+     },
+     "mrp_anclado": {
+      "mae_global": 2.176,
+      "mae_partidos_ge1": 2.9146,
+      "mae_ponderado_votos": 2.2177,
+      "mae_por_partido": {
+       "PP": 3.1068,
+       "PSOE": 8.2224,
+       "VOX": 10.2638,
+       "SUMAR": 1.934,
+       "ERC": 0.6813,
+       "JXCAT": 0.5029,
+       "PNV": 0.3021,
+       "EH BILDU": 0.6012,
+       "BNG": 0.1625,
+       "CUP": 0.327,
+       "CC": 0.2612,
+       "NA+": 0.4207,
+       "PACMA": 0.4726,
+       "CIUDADANOS": 3.2049
+      }
+     },
+     "_mejor_swing": 2.0276,
+     "_veredicto_global": "swing gana",
+     "_veredicto_big": "swing gana"
+    }
+   }
+  },
+  "2023-07-23": {
+   "estudios_entrenamiento": [
+    "3299",
+    "3367",
+    "3382",
+    "3386",
+    "3407",
+    "3411",
+    "3415",
+    "3416"
+   ],
+   "filas_entrenamiento": 85043,
+   "filas_entrenamiento_anclado": 80523,
+   "censo_periodo": 2023,
+   "cobertura_muestras_pp": 61.896,
+   "nacional_real": {
+    "PP": 33.746,
+    "PSOE": 32.343,
+    "VOX": 12.641,
+    "SUMAR": 12.592,
+    "ERC": 1.927,
+    "JXCAT": 1.773,
+    "PNV": 1.147,
+    "EH BILDU": 1.386,
+    "BNG": 0.637,
+    "CUP": 0.412,
+    "CC": 0.481,
+    "NA+": 0.216,
+    "PACMA": 0.7,
+    "CIUDADANOS": 0.0
+   },
+   "nacional_encuestas": {
+    "PP": 28.868,
+    "PSOE": 30.231,
+    "VOX": 12.026,
+    "SUMAR": 19.897,
+    "ERC": 2.034,
+    "JXCAT": 1.167,
+    "PNV": 0.915,
+    "EH BILDU": 1.074,
+    "BNG": 0.958,
+    "CUP": 0.604,
+    "CC": 0.42,
+    "NA+": 0.194,
+    "PACMA": 0.689,
+    "CIUDADANOS": 0.924
+   },
+   "nacional_mrp_crudo": {
+    "PP": 28.032,
+    "PSOE": 30.689,
+    "VOX": 12.387,
+    "SUMAR": 19.569,
+    "ERC": 2.133,
+    "JXCAT": 1.164,
+    "PNV": 1.028,
+    "EH BILDU": 1.205,
+    "BNG": 1.015,
+    "CUP": 0.66,
+    "CC": 0.359,
+    "NA+": 0.186,
+    "PACMA": 0.687,
+    "CIUDADANOS": 0.885
+   },
+   "tests": {
+    "A_objetivo_nacional_real": {
+     "mrp": {
+      "mae_global": 0.9404,
+      "mae_partidos_ge1": 1.578,
+      "mae_ponderado_votos": 0.7346,
+      "mae_por_partido": {
+       "PP": 4.7071,
+       "PSOE": 3.2467,
+       "VOX": 1.705,
+       "SUMAR": 2.2515,
+       "ERC": 0.156,
+       "JXCAT": 0.2099,
+       "PNV": 0.1156,
+       "EH BILDU": 0.2323,
+       "BNG": 0.0572,
+       "CUP": 0.0609,
+       "CC": 0.1953,
+       "NA+": 0.0394,
+       "PACMA": 0.1887,
+       "CIUDADANOS": 0.0
+      }
+     },
+     "mrp_crudo": {
+      "mae_global": 1.6384,
+      "mae_partidos_ge1": 2.6366,
+      "mae_ponderado_votos": 1.4506,
+      "mae_por_partido": {
+       "PP": 7.3072,
+       "PSOE": 2.9006,
+       "VOX": 1.6909,
+       "SUMAR": 7.8602,
+       "ERC": 0.1809,
+       "JXCAT": 0.5257,
+       "PNV": 0.2023,
+       "EH BILDU": 0.4251,
+       "BNG": 0.4489,
+       "CUP": 0.1605,
+       "CC": 0.1943,
+       "NA+": 0.0759,
+       "PACMA": 0.1909,
+       "CIUDADANOS": 0.7747
+      }
+     },
+     "swing": {
+      "mae_global": 0.6477,
+      "mae_partidos_ge1": 1.0774,
+      "mae_ponderado_votos": 0.6488,
+      "mae_por_partido": {
+       "PP": 3.0567,
+       "PSOE": 2.2928,
+       "VOX": 1.4427,
+       "SUMAR": 1.3725,
+       "ERC": 0.0558,
+       "JXCAT": 0.1185,
+       "PNV": 0.0146,
+       "EH BILDU": 0.2656,
+       "BNG": 0.0775,
+       "CUP": 0.0383,
+       "CC": 0.266,
+       "NA+": 0.0071,
+       "PACMA": 0.0592,
+       "CIUDADANOS": 0.0
+      }
+     },
+     "swing_fix": {
+      "mae_global": 0.6873,
+      "mae_partidos_ge1": 1.1141,
+      "mae_ponderado_votos": 0.6887,
+      "mae_por_partido": {
+       "PP": 2.9922,
+       "PSOE": 2.254,
+       "VOX": 1.4603,
+       "SUMAR": 1.4352,
+       "ERC": 0.0905,
+       "JXCAT": 0.1528,
+       "PNV": 0.117,
+       "EH BILDU": 0.4109,
+       "BNG": 0.2396,
+       "CUP": 0.0608,
+       "CC": 0.2623,
+       "NA+": 0.085,
+       "PACMA": 0.0621,
+       "CIUDADANOS": 0.0
+      }
+     },
+     "mrp_anclado": {
+      "mae_global": 0.6849,
+      "mae_partidos_ge1": 1.1497,
+      "mae_ponderado_votos": 0.5724,
+      "mae_por_partido": {
+       "PP": 2.7852,
+       "PSOE": 2.2106,
+       "VOX": 1.8951,
+       "SUMAR": 1.9218,
+       "ERC": 0.0575,
+       "JXCAT": 0.0792,
+       "PNV": 0.0735,
+       "EH BILDU": 0.1743,
+       "BNG": 0.0838,
+       "CUP": 0.0365,
+       "CC": 0.0786,
+       "NA+": 0.0377,
+       "PACMA": 0.1541,
+       "CIUDADANOS": 0.0
+      }
+     },
+     "_mejor_swing": 0.6477,
+     "_veredicto_global": "swing gana",
+     "_veredicto_big": "swing gana"
+    },
+    "B_objetivo_nacional_encuestas": {
+     "mrp": {
+      "mae_global": 1.6374,
+      "mae_partidos_ge1": 2.6432,
+      "mae_ponderado_votos": 1.4556,
+      "mae_por_partido": {
+       "PP": 6.6515,
+       "PSOE": 3.0755,
+       "VOX": 1.7423,
+       "SUMAR": 8.1653,
+       "ERC": 0.1205,
+       "JXCAT": 0.5212,
+       "PNV": 0.314,
+       "EH BILDU": 0.5551,
+       "BNG": 0.3834,
+       "CUP": 0.1334,
+       "CC": 0.1956,
+       "NA+": 0.0659,
+       "PACMA": 0.1902,
+       "CIUDADANOS": 0.8093
+      }
+     },
+     "mrp_crudo": {
+      "mae_global": 1.6384,
+      "mae_partidos_ge1": 2.6366,
+      "mae_ponderado_votos": 1.4506,
+      "mae_por_partido": {
+       "PP": 7.3072,
+       "PSOE": 2.9006,
+       "VOX": 1.6909,
+       "SUMAR": 7.8602,
+       "ERC": 0.1809,
+       "JXCAT": 0.5257,
+       "PNV": 0.2023,
+       "EH BILDU": 0.4251,
+       "BNG": 0.4489,
+       "CUP": 0.1605,
+       "CC": 0.1943,
+       "NA+": 0.0759,
+       "PACMA": 0.1909,
+       "CIUDADANOS": 0.7747
+      }
+     },
+     "swing": {
+      "mae_global": 1.3242,
+      "mae_partidos_ge1": 2.1228,
+      "mae_ponderado_votos": 1.4003,
+      "mae_por_partido": {
+       "PP": 4.685,
+       "PSOE": 2.6627,
+       "VOX": 1.5738,
+       "SUMAR": 6.914,
+       "ERC": 0.1567,
+       "JXCAT": 0.3272,
+       "PNV": 0.247,
+       "EH BILDU": 0.416,
+       "BNG": 0.3249,
+       "CUP": 0.1116,
+       "CC": 0.2065,
+       "NA+": 0.0374,
+       "PACMA": 0.0588,
+       "CIUDADANOS": 0.8169
+      }
+     },
+     "swing_fix": {
+      "mae_global": 1.3631,
+      "mae_partidos_ge1": 2.1751,
+      "mae_ponderado_votos": 1.4256,
+      "mae_por_partido": {
+       "PP": 4.7332,
+       "PSOE": 2.6376,
+       "VOX": 1.5919,
+       "SUMAR": 6.9521,
+       "ERC": 0.1732,
+       "JXCAT": 0.3935,
+       "PNV": 0.3492,
+       "EH BILDU": 0.5702,
+       "BNG": 0.3083,
+       "CUP": 0.1293,
+       "CC": 0.2509,
+       "NA+": 0.1098,
+       "PACMA": 0.0652,
+       "CIUDADANOS": 0.8181
+      }
+     },
+     "mrp_anclado": {
+      "mae_global": 1.4988,
+      "mae_partidos_ge1": 2.4259,
+      "mae_ponderado_votos": 1.3857,
+      "mae_por_partido": {
+       "PP": 5.3719,
+       "PSOE": 2.8309,
+       "VOX": 1.9762,
+       "SUMAR": 7.9008,
+       "ERC": 0.1459,
+       "JXCAT": 0.4148,
+       "PNV": 0.3007,
+       "EH BILDU": 0.4659,
+       "BNG": 0.3428,
+       "CUP": 0.1186,
+       "CC": 0.1274,
+       "NA+": 0.0643,
+       "PACMA": 0.1564,
+       "CIUDADANOS": 0.766
+      }
+     },
+     "_mejor_swing": 1.3242,
+     "_veredicto_global": "swing gana",
+     "_veredicto_big": "swing gana"
+    }
+   }
+  }
+ },
+ "agregado": {
+  "A_objetivo_nacional_real|mrp": {
+   "mae_global_medio": 1.0368,
+   "mae_global_por_eleccion": [
+    1.0986,
+    0.9325,
+    1.1328,
+    1.0796,
+    0.9404
+   ],
+   "mae_partidos_ge1_medio": 1.5883
+  },
+  "A_objetivo_nacional_real|mrp_crudo": {
+   "mae_global_medio": 1.774,
+   "mae_global_por_eleccion": [
+    1.3381,
+    1.3908,
+    2.3075,
+    2.1953,
+    1.6384
+   ],
+   "mae_partidos_ge1_medio": 2.6643
+  },
+  "A_objetivo_nacional_real|mrp_anclado": {
+   "mae_global_medio": 0.8641,
+   "mae_global_por_eleccion": [
+    1.0212,
+    0.7457,
+    0.9948,
+    0.8739,
+    0.6849
+   ],
+   "mae_partidos_ge1_medio": 1.3164
+  },
+  "A_objetivo_nacional_real|swing": {
+   "mae_global_medio": 1.0986,
+   "mae_global_por_eleccion": [
+    2.9279,
+    0.2795,
+    1.1628,
+    0.475,
+    0.6477
+   ],
+   "mae_partidos_ge1_medio": 1.8804
+  },
+  "A_objetivo_nacional_real|swing_fix": {
+   "mae_global_medio": 0.8757,
+   "mae_global_por_eleccion": [
+    1.685,
+    0.3327,
+    1.0767,
+    0.5969,
+    0.6873
+   ],
+   "mae_partidos_ge1_medio": 1.3943
+  },
+  "A_objetivo_nacional_real|swing_mejor": {
+   "mae_global_medio": 0.8328,
+   "mae_global_por_eleccion": [
+    1.685,
+    0.2795,
+    1.0767,
+    0.475,
+    0.6477
+   ]
+  },
+  "B_objetivo_nacional_encuestas|mrp": {
+   "mae_global_medio": 1.7875,
+   "mae_global_por_eleccion": [
+    1.34,
+    1.3649,
+    2.3314,
+    2.2638,
+    1.6374
+   ],
+   "mae_partidos_ge1_medio": 2.6886
+  },
+  "B_objetivo_nacional_encuestas|mrp_crudo": {
+   "mae_global_medio": 1.774,
+   "mae_global_por_eleccion": [
+    1.3381,
+    1.3908,
+    2.3075,
+    2.1953,
+    1.6384
+   ],
+   "mae_partidos_ge1_medio": 2.6643
+  },
+  "B_objetivo_nacional_encuestas|mrp_anclado": {
+   "mae_global_medio": 1.7163,
+   "mae_global_por_eleccion": [
+    1.3964,
+    1.3692,
+    2.1411,
+    2.176,
+    1.4988
+   ],
+   "mae_partidos_ge1_medio": 2.5955
+  },
+  "B_objetivo_nacional_encuestas|swing": {
+   "mae_global_medio": 1.9956,
+   "mae_global_por_eleccion": [
+    3.0839,
+    1.346,
+    2.1962,
+    2.0276,
+    1.3242
+   ],
+   "mae_partidos_ge1_medio": 3.1778
+  },
+  "B_objetivo_nacional_encuestas|swing_fix": {
+   "mae_global_medio": 1.803,
+   "mae_global_por_eleccion": [
+    2.0494,
+    1.3636,
+    2.1875,
+    2.0516,
+    1.3631
+   ],
+   "mae_partidos_ge1_medio": 2.7792
+  },
+  "B_objetivo_nacional_encuestas|swing_mejor": {
+   "mae_global_medio": 1.7869,
+   "mae_global_por_eleccion": [
+    2.0494,
+    1.346,
+    2.1875,
+    2.0276,
+    1.3242
+   ]
+  }
+ },
+ "veredicto": {
+  "test_A_mae_medio": {
+   "mrp": 1.0368,
+   "mrp_anclado": 0.8641,
+   "swing_mejor": 0.8328,
+   "delta_pp_mrp": 0.204,
+   "delta_pp_mrp_anclado": 0.0313
+  },
+  "test_B_mae_medio": {
+   "mrp": 1.7875,
+   "mrp_anclado": 1.7163,
+   "swing_mejor": 1.7869,
+   "delta_pp_mrp": 0.0006,
+   "delta_pp_mrp_anclado": -0.0706
+  },
+  "ganador": "swing uniforme",
+  "mrp_especificado_gana": false,
+  "mejor_variante_mrp_gana": false
+ },
+ "segundos_totales": 37.3
+}
