@@ -85,9 +85,10 @@ Web que expone el histórico completo de encuestas electorales españolas (CIS e
 - [x] MRP provincial: construido y evaluado con backtest de 5 elecciones (52 provincias). **Veredicto: NO supera al swing uniforme** (swing gana 4/5 en ambos tests; MRP anclado en ruido). No adoptado; comparación completa en docs/notes/mrp.md. Hallazgo: la geografía real de la última elección es un predictor provincial más fuerte que la demografía
 - [x] Censo INE 66600 descargado y normalizado (8.736 celdas, supuestos documentados); post-estratificación 29N calibrada (desviación 0,0098 pp)
 
-### Fase 5 — Web y publicación
+### Fase 5 — Web y publicación — CERRADA 15-10-2026
 - [x] Web conectada a datos reales (Fase 5 parte 1): sync-data.py reproducible (8 JSON), portada con bandas de intervalo, cartograma 52 provincias sin JS, 67 encuestas con ficha y filtros, timeline 16 elecciones, metodología con veredicto TimesFM vs baseline sin maquillar. Build exit 0, astro check 0 errores
-- [~] Deploy Vercel: en curso (token verificado, proyecto 29n, team elcanoapps)
+- [x] Deploy Vercel: **https://29n.vercel.app** (proyecto elcanoapps/29n, framework astro fijado en vercel.json, token verificado en almacén de secretos). Smoke test: 200 en /, /prediccion/, /encuestas/, /resultados/, /metodologia/; contenido verificado en fresco
+- [~] Pendiente honrado: verificación visual en navegador (daltonismo, zoom 200%) y dominio propio si Chema quiere
 
 ### Fase 5 — Web y publicación (semanas 5-6)
 - [ ] `DESIGN.md` (Google Stitch format)
