@@ -80,9 +80,14 @@ Web que expone el histórico completo de encuestas electorales españolas (CIS e
 - [x] Simulación D'Hondt 10.000 runs → escaños por provincia con intervalos; coherencia estatal-provincial verificada en fresco (3/3 tests, desviación máx 0,0085 pp)
 - [x] Filtros documentados: CIS no_validada fuera, no estatales fuera, publicación incompleta fuera (incl. 40dB 08-10-2026)
 
-### Fase 4-c — Microdatos/MRP — extracción cerrada 15-10-2026; MRP en curso
+### Fase 4-c — Microdatos/MRP — CERRADA 15-10-2026
 - [x] Dataset individual: 532.498 entrevistas, 55 estudios, 1977-2025 (individual.parquet); validación 35/35 a ±0,1 pp (Δmax 0,0322 pp); censo INE 66600 identificado (MRP viable, con límites documentados)
-- [~] MRP provincial: en construcción (backtest 2015-2019 vs swing uniforme, con Censo 2011 o supuesto documentado)
+- [x] MRP provincial: construido y evaluado con backtest de 5 elecciones (52 provincias). **Veredicto: NO supera al swing uniforme** (swing gana 4/5 en ambos tests; MRP anclado en ruido). No adoptado; comparación completa en docs/notes/mrp.md. Hallazgo: la geografía real de la última elección es un predictor provincial más fuerte que la demografía
+- [x] Censo INE 66600 descargado y normalizado (8.736 celdas, supuestos documentados); post-estratificación 29N calibrada (desviación 0,0098 pp)
+
+### Fase 5 — Web y publicación
+- [x] Web conectada a datos reales (Fase 5 parte 1): sync-data.py reproducible (8 JSON), portada con bandas de intervalo, cartograma 52 provincias sin JS, 67 encuestas con ficha y filtros, timeline 16 elecciones, metodología con veredicto TimesFM vs baseline sin maquillar. Build exit 0, astro check 0 errores
+- [~] Deploy Vercel: en curso (token verificado, proyecto 29n, team elcanoapps)
 
 ### Fase 5 — Web y publicación (semanas 5-6)
 - [ ] `DESIGN.md` (Google Stitch format)
