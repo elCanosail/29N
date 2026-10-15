@@ -1,0 +1,341 @@
+{
+ "estudios_extraidos": 55,
+ "estudios_excluidos": 57,
+ "individuos": 532498,
+ "columnas": [
+  "estudio_id",
+  "fecha_trabajo",
+  "anio",
+  "eleccion",
+  "provincia",
+  "peso",
+  "edad",
+  "sexo",
+  "estudios",
+  "ideologia_1a10",
+  "interes_politica",
+  "recuerdo_voto",
+  "intencion_voto",
+  "religiosidad",
+  "tipo_estudio",
+  "ambito",
+  "peso_var",
+  "ideologia_var",
+  "ideologia_escala",
+  "intencion_var",
+  "intencion_src",
+  "recuerdo_var",
+  "intencion_voto_raw",
+  "recuerdo_voto_raw"
+ ],
+ "archivo": "data/processed/microdatos/individual.parquet",
+ "exclusiones": [
+  {
+   "estudio": "1137",
+   "motivo": "sin variable de ponderacion",
+   "slug": "actitudes-y-comportamientos-ante-las-elecciones-generales.-panel-tiempo-1-"
+  },
+  {
+   "estudio": "1742",
+   "motivo": "sin variable de ponderacion",
+   "slug": "cuestiones-de-actualidad-intencion-de-voto-en-elecciones-generales"
+  },
+  {
+   "estudio": "2805",
+   "motivo": "sin ASCII DA/ES",
+   "slug": "el-voto-flotante-analisis-temporal-desde-un-enfoque-cualitativo"
+  },
+  {
+   "estudio": "1164",
+   "motivo": "sin variable de ponderacion",
+   "slug": "elecciones-generales-y-municipales-1979-ii-"
+  },
+  {
+   "estudio": "1178",
+   "motivo": "sin variable de ponderacion",
+   "slug": "elecciones-generales-y-municipales-1979-iii-"
+  },
+  {
+   "estudio": "1179",
+   "motivo": "sin variable de ponderacion",
+   "slug": "elecciones-generales-y-municipales-1979-iv-"
+  },
+  {
+   "estudio": "1182",
+   "motivo": "sin variable de ponderacion",
+   "slug": "elecciones-generales-y-municipales-1979-v-"
+  },
+  {
+   "estudio": "1184",
+   "motivo": "sin ASCII DA/ES",
+   "slug": "preelectoral-elecciones-generales-1979-iii-"
+  },
+  {
+   "estudio": "1321",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-generales-1982-i-"
+  },
+  {
+   "estudio": "1322",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-generales-1982.-provincia-de-madrid"
+  },
+  {
+   "estudio": "1327",
+   "motivo": "sin variable de ponderacion",
+   "slug": "postelectoral-elecciones-generales-1982"
+  },
+  {
+   "estudio": "1328",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-generales-1982.-asturias"
+  },
+  {
+   "estudio": "1636",
+   "motivo": "sin variable de ponderacion",
+   "slug": "elecciones-al-parlamento-europeo-1987-i-y-relaciones-internacionales"
+  },
+  {
+   "estudio": "1652",
+   "motivo": "sin variable de ponderacion",
+   "slug": "elecciones-al-parlamento-europeo-1987-ii-"
+  },
+  {
+   "estudio": "1673",
+   "motivo": "sin variable de ponderacion",
+   "slug": "elecciones-al-parlamento-europeo-1987-iii-"
+  },
+  {
+   "estudio": "1693",
+   "motivo": "sin variable de ponderacion",
+   "slug": "postelectoral-elecciones-municipales-y-elecciones-al-parlamento-europeo-1987-en-galicia"
+  },
+  {
+   "estudio": "1796",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-i-"
+  },
+  {
+   "estudio": "1803",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-ii-"
+  },
+  {
+   "estudio": "1805",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-iii-"
+  },
+  {
+   "estudio": "1806",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-iv-"
+  },
+  {
+   "estudio": "1807",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-v-"
+  },
+  {
+   "estudio": "1809",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-vi-"
+  },
+  {
+   "estudio": "1811",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-vii-"
+  },
+  {
+   "estudio": "1812",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-viii-"
+  },
+  {
+   "estudio": "1823",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-generales-1989.-principado-de-asturias"
+  },
+  {
+   "estudio": "1824",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-generales-1989.-islas-baleares"
+  },
+  {
+   "estudio": "1826",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-generales-1989.-cantabria"
+  },
+  {
+   "estudio": "1833",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-generales-1989.-comunidad-de-madrid"
+  },
+  {
+   "estudio": "1834",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-generales-1989.-region-de-murcia"
+  },
+  {
+   "estudio": "1835",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-generales-1989.-comunidad-foral-de-navarra"
+  },
+  {
+   "estudio": "1837",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-generales-1989.-la-rioja"
+  },
+  {
+   "estudio": "1838",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-generales-1989-i-"
+  },
+  {
+   "estudio": "1840",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-generales-1989-ii-"
+  },
+  {
+   "estudio": "2053",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-generales-1993-i-"
+  },
+  {
+   "estudio": "2055",
+   "motivo": "sin variable de ponderacion",
+   "slug": "barometro-de-abril-1993.-preelectoral-elecciones-generales-1993-ii-"
+  },
+  {
+   "estudio": "2060",
+   "motivo": "sin variable de ponderacion",
+   "slug": "campana-electoral.-elecciones-generales-1993"
+  },
+  {
+   "estudio": "2061",
+   "motivo": "sin variable de ponderacion",
+   "slug": "postelectoral-elecciones-generales-1993"
+  },
+  {
+   "estudio": "2090",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1994-i-"
+  },
+  {
+   "estudio": "2103",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1994-ii-"
+  },
+  {
+   "estudio": "2108",
+   "motivo": "sin variable de ponderacion",
+   "slug": "barometro-de-junio-1994.-postelectoral-parlamento-europeo-1994"
+  },
+  {
+   "estudio": "2325",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1999.-panel-1-fase-"
+  },
+  {
+   "estudio": "2350",
+   "motivo": "sin variable de ponderacion",
+   "slug": "postelectoral-elecciones-al-parlamento-europeo-1999.-panel-2-fase-"
+  },
+  {
+   "estudio": "2382",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-generales-y-autonomicas-de-andalucia-2000.-panel-1-fase-"
+  },
+  {
+   "estudio": "2384",
+   "motivo": "sin variable de ponderacion",
+   "slug": "postelectoral-elecciones-generales-y-autonomicas-de-andalucia-2000.-panel-2-fase-"
+  },
+  {
+   "estudio": "7700",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-y-postelectoral-elecciones-generales-y-autonomicas-de-andalucia-2000.-panel-total-panel-"
+  },
+  {
+   "estudio": "2564",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-2004"
+  },
+  {
+   "estudio": "2567",
+   "motivo": "sin variable de ponderacion",
+   "slug": "postelectoral-elecciones-al-parlamento-europeo-2004"
+  },
+  {
+   "estudio": "2800",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-2009.-panel-1-fase-"
+  },
+  {
+   "estudio": "2804",
+   "motivo": "sin ASCII DA/ES",
+   "slug": "prospeccion-cualitativa-preelectoral.-elecciones-al-parlamento-europeo-2009"
+  },
+  {
+   "estudio": "2810",
+   "motivo": "sin variable de ponderacion",
+   "slug": "funcionamiento-de-colegio-administrado-electronicamente-cae-en-las-elecciones-al-parlamento-europeo-2009"
+  },
+  {
+   "estudio": "2814",
+   "motivo": "sin ASCII DA/ES",
+   "slug": "prospeccion-cualitativa-postelectoral.-elecciones-al-parlamento-europeo-2009"
+  },
+  {
+   "estudio": "7809",
+   "motivo": "sin ASCII DA/ES",
+   "slug": "preelectoral-y-postelectoral-elecciones-al-parlamento-europeo-2009.-panel-total-panel-"
+  },
+  {
+   "estudio": "7711",
+   "motivo": "sin ASCII DA/ES",
+   "slug": "preelectoral-y-postelectoral-elecciones-generales-2011.-panel-total-panel-"
+  },
+  {
+   "estudio": "3022",
+   "motivo": "sin variable de ponderacion",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-2014"
+  },
+  {
+   "estudio": "3028",
+   "motivo": "sin variable de ponderacion",
+   "slug": "postelectoral-elecciones-al-parlamento-europeo-2014"
+  },
+  {
+   "estudio": "3145",
+   "motivo": "sin variable de ponderacion",
+   "slug": "postelectoral-elecciones-generales-2016"
+  },
+  {
+   "estudio": "3248",
+   "motivo": "sin variable de ponderacion",
+   "slug": "postelectoral-elecciones-generales-2019"
+  }
+ ],
+ "cobertura_objetivo": {
+  "provincia": 55,
+  "edad": 51,
+  "sexo": 51,
+  "estudios": 55,
+  "situacion_laboral": 46,
+  "tamuni": 53,
+  "ideologia": 44,
+  "interes_politica": 19,
+  "recuerdo_voto": 49,
+  "intencion_voto": 47,
+  "religiosidad": 33,
+  "peso": 55
+ },
+ "por_decada": {
+  "2020s": 14,
+  "1970s": 3,
+  "1980s": 18,
+  "1990s": 4,
+  "2000s": 6,
+  "2010s": 10
+ }
+}

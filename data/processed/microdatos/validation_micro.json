@@ -1,0 +1,3919 @@
+{
+ "tolerancia_pp": 0.1,
+ "estudios_comparados": 35,
+ "estudios_ok": 35,
+ "requeridos": [
+  "1135",
+  "1181",
+  "3117",
+  "3242",
+  "3263",
+  "3415"
+ ],
+ "requeridos_ok": [
+  "1135",
+  "1181",
+  "3117",
+  "3242",
+  "3263",
+  "3415"
+ ],
+ "requeridos_fallidos": [],
+ "max_delta_global_pp": 0.0322,
+ "detalle": [
+  {
+   "estudio": "1135",
+   "anio": 1977,
+   "n_individuos": 27260,
+   "suma_pesos": 27260.07,
+   "partidos_comparados": 7,
+   "max_delta_pp": 0.0003,
+   "peor_partido": "IU",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "IU",
+     "polls": 5.053,
+     "individual": 5.053,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NS",
+     "polls": 44.25,
+     "individual": 44.25,
+     "delta": 0.0002
+    },
+    {
+     "partido": "UCD",
+     "polls": 1.156,
+     "individual": 1.156,
+     "delta": 0.0002
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 0.717,
+     "individual": 0.717,
+     "delta": 0.0001
+    },
+    {
+     "partido": "OTROS",
+     "polls": 9.193,
+     "individual": 9.193,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PP",
+     "polls": 12.792,
+     "individual": 12.792,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PSOE",
+     "polls": 1.279,
+     "individual": 1.279,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "1181",
+   "anio": 1979,
+   "n_individuos": 25516,
+   "suma_pesos": 25515.94,
+   "partidos_comparados": 10,
+   "max_delta_pp": 0.0004,
+   "peor_partido": "UCD",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "UCD",
+     "polls": 14.27,
+     "individual": 14.27,
+     "delta": 0.0004
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 0.031,
+     "individual": 0.031,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NO DECIDIDO",
+     "polls": 23.173,
+     "individual": 23.173,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NS",
+     "polls": 24.826,
+     "individual": 24.826,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PSOE",
+     "polls": 14.44,
+     "individual": 14.44,
+     "delta": 0.0002
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 4.207,
+     "individual": 4.207,
+     "delta": 0.0001
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 0.732,
+     "individual": 0.732,
+     "delta": 0.0001
+    },
+    {
+     "partido": "NC",
+     "polls": 7.565,
+     "individual": 7.565,
+     "delta": 0.0001
+    },
+    {
+     "partido": "IU",
+     "polls": 4.35,
+     "individual": 4.35,
+     "delta": 0.0
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.756,
+     "individual": 0.756,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "1183",
+   "anio": 1979,
+   "n_individuos": 24395,
+   "suma_pesos": 24395.0,
+   "partidos_comparados": 10,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "UCD",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "UCD",
+     "polls": 0.156,
+     "individual": 0.156,
+     "delta": 0.0005
+    },
+    {
+     "partido": "ERC",
+     "polls": 0.009,
+     "individual": 0.009,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NO DECIDIDO",
+     "polls": 0.429,
+     "individual": 0.429,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PSOE",
+     "polls": 0.177,
+     "individual": 0.177,
+     "delta": 0.0003
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 0.05,
+     "individual": 0.05,
+     "delta": 0.0002
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 0.006,
+     "individual": 0.006,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NC",
+     "polls": 0.09,
+     "individual": 0.09,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NS",
+     "polls": 0.286,
+     "individual": 0.286,
+     "delta": 0.0002
+    },
+    {
+     "partido": "IU",
+     "polls": 0.115,
+     "individual": 0.115,
+     "delta": 0.0001
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 0.059,
+     "individual": 0.059,
+     "delta": 0.0001
+    }
+   ]
+  },
+  {
+   "estudio": "1324",
+   "anio": 1982,
+   "n_individuos": 24793,
+   "suma_pesos": 24793.0,
+   "partidos_comparados": 9,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "OTROS",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "OTROS",
+     "polls": 4.172,
+     "individual": 4.172,
+     "delta": 0.0005
+    },
+    {
+     "partido": "IU",
+     "polls": 3.501,
+     "individual": 3.501,
+     "delta": 0.0004
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 1.617,
+     "individual": 1.617,
+     "delta": 0.0004
+    },
+    {
+     "partido": "PNV",
+     "polls": 1.076,
+     "individual": 1.076,
+     "delta": 0.0003
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 18.835,
+     "individual": 18.835,
+     "delta": 0.0002
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 0.773,
+     "individual": 0.773,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PSOE",
+     "polls": 21.069,
+     "individual": 21.069,
+     "delta": 0.0001
+    },
+    {
+     "partido": "NC",
+     "polls": 21.931,
+     "individual": 21.931,
+     "delta": 0.0
+    },
+    {
+     "partido": "UCD",
+     "polls": 23.118,
+     "individual": 23.118,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "1326",
+   "anio": 1982,
+   "n_individuos": 24832,
+   "suma_pesos": 24832.0,
+   "partidos_comparados": 9,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "PSOE",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "PSOE",
+     "polls": 20.056,
+     "individual": 20.056,
+     "delta": 0.0005
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 0.605,
+     "individual": 0.605,
+     "delta": 0.0004
+    },
+    {
+     "partido": "IU",
+     "polls": 3.279,
+     "individual": 3.279,
+     "delta": 0.0003
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 1.677,
+     "individual": 1.677,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PNV",
+     "polls": 1.227,
+     "individual": 1.227,
+     "delta": 0.0003
+    },
+    {
+     "partido": "UCD",
+     "polls": 23.464,
+     "individual": 23.464,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NC",
+     "polls": 24.015,
+     "individual": 24.015,
+     "delta": 0.0001
+    },
+    {
+     "partido": "OTROS",
+     "polls": 3.818,
+     "individual": 3.818,
+     "delta": 0.0001
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 18.359,
+     "individual": 18.359,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "1533",
+   "anio": 1986,
+   "n_individuos": 1800,
+   "suma_pesos": 1799.88,
+   "partidos_comparados": 7,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "CDS",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "CDS",
+     "polls": 2.66,
+     "individual": 2.66,
+     "delta": 0.0005
+    },
+    {
+     "partido": "PSOE",
+     "polls": 33.727,
+     "individual": 33.727,
+     "delta": 0.0004
+    },
+    {
+     "partido": "UCD",
+     "polls": 1.73,
+     "individual": 1.73,
+     "delta": 0.0003
+    },
+    {
+     "partido": "BNG",
+     "polls": 2.359,
+     "individual": 2.359,
+     "delta": 0.0002
+    },
+    {
+     "partido": "OTROS",
+     "polls": 0.477,
+     "individual": 0.477,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PP",
+     "polls": 40.343,
+     "individual": 40.343,
+     "delta": 0.0002
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 15.527,
+     "individual": 15.527,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "1542",
+   "anio": 1986,
+   "n_individuos": 8286,
+   "suma_pesos": 8286.0,
+   "partidos_comparados": 13,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "PSOE",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "PSOE",
+     "polls": 43.153,
+     "individual": 43.153,
+     "delta": 0.0005
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 15.807,
+     "individual": 15.807,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PP",
+     "polls": 10.043,
+     "individual": 10.043,
+     "delta": 0.0003
+    },
+    {
+     "partido": "UCD",
+     "polls": 1.635,
+     "individual": 1.635,
+     "delta": 0.0003
+    },
+    {
+     "partido": "CDS",
+     "polls": 3.392,
+     "individual": 3.392,
+     "delta": 0.0002
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 0.381,
+     "individual": 0.381,
+     "delta": 0.0002
+    },
+    {
+     "partido": "OTROS",
+     "polls": 0.787,
+     "individual": 0.787,
+     "delta": 0.0002
+    },
+    {
+     "partido": "ERC",
+     "polls": 0.167,
+     "individual": 0.167,
+     "delta": 0.0001
+    },
+    {
+     "partido": "IU",
+     "polls": 2.448,
+     "individual": 2.448,
+     "delta": 0.0001
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 2.66,
+     "individual": 2.66,
+     "delta": 0.0001
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.728,
+     "individual": 0.728,
+     "delta": 0.0
+    },
+    {
+     "partido": "NC",
+     "polls": 9.487,
+     "individual": 9.487,
+     "delta": 0.0
+    },
+    {
+     "partido": "PNV",
+     "polls": 1.144,
+     "individual": 1.144,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "1815",
+   "anio": 1989,
+   "n_individuos": 4212,
+   "suma_pesos": 10383326852.76,
+   "partidos_comparados": 13,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "PNV",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "PNV",
+     "polls": 1.016,
+     "individual": 1.016,
+     "delta": 0.0005
+    },
+    {
+     "partido": "OTROS",
+     "polls": 0.8,
+     "individual": 0.8,
+     "delta": 0.0004
+    },
+    {
+     "partido": "CDS",
+     "polls": 3.64,
+     "individual": 3.64,
+     "delta": 0.0003
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 0.571,
+     "individual": 0.571,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PP",
+     "polls": 9.494,
+     "individual": 9.494,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PSOE",
+     "polls": 31.418,
+     "individual": 31.418,
+     "delta": 0.0003
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 16.491,
+     "individual": 16.491,
+     "delta": 0.0002
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.257,
+     "individual": 0.257,
+     "delta": 0.0002
+    },
+    {
+     "partido": "IU",
+     "polls": 1.836,
+     "individual": 1.836,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NC",
+     "polls": 14.502,
+     "individual": 14.502,
+     "delta": 0.0002
+    },
+    {
+     "partido": "ERC",
+     "polls": 0.075,
+     "individual": 0.075,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PAR",
+     "polls": 0.075,
+     "individual": 0.075,
+     "delta": 0.0001
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 0.504,
+     "individual": 0.504,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "1817",
+   "anio": 1989,
+   "n_individuos": 13673,
+   "suma_pesos": 34569330164.98,
+   "partidos_comparados": 6,
+   "max_delta_pp": 0.0003,
+   "peor_partido": "ERC",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "ERC",
+     "polls": 0.079,
+     "individual": 0.079,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NC",
+     "polls": 6.057,
+     "individual": 6.057,
+     "delta": 0.0003
+    },
+    {
+     "partido": "OTROS",
+     "polls": 1.012,
+     "individual": 1.012,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NS",
+     "polls": 13.06,
+     "individual": 13.06,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PAR",
+     "polls": 8.548,
+     "individual": 8.548,
+     "delta": 0.0001
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 4.61,
+     "individual": 4.61,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "1842",
+   "anio": 1989,
+   "n_individuos": 3084,
+   "suma_pesos": 3084.0,
+   "partidos_comparados": 10,
+   "max_delta_pp": 0.0004,
+   "peor_partido": "CDS",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "CDS",
+     "polls": 0.402,
+     "individual": 0.402,
+     "delta": 0.0004
+    },
+    {
+     "partido": "PP",
+     "polls": 0.927,
+     "individual": 0.927,
+     "delta": 0.0004
+    },
+    {
+     "partido": "IU",
+     "polls": 0.467,
+     "individual": 0.467,
+     "delta": 0.0003
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 0.081,
+     "individual": 0.081,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PAR",
+     "polls": 0.041,
+     "individual": 0.041,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.041,
+     "individual": 0.041,
+     "delta": 0.0003
+    },
+    {
+     "partido": "OTROS",
+     "polls": 0.249,
+     "individual": 0.249,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NC",
+     "polls": 0.472,
+     "individual": 0.472,
+     "delta": 0.0001
+    },
+    {
+     "partido": "NS",
+     "polls": 0.625,
+     "individual": 0.625,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PSOE",
+     "polls": 2.609,
+     "individual": 2.609,
+     "delta": 0.0001
+    }
+   ]
+  },
+  {
+   "estudio": "2064",
+   "anio": 1993,
+   "n_individuos": 1599,
+   "suma_pesos": 1599.0,
+   "partidos_comparados": 7,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "ABSTENCION",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "ABSTENCION",
+     "polls": 11.352,
+     "individual": 11.352,
+     "delta": 0.0005
+    },
+    {
+     "partido": "PP",
+     "polls": 24.49,
+     "individual": 24.49,
+     "delta": 0.0005
+    },
+    {
+     "partido": "CDS",
+     "polls": 0.725,
+     "individual": 0.725,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NC",
+     "polls": 10.65,
+     "individual": 10.65,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PSOE",
+     "polls": 38.434,
+     "individual": 38.434,
+     "delta": 0.0002
+    },
+    {
+     "partido": "OTROS",
+     "polls": 1.24,
+     "individual": 1.24,
+     "delta": 0.0001
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 0.636,
+     "individual": 0.636,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "2104",
+   "anio": 1994,
+   "n_individuos": 4073,
+   "suma_pesos": 4071.91,
+   "partidos_comparados": 15,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "BNG",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "BNG",
+     "polls": 0.64,
+     "individual": 0.64,
+     "delta": 0.0005
+    },
+    {
+     "partido": "ERC",
+     "polls": 0.6,
+     "individual": 0.6,
+     "delta": 0.0005
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 9.97,
+     "individual": 9.97,
+     "delta": 0.0004
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.36,
+     "individual": 0.36,
+     "delta": 0.0003
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 1.574,
+     "individual": 1.574,
+     "delta": 0.0003
+    },
+    {
+     "partido": "IU",
+     "polls": 10.527,
+     "individual": 10.527,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NS",
+     "polls": 16.765,
+     "individual": 16.765,
+     "delta": 0.0003
+    },
+    {
+     "partido": "OTROS",
+     "polls": 0.29,
+     "individual": 0.29,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.881,
+     "individual": 0.881,
+     "delta": 0.0003
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 3.587,
+     "individual": 3.587,
+     "delta": 0.0002
+    },
+    {
+     "partido": "CDS",
+     "polls": 0.75,
+     "individual": 0.75,
+     "delta": 0.0001
+    },
+    {
+     "partido": "NC",
+     "polls": 8.878,
+     "individual": 8.878,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PAR",
+     "polls": 0.08,
+     "individual": 0.08,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PP",
+     "polls": 20.657,
+     "individual": 20.657,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PSOE",
+     "polls": 21.212,
+     "individual": 21.212,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "2207",
+   "anio": 1996,
+   "n_individuos": 6642,
+   "suma_pesos": 4995.03,
+   "partidos_comparados": 13,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "BNG",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "BNG",
+     "polls": 0.541,
+     "individual": 0.541,
+     "delta": 0.0005
+    },
+    {
+     "partido": "IU",
+     "polls": 9.335,
+     "individual": 9.335,
+     "delta": 0.0005
+    },
+    {
+     "partido": "PP",
+     "polls": 25.557,
+     "individual": 25.557,
+     "delta": 0.0005
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.42,
+     "individual": 0.42,
+     "delta": 0.0004
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 3.584,
+     "individual": 3.584,
+     "delta": 0.0004
+    },
+    {
+     "partido": "PSOE",
+     "polls": 24.177,
+     "individual": 24.177,
+     "delta": 0.0004
+    },
+    {
+     "partido": "ERC",
+     "polls": 0.701,
+     "individual": 0.701,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NC",
+     "polls": 7.185,
+     "individual": 7.185,
+     "delta": 0.0003
+    },
+    {
+     "partido": "OTROS",
+     "polls": 0.305,
+     "individual": 0.305,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.841,
+     "individual": 0.841,
+     "delta": 0.0002
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 2.135,
+     "individual": 2.135,
+     "delta": 0.0001
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 6.561,
+     "individual": 6.561,
+     "delta": 0.0
+    },
+    {
+     "partido": "NS",
+     "polls": 16.926,
+     "individual": 16.926,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "2210",
+   "anio": 1996,
+   "n_individuos": 5338,
+   "suma_pesos": 4989.69,
+   "partidos_comparados": 13,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "OTROS",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "OTROS",
+     "polls": 1.809,
+     "individual": 1.809,
+     "delta": 0.0005
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 5.612,
+     "individual": 5.612,
+     "delta": 0.0004
+    },
+    {
+     "partido": "BNG",
+     "polls": 1.303,
+     "individual": 1.303,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PAR",
+     "polls": 0.361,
+     "individual": 0.361,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PSOE",
+     "polls": 28.021,
+     "individual": 28.021,
+     "delta": 0.0003
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 9.3,
+     "individual": 9.3,
+     "delta": 0.0002
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.401,
+     "individual": 0.401,
+     "delta": 0.0002
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 0.668,
+     "individual": 0.668,
+     "delta": 0.0002
+    },
+    {
+     "partido": "IU",
+     "polls": 7.547,
+     "individual": 7.547,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NC",
+     "polls": 11.41,
+     "individual": 11.41,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PNV",
+     "polls": 1.062,
+     "individual": 1.062,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PP",
+     "polls": 21.345,
+     "individual": 21.345,
+     "delta": 0.0002
+    },
+    {
+     "partido": "ERC",
+     "polls": 0.962,
+     "individual": 0.962,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3117",
+   "anio": 2015,
+   "n_individuos": 17452,
+   "suma_pesos": 17450.77,
+   "partidos_comparados": 20,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "ABSTENCION",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "ABSTENCION",
+     "polls": 8.006,
+     "individual": 8.006,
+     "delta": 0.0005
+    },
+    {
+     "partido": "PSOE",
+     "polls": 14.866,
+     "individual": 14.866,
+     "delta": 0.0005
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.738,
+     "individual": 0.738,
+     "delta": 0.0003
+    },
+    {
+     "partido": "UPYD",
+     "polls": 0.203,
+     "individual": 0.203,
+     "delta": 0.0003
+    },
+    {
+     "partido": "BNG",
+     "polls": 0.113,
+     "individual": 0.113,
+     "delta": 0.0002
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 2.8,
+     "individual": 2.8,
+     "delta": 0.0002
+    },
+    {
+     "partido": "ERC",
+     "polls": 1.668,
+     "individual": 1.668,
+     "delta": 0.0002
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 1.193,
+     "individual": 1.193,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NC",
+     "polls": 6.149,
+     "individual": 6.149,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PI",
+     "polls": 0.012,
+     "individual": 0.012,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PP",
+     "polls": 16.168,
+     "individual": 16.168,
+     "delta": 0.0002
+    },
+    {
+     "partido": "UNIDAS PODEMOS",
+     "polls": 4.908,
+     "individual": 4.908,
+     "delta": 0.0002
+    },
+    {
+     "partido": "GEROA BAI",
+     "polls": 0.081,
+     "individual": 0.081,
+     "delta": 0.0001
+    },
+    {
+     "partido": "IU",
+     "polls": 2.648,
+     "individual": 2.648,
+     "delta": 0.0001
+    },
+    {
+     "partido": "NS",
+     "polls": 19.06,
+     "individual": 19.06,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.733,
+     "individual": 0.733,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PODEMOS",
+     "polls": 6.95,
+     "individual": 6.95,
+     "delta": 0.0001
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 0.61,
+     "individual": 0.61,
+     "delta": 0.0001
+    },
+    {
+     "partido": "CIUDADANOS",
+     "polls": 11.628,
+     "individual": 11.628,
+     "delta": 0.0
+    },
+    {
+     "partido": "OTROS",
+     "polls": 1.252,
+     "individual": 1.252,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3126",
+   "anio": 2015,
+   "n_individuos": 6242,
+   "suma_pesos": 6242.0,
+   "partidos_comparados": 24,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "CHA",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "CHA",
+     "polls": 0.027,
+     "individual": 0.027,
+     "delta": 0.0005
+    },
+    {
+     "partido": "PP",
+     "polls": 19.228,
+     "individual": 19.228,
+     "delta": 0.0005
+    },
+    {
+     "partido": "PSOE",
+     "polls": 17.182,
+     "individual": 17.182,
+     "delta": 0.0005
+    },
+    {
+     "partido": "CIUDADANOS",
+     "polls": 10.873,
+     "individual": 10.873,
+     "delta": 0.0004
+    },
+    {
+     "partido": "PODEMOS",
+     "polls": 15.113,
+     "individual": 15.113,
+     "delta": 0.0004
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 0.449,
+     "individual": 0.449,
+     "delta": 0.0004
+    },
+    {
+     "partido": "BNG",
+     "polls": 0.09,
+     "individual": 0.09,
+     "delta": 0.0003
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 1.06,
+     "individual": 1.06,
+     "delta": 0.0003
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 1.324,
+     "individual": 1.324,
+     "delta": 0.0003
+    },
+    {
+     "partido": "ERC",
+     "polls": 2.791,
+     "individual": 2.791,
+     "delta": 0.0003
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 1.692,
+     "individual": 1.692,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NA+",
+     "polls": 0.028,
+     "individual": 0.028,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PACMA",
+     "polls": 0.809,
+     "individual": 0.809,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.83,
+     "individual": 0.83,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NC",
+     "polls": 9.63,
+     "individual": 9.63,
+     "delta": 0.0002
+    },
+    {
+     "partido": "UNIDAS PODEMOS",
+     "polls": 2.493,
+     "individual": 2.493,
+     "delta": 0.0002
+    },
+    {
+     "partido": "FORO",
+     "polls": 0.013,
+     "individual": 0.013,
+     "delta": 0.0001
+    },
+    {
+     "partido": "OTROS",
+     "polls": 0.078,
+     "individual": 0.078,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PI",
+     "polls": 0.013,
+     "individual": 0.013,
+     "delta": 0.0001
+    },
+    {
+     "partido": "UPYD",
+     "polls": 0.235,
+     "individual": 0.235,
+     "delta": 0.0001
+    },
+    {
+     "partido": "VOX",
+     "polls": 0.187,
+     "individual": 0.187,
+     "delta": 0.0001
+    },
+    {
+     "partido": "CC",
+     "polls": 0.076,
+     "individual": 0.076,
+     "delta": 0.0
+    },
+    {
+     "partido": "GEROA BAI",
+     "polls": 0.041,
+     "individual": 0.041,
+     "delta": 0.0
+    },
+    {
+     "partido": "IU",
+     "polls": 3.326,
+     "individual": 3.326,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3141",
+   "anio": 2016,
+   "n_individuos": 17488,
+   "suma_pesos": 17487.99,
+   "partidos_comparados": 14,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "PP",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "PP",
+     "polls": 16.844,
+     "individual": 16.844,
+     "delta": 0.0005
+    },
+    {
+     "partido": "CIUDADANOS",
+     "polls": 8.458,
+     "individual": 8.458,
+     "delta": 0.0004
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 2.728,
+     "individual": 2.728,
+     "delta": 0.0004
+    },
+    {
+     "partido": "NC",
+     "polls": 7.345,
+     "individual": 7.345,
+     "delta": 0.0004
+    },
+    {
+     "partido": "OTROS",
+     "polls": 1.158,
+     "individual": 1.158,
+     "delta": 0.0004
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 0.711,
+     "individual": 0.711,
+     "delta": 0.0004
+    },
+    {
+     "partido": "NS",
+     "polls": 14.692,
+     "individual": 14.692,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.75,
+     "individual": 0.75,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PSOE",
+     "polls": 14.647,
+     "individual": 14.647,
+     "delta": 0.0003
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 10.971,
+     "individual": 10.971,
+     "delta": 0.0002
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 1.04,
+     "individual": 1.04,
+     "delta": 0.0002
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.545,
+     "individual": 0.545,
+     "delta": 0.0001
+    },
+    {
+     "partido": "ERC",
+     "polls": 1.765,
+     "individual": 1.765,
+     "delta": 0.0001
+    },
+    {
+     "partido": "UNIDAS PODEMOS",
+     "polls": 18.233,
+     "individual": 18.233,
+     "delta": 0.0001
+    }
+   ]
+  },
+  {
+   "estudio": "3242",
+   "anio": 2019,
+   "n_individuos": 16194,
+   "suma_pesos": 16193.95,
+   "partidos_comparados": 19,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "PNV",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "PNV",
+     "polls": 0.813,
+     "individual": 0.813,
+     "delta": 0.0005
+    },
+    {
+     "partido": "CIUDADANOS",
+     "polls": 7.067,
+     "individual": 7.067,
+     "delta": 0.0004
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 0.622,
+     "individual": 0.622,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NS",
+     "polls": 4.489,
+     "individual": 4.489,
+     "delta": 0.0003
+    },
+    {
+     "partido": "OTROS",
+     "polls": 0.651,
+     "individual": 0.651,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PACMA",
+     "polls": 1.008,
+     "individual": 1.008,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PP",
+     "polls": 8.636,
+     "individual": 8.636,
+     "delta": 0.0003
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 0.764,
+     "individual": 0.764,
+     "delta": 0.0003
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.711,
+     "individual": 0.711,
+     "delta": 0.0002
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 2.208,
+     "individual": 2.208,
+     "delta": 0.0002
+    },
+    {
+     "partido": "ERC",
+     "polls": 2.827,
+     "individual": 2.827,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NO DECIDIDO",
+     "polls": 25.327,
+     "individual": 25.327,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PSOE",
+     "polls": 18.881,
+     "individual": 18.881,
+     "delta": 0.0002
+    },
+    {
+     "partido": "VOX",
+     "polls": 3.789,
+     "individual": 3.789,
+     "delta": 0.0002
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 6.975,
+     "individual": 6.975,
+     "delta": 0.0001
+    },
+    {
+     "partido": "CC",
+     "polls": 0.151,
+     "individual": 0.151,
+     "delta": 0.0001
+    },
+    {
+     "partido": "NC",
+     "polls": 8.255,
+     "individual": 8.255,
+     "delta": 0.0001
+    },
+    {
+     "partido": "UNIDAS PODEMOS",
+     "polls": 6.477,
+     "individual": 6.477,
+     "delta": 0.0001
+    },
+    {
+     "partido": "COMPROMIS",
+     "polls": 0.348,
+     "individual": 0.348,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3245",
+   "anio": 2019,
+   "n_individuos": 17641,
+   "suma_pesos": 17641.01,
+   "partidos_comparados": 25,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "CUP",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "CUP",
+     "polls": 0.458,
+     "individual": 0.458,
+     "delta": 0.0005
+    },
+    {
+     "partido": "ERC",
+     "polls": 2.219,
+     "individual": 2.219,
+     "delta": 0.0005
+    },
+    {
+     "partido": "PODEMOS",
+     "polls": 2.748,
+     "individual": 2.748,
+     "delta": 0.0005
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 1.006,
+     "individual": 1.006,
+     "delta": 0.0004
+    },
+    {
+     "partido": "IU",
+     "polls": 1.527,
+     "individual": 1.527,
+     "delta": 0.0004
+    },
+    {
+     "partido": "NO DECIDIDO",
+     "polls": 25.226,
+     "individual": 25.226,
+     "delta": 0.0004
+    },
+    {
+     "partido": "PAR",
+     "polls": 0.102,
+     "individual": 0.102,
+     "delta": 0.0004
+    },
+    {
+     "partido": "UNIDAS PODEMOS",
+     "polls": 1.503,
+     "individual": 1.503,
+     "delta": 0.0004
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 0.345,
+     "individual": 0.345,
+     "delta": 0.0004
+    },
+    {
+     "partido": "VOX",
+     "polls": 1.795,
+     "individual": 1.795,
+     "delta": 0.0004
+    },
+    {
+     "partido": "CHA",
+     "polls": 0.053,
+     "individual": 0.053,
+     "delta": 0.0003
+    },
+    {
+     "partido": "CIUDADANOS",
+     "polls": 4.482,
+     "individual": 4.482,
+     "delta": 0.0003
+    },
+    {
+     "partido": "COMPROMIS",
+     "polls": 0.963,
+     "individual": 0.963,
+     "delta": 0.0003
+    },
+    {
+     "partido": "MÁS PAÍS",
+     "polls": 1.781,
+     "individual": 1.781,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PACMA",
+     "polls": 0.5,
+     "individual": 0.5,
+     "delta": 0.0003
+    },
+    {
+     "partido": "BNG",
+     "polls": 0.558,
+     "individual": 0.558,
+     "delta": 0.0002
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 0.797,
+     "individual": 0.797,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NC",
+     "polls": 5.659,
+     "individual": 5.659,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NS",
+     "polls": 2.933,
+     "individual": 2.933,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PP",
+     "polls": 13.619,
+     "individual": 13.619,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PSOE",
+     "polls": 19.712,
+     "individual": 19.712,
+     "delta": 0.0002
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 6.259,
+     "individual": 6.259,
+     "delta": 0.0001
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 0.599,
+     "individual": 0.599,
+     "delta": 0.0
+    },
+    {
+     "partido": "OTROS",
+     "polls": 3.417,
+     "individual": 3.417,
+     "delta": 0.0
+    },
+    {
+     "partido": "PNV",
+     "polls": 1.265,
+     "individual": 1.265,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3263",
+   "anio": 2019,
+   "n_individuos": 17650,
+   "suma_pesos": 17650.0,
+   "partidos_comparados": 24,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "BNG",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "BNG",
+     "polls": 0.21,
+     "individual": 0.21,
+     "delta": 0.0005
+    },
+    {
+     "partido": "NC",
+     "polls": 9.226,
+     "individual": 9.226,
+     "delta": 0.0005
+    },
+    {
+     "partido": "UNIDAS PODEMOS",
+     "polls": 7.393,
+     "individual": 7.393,
+     "delta": 0.0004
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 0.639,
+     "individual": 0.639,
+     "delta": 0.0004
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.858,
+     "individual": 0.858,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NO DECIDIDO",
+     "polls": 20.304,
+     "individual": 20.304,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NS",
+     "polls": 3.223,
+     "individual": 3.223,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PRC",
+     "polls": 0.097,
+     "individual": 0.097,
+     "delta": 0.0003
+    },
+    {
+     "partido": "VOX",
+     "polls": 3.984,
+     "individual": 3.984,
+     "delta": 0.0003
+    },
+    {
+     "partido": "CIUDADANOS",
+     "polls": 4.194,
+     "individual": 4.194,
+     "delta": 0.0002
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 0.827,
+     "individual": 0.827,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NA+",
+     "polls": 0.203,
+     "individual": 0.203,
+     "delta": 0.0002
+    },
+    {
+     "partido": "OTROS",
+     "polls": 0.758,
+     "individual": 0.758,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.873,
+     "individual": 0.873,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PP",
+     "polls": 9.1,
+     "individual": 9.1,
+     "delta": 0.0002
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 11.756,
+     "individual": 11.756,
+     "delta": 0.0001
+    },
+    {
+     "partido": "CUP",
+     "polls": 0.321,
+     "individual": 0.321,
+     "delta": 0.0001
+    },
+    {
+     "partido": "ERC",
+     "polls": 2.542,
+     "individual": 2.542,
+     "delta": 0.0001
+    },
+    {
+     "partido": "GEROA BAI",
+     "polls": 0.058,
+     "individual": 0.058,
+     "delta": 0.0001
+    },
+    {
+     "partido": "MÁS PAÍS",
+     "polls": 1.328,
+     "individual": 1.328,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PSOE",
+     "polls": 19.88,
+     "individual": 19.88,
+     "delta": 0.0001
+    },
+    {
+     "partido": "CC",
+     "polls": 0.163,
+     "individual": 0.163,
+     "delta": 0.0
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 1.402,
+     "individual": 1.402,
+     "delta": 0.0
+    },
+    {
+     "partido": "PACMA",
+     "polls": 0.604,
+     "individual": 0.604,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3269",
+   "anio": 2019,
+   "n_individuos": 4804,
+   "suma_pesos": 4804.0,
+   "partidos_comparados": 22,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "PNV",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "PNV",
+     "polls": 0.733,
+     "individual": 0.733,
+     "delta": 0.0005
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 12.327,
+     "individual": 12.327,
+     "delta": 0.0004
+    },
+    {
+     "partido": "BNG",
+     "polls": 0.257,
+     "individual": 0.257,
+     "delta": 0.0004
+    },
+    {
+     "partido": "CC",
+     "polls": 0.323,
+     "individual": 0.323,
+     "delta": 0.0004
+    },
+    {
+     "partido": "CIUDADANOS",
+     "polls": 3.218,
+     "individual": 3.218,
+     "delta": 0.0004
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 1.181,
+     "individual": 1.181,
+     "delta": 0.0004
+    },
+    {
+     "partido": "NC",
+     "polls": 9.369,
+     "individual": 9.369,
+     "delta": 0.0004
+    },
+    {
+     "partido": "PACMA",
+     "polls": 0.949,
+     "individual": 0.949,
+     "delta": 0.0004
+    },
+    {
+     "partido": "VOX",
+     "polls": 7.199,
+     "individual": 7.199,
+     "delta": 0.0004
+    },
+    {
+     "partido": "ERC",
+     "polls": 3.008,
+     "individual": 3.008,
+     "delta": 0.0003
+    },
+    {
+     "partido": "MÁS PAÍS",
+     "polls": 0.885,
+     "individual": 0.885,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NA+",
+     "polls": 0.244,
+     "individual": 0.244,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NS",
+     "polls": 12.003,
+     "individual": 12.003,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PP",
+     "polls": 12.342,
+     "individual": 12.342,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PRC",
+     "polls": 0.186,
+     "individual": 0.186,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PSOE",
+     "polls": 21.545,
+     "individual": 21.545,
+     "delta": 0.0002
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 0.561,
+     "individual": 0.561,
+     "delta": 0.0002
+    },
+    {
+     "partido": "CUP",
+     "polls": 0.608,
+     "individual": 0.608,
+     "delta": 0.0001
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 1.345,
+     "individual": 1.345,
+     "delta": 0.0001
+    },
+    {
+     "partido": "OTROS",
+     "polls": 0.506,
+     "individual": 0.506,
+     "delta": 0.0001
+    },
+    {
+     "partido": "UNIDAS PODEMOS",
+     "polls": 9.476,
+     "individual": 9.476,
+     "delta": 0.0001
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 1.679,
+     "individual": 1.679,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3299",
+   "anio": 2020,
+   "n_individuos": 1584,
+   "suma_pesos": 1584.0,
+   "partidos_comparados": 20,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "ERC",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "ERC",
+     "polls": 2.212,
+     "individual": 2.212,
+     "delta": 0.0005
+    },
+    {
+     "partido": "OTROS",
+     "polls": 0.631,
+     "individual": 0.631,
+     "delta": 0.0005
+    },
+    {
+     "partido": "CUP",
+     "polls": 0.263,
+     "individual": 0.263,
+     "delta": 0.0004
+    },
+    {
+     "partido": "MÁS PAÍS",
+     "polls": 1.514,
+     "individual": 1.514,
+     "delta": 0.0004
+    },
+    {
+     "partido": "NA+",
+     "polls": 0.122,
+     "individual": 0.122,
+     "delta": 0.0004
+    },
+    {
+     "partido": "PNV",
+     "polls": 1.367,
+     "individual": 1.367,
+     "delta": 0.0004
+    },
+    {
+     "partido": "UNIDAS PODEMOS",
+     "polls": 10.274,
+     "individual": 10.274,
+     "delta": 0.0004
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 0.601,
+     "individual": 0.601,
+     "delta": 0.0003
+    },
+    {
+     "partido": "CIUDADANOS",
+     "polls": 6.069,
+     "individual": 6.069,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NC",
+     "polls": 19.874,
+     "individual": 19.874,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PACMA",
+     "polls": 0.748,
+     "individual": 0.748,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PP",
+     "polls": 11.111,
+     "individual": 11.111,
+     "delta": 0.0002
+    },
+    {
+     "partido": "BNG",
+     "polls": 0.347,
+     "individual": 0.347,
+     "delta": 0.0001
+    },
+    {
+     "partido": "CC",
+     "polls": 0.069,
+     "individual": 0.069,
+     "delta": 0.0001
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 2.013,
+     "individual": 2.013,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PRC",
+     "polls": 0.194,
+     "individual": 0.194,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PSOE",
+     "polls": 20.033,
+     "individual": 20.033,
+     "delta": 0.0001
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 0.492,
+     "individual": 0.492,
+     "delta": 0.0001
+    },
+    {
+     "partido": "VOX",
+     "polls": 5.121,
+     "individual": 5.121,
+     "delta": 0.0001
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.585,
+     "individual": 0.585,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3367",
+   "anio": 2022,
+   "n_individuos": 3083,
+   "suma_pesos": 3083.0,
+   "partidos_comparados": 12,
+   "max_delta_pp": 0.0004,
+   "peor_partido": "VOTO NULO",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "VOTO NULO",
+     "polls": 1.053,
+     "individual": 1.053,
+     "delta": 0.0004
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 1.89,
+     "individual": 1.89,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NS",
+     "polls": 18.001,
+     "individual": 18.001,
+     "delta": 0.0003
+    },
+    {
+     "partido": "UNIDAS PODEMOS",
+     "polls": 3.573,
+     "individual": 3.573,
+     "delta": 0.0003
+    },
+    {
+     "partido": "CIUDADANOS",
+     "polls": 2.286,
+     "individual": 2.286,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PSOE",
+     "polls": 16.879,
+     "individual": 16.879,
+     "delta": 0.0002
+    },
+    {
+     "partido": "OTROS",
+     "polls": 0.71,
+     "individual": 0.71,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PACMA",
+     "polls": 0.444,
+     "individual": 0.444,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PP",
+     "polls": 32.585,
+     "individual": 32.585,
+     "delta": 0.0001
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 3.539,
+     "individual": 3.539,
+     "delta": 0.0
+    },
+    {
+     "partido": "NC",
+     "polls": 4.478,
+     "individual": 4.478,
+     "delta": 0.0
+    },
+    {
+     "partido": "VOX",
+     "polls": 8.37,
+     "individual": 8.37,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3407",
+   "anio": 2023,
+   "n_individuos": 4549,
+   "suma_pesos": 4549.0,
+   "partidos_comparados": 28,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "ABSTENCION",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "ABSTENCION",
+     "polls": 3.762,
+     "individual": 3.762,
+     "delta": 0.0005
+    },
+    {
+     "partido": "BNG",
+     "polls": 0.684,
+     "individual": 0.684,
+     "delta": 0.0005
+    },
+    {
+     "partido": "CIUDADANOS",
+     "polls": 0.994,
+     "individual": 0.994,
+     "delta": 0.0005
+    },
+    {
+     "partido": "ERC",
+     "polls": 1.467,
+     "individual": 1.467,
+     "delta": 0.0005
+    },
+    {
+     "partido": "PSOE",
+     "polls": 20.679,
+     "individual": 20.679,
+     "delta": 0.0005
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 1.137,
+     "individual": 1.137,
+     "delta": 0.0004
+    },
+    {
+     "partido": "FORO",
+     "polls": 0.09,
+     "individual": 0.09,
+     "delta": 0.0004
+    },
+    {
+     "partido": "NA+",
+     "polls": 0.203,
+     "individual": 0.203,
+     "delta": 0.0004
+    },
+    {
+     "partido": "NS",
+     "polls": 17.562,
+     "individual": 17.562,
+     "delta": 0.0004
+    },
+    {
+     "partido": "PACMA",
+     "polls": 0.075,
+     "individual": 0.075,
+     "delta": 0.0004
+    },
+    {
+     "partido": "SUMAR",
+     "polls": 1.24,
+     "individual": 1.24,
+     "delta": 0.0004
+    },
+    {
+     "partido": "UNIDAS PODEMOS",
+     "polls": 1.313,
+     "individual": 1.313,
+     "delta": 0.0004
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 1.018,
+     "individual": 1.018,
+     "delta": 0.0003
+    },
+    {
+     "partido": "MÁS PAÍS",
+     "polls": 1.283,
+     "individual": 1.283,
+     "delta": 0.0003
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 0.55,
+     "individual": 0.55,
+     "delta": 0.0003
+    },
+    {
+     "partido": "COMPROMIS",
+     "polls": 1.186,
+     "individual": 1.186,
+     "delta": 0.0002
+    },
+    {
+     "partido": "CUP",
+     "polls": 0.469,
+     "individual": 0.469,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NC",
+     "polls": 8.054,
+     "individual": 8.054,
+     "delta": 0.0002
+    },
+    {
+     "partido": "CC",
+     "polls": 0.359,
+     "individual": 0.359,
+     "delta": 0.0001
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.707,
+     "individual": 0.707,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PAR",
+     "polls": 0.061,
+     "individual": 0.061,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PNV",
+     "polls": 1.014,
+     "individual": 1.014,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PODEMOS",
+     "polls": 1.438,
+     "individual": 1.438,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PP",
+     "polls": 21.035,
+     "individual": 21.035,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PRC",
+     "polls": 0.122,
+     "individual": 0.122,
+     "delta": 0.0001
+    },
+    {
+     "partido": "VOX",
+     "polls": 5.472,
+     "individual": 5.472,
+     "delta": 0.0001
+    },
+    {
+     "partido": "IU",
+     "polls": 1.292,
+     "individual": 1.292,
+     "delta": 0.0
+    },
+    {
+     "partido": "OTROS",
+     "polls": 5.944,
+     "individual": 5.944,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3411",
+   "anio": 2023,
+   "n_individuos": 29201,
+   "suma_pesos": 29201.0,
+   "partidos_comparados": 21,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "PP",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "PP",
+     "polls": 25.371,
+     "individual": 25.371,
+     "delta": 0.0005
+    },
+    {
+     "partido": "CC",
+     "polls": 0.273,
+     "individual": 0.273,
+     "delta": 0.0004
+    },
+    {
+     "partido": "ERC",
+     "polls": 1.267,
+     "individual": 1.267,
+     "delta": 0.0004
+    },
+    {
+     "partido": "NS",
+     "polls": 14.123,
+     "individual": 14.123,
+     "delta": 0.0004
+    },
+    {
+     "partido": "OTROS",
+     "polls": 0.866,
+     "individual": 0.866,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PSOE",
+     "polls": 24.644,
+     "individual": 24.644,
+     "delta": 0.0003
+    },
+    {
+     "partido": "SUMAR",
+     "polls": 12.661,
+     "individual": 12.661,
+     "delta": 0.0003
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 2.325,
+     "individual": 2.325,
+     "delta": 0.0002
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.984,
+     "individual": 0.984,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NA+",
+     "polls": 0.096,
+     "individual": 0.096,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NC",
+     "polls": 2.847,
+     "individual": 2.847,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PACMA",
+     "polls": 0.319,
+     "individual": 0.319,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.804,
+     "individual": 0.804,
+     "delta": 0.0002
+    },
+    {
+     "partido": "VOX",
+     "polls": 8.808,
+     "individual": 8.808,
+     "delta": 0.0002
+    },
+    {
+     "partido": "BNG",
+     "polls": 0.798,
+     "individual": 0.798,
+     "delta": 0.0001
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 1.25,
+     "individual": 1.25,
+     "delta": 0.0001
+    },
+    {
+     "partido": "GEROA BAI",
+     "polls": 0.027,
+     "individual": 0.027,
+     "delta": 0.0001
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 0.773,
+     "individual": 0.773,
+     "delta": 0.0001
+    },
+    {
+     "partido": "CUP",
+     "polls": 0.466,
+     "individual": 0.466,
+     "delta": 0.0
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 1.041,
+     "individual": 1.041,
+     "delta": 0.0
+    },
+    {
+     "partido": "PAR",
+     "polls": 0.009,
+     "individual": 0.009,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3415",
+   "anio": 2023,
+   "n_individuos": 8798,
+   "suma_pesos": 8798.0,
+   "partidos_comparados": 18,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "BNG",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "BNG",
+     "polls": 0.788,
+     "individual": 0.788,
+     "delta": 0.0005
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 0.553,
+     "individual": 0.553,
+     "delta": 0.0005
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.901,
+     "individual": 0.901,
+     "delta": 0.0004
+    },
+    {
+     "partido": "OTROS",
+     "polls": 1.125,
+     "individual": 1.125,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PSOE",
+     "polls": 26.464,
+     "individual": 26.464,
+     "delta": 0.0003
+    },
+    {
+     "partido": "SUMAR",
+     "polls": 11.778,
+     "individual": 11.778,
+     "delta": 0.0003
+    },
+    {
+     "partido": "CC",
+     "polls": 0.127,
+     "individual": 0.127,
+     "delta": 0.0002
+    },
+    {
+     "partido": "CUP",
+     "polls": 0.386,
+     "individual": 0.386,
+     "delta": 0.0002
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.822,
+     "individual": 0.822,
+     "delta": 0.0002
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 0.789,
+     "individual": 0.789,
+     "delta": 0.0002
+    },
+    {
+     "partido": "ERC",
+     "polls": 1.57,
+     "individual": 1.57,
+     "delta": 0.0002
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 0.973,
+     "individual": 0.973,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NC",
+     "polls": 5.596,
+     "individual": 5.596,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PP",
+     "polls": 24.864,
+     "individual": 24.864,
+     "delta": 0.0002
+    },
+    {
+     "partido": "VOX",
+     "polls": 8.707,
+     "individual": 8.707,
+     "delta": 0.0002
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 2.293,
+     "individual": 2.293,
+     "delta": 0.0001
+    },
+    {
+     "partido": "NS",
+     "polls": 12.054,
+     "individual": 12.054,
+     "delta": 0.0001
+    },
+    {
+     "partido": "NA+",
+     "polls": 0.123,
+     "individual": 0.123,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3416",
+   "anio": 2023,
+   "n_individuos": 27058,
+   "suma_pesos": 27058.0,
+   "partidos_comparados": 22,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "PP",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "PP",
+     "polls": 6.553,
+     "individual": 6.553,
+     "delta": 0.0005
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.486,
+     "individual": 0.486,
+     "delta": 0.0004
+    },
+    {
+     "partido": "NC",
+     "polls": 1.468,
+     "individual": 1.468,
+     "delta": 0.0004
+    },
+    {
+     "partido": "OTROS",
+     "polls": 12.542,
+     "individual": 12.542,
+     "delta": 0.0004
+    },
+    {
+     "partido": "VOX",
+     "polls": 6.501,
+     "individual": 6.501,
+     "delta": 0.0004
+    },
+    {
+     "partido": "CC",
+     "polls": 0.267,
+     "individual": 0.267,
+     "delta": 0.0003
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 0.504,
+     "individual": 0.504,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NA+",
+     "polls": 0.041,
+     "individual": 0.041,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NS",
+     "polls": 3.048,
+     "individual": 3.048,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PACMA",
+     "polls": 0.665,
+     "individual": 0.665,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PAR",
+     "polls": 0.022,
+     "individual": 0.022,
+     "delta": 0.0003
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 1.142,
+     "individual": 1.142,
+     "delta": 0.0003
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 7.517,
+     "individual": 7.517,
+     "delta": 0.0002
+    },
+    {
+     "partido": "ERC",
+     "polls": 1.445,
+     "individual": 1.445,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.344,
+     "individual": 0.344,
+     "delta": 0.0002
+    },
+    {
+     "partido": "UNIDAS PODEMOS",
+     "polls": 0.062,
+     "individual": 0.062,
+     "delta": 0.0002
+    },
+    {
+     "partido": "BNG",
+     "polls": 0.515,
+     "individual": 0.515,
+     "delta": 0.0001
+    },
+    {
+     "partido": "CUP",
+     "polls": 0.369,
+     "individual": 0.369,
+     "delta": 0.0001
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 4.254,
+     "individual": 4.254,
+     "delta": 0.0001
+    },
+    {
+     "partido": "SUMAR",
+     "polls": 15.854,
+     "individual": 15.854,
+     "delta": 0.0001
+    },
+    {
+     "partido": "GEROA BAI",
+     "polls": 0.026,
+     "individual": 0.026,
+     "delta": 0.0
+    },
+    {
+     "partido": "PSOE",
+     "polls": 10.807,
+     "individual": 10.807,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3420",
+   "anio": 2023,
+   "n_individuos": 10101,
+   "suma_pesos": 10101.0,
+   "partidos_comparados": 18,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "OTROS",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "OTROS",
+     "polls": 1.382,
+     "individual": 1.382,
+     "delta": 0.0005
+    },
+    {
+     "partido": "CC",
+     "polls": 0.176,
+     "individual": 0.176,
+     "delta": 0.0004
+    },
+    {
+     "partido": "NS",
+     "polls": 10.015,
+     "individual": 10.015,
+     "delta": 0.0004
+    },
+    {
+     "partido": "SUMAR",
+     "polls": 12.25,
+     "individual": 12.25,
+     "delta": 0.0004
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 1.308,
+     "individual": 1.308,
+     "delta": 0.0003
+    },
+    {
+     "partido": "ERC",
+     "polls": 1.346,
+     "individual": 1.346,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NA+",
+     "polls": 0.106,
+     "individual": 0.106,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NC",
+     "polls": 7.883,
+     "individual": 7.883,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PACMA",
+     "polls": 0.549,
+     "individual": 0.549,
+     "delta": 0.0003
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 4.348,
+     "individual": 4.348,
+     "delta": 0.0002
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.965,
+     "individual": 0.965,
+     "delta": 0.0002
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 1.526,
+     "individual": 1.526,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PSOE",
+     "polls": 26.616,
+     "individual": 26.616,
+     "delta": 0.0002
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 0.736,
+     "individual": 0.736,
+     "delta": 0.0001
+    },
+    {
+     "partido": "BNG",
+     "polls": 0.724,
+     "individual": 0.724,
+     "delta": 0.0
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.584,
+     "individual": 0.584,
+     "delta": 0.0
+    },
+    {
+     "partido": "PP",
+     "polls": 22.781,
+     "individual": 22.781,
+     "delta": 0.0
+    },
+    {
+     "partido": "VOX",
+     "polls": 6.704,
+     "individual": 6.704,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3458",
+   "anio": 2024,
+   "n_individuos": 6434,
+   "suma_pesos": 6434.01,
+   "partidos_comparados": 22,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "CIUDADANOS",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "CIUDADANOS",
+     "polls": 1.384,
+     "individual": 1.384,
+     "delta": 0.0005
+    },
+    {
+     "partido": "SUMAR",
+     "polls": 5.238,
+     "individual": 5.238,
+     "delta": 0.0005
+    },
+    {
+     "partido": "BNG",
+     "polls": 0.75,
+     "individual": 0.75,
+     "delta": 0.0004
+    },
+    {
+     "partido": "CUP",
+     "polls": 0.006,
+     "individual": 0.006,
+     "delta": 0.0004
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.705,
+     "individual": 0.705,
+     "delta": 0.0004
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 0.798,
+     "individual": 0.798,
+     "delta": 0.0004
+    },
+    {
+     "partido": "OTROS",
+     "polls": 0.476,
+     "individual": 0.476,
+     "delta": 0.0003
+    },
+    {
+     "partido": "UNIDAS PODEMOS",
+     "polls": 0.012,
+     "individual": 0.012,
+     "delta": 0.0003
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 1.781,
+     "individual": 1.781,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NC",
+     "polls": 3.221,
+     "individual": 3.221,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PACMA",
+     "polls": 0.076,
+     "individual": 0.076,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PODEMOS",
+     "polls": 3.809,
+     "individual": 3.809,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PP",
+     "polls": 22.832,
+     "individual": 22.832,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PSOE",
+     "polls": 27.331,
+     "individual": 27.331,
+     "delta": 0.0002
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 0.325,
+     "individual": 0.325,
+     "delta": 0.0002
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 1.989,
+     "individual": 1.989,
+     "delta": 0.0001
+    },
+    {
+     "partido": "CC",
+     "polls": 0.328,
+     "individual": 0.328,
+     "delta": 0.0001
+    },
+    {
+     "partido": "COMPROMIS",
+     "polls": 0.028,
+     "individual": 0.028,
+     "delta": 0.0001
+    },
+    {
+     "partido": "ERC",
+     "polls": 0.927,
+     "individual": 0.927,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.385,
+     "individual": 0.385,
+     "delta": 0.0001
+    },
+    {
+     "partido": "VOX",
+     "polls": 9.238,
+     "individual": 9.238,
+     "delta": 0.0001
+    },
+    {
+     "partido": "NS",
+     "polls": 13.13,
+     "individual": 13.13,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3460",
+   "anio": 2024,
+   "n_individuos": 7491,
+   "suma_pesos": 7491.0,
+   "partidos_comparados": 21,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "BNG",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "BNG",
+     "polls": 0.725,
+     "individual": 0.725,
+     "delta": 0.0005
+    },
+    {
+     "partido": "COMPROMIS",
+     "polls": 0.211,
+     "individual": 0.211,
+     "delta": 0.0005
+    },
+    {
+     "partido": "NA+",
+     "polls": 0.006,
+     "individual": 0.006,
+     "delta": 0.0004
+    },
+    {
+     "partido": "VOX",
+     "polls": 8.238,
+     "individual": 8.238,
+     "delta": 0.0004
+    },
+    {
+     "partido": "CC",
+     "polls": 0.123,
+     "individual": 0.123,
+     "delta": 0.0003
+    },
+    {
+     "partido": "ERC",
+     "polls": 0.942,
+     "individual": 0.942,
+     "delta": 0.0003
+    },
+    {
+     "partido": "OTROS",
+     "polls": 1.381,
+     "individual": 1.381,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.574,
+     "individual": 0.574,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PP",
+     "polls": 20.791,
+     "individual": 20.791,
+     "delta": 0.0003
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.501,
+     "individual": 0.501,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PSOE",
+     "polls": 24.945,
+     "individual": 24.945,
+     "delta": 0.0002
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 0.311,
+     "individual": 0.311,
+     "delta": 0.0002
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 3.131,
+     "individual": 3.131,
+     "delta": 0.0001
+    },
+    {
+     "partido": "CIUDADANOS",
+     "polls": 0.375,
+     "individual": 0.375,
+     "delta": 0.0001
+    },
+    {
+     "partido": "NC",
+     "polls": 4.271,
+     "individual": 4.271,
+     "delta": 0.0001
+    },
+    {
+     "partido": "NS",
+     "polls": 19.165,
+     "individual": 19.165,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PACMA",
+     "polls": 0.167,
+     "individual": 0.167,
+     "delta": 0.0001
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 0.877,
+     "individual": 0.877,
+     "delta": 0.0
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 1.05,
+     "individual": 1.05,
+     "delta": 0.0
+    },
+    {
+     "partido": "PODEMOS",
+     "polls": 2.983,
+     "individual": 2.983,
+     "delta": 0.0
+    },
+    {
+     "partido": "SUMAR",
+     "polls": 4.015,
+     "individual": 4.015,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3465",
+   "anio": 2024,
+   "n_individuos": 3010,
+   "suma_pesos": 3010.0,
+   "partidos_comparados": 25,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "ABSTENCION",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "ABSTENCION",
+     "polls": 3.995,
+     "individual": 3.995,
+     "delta": 0.0005
+    },
+    {
+     "partido": "CUP",
+     "polls": 0.386,
+     "individual": 0.386,
+     "delta": 0.0004
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 1.471,
+     "individual": 1.471,
+     "delta": 0.0004
+    },
+    {
+     "partido": "PACMA",
+     "polls": 0.393,
+     "individual": 0.393,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PI",
+     "polls": 0.033,
+     "individual": 0.033,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.512,
+     "individual": 0.512,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PSOE",
+     "polls": 23.758,
+     "individual": 23.758,
+     "delta": 0.0003
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.903,
+     "individual": 0.903,
+     "delta": 0.0002
+    },
+    {
+     "partido": "ERC",
+     "polls": 1.007,
+     "individual": 1.007,
+     "delta": 0.0002
+    },
+    {
+     "partido": "IU",
+     "polls": 0.21,
+     "individual": 0.21,
+     "delta": 0.0002
+    },
+    {
+     "partido": "OTROS",
+     "polls": 0.64,
+     "individual": 0.64,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PP",
+     "polls": 24.843,
+     "individual": 24.843,
+     "delta": 0.0002
+    },
+    {
+     "partido": "UNIDAS PODEMOS",
+     "polls": 0.054,
+     "individual": 0.054,
+     "delta": 0.0002
+    },
+    {
+     "partido": "BNG",
+     "polls": 0.75,
+     "individual": 0.75,
+     "delta": 0.0001
+    },
+    {
+     "partido": "CC",
+     "polls": 0.082,
+     "individual": 0.082,
+     "delta": 0.0001
+    },
+    {
+     "partido": "NA+",
+     "polls": 0.175,
+     "individual": 0.175,
+     "delta": 0.0001
+    },
+    {
+     "partido": "NC",
+     "polls": 5.022,
+     "individual": 5.022,
+     "delta": 0.0001
+    },
+    {
+     "partido": "SUMAR",
+     "polls": 4.821,
+     "individual": 4.821,
+     "delta": 0.0001
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 0.587,
+     "individual": 0.587,
+     "delta": 0.0001
+    },
+    {
+     "partido": "VOX",
+     "polls": 9.779,
+     "individual": 9.779,
+     "delta": 0.0001
+    },
+    {
+     "partido": "CIUDADANOS",
+     "polls": 0.176,
+     "individual": 0.176,
+     "delta": 0.0
+    },
+    {
+     "partido": "COMPROMIS",
+     "polls": 0.178,
+     "individual": 0.178,
+     "delta": 0.0
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 1.24,
+     "individual": 1.24,
+     "delta": 0.0
+    },
+    {
+     "partido": "NS",
+     "polls": 9.961,
+     "individual": 9.961,
+     "delta": 0.0
+    },
+    {
+     "partido": "PODEMOS",
+     "polls": 3.43,
+     "individual": 3.43,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3500",
+   "anio": 2024,
+   "n_individuos": 1809,
+   "suma_pesos": 1809.0,
+   "partidos_comparados": 18,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "ABSTENCION",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "ABSTENCION",
+     "polls": 8.14,
+     "individual": 8.14,
+     "delta": 0.0005
+    },
+    {
+     "partido": "VOX",
+     "polls": 8.556,
+     "individual": 8.556,
+     "delta": 0.0005
+    },
+    {
+     "partido": "BNG",
+     "polls": 0.521,
+     "individual": 0.521,
+     "delta": 0.0004
+    },
+    {
+     "partido": "CC",
+     "polls": 0.075,
+     "individual": 0.075,
+     "delta": 0.0004
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.657,
+     "individual": 0.657,
+     "delta": 0.0004
+    },
+    {
+     "partido": "OTROS",
+     "polls": 1.634,
+     "individual": 1.634,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.28,
+     "individual": 0.28,
+     "delta": 0.0003
+    },
+    {
+     "partido": "SUMAR",
+     "polls": 4.633,
+     "individual": 4.633,
+     "delta": 0.0003
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 2.908,
+     "individual": 2.908,
+     "delta": 0.0002
+    },
+    {
+     "partido": "NC",
+     "polls": 6.041,
+     "individual": 6.041,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PACMA",
+     "polls": 0.385,
+     "individual": 0.385,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PP",
+     "polls": 15.954,
+     "individual": 15.954,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PSOE",
+     "polls": 24.357,
+     "individual": 24.357,
+     "delta": 0.0002
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 2.342,
+     "individual": 2.342,
+     "delta": 0.0002
+    },
+    {
+     "partido": "ERC",
+     "polls": 0.78,
+     "individual": 0.78,
+     "delta": 0.0001
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 2.021,
+     "individual": 2.021,
+     "delta": 0.0001
+    },
+    {
+     "partido": "NS",
+     "polls": 19.069,
+     "individual": 19.069,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PODEMOS",
+     "polls": 1.646,
+     "individual": 1.646,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "3513",
+   "anio": 2025,
+   "n_individuos": 1752,
+   "suma_pesos": 1752.0,
+   "partidos_comparados": 24,
+   "max_delta_pp": 0.0322,
+   "peor_partido": "NS",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "NS",
+     "polls": 20.215,
+     "individual": 20.247,
+     "delta": 0.0322
+    },
+    {
+     "partido": "PP",
+     "polls": 13.525,
+     "individual": 13.525,
+     "delta": 0.0005
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 4.576,
+     "individual": 4.576,
+     "delta": 0.0004
+    },
+    {
+     "partido": "OTROS",
+     "polls": 1.033,
+     "individual": 1.033,
+     "delta": 0.0004
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.221,
+     "individual": 0.221,
+     "delta": 0.0004
+    },
+    {
+     "partido": "PSOE",
+     "polls": 17.738,
+     "individual": 17.738,
+     "delta": 0.0004
+    },
+    {
+     "partido": "VOX",
+     "polls": 8.456,
+     "individual": 8.456,
+     "delta": 0.0004
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 10.639,
+     "individual": 10.639,
+     "delta": 0.0003
+    },
+    {
+     "partido": "COMPROMIS",
+     "polls": 0.083,
+     "individual": 0.083,
+     "delta": 0.0003
+    },
+    {
+     "partido": "GEROA BAI",
+     "polls": 0.056,
+     "individual": 0.056,
+     "delta": 0.0003
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 0.892,
+     "individual": 0.892,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NC",
+     "polls": 6.072,
+     "individual": 6.072,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PAR",
+     "polls": 0.127,
+     "individual": 0.127,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PODEMOS",
+     "polls": 1.696,
+     "individual": 1.696,
+     "delta": 0.0003
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 1.428,
+     "individual": 1.428,
+     "delta": 0.0003
+    },
+    {
+     "partido": "IU",
+     "polls": 0.099,
+     "individual": 0.099,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PACMA",
+     "polls": 0.256,
+     "individual": 0.256,
+     "delta": 0.0002
+    },
+    {
+     "partido": "SUMAR",
+     "polls": 2.882,
+     "individual": 2.882,
+     "delta": 0.0002
+    },
+    {
+     "partido": "BNG",
+     "polls": 0.344,
+     "individual": 0.344,
+     "delta": 0.0001
+    },
+    {
+     "partido": "CIUDADANOS",
+     "polls": 0.05,
+     "individual": 0.05,
+     "delta": 0.0001
+    },
+    {
+     "partido": "CUP",
+     "polls": 0.092,
+     "individual": 0.092,
+     "delta": 0.0001
+    },
+    {
+     "partido": "ERC",
+     "polls": 0.802,
+     "individual": 0.802,
+     "delta": 0.0001
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.542,
+     "individual": 0.542,
+     "delta": 0.0
+    },
+    {
+     "partido": "UNIDAS PODEMOS",
+     "polls": 0.029,
+     "individual": 0.029,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "7715",
+   "anio": 2015,
+   "n_individuos": 6242,
+   "suma_pesos": 6242.0,
+   "partidos_comparados": 24,
+   "max_delta_pp": 0.0005,
+   "peor_partido": "CHA",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "CHA",
+     "polls": 0.027,
+     "individual": 0.027,
+     "delta": 0.0005
+    },
+    {
+     "partido": "PP",
+     "polls": 19.228,
+     "individual": 19.228,
+     "delta": 0.0005
+    },
+    {
+     "partido": "PSOE",
+     "polls": 17.182,
+     "individual": 17.182,
+     "delta": 0.0005
+    },
+    {
+     "partido": "CIUDADANOS",
+     "polls": 10.873,
+     "individual": 10.873,
+     "delta": 0.0004
+    },
+    {
+     "partido": "PODEMOS",
+     "polls": 15.113,
+     "individual": 15.113,
+     "delta": 0.0004
+    },
+    {
+     "partido": "VOTO NULO",
+     "polls": 0.449,
+     "individual": 0.449,
+     "delta": 0.0004
+    },
+    {
+     "partido": "BNG",
+     "polls": 0.09,
+     "individual": 0.09,
+     "delta": 0.0003
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 1.06,
+     "individual": 1.06,
+     "delta": 0.0003
+    },
+    {
+     "partido": "EN BLANCO",
+     "polls": 1.324,
+     "individual": 1.324,
+     "delta": 0.0003
+    },
+    {
+     "partido": "ERC",
+     "polls": 2.791,
+     "individual": 2.791,
+     "delta": 0.0003
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 1.692,
+     "individual": 1.692,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NA+",
+     "polls": 0.028,
+     "individual": 0.028,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PACMA",
+     "polls": 0.809,
+     "individual": 0.809,
+     "delta": 0.0003
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.83,
+     "individual": 0.83,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NC",
+     "polls": 9.63,
+     "individual": 9.63,
+     "delta": 0.0002
+    },
+    {
+     "partido": "UNIDAS PODEMOS",
+     "polls": 2.493,
+     "individual": 2.493,
+     "delta": 0.0002
+    },
+    {
+     "partido": "FORO",
+     "polls": 0.013,
+     "individual": 0.013,
+     "delta": 0.0001
+    },
+    {
+     "partido": "OTROS",
+     "polls": 0.078,
+     "individual": 0.078,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PI",
+     "polls": 0.013,
+     "individual": 0.013,
+     "delta": 0.0001
+    },
+    {
+     "partido": "UPYD",
+     "polls": 0.235,
+     "individual": 0.235,
+     "delta": 0.0001
+    },
+    {
+     "partido": "VOX",
+     "polls": 0.187,
+     "individual": 0.187,
+     "delta": 0.0001
+    },
+    {
+     "partido": "CC",
+     "polls": 0.076,
+     "individual": 0.076,
+     "delta": 0.0
+    },
+    {
+     "partido": "GEROA BAI",
+     "polls": 0.041,
+     "individual": 0.041,
+     "delta": 0.0
+    },
+    {
+     "partido": "IU",
+     "polls": 3.326,
+     "individual": 3.326,
+     "delta": 0.0
+    }
+   ]
+  },
+  {
+   "estudio": "7789",
+   "anio": 1989,
+   "n_individuos": 27421,
+   "suma_pesos": 27421.02,
+   "partidos_comparados": 16,
+   "max_delta_pp": 0.0187,
+   "peor_partido": "NC",
+   "ok": true,
+   "deltas": [
+    {
+     "partido": "NC",
+     "polls": 4.847,
+     "individual": 4.866,
+     "delta": 0.0187
+    },
+    {
+     "partido": "CDS",
+     "polls": 5.544,
+     "individual": 5.544,
+     "delta": 0.0004
+    },
+    {
+     "partido": "PP",
+     "polls": 10.319,
+     "individual": 10.319,
+     "delta": 0.0004
+    },
+    {
+     "partido": "PRC",
+     "polls": 0.01,
+     "individual": 0.01,
+     "delta": 0.0004
+    },
+    {
+     "partido": "ERC",
+     "polls": 0.349,
+     "individual": 0.349,
+     "delta": 0.0003
+    },
+    {
+     "partido": "JXCAT",
+     "polls": 2.227,
+     "individual": 2.227,
+     "delta": 0.0003
+    },
+    {
+     "partido": "NS",
+     "polls": 22.586,
+     "individual": 22.586,
+     "delta": 0.0002
+    },
+    {
+     "partido": "PSOE",
+     "polls": 33.223,
+     "individual": 33.223,
+     "delta": 0.0002
+    },
+    {
+     "partido": "BNG",
+     "polls": 0.148,
+     "individual": 0.148,
+     "delta": 0.0001
+    },
+    {
+     "partido": "EH BILDU",
+     "polls": 0.542,
+     "individual": 0.542,
+     "delta": 0.0001
+    },
+    {
+     "partido": "IU",
+     "polls": 5.396,
+     "individual": 5.396,
+     "delta": 0.0001
+    },
+    {
+     "partido": "OTROS",
+     "polls": 1.223,
+     "individual": 1.223,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PAR",
+     "polls": 0.093,
+     "individual": 0.093,
+     "delta": 0.0001
+    },
+    {
+     "partido": "PNV",
+     "polls": 0.803,
+     "individual": 0.803,
+     "delta": 0.0001
+    },
+    {
+     "partido": "ABSTENCION",
+     "polls": 10.294,
+     "individual": 10.294,
+     "delta": 0.0
+    },
+    {
+     "partido": "NA+",
+     "polls": 0.041,
+     "individual": 0.041,
+     "delta": 0.0
+    }
+   ]
+  }
+ ]
+}

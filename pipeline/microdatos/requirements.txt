@@ -1,0 +1,8 @@
+# Entorno propio para la extraccion de microdatos individuales (Fase 4-c).
+# Se crea con --system-site-packages para reutilizar pandas/numpy/pyarrow del
+# sistema; aqui solo van las dependencias que faltan.
+#
+# Crear:
+#   python3 -m venv --system-site-packages /root/.venvs/29n-micro
+#   /root/.venvs/29n-micro/bin/pip install -r pipeline/microdatos/requirements.txt
+pyreadstat>=1.2.0
