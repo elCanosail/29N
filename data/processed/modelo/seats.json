@@ -1,0 +1,5880 @@
+{
+ "meta": {
+  "generado": "2026-10-15",
+  "objetivo": "29N 2026-11-29",
+  "base_provincial": "2023-07-23",
+  "metodo": "swing proporcional uniforme desde 23J + calibración + D'Hondt",
+  "n_runs": 10000,
+  "seed": 20261015,
+  "ratios_swing_calibrados": {
+   "PP": 1.0621,
+   "PSOE": 0.8963,
+   "VOX": 1.6562,
+   "SUMAR": 0.5599,
+   "ERC": 0.8034,
+   "JXCAT": 0.7643,
+   "PNV": 0.8586,
+   "EH BILDU": 1.098,
+   "BNG": 1.2191,
+   "CUP": 0.591,
+   "CC": 0.2828,
+   "NA+": 1.2248,
+   "PACMA": 0.5791
+  },
+  "calibracion": {
+   "iteraciones": 4,
+   "desviacion_max_pp": 0.0085
+  },
+  "coherencia": {
+   "suma_medias_escanos": 350.0,
+   "total_escanos": 350,
+   "desviacion_escanos": 0.0,
+   "tolerancia": 0.1,
+   "ok_escanos": true,
+   "max_desviacion_votos_pp": 0.0085,
+   "ok_votos": true
+  },
+  "advertencia": "Swing proporcional uniforme: no modela terremotos locales ni elasticidades provinciales distintas. Intervalos provinciales de partidos pequeños muy anchos (diseño honesto)."
+ },
+ "nacional": {
+  "PP": {
+   "media": 136.54,
+   "ic95": [
+    111,
+    164
+   ],
+   "p_ge1": 1.0,
+   "central_escenario": 138
+  },
+  "PSOE": {
+   "media": 106.44,
+   "ic95": [
+    72,
+    137
+   ],
+   "p_ge1": 1.0,
+   "central_escenario": 109
+  },
+  "VOX": {
+   "media": 66.76,
+   "ic95": [
+    42,
+    93
+   ],
+   "p_ge1": 1.0,
+   "central_escenario": 68
+  },
+  "SUMAR": {
+   "media": 14.95,
+   "ic95": [
+    0,
+    50
+   ],
+   "p_ge1": 0.756,
+   "central_escenario": 9
+  },
+  "ERC": {
+   "media": 5.75,
+   "ic95": [
+    0,
+    12
+   ],
+   "p_ge1": 0.973,
+   "central_escenario": 7
+  },
+  "JXCAT": {
+   "media": 4.99,
+   "ic95": [
+    3,
+    8
+   ],
+   "p_ge1": 1.0,
+   "central_escenario": 5
+  },
+  "PNV": {
+   "media": 4.14,
+   "ic95": [
+    3,
+    6
+   ],
+   "p_ge1": 1.0,
+   "central_escenario": 4
+  },
+  "EH BILDU": {
+   "media": 7.1,
+   "ic95": [
+    5,
+    10
+   ],
+   "p_ge1": 1.0,
+   "central_escenario": 7
+  },
+  "BNG": {
+   "media": 1.55,
+   "ic95": [
+    0,
+    5
+   ],
+   "p_ge1": 0.732,
+   "central_escenario": 2
+  },
+  "CUP": {
+   "media": 0.55,
+   "ic95": [
+    0,
+    3
+   ],
+   "p_ge1": 0.321,
+   "central_escenario": 0
+  },
+  "CC": {
+   "media": 0.16,
+   "ic95": [
+    0,
+    1
+   ],
+   "p_ge1": 0.155,
+   "central_escenario": 0
+  },
+  "NA+": {
+   "media": 1.07,
+   "ic95": [
+    0,
+    3
+   ],
+   "p_ge1": 0.684,
+   "central_escenario": 1
+  },
+  "PACMA": {
+   "media": 0.0,
+   "ic95": [
+    0,
+    0
+   ],
+   "p_ge1": 0.005,
+   "central_escenario": 0
+  }
+ },
+ "provincias": {
+  "1": {
+   "nombre": "Araba/Álava",
+   "escanos": 4,
+   "partidos": {
+    "PP": {
+     "media": 0.99,
+     "ic95": [
+      1,
+      1
+     ],
+     "prob_ge1": 0.991
+    },
+    "PSOE": {
+     "media": 1.2,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 0.998
+    },
+    "VOX": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "SUMAR": {
+     "media": 0.16,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.157
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.64,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.638
+    },
+    "EH BILDU": {
+     "media": 1.02,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 0.991
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "2": {
+   "nombre": "Albacete",
+   "escanos": 4,
+   "partidos": {
+    "PP": {
+     "media": 1.97,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.03,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 1.0,
+     "ic95": [
+      1,
+      1
+     ],
+     "prob_ge1": 0.993
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "3": {
+   "nombre": "Alicante/Alacant",
+   "escanos": 12,
+   "partidos": {
+    "PP": {
+     "media": 4.82,
+     "ic95": [
+      4,
+      6
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 3.4,
+     "ic95": [
+      2,
+      4
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 3.15,
+     "ic95": [
+      2,
+      4
+     ],
+     "prob_ge1": 1.0
+    },
+    "SUMAR": {
+     "media": 0.63,
+     "ic95": [
+      0,
+      2
+     ],
+     "prob_ge1": 0.492
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "4": {
+   "nombre": "Almería",
+   "escanos": 6,
+   "partidos": {
+    "PP": {
+     "media": 2.71,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.27,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 2.02,
+     "ic95": [
+      1,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.003
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "5": {
+   "nombre": "Ávila",
+   "escanos": 3,
+   "partidos": {
+    "PP": {
+     "media": 1.51,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 0.71,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.711
+    },
+    "VOX": {
+     "media": 0.78,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.778
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "6": {
+   "nombre": "Badajoz",
+   "escanos": 5,
+   "partidos": {
+    "PP": {
+     "media": 2.07,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.92,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 1.01,
+     "ic95": [
+      1,
+      1
+     ],
+     "prob_ge1": 0.993
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.001
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "7": {
+   "nombre": "Balears, Illes",
+   "escanos": 8,
+   "partidos": {
+    "PP": {
+     "media": 3.26,
+     "ic95": [
+      2,
+      4
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 2.18,
+     "ic95": [
+      1,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 2.01,
+     "ic95": [
+      1,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "SUMAR": {
+     "media": 0.55,
+     "ic95": [
+      0,
+      2
+     ],
+     "prob_ge1": 0.468
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "8": {
+   "nombre": "Barcelona",
+   "escanos": 32,
+   "partidos": {
+    "PP": {
+     "media": 5.38,
+     "ic95": [
+      4,
+      7
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 12.27,
+     "ic95": [
+      9,
+      16
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 4.52,
+     "ic95": [
+      3,
+      6
+     ],
+     "prob_ge1": 1.0
+    },
+    "SUMAR": {
+     "media": 3.06,
+     "ic95": [
+      0,
+      8
+     ],
+     "prob_ge1": 0.756
+    },
+    "ERC": {
+     "media": 3.54,
+     "ic95": [
+      0,
+      7
+     ],
+     "prob_ge1": 0.973
+    },
+    "JXCAT": {
+     "media": 2.8,
+     "ic95": [
+      2,
+      4
+     ],
+     "prob_ge1": 1.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.42,
+     "ic95": [
+      0,
+      2
+     ],
+     "prob_ge1": 0.321
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.005
+    }
+   }
+  },
+  "9": {
+   "nombre": "Burgos",
+   "escanos": 4,
+   "partidos": {
+    "PP": {
+     "media": 2.0,
+     "ic95": [
+      2,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.08,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 0.92,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.915
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.003
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "10": {
+   "nombre": "Cáceres",
+   "escanos": 4,
+   "partidos": {
+    "PP": {
+     "media": 1.84,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.25,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 0.9,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.904
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "11": {
+   "nombre": "Cádiz",
+   "escanos": 9,
+   "partidos": {
+    "PP": {
+     "media": 3.57,
+     "ic95": [
+      3,
+      4
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 2.77,
+     "ic95": [
+      2,
+      4
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 2.23,
+     "ic95": [
+      1,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "SUMAR": {
+     "media": 0.43,
+     "ic95": [
+      0,
+      2
+     ],
+     "prob_ge1": 0.389
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "12": {
+   "nombre": "Castellón/Castelló",
+   "escanos": 5,
+   "partidos": {
+    "PP": {
+     "media": 2.05,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.53,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 1.22,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 0.999
+    },
+    "SUMAR": {
+     "media": 0.2,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.195
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "13": {
+   "nombre": "Ciudad Real",
+   "escanos": 5,
+   "partidos": {
+    "PP": {
+     "media": 2.21,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.64,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 1.15,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 0.999
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.001
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "14": {
+   "nombre": "Córdoba",
+   "escanos": 6,
+   "partidos": {
+    "PP": {
+     "media": 2.73,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.81,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 1.21,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 0.999
+    },
+    "SUMAR": {
+     "media": 0.25,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.243
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "15": {
+   "nombre": "A Coruña",
+   "escanos": 8,
+   "partidos": {
+    "PP": {
+     "media": 4.4,
+     "ic95": [
+      4,
+      5
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 2.19,
+     "ic95": [
+      1,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 0.23,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.231
+    },
+    "SUMAR": {
+     "media": 0.37,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.349
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.81,
+     "ic95": [
+      0,
+      2
+     ],
+     "prob_ge1": 0.732
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "16": {
+   "nombre": "Cuenca",
+   "escanos": 3,
+   "partidos": {
+    "PP": {
+     "media": 1.14,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.0,
+     "ic95": [
+      1,
+      1
+     ],
+     "prob_ge1": 0.992
+    },
+    "VOX": {
+     "media": 0.86,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.858
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "17": {
+   "nombre": "Girona",
+   "escanos": 6,
+   "partidos": {
+    "PP": {
+     "media": 0.69,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.69
+    },
+    "PSOE": {
+     "media": 2.18,
+     "ic95": [
+      1,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 0.86,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.858
+    },
+    "SUMAR": {
+     "media": 0.28,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.273
+    },
+    "ERC": {
+     "media": 0.76,
+     "ic95": [
+      0,
+      2
+     ],
+     "prob_ge1": 0.701
+    },
+    "JXCAT": {
+     "media": 1.09,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 0.999
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.13,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.131
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "18": {
+   "nombre": "Granada",
+   "escanos": 7,
+   "partidos": {
+    "PP": {
+     "media": 2.92,
+     "ic95": [
+      2,
+      4
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 2.03,
+     "ic95": [
+      1,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 1.85,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "SUMAR": {
+     "media": 0.2,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.198
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "19": {
+   "nombre": "Guadalajara",
+   "escanos": 3,
+   "partidos": {
+    "PP": {
+     "media": 1.02,
+     "ic95": [
+      1,
+      1
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 0.98,
+     "ic95": [
+      1,
+      1
+     ],
+     "prob_ge1": 0.983
+    },
+    "VOX": {
+     "media": 1.0,
+     "ic95": [
+      1,
+      1
+     ],
+     "prob_ge1": 0.992
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "20": {
+   "nombre": "Gipuzkoa",
+   "escanos": 6,
+   "partidos": {
+    "PP": {
+     "media": 0.16,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.163
+    },
+    "PSOE": {
+     "media": 1.51,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 0.999
+    },
+    "VOX": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "SUMAR": {
+     "media": 0.23,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.224
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 1.28,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "EH BILDU": {
+     "media": 2.81,
+     "ic95": [
+      2,
+      4
+     ],
+     "prob_ge1": 1.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "22": {
+   "nombre": "Huesca",
+   "escanos": 3,
+   "partidos": {
+    "PP": {
+     "media": 1.43,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.0,
+     "ic95": [
+      1,
+      1
+     ],
+     "prob_ge1": 0.986
+    },
+    "VOX": {
+     "media": 0.56,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.563
+    },
+    "SUMAR": {
+     "media": 0.01,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.012
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "23": {
+   "nombre": "Jaén",
+   "escanos": 5,
+   "partidos": {
+    "PP": {
+     "media": 2.1,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.83,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 1.07,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 0.998
+    },
+    "SUMAR": {
+     "media": 0.01,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.007
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "24": {
+   "nombre": "León",
+   "escanos": 4,
+   "partidos": {
+    "PP": {
+     "media": 1.96,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.1,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 0.94,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.944
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "25": {
+   "nombre": "Lleida",
+   "escanos": 4,
+   "partidos": {
+    "PP": {
+     "media": 0.69,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.693
+    },
+    "PSOE": {
+     "media": 1.58,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 0.19,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.185
+    },
+    "SUMAR": {
+     "media": 0.02,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.024
+    },
+    "ERC": {
+     "media": 0.69,
+     "ic95": [
+      0,
+      2
+     ],
+     "prob_ge1": 0.649
+    },
+    "JXCAT": {
+     "media": 0.83,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.833
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "26": {
+   "nombre": "La Rioja",
+   "escanos": 4,
+   "partidos": {
+    "PP": {
+     "media": 2.29,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.34,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 0.37,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.369
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "27": {
+   "nombre": "Lugo",
+   "escanos": 4,
+   "partidos": {
+    "PP": {
+     "media": 2.9,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.04,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 0.999
+    },
+    "VOX": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.06,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.059
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "28": {
+   "nombre": "Madrid",
+   "escanos": 37,
+   "partidos": {
+    "PP": {
+     "media": 16.26,
+     "ic95": [
+      13,
+      20
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 9.19,
+     "ic95": [
+      6,
+      12
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 8.51,
+     "ic95": [
+      6,
+      11
+     ],
+     "prob_ge1": 1.0
+    },
+    "SUMAR": {
+     "media": 3.04,
+     "ic95": [
+      0,
+      8
+     ],
+     "prob_ge1": 0.746
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "29": {
+   "nombre": "Málaga",
+   "escanos": 11,
+   "partidos": {
+    "PP": {
+     "media": 4.63,
+     "ic95": [
+      4,
+      6
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 2.93,
+     "ic95": [
+      2,
+      4
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 2.93,
+     "ic95": [
+      2,
+      4
+     ],
+     "prob_ge1": 1.0
+    },
+    "SUMAR": {
+     "media": 0.51,
+     "ic95": [
+      0,
+      2
+     ],
+     "prob_ge1": 0.432
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "30": {
+   "nombre": "Murcia",
+   "escanos": 10,
+   "partidos": {
+    "PP": {
+     "media": 4.31,
+     "ic95": [
+      4,
+      5
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 2.0,
+     "ic95": [
+      1,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 3.45,
+     "ic95": [
+      2,
+      4
+     ],
+     "prob_ge1": 1.0
+    },
+    "SUMAR": {
+     "media": 0.24,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.235
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "31": {
+   "nombre": "Navarra",
+   "escanos": 5,
+   "partidos": {
+    "PP": {
+     "media": 0.98,
+     "ic95": [
+      0,
+      2
+     ],
+     "prob_ge1": 0.946
+    },
+    "PSOE": {
+     "media": 1.51,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 0.994
+    },
+    "VOX": {
+     "media": 0.12,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.123
+    },
+    "SUMAR": {
+     "media": 0.23,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.223
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 1.08,
+     "ic95": [
+      0,
+      2
+     ],
+     "prob_ge1": 0.96
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 1.07,
+     "ic95": [
+      0,
+      3
+     ],
+     "prob_ge1": 0.684
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "32": {
+   "nombre": "Ourense",
+   "escanos": 4,
+   "partidos": {
+    "PP": {
+     "media": 2.92,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.04,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 0.999
+    },
+    "VOX": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.04,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.042
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "33": {
+   "nombre": "Asturias",
+   "escanos": 7,
+   "partidos": {
+    "PP": {
+     "media": 2.98,
+     "ic95": [
+      2,
+      4
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 2.3,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 1.33,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 0.999
+    },
+    "SUMAR": {
+     "media": 0.39,
+     "ic95": [
+      0,
+      2
+     ],
+     "prob_ge1": 0.368
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "34": {
+   "nombre": "Palencia",
+   "escanos": 3,
+   "partidos": {
+    "PP": {
+     "media": 1.61,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 0.98,
+     "ic95": [
+      1,
+      1
+     ],
+     "prob_ge1": 0.98
+    },
+    "VOX": {
+     "media": 0.41,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.407
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "35": {
+   "nombre": "Las Palmas",
+   "escanos": 8,
+   "partidos": {
+    "PP": {
+     "media": 2.64,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 2.86,
+     "ic95": [
+      2,
+      4
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 2.2,
+     "ic95": [
+      1,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "SUMAR": {
+     "media": 0.29,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.285
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "36": {
+   "nombre": "Pontevedra",
+   "escanos": 7,
+   "partidos": {
+    "PP": {
+     "media": 3.69,
+     "ic95": [
+      3,
+      5
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 2.25,
+     "ic95": [
+      1,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 0.05,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.055
+    },
+    "SUMAR": {
+     "media": 0.37,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.347
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.64,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.618
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "37": {
+   "nombre": "Salamanca",
+   "escanos": 4,
+   "partidos": {
+    "PP": {
+     "media": 2.03,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.0,
+     "ic95": [
+      1,
+      1
+     ],
+     "prob_ge1": 0.994
+    },
+    "VOX": {
+     "media": 0.97,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.971
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "38": {
+   "nombre": "Santa Cruz de Tenerife",
+   "escanos": 7,
+   "partidos": {
+    "PP": {
+     "media": 3.69,
+     "ic95": [
+      3,
+      5
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 2.84,
+     "ic95": [
+      2,
+      4
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "SUMAR": {
+     "media": 0.31,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.303
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.16,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.155
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "39": {
+   "nombre": "Cantabria",
+   "escanos": 5,
+   "partidos": {
+    "PP": {
+     "media": 2.47,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.5,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 1.02,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 0.993
+    },
+    "SUMAR": {
+     "media": 0.01,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.012
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "40": {
+   "nombre": "Segovia",
+   "escanos": 3,
+   "partidos": {
+    "PP": {
+     "media": 1.63,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 0.87,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.868
+    },
+    "VOX": {
+     "media": 0.5,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.499
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "41": {
+   "nombre": "Sevilla",
+   "escanos": 12,
+   "partidos": {
+    "PP": {
+     "media": 4.51,
+     "ic95": [
+      4,
+      6
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 4.12,
+     "ic95": [
+      3,
+      5
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 2.61,
+     "ic95": [
+      2,
+      4
+     ],
+     "prob_ge1": 1.0
+    },
+    "SUMAR": {
+     "media": 0.76,
+     "ic95": [
+      0,
+      2
+     ],
+     "prob_ge1": 0.546
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "42": {
+   "nombre": "Soria",
+   "escanos": 2,
+   "partidos": {
+    "PP": {
+     "media": 1.05,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 0.94,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.937
+    },
+    "VOX": {
+     "media": 0.01,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.008
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "43": {
+   "nombre": "Tarragona",
+   "escanos": 6,
+   "partidos": {
+    "PP": {
+     "media": 1.01,
+     "ic95": [
+      1,
+      1
+     ],
+     "prob_ge1": 0.998
+    },
+    "PSOE": {
+     "media": 2.49,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 1.19,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 0.995
+    },
+    "SUMAR": {
+     "media": 0.29,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.282
+    },
+    "ERC": {
+     "media": 0.76,
+     "ic95": [
+      0,
+      2
+     ],
+     "prob_ge1": 0.707
+    },
+    "JXCAT": {
+     "media": 0.27,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.266
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.001
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "44": {
+   "nombre": "Teruel",
+   "escanos": 3,
+   "partidos": {
+    "PP": {
+     "media": 1.23,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 0.97,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.968
+    },
+    "VOX": {
+     "media": 0.8,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.804
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "45": {
+   "nombre": "Toledo",
+   "escanos": 6,
+   "partidos": {
+    "PP": {
+     "media": 2.38,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.69,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 1.91,
+     "ic95": [
+      1,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "SUMAR": {
+     "media": 0.02,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.021
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "46": {
+   "nombre": "Valencia/València",
+   "escanos": 16,
+   "partidos": {
+    "PP": {
+     "media": 5.95,
+     "ic95": [
+      5,
+      7
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 4.67,
+     "ic95": [
+      3,
+      6
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 4.03,
+     "ic95": [
+      3,
+      5
+     ],
+     "prob_ge1": 1.0
+    },
+    "SUMAR": {
+     "media": 1.34,
+     "ic95": [
+      0,
+      4
+     ],
+     "prob_ge1": 0.67
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "47": {
+   "nombre": "Valladolid",
+   "escanos": 5,
+   "partidos": {
+    "PP": {
+     "media": 2.38,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.49,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 1.1,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 0.997
+    },
+    "SUMAR": {
+     "media": 0.02,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.021
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "48": {
+   "nombre": "Bizkaia",
+   "escanos": 8,
+   "partidos": {
+    "PP": {
+     "media": 1.0,
+     "ic95": [
+      1,
+      1
+     ],
+     "prob_ge1": 0.995
+    },
+    "PSOE": {
+     "media": 2.23,
+     "ic95": [
+      1,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "SUMAR": {
+     "media": 0.36,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.347
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 2.22,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "EH BILDU": {
+     "media": 2.18,
+     "ic95": [
+      1,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "49": {
+   "nombre": "Zamora",
+   "escanos": 3,
+   "partidos": {
+    "PP": {
+     "media": 1.71,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 0.94,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.942
+    },
+    "VOX": {
+     "media": 0.34,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.344
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "50": {
+   "nombre": "Zaragoza",
+   "escanos": 7,
+   "partidos": {
+    "PP": {
+     "media": 2.93,
+     "ic95": [
+      2,
+      4
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.96,
+     "ic95": [
+      1,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 1.81,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "SUMAR": {
+     "media": 0.3,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.293
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "51": {
+   "nombre": "Ceuta",
+   "escanos": 1,
+   "partidos": {
+    "PP": {
+     "media": 0.64,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.638
+    },
+    "PSOE": {
+     "media": 0.02,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.017
+    },
+    "VOX": {
+     "media": 0.34,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.345
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "21": {
+   "nombre": "Huelva",
+   "escanos": 5,
+   "partidos": {
+    "PP": {
+     "media": 2.07,
+     "ic95": [
+      2,
+      3
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 1.81,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 1.0
+    },
+    "VOX": {
+     "media": 1.07,
+     "ic95": [
+      1,
+      2
+     ],
+     "prob_ge1": 0.998
+    },
+    "SUMAR": {
+     "media": 0.05,
+     "ic95": [
+      0,
+      1
+     ],
+     "prob_ge1": 0.051
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  },
+  "52": {
+   "nombre": "Melilla",
+   "escanos": 1,
+   "partidos": {
+    "PP": {
+     "media": 1.0,
+     "ic95": [
+      1,
+      1
+     ],
+     "prob_ge1": 1.0
+    },
+    "PSOE": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "VOX": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "SUMAR": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "ERC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "JXCAT": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PNV": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "EH BILDU": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "BNG": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CUP": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "CC": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "NA+": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    },
+    "PACMA": {
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "prob_ge1": 0.0
+    }
+   }
+  }
+ }
+}
