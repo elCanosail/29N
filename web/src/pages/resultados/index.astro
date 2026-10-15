@@ -3,44 +3,90 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import DataTable from '../../components/DataTable.astro';
 import Timeline from '../../components/Timeline.astro';
-import type { Columna } from '../../lib/tipos';
+import eleccionesData from '../../data/elecciones.json';
+import { entero, num, fechaLarga } from '../../lib/format';
+import { colorPartido } from '../../lib/partidos';
+import type { Columna, Fila, CeldaDelta } from '../../lib/tipos';
 
-// Años de elecciones generales (hecho público, no dato inventado).
-const elecciones = [
-  '1977', '1979', '1982', '1986', '1989', '1993', '1996', '2000',
-  '2004', '2008', '2011', '2015', '2016', 'A-2019', 'N-2019', '2023',
+const elecciones = eleccionesData.elecciones;
+const ultima = elecciones[elecciones.length - 1];
+
+const hitos = elecciones.map((e) => ({
+  etiqueta: e.id.slice(0, 4) + (e.id.slice(0, 4) === '2019' ? (e.id.slice(5, 7) === '04' ? '·A' : '·N') : ''),
+  href: `#elec-${e.id}`,
+  activo: e.id === ultima.id,
+  titulo: fechaLarga(e.fecha),
+}));
+
+const colsEscanos: Columna[] = [
+  { clave: 'sigla', etiqueta: 'Candidatura' },
+  { clave: 'nombre', etiqueta: 'Denominación oficial' },
+  { clave: 'escanos', etiqueta: 'Escaños', tipo: 'barra' },
+  { clave: 'pct', etiqueta: '% votos', tipo: 'mono', alinear: 'der' },
 ];
-const hitos = elecciones.map((e) => ({ etiqueta: e, pendiente: true }));
 
-const columnasEscanos: Columna[] = [
+function filasEscrutinio(id: string, n = 10): Fila[] {
+  const el = elecciones.find((e) => e.id === id)!;
+  return el.candidaturas.slice(0, n).map((c) => ({
+    sigla: c.sigla,
+    nombre: c.nombre,
+    escanos: { barra: { pct: c.escanos, color: colorPartido(c.sigla) }, texto: `${entero(c.escanos)}` },
+    pct: num(c.pct, 2),
+  }));
+}
+
+/** Comparador: escaños de la candidatura en A vs B (emparejadas por partido_id). */
+function comparar(idA: string, idB: string): Fila[] {
+  const a = elecciones.find((e) => e.id === idA)!;
+  const b = elecciones.find((e) => e.id === idB)!;
+  const mapa = new Map(b.candidaturas.map((c) => [c.partido_id, c]));
+  const filas: Fila[] = [];
+  for (const c of a.candidaturas) {
+    const prev = mapa.get(c.partido_id);
+    const escB = prev ? prev.escanos : 0;
+    const d = c.escanos - escB;
+    if (c.escanos === 0 && escB === 0) continue;
+    const delta: CeldaDelta = {
+      valor: entero(Math.abs(d)),
+      signo: d > 0 ? '+' : d < 0 ? '-' : '=',
+    };
+    filas.push({
+      candidatura: `${c.sigla} — ${c.nombre}`,
+      escanos_a: entero(c.escanos),
+      escanos_b: entero(escB),
+      delta,
+    });
+  }
+  return filas;
+}
+
+const colsComparador: Columna[] = [
   { clave: 'candidatura', etiqueta: 'Candidatura' },
-  { clave: 'escanos', etiqueta: 'Escaños', tipo: 'barra', escala: 200 },
-  { clave: 'votos', etiqueta: '% votos', tipo: 'mono', alinear: 'der' },
-  { clave: 'delta', etiqueta: 'Δ vs anterior', tipo: 'delta' },
+  { clave: 'escanos_a', etiqueta: 'Elección A', tipo: 'mono', alinear: 'der' },
+  { clave: 'escanos_b', etiqueta: 'Elección B', tipo: 'mono', alinear: 'der' },
+  { clave: 'delta', etiqueta: 'Δ escaños', tipo: 'delta' },
 ];
 
-const columnasComparador: Columna[] = [
-  { clave: 'candidatura', etiqueta: 'Candidatura' },
-  { clave: 'a', etiqueta: 'Elección A', tipo: 'mono', alinear: 'der' },
-  { clave: 'b', etiqueta: 'Elección B', tipo: 'mono', alinear: 'der' },
-  { clave: 'delta', etiqueta: 'Δ', tipo: 'delta' },
+const pares = [
+  { a: '2023-07-23', b: '2019-11-10' },
+  { a: '2019-11-10', b: '2019-04-28' },
+  { a: '2016-06-26', b: '2015-12-20' },
 ];
 ---
 
 <Base
   titulo="Resultados 1977–2023"
-  descripcion="Resultados oficiales de todas las elecciones generales españolas desde 1977, con escaños y porcentajes por candidatura."
+  descripcion="Resultados oficiales de las 16 elecciones generales españolas desde 1977, con escaños y porcentajes por candidatura y comparador entre elecciones."
 >
   <div class="contenedor">
     <Breadcrumbs items={[{ label: 'Resultados' }]} />
 
     <header class="cabecera-pagina">
-      <p class="eyebrow entrada">Escrutinio oficial · 1977–2023</p>
+      <p class="eyebrow entrada">Escrutinio oficial · 16 generales (1977–2023)</p>
       <h1 class="medida entrada entrada--1">Resultados 1977–2023</h1>
       <p class="titular-intro entrada entrada--2">
-        Los resultados oficiales del Ministerio del Interior, sin interpretación.
-        Todo lo que viene después en esta web —series, swing, predicción— se apoya
-        en estos números.
+        Los resultados oficiales del Ministerio del Interior, sin interpretación. Todo
+        lo que viene después en esta web —series, swing, predicción— se apoya en estos números.
       </p>
     </header>
 
@@ -49,71 +95,73 @@ const columnasComparador: Columna[] = [
       <Timeline titulo="Elecciones generales" hitos={hitos} />
     </section>
 
-    <section class="selector" aria-labelledby="selector-titulo">
-      <h2 id="selector-titulo">Elección</h2>
-      <div class="selector__controles">
-        <div class="campo">
-          <label for="e-eleccion">Elección</label>
-          <select id="e-eleccion" disabled aria-describedby="selector-aviso">
-            {elecciones.map((e) => <option>{e}</option>)}
-          </select>
-        </div>
-        <p class="boton boton--secundario selector__boton" aria-disabled="true">Comparar elecciones</p>
-      </div>
-      <p class="nota" id="selector-aviso">
-        Por defecto se mostrará la última elección disponible. Los controles se activan
-        con los datos de la <strong>Fase 2</strong>.
-        <span class="pendiente">en construcción — dato disponible en Fase 2</span>
-      </p>
-    </section>
-
-    <section class="seccion--compacta" aria-labelledby="escanos-titulo">
-      <h2 id="escanos-titulo">Escaños por candidatura</h2>
-      <DataTable
-        id="tabla-escanos"
-        columnas={columnasEscanos}
-        filas={[]}
-        fuente={{ nombre: 'Ministerio del Interior — info electoral', url: 'https://infoelectoral.interior.gob.es' }}
-        extraido="pendiente — Fase 2"
-        vacio="Sin resultados cargados. El escrutinio provincial por candidatura (1977–2023) se publica al cerrar la Fase 2."
-        nota="Las barras son proporcionales al número de escaños. El color de partido solo se usa dentro de la tabla y el gráfico, nunca como decoración de página (DESIGN.md §2)."
-      />
-      <p class="descargas">
-        <span class="boton boton--fantasma" aria-disabled="true">Descargar CSV</span>
-        <span class="boton boton--fantasma" aria-disabled="true">Descargar disco de resultados</span>
-      </p>
-    </section>
-
-    <section class="seccion--compacta comparador" aria-labelledby="comparador-titulo">
-      <h2 id="comparador-titulo">Comparador</h2>
+    <!-- Escrutinio por elección -->
+    <section class="seccion--compacta" aria-labelledby="escrutinio-titulo">
+      <h2 id="escrutinio-titulo">Escaños y votos por candidatura</h2>
       <p class="medida nota">
-        Dos elecciones lado a lado. El color marca únicamente el signo de la diferencia
-        (<span class="mono">+</span>/<span class="mono">−</span>); el valor va siempre en tinta.
+        Candidaturas tal y como las publica el Interior (sin agrupar). Por defecto está
+        abierta la última; las demás se despliegan bajo demanda.
       </p>
-      <div class="comparador__selectores">
-        <div class="campo">
-          <label for="c-a">Elección A</label>
-          <select id="c-a" disabled><option>—</option></select>
-        </div>
-        <div class="campo">
-          <label for="c-b">Elección B</label>
-          <select id="c-b" disabled><option>—</option></select>
-        </div>
-      </div>
-      <DataTable
-        id="tabla-comparador"
-        columnas={columnasComparador}
-        filas={[]}
-        vacio="Selecciona dos elecciones para comparar. Disponible en la Fase 2."
-      />
+
+      {elecciones.slice().reverse().map((el) => (
+        <details class="elec" id={`elec-${el.id}`} open={el.id === ultima.id}>
+          <summary>
+            <span class="elec__fecha mono">{el.id}</span>
+            <span class="elec__titulo">{fechaLarga(el.fecha)}</span>
+            <span class="elec__cifras mono">
+              {entero(el.escanos_totales)} escaños · {num(el.votos_validos / 1e6, 1)} M votos válidos
+            </span>
+          </summary>
+          <DataTable
+            id={`tabla-${el.id}`}
+            columnas={colsEscanos}
+            filas={filasEscrutinio(el.id, 12)}
+            fuente={{ nombre: 'Ministerio del Interior', url: 'https://infoelectoral.interior.gob.es' }}
+            extraido={el.id}
+            vacio="Sin resultados."
+            nota="Las barras son proporcionales a los escaños obtenidos. Se listan las 12 candidaturas con más votos."
+          />
+        </details>
+      ))}
+    </section>
+
+    <!-- Comparador -->
+    <section class="seccion--compacta comparador" aria-labelledby="comparador-titulo">
+      <h2 id="comparador-titulo">Comparador de partidos</h2>
+      <p class="medida nota">
+        Escaños de cada candidatura en dos elecciones, emparejadas por identificador de
+        partido del Interior. El color marca únicamente el signo de la diferencia
+        (<span class="mono">+</span>/<span class="mono">−</span>); el valor va siempre en tinta.
+        El comparador libre (elegir cualquier par) llegará con JavaScript; aquí van tres pares
+        de referencia.
+      </p>
+
+      {pares.map((par, i) => {
+        const A = elecciones.find((e) => e.id === par.a)!;
+        const B = elecciones.find((e) => e.id === par.b)!;
+        return (
+          <details open={i === 0}>
+            <summary class="comparador__summary">
+              {A.id} <span aria-hidden="true">vs</span> {B.id}
+            </summary>
+            <DataTable
+              id={`comparador-${i}`}
+              columnas={colsComparador}
+              filas={comparar(par.a, par.b)}
+              vacio="Sin candidaturas coincidentes."
+              nota={`Δ = escaños de A (${A.id}) − escaños de B (${B.id}). Las candidaturas que solo existen en una de las dos elecciones aparecen con 0 en la otra.`}
+            />
+          </details>
+        );
+      })}
     </section>
 
     <section class="seccion--compacta" aria-labelledby="contexto-titulo">
       <h2 id="contexto-titulo">Nota de contexto</h2>
-      <p class="cita-metodo" id="contexto-nota">
-        Cada elección llevará su nota editorial —disoluciones, pactos, particularidades
-        del censo— en Newsreader itálica. Todavía no hay ninguna escrita:
-        <span class="pendiente">en construcción — dato disponible en Fase 2</span>.
+      <p class="cita-metodo">
+        Las notas editoriales por elección —disoluciones, pactos, particularidades del
+        censo— están pendientes de redacción. Mientras no existan, esta página no las
+        finge: publica el escrutinio y calla lo que no está documentado.
       </p>
     </section>
   </div>
@@ -122,25 +170,20 @@ const columnasComparador: Columna[] = [
 <style>
   .cabecera-pagina { padding-block: var(--s-5) var(--s-6); }
 
-  .selector { border-top: var(--borde-tinta); padding-top: var(--s-4); margin-bottom: var(--s-6); }
-  .selector h2 { font-size: 1.3rem; }
-  .selector__controles {
+  .elec { border-top: var(--borde-regla); padding: var(--s-2) 0; }
+  .elec > summary {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
-    gap: var(--s-4);
+    align-items: baseline;
+    gap: var(--s-3);
+    cursor: pointer;
+    padding: var(--s-2) 0;
+    min-height: 44px;
   }
-  .selector__controles .campo { min-width: 220px; margin-bottom: 0; }
-  .selector__boton { cursor: not-allowed; opacity: 0.55; }
+  .elec__fecha { color: var(--tinta-2); font-size: 0.8125rem; }
+  .elec__titulo { font-family: var(--f-titular); font-size: 1.05rem; font-weight: 600; }
+  .elec__cifras { color: var(--tinta-2); font-size: 0.8125rem; margin-left: auto; }
 
-  .descargas { display: flex; flex-wrap: wrap; gap: var(--s-4); }
-  .descargas .boton { cursor: not-allowed; opacity: 0.7; }
-
-  .comparador__selectores {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--s-5);
-    margin-bottom: var(--s-4);
-  }
-  .comparador__selectores .campo { min-width: 200px; }
+  .comparador__summary { cursor: pointer; font-weight: 600; min-height: 44px; display: flex; align-items: center; }
+  .comparador details { border-top: var(--borde-regla); padding: var(--s-2) 0; }
 </style>

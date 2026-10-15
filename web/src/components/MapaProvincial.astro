@@ -1,73 +1,122 @@
 ---
 /**
- * MapaProvincial — esquema del coroplético (DESIGN.md §4 "Mapa provincial").
+ * MapaProvincial — cartograma de provincias (DESIGN.md §4 «Mapa provincial»).
  *
- * En este scaffold NO se dibuja una silueta provincial real (no la tenemos y
- * falsearla sería deshonesto): se dibuja la RETÍCULA del componente, con la
- * trama de rayado reservada a "sin predicción válida".
- * El mapa nunca es el único camino al dato: en /prediccion/ hay tabla paralela.
+ * No se dibuja una silueta geográfica (no disponemos de la geometría provincial
+ * en el repo y falsearla sería deshonesto): se dibuja un CARTAGRAMA, una celda
+ * por provincia colocada aproximadamente según su posición real. Cada celda
+ * enlaza con el panel de su provincia (`#prov-<código>`), de modo que el mapa
+ * queda sincronizado con el panel y con la tabla paralela sin JavaScript.
+ *
+ * El color codifica el grupo del partido con más escaños esperados, pero NUNCA
+ * es el único canal: cada celda escribe su sigla. El mapa no es el único camino
+ * al dato (DESIGN.md §7.3): hay tabla paralela con las mismas cifras.
  */
-const { descripcion = 'Esquema del componente de mapa provincial. Sin datos todavía.' } =
-  Astro.props as { descripcion?: string };
+import { colorPartido, sigla } from '../lib/partidos';
 
-// Retícula 6 × 4 (24 celdas). Las marcadas con `trama` ilustran el rayado de
-// "sin predicción válida" definido en DESIGN.md §4.
-const celdas = Array.from({ length: 24 }, (_, i) => ({
-  x: (i % 6) * 62 + 4,
-  y: Math.floor(i / 6) * 58 + 4,
-  trama: [3, 9, 14, 22].includes(i),
-}));
+interface ProvinciaMapa {
+  codigo: number;
+  nombre: string;
+  escanos: number;
+  ganador: string;
+}
 
-const cortes = ['< 15 %', '15–20 %', '20–25 %', '25–30 %', '≥ 30 %'];
+interface Props {
+  provincias: ProvinciaMapa[];
+  descripcion?: string;
+}
+const { provincias, descripcion } = Astro.props as Props;
+
+// Cartograma 11 × 9. Cada código ocupa (columna, fila) según su posición real.
+const LAYOUT: Record<number, [number, number]> = {
+  15: [2, 1], 27: [3, 1], 33: [4, 1], 39: [5, 1], 48: [6, 1], 20: [7, 1], 1: [8, 1], 31: [9, 1], 17: [11, 1],
+  36: [1, 2], 32: [2, 2], 24: [3, 2], 34: [4, 2], 9: [5, 2], 42: [6, 2], 26: [7, 2], 50: [8, 2], 22: [9, 2], 25: [10, 2], 8: [11, 2],
+  37: [2, 3], 49: [3, 3], 47: [4, 3], 40: [5, 3], 19: [6, 3], 44: [9, 3], 43: [10, 3],
+  10: [1, 4], 6: [2, 4], 5: [4, 4], 28: [6, 4], 16: [7, 4], 13: [8, 4], 12: [9, 4], 46: [10, 4],
+  21: [1, 5], 41: [2, 5], 14: [3, 5], 23: [4, 5], 45: [5, 5], 2: [6, 5], 3: [8, 5], 30: [9, 5], 7: [11, 5],
+  11: [2, 6], 29: [3, 6], 18: [4, 6], 4: [5, 6],
+  35: [1, 8], 51: [10, 8], 52: [11, 8],
+  38: [1, 9],
+};
+
+/** Abreviatura estable a partir del nombre oficial. */
+function abrev(nombre: string): string {
+  const trozo = nombre.split('/')[0].split(',')[0].trim();
+  const palabras = trozo.split(/\s+/).filter((p) => p.length > 2);
+  if (palabras.length >= 3) return palabras.slice(0, 3).map((p) => p[0]).join('').toUpperCase();
+  if (palabras.length === 2) return (palabras[0].slice(0, 2) + palabras[1][0]).toUpperCase();
+  return trozo.slice(0, 4).toUpperCase();
+}
+
+const filas = provincias.filter((p) => LAYOUT[p.codigo]);
+const grupos = [...new Set(filas.map((p) => p.ganador))].sort();
 ---
 
 <figure class="mapa">
-  <svg
-    class="mapa__svg"
-    viewBox="0 0 376 244"
-    role="img"
-    aria-label={descripcion}
-  >
-    <defs>
-      <pattern id="sin-prediccion" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-        <rect width="7" height="7" fill="var(--papel-3)"></rect>
-        <line x1="0" y1="0" x2="0" y2="7" stroke="var(--regla)" stroke-width="2"></line>
-      </pattern>
-    </defs>
-    {celdas.map((c) => (
-      <rect
-        x={c.x}
-        y={c.y}
-        width="54"
-        height="50"
-        rx="2"
-        fill={c.trama ? 'url(#sin-prediccion)' : 'var(--papel-2)'}
-        stroke="var(--regla)"
-        stroke-width="1"
-      ></rect>
-    ))}
-    <rect x="2" y="2" width="372" height="240" fill="none" stroke="var(--tinta-2)" stroke-width="1.5"></rect>
-  </svg>
+  <div class="mapa__rejilla" role="group" aria-label={descripcion ?? 'Cartograma de provincias'}>
+    {filas.map((p) => {
+      const [col, row] = LAYOUT[p.codigo];
+      return (
+        <a
+          class="celda"
+          href={`#prov-${p.codigo}`}
+          style={`grid-column:${col};grid-row:${row};--c:${colorPartido(p.ganador)}`}
+          aria-label={`${p.nombre}: ${p.ganador}, ${p.escanos} escaños en juego`}
+        >
+          <span class="celda__abrev">{abrev(p.nombre)}</span>
+          <span class="celda__gan mono">{sigla(p.ganador)}</span>
+        </a>
+      );
+    })}
+  </div>
 
   <figcaption class="mapa__pie">
-    <p class="eyebrow">Leyenda · cortes exactos</p>
-    <ul class="mapa__cortes">
-      {cortes.map((c) => <li class="mono">{c}</li>)}
-      <li class="mapa__sin mono"><span class="mapa__muestra" aria-hidden="true"></span> Sin predicción válida</li>
+    <p class="eyebrow">Partido con más escaños esperados</p>
+    <ul class="mapa__leyenda">
+      {grupos.map((g) => (
+        <li>
+          <span class="mapa__muestra" style={`background:${colorPartido(g)}`} aria-hidden="true"></span>
+          <span>{g}</span>
+        </li>
+      ))}
     </ul>
     <p class="nota">
-      Esquema del componente, sin valores. La silueta provincial real y los cortes
-      se publican con la predicción (<strong>Fase 5</strong>).
-      <span class="pendiente">en construcción — dato disponible en Fase 5</span>
+      Cartograma: cada celda es una provincia, colocada según su posición real. El color
+      indica el partido con <strong>más escaños esperados</strong> (media de 10 000
+      simulaciones); la sigla va escrita para que el color no sea el único canal.
+      La geometría provincial fina es una mejora pendiente, no un dato.
     </p>
   </figcaption>
 </figure>
 
 <style>
   .mapa { margin: 0; }
-  .mapa__svg { width: 100%; height: auto; display: block; }
+  .mapa__rejilla {
+    display: grid;
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+    gap: 3px;
+  }
+  .celda {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 0.95;
+    padding: 1px;
+    border-radius: 2px;
+    text-decoration: none;
+    color: var(--tinta);
+    background: color-mix(in oklch, var(--c) 18%, var(--papel));
+    border: 1px solid color-mix(in oklch, var(--c) 45%, var(--papel));
+    overflow: hidden;
+  }
+  .celda:hover { outline: 2px solid var(--tinta); }
+  .celda:focus-visible { outline: 3px solid var(--foco); outline-offset: 1px; }
+  .celda__abrev { font-size: 0.62rem; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+  .celda__gan { font-size: 0.56rem; color: var(--tinta-2); line-height: 1.1; }
+
   .mapa__pie { margin-top: var(--s-3); }
-  .mapa__cortes {
+  .mapa__leyenda {
     list-style: none;
     margin: 0 0 var(--s-2);
     padding: 0;
@@ -77,13 +126,11 @@ const cortes = ['< 15 %', '15–20 %', '20–25 %', '25–30 %', '≥ 30 %'];
     font-size: 0.8125rem;
     color: var(--tinta-2);
   }
-  .mapa__sin { display: inline-flex; align-items: center; gap: var(--s-2); }
-  .mapa__muestra {
-    display: inline-block;
-    width: 18px;
-    height: 12px;
-    background: var(--papel-3);
-    border: 1px solid var(--regla);
-    background-image: repeating-linear-gradient(45deg, var(--regla) 0 2px, transparent 2px 5px);
+  .mapa__leyenda li { display: inline-flex; align-items: center; gap: var(--s-2); }
+  .mapa__muestra { inline-size: 14px; block-size: 14px; border-radius: 2px; }
+
+  @media (max-width: 560px) {
+    .celda__abrev { font-size: 0.5rem; }
+    .celda__gan { display: none; }
   }
 </style>

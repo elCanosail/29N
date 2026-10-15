@@ -1,0 +1,2461 @@
+{
+ "meta": {
+  "generado": "2026-10-15",
+  "objetivo": "29N 2026-11-29",
+  "base_provincial": "2023-07-23",
+  "metodo": "swing proporcional uniforme desde 23J + calibración + D'Hondt",
+  "n_runs": 10000,
+  "seed": 20261015,
+  "ratios_swing_calibrados": {
+   "PP": 1.0621,
+   "PSOE": 0.8963,
+   "VOX": 1.6562,
+   "SUMAR": 0.5599,
+   "ERC": 0.8034,
+   "JXCAT": 0.7643,
+   "PNV": 0.8586,
+   "EH BILDU": 1.098,
+   "BNG": 1.2191,
+   "CUP": 0.591,
+   "CC": 0.2828,
+   "NA+": 1.2248,
+   "PACMA": 0.5791
+  },
+  "calibracion": {
+   "iteraciones": 4,
+   "desviacion_max_pp": 0.0085
+  },
+  "coherencia": {
+   "suma_medias_escanos": 350.0,
+   "total_escanos": 350,
+   "desviacion_escanos": 0.0,
+   "tolerancia": 0.1,
+   "ok_escanos": true,
+   "max_desviacion_votos_pp": 0.0085,
+   "ok_votos": true
+  },
+  "advertencia": "Swing proporcional uniforme: no modela terremotos locales ni elasticidades provinciales distintas. Intervalos provinciales de partidos pequeños muy anchos (diseño honesto)."
+ },
+ "nacional": [
+  {
+   "partido": "PP",
+   "media": 136.54,
+   "ic95": [
+    111,
+    164
+   ],
+   "p_ge1": 1.0,
+   "central_escenario": 138
+  },
+  {
+   "partido": "PSOE",
+   "media": 106.44,
+   "ic95": [
+    72,
+    137
+   ],
+   "p_ge1": 1.0,
+   "central_escenario": 109
+  },
+  {
+   "partido": "VOX",
+   "media": 66.76,
+   "ic95": [
+    42,
+    93
+   ],
+   "p_ge1": 1.0,
+   "central_escenario": 68
+  },
+  {
+   "partido": "SUMAR",
+   "media": 14.95,
+   "ic95": [
+    0,
+    50
+   ],
+   "p_ge1": 0.756,
+   "central_escenario": 9
+  },
+  {
+   "partido": "EH BILDU",
+   "media": 7.1,
+   "ic95": [
+    5,
+    10
+   ],
+   "p_ge1": 1.0,
+   "central_escenario": 7
+  },
+  {
+   "partido": "ERC",
+   "media": 5.75,
+   "ic95": [
+    0,
+    12
+   ],
+   "p_ge1": 0.973,
+   "central_escenario": 7
+  },
+  {
+   "partido": "JXCAT",
+   "media": 4.99,
+   "ic95": [
+    3,
+    8
+   ],
+   "p_ge1": 1.0,
+   "central_escenario": 5
+  },
+  {
+   "partido": "PNV",
+   "media": 4.14,
+   "ic95": [
+    3,
+    6
+   ],
+   "p_ge1": 1.0,
+   "central_escenario": 4
+  },
+  {
+   "partido": "BNG",
+   "media": 1.55,
+   "ic95": [
+    0,
+    5
+   ],
+   "p_ge1": 0.732,
+   "central_escenario": 2
+  },
+  {
+   "partido": "NA+",
+   "media": 1.07,
+   "ic95": [
+    0,
+    3
+   ],
+   "p_ge1": 0.684,
+   "central_escenario": 1
+  },
+  {
+   "partido": "CUP",
+   "media": 0.55,
+   "ic95": [
+    0,
+    3
+   ],
+   "p_ge1": 0.321,
+   "central_escenario": 0
+  },
+  {
+   "partido": "CC",
+   "media": 0.16,
+   "ic95": [
+    0,
+    1
+   ],
+   "p_ge1": 0.155,
+   "central_escenario": 0
+  },
+  {
+   "partido": "PACMA",
+   "media": 0.0,
+   "ic95": [
+    0,
+    0
+   ],
+   "p_ge1": 0.005,
+   "central_escenario": 0
+  }
+ ],
+ "provincias": [
+  {
+   "codigo": 1,
+   "nombre": "Araba/Álava",
+   "escanos": 4,
+   "ganador": "PSOE",
+   "partidos": [
+    {
+     "partido": "PSOE",
+     "media": 1.2,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 0.998
+    },
+    {
+     "partido": "EH BILDU",
+     "media": 1.02,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 0.991
+    },
+    {
+     "partido": "PP",
+     "media": 0.99,
+     "ic95": [
+      1,
+      1
+     ],
+     "p_ge1": 0.991
+    },
+    {
+     "partido": "PNV",
+     "media": 0.64,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.638
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.16,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.157
+    }
+   ]
+  },
+  {
+   "codigo": 2,
+   "nombre": "Albacete",
+   "escanos": 4,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 1.97,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.03,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 1.0,
+     "ic95": [
+      1,
+      1
+     ],
+     "p_ge1": 0.993
+    }
+   ]
+  },
+  {
+   "codigo": 3,
+   "nombre": "Alicante/Alacant",
+   "escanos": 12,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 4.82,
+     "ic95": [
+      4,
+      6
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 3.4,
+     "ic95": [
+      2,
+      4
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 3.15,
+     "ic95": [
+      2,
+      4
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.63,
+     "ic95": [
+      0,
+      2
+     ],
+     "p_ge1": 0.492
+    }
+   ]
+  },
+  {
+   "codigo": 4,
+   "nombre": "Almería",
+   "escanos": 6,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.71,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 2.02,
+     "ic95": [
+      1,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.27,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "p_ge1": 0.003
+    }
+   ]
+  },
+  {
+   "codigo": 5,
+   "nombre": "Ávila",
+   "escanos": 3,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 1.51,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 0.78,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.778
+    },
+    {
+     "partido": "PSOE",
+     "media": 0.71,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.711
+    }
+   ]
+  },
+  {
+   "codigo": 6,
+   "nombre": "Badajoz",
+   "escanos": 5,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.07,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.92,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 1.01,
+     "ic95": [
+      1,
+      1
+     ],
+     "p_ge1": 0.993
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "p_ge1": 0.001
+    }
+   ]
+  },
+  {
+   "codigo": 7,
+   "nombre": "Balears, Illes",
+   "escanos": 8,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 3.26,
+     "ic95": [
+      2,
+      4
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 2.18,
+     "ic95": [
+      1,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 2.01,
+     "ic95": [
+      1,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.55,
+     "ic95": [
+      0,
+      2
+     ],
+     "p_ge1": 0.468
+    }
+   ]
+  },
+  {
+   "codigo": 8,
+   "nombre": "Barcelona",
+   "escanos": 32,
+   "ganador": "PSOE",
+   "partidos": [
+    {
+     "partido": "PSOE",
+     "media": 12.27,
+     "ic95": [
+      9,
+      16
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PP",
+     "media": 5.38,
+     "ic95": [
+      4,
+      7
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 4.52,
+     "ic95": [
+      3,
+      6
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "ERC",
+     "media": 3.54,
+     "ic95": [
+      0,
+      7
+     ],
+     "p_ge1": 0.973
+    },
+    {
+     "partido": "SUMAR",
+     "media": 3.06,
+     "ic95": [
+      0,
+      8
+     ],
+     "p_ge1": 0.756
+    },
+    {
+     "partido": "JXCAT",
+     "media": 2.8,
+     "ic95": [
+      2,
+      4
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "CUP",
+     "media": 0.42,
+     "ic95": [
+      0,
+      2
+     ],
+     "p_ge1": 0.321
+    },
+    {
+     "partido": "PACMA",
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "p_ge1": 0.005
+    }
+   ]
+  },
+  {
+   "codigo": 9,
+   "nombre": "Burgos",
+   "escanos": 4,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.0,
+     "ic95": [
+      2,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.08,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 0.92,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.915
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "p_ge1": 0.003
+    }
+   ]
+  },
+  {
+   "codigo": 10,
+   "nombre": "Cáceres",
+   "escanos": 4,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 1.84,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.25,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 0.9,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.904
+    }
+   ]
+  },
+  {
+   "codigo": 11,
+   "nombre": "Cádiz",
+   "escanos": 9,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 3.57,
+     "ic95": [
+      3,
+      4
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 2.77,
+     "ic95": [
+      2,
+      4
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 2.23,
+     "ic95": [
+      1,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.43,
+     "ic95": [
+      0,
+      2
+     ],
+     "p_ge1": 0.389
+    }
+   ]
+  },
+  {
+   "codigo": 12,
+   "nombre": "Castellón/Castelló",
+   "escanos": 5,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.05,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.53,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 1.22,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 0.999
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.2,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.195
+    }
+   ]
+  },
+  {
+   "codigo": 13,
+   "nombre": "Ciudad Real",
+   "escanos": 5,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.21,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.64,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 1.15,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 0.999
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "p_ge1": 0.001
+    }
+   ]
+  },
+  {
+   "codigo": 14,
+   "nombre": "Córdoba",
+   "escanos": 6,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.73,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.81,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 1.21,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 0.999
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.25,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.243
+    }
+   ]
+  },
+  {
+   "codigo": 15,
+   "nombre": "A Coruña",
+   "escanos": 8,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 4.4,
+     "ic95": [
+      4,
+      5
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 2.19,
+     "ic95": [
+      1,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "BNG",
+     "media": 0.81,
+     "ic95": [
+      0,
+      2
+     ],
+     "p_ge1": 0.732
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.37,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.349
+    },
+    {
+     "partido": "VOX",
+     "media": 0.23,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.231
+    }
+   ]
+  },
+  {
+   "codigo": 16,
+   "nombre": "Cuenca",
+   "escanos": 3,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 1.14,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.0,
+     "ic95": [
+      1,
+      1
+     ],
+     "p_ge1": 0.992
+    },
+    {
+     "partido": "VOX",
+     "media": 0.86,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.858
+    }
+   ]
+  },
+  {
+   "codigo": 17,
+   "nombre": "Girona",
+   "escanos": 6,
+   "ganador": "PSOE",
+   "partidos": [
+    {
+     "partido": "PSOE",
+     "media": 2.18,
+     "ic95": [
+      1,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "JXCAT",
+     "media": 1.09,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 0.999
+    },
+    {
+     "partido": "VOX",
+     "media": 0.86,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.858
+    },
+    {
+     "partido": "ERC",
+     "media": 0.76,
+     "ic95": [
+      0,
+      2
+     ],
+     "p_ge1": 0.701
+    },
+    {
+     "partido": "PP",
+     "media": 0.69,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.69
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.28,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.273
+    },
+    {
+     "partido": "CUP",
+     "media": 0.13,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.131
+    }
+   ]
+  },
+  {
+   "codigo": 18,
+   "nombre": "Granada",
+   "escanos": 7,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.92,
+     "ic95": [
+      2,
+      4
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 2.03,
+     "ic95": [
+      1,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 1.85,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.2,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.198
+    }
+   ]
+  },
+  {
+   "codigo": 19,
+   "nombre": "Guadalajara",
+   "escanos": 3,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 1.02,
+     "ic95": [
+      1,
+      1
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 1.0,
+     "ic95": [
+      1,
+      1
+     ],
+     "p_ge1": 0.992
+    },
+    {
+     "partido": "PSOE",
+     "media": 0.98,
+     "ic95": [
+      1,
+      1
+     ],
+     "p_ge1": 0.983
+    }
+   ]
+  },
+  {
+   "codigo": 20,
+   "nombre": "Gipuzkoa",
+   "escanos": 6,
+   "ganador": "EH BILDU",
+   "partidos": [
+    {
+     "partido": "EH BILDU",
+     "media": 2.81,
+     "ic95": [
+      2,
+      4
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.51,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 0.999
+    },
+    {
+     "partido": "PNV",
+     "media": 1.28,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.23,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.224
+    },
+    {
+     "partido": "PP",
+     "media": 0.16,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.163
+    }
+   ]
+  },
+  {
+   "codigo": 21,
+   "nombre": "Huelva",
+   "escanos": 5,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.07,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.81,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 1.07,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 0.998
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.05,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.051
+    }
+   ]
+  },
+  {
+   "codigo": 22,
+   "nombre": "Huesca",
+   "escanos": 3,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 1.43,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.0,
+     "ic95": [
+      1,
+      1
+     ],
+     "p_ge1": 0.986
+    },
+    {
+     "partido": "VOX",
+     "media": 0.56,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.563
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.01,
+     "ic95": [
+      0,
+      0
+     ],
+     "p_ge1": 0.012
+    }
+   ]
+  },
+  {
+   "codigo": 23,
+   "nombre": "Jaén",
+   "escanos": 5,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.1,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.83,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 1.07,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 0.998
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.01,
+     "ic95": [
+      0,
+      0
+     ],
+     "p_ge1": 0.007
+    }
+   ]
+  },
+  {
+   "codigo": 24,
+   "nombre": "León",
+   "escanos": 4,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 1.96,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.1,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 0.94,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.944
+    }
+   ]
+  },
+  {
+   "codigo": 25,
+   "nombre": "Lleida",
+   "escanos": 4,
+   "ganador": "PSOE",
+   "partidos": [
+    {
+     "partido": "PSOE",
+     "media": 1.58,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "JXCAT",
+     "media": 0.83,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.833
+    },
+    {
+     "partido": "PP",
+     "media": 0.69,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.693
+    },
+    {
+     "partido": "ERC",
+     "media": 0.69,
+     "ic95": [
+      0,
+      2
+     ],
+     "p_ge1": 0.649
+    },
+    {
+     "partido": "VOX",
+     "media": 0.19,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.185
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.02,
+     "ic95": [
+      0,
+      0
+     ],
+     "p_ge1": 0.024
+    }
+   ]
+  },
+  {
+   "codigo": 26,
+   "nombre": "La Rioja",
+   "escanos": 4,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.29,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.34,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 0.37,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.369
+    }
+   ]
+  },
+  {
+   "codigo": 27,
+   "nombre": "Lugo",
+   "escanos": 4,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.9,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.04,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 0.999
+    },
+    {
+     "partido": "BNG",
+     "media": 0.06,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.059
+    }
+   ]
+  },
+  {
+   "codigo": 28,
+   "nombre": "Madrid",
+   "escanos": 37,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 16.26,
+     "ic95": [
+      13,
+      20
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 9.19,
+     "ic95": [
+      6,
+      12
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 8.51,
+     "ic95": [
+      6,
+      11
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "SUMAR",
+     "media": 3.04,
+     "ic95": [
+      0,
+      8
+     ],
+     "p_ge1": 0.746
+    }
+   ]
+  },
+  {
+   "codigo": 29,
+   "nombre": "Málaga",
+   "escanos": 11,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 4.63,
+     "ic95": [
+      4,
+      6
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 2.93,
+     "ic95": [
+      2,
+      4
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 2.93,
+     "ic95": [
+      2,
+      4
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.51,
+     "ic95": [
+      0,
+      2
+     ],
+     "p_ge1": 0.432
+    }
+   ]
+  },
+  {
+   "codigo": 30,
+   "nombre": "Murcia",
+   "escanos": 10,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 4.31,
+     "ic95": [
+      4,
+      5
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 3.45,
+     "ic95": [
+      2,
+      4
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 2.0,
+     "ic95": [
+      1,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.24,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.235
+    }
+   ]
+  },
+  {
+   "codigo": 31,
+   "nombre": "Navarra",
+   "escanos": 5,
+   "ganador": "PSOE",
+   "partidos": [
+    {
+     "partido": "PSOE",
+     "media": 1.51,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 0.994
+    },
+    {
+     "partido": "EH BILDU",
+     "media": 1.08,
+     "ic95": [
+      0,
+      2
+     ],
+     "p_ge1": 0.96
+    },
+    {
+     "partido": "NA+",
+     "media": 1.07,
+     "ic95": [
+      0,
+      3
+     ],
+     "p_ge1": 0.684
+    },
+    {
+     "partido": "PP",
+     "media": 0.98,
+     "ic95": [
+      0,
+      2
+     ],
+     "p_ge1": 0.946
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.23,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.223
+    },
+    {
+     "partido": "VOX",
+     "media": 0.12,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.123
+    }
+   ]
+  },
+  {
+   "codigo": 32,
+   "nombre": "Ourense",
+   "escanos": 4,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.92,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.04,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 0.999
+    },
+    {
+     "partido": "BNG",
+     "media": 0.04,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.042
+    }
+   ]
+  },
+  {
+   "codigo": 33,
+   "nombre": "Asturias",
+   "escanos": 7,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.98,
+     "ic95": [
+      2,
+      4
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 2.3,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 1.33,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 0.999
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.39,
+     "ic95": [
+      0,
+      2
+     ],
+     "p_ge1": 0.368
+    }
+   ]
+  },
+  {
+   "codigo": 34,
+   "nombre": "Palencia",
+   "escanos": 3,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 1.61,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 0.98,
+     "ic95": [
+      1,
+      1
+     ],
+     "p_ge1": 0.98
+    },
+    {
+     "partido": "VOX",
+     "media": 0.41,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.407
+    }
+   ]
+  },
+  {
+   "codigo": 35,
+   "nombre": "Las Palmas",
+   "escanos": 8,
+   "ganador": "PSOE",
+   "partidos": [
+    {
+     "partido": "PSOE",
+     "media": 2.86,
+     "ic95": [
+      2,
+      4
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PP",
+     "media": 2.64,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 2.2,
+     "ic95": [
+      1,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.29,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.285
+    }
+   ]
+  },
+  {
+   "codigo": 36,
+   "nombre": "Pontevedra",
+   "escanos": 7,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 3.69,
+     "ic95": [
+      3,
+      5
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 2.25,
+     "ic95": [
+      1,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "BNG",
+     "media": 0.64,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.618
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.37,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.347
+    },
+    {
+     "partido": "VOX",
+     "media": 0.05,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.055
+    }
+   ]
+  },
+  {
+   "codigo": 37,
+   "nombre": "Salamanca",
+   "escanos": 4,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.03,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.0,
+     "ic95": [
+      1,
+      1
+     ],
+     "p_ge1": 0.994
+    },
+    {
+     "partido": "VOX",
+     "media": 0.97,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.971
+    }
+   ]
+  },
+  {
+   "codigo": 38,
+   "nombre": "Santa Cruz de Tenerife",
+   "escanos": 7,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 3.69,
+     "ic95": [
+      3,
+      5
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 2.84,
+     "ic95": [
+      2,
+      4
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.31,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.303
+    },
+    {
+     "partido": "CC",
+     "media": 0.16,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.155
+    }
+   ]
+  },
+  {
+   "codigo": 39,
+   "nombre": "Cantabria",
+   "escanos": 5,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.47,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.5,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 1.02,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 0.993
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.01,
+     "ic95": [
+      0,
+      0
+     ],
+     "p_ge1": 0.012
+    }
+   ]
+  },
+  {
+   "codigo": 40,
+   "nombre": "Segovia",
+   "escanos": 3,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 1.63,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 0.87,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.868
+    },
+    {
+     "partido": "VOX",
+     "media": 0.5,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.499
+    }
+   ]
+  },
+  {
+   "codigo": 41,
+   "nombre": "Sevilla",
+   "escanos": 12,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 4.51,
+     "ic95": [
+      4,
+      6
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 4.12,
+     "ic95": [
+      3,
+      5
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 2.61,
+     "ic95": [
+      2,
+      4
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.76,
+     "ic95": [
+      0,
+      2
+     ],
+     "p_ge1": 0.546
+    }
+   ]
+  },
+  {
+   "codigo": 42,
+   "nombre": "Soria",
+   "escanos": 2,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 1.05,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 0.94,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.937
+    },
+    {
+     "partido": "VOX",
+     "media": 0.01,
+     "ic95": [
+      0,
+      0
+     ],
+     "p_ge1": 0.008
+    }
+   ]
+  },
+  {
+   "codigo": 43,
+   "nombre": "Tarragona",
+   "escanos": 6,
+   "ganador": "PSOE",
+   "partidos": [
+    {
+     "partido": "PSOE",
+     "media": 2.49,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 1.19,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 0.995
+    },
+    {
+     "partido": "PP",
+     "media": 1.01,
+     "ic95": [
+      1,
+      1
+     ],
+     "p_ge1": 0.998
+    },
+    {
+     "partido": "ERC",
+     "media": 0.76,
+     "ic95": [
+      0,
+      2
+     ],
+     "p_ge1": 0.707
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.29,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.282
+    },
+    {
+     "partido": "JXCAT",
+     "media": 0.27,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.266
+    },
+    {
+     "partido": "CUP",
+     "media": 0.0,
+     "ic95": [
+      0,
+      0
+     ],
+     "p_ge1": 0.001
+    }
+   ]
+  },
+  {
+   "codigo": 44,
+   "nombre": "Teruel",
+   "escanos": 3,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 1.23,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 0.97,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.968
+    },
+    {
+     "partido": "VOX",
+     "media": 0.8,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.804
+    }
+   ]
+  },
+  {
+   "codigo": 45,
+   "nombre": "Toledo",
+   "escanos": 6,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.38,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 1.91,
+     "ic95": [
+      1,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.69,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.02,
+     "ic95": [
+      0,
+      0
+     ],
+     "p_ge1": 0.021
+    }
+   ]
+  },
+  {
+   "codigo": 46,
+   "nombre": "Valencia/València",
+   "escanos": 16,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 5.95,
+     "ic95": [
+      5,
+      7
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 4.67,
+     "ic95": [
+      3,
+      6
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 4.03,
+     "ic95": [
+      3,
+      5
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "SUMAR",
+     "media": 1.34,
+     "ic95": [
+      0,
+      4
+     ],
+     "p_ge1": 0.67
+    }
+   ]
+  },
+  {
+   "codigo": 47,
+   "nombre": "Valladolid",
+   "escanos": 5,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.38,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.49,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 1.1,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 0.997
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.02,
+     "ic95": [
+      0,
+      0
+     ],
+     "p_ge1": 0.021
+    }
+   ]
+  },
+  {
+   "codigo": 48,
+   "nombre": "Bizkaia",
+   "escanos": 8,
+   "ganador": "PSOE",
+   "partidos": [
+    {
+     "partido": "PSOE",
+     "media": 2.23,
+     "ic95": [
+      1,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PNV",
+     "media": 2.22,
+     "ic95": [
+      2,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "EH BILDU",
+     "media": 2.18,
+     "ic95": [
+      1,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PP",
+     "media": 1.0,
+     "ic95": [
+      1,
+      1
+     ],
+     "p_ge1": 0.995
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.36,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.347
+    }
+   ]
+  },
+  {
+   "codigo": 49,
+   "nombre": "Zamora",
+   "escanos": 3,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 1.71,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 0.94,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.942
+    },
+    {
+     "partido": "VOX",
+     "media": 0.34,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.344
+    }
+   ]
+  },
+  {
+   "codigo": 50,
+   "nombre": "Zaragoza",
+   "escanos": 7,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 2.93,
+     "ic95": [
+      2,
+      4
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "PSOE",
+     "media": 1.96,
+     "ic95": [
+      1,
+      3
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "VOX",
+     "media": 1.81,
+     "ic95": [
+      1,
+      2
+     ],
+     "p_ge1": 1.0
+    },
+    {
+     "partido": "SUMAR",
+     "media": 0.3,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.293
+    }
+   ]
+  },
+  {
+   "codigo": 51,
+   "nombre": "Ceuta",
+   "escanos": 1,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 0.64,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.638
+    },
+    {
+     "partido": "VOX",
+     "media": 0.34,
+     "ic95": [
+      0,
+      1
+     ],
+     "p_ge1": 0.345
+    },
+    {
+     "partido": "PSOE",
+     "media": 0.02,
+     "ic95": [
+      0,
+      0
+     ],
+     "p_ge1": 0.017
+    }
+   ]
+  },
+  {
+   "codigo": 52,
+   "nombre": "Melilla",
+   "escanos": 1,
+   "ganador": "PP",
+   "partidos": [
+    {
+     "partido": "PP",
+     "media": 1.0,
+     "ic95": [
+      1,
+      1
+     ],
+     "p_ge1": 1.0
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,114 @@
+---
+/**
+ * SerieLinea — serie temporal de líneas con etiquetas directas al final
+ * (DESIGN.md §4 «Gráficos»): gridlines horizontales, sin verticales, sin caja,
+ * etiquetas al final de cada línea en lugar de leyenda aparte.
+ *
+ * Muestra la MEDIA PONDERADA DE ENCUESTAS (no un resultado ni una predicción).
+ * No lleva banda porque el dato publicado no trae intervalo mensual: convertir
+ * un promedio en una predicción con banda sería deshonesto.
+ */
+import { num } from '../lib/format';
+
+interface Props {
+  meses: string[];
+  series: Record<string, number[]>;
+  partidos: string[];
+  colores: Record<string, string>;
+  descripcion: string;
+  max?: number;
+  pie?: string;
+  lectura?: string;
+}
+
+const { meses, series, partidos, colores, descripcion, max, pie, lectura } = Astro.props as Props;
+
+const W = 720;
+const H = 250;
+const PAD = { a: 44, d: 92, s: 20, i: 40 };
+const tope = max ?? Math.max(1, ...partidos.flatMap((p) => series[p] ?? [])) * 1.08;
+const n = Math.max(meses.length - 1, 1);
+const x = (i: number) => PAD.a + (i / n) * (W - PAD.a - PAD.d);
+const y = (v: number) => PAD.s + (1 - v / tope) * (H - PAD.s - PAD.i);
+
+const refsY = [0, 0.25, 0.5, 0.75, 1].map((t) => t * tope);
+const trazo = (valores: number[]) =>
+  valores.map((v, i) => `${i === 0 ? 'M' : 'L'}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
+
+// Ticks de año: primer índice de cada año distinto.
+const ticksX: { i: number; etiqueta: string }[] = [];
+meses.forEach((m, i) => {
+  const anio = m.slice(0, 4);
+  if (ticksX.length === 0 || ticksX[ticksX.length - 1].etiqueta !== anio) {
+    if (i % 12 === 0 || ticksX.length === 0) ticksX.push({ i, etiqueta: anio });
+  }
+});
+---
+
+<figure class="serie">
+  <div class="serie__cuerpo" role="img" aria-label={descripcion}>
+    <svg class="serie__svg" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet">
+      {refsY.map((v) => (
+        <line x1={PAD.a} y1={y(v)} x2={W - PAD.d} y2={y(v)} class="rejilla"></line>
+      ))}
+      {refsY.map((v) => (
+        <text x={PAD.a - 6} y={y(v) + 4} class="eje" text-anchor="end">{num(v, 0)}</text>
+      ))}
+      {ticksX.map((t) => (
+        <text x={x(t.i)} y={H - 12} class="eje" text-anchor="middle">{t.etiqueta}</text>
+      ))}
+      {partidos.map((p) => (
+        <>
+          <path d={trazo(series[p] ?? [])} class="linea" style={`stroke:${colores[p]}`}></path>
+          <text
+            x={W - PAD.d + 6}
+            y={y((series[p] ?? [0])[(series[p] ?? [0]).length - 1]) + 4}
+            class="etiqueta"
+            style={`fill:${colores[p]}`}
+          >{p}</text>
+        </>
+      ))}
+      <text x={PAD.a} y={PAD.s - 6} class="eje">% sobre voto válido · media ponderada de encuestas</text>
+    </svg>
+  </div>
+
+  {pie && <p class="serie__pie mono">{pie}</p>}
+  {lectura && <p class="serie__lectura">{lectura}</p>}
+
+  <details class="serie__datos">
+    <summary>Últimos 12 meses, en tabla</summary>
+    <table class="tabla-datos">
+      <thead>
+        <tr><th scope="col">Mes</th>{partidos.map((p) => <th scope="col" class="der">{p}</th>)}</tr>
+      </thead>
+      <tbody>
+        {meses.slice(-12).map((m, k, arr) => {
+          const idx = meses.length - arr.length + k;
+          return (
+            <tr>
+              <th scope="row" class="mono">{m}</th>
+              {partidos.map((p) => <td class="mono der">{num((series[p] ?? [])[idx], 1)}</td>)}
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </details>
+</figure>
+
+<style>
+  .serie { margin: 0 0 var(--s-5); container-type: inline-size; }
+  .serie__svg { width: 100%; height: auto; display: block; }
+  .rejilla { stroke: var(--regla); stroke-width: 1; fill: none; }
+  .linea { fill: none; stroke-width: 2; stroke-linejoin: round; }
+  .eje { font-family: var(--f-mono); font-size: 11px; fill: var(--tinta-3); }
+  .etiqueta { font-family: var(--f-mono); font-size: 12px; font-weight: 500; }
+  .serie__pie { margin: var(--s-3) 0 0; color: var(--tinta-2); font-size: 0.8125rem; }
+  .serie__lectura { margin: var(--s-2) 0 0; max-width: var(--medida); font-size: var(--t-small); line-height: var(--lh-small); color: var(--tinta-2); }
+  .serie__datos { margin-top: var(--s-3); }
+  .serie__datos summary { cursor: pointer; font-size: var(--t-small); font-weight: 600; min-height: 44px; display: flex; align-items: center; color: var(--enlace); text-decoration: underline; }
+  .tabla-datos { width: 100%; border-collapse: collapse; font-size: var(--t-data); }
+  .tabla-datos th, .tabla-datos td { text-align: left; padding: var(--s-1) var(--s-3) var(--s-1) 0; border-bottom: var(--borde-regla); }
+  .tabla-datos thead th { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--tinta-2); }
+  .tabla-datos .der { text-align: right; padding-right: 0; }
+</style>

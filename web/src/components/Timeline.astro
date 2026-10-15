@@ -1,9 +1,10 @@
 ---
 /**
- * Timeline — línea temporal electoral horizontal (DESIGN.md §5 "Resultados").
+ * Timeline — línea temporal electoral horizontal (DESIGN.md §5 «Resultados»).
  * Los años de elección son marcas sobre una regla, no una fila de tarjetas.
+ * Cada hito enlaza a la ficha de su elección en la página de resultados.
  */
-interface Hito { etiqueta: string; activo?: boolean; pendiente?: boolean }
+interface Hito { etiqueta: string; href?: string; activo?: boolean; titulo?: string }
 const { hitos = [] as Hito[], titulo } = Astro.props as { hitos: Hito[]; titulo?: string };
 ---
 
@@ -13,16 +14,14 @@ const { hitos = [] as Hito[], titulo } = Astro.props as { hitos: Hito[]; titulo?
     {hitos.map((h) => (
       <li class:list={[h.activo && 'activo']}>
         <span class="cronologia__marca" aria-hidden="true"></span>
-        <span class="cronologia__anio mono">{h.etiqueta}</span>
+        {h.href ? (
+          <a class="cronologia__anio mono" href={h.href} title={h.titulo}>{h.etiqueta}</a>
+        ) : (
+          <span class="cronologia__anio mono">{h.etiqueta}</span>
+        )}
       </li>
     ))}
   </ol>
-  {hitos.every((h) => h.pendiente) && (
-    <p class="nota">
-      Los hitos reales (1977–2023) se publican en la <strong>Fase 2</strong>.
-      <span class="pendiente">en construcción — dato disponible en Fase 2</span>
-    </p>
-  )}
 </div>
 
 <style>
@@ -54,6 +53,7 @@ const { hitos = [] as Hito[], titulo } = Astro.props as { hitos: Hito[]; titulo?
     background: var(--tinta-2);
   }
   .cronologia__regla li.activo .cronologia__marca { background: var(--tinta); height: 20px; width: 3px; }
-  .cronologia__anio { font-size: 0.8125rem; color: var(--tinta-2); white-space: nowrap; }
+  .cronologia__anio { font-size: 0.8125rem; color: var(--tinta-2); white-space: nowrap; text-decoration: none; }
+  .cronologia__anio:hover { color: var(--tinta); text-decoration: underline; }
   .cronologia__regla li.activo .cronologia__anio { color: var(--tinta); font-weight: 500; }
 </style>

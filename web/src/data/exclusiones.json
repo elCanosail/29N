@@ -1,0 +1,800 @@
+{
+ "meta": {
+  "n": 79,
+  "n_cis": 71,
+  "n_privados": 8,
+  "nota": "Una encuesta que no pasa validación no desaparece: se documenta con su motivo."
+ },
+ "exclusiones": [
+  {
+   "origen": "CIS",
+   "id": "CIS-1137",
+   "casa": "CIS",
+   "slug": "actitudes-y-comportamientos-ante-las-elecciones-generales.-panel-tiempo-1-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1164",
+   "casa": "CIS",
+   "slug": "elecciones-generales-y-municipales-1979-ii-",
+   "tipo": "otro",
+   "eleccion": "generales",
+   "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1178",
+   "casa": "CIS",
+   "slug": "elecciones-generales-y-municipales-1979-iii-",
+   "tipo": "otro",
+   "eleccion": "generales",
+   "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1179",
+   "casa": "CIS",
+   "slug": "elecciones-generales-y-municipales-1979-iv-",
+   "tipo": "otro",
+   "eleccion": "generales",
+   "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1182",
+   "casa": "CIS",
+   "slug": "elecciones-generales-y-municipales-1979-v-",
+   "tipo": "otro",
+   "eleccion": "generales",
+   "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1321",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1982-i-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1322",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1982.-provincia-de-madrid",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1328",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1982.-asturias",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1327",
+   "casa": "CIS",
+   "slug": "postelectoral-elecciones-generales-1982",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1636",
+   "casa": "CIS",
+   "slug": "elecciones-al-parlamento-europeo-1987-i-y-relaciones-internacionales",
+   "tipo": "otro",
+   "eleccion": "europeas",
+   "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1652",
+   "casa": "CIS",
+   "slug": "elecciones-al-parlamento-europeo-1987-ii-",
+   "tipo": "otro",
+   "eleccion": "europeas",
+   "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1673",
+   "casa": "CIS",
+   "slug": "elecciones-al-parlamento-europeo-1987-iii-",
+   "tipo": "otro",
+   "eleccion": "europeas",
+   "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1693",
+   "casa": "CIS",
+   "slug": "postelectoral-elecciones-municipales-y-elecciones-al-parlamento-europeo-1987-en-galicia",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1742",
+   "casa": "CIS",
+   "slug": "cuestiones-de-actualidad-intencion-de-voto-en-elecciones-generales",
+   "tipo": "otro",
+   "eleccion": "generales",
+   "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1796",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-i-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1803",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-ii-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1805",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-iii-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1806",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-iv-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1807",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-v-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1809",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-vi-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1811",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-vii-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1812",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-viii-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1838",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989-i-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1829",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989.-cataluna",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1821",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989.-andalucia",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1828",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989.-castilla-y-leon",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1832",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989.-galicia",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1824",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989.-islas-baleares",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1827",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989.-castilla-la-mancha",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1830",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989.-comunidad-valenciana",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1822",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989.-aragon",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1823",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989.-principado-de-asturias",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1831",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989.-extremadura",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1833",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989.-comunidad-de-madrid",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1836",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989.-pais-vasco",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1825",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989.-canarias",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1826",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989.-cantabria",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1834",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989.-region-de-murcia",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1835",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989.-comunidad-foral-de-navarra",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1837",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989.-la-rioja",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-1840",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1989-ii-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2053",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-1993-i-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2055",
+   "casa": "CIS",
+   "slug": "barometro-de-abril-1993.-preelectoral-elecciones-generales-1993-ii-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2060",
+   "casa": "CIS",
+   "slug": "campana-electoral.-elecciones-generales-1993",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2061",
+   "casa": "CIS",
+   "slug": "postelectoral-elecciones-generales-1993",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2090",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1994-i-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2103",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1994-ii-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2108",
+   "casa": "CIS",
+   "slug": "barometro-de-junio-1994.-postelectoral-parlamento-europeo-1994",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2325",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-1999.-panel-1-fase-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2350",
+   "casa": "CIS",
+   "slug": "postelectoral-elecciones-al-parlamento-europeo-1999.-panel-2-fase-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2382",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-y-autonomicas-de-andalucia-2000.-panel-1-fase-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-7700",
+   "casa": "CIS",
+   "slug": "preelectoral-y-postelectoral-elecciones-generales-y-autonomicas-de-andalucia-2000.-panel-total-panel-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2384",
+   "casa": "CIS",
+   "slug": "postelectoral-elecciones-generales-y-autonomicas-de-andalucia-2000.-panel-2-fase-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2555",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-y-autonomicas-de-andalucia-2004",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "no se detecta variable de voto",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2559",
+   "casa": "CIS",
+   "slug": "postelectoral-elecciones-generales-y-autonomicas-de-andalucia-2004",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "no se detecta variable de voto",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2564",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-2004",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2567",
+   "casa": "CIS",
+   "slug": "postelectoral-elecciones-al-parlamento-europeo-2004",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-7708",
+   "casa": "CIS",
+   "slug": "preelectoral-y-postelectoral-elecciones-generales-y-autonomicas-de-andalucia-2008.-panel-total-panel-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "no se detecta variable de voto",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2750",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-y-autonomicas-de-andalucia-2008.-panel-1-fase-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "no se detecta variable de voto",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2757",
+   "casa": "CIS",
+   "slug": "postelectoral-elecciones-generales-y-autonomicas-de-andalucia-2008.-panel-2-fase-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "no se detecta variable de voto",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2800",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-2009.-panel-1-fase-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2810",
+   "casa": "CIS",
+   "slug": "funcionamiento-de-colegio-administrado-electronicamente-cae-en-las-elecciones-al-parlamento-europeo-2009",
+   "tipo": "otro",
+   "eleccion": "europeas",
+   "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2807",
+   "casa": "CIS",
+   "slug": "postelectoral-elecciones-al-parlamento-europeo-2009.-panel-2-fase-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2915",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-generales-2011.-panel-1-fase-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "no se detecta variable de voto",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-2920",
+   "casa": "CIS",
+   "slug": "postelectoral-elecciones-generales-2011.-panel-2-fase-",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "no se detecta variable de voto",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-3022",
+   "casa": "CIS",
+   "slug": "preelectoral-elecciones-al-parlamento-europeo-2014",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-3028",
+   "casa": "CIS",
+   "slug": "postelectoral-elecciones-al-parlamento-europeo-2014",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-3145",
+   "casa": "CIS",
+   "slug": "postelectoral-elecciones-generales-2016",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-3248",
+   "casa": "CIS",
+   "slug": "postelectoral-elecciones-generales-2019",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "sin PESO",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-3382",
+   "casa": "CIS",
+   "slug": "macroencuesta-sobre-tendencias-en-voto-municipal.-octubre-2022",
+   "tipo": "otro",
+   "eleccion": "otro",
+   "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación",
+   "url": null
+  },
+  {
+   "origen": "CIS",
+   "id": "CIS-3386",
+   "casa": "CIS",
+   "slug": "macroencuesta-sobre-tendencias-en-voto-autonomico",
+   "tipo": "otro",
+   "eleccion": "otro",
+   "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación",
+   "url": null
+  },
+  {
+   "origen": "encuestadores",
+   "id": "40db-2023-07-03-elpais",
+   "casa": "40dB",
+   "slug": "majors.json",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "Fuente verificable (n=2.000, 23-26 junio, online) pero el artículo y la nota no publican el desglose de estimación de voto por partido en % (solo escaños agregados); no aporta filas poll×partido",
+   "url": "https://elpais.com/espana/2023-07-03/consulte-todos-los-datos-internos-de-la-encuesta-de-el-pais-publicada-este-3-de-julio.html"
+  },
+  {
+   "origen": "encuestadores",
+   "id": null,
+   "casa": "Hand Research (Investigación Social / Hand Research SL)",
+   "slug": "menores.json",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "No se localizó ninguna nota de prensa ni ficha técnica de encuesta de intención de voto para elecciones generales de España publicada por un encuestador denominado 'Hand Research'/'Hand Research SL'. Las búsquedas devuelven resultados no relacionados (páginas de quiromancia 'Hand Research' y artículos académicos). Sin URL de ficha técnica publicada → excluida.",
+   "url": null
+  },
+  {
+   "origen": "encuestadores",
+   "id": null,
+   "casa": "Cercle d'Estudis i Opinio",
+   "slug": "menores.json",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "No se localiza ninguna encuestadora con la denominación exacta 'Cercle d'Estudis i Opinió'. El homólogo real es el 'Centre d'Estudis d'Opinió' (CEO) de la Generalitat de Catalunya, cuyos sondeos de intención de voto son de ámbito Cataluña (no nacional); se ha documentado aparte su 2ª ola 2026 (ver encuestas).",
+   "url": null
+  },
+  {
+   "origen": "encuestadores",
+   "id": null,
+   "casa": "SocioMétrica",
+   "slug": "menores.json",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "Encuesta de campo 24-26/09/2026 (n=1.200) localizada solo a través de agregadores (politpro.eu) sin nota de prensa ni ficha técnica del editor/cliente localizada en esta sesión → excluida por regla de oro.",
+   "url": null
+  },
+  {
+   "origen": "encuestadores",
+   "id": null,
+   "casa": "Imop Insights",
+   "slug": "menores.json",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "Encuestas del 'tracking' de El Confidencial de julio de 2023 (entregas diarias intermedias 11/07/2023 y otras) citadas de forma secundaria en notas posteriores, sin URL propia de ficha/publicación independiente identificada → solo se incluyen las entregas con nota publicada (29-31/05, 12-19/06, 11-17/07/2023).",
+   "url": null
+  },
+  {
+   "origen": "encuestadores",
+   "id": null,
+   "casa": "Demoscopia y Servicios",
+   "slug": "simplelogica_demoscopia.json",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "No se localiza publicación propia de la encuestadora (web o ficha técnica) con notas de prensa de elecciones generales en el periodo; la marca «Más1 / Más1 investigación social demoscópica» no se ha podido verificar en fuentes primarias como denominación de Demoscopia y Servicios (web oficial consultada: demoscopiayservicios.com). Sus sondeos de la Comunitat Valenciana (29/07/2025 y 08/10/2025) quedan fuera por no ser elecciones generales.",
+   "url": null
+  },
+  {
+   "origen": "encuestadores",
+   "id": null,
+   "casa": "Simple Lógica",
+   "slug": "simplelogica_demoscopia.json",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "Sin encuestas de generales publicadas entre el 13/09/2024 y el 15/10/2026: la última cifra disponible en fuentes es la de septiembre de 2024; a partir de 2026 elDiario.es publica sondeos de Ateneo del Dato, no de Simple Lógica.",
+   "url": null
+  },
+  {
+   "origen": "encuestadores",
+   "id": null,
+   "casa": "Simple Lógica",
+   "slug": "simplelogica_demoscopia.json",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "Tracking diario del 23J (entregas intermedias, p.ej. 14/07/2023 y 15/07/2023 en elDiario.es): se registra solo la entrega final (16/07/2023) por ser la que incluye ficha técnica con tamaño muestral (1.600) y fechas de campo; el resto de entregas diarias no se han podido cotejar con ficha técnica propia en esta sesión.",
+   "url": null
+  }
+ ]
+}

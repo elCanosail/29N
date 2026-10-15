@@ -10,13 +10,15 @@
  *  - En móvil, cada fila se apila como clave-valor (container query): no se
  *    amputa ninguna columna.
  */
-import type { Columna, Celda, CeldaBarra, CeldaDelta, Fila } from '../lib/tipos';
+import type { Columna, Celda, CeldaBarra, CeldaDelta, Fila, AtributosFila } from '../lib/tipos';
 
 interface Props {
   id?: string;
   titulo?: string;
   columnas?: Columna[];
   filas?: Fila[];
+  /** atributos HTML extra por fila (mismo índice que `filas`), p. ej. data-* */
+  filaAttrs?: (AtributosFila | undefined)[];
   fuente?: { nombre: string; url: string };
   extraido?: string;
   nota?: string;
@@ -29,6 +31,7 @@ const {
   titulo,
   columnas = [],
   filas = [],
+  filaAttrs = [],
   fuente,
   extraido,
   nota,
@@ -37,6 +40,16 @@ const {
 
 const esDelta = (c: Celda): c is CeldaDelta =>
   typeof c === 'object' && c !== null && 'valor' in c && 'signo' in c;
+
+/** Normaliza los atributos de una fila a cadenas. */
+function attrDeFila(i: number): Record<string, string> {
+  const src = filaAttrs[i] ?? {};
+  const out: Record<string, string> = {};
+  for (const [k, v] of Object.entries(src)) {
+    if (v !== undefined && v !== null) out[k] = String(v);
+  }
+  return out;
+}
 
 /** Máximo de una columna de barras, para normalizar anchos. */
 function maxColumna(clave: string, col: Columna): number {
@@ -91,8 +104,8 @@ const columnasNorm = columnas.map((c) => ({
           </tr>
         )}
 
-        {filas.map((fila) => (
-          <tr>
+        {filas.map((fila, i) => (
+          <tr {...attrDeFila(i)}>
             {columnasNorm.map((c) => {
               const celda = fila[c.clave];
               const esBarra =

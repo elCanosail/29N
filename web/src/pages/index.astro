@@ -1,6 +1,42 @@
 ---
 import Base from '../layouts/Base.astro';
 import IntervalBand from '../components/IntervalBand.astro';
+import SerieLinea from '../components/SerieLinea.astro';
+import forecast from '../data/forecast.json';
+import seriesData from '../data/series.json';
+import encuestasData from '../data/encuestas.json';
+import eleccionesData from '../data/elecciones.json';
+import { pct, num, entero, fechaLarga } from '../lib/format';
+import { colorPartido } from '../lib/partidos';
+
+const meta = forecast.meta;
+const top = forecast.partidos.slice(0, 4);
+const resto = forecast.partidos.slice(4);
+const aFila = (p: (typeof forecast.partidos)[number]) => ({
+  etiqueta: p.partido,
+  punto: p.punto,
+  p10: p.p10,
+  p90: p.p90,
+  color: colorPartido(p.partido),
+});
+const filasTop = top.map(aFila);
+const filasResto = resto.map(aFila);
+
+// Serie reciente: últimos 36 meses, cuatro partidos grandes.
+const meses = seriesData.meses as string[];
+const corte = Math.max(0, meses.length - 36);
+const mesesV = meses.slice(corte);
+const partidosSerie = ['PP', 'PSOE', 'VOX', 'SUMAR'] as const;
+const seriesV: Record<string, number[]> = Object.fromEntries(
+  partidosSerie.map((p) => [p, (seriesData.series as Record<string, number[]>)[p].slice(corte)]),
+);
+const ultimoDe = (p: string) => (seriesV[p] ? seriesV[p][seriesV[p].length - 1] : 0);
+const coloresSerie: Record<string, string> = Object.fromEntries(
+  partidosSerie.map((p) => [p, colorPartido(p)]),
+);
+
+const ultima = eleccionesData.elecciones[eleccionesData.elecciones.length - 1];
+const topEscrutinio = ultima.candidaturas.slice(0, 5);
 
 const compromisos = [
   'Todo dato de la web es trazable a su fuente y clicable.',
@@ -9,10 +45,12 @@ const compromisos = [
   'Las sumas provinciales cuadran con la predicción estatal.',
   'Log de exclusiones público: una encuesta que no valida se documenta.',
 ];
+
+const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 7) : '—';
 ---
 
 <Base titulo="Portada">
-  <!-- 1. Cabecera editorial: titular + la "una" del día --------------------- -->
+  <!-- 1. Cabecera editorial: titular + la «una» del día -------------------- -->
   <section class="contenedor portada">
     <p class="eyebrow entrada">Datos electorales de España · 1977–2026</p>
 
@@ -21,27 +59,74 @@ const compromisos = [
     </h1>
 
     <p class="titular-intro medida entrada entrada--2">
-      Histórico completo de encuestas (CIS y encuestadores privados), resultados
-      oficiales de todas las generales desde 1977 y una predicción provincial
-      auditable. El valor es el método, no el resultado.
+      Histórico de encuestas (CIS y encuestadores privados), resultados oficiales de
+      todas las generales desde 1977 y una predicción provincial auditable. El valor
+      es el método, no el resultado.
     </p>
 
     <p class="portada__una entrada entrada--3">
       <a href="/prediccion/">
-        Última predicción:
-        <span class="pendiente">en construcción — dato disponible en Fase 4</span> →
+        Predicción del 29N · <span class="mono">{fechaLarga('2026-11-29')}</span>:
+        PP {pct(filasTop[0].punto)} <span class="mono">({num(filasTop[0].p10)}–{num(filasTop[0].p90)})</span>,
+        PSOE {pct(filasTop[1].punto)} <span class="mono">({num(filasTop[1].p10)}–{num(filasTop[1].p90)})</span> →
       </a>
     </p>
   </section>
 
-  <!-- 2. Bloque héroe de datos --------------------------------------------- -->
+  <!-- 2. Bloque héroe: predicción estatal con intervalos reales ------------- -->
   <section class="contenedor seccion seccion--compacta" aria-labelledby="heroe-titulo">
-    <p class="eyebrow" id="heroe-titulo">Serie estatal de intención de voto</p>
+    <div class="heroe__cabecera">
+      <div>
+        <p class="eyebrow" id="heroe-titulo">Predicción estatal 29N · intervalo del 80 %</p>
+        <h2>Qué dicen las encuestas sobre el 29N</h2>
+      </div>
+      <p class="heroe__meta mono">
+        Objetivo {meta.mes_predicho} · último dato {anioUltimo} · cobertura del universo{' '}
+        {num(meta.normalizacion?.cobertura_universo_23J_pct, 1)} % (23J)
+      </p>
+    </div>
+
     <IntervalBand
-      modo="esquema"
-      descripcion="Esquema del gráfico de intención de voto estatal con bandas de intervalo. Sin datos todavía."
-      pie="Modelo: TimesFM v2 · Backtest MAE: [en construcción — Fase 4] · Última encuesta: [en construcción — Fase 3]"
-      lectura="Cuando el pipeline publique la serie, este gráfico mostrará la mediana junto a su banda del 90 %: en 29N la incertidumbre no es una letra pequeña."
+      filas={filasTop}
+      max={45}
+      unidad="%"
+      descripcion={`Predicción estatal 29N: los cuatro primeros partidos con su intervalo del 80 %. PP ${num(filasTop[0].punto)} por ciento, PSOE ${num(filasTop[1].punto)}, VOX ${num(filasTop[2].punto)}, Sumar ${num(filasTop[3].punto)}.`}
+      pie={`Método: ${meta.metodo_primario === 'baseline' ? 'media ponderada de encuestas (baseline)' : meta.metodo_primario} · Backtest MAE: ${num(meta.backtest_mae?.baseline, 3)} pp (n = ${meta.backtest_mae?.n}) · Intervalos empíricos, no probabilidad de resultado`}
+      lectura={`La línea marca el punto y la banda el intervalo del 80 % (cuantiles 0,1–0,9 de los errores del backtest). El intervalo de Sumar (±${num((filasTop[3].p90 - filasTop[3].p10) / 2, 1)} pp) es ancho porque su familia arrastra el descalabro de Podemos en 2015–2019: es honesto, no un defecto.`}
+    />
+
+    <details class="heroe__resto">
+      <summary>Ver los 13 partidos del universo modelado (con su intervalo)</summary>
+      <IntervalBand
+        filas={filasResto}
+        max={25}
+        unidad="%"
+        descripcion="Predicción estatal 29N para los partidos del universo modelado con menos peso, con su intervalo del 80 %."
+        pie="Mismo método y mismo intervalo que el gráfico anterior."
+      />
+    </details>
+
+    <aside class="aviso-metodo" aria-labelledby="aviso-titulo">
+      <p class="eyebrow" id="aviso-titulo">Advertencia metodológica</p>
+      <p>{meta.advertencia}</p>
+      <p class="nota">
+        <a href="/metodologia/#validacion">Ver el backtest completo (MAE por partido y por elección) →</a>
+      </p>
+    </aside>
+  </section>
+
+  <!-- 2b. De dónde viene el número: serie reciente -------------------------- -->
+  <section class="contenedor seccion seccion--compacta" aria-labelledby="serie-titulo">
+    <p class="eyebrow" id="serie-titulo">De dónde viene el número</p>
+    <h2>La serie que alimenta el modelo</h2>
+    <SerieLinea
+      meses={mesesV}
+      series={seriesV}
+      partidos={[...partidosSerie]}
+      colores={coloresSerie}
+      descripcion={`Media ponderada de encuestas, últimos 36 meses: PP ${num(ultimoDe('PP'), 1)} por ciento, PSOE ${num(ultimoDe('PSOE'), 1)}, VOX ${num(ultimoDe('VOX'), 1)}, Sumar ${num(ultimoDe('SUMAR'), 1)}.`}
+      pie="Serie mensual ponderada × recencia (vida media 45 días) × muestra × calidad, corregida por efectos de casa."
+      lectura="Esta línea es un promedio de encuestas, no un resultado ni una predicción; por eso va sin banda. La predicción con intervalo está arriba. El corpus completo arranca en 1979 y está en el explorador de encuestas."
     />
   </section>
 
@@ -53,11 +138,12 @@ const compromisos = [
       <p class="eyebrow">Explorador de encuestas</p>
       <h3>Qué se ha preguntado, cuándo y con qué muestra</h3>
       <p class="entrada-link__texto">
-        Índice de encuestas preelectorales y barómetros, cada una con su ficha
+        Índice de encuestas preelectorales y barométricas, cada una con su ficha
         técnica enlazada y su estado de validación.
       </p>
       <p class="mono entrada-link__dato">
-        N = <span class="pendiente">en construcción — Fase 1</span> encuestas indexadas
+        N = {entero(encuestasData.meta.n)} encuestas indexadas · {entero(encuestasData.meta.n_cis)} del CIS,{' '}
+        {entero(encuestasData.meta.n_privados)} de privados →
       </p>
     </a>
 
@@ -67,12 +153,16 @@ const compromisos = [
       <p class="entrada-link__texto">
         Escaños y porcentajes de cada general, con comparador entre dos elecciones.
       </p>
-      <div class="entrada-link__hueco" aria-hidden="true">
-        <span class="skeleton" style="width:100%"></span>
-        <span class="skeleton" style="width:72%"></span>
-      </div>
+      <ul class="mini-escrutinio mono">
+        {topEscrutinio.map((c) => (
+          <li>
+            <span class="mini-escrutinio__n">{entero(c.escanos)}</span>
+            <span class="mini-escrutinio__s">{c.sigla}</span>
+          </li>
+        ))}
+      </ul>
       <p class="mono entrada-link__dato">
-        Sparkline <span class="pendiente">en construcción — Fase 2</span>
+        {fechaLarga(ultima.fecha)} · escaños de las cinco primeras candidaturas →
       </p>
     </a>
 
@@ -80,11 +170,11 @@ const compromisos = [
       <p class="eyebrow">Predicción provincial 29N</p>
       <h3>Qué predecimos y qué no</h3>
       <p class="entrada-link__texto">
-        Intervalos del 90 % por provincia, con el error del backtest publicado al lado.
-        Sin cifras puntuales, nunca.
+        Escaños por provincia con su intervalo del 95 %, la suma cuadrada con la
+        predicción estatal y el error del backtest publicado al lado.
       </p>
       <p class="mono entrada-link__dato">
-        Mapa provincial <span class="pendiente">en construcción — Fase 5</span>
+        52 provincias · suma de medias = 350 escaños · ver el mapa y la tabla →
       </p>
     </a>
   </section>
@@ -96,6 +186,10 @@ const compromisos = [
       <ol class="metodologia__lista">
         {compromisos.map((c) => <li>{c}</li>)}
       </ol>
+      <p class="metodologia__dato mono">
+        Backtest: MAE baseline {num(meta.backtest_mae?.baseline, 3)} pp · TimesFM {num(meta.backtest_mae?.timesfm, 3)} pp
+        (no mejora) · error absoluto medio de los privados en 23J: 1,73–2,32 pp
+      </p>
       <p><a href="/metodologia/">Leer la metodología completa y el log de exclusiones →</a></p>
     </div>
   </section>
@@ -112,12 +206,37 @@ const compromisos = [
     max-width: var(--medida);
   }
   .portada__una a { color: var(--enlace); }
+  .portada__una .mono { font-size: 0.95em; }
+
+  .heroe__cabecera {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--s-3);
+    margin-bottom: var(--s-4);
+  }
+  .heroe__cabecera h2 { margin: 0; }
+  .heroe__meta { margin: 0; font-size: 0.8125rem; color: var(--tinta-2); max-width: 40ch; }
+  .heroe__resto { margin-top: var(--s-2); }
+  .heroe__resto summary { cursor: pointer; font-weight: 600; min-height: 44px; display: flex; align-items: center; color: var(--enlace); }
+
+  .aviso-metodo {
+    background: var(--papel-2);
+    border-left: 4px solid var(--tinta);
+    padding: var(--s-3) var(--s-4);
+    margin-top: var(--s-4);
+    max-width: 78ch;
+    font-size: var(--t-small);
+    line-height: var(--lh-small);
+  }
+  .aviso-metodo p { margin: 0 0 var(--s-2); }
 
   /* --- Entradas asimétricas: ni grid de tarjetas ni cajas --------------- */
   .entradas {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--s-6) var(--s-6);
+    gap: var(--s-6);
     border-top: var(--borde-tinta);
     padding-top: var(--s-6);
   }
@@ -135,8 +254,17 @@ const compromisos = [
   .entrada-link:hover h3 { text-decoration: underline; text-underline-offset: 0.18em; }
   .entrada-link__texto { font-size: var(--t-small); line-height: var(--lh-small); color: var(--tinta-2); max-width: 46ch; }
   .entrada-link__dato { margin: 0; font-size: 0.8125rem; color: var(--tinta-2); }
-  .entrada-link__hueco { display: grid; gap: var(--s-2); margin: var(--s-4) 0 var(--s-3); }
-  .entrada-link__hueco .skeleton { height: 10px; }
+
+  .mini-escrutinio {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+    margin: var(--s-4) 0 var(--s-3);
+    padding: 0;
+  }
+  .mini-escrutinio__n { font-size: 1.4rem; font-weight: 500; margin-right: 0.25em; }
+  .mini-escrutinio__s { font-size: 0.8125rem; color: var(--tinta-2); }
 
   @media (max-width: 900px) {
     .entradas { grid-template-columns: 1fr; gap: var(--s-5); }
@@ -158,4 +286,5 @@ const compromisos = [
     font-size: var(--t-small);
     line-height: 1.7;
   }
+  .metodologia__dato { font-size: 0.8125rem; color: var(--tinta-2); margin: 0 0 var(--s-3); }
 </style>

@@ -1,109 +1,104 @@
 ---
+/**
+ * Metodología — long-form: prosa de 68 ch + notas al margen en mono (DESIGN.md §5).
+ * Todo lo aquí afirmado sale de data/processed/ y del informe docs/notes/modelo.md.
+ */
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import DataTable from '../../components/DataTable.astro';
-import type { Columna } from '../../lib/tipos';
+import backtest from '../../data/backtest.json';
+import sesgo from '../../data/sesgo.json';
+import exclusionesData from '../../data/exclusiones.json';
+import encuestasData from '../../data/encuestas.json';
+import eleccionesData from '../../data/elecciones.json';
+import { num, entero } from '../../lib/format';
+import type { Columna, Fila } from '../../lib/tipos';
 
-/**
- * Long-form: prosa de 68 ch + notas al margen en mono (DESIGN.md §5 "Metodología").
- * Cada bloque es una fila del pliego: texto a la izquierda, nota al margen a la derecha.
- */
-interface Bloque {
-  id: string;
-  titulo: string;
-  parrafos: string[];
-  nota?: string;
-  pendiente?: string;
-}
+const mae = backtest.mae_global;
+const mp = Object.entries(backtest.mae_por_partido)
+  .sort((a, b) => b[1].mae_baseline - a[1].mae_baseline);
 
-const bloques: Bloque[] = [
-  {
-    id: 'compromisos',
-    titulo: 'Los cinco compromisos',
-    parrafos: [
-      'Este proyecto publica intervalos, no titulares. Todo dato de la web es trazable a su fuente y clicable; el error del backtest se publica sin maquillaje; ninguna predicción viaja como cifra puntual; las sumas provinciales cuadran con la predicción estatal; y cada encuesta que no pasa validación queda documentada en un log público.',
-      'El diseño de esta web replica esos compromisos: si un número está mal, tiene que verse mal.',
-    ],
-    nota: 'Origen: README.md → «Compromisos metodológicos» (1–5).',
-  },
-  {
-    id: 'fuentes',
-    titulo: 'Fuentes',
-    parrafos: [
-      'Tres familias de fuente. El CIS aporta la serie preelectoral desde 1979 con microdatos abiertos. El Ministerio del Interior aporta el escrutinio provincial y municipal por candidatura desde 1977. Los encuestadores privados (GAD3, 40dB, Sigma Dos, NC Report y otros) aportan estimaciones que se transcriben siempre desde su ficha técnica publicada.',
-      'Ninguna encuesta entra sin URL de ficha técnica verificable.',
-    ],
-    nota: 'Contrato: CONTRIBUTING.md → «Toda encuesta entra con la URL de su ficha técnica, sin excepciones».',
-    pendiente: 'Catálogo completo de estudios: Fase 1.',
-  },
-  {
-    id: 'normalizacion',
-    titulo: 'Normalización',
-    parrafos: [
-      'Los identificadores de partido son un diccionario propio con aliases: fusiones, refundaciones y candidaturas históricas (Podemos–IU–Alianza Verde–Sumar, PSC frente a PSOE, Alianza Popular–PP). Los ámbitos estatal y autonómico se mantienen separados.',
-      'Las series se ordenan por fecha de fin de trabajo de campo, no por fecha de publicación: es la fecha en la que el dato existió.',
-    ],
-    nota: 'Campos: `fieldwork_end`, `published`, `n`, ámbito, metodología (CATI/CAWI/mixta).',
-    pendiente: 'Diccionario v1: Fase 1.',
-  },
-  {
-    id: 'modelo',
-    titulo: 'Modelo',
-    parrafos: [
-      'Una serie estatal ponderada por partido (peso de recencia, tamaño muestral y el histórico de error de cada encuestador) alimenta un forecast con TimesFM. Después, una desagregación provincial por swing apoya la predicción en los resultados históricos provinciales, y el reparto de escaños se simula con D\'Hondt sobre 10 000 ejecuciones.',
-      'La salida es un JSON por provincia con mediana e intervalo. La web no calcula nada: solo lee.',
-    ],
-    nota: 'TimesFM 3.0.2 · checkpoint 2.5-200m PyTorch · CPU. Los quantiles devuelven 10 columnas (el punto es la 5.ª).',
-    pendiente: 'Hiperparámetros definitivos y JSON de salida: Fases 4–5.',
-  },
-  {
-    id: 'validacion',
-    titulo: 'Validación (backtest)',
-    parrafos: [
-      'El modelo se prueba contra elecciones ya celebradas y el error medio absoluto por partido se publica aquí, sin redondear a favor. Si el backtest da ±3 puntos, la interfaz no muestra decimales que el modelo no justifica.',
-    ],
-    nota: 'Elecciones de backtest previstas: 2011, 2015, 2016, A-2019, N-2019, 2023.',
-    pendiente: 'Tabla de MAE por partido y por provincia: Fase 4.',
-  },
-  {
-    id: 'errores',
-    titulo: 'Errores conocidos y límites',
-    parrafos: [
-      'El modelo no conoce el futuro y no lo finge. Las provincias con pocas encuestas propias tendrán intervalos anchos: se publican tal cual, porque el ancho del intervalo es información, no un defecto que esconder.',
-      'Cuando no hay datos suficientes lo decimos con esas palabras; no escribimos «próximamente».',
-    ],
-    nota: 'Principio editorial: ninguna cifra crítica vive solo en un tooltip o en una animación.',
-  },
-  {
-    id: 'exclusiones',
-    titulo: 'Log de exclusiones',
-    parrafos: [
-      'Una encuesta que no pasa validación no desaparece: se documenta con su motivo. El log se renderiza como una tabla corriente, sin maquillaje, porque es documentación y no marketing.',
-    ],
-    nota: 'Marcas de exclusión: muestra insuficiente (n < 500), ficha técnica no verificable, campos incompletos.',
-    pendiente: 'Primeras entradas: Fase 3.',
-  },
-  {
-    id: 'licencia',
-    titulo: 'Licencia y reutilización',
-    parrafos: [
-      'El código se publica bajo licencia MIT. Los datos pertenecen a sus fuentes —CIS, Ministerio del Interior y encuestadores— y este proyecto los procesa y enlaza citando siempre el origen. La reutilización es bienvenida con atribución a las fuentes originales y a la metodología aquí descrita.',
-    ],
-    nota: 'Repo: github.com/elCanosail/29N · Licencia: MIT (LICENSE).',
-  },
+const colsMae: Columna[] = [
+  { clave: 'partido', etiqueta: 'Partido' },
+  { clave: 'timesfm', etiqueta: 'TimesFM', tipo: 'mono', alinear: 'der' },
+  { clave: 'baseline', etiqueta: 'Baseline', tipo: 'mono', alinear: 'der' },
+  { clave: 'ensemble', etiqueta: 'Ensemble', tipo: 'mono', alinear: 'der' },
+  { clave: 'mejor', etiqueta: 'Gana' },
+  { clave: 'n', etiqueta: 'n elecc.', tipo: 'mono', alinear: 'der' },
 ];
+const filasMae: Fila[] = mp.map(([partido, d]) => {
+  const vals: [string, number][] = [
+    ['TimesFM', d.mae_timesfm], ['Baseline', d.mae_baseline], ['Ensemble', d.mae_ensemble],
+  ];
+  vals.sort((a, b) => a[1] - b[1]);
+  return {
+    partido,
+    timesfm: num(d.mae_timesfm, 2),
+    baseline: num(d.mae_baseline, 2),
+    ensemble: num(d.mae_ensemble, 2),
+    mejor: vals[0][0],
+    n: String(d.n_elecciones),
+  };
+});
 
-const columnasExclusiones: Columna[] = [
-  { clave: 'id', etiqueta: 'ID encuesta', tipo: 'mono' },
-  { clave: 'encuestador', etiqueta: 'Encuestador' },
-  { clave: 'motivo', etiqueta: 'Motivo de exclusión' },
-  { clave: 'fecha', etiqueta: 'Registrado', tipo: 'mono' },
+const colsEleccion: Columna[] = [
+  { clave: 'eleccion', etiqueta: 'Elección', tipo: 'mono' },
+  { clave: 'cobertura', etiqueta: 'Cobertura universo', tipo: 'mono', alinear: 'der' },
+  { clave: 'mae_base', etiqueta: 'MAE baseline', tipo: 'mono', alinear: 'der' },
+  { clave: 'mae_ts', etiqueta: 'MAE TimesFM', tipo: 'mono', alinear: 'der' },
 ];
+const filasEleccion: Fila[] = backtest.elecciones.map((id) => {
+  const bloque = (backtest.por_eleccion as Record<string, { partidos: Record<string, { err_baseline: number; err_timesfm: number }> }>)[id];
+  const partidos = Object.values(bloque.partidos);
+  const maeBase = partidos.reduce((s, p) => s + Math.abs(p.err_baseline), 0) / partidos.length;
+  const maeTs = partidos.reduce((s, p) => s + Math.abs(p.err_timesfm), 0) / partidos.length;
+  return {
+    eleccion: id,
+    cobertura: `${num((backtest.cobertura_universo_pct_por_eleccion as Record<string, number>)[id], 1)} %`,
+    mae_base: num(maeBase, 2),
+    mae_ts: num(maeTs, 2),
+  };
+});
+
+// Correcciones EB del CIS (serie micro_valid, la que entra en la serie mensual).
+const ebCis = (sesgo.correcciones_eb_cis as Record<string, Record<string, Record<string, { n: number; media_error: number; correccion: number }>>>)?.CIS?.micro_valid ?? {};
+const colsEb: Columna[] = [
+  { clave: 'partido', etiqueta: 'Partido' },
+  { clave: 'error', etiqueta: 'Error medio firmado (pp)', tipo: 'mono', alinear: 'der' },
+  { clave: 'correccion', etiqueta: 'Corrección aplicada (pp)', tipo: 'mono', alinear: 'der' },
+  { clave: 'n', etiqueta: 'n', tipo: 'mono', alinear: 'der' },
+];
+const filasEb: Fila[] = Object.entries(ebCis)
+  .sort((a, b) => Math.abs(b[1].media_error) - Math.abs(a[1].media_error))
+  .slice(0, 8)
+  .map(([partido, d]) => ({
+    partido,
+    error: num(d.media_error, 2),
+    correccion: num(d.correccion, 2),
+    n: String(d.n),
+  }));
+
+const colsExcl: Columna[] = [
+  { clave: 'id', etiqueta: 'ID', tipo: 'mono' },
+  { clave: 'origen', etiqueta: 'Origen' },
+  { clave: 'casa', etiqueta: 'Casa / estudio' },
+  { clave: 'motivo', etiqueta: 'Motivo' },
+];
+const filasExcl: Fila[] = exclusionesData.exclusiones.map((x) => ({
+  id: x.id ?? '—',
+  origen: x.origen === 'CIS' ? 'CIS' : 'Encuestadores',
+  casa: x.casa ?? x.slug ?? '—',
+  motivo: (x.motivo ?? '—').replace(/\s+/g, ' ').trim(),
+}));
+
+const cisResumen = (sesgo.resumen as Record<string, unknown>)?.CIS_comparacion_mismo_conjunto as
+  | { mae_micro_valid: number; mae_est: number; n_micro_valid: number; n_est: number; sesgo_medio_micro_valid: number; sesgo_medio_est: number }
+  | undefined;
 ---
 
 <Base
   titulo="Metodología"
-  descripcion="Metodología de 29N: fuentes, normalización, modelo TimesFM, validación y log público de exclusiones."
+  descripcion="Metodología de 29N: fuentes, normalización, modelo (TimesFM vs baseline), validación, correcciones de sesgo y log público de exclusiones."
 >
   <div class="contenedor">
     <Breadcrumbs items={[{ label: 'Metodología' }]} />
@@ -112,16 +107,23 @@ const columnasExclusiones: Columna[] = [
       <p class="eyebrow entrada">Método · TimesFM · D'Hondt</p>
       <h1 class="medida entrada entrada--1">Metodología</h1>
       <p class="titular-intro entrada entrada--2">
-        Cómo se construye cada cifra de esta web, qué se publica y qué se excluye.
-        Si algo aquí no se puede reproducir, es un error del proyecto.
+        Cómo se construye cada cifra de esta web, qué se publica y qué se excluye. Si
+        algo aquí no se puede reproducir, es un error del proyecto.
       </p>
     </header>
 
-    <!-- Índice: pegajoso en escritorio, details nativo en móvil (DESIGN.md §5) -->
     <details class="indice-movil">
       <summary>Índice de la metodología</summary>
       <ol>
-        {bloques.map((b) => <li><a href={`#${b.id}`}>{b.titulo}</a></li>)}
+        <li><a href="#compromisos">Los cinco compromisos</a></li>
+        <li><a href="#fuentes">Fuentes</a></li>
+        <li><a href="#normalizacion">Normalización</a></li>
+        <li><a href="#modelo">Modelo</a></li>
+        <li><a href="#validacion">Validación (backtest)</a></li>
+        <li><a href="#sesgo">Correcciones de sesgo</a></li>
+        <li><a href="#errores">Errores conocidos y límites</a></li>
+        <li><a href="#exclusiones">Log de exclusiones</a></li>
+        <li><a href="#licencia">Licencia y reutilización</a></li>
       </ol>
     </details>
 
@@ -129,45 +131,265 @@ const columnasExclusiones: Columna[] = [
       <nav class="indice" aria-label="Índice de la metodología">
         <p class="eyebrow">Índice</p>
         <ol>
-          {bloques.map((b) => <li><a href={`#${b.id}`}>{b.titulo}</a></li>)}
+          <li><a href="#compromisos">Los cinco compromisos</a></li>
+          <li><a href="#fuentes">Fuentes</a></li>
+          <li><a href="#normalizacion">Normalización</a></li>
+          <li><a href="#modelo">Modelo</a></li>
+          <li><a href="#validacion">Validación (backtest)</a></li>
+          <li><a href="#sesgo">Correcciones de sesgo</a></li>
+          <li><a href="#errores">Errores conocidos y límites</a></li>
+          <li><a href="#exclusiones">Log de exclusiones</a></li>
+          <li><a href="#licencia">Licencia y reutilización</a></li>
         </ol>
       </nav>
 
       <div class="pliego__cuerpo">
-        {bloques.map((b) => (
-          <section class="bloque" id={b.id}>
-            <div class="bloque__texto">
-              <h2>{b.titulo}</h2>
-              {b.parrafos.map((p) => <p>{p}</p>)}
-              {b.pendiente && (
-                <p class="nota">
-                  <span class="pendiente">en construcción — {b.pendiente}</span>
-                </p>
-              )}
+        <section class="bloque" id="compromisos">
+          <div class="bloque__texto">
+            <h2>Los cinco compromisos</h2>
+            <p>
+              Este proyecto publica intervalos, no titulares. Todo dato de la web es
+              trazable a su fuente y clicable; el error del backtest se publica sin
+              maquillaje; ninguna predicción viaja como cifra puntual; las sumas
+              provinciales cuadran con la predicción estatal; y cada encuesta que no pasa
+              validación queda documentada en un log público.
+            </p>
+            <p>
+              El diseño de esta web replica esos compromisos: si un número está mal, tiene
+              que verse mal.
+            </p>
+          </div>
+          <aside class="nota-margen bloque__nota">
+            <span class="bloque__nota-marca" aria-hidden="true">§</span>
+            Origen: README.md → «Compromisos metodológicos».
+          </aside>
+        </section>
 
-              {b.id === 'exclusiones' && (
-                <DataTable
-                  id="tabla-exclusiones"
-                  columnas={columnasExclusiones}
-                  filas={[]}
-                  vacio="El log está vacío porque aún no hay encuestas procesadas. Se publicará desde la Fase 3, con motivo explícito por entrada."
-                />
-              )}
+        <section class="bloque" id="fuentes">
+          <div class="bloque__texto">
+            <h2>Fuentes</h2>
+            <p>
+              Tres familias de fuente. El CIS aporta microdatos preelectorales abiertos
+              (<strong>{entero(encuestasData.meta.n_cis)} estudios</strong> en el catálogo).
+              El Ministerio del Interior aporta el escrutinio provincial de las
+              <strong>{entero(eleccionesData.elecciones.length)} generales</strong> desde 1977.
+              Los encuestadores privados aportan estimaciones transcritas desde su ficha
+              técnica publicada (<strong>{entero(encuestasData.meta.n_privados)} encuestas</strong>).
+            </p>
+            <p>
+              Ninguna encuesta entra sin URL de ficha técnica verificable. La que no la
+              tiene, no se inventa: entra al log de exclusiones con su motivo.
+            </p>
+          </div>
+          <aside class="nota-margen bloque__nota">
+            <span class="bloque__nota-marca" aria-hidden="true">§</span>
+            Catálogo completo: <span class="mono">data/processed/cis y data/processed/encuestadores/</span>.
+          </aside>
+        </section>
 
-              {b.id === 'licencia' && (
-                <p class="descarga-licencia">
-                  <a href="/">Volver a la portada</a>
-                </p>
-              )}
+        <section class="bloque" id="normalizacion">
+          <div class="bloque__texto">
+            <h2>Normalización</h2>
+            <p>
+              La base de todo es el <strong>% sobre voto válido</strong>: la base con la que
+              se reparten escaños. El voto directo del CIS se publica sobre <em>censo</em> y se
+              reescala a válido; las estimaciones privadas ya vienen sobre válido. Mezclar
+              ambas sin normalizar compararía cosas distintas, así que la web lo advierte en
+              la tabla de encuestas.
+            </p>
+            <p>
+              El espacio de la izquierda estatal cambia de marca (IU → Podemos → Sumar) y se
+              modela como <strong>una sola familia</strong> para no generar partidos fantasma.
+              Los identificadores de partido del Interior se canonicalizan con un diccionario
+              propio (fusiones, refundaciones, siglas autonómicas como PSC o PSE).
+            </p>
+          </div>
+          <aside class="nota-margen bloque__nota">
+            <span class="bloque__nota-marca" aria-hidden="true">§</span>
+            Series ordenadas por fin de trabajo de campo, no por publicación.
+          </aside>
+        </section>
+
+        <section class="bloque" id="modelo">
+          <div class="bloque__texto">
+            <h2>Modelo</h2>
+            <p>
+              Una <strong>serie mensual ponderada</strong> por partido (peso de recencia con
+              vida media de 45 días, tamaño muestral y calidad histórica de cada encuestador)
+              alimenta el forecast estatal. Sobre ella se prueban dos métodos: <strong>TimesFM</strong>
+              (zero-shot, checkpoint <span class="mono">google/timesfm-2.5-200m-pytorch</span>, CPU)
+              y un <strong>baseline ingenuo</strong> (la última media ponderada). Después, una
+              desagregación provincial por swing apoya la predicción en los resultados de 23J,
+              y el reparto de escaños se simula con <strong>D'Hondt</strong> sobre 10 000 ejecuciones.
+            </p>
+            <p>
+              La salida es un JSON por provincia con media e intervalo. <strong>La web no
+              calcula nada: solo lee</strong> el resultado del pipeline.
+            </p>
+          </div>
+          <aside class="nota-margen bloque__nota">
+            <span class="bloque__nota-marca" aria-hidden="true">§</span>
+            Horizonte 1 mes (nov-2026); historia 593 meses; 13 series (una por partido).
+          </aside>
+        </section>
+
+        <section class="bloque" id="validacion">
+          <div class="bloque__texto">
+            <h2>Validación (backtest)</h2>
+            <p>
+              El modelo se prueba contra cinco elecciones ya celebradas sin fuga de datos:
+              se entrena con observaciones anteriores a cada votación. La métrica es el
+              error absoluto medio (MAE) sobre % de voto válido.
+            </p>
+
+            <div class="veredicto banner-alerta" role="note">
+              <p class="eyebrow">Veredicto sin maquillar</p>
+              <p>
+                <strong>TimesFM NO mejora al baseline.</strong> Baseline MAE
+                <span class="mono">{num(mae.baseline, 3)} pp</span> frente a TimesFM
+                <span class="mono">{num(mae.timesfm, 3)} pp</span> y ensemble
+                <span class="mono">{num(mae.ensemble, 3)} pp</span>, con n = {entero(backtest.n_observaciones_mae)}.
+                La diferencia ({num(mae.mejora_timesfm_vs_baseline_pp, 3)} pp) es un empate
+                estadístico: la desviación de los errores es de {num(backtest.baseline_error_distribution.sd, 2)} pp.
+                Por eso el método primario publicado es el <strong>baseline</strong>, y TimesFM
+                se publica como contraste reproducible, no como reclamo.
+              </p>
             </div>
 
-            {b.nota && (
-              <aside class="nota-margen bloque__nota">
-                <span class="bloque__nota-marca" aria-hidden="true">§</span> {b.nota}
-              </aside>
+            <p>
+              Estos son los números por partido. Ser mejor «de media» no significa serlo en
+              todos: TimesFM gana en PP y Sumar, pero pierde donde importa —los partidos
+              grandes—.
+            </p>
+            <DataTable
+              id="tabla-mae"
+              columnas={colsMae}
+              filas={filasMae}
+              extraido={backtest.generado}
+              nota={backtest.metrica}
+            />
+
+            <p class="nota">
+              Por elección (MAE medio de los 13 partidos modelados, recalculado de los errores
+              publicados). La cobertura del universo crece con el tiempo y explica parte del error:
+            </p>
+            <DataTable id="tabla-mae-eleccion" columnas={colsEleccion} filas={filasEleccion} vacio="Sin datos." />
+          </div>
+          <aside class="nota-margen bloque__nota">
+            <span class="bloque__nota-marca" aria-hidden="true">§</span>
+            Elecciones: 2015-12-20, 2016-06-26, 2019-04-28, 2019-11-10, 2023-07-23.
+            <br /><br />
+            Peor caso: 2015 (Podemos ~24 % real frente a ~8 % que daban las encuestas CIS).
+          </aside>
+        </section>
+
+        <section class="bloque" id="sesgo">
+          <div class="bloque__texto">
+            <h2>Correcciones de sesgo</h2>
+            <p>
+              Antes de entrar en la serie, cada observación se corrige con un
+              <strong>efecto de casa</strong> estimado empíricamente: el error firmado medio
+              (encuesta − real) por casa y partido, encogido con un factor de Bayes
+              (k = 5) para no sobrecorregir con muestras pequeñas. La corrección se resta.
+            </p>
+            {cisResumen && (
+              <p>
+                En el CIS, el sesgo direccional vive más en la respuesta directa que en su
+                modelo publicado: sobre el mismo conjunto de cinco elecciones, el microdato
+                reescalado tiene un MAE de <span class="mono">{num(cisResumen.mae_micro_valid, 2)} pp</span>
+                (sesgo medio {num(cisResumen.sesgo_medio_micro_valid, 2)} pp) y la estimación
+                publicada del CIS, <span class="mono">{num(cisResumen.mae_est, 2)} pp</span>
+                (sesgo {num(cisResumen.sesgo_medio_est, 2)} pp). El modelo del CIS
+                <strong>reduce</strong> el error absoluto en {num(cisResumen.mae_micro_valid - cisResumen.mae_est, 2)} pp.
+              </p>
             )}
-          </section>
-        ))}
+            <p>
+              Correcciones EB aplicadas a la serie del CIS (microdato sobre censo). El signo
+              negativo significa que el CIS <em>infravaloraba</em> a ese partido y la corrección
+              suma:
+            </p>
+            <DataTable
+              id="tabla-eb"
+              columnas={colsEb}
+              filas={filasEb}
+              extraido={sesgo.meta.generado}
+              vacio="Sin correcciones publicadas."
+              nota="Serie micro_valid (CIS, microdato reescalado a voto válido). Fuente: pipeline/sesgo."
+            />
+          </div>
+          <aside class="nota-margen bloque__nota">
+            <span class="bloque__nota-marca" aria-hidden="true">§</span>
+            Error firmado = pct_encuesta − pct_real, misma base.
+            <br /><br />
+            Incumbencia: el efecto «in» vs «out» del CIS no es concluyente en el intervalo
+            bootstrap, así que no se usa como variable.
+          </aside>
+        </section>
+
+        <section class="bloque" id="errores">
+          <div class="bloque__texto">
+            <h2>Errores conocidos y límites</h2>
+            <p>
+              El modelo no conoce el futuro y no lo finge. Los límites, sin adorno:
+            </p>
+            <ul class="limites-lista">
+              <li><strong>TimesFM no aporta</strong> aquí: empata con el baseline ({num(mae.mejora_timesfm_vs_baseline_pp, 3)} pp). Se publica igualmente como contraste.</li>
+              <li>Los intervalos son <strong>empíricos</strong> (errores del backtest), no calibrados como probabilidad de resultado; el σ por partido se estima con n = 2–5 elecciones → ruidoso.</li>
+              <li><strong>Swing proporcional uniforme</strong>: no captura terremotos locales ni elasticidades provinciales distintas. Los intervalos de partidos pequeños (CUP, CC, PACMA) son anchos a propósito.</li>
+              <li>El backtest mide a <strong>1 mes vista</strong>; las encuestas del propio mes de la elección quedan fuera por simetría entre métodos.</li>
+              <li>El universo modelado son 13 partidos que cubren el 97,96 % del voto válido de 23J; el residual no reparte escaños.</li>
+              <li>La serie CIS tiene <strong>huecos históricos</strong> (1989–1996, 1996–2015) por descargas en curso; no afecta al forecast de 2026, que vive de los datos 2023–2026.</li>
+            </ul>
+            <p>
+              Cuando no hay datos suficientes lo decimos con esas palabras; no escribimos
+              «próximamente».
+            </p>
+          </div>
+          <aside class="nota-margen bloque__nota">
+            <span class="bloque__nota-marca" aria-hidden="true">§</span>
+            Principio editorial: ninguna cifra crítica vive solo en un tooltip o en una animación.
+          </aside>
+        </section>
+
+        <section class="bloque" id="exclusiones">
+          <div class="bloque__texto">
+            <h2>Log de exclusiones</h2>
+            <p>
+              Una encuesta que no pasa validación no desaparece: se documenta con su motivo.
+              El log se renderiza como una tabla corriente, sin maquillaje, porque es
+              documentación y no marketing.
+            </p>
+            <DataTable
+              id="tabla-exclusiones"
+              columnas={colsExcl}
+              filas={filasExcl}
+              vacio="El log está vacío."
+              nota={`${entero(exclusionesData.meta.n)} entradas: ${entero(exclusionesData.meta.n_cis)} del CIS (sin PESO, tipo fuera de ámbito, voto mal normalizado) y ${entero(exclusionesData.meta.n_privados)} de encuestadores (sin ficha técnica verificable).`}
+            />
+          </div>
+          <aside class="nota-margen bloque__nota">
+            <span class="bloque__nota-marca" aria-hidden="true">§</span>
+            Marcas de exclusión: muestra insuficiente, sin ficha técnica verificable,
+            variable de voto no normalizada, tipo fuera de ámbito.
+          </aside>
+        </section>
+
+        <section class="bloque" id="licencia">
+          <div class="bloque__texto">
+            <h2>Licencia y reutilización</h2>
+            <p>
+              El código se publica bajo licencia MIT. Los datos pertenecen a sus fuentes
+              —CIS, Ministerio del Interior y encuestadores— y este proyecto los procesa y
+              enlaza citando siempre el origen. La reutilización es bienvenida con atribución
+              a las fuentes originales y a la metodología aquí descrita.
+            </p>
+            <p class="descarga-licencia"><a href="/">Volver a la portada</a></p>
+          </div>
+          <aside class="nota-margen bloque__nota">
+            <span class="bloque__nota-marca" aria-hidden="true">§</span>
+            Repo: github.com/elCanosail/29N · Licencia: MIT.
+          </aside>
+        </section>
       </div>
     </div>
   </div>
@@ -188,29 +410,13 @@ const columnasExclusiones: Columna[] = [
     border-top: var(--borde-tinta);
     padding-top: var(--s-5);
   }
-
   .indice { position: sticky; top: calc(var(--header-h) + var(--s-3)); }
-  .indice ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: var(--s-2);
-    font-size: var(--t-small);
-    counter-reset: idx;
-  }
+  .indice ol { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--s-2); font-size: var(--t-small); counter-reset: idx; }
   .indice li { counter-increment: idx; }
   .indice a { color: var(--tinta-2); text-decoration: none; }
-  .indice a::before {
-    content: counter(idx) '. ';
-    font-family: var(--f-mono);
-    font-size: 0.8em;
-    color: var(--tinta-3);
-  }
+  .indice a::before { content: counter(idx) '. '; font-family: var(--f-mono); font-size: 0.8em; color: var(--tinta-3); }
   .indice a:hover { color: var(--tinta); text-decoration: underline; }
 
-  /* Cada bloque: prosa de 68 ch + nota al margen de 200–280 px */
   .bloque {
     display: grid;
     grid-template-columns: minmax(0, var(--medida)) var(--nota-margen);
@@ -225,6 +431,11 @@ const columnasExclusiones: Columna[] = [
   .bloque__nota { align-self: start; }
   .bloque__nota-marca { color: var(--tinta-3); }
 
+  .veredicto { margin: 0 0 var(--s-4); }
+  .veredicto p { margin: 0 0 var(--s-2); }
+  .veredicto p:last-child { margin-bottom: 0; }
+  .limites-lista { padding-left: 1.2em; line-height: 1.7; }
+  .limites-lista li { margin-bottom: var(--s-2); }
   .descarga-licencia { font-size: var(--t-small); }
 
   @media (max-width: 1080px) {
@@ -234,7 +445,6 @@ const columnasExclusiones: Columna[] = [
   }
   @media (max-width: 900px) {
     .bloque { grid-template-columns: 1fr; gap: var(--s-3); }
-    /* En móvil la nota deja de ser marginal y pasa a ser nota al pie */
     .bloque__nota { max-width: var(--medida); }
   }
 </style>

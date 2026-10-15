@@ -1,0 +1,926 @@
+{
+ "generado": "2026-10-15",
+ "elecciones": [
+  "2015-12-20",
+  "2016-06-26",
+  "2019-04-28",
+  "2019-11-10",
+  "2023-07-23"
+ ],
+ "metrica": "MAE sobre % de voto válido (base completa, sin renormalizar)",
+ "cobertura_universo_pct_por_eleccion": {
+  "2015-12-20": 83.23,
+  "2016-06-26": 85.35,
+  "2019-04-28": 81.57,
+  "2019-11-10": 88.45,
+  "2023-07-23": 97.96
+ },
+ "n_observaciones_mae": 59,
+ "mae_global": {
+  "timesfm": 1.27,
+  "baseline": 1.23,
+  "ensemble": 1.24,
+  "verdict": "Mejor metodo en backtest: baseline (MAE 1.234 pp). TimesFM NO mejora al baseline",
+  "mejora_timesfm_vs_baseline_pp": -0.04,
+  "mejora_ensemble_vs_baseline_pp": -0.0,
+  "metodo_primario": "baseline"
+ },
+ "mae_por_partido": {
+  "PP": {
+   "mae_timesfm": 2.01,
+   "mae_baseline": 2.29,
+   "mae_ensemble": 2.15,
+   "n_elecciones": 5
+  },
+  "PSOE": {
+   "mae_timesfm": 4.04,
+   "mae_baseline": 3.49,
+   "mae_ensemble": 3.73,
+   "n_elecciones": 5
+  },
+  "VOX": {
+   "mae_timesfm": 2.82,
+   "mae_baseline": 2.05,
+   "mae_ensemble": 2.43,
+   "n_elecciones": 5
+  },
+  "SUMAR": {
+   "mae_timesfm": 4.19,
+   "mae_baseline": 4.77,
+   "mae_ensemble": 4.34,
+   "n_elecciones": 5
+  },
+  "ERC": {
+   "mae_timesfm": 0.47,
+   "mae_baseline": 0.51,
+   "mae_ensemble": 0.49,
+   "n_elecciones": 5
+  },
+  "JXCAT": {
+   "mae_timesfm": 0.28,
+   "mae_baseline": 0.26,
+   "mae_ensemble": 0.26,
+   "n_elecciones": 5
+  },
+  "PNV": {
+   "mae_timesfm": 0.04,
+   "mae_baseline": 0.05,
+   "mae_ensemble": 0.04,
+   "n_elecciones": 5
+  },
+  "EH BILDU": {
+   "mae_timesfm": 0.18,
+   "mae_baseline": 0.18,
+   "mae_ensemble": 0.18,
+   "n_elecciones": 5
+  },
+  "BNG": {
+   "mae_timesfm": 0.19,
+   "mae_baseline": 0.18,
+   "mae_ensemble": 0.18,
+   "n_elecciones": 4
+  },
+  "CUP": {
+   "mae_timesfm": 0.35,
+   "mae_baseline": 0.32,
+   "mae_ensemble": 0.34,
+   "n_elecciones": 2
+  },
+  "CC": {
+   "mae_timesfm": 0.17,
+   "mae_baseline": 0.16,
+   "mae_ensemble": 0.17,
+   "n_elecciones": 5
+  },
+  "NA+": {
+   "mae_timesfm": 0.2,
+   "mae_baseline": 0.14,
+   "mae_ensemble": 0.17,
+   "n_elecciones": 3
+  },
+  "PACMA": {
+   "mae_timesfm": 0.42,
+   "mae_baseline": 0.44,
+   "mae_ensemble": 0.43,
+   "n_elecciones": 5
+  }
+ },
+ "baseline_error_distribution": {
+  "media": 1.23,
+  "sd": 2.56,
+  "p90_abs": 2.97,
+  "n": 59
+ },
+ "por_eleccion": {
+  "2015-12-20": {
+   "partidos": {
+    "PP": {
+     "pred_timesfm": 26.89,
+     "pred_baseline": 26.69,
+     "pred_ensemble": 26.8,
+     "real": 28.7,
+     "err_timesfm": -1.81,
+     "err_baseline": -2.01,
+     "err_ensemble": -1.91,
+     "ts_p10": 25.29,
+     "ts_p50": 26.89,
+     "ts_p90": 27.96
+    },
+    "PSOE": {
+     "pred_timesfm": 22.18,
+     "pred_baseline": 21.17,
+     "pred_ensemble": 21.68,
+     "real": 22.0,
+     "err_timesfm": 0.19,
+     "err_baseline": -0.83,
+     "err_ensemble": -0.32,
+     "ts_p10": 19.96,
+     "ts_p50": 22.18,
+     "ts_p90": 25.41
+    },
+    "VOX": {
+     "pred_timesfm": 0.0,
+     "pred_baseline": 0.0,
+     "pred_ensemble": 0.0,
+     "real": 0.23,
+     "err_timesfm": -0.23,
+     "err_baseline": -0.23,
+     "err_ensemble": -0.23,
+     "ts_p10": 0.0,
+     "ts_p50": 0.0,
+     "ts_p90": 0.0
+    },
+    "SUMAR": {
+     "pred_timesfm": 7.68,
+     "pred_baseline": 7.47,
+     "pred_ensemble": 7.58,
+     "real": 24.36,
+     "err_timesfm": -16.68,
+     "err_baseline": -16.89,
+     "err_ensemble": -16.78,
+     "ts_p10": 7.1,
+     "ts_p50": 7.68,
+     "ts_p90": 8.41
+    },
+    "ERC": {
+     "pred_timesfm": 2.27,
+     "pred_baseline": 2.27,
+     "pred_ensemble": 2.27,
+     "real": 2.39,
+     "err_timesfm": -0.12,
+     "err_baseline": -0.12,
+     "err_ensemble": -0.12,
+     "ts_p10": 2.04,
+     "ts_p50": 2.27,
+     "ts_p90": 2.4
+    },
+    "JXCAT": {
+     "pred_timesfm": 2.33,
+     "pred_baseline": 2.09,
+     "pred_ensemble": 2.21,
+     "real": 2.25,
+     "err_timesfm": 0.08,
+     "err_baseline": -0.16,
+     "err_ensemble": -0.04,
+     "ts_p10": 2.14,
+     "ts_p50": 2.33,
+     "ts_p90": 2.92
+    },
+    "PNV": {
+     "pred_timesfm": 1.17,
+     "pred_baseline": 1.14,
+     "pred_ensemble": 1.16,
+     "real": 1.2,
+     "err_timesfm": -0.03,
+     "err_baseline": -0.06,
+     "err_ensemble": -0.04,
+     "ts_p10": 1.1,
+     "ts_p50": 1.17,
+     "ts_p90": 1.24
+    },
+    "EH BILDU": {
+     "pred_timesfm": 1.0,
+     "pred_baseline": 1.03,
+     "pred_ensemble": 1.02,
+     "real": 0.91,
+     "err_timesfm": 0.1,
+     "err_baseline": 0.12,
+     "err_ensemble": 0.11,
+     "ts_p10": 0.97,
+     "ts_p50": 1.0,
+     "ts_p90": 1.01
+    },
+    "BNG": {
+     "pred_timesfm": 0.21,
+     "pred_baseline": 0.19,
+     "pred_ensemble": 0.2,
+     "real": 0.0,
+     "err_timesfm": 0.21,
+     "err_baseline": 0.19,
+     "err_ensemble": 0.2,
+     "ts_p10": 0.18,
+     "ts_p50": 0.21,
+     "ts_p90": 0.37
+    },
+    "CUP": {
+     "pred_timesfm": 0.0,
+     "pred_baseline": 0.0,
+     "pred_ensemble": 0.0,
+     "real": 0.0,
+     "err_timesfm": 0.0,
+     "err_baseline": 0.0,
+     "err_ensemble": 0.0,
+     "ts_p10": 0.0,
+     "ts_p50": 0.0,
+     "ts_p90": 0.0
+    },
+    "CC": {
+     "pred_timesfm": 0.0,
+     "pred_baseline": 0.0,
+     "pred_ensemble": 0.0,
+     "real": 0.33,
+     "err_timesfm": -0.33,
+     "err_baseline": -0.33,
+     "err_ensemble": -0.33,
+     "ts_p10": 0.0,
+     "ts_p50": 0.0,
+     "ts_p90": 0.0
+    },
+    "NA+": {
+     "pred_timesfm": 0.0,
+     "pred_baseline": 0.0,
+     "pred_ensemble": 0.0,
+     "real": 0.0,
+     "err_timesfm": 0.0,
+     "err_baseline": 0.0,
+     "err_ensemble": 0.0,
+     "ts_p10": 0.0,
+     "ts_p50": 0.0,
+     "ts_p90": 0.0
+    },
+    "PACMA": {
+     "pred_timesfm": 0.0,
+     "pred_baseline": 0.0,
+     "pred_ensemble": 0.0,
+     "real": 0.87,
+     "err_timesfm": -0.87,
+     "err_baseline": -0.87,
+     "err_ensemble": -0.87,
+     "ts_p10": 0.0,
+     "ts_p50": 0.0,
+     "ts_p90": 0.0
+    }
+   },
+   "historia_meses": 462,
+   "cobertura_universo_pct": 83.23
+  },
+  "2016-06-26": {
+   "partidos": {
+    "PP": {
+     "pred_timesfm": 27.43,
+     "pred_baseline": 27.48,
+     "pred_ensemble": 27.45,
+     "real": 33.02,
+     "err_timesfm": -5.59,
+     "err_baseline": -5.53,
+     "err_ensemble": -5.56,
+     "ts_p10": 26.47,
+     "ts_p50": 27.43,
+     "ts_p90": 28.22
+    },
+    "PSOE": {
+     "pred_timesfm": 20.82,
+     "pred_baseline": 20.72,
+     "pred_ensemble": 20.77,
+     "real": 22.63,
+     "err_timesfm": -1.81,
+     "err_baseline": -1.92,
+     "err_ensemble": -1.86,
+     "ts_p10": 20.53,
+     "ts_p50": 20.82,
+     "ts_p90": 22.19
+    },
+    "VOX": {
+     "pred_timesfm": 1.82,
+     "pred_baseline": 1.8,
+     "pred_ensemble": 1.81,
+     "real": 0.2,
+     "err_timesfm": 1.62,
+     "err_baseline": 1.6,
+     "err_ensemble": 1.61,
+     "ts_p10": 1.59,
+     "ts_p50": 1.82,
+     "ts_p90": 1.99
+    },
+    "SUMAR": {
+     "pred_timesfm": 20.45,
+     "pred_baseline": 21.95,
+     "pred_ensemble": 21.2,
+     "real": 21.15,
+     "err_timesfm": -0.7,
+     "err_baseline": 0.8,
+     "err_ensemble": 0.05,
+     "ts_p10": 16.35,
+     "ts_p50": 20.45,
+     "ts_p90": 23.89
+    },
+    "ERC": {
+     "pred_timesfm": 2.29,
+     "pred_baseline": 2.48,
+     "pred_ensemble": 2.38,
+     "real": 2.63,
+     "err_timesfm": -0.34,
+     "err_baseline": -0.15,
+     "err_ensemble": -0.25,
+     "ts_p10": 1.6,
+     "ts_p50": 2.29,
+     "ts_p90": 2.96
+    },
+    "JXCAT": {
+     "pred_timesfm": 1.89,
+     "pred_baseline": 1.91,
+     "pred_ensemble": 1.9,
+     "real": 2.02,
+     "err_timesfm": -0.13,
+     "err_baseline": -0.11,
+     "err_ensemble": -0.12,
+     "ts_p10": 1.74,
+     "ts_p50": 1.89,
+     "ts_p90": 2.28
+    },
+    "PNV": {
+     "pred_timesfm": 1.16,
+     "pred_baseline": 1.15,
+     "pred_ensemble": 1.15,
+     "real": 1.19,
+     "err_timesfm": -0.04,
+     "err_baseline": -0.04,
+     "err_ensemble": -0.04,
+     "ts_p10": 1.11,
+     "ts_p50": 1.16,
+     "ts_p90": 1.22
+    },
+    "EH BILDU": {
+     "pred_timesfm": 0.75,
+     "pred_baseline": 0.79,
+     "pred_ensemble": 0.77,
+     "real": 0.82,
+     "err_timesfm": -0.07,
+     "err_baseline": -0.03,
+     "err_ensemble": -0.05,
+     "ts_p10": 0.52,
+     "ts_p50": 0.75,
+     "ts_p90": 0.99
+    },
+    "BNG": {
+     "pred_timesfm": 0.15,
+     "pred_baseline": 0.15,
+     "pred_ensemble": 0.15,
+     "real": 0.19,
+     "err_timesfm": -0.04,
+     "err_baseline": -0.03,
+     "err_ensemble": -0.04,
+     "ts_p10": 0.13,
+     "ts_p50": 0.15,
+     "ts_p90": 0.21
+    },
+    "CUP": {
+     "pred_timesfm": 0.0,
+     "pred_baseline": 0.0,
+     "pred_ensemble": 0.0,
+     "real": 0.0,
+     "err_timesfm": 0.0,
+     "err_baseline": 0.0,
+     "err_ensemble": 0.0,
+     "ts_p10": 0.0,
+     "ts_p50": 0.0,
+     "ts_p90": 0.0
+    },
+    "CC": {
+     "pred_timesfm": 0.14,
+     "pred_baseline": 0.14,
+     "pred_ensemble": 0.14,
+     "real": 0.33,
+     "err_timesfm": -0.19,
+     "err_baseline": -0.19,
+     "err_ensemble": -0.19,
+     "ts_p10": 0.12,
+     "ts_p50": 0.14,
+     "ts_p90": 0.15
+    },
+    "NA+": {
+     "pred_timesfm": 0.04,
+     "pred_baseline": 0.04,
+     "pred_ensemble": 0.04,
+     "real": 0.0,
+     "err_timesfm": 0.04,
+     "err_baseline": 0.04,
+     "err_ensemble": 0.04,
+     "ts_p10": 0.04,
+     "ts_p50": 0.04,
+     "ts_p90": 0.05
+    },
+    "PACMA": {
+     "pred_timesfm": 0.94,
+     "pred_baseline": 0.93,
+     "pred_ensemble": 0.94,
+     "real": 1.19,
+     "err_timesfm": -0.25,
+     "err_baseline": -0.26,
+     "err_ensemble": -0.26,
+     "ts_p10": 0.82,
+     "ts_p50": 0.94,
+     "ts_p90": 1.03
+    }
+   },
+   "historia_meses": 468,
+   "cobertura_universo_pct": 85.35
+  },
+  "2019-04-28": {
+   "partidos": {
+    "PP": {
+     "pred_timesfm": 17.07,
+     "pred_baseline": 17.84,
+     "pred_ensemble": 17.45,
+     "real": 16.7,
+     "err_timesfm": 0.37,
+     "err_baseline": 1.14,
+     "err_ensemble": 0.75,
+     "ts_p10": 13.33,
+     "ts_p50": 17.07,
+     "ts_p90": 20.66
+    },
+    "PSOE": {
+     "pred_timesfm": 36.26,
+     "pred_baseline": 33.46,
+     "pred_ensemble": 34.86,
+     "real": 28.68,
+     "err_timesfm": 7.59,
+     "err_baseline": 4.79,
+     "err_ensemble": 6.19,
+     "ts_p10": 29.44,
+     "ts_p50": 36.26,
+     "ts_p90": 41.84
+    },
+    "VOX": {
+     "pred_timesfm": 5.44,
+     "pred_baseline": 8.63,
+     "pred_ensemble": 7.04,
+     "real": 10.26,
+     "err_timesfm": -4.82,
+     "err_baseline": -1.63,
+     "err_ensemble": -3.22,
+     "ts_p10": 3.26,
+     "ts_p50": 5.44,
+     "ts_p90": 8.15
+    },
+    "SUMAR": {
+     "pred_timesfm": 12.99,
+     "pred_baseline": 12.1,
+     "pred_ensemble": 12.54,
+     "real": 15.05,
+     "err_timesfm": -2.06,
+     "err_baseline": -2.95,
+     "err_ensemble": -2.51,
+     "ts_p10": 11.12,
+     "ts_p50": 12.99,
+     "ts_p90": 15.71
+    },
+    "ERC": {
+     "pred_timesfm": 4.48,
+     "pred_baseline": 4.97,
+     "pred_ensemble": 4.73,
+     "real": 3.89,
+     "err_timesfm": 0.58,
+     "err_baseline": 1.08,
+     "err_ensemble": 0.83,
+     "ts_p10": 3.76,
+     "ts_p50": 4.48,
+     "ts_p90": 5.24
+    },
+    "JXCAT": {
+     "pred_timesfm": 1.4,
+     "pred_baseline": 1.41,
+     "pred_ensemble": 1.41,
+     "real": 1.91,
+     "err_timesfm": -0.51,
+     "err_baseline": -0.5,
+     "err_ensemble": -0.51,
+     "ts_p10": 1.33,
+     "ts_p50": 1.4,
+     "ts_p90": 1.86
+    },
+    "PNV": {
+     "pred_timesfm": 1.56,
+     "pred_baseline": 1.52,
+     "pred_ensemble": 1.54,
+     "real": 1.51,
+     "err_timesfm": 0.05,
+     "err_baseline": 0.01,
+     "err_ensemble": 0.03,
+     "ts_p10": 1.41,
+     "ts_p50": 1.56,
+     "ts_p90": 1.7
+    },
+    "EH BILDU": {
+     "pred_timesfm": 1.22,
+     "pred_baseline": 1.22,
+     "pred_ensemble": 1.22,
+     "real": 1.02,
+     "err_timesfm": 0.2,
+     "err_baseline": 0.2,
+     "err_ensemble": 0.2,
+     "ts_p10": 0.97,
+     "ts_p50": 1.22,
+     "ts_p90": 1.48
+    },
+    "BNG": {
+     "pred_timesfm": 0.13,
+     "pred_baseline": 0.13,
+     "pred_ensemble": 0.13,
+     "real": 0.36,
+     "err_timesfm": -0.23,
+     "err_baseline": -0.23,
+     "err_ensemble": -0.23,
+     "ts_p10": 0.09,
+     "ts_p50": 0.13,
+     "ts_p90": 0.17
+    },
+    "CUP": {
+     "pred_timesfm": 0.0,
+     "pred_baseline": 0.0,
+     "pred_ensemble": 0.0,
+     "real": 0.0,
+     "err_timesfm": 0.0,
+     "err_baseline": 0.0,
+     "err_ensemble": 0.0,
+     "ts_p10": 0.0,
+     "ts_p50": 0.0,
+     "ts_p90": 0.0
+    },
+    "CC": {
+     "pred_timesfm": 0.29,
+     "pred_baseline": 0.32,
+     "pred_ensemble": 0.3,
+     "real": 0.53,
+     "err_timesfm": -0.24,
+     "err_baseline": -0.21,
+     "err_ensemble": -0.22,
+     "ts_p10": 0.2,
+     "ts_p50": 0.29,
+     "ts_p90": 0.38
+    },
+    "NA+": {
+     "pred_timesfm": 0.04,
+     "pred_baseline": 0.04,
+     "pred_ensemble": 0.04,
+     "real": 0.41,
+     "err_timesfm": -0.37,
+     "err_baseline": -0.37,
+     "err_ensemble": -0.37,
+     "ts_p10": 0.04,
+     "ts_p50": 0.04,
+     "ts_p90": 0.04
+    },
+    "PACMA": {
+     "pred_timesfm": 1.71,
+     "pred_baseline": 1.77,
+     "pred_ensemble": 1.74,
+     "real": 1.25,
+     "err_timesfm": 0.46,
+     "err_baseline": 0.52,
+     "err_ensemble": 0.49,
+     "ts_p10": 1.33,
+     "ts_p50": 1.71,
+     "ts_p90": 2.12
+    }
+   },
+   "historia_meses": 502,
+   "cobertura_universo_pct": 81.57
+  },
+  "2019-11-10": {
+   "partidos": {
+    "PP": {
+     "pred_timesfm": 19.2,
+     "pred_baseline": 18.94,
+     "pred_ensemble": 19.07,
+     "real": 20.81,
+     "err_timesfm": -1.61,
+     "err_baseline": -1.87,
+     "err_ensemble": -1.74,
+     "ts_p10": 16.63,
+     "ts_p50": 19.2,
+     "ts_p90": 21.37
+    },
+    "PSOE": {
+     "pred_timesfm": 34.97,
+     "pred_baseline": 34.86,
+     "pred_ensemble": 34.91,
+     "real": 28.0,
+     "err_timesfm": 6.97,
+     "err_baseline": 6.86,
+     "err_ensemble": 6.91,
+     "ts_p10": 34.09,
+     "ts_p50": 34.97,
+     "ts_p90": 34.97
+    },
+    "VOX": {
+     "pred_timesfm": 8.21,
+     "pred_baseline": 8.69,
+     "pred_ensemble": 8.45,
+     "real": 15.07,
+     "err_timesfm": -6.87,
+     "err_baseline": -6.38,
+     "err_ensemble": -6.62,
+     "ts_p10": 6.04,
+     "ts_p50": 8.21,
+     "ts_p90": 10.57
+    },
+    "SUMAR": {
+     "pred_timesfm": 12.58,
+     "pred_baseline": 12.13,
+     "pred_ensemble": 12.35,
+     "real": 12.86,
+     "err_timesfm": -0.28,
+     "err_baseline": -0.73,
+     "err_ensemble": -0.51,
+     "ts_p10": 8.55,
+     "ts_p50": 12.58,
+     "ts_p90": 17.87
+    },
+    "ERC": {
+     "pred_timesfm": 4.4,
+     "pred_baseline": 4.38,
+     "pred_ensemble": 4.39,
+     "real": 3.61,
+     "err_timesfm": 0.8,
+     "err_baseline": 0.77,
+     "err_ensemble": 0.78,
+     "ts_p10": 4.21,
+     "ts_p50": 4.4,
+     "ts_p90": 4.55
+    },
+    "JXCAT": {
+     "pred_timesfm": 1.73,
+     "pred_baseline": 1.74,
+     "pred_ensemble": 1.73,
+     "real": 2.19,
+     "err_timesfm": -0.46,
+     "err_baseline": -0.45,
+     "err_ensemble": -0.45,
+     "ts_p10": 1.55,
+     "ts_p50": 1.73,
+     "ts_p90": 2.44
+    },
+    "PNV": {
+     "pred_timesfm": 1.62,
+     "pred_baseline": 1.65,
+     "pred_ensemble": 1.64,
+     "real": 1.56,
+     "err_timesfm": 0.06,
+     "err_baseline": 0.09,
+     "err_ensemble": 0.08,
+     "ts_p10": 1.47,
+     "ts_p50": 1.62,
+     "ts_p90": 1.77
+    },
+    "EH BILDU": {
+     "pred_timesfm": 1.47,
+     "pred_baseline": 1.48,
+     "pred_ensemble": 1.48,
+     "real": 1.17,
+     "err_timesfm": 0.3,
+     "err_baseline": 0.31,
+     "err_ensemble": 0.31,
+     "ts_p10": 1.38,
+     "ts_p50": 1.47,
+     "ts_p90": 1.49
+    },
+    "BNG": {
+     "pred_timesfm": 0.41,
+     "pred_baseline": 0.44,
+     "pred_ensemble": 0.42,
+     "real": 0.5,
+     "err_timesfm": -0.09,
+     "err_baseline": -0.06,
+     "err_ensemble": -0.07,
+     "ts_p10": 0.23,
+     "ts_p50": 0.41,
+     "ts_p90": 0.75
+    },
+    "CUP": {
+     "pred_timesfm": 0.56,
+     "pred_baseline": 0.68,
+     "pred_ensemble": 0.62,
+     "real": 1.02,
+     "err_timesfm": -0.46,
+     "err_baseline": -0.34,
+     "err_ensemble": -0.4,
+     "ts_p10": 0.34,
+     "ts_p50": 0.56,
+     "ts_p90": 0.81
+    },
+    "CC": {
+     "pred_timesfm": 0.34,
+     "pred_baseline": 0.34,
+     "pred_ensemble": 0.34,
+     "real": 0.31,
+     "err_timesfm": 0.03,
+     "err_baseline": 0.02,
+     "err_ensemble": 0.03,
+     "ts_p10": 0.29,
+     "ts_p50": 0.34,
+     "ts_p90": 0.38
+    },
+    "NA+": {
+     "pred_timesfm": 0.23,
+     "pred_baseline": 0.38,
+     "pred_ensemble": 0.31,
+     "real": 0.41,
+     "err_timesfm": -0.17,
+     "err_baseline": -0.03,
+     "err_ensemble": -0.1,
+     "ts_p10": 0.14,
+     "ts_p50": 0.23,
+     "ts_p90": 0.36
+    },
+    "PACMA": {
+     "pred_timesfm": 1.03,
+     "pred_baseline": 1.02,
+     "pred_ensemble": 1.02,
+     "real": 0.94,
+     "err_timesfm": 0.09,
+     "err_baseline": 0.07,
+     "err_ensemble": 0.08,
+     "ts_p10": 0.89,
+     "ts_p50": 1.03,
+     "ts_p90": 1.17
+    }
+   },
+   "historia_meses": 509,
+   "cobertura_universo_pct": 88.45
+  },
+  "2023-07-23": {
+   "partidos": {
+    "PP": {
+     "pred_timesfm": 33.71,
+     "pred_baseline": 33.97,
+     "pred_ensemble": 33.84,
+     "real": 33.06,
+     "err_timesfm": 0.65,
+     "err_baseline": 0.92,
+     "err_ensemble": 0.78,
+     "ts_p10": 30.62,
+     "ts_p50": 33.71,
+     "ts_p90": 37.27
+    },
+    "PSOE": {
+     "pred_timesfm": 28.06,
+     "pred_baseline": 28.61,
+     "pred_ensemble": 28.34,
+     "real": 31.68,
+     "err_timesfm": -3.62,
+     "err_baseline": -3.07,
+     "err_ensemble": -3.34,
+     "ts_p10": 26.02,
+     "ts_p50": 28.06,
+     "ts_p90": 30.51
+    },
+    "VOX": {
+     "pred_timesfm": 12.93,
+     "pred_baseline": 12.78,
+     "pred_ensemble": 12.85,
+     "real": 12.38,
+     "err_timesfm": 0.54,
+     "err_baseline": 0.4,
+     "err_ensemble": 0.47,
+     "ts_p10": 11.05,
+     "ts_p50": 12.93,
+     "ts_p90": 14.64
+    },
+    "SUMAR": {
+     "pred_timesfm": 11.1,
+     "pred_baseline": 9.87,
+     "pred_ensemble": 10.49,
+     "real": 12.34,
+     "err_timesfm": -1.23,
+     "err_baseline": -2.46,
+     "err_ensemble": -1.85,
+     "ts_p10": 7.72,
+     "ts_p50": 11.1,
+     "ts_p90": 14.0
+    },
+    "ERC": {
+     "pred_timesfm": 1.39,
+     "pred_baseline": 1.45,
+     "pred_ensemble": 1.42,
+     "real": 1.89,
+     "err_timesfm": -0.5,
+     "err_baseline": -0.43,
+     "err_ensemble": -0.47,
+     "ts_p10": 1.21,
+     "ts_p50": 1.39,
+     "ts_p90": 1.74
+    },
+    "JXCAT": {
+     "pred_timesfm": 1.53,
+     "pred_baseline": 1.63,
+     "pred_ensemble": 1.58,
+     "real": 1.74,
+     "err_timesfm": -0.21,
+     "err_baseline": -0.11,
+     "err_ensemble": -0.16,
+     "ts_p10": 1.46,
+     "ts_p50": 1.53,
+     "ts_p90": 1.84
+    },
+    "PNV": {
+     "pred_timesfm": 1.11,
+     "pred_baseline": 1.15,
+     "pred_ensemble": 1.13,
+     "real": 1.12,
+     "err_timesfm": -0.01,
+     "err_baseline": 0.03,
+     "err_ensemble": 0.01,
+     "ts_p10": 1.04,
+     "ts_p50": 1.11,
+     "ts_p90": 1.34
+    },
+    "EH BILDU": {
+     "pred_timesfm": 1.14,
+     "pred_baseline": 1.11,
+     "pred_ensemble": 1.12,
+     "real": 1.36,
+     "err_timesfm": -0.22,
+     "err_baseline": -0.25,
+     "err_ensemble": -0.23,
+     "ts_p10": 1.04,
+     "ts_p50": 1.14,
+     "ts_p90": 1.26
+    },
+    "BNG": {
+     "pred_timesfm": 1.01,
+     "pred_baseline": 1.04,
+     "pred_ensemble": 1.03,
+     "real": 0.62,
+     "err_timesfm": 0.38,
+     "err_baseline": 0.42,
+     "err_ensemble": 0.4,
+     "ts_p10": 0.85,
+     "ts_p50": 1.01,
+     "ts_p90": 1.21
+    },
+    "CUP": {
+     "pred_timesfm": 0.65,
+     "pred_baseline": 0.69,
+     "pred_ensemble": 0.67,
+     "real": 0.4,
+     "err_timesfm": 0.25,
+     "err_baseline": 0.29,
+     "err_ensemble": 0.27,
+     "ts_p10": 0.54,
+     "ts_p50": 0.65,
+     "ts_p90": 0.76
+    },
+    "CC": {
+     "pred_timesfm": 0.38,
+     "pred_baseline": 0.43,
+     "pred_ensemble": 0.41,
+     "real": 0.47,
+     "err_timesfm": -0.09,
+     "err_baseline": -0.04,
+     "err_ensemble": -0.07,
+     "ts_p10": 0.3,
+     "ts_p50": 0.38,
+     "ts_p90": 0.5
+    },
+    "NA+": {
+     "pred_timesfm": 0.17,
+     "pred_baseline": 0.17,
+     "pred_ensemble": 0.17,
+     "real": 0.21,
+     "err_timesfm": -0.04,
+     "err_baseline": -0.04,
+     "err_ensemble": -0.04,
+     "ts_p10": 0.13,
+     "ts_p50": 0.17,
+     "ts_p90": 0.21
+    },
+    "PACMA": {
+     "pred_timesfm": 0.27,
+     "pred_baseline": 0.23,
+     "pred_ensemble": 0.25,
+     "real": 0.69,
+     "err_timesfm": -0.42,
+     "err_baseline": -0.46,
+     "err_ensemble": -0.44,
+     "ts_p10": 0.13,
+     "ts_p50": 0.27,
+     "ts_p90": 0.43
+    }
+   },
+   "historia_meses": 553,
+   "cobertura_universo_pct": 97.96
+  }
+ }
+}

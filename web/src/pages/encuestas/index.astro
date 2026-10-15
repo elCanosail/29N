@@ -3,17 +3,93 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import DataTable from '../../components/DataTable.astro';
 import SourceCard from '../../components/SourceCard.astro';
-import type { Columna } from '../../lib/tipos';
+import encuestasData from '../../data/encuestas.json';
+import exclusionesData from '../../data/exclusiones.json';
+import { num, entero, campo, fechaCorta } from '../../lib/format';
+import type { Columna, Fila, AtributosFila } from '../../lib/tipos';
 
-// Estructura de columnas definitiva (los datos llegan en la Fase 1/3).
-const columnas: Columna[] = [
+const encuestas = encuestasData.encuestas;
+const { casas, anios, elecciones } = encuestasData.dimensiones;
+
+const idx = (lista: (string | number)[], valor: unknown) => lista.indexOf(valor as never);
+/** Visualiza el ámbito en español de España. */
+const ambito = (a: string | null) => {
+  if (!a) return '—';
+  if (a === 'estatal' || a === 'nacional') return 'Estatal';
+  return a;
+};
+
+const cols: Columna[] = [
   { clave: 'id', etiqueta: 'ID encuesta', tipo: 'mono' },
+  { clave: 'casa', etiqueta: 'Casa' },
+  { clave: 'tipo', etiqueta: 'Tipo' },
   { clave: 'campo', etiqueta: 'Trabajo de campo', tipo: 'mono' },
-  { clave: 'encuestador', etiqueta: 'Encuestador' },
-  { clave: 'ambito', etiqueta: 'Ámbito' },
   { clave: 'n', etiqueta: 'Muestra (n)', tipo: 'mono', alinear: 'der' },
-  { clave: 'estado', etiqueta: 'Validación' },
+  { clave: 'ambito', etiqueta: 'Ámbito' },
+  { clave: 'eleccion', etiqueta: 'Elección' },
+  { clave: 'pp', etiqueta: 'PP', tipo: 'mono', alinear: 'der' },
+  { clave: 'psoe', etiqueta: 'PSOE', tipo: 'mono', alinear: 'der' },
+  { clave: 'vox', etiqueta: 'VOX', tipo: 'mono', alinear: 'der' },
+  { clave: 'sumar', etiqueta: 'Sumar', tipo: 'mono', alinear: 'der' },
+  { clave: 'ficha', etiqueta: 'Ficha técnica' },
 ];
+
+const partido = (e: (typeof encuestas)[number], p: string) => {
+  const v = (e.partidos as unknown as Record<string, number>)[p];
+  return v === undefined ? '—' : num(v, 1);
+};
+
+const filas: Fila[] = encuestas.map((e) => ({
+  id: e.id,
+  casa: e.casa ?? '—',
+  tipo: e.tipo ?? '—',
+  campo: campo(e.fecha_trabajo),
+  n: e.n ? entero(e.n) : '—',
+  ambito: ambito(e.ambito),
+  eleccion: String(e.eleccion ?? '—'),
+  pp: partido(e, 'PP'),
+  psoe: partido(e, 'PSOE'),
+  vox: partido(e, 'VOX'),
+  sumar: partido(e, 'SUMAR'),
+  ficha: e.url ? 'enlace' : '—',
+}));
+
+// Atributos de filtrado por fila (índices de dimensión), leídos por el CSS.
+const filaAttrs: AtributosFila[] = encuestas.map((e) => ({
+  'data-fila': '',
+  'data-casa': idx(casas, e.casa),
+  'data-anio': idx(anios, e.anio),
+  'data-eleccion': idx(elecciones, String(e.eleccion)),
+}));
+
+// CSS de filtrado puro (sin JavaScript): `:has()` sobre el contenedor + `:not()`
+// por fila. Cada dimensión activa esconde las filas que no casan; al combinarse
+// varias reglas, el efecto es AND. Sin navegador con :has(), no filtra y se ven
+// todas las filas: degradación honesta, nunca un resultado falso.
+const reglas: string[] = [];
+casas.forEach((_, i) => {
+  if (i > 0) reglas.push(`.explorador:has(#fc-${i}:checked) [data-fila]:not([data-casa="${i}"]){display:none}`);
+});
+anios.forEach((_, i) => {
+  if (i > 0) reglas.push(`.explorador:has(#fa-${i}:checked) [data-fila]:not([data-anio="${i}"]){display:none}`);
+});
+elecciones.forEach((_, i) => {
+  if (i > 0) reglas.push(`.explorador:has(#fe-${i}:checked) [data-fila]:not([data-eleccion="${i}"]){display:none}`);
+});
+const cssFiltros = `<style>${reglas.join('')}</style>`;
+
+const colsExclusiones: Columna[] = [
+  { clave: 'id', etiqueta: 'ID encuesta', tipo: 'mono' },
+  { clave: 'origen', etiqueta: 'Origen' },
+  { clave: 'casa', etiqueta: 'Casa / estudio' },
+  { clave: 'motivo', etiqueta: 'Motivo de exclusión' },
+];
+const filasExclusiones: Fila[] = exclusionesData.exclusiones.map((x) => ({
+  id: x.id ?? '—',
+  origen: x.origen === 'CIS' ? 'CIS' : 'Encuestadores',
+  casa: x.casa ?? x.slug ?? '—',
+  motivo: (x.motivo ?? '—').replace(/\s+/g, ' ').trim(),
+}));
 ---
 
 <Base
@@ -24,62 +100,54 @@ const columnas: Columna[] = [
     <Breadcrumbs items={[{ label: 'Encuestas' }]} />
 
     <header class="cabecera-pagina">
-      <p class="eyebrow entrada">Encuestas · 1979–2026</p>
+      <p class="eyebrow entrada">Encuestas · 1977–2026</p>
       <h1 class="medida entrada entrada--1">Explorador de encuestas</h1>
       <p class="titular-intro entrada entrada--2">
         Todo lo que se ha preguntado sobre intención de voto, con la muestra, las
-        fechas de campo y la ficha técnica de origen. Una encuesta sin ficha
-        técnica verificable no entra: entra al log de exclusiones.
+        fechas de campo y la ficha técnica de origen. Una encuesta sin ficha técnica
+        verificable no entra: entra al log de exclusiones.
       </p>
     </header>
+
+    <Fragment set:html={cssFiltros} />
 
     <div class="explorador">
       <aside class="filtros" aria-labelledby="filtros-titulo">
         <h2 class="filtros__titulo" id="filtros-titulo">Filtros</h2>
-
-        <p class="estado-vacio filtros__aviso" id="filtros-aviso">
-          <strong>Los filtros se activan en la Fase 3</strong>, cuando exista el índice
-          de encuestas. Se muestran ya restyleados (controles nativos, operables por
-          teclado) para fijar la estructura y no aparentar una funcionalidad que aún no existe.
+        <p class="nota">
+          Filtrado sin JavaScript (radios nativos + CSS). Si tu navegador no soporta
+          <span class="mono">:has()</span>, se muestran todas las filas en lugar de un
+          resultado falso.
         </p>
 
-        <form aria-describedby="filtros-aviso">
-          <div class="campo">
-            <label for="f-encuestador">Encuestador</label>
-            <select id="f-encuestador" disabled>
-              <option>Todos</option>
-            </select>
-          </div>
-
-          <div class="campo">
-            <label for="f-anio">Año (desde)</label>
-            <select id="f-anio" disabled>
-              <option>1979</option>
-            </select>
-          </div>
-
-          <fieldset class="campo" disabled>
-            <legend class="label">Tipo</legend>
+        <form>
+          <fieldset class="campo filtro">
+            <legend class="label">Casa encuestadora</legend>
             <div class="grupo-opciones">
-              <label><input type="radio" name="tipo" checked /> Preelectoral</label>
-              <label><input type="radio" name="tipo" /> Barómetro</label>
-              <label><input type="radio" name="tipo" /> Postelectoral</label>
+              <label><input type="radio" name="casa" id="fc-0" checked /> Todas</label>
+              {casas.map((c, i) => (
+                <label><input type="radio" name="casa" id={`fc-${i + 1}`} /> {c}</label>
+              ))}
             </div>
           </fieldset>
 
-          <fieldset class="campo" disabled>
-            <legend class="label">Ámbito</legend>
-            <div class="grupo-opciones">
-              <label><input type="radio" name="ambito" checked /> Estatal</label>
-              <label><input type="radio" name="ambito" /> Autonómico</label>
+          <fieldset class="campo filtro">
+            <legend class="label">Año (de campo/publicación)</legend>
+            <div class="grupo-opciones grupo-opciones--compacto">
+              <label><input type="radio" name="anio" id="fa-0" checked /> Todos</label>
+              {anios.map((a, i) => (
+                <label><input type="radio" name="anio" id={`fa-${i + 1}`} /> {a}</label>
+              ))}
             </div>
           </fieldset>
 
-          <fieldset class="campo" disabled>
-            <legend class="label">Validación</legend>
+          <fieldset class="campo filtro">
+            <legend class="label">Elección / ámbito</legend>
             <div class="grupo-opciones">
-              <label><input type="radio" name="val" checked /> Solo válidas</label>
-              <label><input type="radio" name="val" /> Incluir excluidas</label>
+              <label><input type="radio" name="eleccion" id="fe-0" checked /> Todas</label>
+              {elecciones.map((e, i) => (
+                <label><input type="radio" name="eleccion" id={`fe-${i + 1}`} /> {e}</label>
+              ))}
             </div>
           </fieldset>
         </form>
@@ -87,37 +155,69 @@ const columnas: Columna[] = [
 
       <div class="resultados">
         <p class="mono resultados__contador">
-          N = <span class="pendiente">en construcción — dato disponible en Fase 1</span> encuestas ·
-          actualizado <span class="pendiente">Fase 1</span>
+          N = {entero(encuestasData.meta.n)} encuestas · {entero(encuestasData.meta.n_cis)} del CIS ·
+          {entero(encuestasData.meta.n_privados)} de privados · actualizado {fechaCorta('2026-10-15')}
+        </p>
+        <p class="nota">
+          El contador no se recalcula al filtrar (no hay JavaScript en la página); las
+          filas que no cumplen el filtro simplemente se ocultan.
         </p>
 
         <DataTable
           id="tabla-encuestas"
           titulo="Encuestas indexadas"
-          columnas={columnas}
-          filas={[]}
-          extraido="pendiente — Fase 1"
-          vacio="No hay encuestas indexadas todavía. El catálogo (estudio, fechas de campo, ámbito y ficha técnica) se publica al cerrar la Fase 1."
-          nota="Cada fila expandirá una ficha con tamaño muestral, fechas de campo, margen de error declarado, URL de la ficha técnica y estado de validación con motivo si fue excluida (DESIGN.md §5)."
+          columnas={cols}
+          filas={filas}
+          filaAttrs={filaAttrs}
+          fuente={{ nombre: 'CIS y fichas técnicas de encuestadores privados', url: '/metodologia/' }}
+          extraido="2026-10-15"
+          vacio="No hay encuestas indexadas."
+          nota={encuestasData.meta.nota_base}
         />
 
-        <section class="ficha-ejemplo" aria-labelledby="ficha-ejemplo-titulo">
-          <h2 id="ficha-ejemplo-titulo">Ficha de encuesta — esquema del componente</h2>
+        <!-- Atributos de filtrado: cada fila lleva data-casa / data-anio / data-eleccion -->
+
+        <section class="ficha-ejemplo" aria-labelledby="fichas-titulo">
+          <h2 id="fichas-titulo">Fichas técnicas</h2>
           <p class="nota">
-            Estructura visual del componente, sin contenido real: así se leerá cada
-            encuesta cuando el pipeline la publique.
+            Cada encuesta del catálogo con su ficha: muestra, fechas de campo, metodología
+            y enlace obligatorio a la fuente publicada.
           </p>
-          <SourceCard
-            id="CIS-····"
-            titulo="Ficha de encuesta (esquema)"
-            estado="pendiente"
-            campos={[
-              { clave: 'Tamaño muestral (n)', valor: 'pendiente — Fase 1' },
-              { clave: 'Trabajo de campo', valor: 'pendiente — Fase 1' },
-              { clave: 'Publicación', valor: 'pendiente — Fase 1' },
-              { clave: 'Metodología', valor: 'pendiente — Fase 1' },
-              { clave: 'Margen declarado', valor: 'pendiente — Fase 1' },
-            ]}
+          <details class="fichas">
+            <summary>Ver las {entero(encuestas.length)} fichas técnicas</summary>
+            <div class="fichas__lista">
+              {encuestas.map((e) => (
+                <SourceCard
+                  id={e.id}
+                  titulo={`${e.casa ?? '—'} · ${e.eleccion ?? '—'}`}
+                  url={e.url ?? undefined}
+                  estado={e.url ? 'verificada' : 'pendiente'}
+                  campos={[
+                    { clave: 'Trabajo de campo', valor: campo(e.fecha_trabajo) },
+                    { clave: 'Publicación', valor: e.fecha_publicacion ? fechaCorta(e.fecha_publicacion) : '—' },
+                    { clave: 'Muestra (n)', valor: e.n ? entero(e.n) : '—' },
+                    { clave: 'Metodología', valor: e.metodologia ?? '—' },
+                    { clave: 'Ámbito', valor: ambito(e.ambito) },
+                    { clave: 'Base del %', valor: e.base === 'censo' ? 'sobre censo (microdato CIS)' : 'sobre voto válido' },
+                  ]}
+                />
+              ))}
+            </div>
+          </details>
+        </section>
+
+        <section class="seccion--compacta" aria-labelledby="exclusiones-titulo">
+          <h2 id="exclusiones-titulo">Log de exclusiones</h2>
+          <p class="medida nota">
+            Las encuestas que no pasaron validación, con su motivo. No desaparecen: se
+            documentan. También está en la <a href="/metodologia/#exclusiones">metodología</a>.
+          </p>
+          <DataTable
+            id="tabla-exclusiones"
+            columnas={colsExclusiones}
+            filas={filasExclusiones}
+            vacio="No hay exclusiones registradas."
+            nota={`${entero(exclusionesData.meta.n)} entradas (${entero(exclusionesData.meta.n_cis)} del CIS, ${entero(exclusionesData.meta.n_privados)} de encuestadores).`}
           />
         </section>
 
@@ -149,19 +249,16 @@ const columnas: Columna[] = [
 
   .filtros { position: sticky; top: calc(var(--header-h) + var(--s-3)); }
   .filtros__titulo { font-family: var(--f-body); font-size: var(--t-h3); }
-  .filtros__aviso { margin-bottom: var(--s-4); }
-  fieldset.campo { border: 0; padding: 0; margin-inline: 0; }
-  fieldset .label, fieldset legend {
-    display: block;
-    font-weight: 600;
-    font-size: var(--t-small);
-    margin-bottom: var(--s-1);
-    padding: 0;
-  }
+  .filtro { border: 0; padding: 0; margin-inline: 0; }
+  .filtro legend { font-weight: 700; font-size: var(--t-small); margin-bottom: var(--s-1); padding: 0; }
+  .grupo-opciones--compacto { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--s-2); }
 
-  .resultados__contador { margin: 0 0 var(--s-3); color: var(--tinta-2); font-size: 0.8125rem; }
+  .resultados__contador { margin: 0 0 var(--s-1); color: var(--tinta-2); font-size: 0.8125rem; }
+
   .ficha-ejemplo { margin-top: var(--s-6); border-top: var(--borde-regla); padding-top: var(--s-4); }
   .ficha-ejemplo h2 { font-size: 1.3rem; }
+  .fichas > summary { cursor: pointer; font-weight: 600; min-height: 44px; display: flex; align-items: center; color: var(--enlace); }
+  .fichas__lista { display: flex; flex-direction: column; gap: var(--s-3); margin-top: var(--s-3); }
 
   .aviso-loreg {
     margin-top: var(--s-6);

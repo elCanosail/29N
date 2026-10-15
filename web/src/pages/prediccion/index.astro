@@ -1,37 +1,48 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import DataTable from '../../components/DataTable.astro';
 import IntervalBand from '../../components/IntervalBand.astro';
 import MapaProvincial from '../../components/MapaProvincial.astro';
-import type { Columna } from '../../lib/tipos';
+import seats from '../../data/seats.json';
+import { num, entero } from '../../lib/format';
+import { colorPartido } from '../../lib/partidos';
 
-const columnasProvincias: Columna[] = [
-  { clave: 'provincia', etiqueta: 'Provincia' },
-  { clave: 'escanos', etiqueta: 'Escaños' },
-  { clave: 'mediana', etiqueta: 'Mediana', tipo: 'mono', alinear: 'der' },
-  { clave: 'p10', etiqueta: 'p10', tipo: 'mono', alinear: 'der' },
-  { clave: 'p90', etiqueta: 'p90', tipo: 'mono', alinear: 'der' },
-  { clave: 'error', etiqueta: 'MAE backtest', tipo: 'mono', alinear: 'der' },
-];
+const provincias = seats.provincias;
+const nacional = seats.nacional;
+const meta = seats.meta;
+const filasNacional = nacional
+  .filter((p) => p.media > 0 || p.ic95[1] > 0)
+  .map((p) => ({ etiqueta: p.partido, punto: p.media, p10: p.ic95[0], p90: p.ic95[1], color: colorPartido(p.partido) }));
 
 const limites = [
-  'Qué predecimos: intención de voto por provincia el 29N, con intervalos del 90 %.',
-  'Qué no predecimos: el escaño exacto de cada partido, ni el resultado de una provincia sin encuestas propias.',
-  'Lo que el modelo no sabe, no se rellena: se publica el intervalo y el error del backtest.',
+  'Qué predecimos: los escaños por provincia del 29N, con su intervalo del 95 % sobre 10 000 simulaciones D\'Hondt.',
+  'Qué no predecimos: el escaño exacto de un partido en una provincia, ni el desenlace de una provincia sin encuestas propias.',
+  'Lo que el modelo no sabe, no se rellena: se publica el intervalo, la probabilidad de obtener escaño y el error del backtest.',
 ];
+
+/** Filas del panel de una provincia: solo partidos con opción real. */
+function filasProvincia(p: (typeof provincias)[number]) {
+  return p.partidos
+    .filter((x) => x.media >= 0.15 || x.ic95[1] >= 1)
+    .map((x) => ({ etiqueta: x.partido, punto: x.media, p10: x.ic95[0], p90: x.ic95[1], color: colorPartido(x.partido) }));
+}
 ---
 
 <Base
   titulo="Predicción 29N"
-  descripcion="Predicción provincial del 29N con TimesFM: intervalos del 90 % por provincia, error del backtest publicado y tabla paralela accesible."
+  descripcion="Predicción provincial del 29N: escaños por provincia con intervalo del 95 %, coherencia con la predicción estatal y error del backtest publicado."
 >
   <div class="contenedor">
     <Breadcrumbs items={[{ label: 'Predicción 29N' }]} />
 
     <header class="cabecera-pagina">
-      <p class="eyebrow entrada">Predicción provincial · TimesFM</p>
+      <p class="eyebrow entrada">Predicción provincial · swing + D'Hondt</p>
       <h1 class="medida entrada entrada--1">Predicción 29N</h1>
+      <p class="titular-intro entrada entrada--2">
+        Escaños por provincia sobre el escrutinio real de 23J, con el intervalo del
+        95 % de 10 000 simulaciones. El mapa es la recompensa, no el gancho: primero,
+        qué predecimos y qué no.
+      </p>
     </header>
 
     <!-- El encabezado no vende: el mapa es la recompensa, no el gancho -->
@@ -41,10 +52,27 @@ const limites = [
         {limites.map((l) => <li>{l}</li>)}
       </ul>
       <p class="nota">
-        Modelo TimesFM v2, desagregación provincial por swing y reparto D'Hondt sobre
-        10 000 simulaciones. Todos los números de esta página los calcula el pipeline;
-        la web solo los lee (<a href="/metodologia/#modelo">ver metodología</a>).
+        Método: {meta.metodo} · base {meta.base_provincial} · {entero(meta.n_runs)} simulaciones
+        (semilla {meta.seed}). Coherencia verificada: la suma de medias de escaños es{' '}
+        <strong>{num(meta.coherencia?.suma_medias_escanos, 1)}</strong> y el agregado provincial
+        coincide con la predicción estatal con una desviación máxima de{' '}
+        <strong>{num(meta.coherencia?.max_desviacion_votos_pp, 3)} pp</strong>.
+        <a href="/metodologia/#modelo">Ver metodología →</a>
       </p>
+    </section>
+
+    <!-- Predicción nacional de escaños, con banda -->
+    <section class="seccion--compacta" aria-labelledby="nacional-titulo">
+      <p class="eyebrow" id="nacional-titulo">Nacional · escaños totales</p>
+      <h2>Reparto nacional de escaños (media e intervalo del 95 %)</h2>
+      <IntervalBand
+        filas={filasNacional}
+        max={180}
+        unidad="esc."
+        descripcion={`Escaños nacionales 29N: PP ${num(nacional[0].media, 1)}, PSOE ${num(nacional[1].media, 1)}, VOX ${num(nacional[2].media, 1)}.`}
+        pie={`D'Hondt por provincia · ${entero(meta.n_runs)} simulaciones · escenario central = mediana de la simulación`}
+        lectura="El punto es la media de escaños y la banda el intervalo del 95 % de las 10 000 simulaciones. Ningún partido se publica con un escaño puntual: el reparto depende de cómo se rompan los empates en las últimas circunscripciones."
+      />
     </section>
 
     <section class="controles" aria-labelledby="controles-titulo">
@@ -52,44 +80,60 @@ const limites = [
       <div class="campo">
         <label for="p-nivel">Nivel de agregación</label>
         <select id="p-nivel" disabled>
-          <option>Provincia</option>
+          <option selected>Provincia</option>
           <option>Autonomía</option>
           <option>Estatal</option>
         </select>
       </div>
       <div class="campo">
         <label for="p-partido">Partido</label>
-        <select id="p-partido" disabled><option>—</option></select>
+        <select id="p-partido" disabled><option>Todos</option></select>
       </div>
       <p class="nota controles__aviso">
-        Controles inactivos hasta la <strong>Fase 5</strong>, cuando exista el JSON de predicción.
-        <span class="pendiente">en construcción — dato disponible en Fase 5</span>
+        Los datos provinciales están completos y publicados; el selector interactivo de
+        nivel y partido (que reordenaría el mapa en cliente) llega con JavaScript en una
+        fase posterior. Se muestran inactivos para no aparentar una función que aún no existe.
       </p>
     </section>
 
     <section class="panel-doble" aria-labelledby="mapa-titulo">
       <div class="panel-mapa">
-        <h2 id="mapa-titulo">Mapa provincial</h2>
-        <MapaProvincial />
+        <h2 id="mapa-titulo">Cartograma provincial</h2>
+        <MapaProvincial
+          provincias={provincias}
+          descripcion="Cartograma de las 52 provincias con el partido de más escaños esperados el 29N."
+        />
       </div>
 
       <aside class="panel-provincia" aria-labelledby="provincia-titulo">
-        <p class="eyebrow">Provincia seleccionada</p>
-        <h2 id="provincia-titulo" class="panel-provincia__nombre">
-          Ninguna <span class="pendiente">Fase 5</span>
-        </h2>
+        <div class="panel-hint" id="provincia-titulo">
+          <p class="eyebrow">Provincia seleccionada</p>
+          <p class="estado-vacio">
+            <strong>Elige una provincia</strong> en el cartograma o en la tabla paralela
+            para ver su reparto de escaños con intervalo. El mapa y la tabla llevan al
+            mismo panel; no hay ningún dato al que solo se acceda por el mapa.
+          </p>
+        </div>
 
-        <IntervalBand
-          modo="esquema"
-          descripcion="Esquema de la banda de predicción provincial: mediana y intervalo del 90 %. Sin datos todavía."
-          pie="TimesFM v2 · Backtest provincial MAE: [en construcción — Fase 4]"
-          lectura="Con los datos disponibles, el intervalo del 90 % es [en construcción — Fase 4] para [en construcción — Fase 4]. El modelo no afina más: aquí está el error del backtest →"
-        />
-
-        <p class="mono panel-provincia__pie">
-          Serie histórica real + banda de predicción. La mediana nunca viaja sola.
-        </p>
-        <p><a href="/metodologia/#validacion">Cómo se valida este intervalo →</a></p>
+        {provincias.map((p) => (
+          <section class="prov-panel" id={`prov-${p.codigo}`}>
+            <p class="eyebrow">Provincia seleccionada · código {p.codigo}</p>
+            <h3 class="prov-panel__nombre">{p.nombre}</h3>
+            <p class="mono prov-panel__meta">
+              {entero(p.escanos)} escaños en juego · ganador esperado: <strong>{p.ganador}</strong>
+            </p>
+            <IntervalBand
+              filas={filasProvincia(p)}
+              max={p.escanos}
+              unidad="esc."
+              descripcion={`${p.nombre}: partido más probable ${p.ganador}, ${entero(p.escanos)} escaños en juego.`}
+              lectura={`Con los datos disponibles, el intervalo del 95 % de ${p.ganador} en ${p.nombre} es el que muestra la banda. El modelo no afina más: aquí está el error del backtest →`}
+            />
+            <p class="nota">
+              <a href="/metodologia/#validacion">Cómo se valida este intervalo →</a>
+            </p>
+          </section>
+        ))}
       </aside>
     </section>
 
@@ -97,17 +141,61 @@ const limites = [
     <section class="seccion--compacta" aria-labelledby="tabla-paralela-titulo">
       <h2 id="tabla-paralela-titulo">Tabla paralela de provincias</h2>
       <p class="medida nota">
-        Los mismos datos del mapa, en una tabla seleccionable y ordenable. El mapa siempre
-        tiene un equivalente accesible.
+        Los mismos datos del mapa, en tabla navegable por teclado. Cada fila abre el
+        panel de su provincia. Ordenación por columna pendiente de JavaScript.
       </p>
-      <DataTable
-        id="tabla-provincias"
-        columnas={columnasProvincias}
-        filas={[]}
-        extraido="pendiente — Fase 5"
-        vacio="Aún no hay predicción. Esta tabla tendrá las 52 provincias con su mediana, su intervalo del 90 % y el MAE de backtest de esa provincia."
-        nota="Coherencia verificada: la suma de las predicciones provinciales cuadra con la predicción estatal (compromiso metodológico nº 4)."
-      />
+
+      <figure class="tabla-prov">
+        <p class="tabla-prov__meta">
+          Fuente: <a href="https://infoelectoral.interior.gob.es" rel="noopener">Ministerio del Interior</a>
+          <span class="mono">base provincial: {meta.base_provincial}</span>
+        </p>
+        <div class="tabla-prov__marco">
+          <table>
+            <caption class="visualmente-oculto">
+              Escaños esperados por provincia el 29N: ganador, media e intervalo del 95 %
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Provincia</th>
+                <th scope="col">Ganador</th>
+                <th scope="col" class="der">Media</th>
+                <th scope="col" class="der">IC95</th>
+                <th scope="col" class="der">P(≥1)</th>
+                <th scope="col" class="der">Escaños</th>
+              </tr>
+            </thead>
+            <tbody>
+              {provincias.map((p) => {
+                const g = p.partidos[0];
+                return (
+                  <tr>
+                    <th scope="row"><a href={`#prov-${p.codigo}`}>{p.nombre}</a></th>
+                    <td>{g ? g.partido : '—'}</td>
+                    <td class="mono der">{g ? num(g.media, 1) : '—'}</td>
+                    <td class="mono der">{g ? `${entero(g.ic95[0])}–${entero(g.ic95[1])}` : '—'}</td>
+                    <td class="mono der">{g ? num(g.p_ge1 * 100, 0) + ' %' : '—'}</td>
+                    <td class="mono der">{entero(p.escanos)}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </figure>
+
+      <aside class="aviso-mrp">
+        <p class="eyebrow">Mejora evaluada y descartada</p>
+        <p>
+          El modelo actual usa un <strong>swing proporcional uniforme</strong> desde 23J.
+          Evaluamos un <strong>MRP</strong> (regresión multinivel con postestratificación,
+          con 532.000 microdatos del CIS y censo del INE) como candidata a mejorar la
+          desagregación provincial: en el backtest de 5 elecciones no superó al swing
+          (gana el swing en 4 de 5 elecciones en ambos tests; el MRP anclado queda en
+          el ruido). No se adopta. La comparación completa está en el repositorio
+          público (<code>docs/notes/mrp.md</code>).
+        </p>
+      </aside>
     </section>
   </div>
 </Base>
@@ -122,13 +210,8 @@ const limites = [
     padding: var(--s-5) var(--s-4);
     margin-bottom: var(--s-6);
   }
-  .limites__lista {
-    margin: 0 0 var(--s-3);
-    padding-left: 1.2em;
-    max-width: var(--medida);
-    line-height: 1.7;
-  }
-  .limites .nota { max-width: var(--medida); }
+  .limites__lista { margin: 0 0 var(--s-3); padding-left: 1.2em; max-width: var(--medida); line-height: 1.7; }
+  .limites .nota { max-width: 78ch; }
 
   .controles {
     display: flex;
@@ -144,14 +227,13 @@ const limites = [
 
   .panel-doble {
     display: grid;
-    grid-template-columns: 3fr 2fr; /* 60 % mapa / 40 % panel */
+    grid-template-columns: 3fr 2fr;
     gap: var(--s-6);
     align-items: start;
     padding-bottom: var(--s-6);
   }
-  .panel-mapa h2, .panel-provincia h2 { font-size: 1.3rem; }
+  .panel-mapa h2 { font-size: 1.3rem; }
 
-  /* Nivel 1 de elevación: solo el panel de provincia es una "caja" (DESIGN.md §6) */
   .panel-provincia {
     background: var(--papel-2);
     border: var(--borde-regla);
@@ -160,13 +242,40 @@ const limites = [
     position: sticky;
     top: calc(var(--header-h) + var(--s-3));
   }
-  .panel-provincia__nombre { margin-bottom: var(--s-3); }
-  .panel-provincia__pie { margin: var(--s-3) 0 0; font-size: 0.8125rem; color: var(--tinta-2); }
-  .panel-provincia :global(.banda) { background: transparent; }
+  .panel-provincia :global(.bandas) { background: transparent; }
+
+  /* Sincronización mapa ↔ panel ↔ tabla, sin JavaScript: solo el panel
+     apuntado por el ancla (#prov-N) se muestra. */
+  .prov-panel { display: none; }
+  .prov-panel:target { display: block; }
+  .panel-provincia:has(.prov-panel:target) .panel-hint { display: none; }
+  .prov-panel__nombre { margin-bottom: var(--s-2); }
+  .prov-panel__meta { font-size: 0.8125rem; color: var(--tinta-2); }
+  .prov-panel :global(.fila) { grid-template-columns: 40% 1fr auto; }
+
+  .tabla-prov { margin: 0; }
+  .tabla-prov__meta { display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-4); margin: 0 0 var(--s-2); font-size: var(--t-small); color: var(--tinta-2); }
+  .tabla-prov__marco { overflow-x: auto; border-top: var(--borde-tinta); }
+  .tabla-prov table { width: 100%; border-collapse: collapse; font-size: var(--t-data); }
+  .tabla-prov th, .tabla-prov td { text-align: left; padding: var(--s-2) var(--s-3) var(--s-2) 0; border-bottom: var(--borde-regla); white-space: nowrap; }
+  .tabla-prov thead th { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--tinta-2); }
+  .tabla-prov .der { text-align: right; padding-right: 0; }
+  .tabla-prov tbody tr:hover td, .tabla-prov tbody tr:hover th { background: var(--papel-3); }
+  .tabla-prov a { font-family: var(--f-body); }
+
+  .aviso-mrp {
+    margin-top: var(--s-5);
+    background: var(--papel-2);
+    border-left: 4px solid var(--tinta);
+    padding: var(--s-3) var(--s-4);
+    max-width: 80ch;
+    font-size: var(--t-small);
+    line-height: var(--lh-small);
+  }
+  .aviso-mrp p { margin: 0; }
 
   @media (max-width: 980px) {
     .panel-doble { grid-template-columns: 1fr; }
-    /* En móvil: mapa arriba a alto completo, panel debajo (no modal) */
     .panel-provincia { position: static; }
   }
 </style>

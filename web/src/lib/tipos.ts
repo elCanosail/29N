@@ -34,3 +34,6 @@ export type Celda =
 
 /** Una fila de tabla: clave de columna → celda. */
 export type Fila = Record<string, Celda>;
+
+/** Atributos HTML extra de una fila (p. ej. data-* para filtrado por CSS). */
+export type AtributosFila = Record<string, string | number>;
