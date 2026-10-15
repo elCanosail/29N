@@ -53,6 +53,7 @@ const grupos = [...new Set(filas.map((p) => p.ganador))].sort();
 ---
 
 <figure class="mapa">
+  <div class="mapa__marco">
   <div class="mapa__rejilla" role="group" aria-label={descripcion ?? 'Cartograma de provincias'}>
     {filas.map((p) => {
       const [col, row] = LAYOUT[p.codigo];
@@ -68,6 +69,7 @@ const grupos = [...new Set(filas.map((p) => p.ganador))].sort();
         </a>
       );
     })}
+  </div>
   </div>
 
   <figcaption class="mapa__pie">
@@ -91,6 +93,7 @@ const grupos = [...new Set(filas.map((p) => p.ganador))].sort();
 
 <style>
   .mapa { margin: 0; }
+  .mapa__marco { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .mapa__rejilla {
     display: grid;
     grid-template-columns: repeat(11, minmax(0, 1fr));
@@ -130,7 +133,8 @@ const grupos = [...new Set(filas.map((p) => p.ganador))].sort();
   .mapa__muestra { inline-size: 14px; block-size: 14px; border-radius: 2px; }
 
   @media (max-width: 560px) {
-    .celda__abrev { font-size: 0.5rem; }
+    .mapa__rejilla { min-width: 500px; }
+    .celda__abrev { font-size: 0.6rem; }
     .celda__gan { display: none; }
   }
 </style>

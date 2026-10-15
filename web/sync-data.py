@@ -335,6 +335,62 @@ def gen_elecciones() -> int:
 
 
 # ---------------------------------------------------------------------------
+# 5b. Reparto de escaños de la última elección, agregado por familia
+# ---------------------------------------------------------------------------
+
+# Familias políticas: la misma agrupación que usa el universo modelado, para
+# que la comparación 29N vs 23J sea manzanas con manzanas.
+FAMILIAS = {
+    "pp": "PP",
+    "psoe": "PSOE", "psc": "PSOE", "psdeg": "PSOE", "pse": "PSOE",
+    "psib-psoe": "PSOE", "psn-psoe": "PSOE",
+    "vox": "VOX",
+    "sumar": "SUMAR", "ecp": "SUMAR", "compromis": "SUMAR",
+    "sumar-aragón": "SUMAR",
+    "més-per-mallorca-més-per-menorca-sumar": "SUMAR",
+    "erc": "ERC", "junts": "JXCAT", "ehbildu": "EH BILDU", "pnv": "PNV",
+    "b-n-g": "BNG", "cc": "CC", "u-p-n": "NA+",
+}
+
+
+def gen_reparto23() -> int:
+    """Escaños de la última general agregados por familia política."""
+    src = leer_json(os.path.join(P_INTERIOR, "elections.json"))
+    ultima = max(src["elecciones"], key=lambda e: e["fecha"])
+    familias: dict[str, int] = {}
+    for c in ultima["partidos"]:
+        familia = FAMILIAS.get(c["partido_id"])
+        if familia is None:
+            continue
+        familias[familia] = familias.get(familia, 0) + c["escanos"]
+    filas = [{"partido": k, "escanos": v} for k, v in familias.items()]
+    filas.sort(key=lambda x: -x["escanos"])
+    total = sum(f["escanos"] for f in filas)
+    if total != ultima["escanos_totales"]:
+        print(
+            f"  ⚠ reparto23: la agregación por familia suma {total} de "
+            f"{ultima['escanos_totales']} escaños — revisar el mapa FAMILIAS",
+            file=sys.stderr,
+        )
+        return 1
+    datos = {
+        "meta": {
+            "eleccion": ultima["id"],
+            "fecha": ultima["fecha"],
+            "total": total,
+            "nota": (
+                "Escaños de la última elección agregados por familia política para ser "
+                "comparables con el universo modelado: PSOE incluye PSC, PSE-EE, PSdeG, "
+                "PSIB-PSOE y PSN-PSOE; SUMAR incluye ECP, Compromís, Sumar Aragón y Més "
+                "per Mallorca-Ménorca. Candidaturas sin escaños no aparecen."
+            ),
+        },
+        "familias": filas,
+    }
+    return escribir("reparto23.json", datos)
+
+
+# ---------------------------------------------------------------------------
 # 6. Catálogo de encuestas (CIS + privados)
 # ---------------------------------------------------------------------------
 
@@ -518,6 +574,7 @@ def main() -> int:
         ("backtest.json", gen_backtest),
         ("series.json", gen_series),
         ("elecciones.json", gen_elecciones),
+        ("reparto23.json", gen_reparto23),
         ("encuestas.json", gen_encuestas),
         ("exclusiones.json", gen_exclusiones),
         ("sesgo.json", gen_sesgo),

@@ -1,0 +1,54 @@
+{
+ "meta": {
+  "eleccion": "2023-07-23",
+  "fecha": "2023-07-23",
+  "total": 350,
+  "nota": "Escaños de la última elección agregados por familia política para ser comparables con el universo modelado: PSOE incluye PSC, PSE-EE, PSdeG, PSIB-PSOE y PSN-PSOE; SUMAR incluye ECP, Compromís, Sumar Aragón y Més per Mallorca-Ménorca. Candidaturas sin escaños no aparecen."
+ },
+ "familias": [
+  {
+   "partido": "PP",
+   "escanos": 137
+  },
+  {
+   "partido": "PSOE",
+   "escanos": 121
+  },
+  {
+   "partido": "VOX",
+   "escanos": 33
+  },
+  {
+   "partido": "SUMAR",
+   "escanos": 31
+  },
+  {
+   "partido": "ERC",
+   "escanos": 7
+  },
+  {
+   "partido": "JXCAT",
+   "escanos": 7
+  },
+  {
+   "partido": "EH BILDU",
+   "escanos": 6
+  },
+  {
+   "partido": "PNV",
+   "escanos": 5
+  },
+  {
+   "partido": "BNG",
+   "escanos": 1
+  },
+  {
+   "partido": "CC",
+   "escanos": 1
+  },
+  {
+   "partido": "NA+",
+   "escanos": 1
+  }
+ ]
+}

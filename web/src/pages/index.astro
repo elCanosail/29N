@@ -1,9 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import IntervalBand from '../components/IntervalBand.astro';
+import BarraEscanos from '../components/BarraEscanos.astro';
 import SerieLinea from '../components/SerieLinea.astro';
 import forecast from '../data/forecast.json';
 import seatsData from '../data/seats.json';
+import repartoData from '../data/reparto23.json';
 import seriesData from '../data/series.json';
 import encuestasData from '../data/encuestas.json';
 import eleccionesData from '../data/elecciones.json';
@@ -33,6 +35,14 @@ const nacional = seatsData.nacional.map((p: {partido: string; media: number; ic9
 }));
 const topNacional = nacional.slice(0, 4);
 const restoNacional = nacional.slice(4);
+
+// Comparación 23J: escaños reales agregados por familia (ver reparto23.json).
+const real23 = Object.fromEntries(
+  (repartoData.familias as {partido: string; escanos: number}[]).map((f) => [f.partido, f.escanos]),
+);
+const filasReparto = nacional
+  .map((p) => ({partido: p.etiqueta, estimacion: p.punto, real: real23[p.etiqueta] ?? 0}))
+  .filter((f) => f.estimacion >= 0.1 || f.real > 0);
 
 // Serie reciente: últimos 36 meses, cuatro partidos grandes.
 const meses = seriesData.meses as string[];
@@ -87,25 +97,30 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
   <section class="contenedor seccion seccion--compacta" aria-labelledby="resultado-titulo">
     <div class="heroe__cabecera">
       <div>
-        <p class="eyebrow" id="resultado-titulo">El resultado · escaños estimados 29N · intervalo del 95 %</p>
-        <h2>350 escaños en juego, partido a partido</h2>
+        <p class="eyebrow" id="resultado-titulo">El resultado · reparto de escaños estimado</p>
+        <h2>350 escaños en juego: estimación frente al 23J real</h2>
       </div>
       <p class="heroe__meta mono">
         Objetivo {meta.mes_predicho} · 10.000 simulaciones D'Hondt provincia a provincia
       </p>
     </div>
 
-    <IntervalBand
-      filas={topNacional}
-      max={170}
-      unidad="escaños"
-      descripcion={`Estimación de escaños para el 29N: ${topNacional[0].etiqueta} ${num(topNacional[0].punto, 1)}, ${topNacional[1].etiqueta} ${num(topNacional[1].punto, 1)}, ${topNacional[2].etiqueta} ${num(topNacional[2].punto, 1)} y ${topNacional[3].etiqueta} ${num(topNacional[3].punto, 1)}, con su intervalo del 95 %.`}
-      pie={`Modelo: media ponderada de encuestas + swing proporcional provincial · 10.000 simulaciones con reparto D'Hondt por provincia · intervalo: percentiles 2,5–97,5 de la simulación`}
-      lectura={`La suma de las medias es exactamente 350 escaños. El intervalo de ${topNacional[3].etiqueta} (${num(topNacional[3].p10)}–${num(topNacional[3].p90)}) es el más ancho de los grandes porque su error en el backtest es el mayor del universo modelado: es honesto, no un defecto.`}
+    <BarraEscanos
+      filas={filasReparto}
+      descripcion={`Reparto de escaños, estimación 29N frente al resultado real de 23J: ${filasReparto.slice(0, 4).map((f) => `${f.partido} ${num(f.estimacion, 1)} frente a ${entero(f.real)}`).join('; ')}. El triángulo indica los escaños de más o de menos frente al 23J real.`}
+      pie={`Estimación: media ponderada de encuestas + swing proporcional provincial + 10.000 simulaciones D'Hondt · ▲▼ = escaños de más o de menos frente al 23J real · ${meta.mes_predicho}`}
+      lectura={`La comparación se hace por familias políticas idénticas a las del modelo (PSOE incluye PSC, PSE-EE, PSdeG, PSIB-PSOE y PSN-PSOE; SUMAR incluye ECP, Compromís, Sumar Aragón y Més). La precisión de cada estimación —media nunca sin su intervalo— está en el desglose de abajo.`}
     />
 
     <details class="heroe__resto">
-      <summary>Ver los 13 partidos del universo modelado (con su intervalo)</summary>
+      <summary>Ver la precisión: banda de cada estimación (p10–p90), los 13 partidos</summary>
+      <IntervalBand
+        filas={topNacional}
+        max={170}
+        unidad="escaños"
+        descripcion={`Estimación de escaños para el 29N: ${topNacional[0].etiqueta} ${num(topNacional[0].punto, 1)}, ${topNacional[1].etiqueta} ${num(topNacional[1].punto, 1)}, ${topNacional[2].etiqueta} ${num(topNacional[2].punto, 1)} y ${topNacional[3].etiqueta} ${num(topNacional[3].punto, 1)}, con su intervalo del 95 %.`}
+        pie={`Modelo: media ponderada de encuestas + swing proporcional provincial · 10.000 simulaciones con reparto D'Hondt por provincia · intervalo: percentiles 2,5–97,5 de la simulación`}
+      />
       <IntervalBand
         filas={restoNacional}
         max={170}
@@ -289,6 +304,7 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
     line-height: var(--lh-small);
   }
   .aviso-metodo p { margin: 0 0 var(--s-2); }
+  .aviso-metodo .nota a { display: inline-block; padding: 8px 0; }
 
   /* --- Entradas asimétricas: ni grid de tarjetas ni cajas --------------- */
   .entradas {

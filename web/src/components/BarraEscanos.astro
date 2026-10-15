@@ -1,0 +1,166 @@
+---
+/**
+ * BarraEscanos — el gráfico clásico de reparto de escaños (DESIGN.md §5).
+ *
+ * Dos barras apiladas comparables: la estimación 29N junto al resultado real
+ * de la elección anterior. Cada segmento es un partido; su ancho, los escaños.
+ * Mismo orden y mismos colores en ambas barras para que la comparación sea
+ * inmediata. Mobile-first: barras flex a ancho completo; la leyenda envuelve.
+ *
+ * Honestidad visual: la comparación es entre el punto central de la
+ * estimación y el resultado real; los intervalos viven en el IntervalBand.
+ */
+import { num, entero } from '../lib/format';
+import { colorPartido } from '../lib/partidos';
+
+export interface FilaReparto {
+  partido: string;
+  /** escaños estimados 29N (media de la simulación) */
+  estimacion: number;
+  /** escaños reales de la elección de comparación */
+  real: number;
+}
+
+interface Props {
+  filas: FilaReparto[];
+  fechaObjetivo?: string;
+  fechaReal?: string;
+  descripcion: string;
+  pie?: string;
+  lectura?: string;
+}
+
+const {
+  filas,
+  fechaObjetivo = '29-11-2026',
+  fechaReal = '23-07-2023',
+  descripcion,
+  pie,
+  lectura,
+} = Astro.props as Props;
+
+const orden = [...filas].sort((a, b) => b.estimacion - a.estimacion);
+const delta = (f: (typeof orden)[number]) => f.estimacion - f.real;
+const conDelta = delta(orden[0]) !== 0 || orden.some((f) => delta(f) !== 0);
+const flecha = (v: number) => (v > 0.05 ? '▲' : v < -0.05 ? '▼' : '＝');
+const clase = (v: number) => (v > 0.05 ? 'sube' : v < -0.05 ? 'baja' : 'plano');
+const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
+---
+
+<figure class="reparto">
+  <div class="reparto__cuerpo" role="img" aria-label={descripcion}>
+    <p class="reparto__rotulo">
+      <span class="reparto__eleccion mono">29N</span>
+      <span>estimación del modelo</span>
+      <span class="reparto__fecha mono">{fechaObjetivo}</span>
+    </p>
+    <div class="reparto__barra" aria-hidden="true">
+      {orden.map((f) => (
+        <span
+          class="reparto__tramo"
+          style={`flex:${Math.max(f.estimacion, 0.001)};background:${colorPartido(f.partido)}`}
+        />
+      ))}
+    </div>
+
+    <p class="reparto__rotulo reparto__rotulo--segundo">
+      <span class="reparto__eleccion mono">23J</span>
+      <span>resultado real</span>
+      <span class="reparto__fecha mono">{fechaReal}</span>
+    </p>
+    <div class="reparto__barra" aria-hidden="true">
+      {orden.map((f) => (
+        <span
+          class="reparto__tramo"
+          style={`flex:${Math.max(f.real, 0.001)};background:${colorPartido(f.partido)}`}
+        />
+      ))}
+    </div>
+  </div>
+
+  <ul class="reparto__leyenda">
+    {orden.map((f) => (
+      <li>
+        <span class="reparto__muestra" style={`background:${colorPartido(f.partido)}`} aria-hidden="true"></span>
+        <span class="reparto__partido">{f.partido}</span>
+        <span class="mono reparto__nums">
+          {num(f.estimacion, 1)} <span class="reparto__sep">29N</span>
+          <span aria-hidden="true">·</span> {entero(f.real)} <span class="reparto__sep">23J</span>
+          {conDelta && (
+            <span class={`reparto__delta ${clase(delta(f))}`} aria-label={`diferencia ${signado(delta(f))}`}>
+              {flecha(delta(f))}
+            </span>
+          )}
+        </span>
+      </li>
+    ))}
+  </ul>
+
+  {pie && <p class="reparto__pie mono">{pie}</p>}
+  {lectura && <p class="reparto__lectura">{lectura}</p>}
+</figure>
+
+<style>
+  .reparto {
+    margin: 0 0 var(--s-5);
+    background: var(--papel);
+    border-top: var(--borde-regla);
+    border-bottom: var(--borde-regla);
+    padding: var(--s-4) 0;
+  }
+
+  .reparto__rotulo {
+    display: flex;
+    align-items: baseline;
+    gap: var(--s-2);
+    margin: 0 0 var(--s-1);
+    font-size: var(--t-small);
+    color: var(--tinta-2);
+  }
+  .reparto__rotulo--segundo { margin-top: var(--s-3); }
+  .reparto__eleccion { font-weight: 700; font-size: 1rem; color: var(--tinta); }
+  .reparto__fecha { margin-left: auto; color: var(--tinta-3); }
+
+  .reparto__barra {
+    display: flex;
+    width: 100%;
+    height: 44px;
+    border: 1px solid var(--tinta);
+  }
+  .reparto__tramo { display: block; min-width: 2px; }
+  .reparto__tramo + .reparto__tramo { border-left: 2px solid var(--papel); }
+
+  .reparto__leyenda {
+    list-style: none;
+    margin: var(--s-4) 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--s-2) var(--s-4);
+  }
+  .reparto__leyenda li {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    font-size: var(--t-small);
+    border-bottom: var(--borde-regla);
+    padding-bottom: var(--s-2);
+  }
+  .reparto__muestra { inline-size: 12px; block-size: 12px; border-radius: 2px; flex: 0 0 auto; }
+  .reparto__partido { font-weight: 600; }
+  .reparto__nums { color: var(--tinta-2); font-size: 0.8125rem; white-space: nowrap; }
+  .reparto__sep { color: var(--tinta-3); }
+  .reparto__delta { margin-left: 0.25em; }
+  .reparto__delta.sube { color: var(--ok); }
+  .reparto__delta.baja { color: var(--alerta); }
+  .reparto__delta.plano { color: var(--tinta-3); }
+
+  .reparto__pie { margin: var(--s-3) 0 0; color: var(--tinta-2); font-size: 0.8125rem; }
+  .reparto__lectura {
+    margin: var(--s-2) 0 0;
+    max-width: var(--medida);
+    font-size: var(--t-small);
+    line-height: var(--lh-small);
+    color: var(--tinta-2);
+  }
+</style>
