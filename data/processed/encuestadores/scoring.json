@@ -1,0 +1,101 @@
+{
+ "eleccion_referencia": "2023-07-23",
+ "resultado_real_pct": {
+  "PP": 33.06,
+  "PSOE": 31.68,
+  "VOX": 12.38,
+  "SUMAR": 12.33
+ },
+ "partidos_comparados": [
+  "PP",
+  "PSOE",
+  "VOX",
+  "SUMAR"
+ ],
+ "por_encuestador": [
+  {
+   "encuestador": "Simple Lógica",
+   "n_encuestas_2023": 1,
+   "n_observaciones": 4,
+   "mae": 1.73,
+   "mae_por_partido": {
+    "PP": 0.86,
+    "PSOE": 3.08,
+    "VOX": 1.52,
+    "SUMAR": 1.47
+   }
+  },
+  {
+   "encuestador": "Sigma Dos",
+   "n_encuestas_2023": 2,
+   "n_observaciones": 8,
+   "mae": 1.82,
+   "mae_por_partido": {
+    "PP": 1.74,
+    "PSOE": 3.23,
+    "VOX": 1.18,
+    "SUMAR": 1.12
+   }
+  },
+  {
+   "encuestador": "Sociometrica",
+   "n_encuestas_2023": 2,
+   "n_observaciones": 8,
+   "mae": 2.03,
+   "mae_por_partido": {
+    "PP": 0.7,
+    "PSOE": 4.83,
+    "VOX": 1.97,
+    "SUMAR": 0.62
+   }
+  },
+  {
+   "encuestador": "NC Report",
+   "n_encuestas_2023": 2,
+   "n_observaciones": 8,
+   "mae": 2.1,
+   "mae_por_partido": {
+    "PP": 3.54,
+    "PSOE": 3.63,
+    "VOX": 0.65,
+    "SUMAR": 0.58
+   }
+  },
+  {
+   "encuestador": "GAD3",
+   "n_encuestas_2023": 3,
+   "n_observaciones": 12,
+   "mae": 2.14,
+   "mae_por_partido": {
+    "PP": 3.77,
+    "PSOE": 3.45,
+    "VOX": 0.39,
+    "SUMAR": 0.93
+   }
+  },
+  {
+   "encuestador": "40dB",
+   "n_encuestas_2023": 2,
+   "n_observaciones": 6,
+   "mae": 2.28,
+   "mae_por_partido": {
+    "PP": 1.16,
+    "PSOE": 3.43,
+    "VOX": 1.22,
+    "SUMAR": 3.27
+   }
+  },
+  {
+   "encuestador": "Imop Insights",
+   "n_encuestas_2023": 3,
+   "n_observaciones": 7,
+   "mae": 2.32,
+   "mae_por_partido": {
+    "PP": 0.58,
+    "SUMAR": 2.4,
+    "PSOE": 7.18,
+    "VOX": 2.52
+   }
+  }
+ ]
+}

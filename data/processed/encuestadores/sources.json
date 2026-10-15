@@ -1,0 +1,614 @@
+[
+ {
+  "fuente": "GAD3",
+  "estudio_id": "gad3-2023-06-11-abc",
+  "fecha_trabajo": "2023-06-05/2023-06-08",
+  "fecha_publicacion": "2023-06-11",
+  "n": 2007,
+  "metodologia": "CATI (telefónica)",
+  "ambito": "nacional",
+  "eleccion": "generales 2023",
+  "fuente_tipo": "prensa",
+  "url": "https://www.abc.es/espana/feijoo-supera-150-escanos-deja-sanchez-opciones-20230611204255-nt.html",
+  "extracto": "GAD3/ABC (ficha técnica): Tamaño de la muestra: 2.007 entrevistas. Procedimiento: CATI. Fechas de trabajo de campo: 5 al 8 de junio de 2023. Voto: \"sitúa a los populares en un 36,6% de voto\"; \"se quedaría en un 12,4% de los votos\" (Vox); \"mantiene un porcentaje de voto (27,7%)\" (PSOE); \"entre 27 y 29 escaños con el 11,2% de voto\" (Sumar).",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "GAD3",
+  "estudio_id": "gad3-2023-07-16-abc-tracking13",
+  "fecha_trabajo": "2023-06-29/2023-07-15",
+  "fecha_publicacion": "2023-07-16",
+  "n": 7002,
+  "metodologia": "CATI (telefónica)",
+  "ambito": "nacional",
+  "eleccion": "generales 2023",
+  "fuente_tipo": "agregador",
+  "url": "https://www.electografica.com/2023/07/encuesta-gad3-230717.html",
+  "extracto": "Electográfica (reproduce GAD3/Vocento tracking 13): \"SUMAR 11,5% (25) | PSOE 28,4% (115) | PP 37,0% (151) | VOX 11,9% (29)\". FICHA TÉCNICA: Periodo de campo: 29/06-15/07/2023 · Método: Telefónico · Muestra: 7.002 · Margen de error: ± 1,2%. Fuente citada: ABC.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "GAD3",
+  "estudio_id": "gad3-2023-07-17-abc-tracking14",
+  "fecha_trabajo": "2023-06-29/2023-07-17",
+  "fecha_publicacion": "2023-07-17",
+  "n": 8001,
+  "metodologia": "CATI (telefónica)",
+  "ambito": "nacional",
+  "eleccion": "generales 2023",
+  "fuente_tipo": "agregador",
+  "url": "https://www.electografica.com/2023/07/encuesta-gad3-230717-2.html",
+  "extracto": "Electográfica (reproduce GAD3/Vocento tracking 14): \"SUMAR 11,5% (24) | PSOE 28,6% (115) | PP 36,9% (152) | VOX 11,7% (28)\". FICHA TÉCNICA: Periodo de campo: 29/06-17/07/2023 · Método: Telefónico · Muestra: 8.001 · Margen de error: ± 1,1%.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "Sigma Dos",
+  "estudio_id": "sigmados-2023-07-17-elmundo",
+  "fecha_trabajo": "2023-07-10/2023-07-17",
+  "fecha_publicacion": "2023-07-17",
+  "n": 8183,
+  "metodologia": "mixta CATI/CAWI (panel)",
+  "ambito": "nacional",
+  "eleccion": "generales 2023",
+  "fuente_tipo": "prensa",
+  "url": "https://www.elmundo.es/elecciones/elecciones-generales/2023/07/17/64b58986e9cf4a5e018b459f.html",
+  "extracto": "El Mundo/Sigma Dos (ficha técnica): Tamaños muestrales: 8.183 entrevistas. Técnica: panel Sigma Dos by Trust Survey, mixta CATI/online. Fecha del trabajo de campo: del 10 al 17 de julio de 2023. Voto: \"ganará las elecciones... con un 35,4% del voto\". Electográfica (tracking 11): \"SUMAR 13,6% (33/36) | PSOE 28,0% (105/110) | PP 35,4% (145/150) | VOX 11,2% (26/29)\".",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "Sigma Dos",
+  "estudio_id": "sigmados-2023-07-23-rtve",
+  "fecha_trabajo": "2023-07-06/2023-07-21",
+  "fecha_publicacion": "2023-07-23",
+  "n": 17550,
+  "metodologia": "CATI (telefónica)",
+  "ambito": "nacional",
+  "eleccion": "generales 2023",
+  "fuente_tipo": "agregador",
+  "url": "https://www.electografica.com/2023/07/encuesta-sigmados-230723.html",
+  "extracto": "Electográfica (reproduce SigmaDos para RTVE y Forta): \"SUMAR 13,3% (28/31) | PSOE 28,9% (113/118) | PP 34,2% (145/150) | VOX 11,2% (24/27)\". FICHA TÉCNICA: Periodo de campo: 06-21/07/2023 · Método: Telefónico · Muestra: 17.550 · Margen de error: ± 0,7%.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "NC Report",
+  "estudio_id": "ncreport-2023-07-12-larazon",
+  "fecha_trabajo": "2023-07-10/2023-07-11",
+  "fecha_publicacion": "2023-07-12",
+  "n": 1000,
+  "metodologia": "telefónica/online",
+  "ambito": "nacional",
+  "eleccion": "generales 2023",
+  "fuente_tipo": "prensa",
+  "url": "https://www.larazon.es/elecciones/generales/encuesta-diaria-razon-psoe-aumentan-porcentaje-voto-debate_2023071264adf4a51f119100016006e9.html",
+  "extracto": "La Razón/NC Report: \"se sitúan en un 27,8% los socialistas\"; \"los populares también crecen hasta un 36% frente al 35,7%\"; \"Vox que estaría ahora en un 12,4%\"; \"Sumar también baja al 12,2% del voto\". \"realizada en un total de 1.000 entrevistas\".",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "NC Report",
+  "estudio_id": "ncreport-2023-07-17-larazon-tracking6",
+  "fecha_trabajo": "2023-07-15/2023-07-16",
+  "fecha_publicacion": "2023-07-17",
+  "n": 1000,
+  "metodologia": "telefónica/online",
+  "ambito": "nacional",
+  "eleccion": "generales 2023",
+  "fuente_tipo": "agregador",
+  "url": "https://www.electografica.com/2023/07/encuesta-nc-report-230717.html",
+  "extracto": "Electográfica (reproduce NC Report para La Razón, tracking 6): \"SUMAR 11,3% (25/27) | PSOE 28,3% (106/109) | PP 37,2% (153/156) | VOX 11,1% (26/28)\". FICHA TÉCNICA: Periodo de campo: 15-16/07/2023 · Método: Telefónico, online · Muestra: 1.000 · Margen de error: ± 3,1%.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "40dB",
+  "estudio_id": "40db-2023-06-05-elpais",
+  "fecha_trabajo": "2023-05-31/2023-06-01",
+  "fecha_publicacion": "2023-06-05",
+  "n": 800,
+  "metodologia": "CAWI (online)",
+  "ambito": "nacional",
+  "eleccion": "generales 2023",
+  "fuente_tipo": "prensa",
+  "url": "https://elpais.com/espana/2023-06-05/el-pp-ganara-las-elecciones-pero-no-lograria-gobernar-si-diaz-agrupa-a-podemos-en-sumar-el-23-j.html",
+  "extracto": "El País/40dB (ficha técnica): \"muestra de 800 entrevistas, se realizó entre el 31 de mayo y el 1 de junio\". Escenario Sumar+Podemos juntos: \"el PP... ganaría las elecciones con un 32,3% de estimación de voto... los socialistas (27,2%)... Sumar y Podemos reunirían juntos el 15,6% del voto y desplazarían a Vox (13,6%)\".",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "40dB",
+  "estudio_id": "40db-2023-07-08-elpais",
+  "fecha_trabajo": "2023-07-04/2023-07-07",
+  "fecha_publicacion": "2023-07-08",
+  "n": 1500,
+  "metodologia": "CAWI (online)",
+  "ambito": "nacional",
+  "eleccion": "generales 2023",
+  "fuente_tipo": "prensa",
+  "url": "https://elpais.com/espana/elecciones-generales/2023-07-08/el-pp-frena-la-caida-tras-los-pactos-con-vox.html",
+  "extracto": "El País/40dB (ficha técnica): \"Tamaño de la muestra: 1.500 entrevistas... Procedimiento: entrevista online (CAWI)... Fecha de realización: 4 y 7 de julio de 2023\". Voto: \"Los populares alcanzan el 31,5% de la estimación de voto, es decir, dos puntos porcentuales más que el PSOE\" (PSOE 29,3%).",
+  "partidos_publicados": [
+   "PP",
+   "PSOE"
+  ]
+ },
+ {
+  "fuente": "Sociometrica",
+  "estudio_id": "sociometrica-2023-07-17-elespanol",
+  "fecha_trabajo": "2023-07-11/2023-07-16",
+  "fecha_publicacion": "2023-07-17",
+  "n": 1500,
+  "metodologia": "telefónica/online",
+  "ambito": "nacional",
+  "eleccion": "generales 2023",
+  "fuente_tipo": "agregador",
+  "url": "https://www.electografica.com/2023/07/encuesta-sociometrica-230717.html",
+  "extracto": "Electográfica (reproduce SocioMétrica para El Español): \"SUMAR 13,2% (33) | PSOE 28,3% (107) | PP 33,5% (143) | VOX 13,7% (37)\". FICHA TÉCNICA: Periodo de campo: 11-16/07/2023 · Método: Telefónico, online · Muestra: 1.500 · Margen de error: ± 2,5%.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "Imop Insights",
+  "estudio_id": "imop-2023-05-29",
+  "fecha_trabajo": "2023-05-29/2023-05-30",
+  "fecha_publicacion": "2023-05-31",
+  "n": 914,
+  "metodologia": "CATI (telefónica asistida por ordenador; 60% móvil)",
+  "ambito": "nacional",
+  "eleccion": "generales 2023",
+  "fuente_tipo": "prensa",
+  "url": "https://www.elconfidencial.com/espana/observatorio-electoral/2023-05-31/encuesta-imop-sanchez-feijoo-23j-elecciones-generales_3656371/",
+  "extracto": "barómetro flash de IMOP para El Confidencial... El bloque de la derecha estaría hoy 20 escaños por encima de la mayoría absoluta (176) con los 144 diputados del PP y los 52 de Vox... En tres años y medio, pasa de un 20,8% de apoyos al 34,4%... la plataforma de Yolanda Díaz, apenas convencería al 10,2% de los electores, lo que se traduciría en 25 representantes.",
+  "partidos_publicados": [
+   "PP",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "Imop Insights",
+  "estudio_id": "imop-2023-06-12",
+  "fecha_trabajo": "2023-06-12/2023-06-15",
+  "fecha_publicacion": "2023-06-19",
+  "n": 1008,
+  "metodologia": "CATI (telefónica asistida por ordenador; 60% móvil)",
+  "ambito": "nacional",
+  "eleccion": "generales 2023",
+  "fuente_tipo": "prensa",
+  "url": "https://www.elconfidencial.com/espana/observatorio-electoral/2023-06-19/feijoo-ganara-elecciones-tendra-que-pactar-con-vox_3667875/",
+  "extracto": "Según la encuesta de IMOP-Insights para El Confidencial, el PP obtendría el 33,3% del voto y 136-138 diputados en el Congreso... Los socialistas están hoy en el 24,5% de los votos y 94-96 asientos... La coalición de Yolanda Díaz... empataría con Vox (15% y 14,9%, respectivamente).",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "Imop Insights",
+  "estudio_id": "imop-2023-07-11",
+  "fecha_trabajo": "2023-07-11/2023-07-14",
+  "fecha_publicacion": "2023-07-17",
+  "n": 1843,
+  "metodologia": "CATI (telefónica asistida por ordenador; 61% móvil)",
+  "ambito": "nacional",
+  "eleccion": "generales 2023",
+  "fuente_tipo": "prensa",
+  "url": "https://www.elconfidencial.com/espana/observatorio-electoral/2023-07-17/encuesta-pp-escanos-vox-decisivo-gobernar_3701636/",
+  "extracto": "la cuarta y última encuesta de IMOP-Insights para El Confidencial constata que los populares están anclados en el 33% del voto y 140 escaños, lo que en verdad supone una victoria importante sobre el PSOE (106 escaños)... Si las elecciones se celebraran hoy, el Partido Popular las ganaría claramente, con un 32,9% de los votos, lo que se traduce en un mínimo de 134 y un máximo de 142 diputados.",
+  "partidos_publicados": [
+   "PP"
+  ]
+ },
+ {
+  "fuente": "Imop Insights",
+  "estudio_id": "imop-2026-10-05",
+  "fecha_trabajo": "2026-10-05/2026-10-07",
+  "fecha_publicacion": "2026-10-09",
+  "n": 900,
+  "metodologia": "Híbrida: CATI + CAWI (distribución aprox. 45%/55%; en el canal telefónico 70% móvil)",
+  "ambito": "nacional",
+  "eleccion": "generales 2026",
+  "fuente_tipo": "encuestador",
+  "url": "https://www.imop.es/encuesta-pre-electoral-para-el-confidencial-2026/",
+  "extracto": "Si las elecciones fuesen mañana: El PP se situaría como primera fuerza política, con el 30% de los votos válidos, seguido del PSOE, con un 26%. Vox consolidaría su tercera posición, alcanzando el 19% de los sufragios y ampliando considerablemente la distancia respecto a Sumar, con quien prácticamente empató en 2023. Sumar retrocedería hasta el 7,6%. ... Del 5 al 7 de octubre de 2026. ... 900 entrevistas.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "Sociometrica",
+  "estudio_id": "sociometrica-2023-06-08",
+  "fecha_trabajo": "2023-06-08/2023-06-10",
+  "fecha_publicacion": "2023-06-12",
+  "n": 1010,
+  "metodologia": "Mixta CATI + CAWI (plataforma Gandia Integra)",
+  "ambito": "nacional",
+  "eleccion": "generales 2023",
+  "fuente_tipo": "prensa",
+  "url": "https://www.elespanol.com/espana/politica/20230612/pacto-sumar-podemos-otorga-izquierda-escanos-sigue-mayoria/770673030_0.html",
+  "extracto": "Alberto Núñez Feijóo, en cabeza con el 32,1% de los apoyos... El partido de Santiago Abascal, consolidado en la barrera del 15%, perdería fuelle al retroceder un 1,1%... el PSOE... sigue, con el 25,4% de los electores y 94 diputados, 6,7 puntos por debajo del PP... la previsión es que consigan un 12,7% de los sufragios y 33 representantes.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "Sociometrica",
+  "estudio_id": "sociometrica-2026-10-01",
+  "fecha_trabajo": "2026-10-01/2026-10-03",
+  "fecha_publicacion": "2026-10-04",
+  "n": 1000,
+  "metodologia": "Online (CAWI panel)",
+  "ambito": "nacional",
+  "eleccion": "generales 2026",
+  "fuente_tipo": "agregador",
+  "url": "https://www.electografica.com/2026/10/encuesta-sociometrica-261004.html",
+  "extracto": "El PP lidera con 143 escaños y Vox sube hasta los 62. El Partido Popular sería la primera fuerza con 143 escaños y el 33,4 % de los votos, mientras el PSOE obtendría 106 diputados y el 26,5 %. Vox alcanzaría 62 escaños y el 18,1 %, y UPN sumaría uno más... El Frente Amplio, la nueva plataforma vinculada a Sumar, obtendría seis escaños y el 5,3 %, mientras Podemos se quedaría con dos.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "Sociometrica",
+  "estudio_id": "sociometrica-2026-10-10",
+  "fecha_trabajo": "2026-10-10/2026-10-11",
+  "fecha_publicacion": "2026-10-11",
+  "n": 1000,
+  "metodologia": "Online (CAWI panel)",
+  "ambito": "nacional",
+  "eleccion": "generales 2026",
+  "fuente_tipo": "agregador",
+  "url": "https://sumomento.com/encuestas/sociometrica-2026-10-11",
+  "extracto": "En la encuesta de SocioMétrica para El Español (campo del 10 de octubre de 2026 al 11 de octubre de 2026, 1.000 entrevistas), la candidatura más votada es PP, con el 32,6 % de los votos y 141 escaños. Le sigue PSOE, con el 26,2 % y 104 escaños... | Vox | 18,8 % | 64 | ... | Sumar | 5,8 % | 8 |",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "CEO (Centre d'Estudis d'Opinió)",
+  "estudio_id": "ceo-2026-09-01",
+  "fecha_trabajo": "2026-09-01/2026-10-05",
+  "fecha_publicacion": "2026-10-14",
+  "n": 2000,
+  "metodologia": "No especificada en la fuente (2ª ola Barómetro de Opinión Política del CEO; ejecución: GESOP)",
+  "ambito": "Cataluña",
+  "eleccion": "generales 2026 (proyección en Cataluña)",
+  "fuente_tipo": "prensa",
+  "url": "https://www.elplural.com/autonomias/cataluna/encuesta-ceo-psc-ganara-generales-cataluna-erc-crecera-tanto-junts-comuns-sufriran-declive_801383102",
+  "extracto": "El PSC volvería a ganar las elecciones generales en Cataluña con entre 18 y 19 diputados... los socialistas catalanes volverían a ser un pilar fundamental para el PSOE con 29,6% de los votos del conjunto de electores catalanes. La segunda fuerza sería ERC... logrando entre 10 y 11 escaños y reuniendo a un 19% del electorado... los posconvergentes descenderían de los siete diputados a entre cuatro y cinco con un 10,3% de los votos... pasarían de tener siete escaños a contar con entre dos y tres y un 6% de los votos... la formación morada no obtendría ningún escaño y contaría con un 2,5% de los votos... el partido anticapitalista e independentista contaría con el apoyo del 2,8% del electorado catalán... el PP lograría entre seis y siete diputados con un 13,1% de los votos... Vox, que con un 12,2% del electorado mejoraría su resultado respecto a 2023.",
+  "partidos_publicados": [
+   "PSC",
+   "ERC",
+   "JUNTS",
+   "SUMAR",
+   "PODEMOS",
+   "CUP",
+   "PP",
+   "VOX"
+  ]
+ },
+ {
+  "fuente": "GAD3",
+  "estudio_id": "gad3-2026-10-08",
+  "fecha_trabajo": "2026-10-06/2026-10-08",
+  "fecha_publicacion": "2026-10-12",
+  "n": 1077,
+  "metodologia": "CATI",
+  "ambito": "nacional",
+  "eleccion": "generales 2026 (próxima cita 29N2026)",
+  "fuente_tipo": "encuestador",
+  "url": "https://www.gad3.com/barometro-abc-estimacion-de-voto-nacional-octubre-2026/",
+  "extracto": "la encuesta realizada por GAD3 para ABC durante el mes de octubre de 2026 señala que el Partido Popular obtendría 133 escaños y el 31,4% de los votos. El PSOE alcanzaría 107 escaños con un 26,4% del respaldo, seguido de Vox, que lograría 65 diputados y un 18,2% de apoyo. Sumar, por su parte, conseguiría 10 escaños y un 7,4% de los votos. ... Tamaño de la muestra: 1.077 entrevistas. ... Encuesta telefónica (CATI) asistida por ordenador ... Fechas del trabajo de campo: Del 6 al 8 de octubre de 2026.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "GAD3",
+  "estudio_id": "gad3-2026-05-28",
+  "fecha_trabajo": "2026-05-26/2026-05-28",
+  "fecha_publicacion": "2026-06-01",
+  "n": 1011,
+  "metodologia": "CATI + CAWI",
+  "ambito": "nacional",
+  "eleccion": "generales 2026 (próxima cita 29N2026)",
+  "fuente_tipo": "encuestador",
+  "url": "https://www.gad3.com/barometro-abc-estimacion-de-voto-nacional-mayo-2026/",
+  "extracto": "la encuesta realizada por GAD3 para ABC durante el mes de mayo de 2026 señala que el Partido Popular obtendría 141 escaños y el 33,1% de los votos. El PSOE alcanzaría 107 escaños con un 26,8% del respaldo, seguido de Vox, que lograría 60 diputados y un 17,1% de apoyo. Sumar, por su parte, conseguiría 7 escaños y un 5,9% de los votos. ... Tamaño de la muestra: 1.011 entrevistas telefónicas. ... Encuesta telefónica (CATI) y online (CAWI) asistidas por ordenador. ... Fechas del trabajo de campo: Del 26 al 28 de mayo de 2026.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "GAD3",
+  "estudio_id": "gad3-2025-09-11",
+  "fecha_trabajo": "2025-09-05/2025-09-11",
+  "fecha_publicacion": "2025-09-15",
+  "n": 1001,
+  "metodologia": "CATI",
+  "ambito": "nacional",
+  "eleccion": "generales (contexto post-23J)",
+  "fuente_tipo": "encuestador",
+  "url": "https://www.gad3.com/barometro-abc-estimacion-de-voto-nacional-septiembre-2025/",
+  "extracto": "la encuesta realizada por GAD3 para ABC durante el mes de septiembre de 2025, señala que el Partido Popular lograría 137 escaños y el 32% de los votos. El PSOE obtendría 107 escaños con un 26,9% del respaldo; seguido de Vox, que alcanzaría los 61 escaños con un 17,9% de apoyo. Sumar, por su parte, conseguiría 10 escaños y un 6,6% de los votos. ... Tamaño de la muestra: 1.001 entrevistas. ... Entrevista telefónica asistida por ordenador (CATI). ... Fechas del trabajo de campo: Del 5 al 11 de septiembre.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "40dB",
+  "estudio_id": "40db-2025-10-26",
+  "fecha_trabajo": "2025-10-24/2025-10-26",
+  "fecha_publicacion": "2025-11-03",
+  "n": 2000,
+  "metodologia": "online (CAWI)",
+  "ambito": "nacional",
+  "eleccion": "generales (contexto post-23J)",
+  "fuente_tipo": "agregador",
+  "url": "https://www.electografica.com/2025/11/encuesta-40db-251103.html",
+  "extracto": "Encuesta para elecciones generales en España realizada por 40dB. para El País y Cadena SER. ... ESTIMACIÓN DE VOTO (%): Partido Popular (PP) 30,5 / PSOE 28,3 / Vox (VOX) 17,1 / Sumar (SUMAR) 6,8 / (PODEMOS) 3,0 ... Periodo de campo: 24-26/10/2025 · Método: Online · Muestra: 2.000 · Margen de error: ± 2,2%",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "40dB",
+  "estudio_id": "40db-2026-10-08",
+  "fecha_trabajo": "2026-10-07/2026-10-08",
+  "fecha_publicacion": "2026-10-09",
+  "n": 800,
+  "metodologia": "online (CAWI)",
+  "ambito": "nacional",
+  "eleccion": "generales 2026 (próxima cita 29N2026)",
+  "fuente_tipo": "prensa",
+  "url": "https://ep00.epimg.net/infografias/encuestas40db/2026/10-08-barometro-flash/2026_10_informe_voto_barometro_flash.pdf",
+  "extracto": "Encuesta flash Octubre 2026 ... Intención de voto. Y, ¿a qué partido o coalición votarías? (% sobre la población general): 23,0 / 20,5 / 20,1 / 4,2 → PSOE, PP, Vox, Sumar / Frente Amplio. ... TAMAÑO DE LA MUESTRA 800 entrevistas. ... FECHA DE REALIZACIÓN 07/10/2026 a 08/10/2026. (Valores de intención directa de voto, sin cocina demoscópica.)",
+  "partidos_publicados": [
+   "PSOE",
+   "PP",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "40dB",
+  "estudio_id": "40db-2025-09-28",
+  "fecha_trabajo": "2025-09-26/2025-09-28",
+  "fecha_publicacion": "2025-10-06",
+  "n": 2000,
+  "metodologia": "CAWI",
+  "ambito": "nacional",
+  "eleccion": "generales (contexto post-23J)",
+  "fuente_tipo": "prensa",
+  "url": "https://elpais.com/espana/2025-10-06/el-psoe-sube-casi-dos-puntos-en-estimacion-de-voto-en-un-mes-y-se-situa-a-la-menor-distancia-del-pp-desde-las-elecciones-de-2023.html",
+  "extracto": "El barómetro del instituto 40dB. para EL PAÍS y la Cadena SER muestra una subida en estimación de voto para los socialistas de casi dos puntos respecto al mes anterior, lo que sitúa al partido de Pedro Sánchez a solo 1,1 puntos (29,4%) de la formación liderada por Alberto Núñez Feijóo (30,5%). ... la derecha y la extrema derecha mantienen una amplia ventaja ... Los primeros aglutinan el 47,2% de la estimación de voto ... mientras que los segundos (PSOE, Sumar y Podemos) recibirían ... el 38,9%. ... Ámbito: España. ... Tamaño de la muestra: 2.000 entrevistas. Procedimiento: entrevista online (CAWI). Error muestral: +-2,2%. Fecha de realización: del 26 al 28 de septiembre de 2025.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE"
+  ]
+ },
+ {
+  "fuente": "Sigma Dos",
+  "estudio_id": "sigmados-2026-10-01",
+  "fecha_trabajo": "2026-09-22/2026-10-01",
+  "fecha_publicacion": null,
+  "n": 2116,
+  "metodologia": "mixta CATI + CAWI (panel)",
+  "ambito": "nacional",
+  "eleccion": "generales 2026 (próxima cita 29N2026)",
+  "fuente_tipo": "agregador",
+  "url": "https://www.pollingforecast.com/es/polls/1000205?lang=es",
+  "extracto": "Sigma Dos da a PP 7 puntos por delante de PSOE, 32,6 % frente a 25,6 %. ... Trabajo de campo: 22 septiembre 2026 – 1 octubre 2026. Encargada por: El Mundo. Muestra: 2.116. Método: phone (CATI) + online panel (CAWI), mixed. ... PP 32,6 / PSOE 25,6 / Vox 18,3 / Sumar 6,6 / Podemos 3,3.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "Sigma Dos",
+  "estudio_id": "sigmados-2026-10-12",
+  "fecha_trabajo": null,
+  "fecha_publicacion": "2026-10-12",
+  "n": 2017,
+  "metodologia": "mixta telefónica (CATI) / online (CAWI) / RRSS",
+  "ambito": "nacional",
+  "eleccion": "generales 2026 (próxima cita 29N2026)",
+  "fuente_tipo": "encuestador",
+  "url": "https://www.sigmados.com/sondeo-de-arranque-de-campana-estimacion-de-voto-para-las-elecciones-generales-29-n/",
+  "extracto": "La nueva encuesta de octubre de Sigma Dos para El Mundo corresponde a la estimación de voto para las Elecciones Generales en el arranque de la precampaña. Nuestra estimación sitúa al Partido Popular (PP) como primera fuerza política con un 31,9 % de los sufragios, lo que le otorgaría 135 escaños. El PSOE registraría el 25,3 % de la intención de voto y 103 escaños, seguido por Vox, que obtendría el 19,1 % de los apoyos y 68 representantes. Por su parte, Sumar sumaría el 7,6 % de las papeletas logrando 9 parlamentarios. ... Técnica de recogida de información: A través del Panel Sigma Dos by Trust Survey. Metodología mixta telefónica (CATI) / online (CAWI) / RRSS. Muestra: 2.017 entrevistas.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "NC Report",
+  "estudio_id": "ncreport-2026-10-06",
+  "fecha_trabajo": "2026-10-01/2026-10-06",
+  "fecha_publicacion": "2026-10-08",
+  "n": 1000,
+  "metodologia": "telefónico + online",
+  "ambito": "nacional",
+  "eleccion": "generales 2026 (próxima cita 29N2026)",
+  "fuente_tipo": "agregador",
+  "url": "https://www.electografica.com/2026/10/encuesta-nc-report-261008.html",
+  "extracto": "El Partido Popular sería la primera fuerza con el 34,1 % de los votos y entre 146 y 148 escaños, mientras el PSOE se quedaría en el 25 % y entre 98 y 102 diputados. Vox alcanzaría el 18,2 % y entre 61 y 64 escaños ... Sumar, que obtendría el 5,3 % y entre seis y ocho escaños. Podemos lograría el 3,9 % ... Encuestadora NC Report Cliente La Razón Fecha realización 01-06/10/2026 Método Telefónico + online Muestra 1.000 entrevistas Margen de error ± 3,1%",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "NC Report",
+  "estudio_id": "ncreport-2026-09-03",
+  "fecha_trabajo": "2026-09-01/2026-09-03",
+  "fecha_publicacion": null,
+  "n": 1000,
+  "metodologia": "no consta en la fuente consultada",
+  "ambito": "nacional",
+  "eleccion": "generales 2026 (próxima cita 29N2026)",
+  "fuente_tipo": "agregador",
+  "url": "https://politpro.eu/es/espana/intencion-de-voto/nc-report-2026-09-03/elecciones-parlamentarias",
+  "extracto": "NC Report: último sondeo para las Elecciones Generales en España, trabajo de campo finalizado el 3 de septiembre de 2026. ... PP 34,5 / PSOE 24,9 / Vox 18,3 / Sumar 5,7 / POD 3,4 / ERC 2,0 / JxC 1,6 / Bildu 1,4 / PNV 1,0 / BNG 0,8 / CC 0,4 / UPN 0,2 / Otros 5,8. Instituto: NC Report. Periodo de estudio: 01/09/2026 – 03/09/2026. Encuestados: 1.000.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "NC Report",
+  "estudio_id": "ncreport-2024-06-15",
+  "fecha_trabajo": "2024-06-11/2024-06-15",
+  "fecha_publicacion": "2024-06-17",
+  "n": 1000,
+  "metodologia": "telefónico, online",
+  "ambito": "nacional",
+  "eleccion": "generales (contexto post-23J)",
+  "fuente_tipo": "agregador",
+  "url": "https://www.electografica.com/2024/06/encuesta-nc-report-240617.html",
+  "extracto": "Encuesta NC Report 17/06/2024: PP 34,4% (153/155) · PSOE 29,8% (120/122) · VOX 10,3% (28/29) · SUMAR 6,3% (9/10) · SALF 4,3% (5/6) · PODEMOS 3,5% (2). Encuesta para elecciones generales en España realizada por NC Report para La Razón. ... Periodo de campo: 11-15/06/2024 · Método: Telefónico, online · Muestra: 1.000 · Margen de error: ± 3,1%",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "Simple Lógica",
+  "estudio_id": "simplelogica-2023-07-16",
+  "fecha_trabajo": "2023-07-11/2023-07-13",
+  "fecha_publicacion": "2023-07-16",
+  "n": 1600,
+  "metodologia": "telefónica (CATI; 87% de las entrevistas en móviles generados aleatoriamente)",
+  "ambito": "nacional",
+  "eleccion": "generales 2023",
+  "fuente_tipo": "prensa",
+  "url": "https://www.eldiario.es/politica/psoe-sube-derecha-no-asegurada-mayoria-semana-elecciones-generales_1_10382875.html",
+  "extracto": "Según esta última estimación, el PP ganará las elecciones con el 32,2% de los votos, sin que su porcentaje haya variado respecto al último tracking. [...] El PSOE quedaría en segunda plaza con el 28,6% de los votos, una subida de dos décimas respecto al último tracking. [...] El partido de Santiago Abascal obtendría un 13,9% de los votos que se traducirían en de 34 a 40 diputados [...] La formación de Yolanda Díaz obtendría ahora un 13,8% de los votos y entre 33 y 39 diputados. (...) [Ficha técnica] Encuesta de ámbito nacional, realizada telefónicamente. [...] El error para los datos globales de la muestra de 1.600 entrevistas, asumiendo un muestreo aleatorio simple, es de +2,5 puntos, para un nivel de confianza del 95,5% [...] Las entrevistas contempladas en este informe se realizaron entre el 11 y el 13 de julio de 2023.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ {
+  "fuente": "Simple Lógica",
+  "estudio_id": "simplelogica-2024-09-22",
+  "fecha_trabajo": "2024-09-01/2024-09-13",
+  "fecha_publicacion": "2024-09-22",
+  "n": 1032,
+  "metodologia": "telefónica (CATI; 64% de las entrevistas en móviles generados aleatoriamente)",
+  "ambito": "nacional",
+  "eleccion": "próximas generales (escenario post-23J)",
+  "fuente_tipo": "prensa",
+  "url": "https://www.eldiario.es/politica/pp-mantiene-tres-puntos-ventaja-psoe-sumar-encadena-seis-meses-caida_1_11660602.html",
+  "extracto": "El barómetro de septiembre, elaborado por Simple Lógica para elDiario.es, vuelve a dejar al PP como partido más votado si ahora se celebrasen elecciones generales. Obtendría el 33,5% de los votos, el mismo dato que en julio y junio. [...] [Ficha técnica] Encuesta de ámbito nacional, realizada telefónicamente a una muestra de 1032 individuos con derecho a voto en comicios generales. [...] El error para los datos globales, asumiendo un muestreo aleatorio simple, es de +3,1 puntos, para un nivel de confianza del 95,5% [...] Las entrevistas se realizaron entre el 1 y el 13 de septiembre de 2024.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR",
+   "SALF",
+   "PODEMOS"
+  ]
+ },
+ {
+  "fuente": "Demoscopia y Servicios",
+  "estudio_id": "demoscopia-2025-09-08",
+  "fecha_trabajo": "2025-09-02/2025-09-05",
+  "fecha_publicacion": "2025-09-08",
+  "n": 3000,
+  "metodologia": "mixta: panel tabulado + entrevista telefónica asistida por ordenador (CATI)",
+  "ambito": "nacional",
+  "eleccion": "próximas generales",
+  "fuente_tipo": "prensa",
+  "url": "https://www.libertaddigital.com/espana/politica/2025-09-08/encuesta-esradio-ld-pp-y-vox-tendrian-205-diputados-y-podemos-se-acerca-peligrosamente-a-sumar-7293066/",
+  "extracto": "El PP ganaría las elecciones con un amplio margen sobre el PSOE, según la macroencuesta de Demoscopia y Servicios con 3.000 entrevistas elaborada en exclusiva para el Grupo Libertad Digital. Los populares lograrían un 35,1% de los votos, mientras que el PSOE se quedaría casi nueve puntos más atrás: en el 26,6%. [...] El tercero en discordia sería Vox, que tendría un 16,7% del voto y 56 escaños. [...] Por su parte, en los partidos más a la izquierda de la extrema izquierda del PSOE el margen se estrecha: Sumar se queda en el 6,1% mientras que Podemos, con el 5,1%, se acerca peligrosamente. [...] [Ficha técnica] La encuesta contado con una muestra de 3.000 entrevistas, con un margen global de error del 1,79% para un nivel de confianza del 95%. La selección de los entrevistados ha sido aleatoria con proporcionalidad por sexo, rangos de edad y tamaño poblacional. La metodología ha sido mixta de panel tabulado y llamada telefónica asistida por ordenador [...] El trabajo de campo se ha realizado entre los días 2 y 5 de este mismo mes de septiembre.",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR",
+   "PODEMOS",
+   "SALF",
+   "ERC",
+   "EH BILDU",
+   "JUNTS",
+   "PNV",
+   "BNG"
+  ]
+ }
+]

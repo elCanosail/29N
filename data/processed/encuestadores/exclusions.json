@@ -1,0 +1,44 @@
+[
+ {
+  "archivo": "majors.json",
+  "fuente": "40dB",
+  "estudio_id": "40db-2023-07-03-elpais",
+  "url": "https://elpais.com/espana/2023-07-03/consulte-todos-los-datos-internos-de-la-encuesta-de-el-pais-publicada-este-3-de-julio.html",
+  "motivo": "Fuente verificable (n=2.000, 23-26 junio, online) pero el artículo y la nota no publican el desglose de estimación de voto por partido en % (solo escaños agregados); no aporta filas poll×partido"
+ },
+ {
+  "archivo": "menores.json",
+  "fuente": "Hand Research (Investigación Social / Hand Research SL)",
+  "motivo": "No se localizó ninguna nota de prensa ni ficha técnica de encuesta de intención de voto para elecciones generales de España publicada por un encuestador denominado 'Hand Research'/'Hand Research SL'. Las búsquedas devuelven resultados no relacionados (páginas de quiromancia 'Hand Research' y artículos académicos). Sin URL de ficha técnica publicada → excluida."
+ },
+ {
+  "archivo": "menores.json",
+  "fuente": "Cercle d'Estudis i Opinio",
+  "motivo": "No se localiza ninguna encuestadora con la denominación exacta 'Cercle d'Estudis i Opinió'. El homólogo real es el 'Centre d'Estudis d'Opinió' (CEO) de la Generalitat de Catalunya, cuyos sondeos de intención de voto son de ámbito Cataluña (no nacional); se ha documentado aparte su 2ª ola 2026 (ver encuestas)."
+ },
+ {
+  "archivo": "menores.json",
+  "fuente": "SocioMétrica",
+  "motivo": "Encuesta de campo 24-26/09/2026 (n=1.200) localizada solo a través de agregadores (politpro.eu) sin nota de prensa ni ficha técnica del editor/cliente localizada en esta sesión → excluida por regla de oro."
+ },
+ {
+  "archivo": "menores.json",
+  "fuente": "Imop Insights",
+  "motivo": "Encuestas del 'tracking' de El Confidencial de julio de 2023 (entregas diarias intermedias 11/07/2023 y otras) citadas de forma secundaria en notas posteriores, sin URL propia de ficha/publicación independiente identificada → solo se incluyen las entregas con nota publicada (29-31/05, 12-19/06, 11-17/07/2023)."
+ },
+ {
+  "archivo": "simplelogica_demoscopia.json",
+  "fuente": "Demoscopia y Servicios",
+  "motivo": "No se localiza publicación propia de la encuestadora (web o ficha técnica) con notas de prensa de elecciones generales en el periodo; la marca «Más1 / Más1 investigación social demoscópica» no se ha podido verificar en fuentes primarias como denominación de Demoscopia y Servicios (web oficial consultada: demoscopiayservicios.com). Sus sondeos de la Comunitat Valenciana (29/07/2025 y 08/10/2025) quedan fuera por no ser elecciones generales."
+ },
+ {
+  "archivo": "simplelogica_demoscopia.json",
+  "fuente": "Simple Lógica",
+  "motivo": "Sin encuestas de generales publicadas entre el 13/09/2024 y el 15/10/2026: la última cifra disponible en fuentes es la de septiembre de 2024; a partir de 2026 elDiario.es publica sondeos de Ateneo del Dato, no de Simple Lógica."
+ },
+ {
+  "archivo": "simplelogica_demoscopia.json",
+  "fuente": "Simple Lógica",
+  "motivo": "Tracking diario del 23J (entregas intermedias, p.ej. 14/07/2023 y 15/07/2023 en elDiario.es): se registra solo la entrega final (16/07/2023) por ser la que incluye ficha técnica con tamaño muestral (1.600) y fechas de campo; el resto de entregas diarias no se han podido cotejar con ficha técnica propia en esta sesión."
+ }
+]

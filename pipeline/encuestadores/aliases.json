@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "descripcion": "Mapeos específicos de encuestadores privados (29N, Fase 3). NO modifica pipeline/party_aliases.csv (uso exclusivo del pipeline CIS). Los canónicos de partido siguen el diccionario CIS.",
+  "fuente": {
+    "GAD3": ["GAD3", "GAD3 para ABC", "GAD3 para Vocento"],
+    "40dB": ["40dB", "40dB.", "40dB para El País", "40dB para EL PAÍS"],
+    "Sigma Dos": ["Sigma Dos", "SigmaDos", "Sigma Dos para El Mundo", "SIGMA DOS S.L"],
+    "NC Report": ["NC Report", "NCReport", "NC Report para La Razón"],
+    "Simple Lógica": ["Simple Lógica", "Simple Lógica para elDiario.es"],
+    "Demoscopia y Servicios": ["Demoscopia y Servicios", "Demoscopia y Servicios (Más1)", "Más1", "Más1 investigación social demoscópica", "Mas1"],
+    "CEO (Centre d'Estudis d'Opinió)": ["Cercle d'Estudis", "Cercle d'Estudis i Opinió", "Cercle d'Estudis i Opinio (Centre d'Estudis d'Opinió, CEO)", "Centre d'Estudis d'Opinió", "CEO"],
+    "Sociometrica": ["Sociometrica", "SocioMétrica", "SocioMétrica para El Español"],
+    "Hand Research": ["Hand Research", "Hand Research SL", "Hand Research Investigación Social"],
+    "Imop Insights": ["Imop Insights", "Imop", "IMOP Insights para El Confidencial"]
+  },
+  "partido": {
+    "PP": ["PP", "Partido Popular", "PP (Partido Popular)"],
+    "PSOE": ["PSOE", "Psoe", "PSOE-PSC", "PSC-PSOE", "PSC", "PSdeG", "PSE-EE", "PSIB-PSOE", "PSN-PSOE", "Socialistas"],
+    "VOX": ["VOX", "Vox"],
+    "SUMAR": ["SUMAR", "Sumar", "Sumar-Podemos", "SUMAR + PODEMOS"],
+    "UNIDAS PODEMOS": ["Unidas Podemos", "UP", "UP-ECP-EC", "En Comú Podem", "En Común Podem", "Podemos"],
+    "ERC": ["ERC", "Esquerra Republicana", "ERC-CatSí"],
+    "JXCAT": ["Junts", "JxCAT", "Junts per Catalunya", "Junts+Puigdemont"],
+    "EH BILDU": ["EH Bildu", "Bildu", "EH-BILDU"],
+    "PNV": ["PNV", "EAJ-PNV", "EAJ-PNY"],
+    "BNG": ["BNG", "Bloque Nacionalista Galego"],
+    "CUP": ["CUP", "CUP-PR"],
+    "CC": ["CC", "Coalición Canaria", "CCa-NC"],
+    "NA+": ["UPN", "Navarra Suma", "NA+"],
+    "PACMA": ["PACMA"],
+    "OTROS": ["Otros", "OTROS", "Otras candidaturas", "Otros partidos", "SALF", "Se Acabó La Fiesta", "SALF (Se Acabó La Fiesta)"],
+    "EN BLANCO": ["Voto en blanco", "Blanco"],
+    "VOTO NULO": ["Voto nulo", "Nulo"],
+    "ABSTENCION": ["Abstención", "No votará", "No votaría"],
+    "NS": ["N.S.", "No sabe", "NS"],
+    "NC": ["N.C.", "No contesta", "NC"]
+  },
+  "notas": [
+    "Coaliciones dependientes de la era: 'En Comú Podem', 'Més Compromís' significan UNIDAS PODEMOS en 2016-2019 y SUMAR en 2023 (mismo problema documentado en docs/notes/cis-ingest.md §4).",
+    "En 2023 la marca SUMAR agrupa a Podemos, IU, Más Madrid, Compromís y los Comunes; los sondeos que publican 'Sumar' y 'Podemos' por separado deben agregarse a SUMAR solo si el escenario publicado es de candidatura conjunta.",
+    "Los porcentajes de estimación de voto se registran sobre base de votos válidos siempre que la fuente lo permita, para comparar con el resultado oficial.",
+    "El encuestador objetivo 'Cercle d'Estudis' de la Fase 3 no existe con esa denominación: el homólogo real es el Centre d'Estudis d'Opinió (CEO) de la Generalitat de Catalunya, de ámbito Cataluña (no estatal).",
+    "La marca 'Más1' como sinónimo de Demoscopia y Servicios no se ha verificado en fuentes primarias en esta sesión; se mantiene como alias pero el canónico es 'Demoscopia y Servicios'."
+  ]
+}

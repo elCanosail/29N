@@ -1,0 +1,11 @@
+# Dependencias del pipeline de encuestadores privados (pipeline/encuestadores/)
+#
+# Igual que el pipeline CIS, funciona SOLO con la biblioteca estándar de Python 3.11+.
+# No requiere paquetes de terceros.
+#
+# OPCIONALES (no usados por defecto):
+#   requests>=2.31       # alternativa a urllib para la ingesta web
+#   pyarrow>=15.0        # export a parquet de las series normalizadas
+#
+# Nota: NO editar ningún requirements.txt global del repositorio. Este archivo es
+# el único ámbito de dependencias de pipeline/encuestadores/.
