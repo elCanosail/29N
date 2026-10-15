@@ -53,7 +53,7 @@ const { hitos = [] as Hito[], titulo } = Astro.props as { hitos: Hito[]; titulo?
     background: var(--tinta-2);
   }
   .cronologia__regla li.activo .cronologia__marca { background: var(--tinta); height: 20px; width: 3px; }
-  .cronologia__anio { font-size: 0.8125rem; color: var(--tinta-2); white-space: nowrap; text-decoration: none; }
+  .cronologia__anio { display: inline-block; padding: 10px 2px; font-size: 0.8125rem; color: var(--tinta-2); white-space: nowrap; text-decoration: none; }
   .cronologia__anio:hover { color: var(--tinta); text-decoration: underline; }
   .cronologia__regla li.activo .cronologia__anio { color: var(--tinta); font-weight: 500; }
 </style>
