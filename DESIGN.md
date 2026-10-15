@@ -135,7 +135,7 @@ La jerarquía de una página de datos es: **titular Newsreader → regla horizon
 ### Navegación
 
 - Header plano sobre `--papel`, altura 64 px, borde inferior de 2 px en `--tinta` (regla de periódico, no sombra).
-- Wordmark "29N" en Newsreader 800 + descriptor "Datos electorales de España" en `--t-small`.
+- Wordmark "29N.info" en Newsreader 800 (el dominio ".info" en `--tinta-2`, misma tipografía y tamaño) + descriptor "Elecciones en España" en `--t-small`.
 - Links de sección en Source Sans 600, subrayados en hover y en página activa (subrayado grueso de 3 px bajo el ítem activo, estilo GOV.UK).
 - Sin mega-menus. Breadcrumbs (estilo EU design system) en páginas profundas, con `/` separador mono.
 
