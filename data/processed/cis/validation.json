@@ -1,5 +1,16 @@
 [
  {
+  "estudio": "3117",
+  "variable": "P11R",
+  "filas_comparadas": 18,
+  "max_delta": 0.05,
+  "discrepancias": [],
+  "publicado_no_reproducido": [
+   "OTROS"
+  ],
+  "ok": true
+ },
+ {
   "estudio": "3141",
   "variable": "P7R",
   "filas_comparadas": 13,
@@ -27,6 +38,167 @@
   "ok": true
  },
  {
+  "estudio": "3269",
+  "variable": "C1R",
+  "filas_comparadas": 22,
+  "max_delta": 0.34,
+  "discrepancias": [
+   {
+    "partido": "MÁS PAÍS",
+    "publicado": 0.9,
+    "microdatos": 0.56,
+    "delta": 0.34
+   }
+  ],
+  "publicado_no_reproducido": [],
+  "ok": false
+ },
+ {
+  "estudio": "3367",
+  "variable": "INTENCIONA",
+  "filas_comparadas": 12,
+  "max_delta": 0.09,
+  "discrepancias": [],
+  "publicado_no_reproducido": [],
+  "ok": true
+ },
+ {
+  "estudio": "3382",
+  "variable": "INTENCIONGR",
+  "filas_comparadas": 22,
+  "max_delta": 23.46,
+  "discrepancias": [
+   {
+    "partido": "PSOE",
+    "publicado": 42.8,
+    "microdatos": 22.93,
+    "delta": 19.87
+   },
+   {
+    "partido": "PP",
+    "publicado": 39.900000000000006,
+    "microdatos": 22.63,
+    "delta": 17.27
+   },
+   {
+    "partido": "UNIDAS PODEMOS",
+    "publicado": 13.600000000000001,
+    "microdatos": 8.42,
+    "delta": 5.18
+   },
+   {
+    "partido": "VOX",
+    "publicado": 10.8,
+    "microdatos": 6.82,
+    "delta": 3.98
+   },
+   {
+    "partido": "ERC",
+    "publicado": 3.8,
+    "microdatos": 1.91,
+    "delta": 1.89
+   },
+   {
+    "partido": "CIUDADANOS",
+    "publicado": 1.8,
+    "microdatos": 0.99,
+    "delta": 0.81
+   },
+   {
+    "partido": "JXCAT",
+    "publicado": 1.8,
+    "microdatos": 1.03,
+    "delta": 0.77
+   },
+   {
+    "partido": "PNV",
+    "publicado": 1.8,
+    "microdatos": 0.71,
+    "delta": 1.09
+   },
+   {
+    "partido": "BNG",
+    "publicado": 1.7000000000000002,
+    "microdatos": 0.78,
+    "delta": 0.92
+   },
+   {
+    "partido": "EH BILDU",
+    "publicado": 1.4,
+    "microdatos": 0.63,
+    "delta": 0.77
+   },
+   {
+    "partido": "CUP",
+    "publicado": 0.8,
+    "microdatos": 0.36,
+    "delta": 0.44
+   },
+   {
+    "partido": "CC",
+    "publicado": 0.5,
+    "microdatos": 0.14,
+    "delta": 0.36
+   },
+   {
+    "partido": "OTROS",
+    "publicado": 7.5,
+    "microdatos": 1.57,
+    "delta": 5.93
+   },
+   {
+    "partido": "EN BLANCO",
+    "publicado": 3.6,
+    "microdatos": 2.03,
+    "delta": 1.57
+   },
+   {
+    "partido": "VOTO NULO",
+    "publicado": 1.7,
+    "microdatos": 0.98,
+    "delta": 0.72
+   },
+   {
+    "partido": "ABSTENCION",
+    "publicado": 10.0,
+    "microdatos": 5.48,
+    "delta": 4.52
+   },
+   {
+    "partido": "NS",
+    "publicado": 38.3,
+    "microdatos": 14.84,
+    "delta": 23.46
+   },
+   {
+    "partido": "NC",
+    "publicado": 14.200000000000001,
+    "microdatos": 5.93,
+    "delta": 8.27
+   }
+  ],
+  "publicado_no_reproducido": [
+   "COMPROMIS"
+  ],
+  "ok": false
+ },
+ {
+  "estudio": "3407",
+  "variable": "INTENCIONMR",
+  "filas_comparadas": 16,
+  "max_delta": 3.06,
+  "discrepancias": [
+   {
+    "partido": "OTROS",
+    "publicado": 9.0,
+    "microdatos": 5.94,
+    "delta": 3.06
+   }
+  ],
+  "publicado_no_reproducido": [],
+  "ok": false
+ },
+ {
   "estudio": "3411",
   "variable": "INTENCIONGR",
   "filas_comparadas": 16,
@@ -37,6 +209,87 @@
     "publicado": 1.7,
     "microdatos": 0.87,
     "delta": 0.83
+   }
+  ],
+  "publicado_no_reproducido": [],
+  "ok": false
+ },
+ {
+  "estudio": "3415",
+  "variable": "CORREOEMITIDOINTENCIONGR",
+  "filas_comparadas": 18,
+  "max_delta": 0.05,
+  "discrepancias": [],
+  "publicado_no_reproducido": [
+   "PACMA"
+  ],
+  "ok": true
+ },
+ {
+  "estudio": "3420",
+  "variable": "INTENCIONGR",
+  "filas_comparadas": 17,
+  "max_delta": 0.52,
+  "discrepancias": [
+   {
+    "partido": "OTROS",
+    "publicado": 1.9,
+    "microdatos": 1.38,
+    "delta": 0.52
+   }
+  ],
+  "publicado_no_reproducido": [],
+  "ok": false
+ },
+ {
+  "estudio": "3500",
+  "variable": "INTENCIONGR",
+  "filas_comparadas": 18,
+  "max_delta": 0.36,
+  "discrepancias": [
+   {
+    "partido": "SUMAR",
+    "publicado": 4.9,
+    "microdatos": 4.63,
+    "delta": 0.27
+   },
+   {
+    "partido": "ABSTENCION",
+    "publicado": 8.5,
+    "microdatos": 8.14,
+    "delta": 0.36
+   }
+  ],
+  "publicado_no_reproducido": [],
+  "ok": false
+ },
+ {
+  "estudio": "3458",
+  "variable": "INTENCIONEU",
+  "filas_comparadas": 13,
+  "max_delta": 0.52,
+  "discrepancias": [
+   {
+    "partido": "OTROS",
+    "publicado": 1.0,
+    "microdatos": 0.48,
+    "delta": 0.52
+   }
+  ],
+  "publicado_no_reproducido": [],
+  "ok": false
+ },
+ {
+  "estudio": "3460",
+  "variable": "INTENCIONUE",
+  "filas_comparadas": 13,
+  "max_delta": 0.22,
+  "discrepancias": [
+   {
+    "partido": "OTROS",
+    "publicado": 1.6,
+    "microdatos": 1.38,
+    "delta": 0.22
    }
   ],
   "publicado_no_reproducido": [],

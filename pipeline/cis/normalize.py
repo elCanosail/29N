@@ -65,6 +65,12 @@ def canonize(label):
     return None
 
 
+def fecha_iso(s):
+    """Primer DD/MM/YYYY de la cadena -> 'YYYY-MM-DD' (None si no hay)."""
+    m = re.search(r"(\d{1,2})/(\d{1,2})/(\d{4})", s or "")
+    return f"{m.group(3)}-{m.group(2).zfill(2)}-{m.group(1).zfill(2)}" if m else None
+
+
 # ------------------------------------------------------------------ parseo
 
 def var_labels(es_path):
@@ -245,33 +251,46 @@ def main():
         lm = vl.get(chosen_var, {})
         dist, unmapped = distribution_by_canon(counts, tot, lm)
 
-        for canon, pct in sorted(dist.items()):
-            polls.append({"estudio_id": est, "fecha_trabajo": rec["fecha_trabajo"],
-                          "tipo": rec["tipo"], "ambito": rec["ambito"],
-                          "eleccion": rec["eleccion"], "anio": rec["anio"],
-                          "partido": canon, "voto_pct": round(pct, 3),
-                          "variable": chosen_var, "n": n,
-                          "suma_pesos": round(tot, 2), "fuente_url": rec["url"]})
-        studies.append({"estudio": est, "fecha_trabajo": rec["fecha_trabajo"],
-                        "slug": rec["slug"], "url": rec["url"], "tipo": rec["tipo"],
-                        "ambito": rec["ambito"], "eleccion": rec["eleccion"],
-                        "anio": rec["anio"], "n": n, "suma_pesos": round(tot, 2),
-                        "variable_voto": chosen_var, "n_partidos": len(dist),
-                        "etiquetas_sin_mapear": unmapped[:20],
-                        "candidatas": cands[:5]})
+        val_entry = None
         if table:
             diffs = [{"partido": k, "publicado": table[k], "microdatos": round(dist[k], 2),
                       "delta": round(abs(dist[k] - table[k]), 2)}
                      for k in table if k in dist]
             bad = [d for d in diffs if d["delta"] > args.tolerance]
             missing = [k for k in table if k not in dist]
-            validation.append({"estudio": est, "variable": chosen_var,
-                               "filas_comparadas": len(diffs),
-                               "max_delta": max((d["delta"] for d in diffs), default=None),
-                               "discrepancias": bad, "publicado_no_reproducido": missing,
-                               "ok": not bad})
+            val_entry = {"estudio": est, "variable": chosen_var,
+                         "filas_comparadas": len(diffs),
+                         "max_delta": max((d["delta"] for d in diffs), default=None),
+                         "discrepancias": bad, "publicado_no_reproducido": missing,
+                         "ok": not bad}
+            validation.append(val_entry)
+            if bad and len(bad) * 2 >= len(diffs):
+                exclusions.append({"estudio": est, "slug": rec["slug"], "url": rec["url"],
+                                   "motivo": (f"validacion sistematica: {len(bad)}/{len(diffs)} "
+                                              f"filas fuera de tolerancia "
+                                              f"(max_delta={val_entry['max_delta']}) - "
+                                              "variable/denominador probablemente equivocado")})
+                print(f"EXCLUIDO {est} var={chosen_var} n={n} "
+                      f"({len(bad)}/{len(diffs)} filas fuera de tolerancia)", file=sys.stderr)
+                continue
+        for canon, pct in sorted(dist.items()):
+            polls.append({"estudio_id": est, "fecha_trabajo": rec["fecha_trabajo"],
+                          "fecha_trabajo_iso": fecha_iso(rec["fecha_trabajo"]),
+                          "tipo": rec["tipo"], "ambito": rec["ambito"],
+                          "eleccion": rec["eleccion"], "anio": rec["anio"],
+                          "partido": canon, "voto_pct": round(pct, 3),
+                          "variable": chosen_var, "n": n,
+                          "suma_pesos": round(tot, 2), "fuente_url": rec["url"]})
+        studies.append({"estudio": est, "fecha_trabajo": rec["fecha_trabajo"],
+                        "fecha_trabajo_iso": fecha_iso(rec["fecha_trabajo"]),
+                        "slug": rec["slug"], "url": rec["url"], "tipo": rec["tipo"],
+                        "ambito": rec["ambito"], "eleccion": rec["eleccion"],
+                        "anio": rec["anio"], "n": n, "suma_pesos": round(tot, 2),
+                        "variable_voto": chosen_var, "n_partidos": len(dist),
+                        "etiquetas_sin_mapear": unmapped[:20],
+                        "candidatas": cands[:5]})
         print(f"OK {est} var={chosen_var} n={n} partidos={len(dist)}"
-              + (f" validacion={'OK' if validation and validation[-1]['estudio']==est and validation[-1]['ok'] else 'REVISAR'}" if table else ""),
+              + (f" validacion={'OK' if val_entry and val_entry['ok'] else 'REVISAR'}" if table else ""),
               file=sys.stderr)
 
     with open(os.path.join(OUT, "polls.jsonl"), "w", encoding="utf-8") as f:

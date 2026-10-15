@@ -1,0 +1,153 @@
+{
+  "encuestas": [
+    {
+      "fuente": "GAD3",
+      "estudio_id": "gad3-2023-06-11-abc",
+      "fecha_trabajo": "2023-06-05/2023-06-08",
+      "fecha_publicacion": "2023-06-11",
+      "n": 2007,
+      "metodologia": "CATI (telefónica)",
+      "ambito": "nacional",
+      "eleccion": "generales 2023",
+      "url": "https://www.abc.es/espana/feijoo-supera-150-escanos-deja-sanchez-opciones-20230611204255-nt.html",
+      "fuente_tipo": "prensa",
+      "extracto": "GAD3/ABC (ficha técnica): Tamaño de la muestra: 2.007 entrevistas. Procedimiento: CATI. Fechas de trabajo de campo: 5 al 8 de junio de 2023. Voto: \"sitúa a los populares en un 36,6% de voto\"; \"se quedaría en un 12,4% de los votos\" (Vox); \"mantiene un porcentaje de voto (27,7%)\" (PSOE); \"entre 27 y 29 escaños con el 11,2% de voto\" (Sumar).",
+      "votos": {"PP": 36.6, "PSOE": 27.7, "VOX": 12.4, "SUMAR": 11.2}
+    },
+    {
+      "fuente": "GAD3",
+      "estudio_id": "gad3-2023-07-16-abc-tracking13",
+      "fecha_trabajo": "2023-06-29/2023-07-15",
+      "fecha_publicacion": "2023-07-16",
+      "n": 7002,
+      "metodologia": "CATI (telefónica)",
+      "ambito": "nacional",
+      "eleccion": "generales 2023",
+      "url": "https://www.electografica.com/2023/07/encuesta-gad3-230717.html",
+      "fuente_tipo": "agregador",
+      "extracto": "Electográfica (reproduce GAD3/Vocento tracking 13): \"SUMAR 11,5% (25) | PSOE 28,4% (115) | PP 37,0% (151) | VOX 11,9% (29)\". FICHA TÉCNICA: Periodo de campo: 29/06-15/07/2023 · Método: Telefónico · Muestra: 7.002 · Margen de error: ± 1,2%. Fuente citada: ABC.",
+      "votos": {"PP": 37.0, "PSOE": 28.4, "VOX": 11.9, "SUMAR": 11.5}
+    },
+    {
+      "fuente": "GAD3",
+      "estudio_id": "gad3-2023-07-17-abc-tracking14",
+      "fecha_trabajo": "2023-06-29/2023-07-17",
+      "fecha_publicacion": "2023-07-17",
+      "n": 8001,
+      "metodologia": "CATI (telefónica)",
+      "ambito": "nacional",
+      "eleccion": "generales 2023",
+      "url": "https://www.electografica.com/2023/07/encuesta-gad3-230717-2.html",
+      "fuente_tipo": "agregador",
+      "extracto": "Electográfica (reproduce GAD3/Vocento tracking 14): \"SUMAR 11,5% (24) | PSOE 28,6% (115) | PP 36,9% (152) | VOX 11,7% (28)\". FICHA TÉCNICA: Periodo de campo: 29/06-17/07/2023 · Método: Telefónico · Muestra: 8.001 · Margen de error: ± 1,1%.",
+      "votos": {"PP": 36.9, "PSOE": 28.6, "VOX": 11.7, "SUMAR": 11.5}
+    },
+    {
+      "fuente": "Sigma Dos",
+      "estudio_id": "sigmados-2023-07-17-elmundo",
+      "fecha_trabajo": "2023-07-10/2023-07-17",
+      "fecha_publicacion": "2023-07-17",
+      "n": 8183,
+      "metodologia": "mixta CATI/CAWI (panel)",
+      "ambito": "nacional",
+      "eleccion": "generales 2023",
+      "url": "https://www.elmundo.es/elecciones/elecciones-generales/2023/07/17/64b58986e9cf4a5e018b459f.html",
+      "fuente_tipo": "prensa",
+      "extracto": "El Mundo/Sigma Dos (ficha técnica): Tamaños muestrales: 8.183 entrevistas. Técnica: panel Sigma Dos by Trust Survey, mixta CATI/online. Fecha del trabajo de campo: del 10 al 17 de julio de 2023. Voto: \"ganará las elecciones... con un 35,4% del voto\". Electográfica (tracking 11): \"SUMAR 13,6% (33/36) | PSOE 28,0% (105/110) | PP 35,4% (145/150) | VOX 11,2% (26/29)\".",
+      "votos": {"PP": 35.4, "PSOE": 28.0, "VOX": 11.2, "SUMAR": 13.6}
+    },
+    {
+      "fuente": "Sigma Dos",
+      "estudio_id": "sigmados-2023-07-23-rtve",
+      "fecha_trabajo": "2023-07-06/2023-07-21",
+      "fecha_publicacion": "2023-07-23",
+      "n": 17550,
+      "metodologia": "CATI (telefónica)",
+      "ambito": "nacional",
+      "eleccion": "generales 2023",
+      "url": "https://www.electografica.com/2023/07/encuesta-sigmados-230723.html",
+      "fuente_tipo": "agregador",
+      "extracto": "Electográfica (reproduce SigmaDos para RTVE y Forta): \"SUMAR 13,3% (28/31) | PSOE 28,9% (113/118) | PP 34,2% (145/150) | VOX 11,2% (24/27)\". FICHA TÉCNICA: Periodo de campo: 06-21/07/2023 · Método: Telefónico · Muestra: 17.550 · Margen de error: ± 0,7%.",
+      "votos": {"PP": 34.2, "PSOE": 28.9, "VOX": 11.2, "SUMAR": 13.3}
+    },
+    {
+      "fuente": "NC Report",
+      "estudio_id": "ncreport-2023-07-12-larazon",
+      "fecha_trabajo": "2023-07-10/2023-07-11",
+      "fecha_publicacion": "2023-07-12",
+      "n": 1000,
+      "metodologia": "telefónica/online",
+      "ambito": "nacional",
+      "eleccion": "generales 2023",
+      "url": "https://www.larazon.es/elecciones/generales/encuesta-diaria-razon-psoe-aumentan-porcentaje-voto-debate_2023071264adf4a51f119100016006e9.html",
+      "fuente_tipo": "prensa",
+      "extracto": "La Razón/NC Report: \"se sitúan en un 27,8% los socialistas\"; \"los populares también crecen hasta un 36% frente al 35,7%\"; \"Vox que estaría ahora en un 12,4%\"; \"Sumar también baja al 12,2% del voto\". \"realizada en un total de 1.000 entrevistas\".",
+      "votos": {"PP": 36.0, "PSOE": 27.8, "VOX": 12.4, "SUMAR": 12.2}
+    },
+    {
+      "fuente": "NC Report",
+      "estudio_id": "ncreport-2023-07-17-larazon-tracking6",
+      "fecha_trabajo": "2023-07-15/2023-07-16",
+      "fecha_publicacion": "2023-07-17",
+      "n": 1000,
+      "metodologia": "telefónica/online",
+      "ambito": "nacional",
+      "eleccion": "generales 2023",
+      "url": "https://www.electografica.com/2023/07/encuesta-nc-report-230717.html",
+      "fuente_tipo": "agregador",
+      "extracto": "Electográfica (reproduce NC Report para La Razón, tracking 6): \"SUMAR 11,3% (25/27) | PSOE 28,3% (106/109) | PP 37,2% (153/156) | VOX 11,1% (26/28)\". FICHA TÉCNICA: Periodo de campo: 15-16/07/2023 · Método: Telefónico, online · Muestra: 1.000 · Margen de error: ± 3,1%.",
+      "votos": {"PP": 37.2, "PSOE": 28.3, "VOX": 11.1, "SUMAR": 11.3}
+    },
+    {
+      "fuente": "40dB",
+      "estudio_id": "40db-2023-06-05-elpais",
+      "fecha_trabajo": "2023-05-31/2023-06-01",
+      "fecha_publicacion": "2023-06-05",
+      "n": 800,
+      "metodologia": "CAWI (online)",
+      "ambito": "nacional",
+      "eleccion": "generales 2023",
+      "url": "https://elpais.com/espana/2023-06-05/el-pp-ganara-las-elecciones-pero-no-lograria-gobernar-si-diaz-agrupa-a-podemos-en-sumar-el-23-j.html",
+      "fuente_tipo": "prensa",
+      "extracto": "El País/40dB (ficha técnica): \"muestra de 800 entrevistas, se realizó entre el 31 de mayo y el 1 de junio\". Escenario Sumar+Podemos juntos: \"el PP... ganaría las elecciones con un 32,3% de estimación de voto... los socialistas (27,2%)... Sumar y Podemos reunirían juntos el 15,6% del voto y desplazarían a Vox (13,6%)\".",
+      "votos": {"PP": 32.3, "PSOE": 27.2, "VOX": 13.6, "SUMAR": 15.6},
+      "nota": "SUMAR = escenario Sumar+Podemos juntos, que anticipa la marca electoral del 23J"
+    },
+    {
+      "fuente": "40dB",
+      "estudio_id": "40db-2023-07-08-elpais",
+      "fecha_trabajo": "2023-07-04/2023-07-07",
+      "fecha_publicacion": "2023-07-08",
+      "n": 1500,
+      "metodologia": "CAWI (online)",
+      "ambito": "nacional",
+      "eleccion": "generales 2023",
+      "url": "https://elpais.com/espana/elecciones-generales/2023-07-08/el-pp-frena-la-caida-tras-los-pactos-con-vox.html",
+      "fuente_tipo": "prensa",
+      "extracto": "El País/40dB (ficha técnica): \"Tamaño de la muestra: 1.500 entrevistas... Procedimiento: entrevista online (CAWI)... Fecha de realización: 4 y 7 de julio de 2023\". Voto: \"Los populares alcanzan el 31,5% de la estimación de voto, es decir, dos puntos porcentuales más que el PSOE\" (PSOE 29,3%).",
+      "votos": {"PP": 31.5, "PSOE": 29.3}
+    },
+    {
+      "fuente": "Sociometrica",
+      "estudio_id": "sociometrica-2023-07-17-elespanol",
+      "fecha_trabajo": "2023-07-11/2023-07-16",
+      "fecha_publicacion": "2023-07-17",
+      "n": 1500,
+      "metodologia": "telefónica/online",
+      "ambito": "nacional",
+      "eleccion": "generales 2023",
+      "url": "https://www.electografica.com/2023/07/encuesta-sociometrica-230717.html",
+      "fuente_tipo": "agregador",
+      "extracto": "Electográfica (reproduce SocioMétrica para El Español): \"SUMAR 13,2% (33) | PSOE 28,3% (107) | PP 33,5% (143) | VOX 13,7% (37)\". FICHA TÉCNICA: Periodo de campo: 11-16/07/2023 · Método: Telefónico, online · Muestra: 1.500 · Margen de error: ± 2,5%.",
+      "votos": {"PP": 33.5, "PSOE": 28.3, "VOX": 13.7, "SUMAR": 13.2}
+    }
+  ],
+  "exclusiones": [
+    {
+      "fuente": "40dB",
+      "estudio_id": "40db-2023-07-03-elpais",
+      "url": "https://elpais.com/espana/2023-07-03/consulte-todos-los-datos-internos-de-la-encuesta-de-el-pais-publicada-este-3-de-julio.html",
+      "motivo": "Fuente verificable (n=2.000, 23-26 junio, online) pero el artículo y la nota no publican el desglose de estimación de voto por partido en % (solo escaños agregados); no aporta filas poll×partido"
+    }
+  ]
+}

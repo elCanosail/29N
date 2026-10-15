@@ -2,6 +2,7 @@
  {
   "estudio": "1135",
   "fecha_trabajo": "01/06/1977",
+  "fecha_trabajo_iso": "1977-06-01",
   "slug": "preelectoral-elecciones-generales-1977-iii-",
   "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-1977-iii-",
   "tipo": "preelectoral",
@@ -35,6 +36,7 @@
  {
   "estudio": "1181",
   "fecha_trabajo": "25/01/1979",
+  "fecha_trabajo_iso": "1979-01-25",
   "slug": "preelectoral-elecciones-generales-1979-i-",
   "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-1979-i-",
   "tipo": "preelectoral",
@@ -77,6 +79,7 @@
  {
   "estudio": "1183",
   "fecha_trabajo": "01/02/1979",
+  "fecha_trabajo_iso": "1979-02-01",
   "slug": "preelectoral-elecciones-generales-1979-ii-",
   "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-1979-ii-",
   "tipo": "preelectoral",
@@ -108,6 +111,7 @@
  {
   "estudio": "1324",
   "fecha_trabajo": "29/09/1982",
+  "fecha_trabajo_iso": "1982-09-29",
   "slug": "preelectoral-elecciones-generales-1982-ii-",
   "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-1982-ii-",
   "tipo": "preelectoral",
@@ -133,6 +137,7 @@
  {
   "estudio": "1326",
   "fecha_trabajo": "18/10/1982",
+  "fecha_trabajo_iso": "1982-10-18",
   "slug": "preelectoral-elecciones-generales-1982-iii-",
   "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-1982-iii-",
   "tipo": "preelectoral",
@@ -158,6 +163,7 @@
  {
   "estudio": "1533",
   "fecha_trabajo": "13/05/1986",
+  "fecha_trabajo_iso": "1986-05-13",
   "slug": "preelectoral-elecciones-generales-en-galicia-1986",
   "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-en-galicia-1986",
   "tipo": "preelectoral",
@@ -184,6 +190,7 @@
  {
   "estudio": "1542",
   "fecha_trabajo": "01/07/1986",
+  "fecha_trabajo_iso": "1986-07-01",
   "slug": "postelectoral-elecciones-generales-1986-i-y-autonomicas-de-andalucia",
   "url": "https://www.cis.es/es/estudios/postelectoral-elecciones-generales-1986-i-y-autonomicas-de-andalucia",
   "tipo": "postelectoral",
@@ -208,8 +215,84 @@
   ]
  },
  {
+  "estudio": "1815",
+  "fecha_trabajo": "10/06/1989",
+  "fecha_trabajo_iso": "1989-06-10",
+  "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-ix-",
+  "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-al-parlamento-europeo-1989-ix-",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "europeas",
+  "anio": 1989,
+  "n": 4212,
+  "suma_pesos": 10383326852.76,
+  "variable_voto": "P11",
+  "n_partidos": 12,
+  "etiquetas_sin_mapear": [
+   "AIC",
+   "CG",
+   "EE",
+   "No recuerda",
+   "None",
+   "Otro de derechas",
+   "Otro de izquierdas",
+   "UV"
+  ],
+  "candidatas": [
+   "P11",
+   "P12",
+   "P5",
+   "N3",
+   "VOTOSIME89"
+  ]
+ },
+ {
+  "estudio": "1817",
+  "fecha_trabajo": "23/06/1989",
+  "fecha_trabajo_iso": "1989-06-23",
+  "slug": "postelectoral-parlamento-europeo-1989",
+  "url": "https://www.cis.es/es/estudios/postelectoral-parlamento-europeo-1989",
+  "tipo": "postelectoral",
+  "ambito": "estatal",
+  "eleccion": "europeas",
+  "anio": 1989,
+  "n": 13673,
+  "suma_pesos": 34569330164.98,
+  "variable_voto": "P29",
+  "n_partidos": 5,
+  "etiquetas_sin_mapear": [
+   "0",
+   "1",
+   "19",
+   "2",
+   "20",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "90",
+   "AIC",
+   "CG",
+   "None",
+   "Otro de derechas",
+   "Otro de izquierdas",
+   "UV"
+  ],
+  "candidatas": [
+   "P29",
+   "N3",
+   "P12",
+   "P10A",
+   "VOTOSIMG89"
+  ]
+ },
+ {
   "estudio": "7789",
   "fecha_trabajo": "05/09/1989",
+  "fecha_trabajo_iso": "1989-09-05",
   "slug": "preelectoral-elecciones-generales-1989.-muestra-total",
   "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-1989.-muestra-total",
   "tipo": "preelectoral",
@@ -246,6 +329,7 @@
  {
   "estudio": "1842",
   "fecha_trabajo": "01/11/1989",
+  "fecha_trabajo_iso": "1989-11-01",
   "slug": "postelectoral-elecciones-generales-1989",
   "url": "https://www.cis.es/es/estudios/postelectoral-elecciones-generales-1989",
   "tipo": "postelectoral",
@@ -271,8 +355,234 @@
   ]
  },
  {
+  "estudio": "2064",
+  "fecha_trabajo": "08/07/1993",
+  "fecha_trabajo_iso": "1993-07-08",
+  "slug": "barometro-postelectoral-valencia.-elecciones-generales-1993-xiv-",
+  "url": "https://www.cis.es/es/estudios/barometro-postelectoral-valencia.-elecciones-generales-1993-xiv-",
+  "tipo": "postelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 1993,
+  "n": 1599,
+  "suma_pesos": 1599.0,
+  "variable_voto": "RECUERDO",
+  "n_partidos": 7,
+  "etiquetas_sin_mapear": [
+   "EU",
+   "None",
+   "UPV",
+   "UV"
+  ],
+  "candidatas": [
+   "RECUERDO",
+   "P28",
+   "P27",
+   "P26",
+   "P10"
+  ]
+ },
+ {
+  "estudio": "2104",
+  "fecha_trabajo": "27/05/1994",
+  "fecha_trabajo_iso": "1994-05-27",
+  "slug": "preelectoral-elecciones-al-parlamento-europeo-1994-iii-",
+  "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-al-parlamento-europeo-1994-iii-",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "europeas",
+  "anio": 1994,
+  "n": 4073,
+  "suma_pesos": 4071.91,
+  "variable_voto": "P10",
+  "n_partidos": 14,
+  "etiquetas_sin_mapear": [
+   "ARM",
+   "CC",
+   "EA",
+   "Los Verdes, un partido ecologista ",
+   "None",
+   "Otro",
+   "Poder Andaluz-PA ",
+   "UM",
+   "UV"
+  ],
+  "candidatas": [
+   "P10",
+   "VOTOSIM",
+   "P6",
+   "P19",
+   "P10A"
+  ]
+ },
+ {
+  "estudio": "2207",
+  "fecha_trabajo": "12/02/1996",
+  "fecha_trabajo_iso": "1996-02-12",
+  "slug": "preelectoral-elecciones-generales-y-autonomicas-de-andalucia-1996",
+  "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-y-autonomicas-de-andalucia-1996",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 1996,
+  "n": 6642,
+  "suma_pesos": 4995.03,
+  "variable_voto": "P15",
+  "n_partidos": 12,
+  "etiquetas_sin_mapear": [
+   "CC",
+   "EA-EUE",
+   "Los Verdes",
+   "None",
+   "Otro",
+   "PA (PAP)",
+   "UV"
+  ],
+  "candidatas": [
+   "P15",
+   "VOTOSIMG",
+   "P12",
+   "P38",
+   "VOTOSIMA"
+  ]
+ },
+ {
+  "estudio": "2210",
+  "fecha_trabajo": "15/03/1996",
+  "fecha_trabajo_iso": "1996-03-15",
+  "slug": "postelectoral-elecciones-generales-y-autonomicas-de-andalucia-1996",
+  "url": "https://www.cis.es/es/estudios/postelectoral-elecciones-generales-y-autonomicas-de-andalucia-1996",
+  "tipo": "postelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 1996,
+  "n": 5338,
+  "suma_pesos": 4989.69,
+  "variable_voto": "P32R",
+  "n_partidos": 12,
+  "etiquetas_sin_mapear": [
+   "CC (Sólo Canarias)",
+   "EA (Sólo País Vasco y Navarra)",
+   "No recuerda",
+   "No tenía edad para votar",
+   "None",
+   "Otro",
+   "PA-PAP (Sólo Andalucía)",
+   "UA (Sólo País Vasco)",
+   "UV (Sólo Comunidad Valenciana)"
+  ],
+  "candidatas": [
+   "P32R",
+   "P28",
+   "P32",
+   "P11",
+   "P8C"
+  ]
+ },
+ {
+  "estudio": "7715",
+  "fecha_trabajo": "27/10/2015",
+  "fecha_trabajo_iso": "2015-10-27",
+  "slug": "preelectoral-y-postelectoral-elecciones-generales-2015.-panel-total-panel-",
+  "url": "https://www.cis.es/es/estudios/preelectoral-y-postelectoral-elecciones-generales-2015.-panel-total-panel-",
+  "tipo": "preelectoral_panel",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2015,
+  "n": 6242,
+  "suma_pesos": 6242.0,
+  "variable_voto": "PP31",
+  "n_partidos": 23,
+  "etiquetas_sin_mapear": [
+   "EQUO",
+   "Falange",
+   "Més per Mallorca",
+   "N.P.",
+   "Otro",
+   "PCPC (Partido Comunista de los Pueblos Catalans)",
+   "PSM-Entesa Nacionalista",
+   "Partido Pirata",
+   "Recortes Cero",
+   "UPL",
+   "Unió",
+   "Verdes"
+  ],
+  "candidatas": [
+   "PP31",
+   "PP29D",
+   "P11R",
+   "PP48A",
+   "PP39A"
+  ]
+ },
+ {
+  "estudio": "3117",
+  "fecha_trabajo": "27/10/2015",
+  "fecha_trabajo_iso": "2015-10-27",
+  "slug": "preelectoral-elecciones-generales-2015.-panel-1-fase-",
+  "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-2015.-panel-1-fase-",
+  "tipo": "preelectoral_panel",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2015,
+  "n": 17452,
+  "suma_pesos": 17450.77,
+  "variable_voto": "P11R",
+  "n_partidos": 19,
+  "etiquetas_sin_mapear": [
+   "CC",
+   "MES",
+   "Otro",
+   "Unió"
+  ],
+  "candidatas": [
+   "P11R",
+   "P11",
+   "VOTOSIM",
+   "P26A",
+   "RVAUTON"
+  ]
+ },
+ {
+  "estudio": "3126",
+  "fecha_trabajo": "07/01/2016",
+  "fecha_trabajo_iso": "2016-01-07",
+  "slug": "postelectoral-elecciones-generales-2015.-panel-2-fase-",
+  "url": "https://www.cis.es/es/estudios/postelectoral-elecciones-generales-2015.-panel-2-fase-",
+  "tipo": "postelectoral_panel",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2015,
+  "n": 6242,
+  "suma_pesos": 6242.0,
+  "variable_voto": "P31",
+  "n_partidos": 23,
+  "etiquetas_sin_mapear": [
+   "EQUO",
+   "Falange",
+   "Més per Mallorca",
+   "N.P.",
+   "Otro",
+   "PCPC (Partido Comunista de los Pueblos Catalans)",
+   "PSM-Entesa Nacionalista",
+   "Partido Pirata",
+   "Recortes Cero",
+   "UPL",
+   "Unió",
+   "Verdes"
+  ],
+  "candidatas": [
+   "P31",
+   "P29D",
+   "P48A",
+   "P39A",
+   "P18A"
+  ]
+ },
+ {
   "estudio": "3141",
   "fecha_trabajo": "04/05/2016",
+  "fecha_trabajo_iso": "2016-05-04",
   "slug": "preelectoral-elecciones-generales-2016",
   "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-2016",
   "tipo": "preelectoral",
@@ -297,6 +607,7 @@
  {
   "estudio": "3242",
   "fecha_trabajo": "01/03/2019",
+  "fecha_trabajo_iso": "2019-03-01",
   "slug": "macrobarometro-de-marzo-2019.-preelectoral-elecciones-generales-2019",
   "url": "https://www.cis.es/es/estudios/macrobarometro-de-marzo-2019.-preelectoral-elecciones-generales-2019",
   "tipo": "preelectoral",
@@ -317,8 +628,41 @@
   ]
  },
  {
+  "estudio": "3245",
+  "fecha_trabajo": "01/04/2019",
+  "fecha_trabajo_iso": "2019-04-01",
+  "slug": "macrobarometro-de-abril-2019.-preelectoral-elecciones-al-parlamento-europeo-autonomicas-y-municipales-2019",
+  "url": "https://www.cis.es/es/estudios/macrobarometro-de-abril-2019.-preelectoral-elecciones-al-parlamento-europeo-autonomicas-y-municipales-2019",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "europeas",
+  "anio": 2019,
+  "n": 17641,
+  "suma_pesos": 17641.01,
+  "variable_voto": "P23R",
+  "n_partidos": 25,
+  "etiquetas_sin_mapear": [
+   "Adelante Sevilla",
+   "Barcelona pel Canvi-C",
+   "Coalición Caballas",
+   "Coalición por Melilla",
+   "Compostela Aberta",
+   "Compromiso por Galicia",
+   "Los Verdes",
+   "MDyC"
+  ],
+  "candidatas": [
+   "P23R",
+   "P8",
+   "P23",
+   "P21",
+   "P8R"
+  ]
+ },
+ {
   "estudio": "3263",
   "fecha_trabajo": "01/10/2019",
+  "fecha_trabajo_iso": "2019-10-01",
   "slug": "macrobarometro-de-octubre-2019.-preelectoral-elecciones-generales-2019",
   "url": "https://www.cis.es/es/estudios/macrobarometro-de-octubre-2019.-preelectoral-elecciones-generales-2019",
   "tipo": "preelectoral",
@@ -344,8 +688,142 @@
   ]
  },
  {
+  "estudio": "3269",
+  "fecha_trabajo": "01/12/2019",
+  "fecha_trabajo_iso": "2019-12-01",
+  "slug": "barometro-de-diciembre-2019.-postelectoral-elecciones-generales-2019",
+  "url": "https://www.cis.es/es/estudios/barometro-de-diciembre-2019.-postelectoral-elecciones-generales-2019",
+  "tipo": "postelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2019,
+  "n": 4804,
+  "suma_pesos": 4804.0,
+  "variable_voto": "C1R",
+  "n_partidos": 23,
+  "etiquetas_sin_mapear": [
+   "Teruel Existe"
+  ],
+  "candidatas": [
+   "C1A",
+   "C1",
+   "C1R",
+   "C1AR",
+   "B22R"
+  ]
+ },
+ {
+  "estudio": "3299",
+  "fecha_trabajo": "23/10/2020",
+  "fecha_trabajo_iso": "2020-10-23",
+  "slug": "encuesta-flash-experimental-mocion-de-censura-2020",
+  "url": "https://www.cis.es/es/estudios/encuesta-flash-experimental-mocion-de-censura-2020",
+  "tipo": "flash",
+  "ambito": "estatal",
+  "eleccion": "otro",
+  "anio": 2020,
+  "n": 1584,
+  "suma_pesos": 1584.0,
+  "variable_voto": "RECUVOTOGR",
+  "n_partidos": 21,
+  "etiquetas_sin_mapear": [
+   "N.P.",
+   "No recuerda",
+   "Teruel Existe"
+  ],
+  "candidatas": [
+   "RECUVOTOGR",
+   "P2",
+   "RECUVOTOG",
+   "RECUERDO"
+  ]
+ },
+ {
+  "estudio": "3367",
+  "fecha_trabajo": "06/06/2022",
+  "fecha_trabajo_iso": "2022-06-06",
+  "slug": "encuesta-flash.-elecciones-comunidad-autonoma-de-andalucia-2022",
+  "url": "https://www.cis.es/es/estudios/encuesta-flash.-elecciones-comunidad-autonoma-de-andalucia-2022",
+  "tipo": "flash",
+  "ambito": "estatal",
+  "eleccion": "otro",
+  "anio": 2022,
+  "n": 3083,
+  "suma_pesos": 3083.0,
+  "variable_voto": "INTENCIONA",
+  "n_partidos": 12,
+  "etiquetas_sin_mapear": [
+   "Jaén Merece Más",
+   "Por Andalucía",
+   "Por Huelva"
+  ],
+  "candidatas": [
+   "INTENCIONALTERA",
+   "INTENCIONA",
+   "P2R",
+   "VOTOSIMA",
+   "SIMPATIAA"
+  ]
+ },
+ {
+  "estudio": "3386",
+  "fecha_trabajo": "17/11/2022",
+  "fecha_trabajo_iso": "2022-11-17",
+  "slug": "macroencuesta-sobre-tendencias-en-voto-autonomico",
+  "url": "https://www.cis.es/es/estudios/macroencuesta-sobre-tendencias-en-voto-autonomico",
+  "tipo": "otro",
+  "ambito": "estatal",
+  "eleccion": "otro",
+  "anio": null,
+  "n": 5545,
+  "suma_pesos": 5545.0,
+  "variable_voto": "INTENCIONGR",
+  "n_partidos": 22,
+  "etiquetas_sin_mapear": [
+   "Teruel Existe"
+  ],
+  "candidatas": [
+   "INTENCIONGR",
+   "INTENCIONAALTERR",
+   "INTENCIONAALTER",
+   "INTENCIONG",
+   "SIMPATIAAR"
+  ]
+ },
+ {
+  "estudio": "3407",
+  "fecha_trabajo": "16/05/2023",
+  "fecha_trabajo_iso": "2023-05-16",
+  "slug": "encuesta-flash-elecciones-municipales-2023",
+  "url": "https://www.cis.es/es/estudios/encuesta-flash-elecciones-municipales-2023",
+  "tipo": "flash",
+  "ambito": "estatal",
+  "eleccion": "municipales",
+  "anio": 2023,
+  "n": 4549,
+  "suma_pesos": 4549.0,
+  "variable_voto": "INTENCIONMR",
+  "n_partidos": 27,
+  "etiquetas_sin_mapear": [
+   "Adelante",
+   "Los Verdes",
+   "MÉS",
+   "UPL",
+   "Valents",
+   "Valladolid Toma la Palabra"
+  ],
+  "candidatas": [
+   "INTENCIONMALTER",
+   "INTENCIONMR",
+   "INTENCIONMALTERR",
+   "RECUVOTOMR",
+   "INTENCIONM"
+  ]
+ },
+ {
   "estudio": "3411",
   "fecha_trabajo": "08/06/2023",
+  "fecha_trabajo_iso": "2023-06-08",
   "slug": "preelectoral-elecciones-generales-2023",
   "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-2023",
   "tipo": "preelectoral",
@@ -371,6 +849,237 @@
    "INTENCIONGALTER",
    "P9R",
    "INTENCIONG"
+  ]
+ },
+ {
+  "estudio": "3415",
+  "fecha_trabajo": "10/07/2023",
+  "fecha_trabajo_iso": "2023-07-10",
+  "slug": "encuesta-flash-elecciones-generales-2023",
+  "url": "https://www.cis.es/es/estudios/encuesta-flash-elecciones-generales-2023",
+  "tipo": "flash",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2023,
+  "n": 8798,
+  "suma_pesos": 8798.0,
+  "variable_voto": "CORREOEMITIDOINTENCIONGR",
+  "n_partidos": 18,
+  "etiquetas_sin_mapear": [
+   "Existe"
+  ],
+  "candidatas": [
+   "INTENCIONGR",
+   "INTENCIONGALTERR",
+   "CORREOEMITIDOINTENCIONGR",
+   "INTENCIONGALTER",
+   "VOTOCORREOEMITIDO2R"
+  ]
+ },
+ {
+  "estudio": "3416",
+  "fecha_trabajo": "13/07/2023",
+  "fecha_trabajo_iso": "2023-07-13",
+  "slug": "estudio-metodologico-sobre-las-tendencias-de-definicion/decision-de-voto-a-lo-largo-de-la-campana-electoral-de-julio-de-2023",
+  "url": "https://www.cis.es/es/estudios/estudio-metodologico-sobre-las-tendencias-de-definicion/decision-de-voto-a-lo-largo-de-la-campana-electoral-de-julio-de-2023",
+  "tipo": "campana",
+  "ambito": "estatal",
+  "eleccion": "otro",
+  "anio": 2023,
+  "n": 27058,
+  "suma_pesos": 27058.0,
+  "variable_voto": "INTENCIONGALTER",
+  "n_partidos": 22,
+  "etiquetas_sin_mapear": [
+   "España Vaciada",
+   "Existe",
+   "Jaén Merece Más",
+   "No procede",
+   "Por Ávila",
+   "Soria Ya",
+   "UPL"
+  ],
+  "candidatas": [
+   "INTENCIONGALTER",
+   "PARTIDOGUSTAR",
+   "INTENCIONGALTERR",
+   "INTENCIONG",
+   "RECUVOTOGR"
+  ]
+ },
+ {
+  "estudio": "3420",
+  "fecha_trabajo": "01/09/2023",
+  "fecha_trabajo_iso": "2023-09-01",
+  "slug": "barometro-de-septiembre-2023.-postelectoral-elecciones-generales-2023",
+  "url": "https://www.cis.es/es/estudios/barometro-de-septiembre-2023.-postelectoral-elecciones-generales-2023",
+  "tipo": "postelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2023,
+  "n": 10101,
+  "suma_pesos": 10101.0,
+  "variable_voto": "INTENCIONGR",
+  "n_partidos": 18,
+  "etiquetas_sin_mapear": [],
+  "candidatas": [
+   "INTENCIONGR",
+   "INTENCIONGALTERR",
+   "INTENCIONGALTER",
+   "INTENCIONG",
+   "VOTOSIMG"
+  ]
+ },
+ {
+  "estudio": "3500",
+  "fecha_trabajo": "26/04/2024",
+  "fecha_trabajo_iso": "2024-04-26",
+  "slug": "encuesta-flash-situacion-politica-espanola",
+  "url": "https://www.cis.es/es/estudios/encuesta-flash-situacion-politica-espanola",
+  "tipo": "flash",
+  "ambito": "estatal",
+  "eleccion": "otro",
+  "anio": null,
+  "n": 1809,
+  "suma_pesos": 1809.0,
+  "variable_voto": "INTENCIONGR",
+  "n_partidos": 18,
+  "etiquetas_sin_mapear": [],
+  "candidatas": [
+   "INTENCIONG",
+   "SIMPATIA",
+   "CERCANIA",
+   "INTENCIONGR",
+   "RECUVOTOGR"
+  ]
+ },
+ {
+  "estudio": "3458",
+  "fecha_trabajo": "08/05/2024",
+  "fecha_trabajo_iso": "2024-05-08",
+  "slug": "preelectoral-elecciones-al-parlamento-europeo-2024",
+  "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-al-parlamento-europeo-2024",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "europeas",
+  "anio": 2024,
+  "n": 6434,
+  "suma_pesos": 6434.01,
+  "variable_voto": "INTENCIONEU",
+  "n_partidos": 22,
+  "etiquetas_sin_mapear": [
+   "Agrupación de electores ",
+   "Ahora Repúblicas",
+   "Frente Obrero",
+   "La España Olvidada Existe",
+   "Los Verdes",
+   "PCPE",
+   "Partido Feminista de España",
+   "Partido Libertario",
+   "Por una Europa Solidaria",
+   "Teruel Existe"
+  ],
+  "candidatas": [
+   "INTENCIONGR",
+   "INTENCIONEUALTER",
+   "INTENCIONG",
+   "INTENCIONEU",
+   "CERCANIAR"
+  ]
+ },
+ {
+  "estudio": "3460",
+  "fecha_trabajo": "23/05/2024",
+  "fecha_trabajo_iso": "2024-05-23",
+  "slug": "campana-de-las-elecciones-al-parlamento-europeo-2024",
+  "url": "https://www.cis.es/es/estudios/campana-de-las-elecciones-al-parlamento-europeo-2024",
+  "tipo": "campana",
+  "ambito": "estatal",
+  "eleccion": "europeas",
+  "anio": 2024,
+  "n": 7491,
+  "suma_pesos": 7491.0,
+  "variable_voto": "INTENCIONUE",
+  "n_partidos": 21,
+  "etiquetas_sin_mapear": [
+   "Agrupación de electores ",
+   "Ahora Repúblicas",
+   "La España Olvidada Existe",
+   "Por una Europa Solidaria",
+   "Teruel Existe (Aragón Existe)"
+  ],
+  "candidatas": [
+   "INTENCIONUEALTER",
+   "SIMPATIA",
+   "INTENCIONGR",
+   "INTENCIONG",
+   "INTENCIONUE"
+  ]
+ },
+ {
+  "estudio": "3465",
+  "fecha_trabajo": "17/06/2024",
+  "fecha_trabajo_iso": "2024-06-17",
+  "slug": "postelectoral-elecciones-al-parlamento-europeo-2024",
+  "url": "https://www.cis.es/es/estudios/postelectoral-elecciones-al-parlamento-europeo-2024",
+  "tipo": "postelectoral",
+  "ambito": "estatal",
+  "eleccion": "europeas",
+  "anio": 2024,
+  "n": 3010,
+  "suma_pesos": 3010.0,
+  "variable_voto": "INTENCIONG",
+  "n_partidos": 25,
+  "etiquetas_sin_mapear": [
+   "Aliança Catalana",
+   "EQUO",
+   "Frente Obrero",
+   "N.P.",
+   "PCPE",
+   "Por Ávila",
+   "Se Acabó la Fiesta",
+   "Teruel Existe",
+   "UPL"
+  ],
+  "candidatas": [
+   "INTENCIONG",
+   "CERCANIA",
+   "INTENCIONGR",
+   "RECUVOTOGR",
+   "VOTOUEABSTENR"
+  ]
+ },
+ {
+  "estudio": "3513",
+  "fecha_trabajo": "29/04/2025",
+  "fecha_trabajo_iso": "2025-04-29",
+  "slug": "encuesta-flash-sobre-el-apagon-electrico-del-28-de-abril",
+  "url": "https://www.cis.es/es/estudios/encuesta-flash-sobre-el-apagon-electrico-del-28-de-abril",
+  "tipo": "flash",
+  "ambito": "estatal",
+  "eleccion": "otro",
+  "anio": null,
+  "n": 1752,
+  "suma_pesos": 1752.0,
+  "variable_voto": "INTENCIONG",
+  "n_partidos": 24,
+  "etiquetas_sin_mapear": [
+   "Aliança Catalana",
+   "Falange Española de las JONS",
+   "Frente Obrero",
+   "N.P.",
+   "PREPAL",
+   "Partido Libertario",
+   "Se Acabó la Fiesta",
+   "Teruel Existe",
+   "Vía Burgalesa"
+  ],
+  "candidatas": [
+   "INTENCIONG",
+   "SIMPATIA",
+   "CERCANIA",
+   "INTENCIONGR",
+   "RECUVOTOGR"
   ]
  }
 ]

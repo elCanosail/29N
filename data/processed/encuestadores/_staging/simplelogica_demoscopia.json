@@ -1,0 +1,57 @@
+{
+  "encuestas": [
+    {
+      "fuente": "Simple Lógica",
+      "estudio_id": "simplelogica-2023-07-16",
+      "fecha_trabajo": "2023-07-11/2023-07-13",
+      "fecha_publicacion": "2023-07-16",
+      "n": 1600,
+      "metodologia": "telefónica (CATI; 87% de las entrevistas en móviles generados aleatoriamente)",
+      "ambito": "nacional",
+      "eleccion": "generales 2023",
+      "url": "https://www.eldiario.es/politica/psoe-sube-derecha-no-asegurada-mayoria-semana-elecciones-generales_1_10382875.html",
+      "extracto": "Según esta última estimación, el PP ganará las elecciones con el 32,2% de los votos, sin que su porcentaje haya variado respecto al último tracking. [...] El PSOE quedaría en segunda plaza con el 28,6% de los votos, una subida de dos décimas respecto al último tracking. [...] El partido de Santiago Abascal obtendría un 13,9% de los votos que se traducirían en de 34 a 40 diputados [...] La formación de Yolanda Díaz obtendría ahora un 13,8% de los votos y entre 33 y 39 diputados. (...) [Ficha técnica] Encuesta de ámbito nacional, realizada telefónicamente. [...] El error para los datos globales de la muestra de 1.600 entrevistas, asumiendo un muestreo aleatorio simple, es de +2,5 puntos, para un nivel de confianza del 95,5% [...] Las entrevistas contempladas en este informe se realizaron entre el 11 y el 13 de julio de 2023.",
+      "votos": {"PP": 32.2, "PSOE": 28.6, "VOX": 13.9, "SUMAR": 13.8}
+    },
+    {
+      "fuente": "Simple Lógica",
+      "estudio_id": "simplelogica-2024-09-22",
+      "fecha_trabajo": "2024-09-01/2024-09-13",
+      "fecha_publicacion": "2024-09-22",
+      "n": 1032,
+      "metodologia": "telefónica (CATI; 64% de las entrevistas en móviles generados aleatoriamente)",
+      "ambito": "nacional",
+      "eleccion": "próximas generales (escenario post-23J)",
+      "url": "https://www.eldiario.es/politica/pp-mantiene-tres-puntos-ventaja-psoe-sumar-encadena-seis-meses-caida_1_11660602.html",
+      "extracto": "El barómetro de septiembre, elaborado por Simple Lógica para elDiario.es, vuelve a dejar al PP como partido más votado si ahora se celebrasen elecciones generales. Obtendría el 33,5% de los votos, el mismo dato que en julio y junio. [...] [Ficha técnica] Encuesta de ámbito nacional, realizada telefónicamente a una muestra de 1032 individuos con derecho a voto en comicios generales. [...] El error para los datos globales, asumiendo un muestreo aleatorio simple, es de +3,1 puntos, para un nivel de confianza del 95,5% [...] Las entrevistas se realizaron entre el 1 y el 13 de septiembre de 2024.",
+      "votos": {"PP": 33.5, "PSOE": 30.6, "VOX": 10.5, "SUMAR": 7.4, "SALF": 3.8, "PODEMOS": 3.4}
+    },
+    {
+      "fuente": "Demoscopia y Servicios",
+      "estudio_id": "demoscopia-2025-09-08",
+      "fecha_trabajo": "2025-09-02/2025-09-05",
+      "fecha_publicacion": "2025-09-08",
+      "n": 3000,
+      "metodologia": "mixta: panel tabulado + entrevista telefónica asistida por ordenador (CATI)",
+      "ambito": "nacional",
+      "eleccion": "próximas generales",
+      "url": "https://www.libertaddigital.com/espana/politica/2025-09-08/encuesta-esradio-ld-pp-y-vox-tendrian-205-diputados-y-podemos-se-acerca-peligrosamente-a-sumar-7293066/",
+      "extracto": "El PP ganaría las elecciones con un amplio margen sobre el PSOE, según la macroencuesta de Demoscopia y Servicios con 3.000 entrevistas elaborada en exclusiva para el Grupo Libertad Digital. Los populares lograrían un 35,1% de los votos, mientras que el PSOE se quedaría casi nueve puntos más atrás: en el 26,6%. [...] El tercero en discordia sería Vox, que tendría un 16,7% del voto y 56 escaños. [...] Por su parte, en los partidos más a la izquierda de la extrema izquierda del PSOE el margen se estrecha: Sumar se queda en el 6,1% mientras que Podemos, con el 5,1%, se acerca peligrosamente. [...] [Ficha técnica] La encuesta contado con una muestra de 3.000 entrevistas, con un margen global de error del 1,79% para un nivel de confianza del 95%. La selección de los entrevistados ha sido aleatoria con proporcionalidad por sexo, rangos de edad y tamaño poblacional. La metodología ha sido mixta de panel tabulado y llamada telefónica asistida por ordenador [...] El trabajo de campo se ha realizado entre los días 2 y 5 de este mismo mes de septiembre.",
+      "votos": {"PP": 35.1, "PSOE": 26.6, "VOX": 16.7, "SUMAR": 6.1, "PODEMOS": 5.1, "SALF": 1.7, "ERC": 1.6, "EH BILDU": 1.5, "JUNTS": 1.3, "PNV": 1.0, "BNG": 0.7}
+    }
+  ],
+  "exclusiones": [
+    {
+      "fuente": "Demoscopia y Servicios",
+      "motivo": "No se localiza publicación propia de la encuestadora (web o ficha técnica) con notas de prensa de elecciones generales en el periodo; la marca «Más1 / Más1 investigación social demoscópica» no se ha podido verificar en fuentes primarias como denominación de Demoscopia y Servicios (web oficial consultada: demoscopiayservicios.com). Sus sondeos de la Comunitat Valenciana (29/07/2025 y 08/10/2025) quedan fuera por no ser elecciones generales."
+    },
+    {
+      "fuente": "Simple Lógica",
+      "motivo": "Sin encuestas de generales publicadas entre el 13/09/2024 y el 15/10/2026: la última cifra disponible en fuentes es la de septiembre de 2024; a partir de 2026 elDiario.es publica sondeos de Ateneo del Dato, no de Simple Lógica."
+    },
+    {
+      "fuente": "Simple Lógica",
+      "motivo": "Tracking diario del 23J (entregas intermedias, p.ej. 14/07/2023 y 15/07/2023 en elDiario.es): se registra solo la entrega final (16/07/2023) por ser la que incluye ficha técnica con tamaño muestral (1.600) y fechas de campo; el resto de entregas diarias no se han podido cotejar con ficha técnica propia en esta sesión."
+    }
+  ]
+}

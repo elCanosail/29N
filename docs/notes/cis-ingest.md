@@ -137,3 +137,17 @@ python3 pipeline/cis/build_catalog.py                 # catálogo desde fragment
 python3 pipeline/cis/fetch_microdata.py --pause 8     # descarga (reanudable)
 python3 pipeline/cis/normalize.py                     # salidas + validación
 ```
+
+
+## Cierre del barrido (15-10-2026)
+
+Descarga completa: 110 estudios con microdatos, 22 sin enlace publico (1977-1989),
+2 zip corruptos. Normalizacion v2: polls.jsonl ampliado, con `fecha_trabajo_iso`
+anadido (encuestadores ya usa ISO; el merge de Fase 4 lo exige).
+
+Nueva puerta de calidad en normalize.py: si la tabla publicada de un estudio es
+irreproducible en >=50% de sus filas (fallo sistemico: variable o denominador
+equivocado), el estudio va a exclusions.json en vez de contaminar polls.jsonl
+(caso 3382, 18/22 filas, max_delta 23,46 pp). Los fallos dispersos (coaliciones
+por era, p.ej. 3411/23J con 1 fila a 0,83 pp) se quedan en el dataset, flaggados
+en validation.json con su mitigacion documentada.

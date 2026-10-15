@@ -45,8 +45,68 @@
   "motivo": "sin PESO"
  },
  {
+  "estudio": "1636",
+  "slug": "elecciones-al-parlamento-europeo-1987-i-y-relaciones-internacionales",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "1652",
+  "slug": "elecciones-al-parlamento-europeo-1987-ii-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "1673",
+  "slug": "elecciones-al-parlamento-europeo-1987-iii-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "1693",
+  "slug": "postelectoral-elecciones-municipales-y-elecciones-al-parlamento-europeo-1987-en-galicia",
+  "motivo": "sin PESO"
+ },
+ {
   "estudio": "1742",
   "slug": "cuestiones-de-actualidad-intencion-de-voto-en-elecciones-generales",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "1796",
+  "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-i-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "1803",
+  "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-ii-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "1805",
+  "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-iii-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "1806",
+  "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-iv-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "1807",
+  "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-v-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "1809",
+  "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-vi-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "1811",
+  "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-vii-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "1812",
+  "slug": "preelectoral-elecciones-al-parlamento-europeo-1989-viii-",
   "motivo": "sin PESO"
  },
  {
@@ -148,5 +208,146 @@
   "estudio": "2053",
   "slug": "preelectoral-elecciones-generales-1993-i-",
   "motivo": "sin PESO"
+ },
+ {
+  "estudio": "2055",
+  "slug": "barometro-de-abril-1993.-preelectoral-elecciones-generales-1993-ii-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "2060",
+  "slug": "campana-electoral.-elecciones-generales-1993",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "2061",
+  "slug": "postelectoral-elecciones-generales-1993",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "2090",
+  "slug": "preelectoral-elecciones-al-parlamento-europeo-1994-i-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "2103",
+  "slug": "preelectoral-elecciones-al-parlamento-europeo-1994-ii-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "2108",
+  "slug": "barometro-de-junio-1994.-postelectoral-parlamento-europeo-1994",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "2325",
+  "slug": "preelectoral-elecciones-al-parlamento-europeo-1999.-panel-1-fase-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "2350",
+  "slug": "postelectoral-elecciones-al-parlamento-europeo-1999.-panel-2-fase-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "2382",
+  "slug": "preelectoral-elecciones-generales-y-autonomicas-de-andalucia-2000.-panel-1-fase-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "7700",
+  "slug": "preelectoral-y-postelectoral-elecciones-generales-y-autonomicas-de-andalucia-2000.-panel-total-panel-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "2384",
+  "slug": "postelectoral-elecciones-generales-y-autonomicas-de-andalucia-2000.-panel-2-fase-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "2555",
+  "slug": "preelectoral-elecciones-generales-y-autonomicas-de-andalucia-2004",
+  "motivo": "no se detecta variable de voto"
+ },
+ {
+  "estudio": "2559",
+  "slug": "postelectoral-elecciones-generales-y-autonomicas-de-andalucia-2004",
+  "motivo": "no se detecta variable de voto"
+ },
+ {
+  "estudio": "2564",
+  "slug": "preelectoral-elecciones-al-parlamento-europeo-2004",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "2567",
+  "slug": "postelectoral-elecciones-al-parlamento-europeo-2004",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "7708",
+  "slug": "preelectoral-y-postelectoral-elecciones-generales-y-autonomicas-de-andalucia-2008.-panel-total-panel-",
+  "motivo": "no se detecta variable de voto"
+ },
+ {
+  "estudio": "2750",
+  "slug": "preelectoral-elecciones-generales-y-autonomicas-de-andalucia-2008.-panel-1-fase-",
+  "motivo": "no se detecta variable de voto"
+ },
+ {
+  "estudio": "2757",
+  "slug": "postelectoral-elecciones-generales-y-autonomicas-de-andalucia-2008.-panel-2-fase-",
+  "motivo": "no se detecta variable de voto"
+ },
+ {
+  "estudio": "2800",
+  "slug": "preelectoral-elecciones-al-parlamento-europeo-2009.-panel-1-fase-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "2810",
+  "slug": "funcionamiento-de-colegio-administrado-electronicamente-cae-en-las-elecciones-al-parlamento-europeo-2009",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "2807",
+  "slug": "postelectoral-elecciones-al-parlamento-europeo-2009.-panel-2-fase-",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "2915",
+  "slug": "preelectoral-elecciones-generales-2011.-panel-1-fase-",
+  "motivo": "no se detecta variable de voto"
+ },
+ {
+  "estudio": "2920",
+  "slug": "postelectoral-elecciones-generales-2011.-panel-2-fase-",
+  "motivo": "no se detecta variable de voto"
+ },
+ {
+  "estudio": "3022",
+  "slug": "preelectoral-elecciones-al-parlamento-europeo-2014",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "3028",
+  "slug": "postelectoral-elecciones-al-parlamento-europeo-2014",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "3145",
+  "slug": "postelectoral-elecciones-generales-2016",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "3248",
+  "slug": "postelectoral-elecciones-generales-2019",
+  "motivo": "sin PESO"
+ },
+ {
+  "estudio": "3382",
+  "slug": "macroencuesta-sobre-tendencias-en-voto-municipal.-octubre-2022",
+  "url": "https://www.cis.es/es/estudios/macroencuesta-sobre-tendencias-en-voto-municipal.-octubre-2022",
+  "motivo": "validacion sistematica: 18/22 filas fuera de tolerancia (max_delta=23.46) - variable/denominador probablemente equivocado"
  }
 ]
