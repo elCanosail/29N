@@ -1,0 +1,176 @@
+---
+/**
+ * IntervalBand — la banda de intervalo (DESIGN.md §2, el color firma).
+ *
+ * El componente tiene dos modos y NINGUNO inventa datos:
+ *  - 'vacio'   → esqueleto neutro (--papel-3), sin valor alguno. Estado de carga/vacío.
+ *  - 'esquema' → dibuja la FORMA del componente (área p10–p90 en --intervalo,
+ *                mediana en --tinta) SIN valores numéricos, rotulado como esquema.
+ *
+ * Regla dura que respeta: la mediana nunca viaja sin su banda.
+ */
+interface Props {
+  modo?: 'vacio' | 'esquema';
+  /** aria-label con la conclusión cuando haya datos reales; hoy describe el estado */
+  descripcion?: string;
+  /** frase de lectura metodológica obligatoria bajo el gráfico (DESIGN.md §9) */
+  lectura?: string;
+  /** pie mono (modelo, backtest, última encuesta) */
+  pie?: string;
+}
+
+const {
+  modo = 'vacio',
+  descripcion = modo === 'esquema'
+    ? 'Esquema del componente de banda de intervalo: sin datos todavía.'
+    : 'Gráfico sin datos todavía.',
+  lectura,
+  pie,
+} = Astro.props as Props;
+
+// Geometría esquemática y determinista (sin aleatoriedad, sin valores reales).
+const W = 720;
+const H = 300;
+const PAD = { arr: 56, der: 84, sup: 24, inf: 34 };
+
+const xs = Array.from({ length: 13 }, (_, i) => i * 60);
+const escalaY = (v: number) => {
+  const alto = H - PAD.sup - PAD.inf;
+  return PAD.sup + (1 - v / 100) * alto;
+};
+const mediana = xs.map((x) => 46 + 0.026 * x + 6 * Math.sin(x / 115));
+const p10 = mediana.map((v, i) => v - 9 - 3 * Math.sin(i / 2));
+const p90 = mediana.map((v, i) => v + 9 + 3 * Math.cos(i / 2));
+
+const linea = (valores: number[]) =>
+  valores.map((v, i) => `${i === 0 ? 'M' : 'L'}${xs[i]},${escalaY(v).toFixed(1)}`).join(' ');
+
+const areaPath =
+  linea(p90) + ' ' + [...p10].reverse().map((v, i) => `L${xs[xs.length - 1 - i]},${escalaY(v).toFixed(1)}`).join(' ') + ' Z';
+
+const refsY = [25, 50, 75];
+const etiquetaDerecha = [
+  { texto: 'p90', v: p90[p90.length - 1] },
+  { texto: 'mediana', v: mediana[mediana.length - 1] },
+  { texto: 'p10', v: p10[p10.length - 1] },
+];
+---
+
+<figure class="banda">
+  {modo === 'esquema' ? (
+    <svg
+      class="banda__svg"
+      viewBox={`0 0 ${W} ${H}`}
+      width={W}
+      height={H}
+      role="img"
+      aria-label={descripcion}
+    >
+      <!-- gridlines horizontales, sin verticales (DESIGN.md §4 Gráficos) -->
+      {refsY.map((v) => (
+        <line x1={PAD.arr} y1={escalaY(v)} x2={W - PAD.der} y2={escalaY(v)} class="rejilla" />
+      ))}
+      <!-- banda p10–p90: el color firma -->
+      <path d={areaPath} class="area" />
+      <path d={linea(p10)} class="borde-banda" />
+      <path d={linea(p90)} class="borde-banda" />
+      <!-- mediana -->
+      <path d={linea(mediana)} class="mediana" />
+      <!-- etiquetas directas al final de las líneas, no leyenda aparte -->
+      {etiquetaDerecha.map((e) => (
+        <text
+          x={W - PAD.der + 8}
+          y={escalaY(e.v) + 4}
+          class:list={['etiqueta', e.texto === 'mediana' && 'etiqueta--mediana']}
+        >
+          {e.texto}
+        </text>
+      ))}
+      <text x={PAD.arr} y={H - 8} class="eje">fecha de trabajo →</text>
+      <text x={PAD.arr} y={PAD.sup - 10} class="eje">% estimación de voto</text>
+      <text x={W - PAD.der - 4} y={H - 8} class="eje eje--fin" text-anchor="end">
+        esquema · sin valores
+      </text>
+    </svg>
+  ) : (
+    <div class="banda__esqueleto" role="img" aria-label={descripcion}>
+      <span class="skeleton" style="width:100%"></span>
+      <span class="skeleton" style="width:92%"></span>
+      <span class="skeleton" style="width:80%"></span>
+      <span class="skeleton" style="width:88%"></span>
+      <span class="skeleton" style="width:64%"></span>
+    </div>
+  )}
+
+  {pie && <p class="banda__pie mono">{pie}</p>}
+
+  {lectura && <p class="banda__lectura">{lectura}</p>}
+
+  <details class="banda__datos">
+    <summary>Ver los datos de este gráfico en tabla</summary>
+    <p class="nota">
+      Sin datos todavía. La serie se publica cuando el pipeline cierre la fase
+      correspondiente; entonces esta tabla llevará exactamente los mismos números
+      que el gráfico (DESIGN.md §7.5).
+    </p>
+  </details>
+</figure>
+
+<style>
+  .banda {
+    margin: 0 0 var(--s-5);
+    background: var(--papel);
+    border-top: var(--borde-regla);
+    border-bottom: var(--borde-regla);
+    padding: var(--s-4) 0;
+  }
+  .banda__svg { width: 100%; height: auto; display: block; }
+
+  .rejilla { stroke: var(--regla); stroke-width: 1; fill: none; }
+  .area { fill: var(--intervalo); stroke: none; }
+  .borde-banda {
+    fill: none;
+    stroke: var(--intervalo-borde);
+    stroke-width: 1.5;
+    stroke-dasharray: 4 3;
+  }
+  .mediana { fill: none; stroke: var(--tinta); stroke-width: 2; }
+
+  .etiqueta {
+    font-family: var(--f-mono);
+    font-size: 13px;
+    fill: var(--tinta-2);
+  }
+  .etiqueta--mediana { fill: var(--tinta); font-weight: 500; }
+  .eje {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    fill: var(--tinta-3);
+  }
+  .eje--fin { fill: var(--tinta-2); }
+
+  .banda__esqueleto { display: grid; gap: var(--s-3); padding: var(--s-5) 0; }
+  .banda__esqueleto .skeleton { height: 12px; }
+
+  .banda__pie { margin: var(--s-3) 0 0; color: var(--tinta-2); font-size: 0.8125rem; }
+  .banda__lectura {
+    margin: var(--s-2) 0 0;
+    max-width: var(--medida);
+    font-size: var(--t-small);
+    line-height: var(--lh-small);
+    color: var(--tinta-2);
+  }
+
+  .banda__datos { margin-top: var(--s-3); }
+  .banda__datos summary {
+    cursor: pointer;
+    font-size: var(--t-small);
+    font-weight: 600;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    color: var(--enlace);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+</style>

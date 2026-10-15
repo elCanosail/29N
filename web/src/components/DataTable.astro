@@ -1,0 +1,259 @@
+---
+/**
+ * DataTable — el componente rey (DESIGN.md §4 "Tablas").
+ *
+ * Contrato de diseño que este componente garantiza:
+ *  - Fuente clicable y fecha de extracción SIEMPRE encima de la tabla.
+ *  - Cabecera con borde inferior 2 px --tinta, mayúsculas pequeñas.
+ *  - Sin cebra; hover en --papel-3.
+ *  - Cifras tabulares; columnas numéricas alineadas a la derecha.
+ *  - En móvil, cada fila se apila como clave-valor (container query): no se
+ *    amputa ninguna columna.
+ */
+import type { Columna, Celda, CeldaBarra, CeldaDelta, Fila } from '../lib/tipos';
+
+interface Props {
+  id?: string;
+  titulo?: string;
+  columnas?: Columna[];
+  filas?: Fila[];
+  fuente?: { nombre: string; url: string };
+  extraido?: string;
+  nota?: string;
+  /** mensaje de estado vacío que enseña (DESIGN.md §4) */
+  vacio?: string;
+}
+
+const {
+  id,
+  titulo,
+  columnas = [],
+  filas = [],
+  fuente,
+  extraido,
+  nota,
+  vacio,
+} = Astro.props as Props;
+
+const esDelta = (c: Celda): c is CeldaDelta =>
+  typeof c === 'object' && c !== null && 'valor' in c && 'signo' in c;
+
+/** Máximo de una columna de barras, para normalizar anchos. */
+function maxColumna(clave: string, col: Columna): number {
+  if (col.escala) return col.escala;
+  let max = 0;
+  for (const f of filas) {
+    const v = f[clave];
+    if (typeof v === 'object' && v !== null && 'barra' in v) {
+      max = Math.max(max, (v as { barra: CeldaBarra }).barra.pct);
+    }
+  }
+  return max || 1;
+}
+
+const columnasNorm = columnas.map((c) => ({
+  ...c,
+  max: c.tipo === 'barra' ? maxColumna(c.clave, c) : 1,
+}));
+---
+
+<figure class="tabla" id={id}>
+  {titulo && <figcaption class="tabla__titulo">{titulo}</figcaption>}
+
+  {(fuente || extraido) && (
+    <p class="tabla__meta">
+      {fuente && (
+        <span>
+          Fuente: <a href={fuente.url} rel="noopener">{fuente.nombre}</a>
+        </span>
+      )}
+      {extraido && <span class="mono">Extracción: {extraido}</span>}
+    </p>
+  )}
+
+  <div class="tabla__marco">
+    <table>
+      <thead>
+        <tr>
+          {columnasNorm.map((c) => (
+            <th scope="col" class:list={[`c-${c.tipo ?? 'texto'}`, c.alinear === 'der' && 'der']}>
+              {c.etiqueta}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {filas.length === 0 && (
+          <tr class="tabla__vacio-fila">
+            <td colspan={columnasNorm.length}>
+              <span class="estado-vacio">{vacio ?? 'Sin datos todavía.'}</span>
+            </td>
+          </tr>
+        )}
+
+        {filas.map((fila) => (
+          <tr>
+            {columnasNorm.map((c) => {
+              const celda = fila[c.clave];
+              const esBarra =
+                typeof celda === 'object' && celda !== null && 'barra' in (celda as object);
+              const barra = esBarra ? (celda as { barra: CeldaBarra }).barra : null;
+              return (
+                <td
+                  class:list={[
+                    `c-${c.tipo ?? 'texto'}`,
+                    c.alinear === 'der' && 'der',
+                    c.tipo === 'mono' && 'mono',
+                  ]}
+                  data-etiqueta={c.etiqueta}
+                >
+                  {barra ? (
+                    <span class="celda-barra">
+                      <span
+                        class="celda-barra__trazo"
+                        style={`width:${Math.max(0, Math.min(100, (barra.pct / columnasNorm.find((x) => x.clave === c.clave)!.max) * 100))}%;background:${barra.color}`}
+                        aria-hidden="true"
+                      ></span>
+                      <span class="celda-barra__valor mono">
+                        {(celda as { texto?: string }).texto ?? ''}
+                      </span>
+                    </span>
+                  ) : esDelta(celda) ? (
+                    <span class="celda-delta mono">
+                      <span
+                        class:list={[
+                          'celda-delta__signo',
+                          celda.signo === '+' && 'mas',
+                          celda.signo === '-' && 'menos',
+                        ]}
+                        aria-hidden="true"
+                      >
+                        {celda.signo === '+' ? '+' : celda.signo === '-' ? '−' : '='}
+                      </span>
+                      <span class="celda-delta__valor">{celda.valor}</span>
+                      <span class="visualmente-oculto">
+                        {celda.signo === '+' ? 'sube' : celda.signo === '-' ? 'baja' : 'sin cambio'}
+                      </span>
+                    </span>
+                  ) : typeof celda === 'object' && celda !== null && 'texto' in celda ? (
+                    (celda as { texto: string }).texto
+                  ) : (
+                    celda
+                  )}
+                </td>
+              );
+            })}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  {nota && <p class="tabla__nota nota">{nota}</p>}
+</figure>
+
+<style>
+  .tabla {
+    margin: 0 0 var(--s-5);
+    container-type: inline-size;
+  }
+  .tabla__titulo {
+    font-family: var(--f-body);
+    font-weight: 700;
+    font-size: var(--t-h3);
+    margin-bottom: var(--s-2);
+  }
+  /* Sin tarjetas: la tabla no vive en una caja, solo la regla la separa. */
+  .tabla__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-1) var(--s-4);
+    margin: 0 0 var(--s-2);
+    font-size: var(--t-small);
+    color: var(--tinta-2);
+  }
+  .tabla__marco {
+    overflow-x: auto;
+    border-top: var(--borde-tinta);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--t-data);
+    text-align: left;
+  }
+  thead th {
+    font-family: var(--f-body);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--tinta-2);
+    border-bottom: var(--borde-tinta);
+    padding: var(--s-2) var(--s-3) var(--s-2) 0;
+    white-space: nowrap;
+  }
+  tbody td {
+    border-bottom: var(--borde-regla);
+    padding: var(--s-2) var(--s-3) var(--s-2) 0;
+    vertical-align: baseline;
+  }
+  /* hover de fila: única "interacción" de la tabla, sin cebra */
+  tbody tr:hover td { background: var(--papel-3); }
+
+  .c-mono, .mono { font-family: var(--f-mono); }
+  .der { text-align: right; }
+  thead th.der, tbody td.der { text-align: right; padding-right: 0; }
+
+  .celda-barra {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: var(--s-2);
+  }
+  .celda-barra__trazo {
+    display: block;
+    height: 10px;
+    border-radius: 2px;
+    min-width: 2px;
+  }
+  .celda-barra__valor { text-align: right; }
+
+  .celda-delta { display: inline-flex; gap: 0.35em; align-items: baseline; }
+  /* El color marca SOLO el signo; el valor va siempre en tinta (DESIGN.md §7.2) */
+  .celda-delta__signo.mas { color: var(--ok); }
+  .celda-delta__signo.menos { color: var(--alerta); }
+  .celda-delta__valor { color: var(--tinta); }
+
+  .tabla__nota { margin-top: var(--s-2); }
+  .tabla__vacio-fila td { padding: var(--s-4) 0; }
+
+  /* --- Móvil: filas clave-valor, sin amputar columnas (DESIGN.md §8) ----- */
+  @container (max-width: 620px) {
+    .tabla__marco { overflow-x: visible; }
+    thead { display: none; }
+    table, tbody, tr, td { display: block; width: 100%; }
+    tbody tr {
+      border-bottom: var(--borde-tinta);
+      padding: var(--s-3) 0;
+    }
+    tbody td {
+      border: 0;
+      padding: 0 0 var(--s-1);
+      display: grid;
+      grid-template-columns: minmax(120px, 40%) 1fr;
+      gap: var(--s-2);
+      text-align: left;
+    }
+    tbody td::before {
+      content: attr(data-etiqueta);
+      font-family: var(--f-body);
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--tinta-2);
+    }
+    tbody td.der { text-align: left; }
+  }
+</style>

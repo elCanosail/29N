@@ -1,0 +1,240 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import DataTable from '../../components/DataTable.astro';
+import type { Columna } from '../../lib/tipos';
+
+/**
+ * Long-form: prosa de 68 ch + notas al margen en mono (DESIGN.md §5 "Metodología").
+ * Cada bloque es una fila del pliego: texto a la izquierda, nota al margen a la derecha.
+ */
+interface Bloque {
+  id: string;
+  titulo: string;
+  parrafos: string[];
+  nota?: string;
+  pendiente?: string;
+}
+
+const bloques: Bloque[] = [
+  {
+    id: 'compromisos',
+    titulo: 'Los cinco compromisos',
+    parrafos: [
+      'Este proyecto publica intervalos, no titulares. Todo dato de la web es trazable a su fuente y clicable; el error del backtest se publica sin maquillaje; ninguna predicción viaja como cifra puntual; las sumas provinciales cuadran con la predicción estatal; y cada encuesta que no pasa validación queda documentada en un log público.',
+      'El diseño de esta web replica esos compromisos: si un número está mal, tiene que verse mal.',
+    ],
+    nota: 'Origen: README.md → «Compromisos metodológicos» (1–5).',
+  },
+  {
+    id: 'fuentes',
+    titulo: 'Fuentes',
+    parrafos: [
+      'Tres familias de fuente. El CIS aporta la serie preelectoral desde 1979 con microdatos abiertos. El Ministerio del Interior aporta el escrutinio provincial y municipal por candidatura desde 1977. Los encuestadores privados (GAD3, 40dB, Sigma Dos, NC Report y otros) aportan estimaciones que se transcriben siempre desde su ficha técnica publicada.',
+      'Ninguna encuesta entra sin URL de ficha técnica verificable.',
+    ],
+    nota: 'Contrato: CONTRIBUTING.md → «Toda encuesta entra con la URL de su ficha técnica, sin excepciones».',
+    pendiente: 'Catálogo completo de estudios: Fase 1.',
+  },
+  {
+    id: 'normalizacion',
+    titulo: 'Normalización',
+    parrafos: [
+      'Los identificadores de partido son un diccionario propio con aliases: fusiones, refundaciones y candidaturas históricas (Podemos–IU–Alianza Verde–Sumar, PSC frente a PSOE, Alianza Popular–PP). Los ámbitos estatal y autonómico se mantienen separados.',
+      'Las series se ordenan por fecha de fin de trabajo de campo, no por fecha de publicación: es la fecha en la que el dato existió.',
+    ],
+    nota: 'Campos: `fieldwork_end`, `published`, `n`, ámbito, metodología (CATI/CAWI/mixta).',
+    pendiente: 'Diccionario v1: Fase 1.',
+  },
+  {
+    id: 'modelo',
+    titulo: 'Modelo',
+    parrafos: [
+      'Una serie estatal ponderada por partido (peso de recencia, tamaño muestral y el histórico de error de cada encuestador) alimenta un forecast con TimesFM. Después, una desagregación provincial por swing apoya la predicción en los resultados históricos provinciales, y el reparto de escaños se simula con D\'Hondt sobre 10 000 ejecuciones.',
+      'La salida es un JSON por provincia con mediana e intervalo. La web no calcula nada: solo lee.',
+    ],
+    nota: 'TimesFM 3.0.2 · checkpoint 2.5-200m PyTorch · CPU. Los quantiles devuelven 10 columnas (el punto es la 5.ª).',
+    pendiente: 'Hiperparámetros definitivos y JSON de salida: Fases 4–5.',
+  },
+  {
+    id: 'validacion',
+    titulo: 'Validación (backtest)',
+    parrafos: [
+      'El modelo se prueba contra elecciones ya celebradas y el error medio absoluto por partido se publica aquí, sin redondear a favor. Si el backtest da ±3 puntos, la interfaz no muestra decimales que el modelo no justifica.',
+    ],
+    nota: 'Elecciones de backtest previstas: 2011, 2015, 2016, A-2019, N-2019, 2023.',
+    pendiente: 'Tabla de MAE por partido y por provincia: Fase 4.',
+  },
+  {
+    id: 'errores',
+    titulo: 'Errores conocidos y límites',
+    parrafos: [
+      'El modelo no conoce el futuro y no lo finge. Las provincias con pocas encuestas propias tendrán intervalos anchos: se publican tal cual, porque el ancho del intervalo es información, no un defecto que esconder.',
+      'Cuando no hay datos suficientes lo decimos con esas palabras; no escribimos «próximamente».',
+    ],
+    nota: 'Principio editorial: ninguna cifra crítica vive solo en un tooltip o en una animación.',
+  },
+  {
+    id: 'exclusiones',
+    titulo: 'Log de exclusiones',
+    parrafos: [
+      'Una encuesta que no pasa validación no desaparece: se documenta con su motivo. El log se renderiza como una tabla corriente, sin maquillaje, porque es documentación y no marketing.',
+    ],
+    nota: 'Marcas de exclusión: muestra insuficiente (n < 500), ficha técnica no verificable, campos incompletos.',
+    pendiente: 'Primeras entradas: Fase 3.',
+  },
+  {
+    id: 'licencia',
+    titulo: 'Licencia y reutilización',
+    parrafos: [
+      'El código se publica bajo licencia MIT. Los datos pertenecen a sus fuentes —CIS, Ministerio del Interior y encuestadores— y este proyecto los procesa y enlaza citando siempre el origen. La reutilización es bienvenida con atribución a las fuentes originales y a la metodología aquí descrita.',
+    ],
+    nota: 'Repo: github.com/elCanosail/29N · Licencia: MIT (LICENSE).',
+  },
+];
+
+const columnasExclusiones: Columna[] = [
+  { clave: 'id', etiqueta: 'ID encuesta', tipo: 'mono' },
+  { clave: 'encuestador', etiqueta: 'Encuestador' },
+  { clave: 'motivo', etiqueta: 'Motivo de exclusión' },
+  { clave: 'fecha', etiqueta: 'Registrado', tipo: 'mono' },
+];
+---
+
+<Base
+  titulo="Metodología"
+  descripcion="Metodología de 29N: fuentes, normalización, modelo TimesFM, validación y log público de exclusiones."
+>
+  <div class="contenedor">
+    <Breadcrumbs items={[{ label: 'Metodología' }]} />
+
+    <header class="cabecera-pagina">
+      <p class="eyebrow entrada">Método · TimesFM · D'Hondt</p>
+      <h1 class="medida entrada entrada--1">Metodología</h1>
+      <p class="titular-intro entrada entrada--2">
+        Cómo se construye cada cifra de esta web, qué se publica y qué se excluye.
+        Si algo aquí no se puede reproducir, es un error del proyecto.
+      </p>
+    </header>
+
+    <!-- Índice: pegajoso en escritorio, details nativo en móvil (DESIGN.md §5) -->
+    <details class="indice-movil">
+      <summary>Índice de la metodología</summary>
+      <ol>
+        {bloques.map((b) => <li><a href={`#${b.id}`}>{b.titulo}</a></li>)}
+      </ol>
+    </details>
+
+    <div class="pliego">
+      <nav class="indice" aria-label="Índice de la metodología">
+        <p class="eyebrow">Índice</p>
+        <ol>
+          {bloques.map((b) => <li><a href={`#${b.id}`}>{b.titulo}</a></li>)}
+        </ol>
+      </nav>
+
+      <div class="pliego__cuerpo">
+        {bloques.map((b) => (
+          <section class="bloque" id={b.id}>
+            <div class="bloque__texto">
+              <h2>{b.titulo}</h2>
+              {b.parrafos.map((p) => <p>{p}</p>)}
+              {b.pendiente && (
+                <p class="nota">
+                  <span class="pendiente">en construcción — {b.pendiente}</span>
+                </p>
+              )}
+
+              {b.id === 'exclusiones' && (
+                <DataTable
+                  id="tabla-exclusiones"
+                  columnas={columnasExclusiones}
+                  filas={[]}
+                  vacio="El log está vacío porque aún no hay encuestas procesadas. Se publicará desde la Fase 3, con motivo explícito por entrada."
+                />
+              )}
+
+              {b.id === 'licencia' && (
+                <p class="descarga-licencia">
+                  <a href="/">Volver a la portada</a>
+                </p>
+              )}
+            </div>
+
+            {b.nota && (
+              <aside class="nota-margen bloque__nota">
+                <span class="bloque__nota-marca" aria-hidden="true">§</span> {b.nota}
+              </aside>
+            )}
+          </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .cabecera-pagina { padding-block: var(--s-5) var(--s-6); }
+
+  .indice-movil { display: none; border-top: var(--borde-tinta); border-bottom: var(--borde-regla); padding-block: var(--s-3); }
+  .indice-movil summary { font-weight: 600; cursor: pointer; min-height: 44px; display: flex; align-items: center; }
+  .indice-movil ol { margin: var(--s-2) 0 0; padding-left: 1.2em; line-height: 1.9; }
+
+  .pliego {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: var(--s-6);
+    align-items: start;
+    border-top: var(--borde-tinta);
+    padding-top: var(--s-5);
+  }
+
+  .indice { position: sticky; top: calc(var(--header-h) + var(--s-3)); }
+  .indice ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+    font-size: var(--t-small);
+    counter-reset: idx;
+  }
+  .indice li { counter-increment: idx; }
+  .indice a { color: var(--tinta-2); text-decoration: none; }
+  .indice a::before {
+    content: counter(idx) '. ';
+    font-family: var(--f-mono);
+    font-size: 0.8em;
+    color: var(--tinta-3);
+  }
+  .indice a:hover { color: var(--tinta); text-decoration: underline; }
+
+  /* Cada bloque: prosa de 68 ch + nota al margen de 200–280 px */
+  .bloque {
+    display: grid;
+    grid-template-columns: minmax(0, var(--medida)) var(--nota-margen);
+    gap: var(--s-6);
+    align-items: start;
+    padding-bottom: var(--s-6);
+    margin-bottom: var(--s-6);
+    border-bottom: var(--borde-regla);
+  }
+  .bloque:last-child { border-bottom: 0; }
+  .bloque__texto h2 { scroll-margin-top: calc(var(--header-h) + var(--s-4)); }
+  .bloque__nota { align-self: start; }
+  .bloque__nota-marca { color: var(--tinta-3); }
+
+  .descarga-licencia { font-size: var(--t-small); }
+
+  @media (max-width: 1080px) {
+    .indice { display: none; }
+    .indice-movil { display: block; margin-bottom: var(--s-5); }
+    .pliego { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 900px) {
+    .bloque { grid-template-columns: 1fr; gap: var(--s-3); }
+    /* En móvil la nota deja de ser marginal y pasa a ser nota al pie */
+    .bloque__nota { max-width: var(--medida); }
+  }
+</style>

@@ -1,0 +1,172 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import DataTable from '../../components/DataTable.astro';
+import IntervalBand from '../../components/IntervalBand.astro';
+import MapaProvincial from '../../components/MapaProvincial.astro';
+import type { Columna } from '../../lib/tipos';
+
+const columnasProvincias: Columna[] = [
+  { clave: 'provincia', etiqueta: 'Provincia' },
+  { clave: 'escanos', etiqueta: 'Escaños' },
+  { clave: 'mediana', etiqueta: 'Mediana', tipo: 'mono', alinear: 'der' },
+  { clave: 'p10', etiqueta: 'p10', tipo: 'mono', alinear: 'der' },
+  { clave: 'p90', etiqueta: 'p90', tipo: 'mono', alinear: 'der' },
+  { clave: 'error', etiqueta: 'MAE backtest', tipo: 'mono', alinear: 'der' },
+];
+
+const limites = [
+  'Qué predecimos: intención de voto por provincia el 29N, con intervalos del 90 %.',
+  'Qué no predecimos: el escaño exacto de cada partido, ni el resultado de una provincia sin encuestas propias.',
+  'Lo que el modelo no sabe, no se rellena: se publica el intervalo y el error del backtest.',
+];
+---
+
+<Base
+  titulo="Predicción 29N"
+  descripcion="Predicción provincial del 29N con TimesFM: intervalos del 90 % por provincia, error del backtest publicado y tabla paralela accesible."
+>
+  <div class="contenedor">
+    <Breadcrumbs items={[{ label: 'Predicción 29N' }]} />
+
+    <header class="cabecera-pagina">
+      <p class="eyebrow entrada">Predicción provincial · TimesFM</p>
+      <h1 class="medida entrada entrada--1">Predicción 29N</h1>
+    </header>
+
+    <!-- El encabezado no vende: el mapa es la recompensa, no el gancho -->
+    <section class="limites" aria-labelledby="limites-titulo">
+      <h2 id="limites-titulo">Qué predecimos y qué no</h2>
+      <ul class="limites__lista">
+        {limites.map((l) => <li>{l}</li>)}
+      </ul>
+      <p class="nota">
+        Modelo TimesFM v2, desagregación provincial por swing y reparto D'Hondt sobre
+        10 000 simulaciones. Todos los números de esta página los calcula el pipeline;
+        la web solo los lee (<a href="/metodologia/#modelo">ver metodología</a>).
+      </p>
+    </section>
+
+    <section class="controles" aria-labelledby="controles-titulo">
+      <h2 class="visualmente-oculto" id="controles-titulo">Controles del mapa</h2>
+      <div class="campo">
+        <label for="p-nivel">Nivel de agregación</label>
+        <select id="p-nivel" disabled>
+          <option>Provincia</option>
+          <option>Autonomía</option>
+          <option>Estatal</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="p-partido">Partido</label>
+        <select id="p-partido" disabled><option>—</option></select>
+      </div>
+      <p class="nota controles__aviso">
+        Controles inactivos hasta la <strong>Fase 5</strong>, cuando exista el JSON de predicción.
+        <span class="pendiente">en construcción — dato disponible en Fase 5</span>
+      </p>
+    </section>
+
+    <section class="panel-doble" aria-labelledby="mapa-titulo">
+      <div class="panel-mapa">
+        <h2 id="mapa-titulo">Mapa provincial</h2>
+        <MapaProvincial />
+      </div>
+
+      <aside class="panel-provincia" aria-labelledby="provincia-titulo">
+        <p class="eyebrow">Provincia seleccionada</p>
+        <h2 id="provincia-titulo" class="panel-provincia__nombre">
+          Ninguna <span class="pendiente">Fase 5</span>
+        </h2>
+
+        <IntervalBand
+          modo="esquema"
+          descripcion="Esquema de la banda de predicción provincial: mediana y intervalo del 90 %. Sin datos todavía."
+          pie="TimesFM v2 · Backtest provincial MAE: [en construcción — Fase 4]"
+          lectura="Con los datos disponibles, el intervalo del 90 % es [en construcción — Fase 4] para [en construcción — Fase 4]. El modelo no afina más: aquí está el error del backtest →"
+        />
+
+        <p class="mono panel-provincia__pie">
+          Serie histórica real + banda de predicción. La mediana nunca viaja sola.
+        </p>
+        <p><a href="/metodologia/#validacion">Cómo se valida este intervalo →</a></p>
+      </aside>
+    </section>
+
+    <!-- El mapa nunca es el único camino al dato (DESIGN.md §7.3) -->
+    <section class="seccion--compacta" aria-labelledby="tabla-paralela-titulo">
+      <h2 id="tabla-paralela-titulo">Tabla paralela de provincias</h2>
+      <p class="medida nota">
+        Los mismos datos del mapa, en una tabla seleccionable y ordenable. El mapa siempre
+        tiene un equivalente accesible.
+      </p>
+      <DataTable
+        id="tabla-provincias"
+        columnas={columnasProvincias}
+        filas={[]}
+        extraido="pendiente — Fase 5"
+        vacio="Aún no hay predicción. Esta tabla tendrá las 52 provincias con su mediana, su intervalo del 90 % y el MAE de backtest de esa provincia."
+        nota="Coherencia verificada: la suma de las predicciones provinciales cuadra con la predicción estatal (compromiso metodológico nº 4)."
+      />
+    </section>
+  </div>
+</Base>
+
+<style>
+  .cabecera-pagina { padding-block: var(--s-5) var(--s-4); }
+
+  .limites {
+    background: var(--papel-2);
+    border-top: var(--borde-tinta);
+    border-bottom: var(--borde-regla);
+    padding: var(--s-5) var(--s-4);
+    margin-bottom: var(--s-6);
+  }
+  .limites__lista {
+    margin: 0 0 var(--s-3);
+    padding-left: 1.2em;
+    max-width: var(--medida);
+    line-height: 1.7;
+  }
+  .limites .nota { max-width: var(--medida); }
+
+  .controles {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: var(--s-4);
+    padding-bottom: var(--s-4);
+    border-bottom: var(--borde-regla);
+    margin-bottom: var(--s-6);
+  }
+  .controles .campo { min-width: 220px; margin-bottom: 0; }
+  .controles__aviso { flex: 1 1 320px; margin: 0; }
+
+  .panel-doble {
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* 60 % mapa / 40 % panel */
+    gap: var(--s-6);
+    align-items: start;
+    padding-bottom: var(--s-6);
+  }
+  .panel-mapa h2, .panel-provincia h2 { font-size: 1.3rem; }
+
+  /* Nivel 1 de elevación: solo el panel de provincia es una "caja" (DESIGN.md §6) */
+  .panel-provincia {
+    background: var(--papel-2);
+    border: var(--borde-regla);
+    border-radius: var(--radio);
+    padding: var(--s-4);
+    position: sticky;
+    top: calc(var(--header-h) + var(--s-3));
+  }
+  .panel-provincia__nombre { margin-bottom: var(--s-3); }
+  .panel-provincia__pie { margin: var(--s-3) 0 0; font-size: 0.8125rem; color: var(--tinta-2); }
+  .panel-provincia :global(.banda) { background: transparent; }
+
+  @media (max-width: 980px) {
+    .panel-doble { grid-template-columns: 1fr; }
+    /* En móvil: mapa arriba a alto completo, panel debajo (no modal) */
+    .panel-provincia { position: static; }
+  }
+</style>

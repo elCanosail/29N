@@ -1,0 +1,115 @@
+---
+/**
+ * SourceCard — ficha de fuente (DESIGN.md §4 "Ficha de encuesta", §6 nivel 1).
+ * Es el objeto que hace visible el compromiso nº1 del proyecto:
+ * todo dato es trazable a su fuente y clicable.
+ */
+interface Campo { clave: string; valor: string }
+interface Props {
+  id: string;
+  titulo: string;
+  url?: string;
+  campos?: Campo[];
+  estado?: 'verificada' | 'excluida' | 'pendiente';
+  /** obligatorio si estado = 'excluida': el log de exclusiones es público */
+  motivo?: string;
+}
+
+const {
+  id,
+  titulo,
+  url,
+  campos = [],
+  estado = 'pendiente',
+  motivo,
+} = Astro.props as Props;
+
+const etiquetaEstado = {
+  verificada: 'Validación superada',
+  excluida: 'Encuesta excluida',
+  pendiente: 'Pendiente de validación',
+}[estado];
+---
+
+<article class:list={['ficha', `ficha--${estado}`]}>
+  <header class="ficha__cabecera">
+    <p class="ficha__id mono">{id}</p>
+    <h3 class="ficha__titulo">{titulo}</h3>
+    <p class:list={['ficha__estado', estado === 'verificada' && 'ok', estado === 'excluida' && 'alerta']}>
+      <span aria-hidden="true">{estado === 'verificada' ? '●' : estado === 'excluida' ? '▲' : '○'}</span>
+      {etiquetaEstado}
+    </p>
+  </header>
+
+  {campos.length > 0 && (
+    <dl class="ficha__campos">
+      {campos.map((c) => (
+        <>
+          <dt>{c.clave}</dt>
+          <dd>{c.valor}</dd>
+        </>
+      ))}
+    </dl>
+  )}
+
+  {estado === 'excluida' && motivo && (
+    <p class="banner-alerta ficha__motivo">
+      <strong>Motivo de exclusión:</strong> {motivo}{' '}
+      <a href="/metodologia/#exclusiones">Ver log de exclusiones completo</a>
+    </p>
+  )}
+
+  <footer class="ficha__pie">
+    {url ? (
+      <a class="ficha__enlace" href={url} rel="noopener">Ver ficha técnica →</a>
+    ) : (
+      <span class="ficha__enlace ficha__enlace--sin">
+        Ficha técnica: <span class="pendiente">en construcción — dato disponible en Fase 3</span>
+      </span>
+    )}
+  </footer>
+</article>
+
+<style>
+  .ficha {
+    background: var(--papel-2);
+    border: var(--borde-regla);
+    border-radius: var(--radio);
+    padding: var(--s-4);
+    margin: 0 0 var(--s-4);
+  }
+  /* Estado de exclusión: el error se ve igual de cuidado que el acierto */
+  .ficha--excluida { border-left: 4px solid var(--alerta); }
+
+  .ficha__cabecera { margin-bottom: var(--s-3); }
+  .ficha__id { margin: 0 0 var(--s-1); color: var(--tinta-2); font-size: 0.8125rem; }
+  .ficha__titulo { margin: 0 0 var(--s-2); font-size: 1.15rem; }
+  .ficha__estado {
+    display: inline-flex;
+    gap: 0.4em;
+    align-items: center;
+    margin: 0;
+    font-size: var(--t-small);
+    font-weight: 600;
+    color: var(--tinta-2);
+  }
+  .ficha__estado.ok { color: var(--ok); }
+  .ficha__estado.alerta { color: var(--alerta); }
+
+  .ficha__campos {
+    display: grid;
+    grid-template-columns: minmax(140px, max-content) 1fr;
+    gap: var(--s-1) var(--s-4);
+    margin: 0 0 var(--s-3);
+    font-size: var(--t-data);
+    border-top: var(--borde-regla);
+    padding-top: var(--s-3);
+  }
+  .ficha__campos dt { color: var(--tinta-2); font-size: var(--t-small); }
+  .ficha__campos dd { margin: 0; font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+
+  .ficha__motivo { margin: 0 0 var(--s-3); }
+  .ficha__pie { border-top: var(--borde-regla); padding-top: var(--s-2); font-size: var(--t-small); }
+  .ficha__enlace { font-weight: 600; }
+  .ficha__enlace--sin { color: var(--tinta-2); }
+</style>

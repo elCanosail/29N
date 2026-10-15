@@ -1,0 +1,23 @@
+{
+  "name": "29n-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Web pública de 29N — histórico de encuestas, resultados oficiales y predicción provincial (Astro 5, salida estática).",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@fontsource-variable/newsreader": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/source-sans-3": "^5.3.1",
+    "astro": "^5.18.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "typescript": "^5.9.3"
+  }
+}

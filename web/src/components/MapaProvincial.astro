@@ -1,0 +1,89 @@
+---
+/**
+ * MapaProvincial — esquema del coroplético (DESIGN.md §4 "Mapa provincial").
+ *
+ * En este scaffold NO se dibuja una silueta provincial real (no la tenemos y
+ * falsearla sería deshonesto): se dibuja la RETÍCULA del componente, con la
+ * trama de rayado reservada a "sin predicción válida".
+ * El mapa nunca es el único camino al dato: en /prediccion/ hay tabla paralela.
+ */
+const { descripcion = 'Esquema del componente de mapa provincial. Sin datos todavía.' } =
+  Astro.props as { descripcion?: string };
+
+// Retícula 6 × 4 (24 celdas). Las marcadas con `trama` ilustran el rayado de
+// "sin predicción válida" definido en DESIGN.md §4.
+const celdas = Array.from({ length: 24 }, (_, i) => ({
+  x: (i % 6) * 62 + 4,
+  y: Math.floor(i / 6) * 58 + 4,
+  trama: [3, 9, 14, 22].includes(i),
+}));
+
+const cortes = ['< 15 %', '15–20 %', '20–25 %', '25–30 %', '≥ 30 %'];
+---
+
+<figure class="mapa">
+  <svg
+    class="mapa__svg"
+    viewBox="0 0 376 244"
+    role="img"
+    aria-label={descripcion}
+  >
+    <defs>
+      <pattern id="sin-prediccion" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="7" height="7" fill="var(--papel-3)"></rect>
+        <line x1="0" y1="0" x2="0" y2="7" stroke="var(--regla)" stroke-width="2"></line>
+      </pattern>
+    </defs>
+    {celdas.map((c) => (
+      <rect
+        x={c.x}
+        y={c.y}
+        width="54"
+        height="50"
+        rx="2"
+        fill={c.trama ? 'url(#sin-prediccion)' : 'var(--papel-2)'}
+        stroke="var(--regla)"
+        stroke-width="1"
+      ></rect>
+    ))}
+    <rect x="2" y="2" width="372" height="240" fill="none" stroke="var(--tinta-2)" stroke-width="1.5"></rect>
+  </svg>
+
+  <figcaption class="mapa__pie">
+    <p class="eyebrow">Leyenda · cortes exactos</p>
+    <ul class="mapa__cortes">
+      {cortes.map((c) => <li class="mono">{c}</li>)}
+      <li class="mapa__sin mono"><span class="mapa__muestra" aria-hidden="true"></span> Sin predicción válida</li>
+    </ul>
+    <p class="nota">
+      Esquema del componente, sin valores. La silueta provincial real y los cortes
+      se publican con la predicción (<strong>Fase 5</strong>).
+      <span class="pendiente">en construcción — dato disponible en Fase 5</span>
+    </p>
+  </figcaption>
+</figure>
+
+<style>
+  .mapa { margin: 0; }
+  .mapa__svg { width: 100%; height: auto; display: block; }
+  .mapa__pie { margin-top: var(--s-3); }
+  .mapa__cortes {
+    list-style: none;
+    margin: 0 0 var(--s-2);
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-1) var(--s-4);
+    font-size: 0.8125rem;
+    color: var(--tinta-2);
+  }
+  .mapa__sin { display: inline-flex; align-items: center; gap: var(--s-2); }
+  .mapa__muestra {
+    display: inline-block;
+    width: 18px;
+    height: 12px;
+    background: var(--papel-3);
+    border: 1px solid var(--regla);
+    background-image: repeating-linear-gradient(45deg, var(--regla) 0 2px, transparent 2px 5px);
+  }
+</style>

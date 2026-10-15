@@ -1,0 +1,161 @@
+---
+import Base from '../layouts/Base.astro';
+import IntervalBand from '../components/IntervalBand.astro';
+
+const compromisos = [
+  'Todo dato de la web es trazable a su fuente y clicable.',
+  'El error del backtest se publica, sin maquillaje.',
+  'Las predicciones llevan intervalos, nunca cifras puntuales.',
+  'Las sumas provinciales cuadran con la predicción estatal.',
+  'Log de exclusiones público: una encuesta que no valida se documenta.',
+];
+---
+
+<Base titulo="Portada">
+  <!-- 1. Cabecera editorial: titular + la "una" del día --------------------- -->
+  <section class="contenedor portada">
+    <p class="eyebrow entrada">Datos electorales de España · 1977–2026</p>
+
+    <h1 class="display medida entrada entrada--1">
+      Todo el dato electoral español,<br />con intervalos y no titulares.
+    </h1>
+
+    <p class="titular-intro medida entrada entrada--2">
+      Histórico completo de encuestas (CIS y encuestadores privados), resultados
+      oficiales de todas las generales desde 1977 y una predicción provincial
+      auditable. El valor es el método, no el resultado.
+    </p>
+
+    <p class="portada__una entrada entrada--3">
+      <a href="/prediccion/">
+        Última predicción:
+        <span class="pendiente">en construcción — dato disponible en Fase 4</span> →
+      </a>
+    </p>
+  </section>
+
+  <!-- 2. Bloque héroe de datos --------------------------------------------- -->
+  <section class="contenedor seccion seccion--compacta" aria-labelledby="heroe-titulo">
+    <p class="eyebrow" id="heroe-titulo">Serie estatal de intención de voto</p>
+    <IntervalBand
+      modo="esquema"
+      descripcion="Esquema del gráfico de intención de voto estatal con bandas de intervalo. Sin datos todavía."
+      pie="Modelo: TimesFM v2 · Backtest MAE: [en construcción — Fase 4] · Última encuesta: [en construcción — Fase 3]"
+      lectura="Cuando el pipeline publique la serie, este gráfico mostrará la mediana junto a su banda del 90 %: en 29N la incertidumbre no es una letra pequeña."
+    />
+  </section>
+
+  <!-- 3. Tres entradas asimétricas (2/3 + 1/3, escalonadas) ---------------- -->
+  <section class="contenedor seccion entradas" aria-labelledby="entradas-titulo">
+    <h2 class="visualmente-oculto" id="entradas-titulo">Secciones del proyecto</h2>
+
+    <a class="entrada-link entrada-link--a" href="/encuestas/">
+      <p class="eyebrow">Explorador de encuestas</p>
+      <h3>Qué se ha preguntado, cuándo y con qué muestra</h3>
+      <p class="entrada-link__texto">
+        Índice de encuestas preelectorales y barómetros, cada una con su ficha
+        técnica enlazada y su estado de validación.
+      </p>
+      <p class="mono entrada-link__dato">
+        N = <span class="pendiente">en construcción — Fase 1</span> encuestas indexadas
+      </p>
+    </a>
+
+    <a class="entrada-link entrada-link--b" href="/resultados/">
+      <p class="eyebrow">Resultados 1977–2023</p>
+      <h3>Escrutinio oficial, provincia a provincia</h3>
+      <p class="entrada-link__texto">
+        Escaños y porcentajes de cada general, con comparador entre dos elecciones.
+      </p>
+      <div class="entrada-link__hueco" aria-hidden="true">
+        <span class="skeleton" style="width:100%"></span>
+        <span class="skeleton" style="width:72%"></span>
+      </div>
+      <p class="mono entrada-link__dato">
+        Sparkline <span class="pendiente">en construcción — Fase 2</span>
+      </p>
+    </a>
+
+    <a class="entrada-link entrada-link--c" href="/prediccion/">
+      <p class="eyebrow">Predicción provincial 29N</p>
+      <h3>Qué predecimos y qué no</h3>
+      <p class="entrada-link__texto">
+        Intervalos del 90 % por provincia, con el error del backtest publicado al lado.
+        Sin cifras puntuales, nunca.
+      </p>
+      <p class="mono entrada-link__dato">
+        Mapa provincial <span class="pendiente">en construcción — Fase 5</span>
+      </p>
+    </a>
+  </section>
+
+  <!-- 4. Banda de metodología: la firma de confianza ----------------------- -->
+  <section class="metodologia" aria-labelledby="metodologia-titulo">
+    <div class="contenedor metodologia__inner">
+      <p class="eyebrow" id="metodologia-titulo">Compromisos metodológicos</p>
+      <ol class="metodologia__lista">
+        {compromisos.map((c) => <li>{c}</li>)}
+      </ol>
+      <p><a href="/metodologia/">Leer la metodología completa y el log de exclusiones →</a></p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .portada { padding-block: var(--s-6) var(--s-5); }
+  .portada__una {
+    font-family: var(--f-titular);
+    font-size: 1.15rem;
+    margin: var(--s-5) 0 0;
+    padding-top: var(--s-3);
+    border-top: var(--borde-regla);
+    max-width: var(--medida);
+  }
+  .portada__una a { color: var(--enlace); }
+
+  /* --- Entradas asimétricas: ni grid de tarjetas ni cajas --------------- */
+  .entradas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-6) var(--s-6);
+    border-top: var(--borde-tinta);
+    padding-top: var(--s-6);
+  }
+  .entrada-link {
+    display: block;
+    color: var(--tinta);
+    text-decoration: none;
+    padding-top: var(--s-3);
+    border-top: var(--borde-regla);
+  }
+  .entrada-link--a { grid-column: 1 / span 2; }
+  .entrada-link--b { grid-column: 3; margin-top: var(--s-6); }
+  .entrada-link--c { grid-column: 2 / span 2; margin-top: var(--s-7); }
+  .entrada-link h3 { margin-bottom: var(--s-2); font-family: var(--f-titular); font-size: 1.4rem; }
+  .entrada-link:hover h3 { text-decoration: underline; text-underline-offset: 0.18em; }
+  .entrada-link__texto { font-size: var(--t-small); line-height: var(--lh-small); color: var(--tinta-2); max-width: 46ch; }
+  .entrada-link__dato { margin: 0; font-size: 0.8125rem; color: var(--tinta-2); }
+  .entrada-link__hueco { display: grid; gap: var(--s-2); margin: var(--s-4) 0 var(--s-3); }
+  .entrada-link__hueco .skeleton { height: 10px; }
+
+  @media (max-width: 900px) {
+    .entradas { grid-template-columns: 1fr; gap: var(--s-5); }
+    .entrada-link--a, .entrada-link--b, .entrada-link--c { grid-column: 1; margin-top: 0; }
+  }
+
+  /* --- Banda de metodología (fondo --papel-2, borde superior 2 px) ------- */
+  .metodologia {
+    background: var(--papel-2);
+    border-top: var(--borde-tinta);
+    border-bottom: var(--borde-regla);
+    padding-block: var(--s-6);
+    margin-top: var(--s-7);
+  }
+  .metodologia__lista {
+    margin: 0 0 var(--s-4);
+    padding-left: 1.2em;
+    max-width: var(--medida);
+    font-size: var(--t-small);
+    line-height: 1.7;
+  }
+</style>

@@ -1,0 +1,59 @@
+---
+/**
+ * Timeline — línea temporal electoral horizontal (DESIGN.md §5 "Resultados").
+ * Los años de elección son marcas sobre una regla, no una fila de tarjetas.
+ */
+interface Hito { etiqueta: string; activo?: boolean; pendiente?: boolean }
+const { hitos = [] as Hito[], titulo } = Astro.props as { hitos: Hito[]; titulo?: string };
+---
+
+<div class="cronologia">
+  {titulo && <p class="eyebrow">{titulo}</p>}
+  <ol class="cronologia__regla">
+    {hitos.map((h) => (
+      <li class:list={[h.activo && 'activo']}>
+        <span class="cronologia__marca" aria-hidden="true"></span>
+        <span class="cronologia__anio mono">{h.etiqueta}</span>
+      </li>
+    ))}
+  </ol>
+  {hitos.every((h) => h.pendiente) && (
+    <p class="nota">
+      Los hitos reales (1977–2023) se publican en la <strong>Fase 2</strong>.
+      <span class="pendiente">en construcción — dato disponible en Fase 2</span>
+    </p>
+  )}
+</div>
+
+<style>
+  .cronologia { margin: 0 0 var(--s-5); }
+  .cronologia__regla {
+    list-style: none;
+    display: flex;
+    align-items: flex-end;
+    gap: var(--s-1);
+    margin: 0 0 var(--s-2);
+    padding: 0 0 var(--s-2);
+    border-bottom: var(--borde-regla);
+    overflow-x: auto;
+  }
+  .cronologia__regla li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--s-2);
+    flex: 1 0 auto;
+    padding-top: var(--s-4);
+    position: relative;
+  }
+  .cronologia__marca {
+    position: absolute;
+    bottom: -4px;
+    width: 2px;
+    height: 14px;
+    background: var(--tinta-2);
+  }
+  .cronologia__regla li.activo .cronologia__marca { background: var(--tinta); height: 20px; width: 3px; }
+  .cronologia__anio { font-size: 0.8125rem; color: var(--tinta-2); white-space: nowrap; }
+  .cronologia__regla li.activo .cronologia__anio { color: var(--tinta); font-weight: 500; }
+</style>

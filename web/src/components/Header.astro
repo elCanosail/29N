@@ -1,0 +1,164 @@
+---
+/**
+ * Header — DESIGN.md §4 (navegación).
+ * Plano sobre --papel, borde inferior 2 px en --tinta (regla de periódico).
+ * En móvil colapsa a `details` nativo: navegar no requiere JS.
+ */
+const secciones = [
+  { href: '/encuestas/', label: 'Encuestas' },
+  { href: '/resultados/', label: 'Resultados' },
+  { href: '/prediccion/', label: 'Predicción 29N' },
+  { href: '/metodologia/', label: 'Metodología' },
+];
+
+const ruta = Astro.url.pathname;
+const esActiva = (href: string) =>
+  href === '/' ? ruta === '/' : ruta === href || ruta.startsWith(href);
+---
+
+<header class="cabecera">
+  <div class="contenedor cabecera__inner">
+    <a class="marca" href="/" aria-label="29N — portada">
+      <span class="marca__sigla">29N</span>
+      <span class="marca__descriptor">Datos electorales de España</span>
+    </a>
+
+    <nav class="nav-escritorio" aria-label="Secciones">
+      <ul>
+        {secciones.map((s) => (
+          <li>
+            <a href={s.href} aria-current={esActiva(s.href) ? 'page' : undefined}>{s.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <details class="nav-movil">
+      <summary>
+        <span class="visualmente-oculto">Abrir menú de secciones</span>
+        <span aria-hidden="true">Menú</span>
+      </summary>
+      <nav aria-label="Secciones">
+        <ul>
+          {secciones.map((s) => (
+            <li>
+              <a href={s.href} aria-current={esActiva(s.href) ? 'page' : undefined}>{s.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<style>
+  .cabecera {
+    background: var(--papel);
+    border-bottom: var(--borde-tinta);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+
+  .cabecera__inner {
+    min-height: var(--header-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-4);
+    flex-wrap: wrap;
+    padding-block: var(--s-2);
+  }
+
+  .marca {
+    display: flex;
+    align-items: baseline;
+    gap: var(--s-3);
+    text-decoration: none;
+    color: var(--tinta);
+  }
+  .marca__sigla {
+    font-family: var(--f-titular);
+    font-weight: 800;
+    font-size: 1.75rem;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .marca__descriptor {
+    font-size: var(--t-small);
+    line-height: 1.2;
+    color: var(--tinta-2);
+    max-width: 16ch;
+  }
+
+  .nav-escritorio ul {
+    display: flex;
+    gap: var(--s-4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-escritorio a {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--tinta);
+    text-decoration: none;
+    padding-block: var(--s-2);
+    border-bottom: 3px solid transparent;
+  }
+  .nav-escritorio a:hover { text-decoration: underline; text-underline-offset: 0.3em; }
+  /* Página activa: subrayado grueso de 3 px (GOV.UK) */
+  .nav-escritorio a[aria-current='page'] { border-bottom-color: var(--tinta); }
+
+  /* --- Móvil: details nativo -------------------------------------------- */
+  .nav-movil { display: none; }
+  .nav-movil summary {
+    list-style: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: var(--s-2) var(--s-3);
+    border: var(--borde-tinta);
+    border-radius: var(--radio);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .nav-movil summary::-webkit-details-marker { display: none; }
+  .nav-movil summary::after {
+    content: ' ▾';
+    color: var(--tinta-2);
+  }
+  .nav-movil[open] summary::after { content: ' ▴'; }
+  .nav-movil nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: var(--papel);
+    border-bottom: var(--borde-tinta);
+    padding: var(--s-3) var(--s-4) var(--s-4);
+  }
+  .nav-movil ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-movil a {
+    display: block;
+    padding: var(--s-3) 0;
+    min-height: 44px;
+    font-weight: 600;
+    color: var(--tinta);
+    text-decoration: none;
+    border-bottom: var(--borde-regla);
+  }
+  .nav-movil a[aria-current='page'] { border-bottom: 3px solid var(--tinta); }
+
+  @media (max-width: 767px) {
+    .nav-escritorio { display: none; }
+    .nav-movil { display: block; position: relative; }
+  }
+</style>

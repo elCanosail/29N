@@ -1,0 +1,75 @@
+/* ============================================================================
+   tokens.css — 29N
+   Traspaso literal de DESIGN.md (§2 paleta, §3 tipografía, §5 espacio).
+   NO reinventar valores: este archivo es el contrato de diseño en código.
+   Cualquier cambio aquí debe reflejarse antes en DESIGN.md.
+   ========================================================================= */
+
+:root {
+  /* --- Superficies y tinta (DESIGN.md §2) --------------------------------- */
+  --papel: oklch(0.985 0.004 95);
+  --papel-2: oklch(0.962 0.006 95);
+  --papel-3: oklch(0.93 0.008 95);
+  --tinta: oklch(0.24 0.02 260);
+  --tinta-2: oklch(0.42 0.02 260);
+  --tinta-3: oklch(0.55 0.02 260);
+  --regla: oklch(0.87 0.01 260);
+  --enlace: oklch(0.42 0.14 265);
+  --foco: oklch(0.88 0.17 95);
+  --accion: oklch(0.32 0.11 265);
+
+  /* --- Colores de significado (datos e incertidumbre) -------------------- */
+  --intervalo: oklch(0.82 0.13 85 / 0.6);
+  --intervalo-borde: oklch(0.72 0.14 85);
+  --alerta: oklch(0.55 0.19 28);
+  --ok: oklch(0.45 0.09 155);
+
+  /* --- Colores de partido (solo gráficos, mapas, tablas y leyendas) ------ */
+  --p-psoe: oklch(0.52 0.17 28);
+  --p-pp: oklch(0.45 0.13 250);
+  --p-vox: oklch(0.52 0.12 145);
+  --p-sumar: oklch(0.50 0.13 320);
+  --p-podemos: oklch(0.48 0.11 310);
+  --p-cs: oklch(0.62 0.13 80);
+  --p-erc: oklch(0.58 0.14 40);
+  --p-pnv: oklch(0.50 0.10 200);
+  --p-otros: oklch(0.60 0.01 260);
+
+  /* --- Tipografía (DESIGN.md §3) ----------------------------------------- */
+  --f-titular: 'Newsreader Variable', 'Newsreader', Georgia, 'Times New Roman', serif;
+  --f-body: 'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, sans-serif;
+  --f-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --t-display: clamp(2.6rem, 7vw, 4.6rem);
+  --t-h1: clamp(2rem, 4.5vw, 3rem);
+  --t-h2: clamp(1.5rem, 3vw, 2.1rem);
+  --t-h3: 1.2rem;
+  --t-body: 1.0625rem;
+  --t-small: 0.875rem;
+  --t-data: 0.9rem;
+  --t-eyebrow: 0.75rem;
+
+  --lh-body: 1.65;
+  --lh-small: 1.5;
+  --medida: 68ch;
+
+  /* --- Espacio (DESIGN.md §5) -------------------------------------------- */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 16px;
+  --s-4: 24px;
+  --s-5: 40px;
+  --s-6: 64px;
+  --s-7: clamp(64px, 10vw, 128px);
+
+  /* --- Formas y elevación (DESIGN.md §6) --------------------------------- */
+  --radio: 4px;
+  --borde-regla: 1px solid var(--regla);
+  --borde-tinta: 2px solid var(--tinta);
+  --sombra-overlay: 0 2px 8px oklch(0.24 0.02 260 / 0.18);
+
+  /* --- Layout ------------------------------------------------------------- */
+  --contenedor: 1200px;
+  --header-h: 64px;
+  --nota-margen: 240px;
+}

@@ -1,0 +1,40 @@
+---
+/**
+ * Breadcrumbs — estilo EU Design System (DESIGN.md §4), separador `/` en mono.
+ */
+interface Enlace { label: string; href?: string }
+const { items = [] } = Astro.props as { items: Enlace[] };
+---
+{
+  items.length > 0 && (
+    <nav class="migas" aria-label="Ruta de navegación">
+      <ol>
+        <li><a href="/">Portada</a></li>
+        {items.map((it) => (
+          <li>
+            <span class="migas__sep" aria-hidden="true">/</span>
+            {it.href ? <a href={it.href}>{it.label}</a> : <span aria-current="page">{it.label}</span>}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}
+
+<style>
+  .migas { padding-block: var(--s-3) 0; }
+  .migas ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+    margin: 0;
+    padding: 0;
+    font-family: var(--f-mono);
+    font-size: 0.8125rem;
+    color: var(--tinta-2);
+  }
+  .migas li { display: flex; gap: var(--s-2); align-items: baseline; }
+  .migas__sep { color: var(--tinta-3); }
+  .migas [aria-current='page'] { color: var(--tinta); }
+</style>

@@ -1,0 +1,72 @@
+---
+/**
+ * Footer — licencia y fuentes (DESIGN.md §1, §9).
+ * Las fuentes son parte del contrato del proyecto: siempre visibles.
+ */
+const anio = 2026;
+const fuentes = [
+  { nombre: 'CIS — Banco de Datos', url: 'https://www.cis.es' },
+  { nombre: 'Ministerio del Interior — info electoral', url: 'https://infoelectoral.interior.gob.es' },
+  { nombre: 'Fichas técnicas de encuestadores privados', url: '/metodologia/' },
+];
+---
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie__grid">
+      <div>
+        <p class="eyebrow">Fuentes</p>
+        <ul class="pie__lista">
+          {fuentes.map((f) => (
+            <li><a href={f.url} rel="noopener">{f.nombre}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">Proyecto</p>
+        <ul class="pie__lista">
+          <li><a href="/metodologia/">Metodología y log de exclusiones</a></li>
+          <li><a href="/metodologia/#licencia">Licencia y reutilización</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">Licencia</p>
+        <p class="pie__texto">
+          Código bajo <strong>MIT</strong>. Los datos pertenecen a sus fuentes
+          (CIS, Ministerio del Interior, encuestadores); 29N los procesa y enlaza,
+          citando siempre su origen.
+        </p>
+      </div>
+    </div>
+    <p class="pie__cierre mono">
+      29N · «intervalos, no titulares» · <span aria-hidden="true">·</span> {anio}
+    </p>
+  </div>
+</footer>
+
+<style>
+  .pie {
+    border-top: var(--borde-tinta);
+    background: var(--papel);
+    padding-block: var(--s-6) var(--s-5);
+    margin-top: var(--s-7);
+  }
+  .pie__grid {
+    display: grid;
+    gap: var(--s-6);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    padding-bottom: var(--s-5);
+    border-bottom: var(--borde-regla);
+  }
+  .pie__lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+    font-size: var(--t-small);
+  }
+  .pie__texto { font-size: var(--t-small); line-height: var(--lh-small); color: var(--tinta-2); margin: 0; }
+  .pie__cierre { margin: var(--s-4) 0 0; color: var(--tinta-2); font-size: 0.8125rem; }
+</style>

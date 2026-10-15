@@ -1,0 +1,181 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import DataTable from '../../components/DataTable.astro';
+import SourceCard from '../../components/SourceCard.astro';
+import type { Columna } from '../../lib/tipos';
+
+// Estructura de columnas definitiva (los datos llegan en la Fase 1/3).
+const columnas: Columna[] = [
+  { clave: 'id', etiqueta: 'ID encuesta', tipo: 'mono' },
+  { clave: 'campo', etiqueta: 'Trabajo de campo', tipo: 'mono' },
+  { clave: 'encuestador', etiqueta: 'Encuestador' },
+  { clave: 'ambito', etiqueta: 'Ámbito' },
+  { clave: 'n', etiqueta: 'Muestra (n)', tipo: 'mono', alinear: 'der' },
+  { clave: 'estado', etiqueta: 'Validación' },
+];
+---
+
+<Base
+  titulo="Encuestas"
+  descripcion="Explorador del histórico de encuestas electorales españolas: CIS y encuestadores privados, con ficha técnica y estado de validación."
+>
+  <div class="contenedor">
+    <Breadcrumbs items={[{ label: 'Encuestas' }]} />
+
+    <header class="cabecera-pagina">
+      <p class="eyebrow entrada">Encuestas · 1979–2026</p>
+      <h1 class="medida entrada entrada--1">Explorador de encuestas</h1>
+      <p class="titular-intro entrada entrada--2">
+        Todo lo que se ha preguntado sobre intención de voto, con la muestra, las
+        fechas de campo y la ficha técnica de origen. Una encuesta sin ficha
+        técnica verificable no entra: entra al log de exclusiones.
+      </p>
+    </header>
+
+    <div class="explorador">
+      <aside class="filtros" aria-labelledby="filtros-titulo">
+        <h2 class="filtros__titulo" id="filtros-titulo">Filtros</h2>
+
+        <p class="estado-vacio filtros__aviso" id="filtros-aviso">
+          <strong>Los filtros se activan en la Fase 3</strong>, cuando exista el índice
+          de encuestas. Se muestran ya restyleados (controles nativos, operables por
+          teclado) para fijar la estructura y no aparentar una funcionalidad que aún no existe.
+        </p>
+
+        <form aria-describedby="filtros-aviso">
+          <div class="campo">
+            <label for="f-encuestador">Encuestador</label>
+            <select id="f-encuestador" disabled>
+              <option>Todos</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="f-anio">Año (desde)</label>
+            <select id="f-anio" disabled>
+              <option>1979</option>
+            </select>
+          </div>
+
+          <fieldset class="campo" disabled>
+            <legend class="label">Tipo</legend>
+            <div class="grupo-opciones">
+              <label><input type="radio" name="tipo" checked /> Preelectoral</label>
+              <label><input type="radio" name="tipo" /> Barómetro</label>
+              <label><input type="radio" name="tipo" /> Postelectoral</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="campo" disabled>
+            <legend class="label">Ámbito</legend>
+            <div class="grupo-opciones">
+              <label><input type="radio" name="ambito" checked /> Estatal</label>
+              <label><input type="radio" name="ambito" /> Autonómico</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="campo" disabled>
+            <legend class="label">Validación</legend>
+            <div class="grupo-opciones">
+              <label><input type="radio" name="val" checked /> Solo válidas</label>
+              <label><input type="radio" name="val" /> Incluir excluidas</label>
+            </div>
+          </fieldset>
+        </form>
+      </aside>
+
+      <div class="resultados">
+        <p class="mono resultados__contador">
+          N = <span class="pendiente">en construcción — dato disponible en Fase 1</span> encuestas ·
+          actualizado <span class="pendiente">Fase 1</span>
+        </p>
+
+        <DataTable
+          id="tabla-encuestas"
+          titulo="Encuestas indexadas"
+          columnas={columnas}
+          filas={[]}
+          extraido="pendiente — Fase 1"
+          vacio="No hay encuestas indexadas todavía. El catálogo (estudio, fechas de campo, ámbito y ficha técnica) se publica al cerrar la Fase 1."
+          nota="Cada fila expandirá una ficha con tamaño muestral, fechas de campo, margen de error declarado, URL de la ficha técnica y estado de validación con motivo si fue excluida (DESIGN.md §5)."
+        />
+
+        <section class="ficha-ejemplo" aria-labelledby="ficha-ejemplo-titulo">
+          <h2 id="ficha-ejemplo-titulo">Ficha de encuesta — esquema del componente</h2>
+          <p class="nota">
+            Estructura visual del componente, sin contenido real: así se leerá cada
+            encuesta cuando el pipeline la publique.
+          </p>
+          <SourceCard
+            id="CIS-····"
+            titulo="Ficha de encuesta (esquema)"
+            estado="pendiente"
+            campos={[
+              { clave: 'Tamaño muestral (n)', valor: 'pendiente — Fase 1' },
+              { clave: 'Trabajo de campo', valor: 'pendiente — Fase 1' },
+              { clave: 'Publicación', valor: 'pendiente — Fase 1' },
+              { clave: 'Metodología', valor: 'pendiente — Fase 1' },
+              { clave: 'Margen declarado', valor: 'pendiente — Fase 1' },
+            ]}
+          />
+        </section>
+
+        <aside class="aviso-loreg" aria-labelledby="loreg-titulo">
+          <p class="eyebrow" id="loreg-titulo">Norma aplicada</p>
+          <p>
+            <strong>Apagón electoral (LOREG).</strong> Los cinco días previos al 29N
+            no se publicarán resultados de encuestas en esta sección. La restricción se
+            aplica en la web, no en los datos: el histórico completo sigue disponible
+            antes y después de esa ventana.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .cabecera-pagina { padding-block: var(--s-5) var(--s-6); }
+
+  .explorador {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: var(--s-6);
+    align-items: start;
+    border-top: var(--borde-tinta);
+    padding-top: var(--s-5);
+  }
+
+  .filtros { position: sticky; top: calc(var(--header-h) + var(--s-3)); }
+  .filtros__titulo { font-family: var(--f-body); font-size: var(--t-h3); }
+  .filtros__aviso { margin-bottom: var(--s-4); }
+  fieldset.campo { border: 0; padding: 0; margin-inline: 0; }
+  fieldset .label, fieldset legend {
+    display: block;
+    font-weight: 600;
+    font-size: var(--t-small);
+    margin-bottom: var(--s-1);
+    padding: 0;
+  }
+
+  .resultados__contador { margin: 0 0 var(--s-3); color: var(--tinta-2); font-size: 0.8125rem; }
+  .ficha-ejemplo { margin-top: var(--s-6); border-top: var(--borde-regla); padding-top: var(--s-4); }
+  .ficha-ejemplo h2 { font-size: 1.3rem; }
+
+  .aviso-loreg {
+    margin-top: var(--s-6);
+    background: var(--papel-2);
+    border: var(--borde-regla);
+    border-radius: var(--radio);
+    padding: var(--s-4);
+    max-width: 60ch;
+    font-size: var(--t-small);
+    line-height: var(--lh-small);
+  }
+
+  @media (max-width: 980px) {
+    .explorador { grid-template-columns: 1fr; }
+    .filtros { position: static; }
+  }
+</style>
