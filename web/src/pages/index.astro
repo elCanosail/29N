@@ -14,6 +14,8 @@ import { colorPartido } from '../lib/partidos';
 
 const meta = forecast.meta;
 const top = forecast.partidos.slice(0, 4);
+// Cuenta atrás al día de la votación (2026-11-29); el cliente la recalcula al cargar.
+const diasRestantes = Math.max(0, Math.ceil((Date.parse('2026-11-29T00:00:00Z') - Date.now()) / 86400000));
 const resto = forecast.partidos.slice(4);
 const aFila = (p: (typeof forecast.partidos)[number]) => ({
   etiqueta: p.partido,
@@ -89,8 +91,8 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
     <h1 class="visualmente-oculto">Estimación de resultados del 29N</h1>
     <div class="heroe__cabecera">
       <div>
-        <p class="eyebrow" id="resultado-titulo">El resultado · reparto de escaños estimado</p>
-        <h2>350 escaños en juego: estimación frente al 23J real</h2>
+        <p class="eyebrow" id="resultado-titulo">Así queda el Congreso<span data-cuenta-atras> · a <span data-dias>{diasRestantes}</span> <span data-unidad>días</span> de la votación</span></p>
+        <h2>Los 350 escaños del 29N que proyecta el modelo</h2>
       </div>
       <p class="heroe__meta mono">
         Objetivo {meta.mes_predicho} · 10.000 simulaciones D'Hondt provincia a provincia
@@ -360,3 +362,18 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
   }
   .metodologia__dato { font-size: 0.8125rem; color: var(--tinta-2); margin: 0 0 var(--s-3); }
 </style>
+
+<script>
+  // Cuenta atrás del héroe: recalculada en el cliente para no depender del último build.
+  const diasEl = document.querySelector('[data-dias]');
+  if (diasEl) {
+    const dias = Math.ceil((Date.parse('2026-11-29T00:00:00Z') - Date.now()) / 86400000);
+    if (dias <= 0) {
+      diasEl.closest('[data-cuenta-atras]')?.remove();
+    } else {
+      diasEl.textContent = String(dias);
+      const unidad = document.querySelector('[data-unidad]');
+      if (unidad) unidad.textContent = dias === 1 ? 'día' : 'días';
+    }
+  }
+</script>
