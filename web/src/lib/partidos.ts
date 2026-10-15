@@ -25,7 +25,7 @@ export const GRUPO: Record<string, GrupoPartido> = {
   PNV: 'pnv', 'GEROA BAI': 'pnv', 'NA+': 'pnv', UPN: 'pnv',
 };
 
-/** token CSS por grupo. */
+/** token CSS por grupo (fallback histórico para partidos fuera del mapa). */
 export const COLOR_GRUPO: Record<GrupoPartido, string> = {
   pp: 'var(--p-pp)',
   psoe: 'var(--p-psoe)',
@@ -35,6 +35,26 @@ export const COLOR_GRUPO: Record<GrupoPartido, string> = {
   nacionalistas: 'var(--p-erc)',
   pnv: 'var(--p-pnv)',
   otros: 'var(--p-otros)',
+};
+
+/** Color por partido concreto (DESIGN.md §2, Chema 15-10-2026: cada partido su color). */
+export const COLOR_PARTIDO: Record<string, string> = {
+  PP: 'var(--p-pp)', AP: 'var(--p-pp)', 'PP-AP': 'var(--p-pp)', CP: 'var(--p-pp)', UCD: 'var(--p-pp)',
+  PSOE: 'var(--p-psoe)', PSC: 'var(--p-psoe)', 'PSE-EE': 'var(--p-psoe)', PSDEG: 'var(--p-psoe)',
+  'PSIB-PSOE': 'var(--p-psoe)', 'PSN-PSOE': 'var(--p-psoe)',
+  VOX: 'var(--p-vox)',
+  SUMAR: 'var(--p-sumar)', PODEMOS: 'var(--p-podemos)', 'UNIDAS PODEMOS': 'var(--p-sumar)',
+  IU: 'var(--p-sumar)', COMPROMIS: 'var(--p-sumar)', ECP: 'var(--p-sumar)', 'MÁS PAÍS': 'var(--p-sumar)',
+  CIUDADANOS: 'var(--p-cs)',
+  ERC: 'var(--p-erc)',
+  'EH BILDU': 'var(--p-ehbildu)',
+  JXCAT: 'var(--p-jxcat)', JUNTS: 'var(--p-jxcat)', CIU: 'var(--p-jxcat)',
+  BNG: 'var(--p-bng)',
+  CUP: 'var(--p-cup)',
+  CC: 'var(--p-cc)',
+  PNV: 'var(--p-pnv)', 'GEROA BAI': 'var(--p-pnv)',
+  'NA+': 'var(--p-na)', UPN: 'var(--p-na)',
+  PACMA: 'var(--p-pacma)',
 };
 
 export const NOMBRE_GRUPO: Record<GrupoPartido, string> = {
@@ -48,8 +68,10 @@ export const NOMBRE_GRUPO: Record<GrupoPartido, string> = {
   otros: 'Otros y minoritarios',
 };
 
-/** Color de un partido concreto (cae a «otros»). */
+/** Color de un partido concreto: primero su color propio, luego el de su grupo, y «otros» al final. */
 export function colorPartido(partido: string | null | undefined): string {
+  const explicito = partido ? COLOR_PARTIDO[partido] : undefined;
+  if (explicito) return explicito;
   const g = partido ? GRUPO[partido] ?? 'otros' : 'otros';
   return COLOR_GRUPO[g];
 }

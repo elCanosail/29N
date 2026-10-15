@@ -68,16 +68,24 @@ Los colores de partido son una convención que la audiencia (periodistas) ya con
 | Vox | `--p-vox` | `oklch(0.52 0.12 145)` | Verde convencional. |
 | Sumar / Izquierda (verde-púrpura) | `--p-sumar` | `oklch(0.50 0.13 320)` | Púrpura-magenta. |
 | Podemos (histórico) | `--p-podemos` | `oklch(0.48 0.11 310)` | Púrpura más frío; en series se distingue de Sumar por **patrón**, no sólo tono. |
-| Cs | `--p-cs` | `oklch(0.62 0.13 80)` | Naranja; sólo para ≥3:1 (trazo grueso o banda). |
-| ERC / nacionalistas | `--p-erc` | `oklch(0.58 0.14 40)` | Amarillo-naranja. |
-| PNV | `--p-pnv` | `oklch(0.50 0.10 200)` | Verde azulado. |
+| Cs (histórico) | `--p-cs` | `oklch(0.62 0.13 80)` | Naranja; sólo para ≥3:1 (trazo grueso o banda). |
+| ERC | `--p-erc` | `oklch(0.58 0.14 40)` | Amarillo-naranja. |
+| EH Bildu | `--p-ehbildu` | `oklch(0.38 0.10 30)` | Granate oscuro: familia del rojo pero separado de PSOE por luminosidad (0,38 vs 0,52). |
+| JXCAT | `--p-jxcat` | `oklch(0.60 0.11 230)` | Celeste. |
+| BNG | `--p-bng` | `oklch(0.68 0.09 240)` | Celeste claro (ferraz no; gallego): separado de JXCAT por luminosidad. |
+| CUP | `--p-cup` | `oklch(0.62 0.14 100)` | Amarillo-verdoso, hue distinto del naranja de ERC. |
+| CC | `--p-cc` | `oklch(0.55 0.12 265)` | Azul-violeta canario. |
+| NA+ / UPN | `--p-na` | `oklch(0.36 0.08 255)` | Azul muy oscuro; separado de PP por luminosidad. |
+| PACMA | `--p-pacma` | `oklch(0.60 0.15 340)` | Magenta-rosa (marca del partido). |
+| PNV | `--p-pnv` | `oklch(0.45 0.09 170)` | Verde-teal oscuro; separado de VOX (145) y JXCAT (230). |
 | Otros | `--p-otros` | `oklch(0.60 0.01 260)` | Gris tinta. |
 
 Reglas de partido:
 
 1. Los colores de partido **nunca** se usan en botones, links, fondos de página ni decoración. Su único dominio son gráficos, mapas, tablas y leyendas.
-2. En una misma serie se distinguen por **tono Y luminosidad alternada** (nunca 6 líneas con la misma L). Los partidos históricamente confundidos para daltónicos (rojo/verde: PSOE–Vox) se separan además por luminosidad o patrón de trazo (`stroke-dasharray`).
-3. Fuera del canvas del gráfico, el nombre del partido va siempre en texto (`--tinta`), con la muestra de color como apoyo.
+2. **Cada partido del universo modelado tiene su propio color** (Chema, 15-10-2026): nada de compartir token entre partidos pequeños. Las familias históricas (AP→PP, UCD→PP, PODEMOS→Sumar) sí comparten el de su sucesor.
+3. En una misma serie se distinguen por **tono Y luminosidad alternada** (nunca 6 líneas con la misma L). Los partidos históricamente confundidos para daltónicos (rojo/verde: PSOE–Vox) se separan además por luminosidad o patrón de trazo (`stroke-dasharray`).
+4. Fuera del canvas del gráfico, el nombre del partido va siempre en texto (`--tinta`), con la muestra de color como apoyo.
 
 ### Antipatrones de color (prohibidos)
 

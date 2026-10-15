@@ -32,7 +32,14 @@
   --p-podemos: oklch(0.48 0.11 310);
   --p-cs: oklch(0.62 0.13 80);
   --p-erc: oklch(0.58 0.14 40);
-  --p-pnv: oklch(0.50 0.10 200);
+  --p-ehbildu: oklch(0.38 0.10 30);
+  --p-jxcat: oklch(0.60 0.11 230);
+  --p-bng: oklch(0.68 0.09 240);
+  --p-cup: oklch(0.62 0.14 100);
+  --p-cc: oklch(0.55 0.12 265);
+  --p-na: oklch(0.36 0.08 255);
+  --p-pacma: oklch(0.60 0.15 340);
+  --p-pnv: oklch(0.45 0.09 170);
   --p-otros: oklch(0.60 0.01 260);
 
   /* --- Tipografía (DESIGN.md §3) ----------------------------------------- */
