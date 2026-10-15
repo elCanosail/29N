@@ -31,6 +31,7 @@ Web que expone el histórico completo de encuestas electorales españolas (CIS e
 ## Modelo de predicción
 
 1. **Serie estatal por partido**: intention-of-vote estimada por el CIS + encuestadores, ponderada (recencia, tamaño muestral, histórico de error del encuestador — pitchfork scoring contra resultados reales).
+1b. **Efectos de casa y sesgo de incumbencia (Fase 4-bis, petición Chema 15-10-2026)**: para cada encuestador, error firmado histórico (última encuesta pre-electoral − resultado real) por partido; descomposición incumbencia vs. efecto fijo de partido; para el CIS, medir por separado el sesgo de la "estimación del modelo" publicada (tablas oficiales) y del "voto directo" de microdatos. Corrección aplicada con encogimiento empirical-bayes (n pequeño → corrección ~0), intervalos publicados tal cual. Medir, no asumir.
 2. **TimesFM**: forecast de la serie estatal por partido hasta el 29N, con intervalos.
 3. **Desagregación provincial**: nowcasting por swing — resultados históricos provinciales (1976-2023) como base, ajuste con la variación nacional prevista. Validar contra 23J, 10N, 28A, 26J, 20D, 2015, 2011 (backtest).
 4. **Ecuaciones de reparto**: escaños por provincia con método D'Hondt sobre 10.000 simulaciones (intervalos de predicción, no punto).
