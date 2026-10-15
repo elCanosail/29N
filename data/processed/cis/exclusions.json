@@ -7,22 +7,30 @@
  {
   "estudio": "1164",
   "slug": "elecciones-generales-y-municipales-1979-ii-",
-  "motivo": "sin PESO"
+  "eleccion": "generales",
+  "tipo": "otro",
+  "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación"
  },
  {
   "estudio": "1178",
   "slug": "elecciones-generales-y-municipales-1979-iii-",
-  "motivo": "sin PESO"
+  "eleccion": "generales",
+  "tipo": "otro",
+  "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación"
  },
  {
   "estudio": "1179",
   "slug": "elecciones-generales-y-municipales-1979-iv-",
-  "motivo": "sin PESO"
+  "eleccion": "generales",
+  "tipo": "otro",
+  "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación"
  },
  {
   "estudio": "1182",
   "slug": "elecciones-generales-y-municipales-1979-v-",
-  "motivo": "sin PESO"
+  "eleccion": "generales",
+  "tipo": "otro",
+  "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación"
  },
  {
   "estudio": "1321",
@@ -47,17 +55,23 @@
  {
   "estudio": "1636",
   "slug": "elecciones-al-parlamento-europeo-1987-i-y-relaciones-internacionales",
-  "motivo": "sin PESO"
+  "eleccion": "europeas",
+  "tipo": "otro",
+  "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación"
  },
  {
   "estudio": "1652",
   "slug": "elecciones-al-parlamento-europeo-1987-ii-",
-  "motivo": "sin PESO"
+  "eleccion": "europeas",
+  "tipo": "otro",
+  "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación"
  },
  {
   "estudio": "1673",
   "slug": "elecciones-al-parlamento-europeo-1987-iii-",
-  "motivo": "sin PESO"
+  "eleccion": "europeas",
+  "tipo": "otro",
+  "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación"
  },
  {
   "estudio": "1693",
@@ -67,7 +81,9 @@
  {
   "estudio": "1742",
   "slug": "cuestiones-de-actualidad-intencion-de-voto-en-elecciones-generales",
-  "motivo": "sin PESO"
+  "eleccion": "generales",
+  "tipo": "otro",
+  "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación"
  },
  {
   "estudio": "1796",
@@ -307,7 +323,9 @@
  {
   "estudio": "2810",
   "slug": "funcionamiento-de-colegio-administrado-electronicamente-cae-en-las-elecciones-al-parlamento-europeo-2009",
-  "motivo": "sin PESO"
+  "eleccion": "europeas",
+  "tipo": "otro",
+  "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación"
  },
  {
   "estudio": "2807",
@@ -347,7 +365,15 @@
  {
   "estudio": "3382",
   "slug": "macroencuesta-sobre-tendencias-en-voto-municipal.-octubre-2022",
-  "url": "https://www.cis.es/es/estudios/macroencuesta-sobre-tendencias-en-voto-municipal.-octubre-2022",
-  "motivo": "validacion sistematica: 18/22 filas fuera de tolerancia (max_delta=23.46) - variable/denominador probablemente equivocado"
+  "eleccion": "otro",
+  "tipo": "otro",
+  "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación"
+ },
+ {
+  "estudio": "3386",
+  "slug": "macroencuesta-sobre-tendencias-en-voto-autonomico",
+  "eleccion": "otro",
+  "tipo": "otro",
+  "motivo": "tipo 'otro': fuera de ámbito preelectoral/postelectoral; no entra en polls ni validación"
  }
 ]

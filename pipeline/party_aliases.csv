@@ -150,3 +150,7 @@ priority,canonical,grupo,alias,fuente
 151,NS,nsnc,NS,No sabe
 152,NC,nsnc,N.C.,No contesta
 153,NC,nsnc,NO CONTESTA,No contesta
+154,OTROS,otros,OTRO,Respuesta residual de partido
+155,OTROS,otros,OTRAS CANDIDATURAS,Respuesta residual de partido
+156,OTROS,otros,OTROS CANDIDATURAS,Respuesta residual de partido
+157,ABSTENCION,novoto,NO VA A VOTAR,Abstención declarada

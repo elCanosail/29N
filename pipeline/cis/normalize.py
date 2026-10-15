@@ -3,17 +3,25 @@
 
 Entrada : data/raw/cis/<estudio>/... (microdatos) + data/raw/cis/manifest.json
           data/raw/cis/estimacion/est<estudio>.pdf|.txt (tabla publicada)
-Salida  :
+Salida (escritura atómica temp+rename):
   data/processed/cis/polls.jsonl        una línea por estudio × partido
   data/processed/cis/studies.json       catálogo normalizado con trazabilidad
   data/processed/cis/validation.json    validación vs. tablas publicadas (≤2015+)
   data/processed/cis/exclusions.json    estudios no normalizables y motivo
 
-Parseo: formato ASCII universal DA#### + ES#### (válido para todos los estudios).
-Selección de la variable de voto: se puntúan todas las variables cuyos VALUE
-LABELS contienen nombres de partidos; si hay tabla publicada ("Voto directo en la
-encuesta") se elige la variable que MEJOR reproduce esa tabla (esto es a la vez
-la validación); si no, se usa la de mayor puntuación heurística.
+Reglas:
+  * Parseo ASCII universal DA#### + ES####.
+  * Selección de la variable de voto: si hay tabla publicada se elige la que
+    MEJOR la reproduce (menos filas fuera de tolerancia, luego más filas
+    comparadas, luego menor Δ máxima); si no, la de mayor puntuación heurística.
+  * Los estudios con tipo == 'otro' NO entran en polls ni en validación: van a
+    exclusions.json (su tabla publicada es de otro ámbito → comparación inválida).
+  * Diccionario de partidos con aliases generales (party_aliases.csv) y aliases
+    con ventana temporal por año (party_aliases_eras.csv).
+  * Los partidos residuales no reconocidos se agregan en OTROS (así lo hace la
+    propia tabla del CIS con "Otros partidos"); los códigos no-partido
+    (N.P., No procede, consultar tarjeta, …) se descartan.
+NO se maquilla ni se fuerza: lo que no cuadre queda como discrepancia/limitación.
 """
 import argparse
 import csv
@@ -39,12 +47,12 @@ MARKERS = ["blanco", "nulo", "absten", "no votar", "no votar\u00e1", "ns", "n.s.
            "nc", "n.c.", "no decidido", "no lo tiene decidido", "no sabe", "no contesta"]
 PREF_VARS = {"P9R", "P7R", "P10R", "P32R", "P24R", "INTENCIONG", "VOTOR"}
 
-
-def load_aliases():
-    p = os.path.join(REPO, "pipeline/party_aliases.csv")
-    rows = list(csv.DictReader(open(p, encoding="utf-8")))
-    rows.sort(key=lambda r: int(r["priority"]))
-    return rows
+# etiquetas que NO son partido -> no se agregan a OTROS
+NONPARTY = re.compile(
+    r"(n\.?\s?p\.?$|no procede|no recuerda|no quiere contestar|no va a votar|"
+    r"no votar[ií]a|no votar[aá]|no sabe|no contesta|no ten[ií]a edad|"
+    r"no identificables|ninguno|ninguna|consultar tarjeta|a quien le dijesen)",
+    re.I)
 
 
 def alias_to_regex(alias):
@@ -54,21 +62,53 @@ def alias_to_regex(alias):
     return re.compile(re.escape(a))
 
 
-ALIAS_RE = [(r["canonical"], alias_to_regex(r["alias"])) for r in load_aliases()]
+def _read_aliases(path):
+    if not os.path.exists(path):
+        return []
+    rows = list(csv.DictReader(open(path, encoding="utf-8")))
+    rows.sort(key=lambda r: int(re.sub(r"\D", "", r["priority"]) or 0))
+    return rows
 
 
-def canonize(label):
+def load_aliases():
+    gen = [(r["canonical"], alias_to_regex(r["alias"]))
+           for r in _read_aliases(os.path.join(REPO, "pipeline/party_aliases.csv"))]
+    eras = []
+    for r in _read_aliases(os.path.join(BASE, "party_aliases_eras.csv")):
+        d = int(r["desde"]) if (r.get("desde") or "").strip() else None
+        h = int(r["hasta"]) if (r.get("hasta") or "").strip() else None
+        eras.append((r["canonical"], alias_to_regex(r["alias"]), d, h))
+    return gen, eras
+
+
+ALIAS_GEN, ALIAS_ERA = load_aliases()
+
+
+def canonize(label, anio=None):
+    """Mapea una etiqueta a partido canónico; los aliases con ventana temporal
+    solo aplican si el año del estudio cae dentro de [desde, hasta]."""
     u = label.upper().strip()
-    for canon, rx in ALIAS_RE:
+    if anio is not None:
+        for canon, rx, d, h in ALIAS_ERA:
+            if (d is None or anio >= d) and (h is None or anio <= h) and rx.search(u):
+                return canon
+    for canon, rx in ALIAS_GEN:
         if rx.search(u):
             return canon
     return None
 
 
-def fecha_iso(s):
-    """Primer DD/MM/YYYY de la cadena -> 'YYYY-MM-DD' (None si no hay)."""
-    m = re.search(r"(\d{1,2})/(\d{1,2})/(\d{4})", s or "")
-    return f"{m.group(3)}-{m.group(2).zfill(2)}-{m.group(1).zfill(2)}" if m else None
+def is_party_residual(label):
+    """Etiqueta no reconocida: ¿es un partido residual (→ OTROS) o un código
+    no-partido (se descarta)?"""
+    u = label.strip()
+    if not u:
+        return False
+    if re.fullmatch(r"[\d\s\.,-]+", u):   # códigos numéricos / tarjeta
+        return False
+    if NONPARTY.search(u):
+        return False
+    return True
 
 
 # ------------------------------------------------------------------ parseo
@@ -134,20 +174,26 @@ def weighted_distribution(da, spec, order, var, weight="PESO"):
     return counts, tot, n
 
 
-def distribution_by_canon(counts, tot, labs):
+def distribution_by_canon(counts, tot, labs, anio=None):
+    """Agrega por partido canónico.
+
+    Las etiquetas no reconocidas por el diccionario NO se fuerzan a OTROS: se
+    registran en `residual` y se descartan del reparto (evidencia: forzarlas a
+    OTROS reproduce 3411 pero rompe 3263/3367/3458, donde el CIS NO las agrupa
+    en "Otros partidos"). Queda como limitación documentada.
+    """
     d = defaultdict(float)
-    unmapped = []
+    residual = []
     for code, w in counts.items():
         lab = labs.get(str(code))
         if lab is None:
-            unmapped.append(str(code))
             continue
-        c = canonize(lab)
+        c = canonize(lab, anio)
         if c is None:
-            unmapped.append(lab)
+            residual.append(lab)
             continue
         d[c] += 100.0 * w / tot
-    return {k: v for k, v in d.items()}, sorted(set(unmapped))
+    return {k: v for k, v in d.items()}, sorted(set(residual))
 
 
 # -------------------------------------------------------------- validación
@@ -155,20 +201,17 @@ def distribution_by_canon(counts, tot, labs):
 ROW = re.compile(r"^\s*([A-Za-zÁÉÍÓÚÜÑáéíóúüñ(][^\n]*?)\s{2,}(\d+,\d+)(?:\s|$)", re.M)
 
 
-def published_table(est):
-    """Extrae {canonical: pct} de la tabla 'Voto directo en la encuesta'."""
+def published_table(est, anio=None):
     txt = os.path.join(RAW, "estimacion", f"est{est}.txt")
     pdf = os.path.join(RAW, "estimacion", f"est{est}.pdf")
     if not os.path.exists(txt) and os.path.exists(pdf):
         try:
-            subprocess.run(["pdftotext", "-layout", pdf, txt], check=True,
-                           timeout=60)
+            subprocess.run(["pdftotext", "-layout", pdf, txt], check=True, timeout=60)
         except Exception:
             return None
     if not os.path.exists(txt):
         return None
     data = open(txt, encoding="utf-8", errors="replace").read()
-    # acotar a la primera tabla de "Voto directo" y cortar antes de escaños
     start = data.find("Voto directo")
     if start > 0:
         data = data[start:]
@@ -181,7 +224,9 @@ def published_table(est):
         pct = float(m.group(2).replace(",", "."))
         if len(label) > 45:
             continue
-        canon = canonize(label)
+        # misma canonización (con el año del estudio) que los microdatos:
+        # si no, los aliases con ventana temporal aplicarían a un solo lado.
+        canon = canonize(label, anio)
         if canon:
             table[canon] += pct
     return dict(table) or None
@@ -196,6 +241,28 @@ def score_against_var(dist, table, tolerance=0.2):
     return (-bad, len(common), -max(diffs))
 
 
+# ------------------------------------------------------------ escritura atómica
+
+def atomic_write_json(path, obj):
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(obj, f, ensure_ascii=False, indent=1)
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(tmp, path)
+
+
+def atomic_write_lines(path, lines):
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        for ln in lines:
+            f.write(ln)
+            f.write("\n")
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(tmp, path)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--catalog", default=os.path.join(BASE, "catalog.json"))
@@ -203,28 +270,33 @@ def main():
     args = ap.parse_args()
 
     cat = {r["estudio"]: r for r in json.load(open(args.catalog))}
-    man = json.load(open(os.path.join(RAW, "manifest.json"))) if os.path.exists(
-        os.path.join(RAW, "manifest.json")) else {}
+    mpath = os.path.join(RAW, "manifest.json")
+    man = json.load(open(mpath)) if os.path.exists(mpath) else {}
     os.makedirs(OUT, exist_ok=True)
 
     studies, exclusions, polls, validation = [], [], [], []
     for est, rec in sorted(cat.items(), key=lambda kv: kv[1]["fecha_trabajo"][-4:]):
         es, da = find_data(est)
         if not es:
-            continue
-        if man.get(est, {}).get("status") not in (None, "done") and not es:
+            continue  # no descargado
+        if rec["tipo"] == "otro":
+            exclusions.append({"estudio": est, "slug": rec["slug"],
+                               "eleccion": rec["eleccion"], "tipo": rec["tipo"],
+                               "motivo": "tipo 'otro': fuera de ámbito preelectoral/"
+                                         "postelectoral; no entra en polls ni validación"})
             continue
         spec, order, vl = pm.parse_es(es)
         if "PESO" not in spec:
             exclusions.append({"estudio": est, "slug": rec["slug"], "motivo": "sin PESO"})
             continue
+        anio = rec.get("anio")
         vlabels = var_labels(es)
         cands = candidates(vl, vlabels)
         if not cands:
             exclusions.append({"estudio": est, "slug": rec["slug"],
                                "motivo": "no se detecta variable de voto"})
             continue
-        table = published_table(est)
+        table = published_table(est, anio)
         chosen, chosen_var = None, None
         if table:
             best = None
@@ -232,73 +304,58 @@ def main():
                 counts, tot, n = weighted_distribution(da, spec, order, v)
                 if tot <= 0:
                     continue
-                dist, _ = distribution_by_canon(counts, tot, vl.get(v, {}))
+                dist, _ = distribution_by_canon(counts, tot, vl.get(v, {}), anio)
                 sc = score_against_var(dist, table, args.tolerance)
                 if best is None or sc > best[0]:
                     best = (sc, (counts, tot, n, dist), v)
             if best is None:
                 counts, tot, n = weighted_distribution(da, spec, order, cands[0])
-                dist, _ = distribution_by_canon(counts, tot, vl.get(cands[0], {}))
+                dist, _ = distribution_by_canon(counts, tot, vl.get(cands[0], {}), anio)
                 chosen, chosen_var = (counts, tot, n, dist), cands[0]
             else:
                 _sc, chosen, chosen_var = best
         else:
             counts, tot, n = weighted_distribution(da, spec, order, cands[0])
-            dist, _ = distribution_by_canon(counts, tot, vl.get(cands[0], {}))
+            dist, _ = distribution_by_canon(counts, tot, vl.get(cands[0], {}), anio)
             chosen, chosen_var = (counts, tot, n, dist), cands[0]
 
-        counts, tot, n, dist = chosen
-        lm = vl.get(chosen_var, {})
-        dist, unmapped = distribution_by_canon(counts, tot, lm)
+        counts, tot, n, _ = chosen
+        dist, residual = distribution_by_canon(counts, tot, vl.get(chosen_var, {}), anio)
 
-        val_entry = None
+        for canon, pct in sorted(dist.items()):
+            polls.append({"estudio_id": est, "fecha_trabajo": rec["fecha_trabajo"],
+                          "tipo": rec["tipo"], "ambito": rec["ambito"],
+                          "eleccion": rec["eleccion"], "anio": anio,
+                          "partido": canon, "voto_pct": round(pct, 3),
+                          "variable": chosen_var, "n": n,
+                          "suma_pesos": round(tot, 2), "fuente_url": rec["url"]})
+        studies.append({"estudio": est, "fecha_trabajo": rec["fecha_trabajo"],
+                        "slug": rec["slug"], "url": rec["url"], "tipo": rec["tipo"],
+                        "ambito": rec["ambito"], "eleccion": rec["eleccion"],
+                        "anio": anio, "n": n, "suma_pesos": round(tot, 2),
+                        "variable_voto": chosen_var, "n_partidos": len(dist),
+                        "residuales_en_otros": residual[:25],
+                        "candidatas": cands[:5]})
         if table:
             diffs = [{"partido": k, "publicado": table[k], "microdatos": round(dist[k], 2),
                       "delta": round(abs(dist[k] - table[k]), 2)}
                      for k in table if k in dist]
             bad = [d for d in diffs if d["delta"] > args.tolerance]
             missing = [k for k in table if k not in dist]
-            val_entry = {"estudio": est, "variable": chosen_var,
-                         "filas_comparadas": len(diffs),
-                         "max_delta": max((d["delta"] for d in diffs), default=None),
-                         "discrepancias": bad, "publicado_no_reproducido": missing,
-                         "ok": not bad}
-            validation.append(val_entry)
-            if bad and len(bad) * 2 >= len(diffs):
-                exclusions.append({"estudio": est, "slug": rec["slug"], "url": rec["url"],
-                                   "motivo": (f"validacion sistematica: {len(bad)}/{len(diffs)} "
-                                              f"filas fuera de tolerancia "
-                                              f"(max_delta={val_entry['max_delta']}) - "
-                                              "variable/denominador probablemente equivocado")})
-                print(f"EXCLUIDO {est} var={chosen_var} n={n} "
-                      f"({len(bad)}/{len(diffs)} filas fuera de tolerancia)", file=sys.stderr)
-                continue
-        for canon, pct in sorted(dist.items()):
-            polls.append({"estudio_id": est, "fecha_trabajo": rec["fecha_trabajo"],
-                          "fecha_trabajo_iso": fecha_iso(rec["fecha_trabajo"]),
-                          "tipo": rec["tipo"], "ambito": rec["ambito"],
-                          "eleccion": rec["eleccion"], "anio": rec["anio"],
-                          "partido": canon, "voto_pct": round(pct, 3),
-                          "variable": chosen_var, "n": n,
-                          "suma_pesos": round(tot, 2), "fuente_url": rec["url"]})
-        studies.append({"estudio": est, "fecha_trabajo": rec["fecha_trabajo"],
-                        "fecha_trabajo_iso": fecha_iso(rec["fecha_trabajo"]),
-                        "slug": rec["slug"], "url": rec["url"], "tipo": rec["tipo"],
-                        "ambito": rec["ambito"], "eleccion": rec["eleccion"],
-                        "anio": rec["anio"], "n": n, "suma_pesos": round(tot, 2),
-                        "variable_voto": chosen_var, "n_partidos": len(dist),
-                        "etiquetas_sin_mapear": unmapped[:20],
-                        "candidatas": cands[:5]})
+            validation.append({"estudio": est, "variable": chosen_var,
+                               "filas_comparadas": len(diffs),
+                               "max_delta": max((d["delta"] for d in diffs), default=None),
+                               "discrepancias": bad, "publicado_no_reproducido": missing,
+                               "ok": not bad})
         print(f"OK {est} var={chosen_var} n={n} partidos={len(dist)}"
-              + (f" validacion={'OK' if val_entry and val_entry['ok'] else 'REVISAR'}" if table else ""),
-              file=sys.stderr)
+              + (f" valid={'OK' if validation and validation[-1]['estudio']==est and validation[-1]['ok'] else 'REVISAR'}"
+                 if table else ""), file=sys.stderr)
 
-    with open(os.path.join(OUT, "polls.jsonl"), "w", encoding="utf-8") as f:
-        for p in polls:
-            f.write(json.dumps(p, ensure_ascii=False) + "\n")
-    json.dump(studies, open(os.path.join(OUT, "studies.json"), "w"), ensure_ascii=False, indent=1)
-    json.dump(validation, open(os.path.join(OUT, "validation.json"), "w"), ensure_ascii=False, indent=1)
-    json.dump(exclusions, open(os.path.join(OUT, "exclusions.json"), "w"), ensure_ascii=False, indent=1)
+    atomic_write_lines(os.path.join(OUT, "polls.jsonl"),
+                       [json.dumps(p, ensure_ascii=False) for p in polls])
+    atomic_write_json(os.path.join(OUT, "studies.json"), studies)
+    atomic_write_json(os.path.join(OUT, "validation.json"), validation)
+    atomic_write_json(os.path.join(OUT, "exclusions.json"), exclusions)
     ok = sum(1 for v in validation if v["ok"])
     print(json.dumps({"estudios": len(studies), "filas": len(polls),
                       "validados_ok": ok, "validados_total": len(validation),

@@ -93,32 +93,69 @@ Salidas: `data/processed/cis/polls.jsonl` (una línea por estudio×partido),
 
 Se replican las filas de "Voto directo en la encuesta (en %)" de la *Estimación
 de voto* publicada, agregando las etiquetas de coalición por partido canónico.
+La tabla publicada y los microdatos se canonizan **con el mismo año** (si no, los
+aliases con ventana temporal aplicarían a un solo lado).
 
-| Estudio | Variable elegida | Filas | Δ máx | Resultado |
+### Correcciones tras revisión (2026-10-15)
+
+1. **`tipo == 'otro'` fuera de polls y validación.** Los estudios clasificados
+   como `otro` (p. ej. **3382**, macroencuesta de voto *municipal* oct-2022) se
+   comparaban contra tablas de otro ámbito → validación inválida (Δ23,46 pp).
+   Ahora van a `exclusions.json` con motivo `tipo 'otro'` (11 estudios).
+2. **Aliases con ventana temporal** (`party_aliases_eras.csv`): en 2023 SUMAR
+   absorbe En Comú Podem / Compromís-Sumar / Més Compromís; en 2015-2019 esos
+   nombres integraban UNIDAS PODEMOS; Més Compromís 2019-2022 = Más País.
+3. **Residuales NO forzados a OTROS.** Se probó a agregar los partidos
+   residuales no reconocidos en OTROS: reproduce 3411 (0,83→0,59) pero **rompe**
+   3263 (0,04→0,49), 3367 (0,09→6,10), 3458 (0,52→4,71) y 3460 (0,22→5,00),
+   donde el CIS **no** los agrupa en "Otros partidos". Se **revierte**: las
+   etiquetas no reconocidas se descartan y se registran en
+   `residuales_en_otros` de `studies.json` (trazabilidad, sin forzar).
+
+### Antes / después (Δ máx por estudio, tolerancia ±0,2)
+
+| Estudio | Antes | Después | Partido con Δ | Nota |
 |---|---|---|---|---|
-| 3263 (10N‑2019) | P9R | 25 | **0,04** | ✅ |
-| 3242 (28A‑2019) | P10R | 19 | **0,14** | ✅ |
-| 3141 (26J‑2016) | P7R | 13 | **0,05** | ✅ |
-| 3411 (23J‑2023) | INTENCIONGR | 16 | **0,83** | ❌ 1 fila |
+| 3117 (20D-2015 panel) | 0,05 ✅ | 0,05 ✅ | — | |
+| 3141 (26J-2016) | 0,05 ✅ | 0,05 ✅ | — | |
+| 3242 (28A-2019) | 0,14 ✅ | 0,14 ✅ | — | |
+| 3263 (10N-2019) | 0,04 ✅ | 0,04 ✅ | — | |
+| 3269 (postelect. 2019) | 0,34 ❌ | **0,08 ✅** | MÁS PAÍS (antes) | corregido por alias 2019 |
+| 3367 (flash 2022) | 0,09 ✅ | 0,09 ✅ | — | |
+| 3382 (macroencuesta municipal) | 23,46 ❌ | — | — | **excluido** (`tipo 'otro'`) |
+| 3415 (flash 2023) | 0,05 ✅ | 0,05 ✅ | — | |
+| 3407 (flash municip. 2023) | 3,06 ❌ | 3,06 ❌ | OTROS | limitación |
+| 3411 (23J-2023) | 0,83 ❌ | 0,83 ❌ | OTROS | limitación |
+| 3420 (postelect. 2023) | 0,52 ❌ | 0,52 ❌ | OTROS | limitación |
+| 3458 (europeas 2024, pre) | 0,52 ❌ | 0,52 ❌ | OTROS | limitación |
+| 3460 (europeas 2024, campaña) | 0,22 ❌ | 0,22 ❌ | OTROS | limitación |
+| 3500 (flash 2024) | 0,36 ❌ | 0,36 ❌ | SUMAR, ABSTENCIÓN | limitación |
 
-**Discrepancia 3411 (sin maquillar)**: auto‑selección elige la recodificada
-`INTENCIONGR` (15/16 filas ≤0,2) pero **"Otros partidos"** sale 0,87 % frente a
-1,7 % publicado (Δ0,83). Con `INTENCIONG` (la que usó el sondeo manual) el
-"Otros" baja a 0,43 % y **"SUMAR" no se reproduce** (10,15 % vs 12,7 %).
+**Total: 6/14 → 7/13 OK** (denominador menor al excluir 3382).
 
-**Causa raíz (limitación documentada)**: el diccionario estático no distingue
-coaliciones **dependientes de la era**. Etiquetas como *En Comú Podem* o
-*Més Compromís* significan **Unidas Podemos** en 2016‑2019 y **SUMAR** en 2023;
-un mapa única‑alias→canónico no puede desambiguar por año. Consecuencia: en 3411
-parte del voto de SUMAR cae en UNIDAS PODEMOS/OTROS. Mitigación futura: alias
-**con ventana temporal** (`desde/hasta`) o desambiguación por coalición del año
-electoral. Se deja como incidencia, no se corrige a mano.
+### Limitación documentada (no maquillada)
+
+Las 6 validaciones que siguen fuera de tolerancia lo hacen **solo en "Otros
+partidos"** (3407, 3411, 3420, 3458, 3460) y en 3500 (SUMAR/ABSTENCIÓN).
+Causa raíz: el reparto de "Otros partidos" del CIS **no sigue una regla única
+entre estudios** — a veces agrupa las candidaturas residuales (España Vaciada,
+Teruel Existe, Por Ávila, UPL, Ahora Repúblicas, Partido Libertario…), a veces
+las lista aparte. Reproducirlo exigiría replicar la **agrupación por estudio**
+del propio CIS (lectura del libro de códigos de cada campaña), que aquí no se
+aplica para no forzar el ajuste. El déficit medido en 3411 es exactamente la
+masa residual descartada (0,83 pp ≈ suma de las 7 candidaturas no reconocidas).
+Mitigación futura: fijar las candidaturas de cada convocatoria (diccionario por
+año) y, solo entonces, decidir su agrupación con criterio documentado.
+
 
 ## 5. Exclusiones (`data/processed/cis/exclusions.json`)
 
-- `no_data_link`: estudio sin microdato en la ficha (fondo antiguo). 
-- `no se detecta variable de voto` / `sin PESO` / `sin ficheros DA/ES`: estudios
-  cualitativos, paneles sin dato descargable o formatos no cubiertos.
+- `tipo 'otro'` (11): estudio cuyo tipo no es preelectoral/postelectoral/etc.;
+  no entra en polls ni validación (incluye el caso 3382 de validación cruzada inválida).
+- `sin PESO` (53): fondos antiguos sin ponderador en el ASCII.
+- `no se detecta variable de voto` (7): estudios sin variable de intención explícita.
+- (La ausencia de microdato publicado en fichas antiguas se refleja en el
+  `manifest.json` como `no_data_link`/`bad_zip`, no como exclusión de normalización.)
 
 ## 6. Artefactos
 
