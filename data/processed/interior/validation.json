@@ -1,0 +1,6089 @@
+{
+ "generado": "2026-10-15T10:37:20.922045+00:00",
+ "validaciones": [
+  {
+   "id": "1977-06-15",
+   "escanos_totales": 350,
+   "provincias": {
+    "1": {
+     "nombre": "Araba/Álava",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 245,
+     "validos": 124212
+    },
+    "2": {
+     "nombre": "Albacete",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 474,
+     "validos": 169553
+    },
+    "3": {
+     "nombre": "Alicante/Alacant",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 1071,
+     "validos": 549184
+    },
+    "4": {
+     "nombre": "Almería",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 360,
+     "validos": 185182
+    },
+    "5": {
+     "nombre": "Ávila",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 240,
+     "validos": 105134
+    },
+    "6": {
+     "nombre": "Badajoz",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 632,
+     "validos": 319026
+    },
+    "7": {
+     "nombre": "Balears, Illes",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 1311,
+     "validos": 315147
+    },
+    "8": {
+     "nombre": "Barcelona",
+     "escanos": 33,
+     "ok": true,
+     "blanco": 4279,
+     "validos": 2363117
+    },
+    "9": {
+     "nombre": "Burgos",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 743,
+     "validos": 186301
+    },
+    "10": {
+     "nombre": "Cáceres",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 362,
+     "validos": 209363
+    },
+    "11": {
+     "nombre": "Cádiz",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 1387,
+     "validos": 413337
+    },
+    "12": {
+     "nombre": "Castellón/Castelló",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 750,
+     "validos": 238154
+    },
+    "13": {
+     "nombre": "Ciudad Real",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 512,
+     "validos": 248142
+    },
+    "14": {
+     "nombre": "Córdoba",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 405,
+     "validos": 361661
+    },
+    "15": {
+     "nombre": "A Coruña",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 2458,
+     "validos": 450884
+    },
+    "16": {
+     "nombre": "Cuenca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 314,
+     "validos": 126227
+    },
+    "17": {
+     "nombre": "Girona",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 505,
+     "validos": 246345
+    },
+    "18": {
+     "nombre": "Granada",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 875,
+     "validos": 348393
+    },
+    "19": {
+     "nombre": "Guadalajara",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 203,
+     "validos": 80690
+    },
+    "20": {
+     "nombre": "Gipuzkoa",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 1157,
+     "validos": 331292
+    },
+    "21": {
+     "nombre": "Huelva",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 295,
+     "validos": 187251
+    },
+    "22": {
+     "nombre": "Huesca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 394,
+     "validos": 122523
+    },
+    "23": {
+     "nombre": "Jaén",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 269,
+     "validos": 314177
+    },
+    "24": {
+     "nombre": "León",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 1282,
+     "validos": 270228
+    },
+    "25": {
+     "nombre": "Lleida",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 369,
+     "validos": 185895
+    },
+    "26": {
+     "nombre": "La Rioja",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 356,
+     "validos": 137659
+    },
+    "27": {
+     "nombre": "Lugo",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 802,
+     "validos": 167944
+    },
+    "28": {
+     "nombre": "Madrid",
+     "escanos": 32,
+     "ok": true,
+     "blanco": 6111,
+     "validos": 2308916
+    },
+    "29": {
+     "nombre": "Málaga",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 912,
+     "validos": 434521
+    },
+    "30": {
+     "nombre": "Murcia",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 660,
+     "validos": 446272
+    },
+    "31": {
+     "nombre": "Navarra",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 598,
+     "validos": 258464
+    },
+    "32": {
+     "nombre": "Ourense",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 590,
+     "validos": 161081
+    },
+    "33": {
+     "nombre": "Asturias",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 1012,
+     "validos": 576100
+    },
+    "34": {
+     "nombre": "Palencia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 310,
+     "validos": 102070
+    },
+    "35": {
+     "nombre": "Las Palmas",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 857,
+     "validos": 283698
+    },
+    "36": {
+     "nombre": "Pontevedra",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 898,
+     "validos": 348710
+    },
+    "37": {
+     "nombre": "Salamanca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 517,
+     "validos": 194069
+    },
+    "38": {
+     "nombre": "Santa Cruz de Tenerife",
+     "escanos": 7,
+     "ok": false,
+     "blanco": 860,
+     "validos": 263445
+    },
+    "39": {
+     "nombre": "Cantabria",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 391,
+     "validos": 256406
+    },
+    "40": {
+     "nombre": "Segovia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 364,
+     "validos": 85555
+    },
+    "41": {
+     "nombre": "Sevilla",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 2032,
+     "validos": 684399
+    },
+    "42": {
+     "nombre": "Soria",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 282,
+     "validos": 60279
+    },
+    "43": {
+     "nombre": "Tarragona",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 540,
+     "validos": 252624
+    },
+    "44": {
+     "nombre": "Teruel",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 479,
+     "validos": 93272
+    },
+    "45": {
+     "nombre": "Toledo",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 393,
+     "validos": 265929
+    },
+    "46": {
+     "nombre": "Valencia/València",
+     "escanos": 15,
+     "ok": true,
+     "blanco": 1870,
+     "validos": 1080031
+    },
+    "47": {
+     "nombre": "Valladolid",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1004,
+     "validos": 245518
+    },
+    "48": {
+     "nombre": "Bizkaia",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 1166,
+     "validos": 556235
+    },
+    "49": {
+     "nombre": "Zamora",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 600,
+     "validos": 130134
+    },
+    "50": {
+     "nombre": "Zaragoza",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 1578,
+     "validos": 436238
+    },
+    "51": {
+     "nombre": "Ceuta",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 67,
+     "validos": 24290
+    },
+    "52": {
+     "nombre": "Melilla",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 107,
+     "validos": 19056
+    }
+   },
+   "a_sum_escanos_ok": true,
+   "b_dhondt_ok": false,
+   "c_cargos_ok": true,
+   "fallos": [
+    {
+     "tipo": "b",
+     "provincia": 38,
+     "provincia_nombre": "Santa Cruz de Tenerife",
+     "escanos": 7,
+     "oficial": {
+      "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE": 2,
+      "UNION DE CENTRO DEMOCRATICO - UCD": 5
+     },
+     "dhondt": {
+      "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE": 1,
+      "FEDERACION DE PARTIDOS DE ALIANZA POPULAR - AP": 1,
+      "UNION DE CENTRO DEMOCRATICO - UCD": 5
+     },
+     "dif": {
+      "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PSOE": 1,
+      "FEDERACION DE PARTIDOS DE ALIANZA POPULAR - AP": -1
+     }
+    }
+   ],
+   "resumen": {
+    "escanos": 350,
+    "provincias_ok": 51,
+    "provincias_total": 52
+   }
+  },
+  {
+   "id": "1979-03-01",
+   "escanos_totales": 350,
+   "provincias": {
+    "1": {
+     "nombre": "Araba/Álava",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 481,
+     "validos": 116601
+    },
+    "2": {
+     "nombre": "Albacete",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 359,
+     "validos": 169109
+    },
+    "3": {
+     "nombre": "Alicante/Alacant",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 1110,
+     "validos": 553932
+    },
+    "4": {
+     "nombre": "Almería",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 360,
+     "validos": 182899
+    },
+    "5": {
+     "nombre": "Ávila",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 499,
+     "validos": 101805
+    },
+    "6": {
+     "nombre": "Badajoz",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 573,
+     "validos": 328892
+    },
+    "7": {
+     "nombre": "Balears, Illes",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 1134,
+     "validos": 300331
+    },
+    "8": {
+     "nombre": "Barcelona",
+     "escanos": 33,
+     "ok": true,
+     "blanco": 9714,
+     "validos": 2294556
+    },
+    "9": {
+     "nombre": "Burgos",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1026,
+     "validos": 180249
+    },
+    "10": {
+     "nombre": "Cáceres",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 456,
+     "validos": 207007
+    },
+    "11": {
+     "nombre": "Cádiz",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 972,
+     "validos": 413958
+    },
+    "12": {
+     "nombre": "Castellón/Castelló",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 791,
+     "validos": 240299
+    },
+    "13": {
+     "nombre": "Ciudad Real",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 453,
+     "validos": 243851
+    },
+    "14": {
+     "nombre": "Córdoba",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 568,
+     "validos": 369849
+    },
+    "15": {
+     "nombre": "A Coruña",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 402,
+     "validos": 429383
+    },
+    "16": {
+     "nombre": "Cuenca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 518,
+     "validos": 122718
+    },
+    "17": {
+     "nombre": "Girona",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 728,
+     "validos": 236594
+    },
+    "18": {
+     "nombre": "Granada",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 440,
+     "validos": 358073
+    },
+    "19": {
+     "nombre": "Guadalajara",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 286,
+     "validos": 77458
+    },
+    "20": {
+     "nombre": "Gipuzkoa",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 761,
+     "validos": 328647
+    },
+    "21": {
+     "nombre": "Huelva",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 332,
+     "validos": 184404
+    },
+    "22": {
+     "nombre": "Huesca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 462,
+     "validos": 117782
+    },
+    "23": {
+     "nombre": "Jaén",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 357,
+     "validos": 329075
+    },
+    "24": {
+     "nombre": "León",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 1075,
+     "validos": 257471
+    },
+    "25": {
+     "nombre": "Lleida",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 679,
+     "validos": 172170
+    },
+    "26": {
+     "nombre": "La Rioja",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 646,
+     "validos": 134739
+    },
+    "27": {
+     "nombre": "Lugo",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 500,
+     "validos": 159620
+    },
+    "28": {
+     "nombre": "Madrid",
+     "escanos": 32,
+     "ok": true,
+     "blanco": 8691,
+     "validos": 2307644
+    },
+    "29": {
+     "nombre": "Málaga",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 877,
+     "validos": 413179
+    },
+    "30": {
+     "nombre": "Murcia",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 2082,
+     "validos": 456209
+    },
+    "31": {
+     "nombre": "Navarra",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 821,
+     "validos": 252992
+    },
+    "32": {
+     "nombre": "Ourense",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 0,
+     "validos": 143391
+    },
+    "33": {
+     "nombre": "Asturias",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 1196,
+     "validos": 537364
+    },
+    "34": {
+     "nombre": "Palencia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 648,
+     "validos": 99290
+    },
+    "35": {
+     "nombre": "Las Palmas",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 1024,
+     "validos": 287790
+    },
+    "36": {
+     "nombre": "Pontevedra",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 884,
+     "validos": 291182
+    },
+    "37": {
+     "nombre": "Salamanca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1210,
+     "validos": 195098
+    },
+    "38": {
+     "nombre": "Santa Cruz de Tenerife",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 669,
+     "validos": 246409
+    },
+    "39": {
+     "nombre": "Cantabria",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1175,
+     "validos": 259307
+    },
+    "40": {
+     "nombre": "Segovia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 567,
+     "validos": 83258
+    },
+    "41": {
+     "nombre": "Sevilla",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 1051,
+     "validos": 692141
+    },
+    "42": {
+     "nombre": "Soria",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 588,
+     "validos": 55520
+    },
+    "43": {
+     "nombre": "Tarragona",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 591,
+     "validos": 247815
+    },
+    "44": {
+     "nombre": "Teruel",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 448,
+     "validos": 84350
+    },
+    "45": {
+     "nombre": "Toledo",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 499,
+     "validos": 265700
+    },
+    "46": {
+     "nombre": "Valencia/València",
+     "escanos": 15,
+     "ok": true,
+     "blanco": 3308,
+     "validos": 1078478
+    },
+    "47": {
+     "nombre": "Valladolid",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1438,
+     "validos": 244744
+    },
+    "48": {
+     "nombre": "Bizkaia",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 1127,
+     "validos": 553407
+    },
+    "49": {
+     "nombre": "Zamora",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 881,
+     "validos": 120680
+    },
+    "50": {
+     "nombre": "Zaragoza",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 1635,
+     "validos": 424731
+    },
+    "51": {
+     "nombre": "Ceuta",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 112,
+     "validos": 21244
+    },
+    "52": {
+     "nombre": "Melilla",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 63,
+     "validos": 17520
+    }
+   },
+   "a_sum_escanos_ok": true,
+   "b_dhondt_ok": true,
+   "c_cargos_ok": true,
+   "fallos": [],
+   "resumen": {
+    "escanos": 350,
+    "provincias_ok": 52,
+    "provincias_total": 52
+   }
+  },
+  {
+   "id": "1982-10-28",
+   "escanos_totales": 350,
+   "provincias": {
+    "1": {
+     "nombre": "Araba/Álava",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 834,
+     "validos": 146251
+    },
+    "2": {
+     "nombre": "Albacete",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 861,
+     "validos": 192882
+    },
+    "3": {
+     "nombre": "Alicante/Alacant",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 2920,
+     "validos": 651383
+    },
+    "4": {
+     "nombre": "Almería",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1393,
+     "validos": 207562
+    },
+    "5": {
+     "nombre": "Ávila",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 557,
+     "validos": 111632
+    },
+    "6": {
+     "nombre": "Badajoz",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 1530,
+     "validos": 365197
+    },
+    "7": {
+     "nombre": "Balears, Illes",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2148,
+     "validos": 356539
+    },
+    "8": {
+     "nombre": "Barcelona",
+     "escanos": 33,
+     "ok": true,
+     "blanco": 10818,
+     "validos": 2682414
+    },
+    "9": {
+     "nombre": "Burgos",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1667,
+     "validos": 211814
+    },
+    "10": {
+     "nombre": "Cáceres",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 764,
+     "validos": 235868
+    },
+    "11": {
+     "nombre": "Cádiz",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 1421,
+     "validos": 484629
+    },
+    "12": {
+     "nombre": "Castellón/Castelló",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1089,
+     "validos": 262382
+    },
+    "13": {
+     "nombre": "Ciudad Real",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1062,
+     "validos": 280174
+    },
+    "14": {
+     "nombre": "Córdoba",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 5264,
+     "validos": 425397
+    },
+    "15": {
+     "nombre": "A Coruña",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 2708,
+     "validos": 513738
+    },
+    "16": {
+     "nombre": "Cuenca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 717,
+     "validos": 132778
+    },
+    "17": {
+     "nombre": "Girona",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 962,
+     "validos": 267112
+    },
+    "18": {
+     "nombre": "Granada",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 1079,
+     "validos": 405204
+    },
+    "19": {
+     "nombre": "Guadalajara",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 693,
+     "validos": 89610
+    },
+    "20": {
+     "nombre": "Gipuzkoa",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 1657,
+     "validos": 384660
+    },
+    "21": {
+     "nombre": "Huelva",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 563,
+     "validos": 220051
+    },
+    "22": {
+     "nombre": "Huesca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 827,
+     "validos": 130487
+    },
+    "23": {
+     "nombre": "Jaén",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 604,
+     "validos": 363721
+    },
+    "24": {
+     "nombre": "León",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 1899,
+     "validos": 297733
+    },
+    "25": {
+     "nombre": "Lleida",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 833,
+     "validos": 200991
+    },
+    "26": {
+     "nombre": "La Rioja",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1086,
+     "validos": 155995
+    },
+    "27": {
+     "nombre": "Lugo",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1196,
+     "validos": 191583
+    },
+    "28": {
+     "nombre": "Madrid",
+     "escanos": 32,
+     "ok": true,
+     "blanco": 11826,
+     "validos": 2762663
+    },
+    "29": {
+     "nombre": "Málaga",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 1401,
+     "validos": 508260
+    },
+    "30": {
+     "nombre": "Murcia",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 1854,
+     "validos": 532961
+    },
+    "31": {
+     "nombre": "Navarra",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1885,
+     "validos": 298011
+    },
+    "32": {
+     "nombre": "Ourense",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 652,
+     "validos": 179221
+    },
+    "33": {
+     "nombre": "Asturias",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 2799,
+     "validos": 651378
+    },
+    "34": {
+     "nombre": "Palencia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 678,
+     "validos": 115881
+    },
+    "35": {
+     "nombre": "Las Palmas",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 1748,
+     "validos": 335299
+    },
+    "36": {
+     "nombre": "Pontevedra",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 1997,
+     "validos": 414468
+    },
+    "37": {
+     "nombre": "Salamanca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1599,
+     "validos": 218482
+    },
+    "38": {
+     "nombre": "Santa Cruz de Tenerife",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 1446,
+     "validos": 318433
+    },
+    "39": {
+     "nombre": "Cantabria",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1768,
+     "validos": 302165
+    },
+    "40": {
+     "nombre": "Segovia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 919,
+     "validos": 92619
+    },
+    "41": {
+     "nombre": "Sevilla",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 2271,
+     "validos": 800995
+    },
+    "42": {
+     "nombre": "Soria",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 769,
+     "validos": 61230
+    },
+    "43": {
+     "nombre": "Tarragona",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1115,
+     "validos": 287189
+    },
+    "44": {
+     "nombre": "Teruel",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 627,
+     "validos": 94778
+    },
+    "45": {
+     "nombre": "Toledo",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 997,
+     "validos": 293302
+    },
+    "46": {
+     "nombre": "Valencia/València",
+     "escanos": 15,
+     "ok": true,
+     "blanco": 4552,
+     "validos": 1191845
+    },
+    "47": {
+     "nombre": "Valladolid",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2150,
+     "validos": 281325
+    },
+    "48": {
+     "nombre": "Bizkaia",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 3318,
+     "validos": 664570
+    },
+    "49": {
+     "nombre": "Zamora",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1368,
+     "validos": 132478
+    },
+    "50": {
+     "nombre": "Zaragoza",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 3276,
+     "validos": 498002
+    },
+    "51": {
+     "nombre": "Ceuta",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 119,
+     "validos": 25690
+    },
+    "52": {
+     "nombre": "Melilla",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 152,
+     "validos": 21006
+    }
+   },
+   "a_sum_escanos_ok": true,
+   "b_dhondt_ok": true,
+   "c_cargos_ok": true,
+   "fallos": [],
+   "resumen": {
+    "escanos": 350,
+    "provincias_ok": 52,
+    "provincias_total": 52
+   }
+  },
+  {
+   "id": "1986-06-22",
+   "escanos_totales": 350,
+   "provincias": {
+    "1": {
+     "nombre": "Araba/Álava",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 986,
+     "validos": 136562
+    },
+    "2": {
+     "nombre": "Albacete",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1289,
+     "validos": 191641
+    },
+    "3": {
+     "nombre": "Alicante/Alacant",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 2954,
+     "validos": 638049
+    },
+    "4": {
+     "nombre": "Almería",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 734,
+     "validos": 210067
+    },
+    "5": {
+     "nombre": "Ávila",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 502,
+     "validos": 109640
+    },
+    "6": {
+     "nombre": "Badajoz",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 1955,
+     "validos": 366121
+    },
+    "7": {
+     "nombre": "Balears, Illes",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2452,
+     "validos": 341056
+    },
+    "8": {
+     "nombre": "Barcelona",
+     "escanos": 33,
+     "ok": true,
+     "blanco": 9905,
+     "validos": 2439795
+    },
+    "9": {
+     "nombre": "Burgos",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1997,
+     "validos": 200318
+    },
+    "10": {
+     "nombre": "Cáceres",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1173,
+     "validos": 236332
+    },
+    "11": {
+     "nombre": "Cádiz",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 2416,
+     "validos": 471174
+    },
+    "12": {
+     "nombre": "Castellón/Castelló",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1450,
+     "validos": 257863
+    },
+    "13": {
+     "nombre": "Ciudad Real",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1582,
+     "validos": 268640
+    },
+    "14": {
+     "nombre": "Córdoba",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 2383,
+     "validos": 417887
+    },
+    "15": {
+     "nombre": "A Coruña",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 3017,
+     "validos": 512141
+    },
+    "16": {
+     "nombre": "Cuenca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 763,
+     "validos": 126617
+    },
+    "17": {
+     "nombre": "Girona",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1051,
+     "validos": 261332
+    },
+    "18": {
+     "nombre": "Granada",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 1604,
+     "validos": 400245
+    },
+    "19": {
+     "nombre": "Guadalajara",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 655,
+     "validos": 86289
+    },
+    "20": {
+     "nombre": "Gipuzkoa",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 1681,
+     "validos": 347246
+    },
+    "21": {
+     "nombre": "Huelva",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 931,
+     "validos": 209541
+    },
+    "22": {
+     "nombre": "Huesca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 991,
+     "validos": 120776
+    },
+    "23": {
+     "nombre": "Jaén",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 1171,
+     "validos": 365784
+    },
+    "24": {
+     "nombre": "León",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2407,
+     "validos": 288551
+    },
+    "25": {
+     "nombre": "Lleida",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 873,
+     "validos": 190829
+    },
+    "26": {
+     "nombre": "La Rioja",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1361,
+     "validos": 148328
+    },
+    "27": {
+     "nombre": "Lugo",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1084,
+     "validos": 188482
+    },
+    "28": {
+     "nombre": "Madrid",
+     "escanos": 33,
+     "ok": true,
+     "blanco": 24814,
+     "validos": 2584562
+    },
+    "29": {
+     "nombre": "Málaga",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 2531,
+     "validos": 496320
+    },
+    "30": {
+     "nombre": "Murcia",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 2624,
+     "validos": 536218
+    },
+    "31": {
+     "nombre": "Navarra",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2712,
+     "validos": 273152
+    },
+    "32": {
+     "nombre": "Ourense",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 865,
+     "validos": 174211
+    },
+    "33": {
+     "nombre": "Asturias",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 3477,
+     "validos": 606514
+    },
+    "34": {
+     "nombre": "Palencia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 827,
+     "validos": 111739
+    },
+    "35": {
+     "nombre": "Las Palmas",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 1519,
+     "validos": 349374
+    },
+    "36": {
+     "nombre": "Pontevedra",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 2137,
+     "validos": 407093
+    },
+    "37": {
+     "nombre": "Salamanca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2221,
+     "validos": 213335
+    },
+    "38": {
+     "nombre": "Santa Cruz de Tenerife",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 1029,
+     "validos": 319487
+    },
+    "39": {
+     "nombre": "Cantabria",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2371,
+     "validos": 291064
+    },
+    "40": {
+     "nombre": "Segovia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1152,
+     "validos": 90161
+    },
+    "41": {
+     "nombre": "Sevilla",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 3077,
+     "validos": 800183
+    },
+    "42": {
+     "nombre": "Soria",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 592,
+     "validos": 56863
+    },
+    "43": {
+     "nombre": "Tarragona",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1351,
+     "validos": 277784
+    },
+    "44": {
+     "nombre": "Teruel",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 754,
+     "validos": 87114
+    },
+    "45": {
+     "nombre": "Toledo",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1577,
+     "validos": 284260
+    },
+    "46": {
+     "nombre": "Valencia/València",
+     "escanos": 16,
+     "ok": true,
+     "blanco": 5637,
+     "validos": 1195850
+    },
+    "47": {
+     "nombre": "Valladolid",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2395,
+     "validos": 277166
+    },
+    "48": {
+     "nombre": "Bizkaia",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 2935,
+     "validos": 611221
+    },
+    "49": {
+     "nombre": "Zamora",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1181,
+     "validos": 129191
+    },
+    "50": {
+     "nombre": "Zaragoza",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 3616,
+     "validos": 454801
+    },
+    "51": {
+     "nombre": "Ceuta",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 136,
+     "validos": 24181
+    },
+    "52": {
+     "nombre": "Melilla",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 289,
+     "validos": 19769
+    }
+   },
+   "a_sum_escanos_ok": true,
+   "b_dhondt_ok": true,
+   "c_cargos_ok": true,
+   "fallos": [],
+   "resumen": {
+    "escanos": 350,
+    "provincias_ok": 52,
+    "provincias_total": 52
+   }
+  },
+  {
+   "id": "1989-10-29",
+   "escanos_totales": 350,
+   "provincias": {
+    "1": {
+     "nombre": "Araba/Álava",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1059,
+     "validos": 137846
+    },
+    "2": {
+     "nombre": "Albacete",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1322,
+     "validos": 197173
+    },
+    "3": {
+     "nombre": "Alicante/Alacant",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 3331,
+     "validos": 664060
+    },
+    "4": {
+     "nombre": "Almería",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 791,
+     "validos": 219435
+    },
+    "5": {
+     "nombre": "Ávila",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 676,
+     "validos": 109087
+    },
+    "6": {
+     "nombre": "Badajoz",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 1799,
+     "validos": 373292
+    },
+    "7": {
+     "nombre": "Balears, Illes",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2976,
+     "validos": 344681
+    },
+    "8": {
+     "nombre": "Barcelona",
+     "escanos": 32,
+     "ok": true,
+     "blanco": 14241,
+     "validos": 2443643
+    },
+    "9": {
+     "nombre": "Burgos",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2398,
+     "validos": 203508
+    },
+    "10": {
+     "nombre": "Cáceres",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1086,
+     "validos": 240509
+    },
+    "11": {
+     "nombre": "Cádiz",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 2464,
+     "validos": 469188
+    },
+    "12": {
+     "nombre": "Castellón/Castelló",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1673,
+     "validos": 254870
+    },
+    "13": {
+     "nombre": "Ciudad Real",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1480,
+     "validos": 273884
+    },
+    "14": {
+     "nombre": "Córdoba",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 1565,
+     "validos": 420386
+    },
+    "15": {
+     "nombre": "A Coruña",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 4775,
+     "validos": 518266
+    },
+    "16": {
+     "nombre": "Cuenca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 785,
+     "validos": 127446
+    },
+    "17": {
+     "nombre": "Girona",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1986,
+     "validos": 257757
+    },
+    "18": {
+     "nombre": "Granada",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 2253,
+     "validos": 408799
+    },
+    "19": {
+     "nombre": "Guadalajara",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 796,
+     "validos": 86690
+    },
+    "20": {
+     "nombre": "Gipuzkoa",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 2229,
+     "validos": 354371
+    },
+    "21": {
+     "nombre": "Huelva",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 940,
+     "validos": 210319
+    },
+    "22": {
+     "nombre": "Huesca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1051,
+     "validos": 117395
+    },
+    "23": {
+     "nombre": "Jaén",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 1171,
+     "validos": 365367
+    },
+    "24": {
+     "nombre": "León",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2786,
+     "validos": 285943
+    },
+    "25": {
+     "nombre": "Lleida",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1341,
+     "validos": 183444
+    },
+    "26": {
+     "nombre": "La Rioja",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1775,
+     "validos": 147808
+    },
+    "27": {
+     "nombre": "Lugo",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1382,
+     "validos": 201857
+    },
+    "28": {
+     "nombre": "Madrid",
+     "escanos": 33,
+     "ok": true,
+     "blanco": 27303,
+     "validos": 2686715
+    },
+    "29": {
+     "nombre": "Málaga",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 2107,
+     "validos": 510152
+    },
+    "30": {
+     "nombre": "Murcia",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 2640,
+     "validos": 556083
+    },
+    "31": {
+     "nombre": "Navarra",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2960,
+     "validos": 277937
+    },
+    "32": {
+     "nombre": "Ourense",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1276,
+     "validos": 188316
+    },
+    "33": {
+     "nombre": "Asturias",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 3728,
+     "validos": 612844
+    },
+    "34": {
+     "nombre": "Palencia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1041,
+     "validos": 112752
+    },
+    "35": {
+     "nombre": "Las Palmas",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 1782,
+     "validos": 354733
+    },
+    "36": {
+     "nombre": "Pontevedra",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 3906,
+     "validos": 421949
+    },
+    "37": {
+     "nombre": "Salamanca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1877,
+     "validos": 216198
+    },
+    "38": {
+     "nombre": "Santa Cruz de Tenerife",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 1566,
+     "validos": 315806
+    },
+    "39": {
+     "nombre": "Cantabria",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2824,
+     "validos": 297873
+    },
+    "40": {
+     "nombre": "Segovia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1230,
+     "validos": 89537
+    },
+    "41": {
+     "nombre": "Sevilla",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 4083,
+     "validos": 810000
+    },
+    "42": {
+     "nombre": "Soria",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 677,
+     "validos": 55844
+    },
+    "43": {
+     "nombre": "Tarragona",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1684,
+     "validos": 273403
+    },
+    "44": {
+     "nombre": "Teruel",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 585,
+     "validos": 84196
+    },
+    "45": {
+     "nombre": "Toledo",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1722,
+     "validos": 288466
+    },
+    "46": {
+     "nombre": "Valencia/València",
+     "escanos": 16,
+     "ok": true,
+     "blanco": 6020,
+     "validos": 1199875
+    },
+    "47": {
+     "nombre": "Valladolid",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2967,
+     "validos": 282555
+    },
+    "48": {
+     "nombre": "Bizkaia",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 4176,
+     "validos": 614724
+    },
+    "49": {
+     "nombre": "Zamora",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1131,
+     "validos": 128411
+    },
+    "50": {
+     "nombre": "Zaragoza",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 3952,
+     "validos": 457862
+    },
+    "51": {
+     "nombre": "Ceuta",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 270,
+     "validos": 22919
+    },
+    "52": {
+     "nombre": "Melilla",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 157,
+     "validos": 17508
+    }
+   },
+   "a_sum_escanos_ok": true,
+   "b_dhondt_ok": true,
+   "c_cargos_ok": true,
+   "fallos": [],
+   "resumen": {
+    "escanos": 350,
+    "provincias_ok": 52,
+    "provincias_total": 52
+   }
+  },
+  {
+   "id": "1993-06-06",
+   "escanos_totales": 350,
+   "provincias": {
+    "1": {
+     "nombre": "Araba/Álava",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2223,
+     "validos": 156676
+    },
+    "2": {
+     "nombre": "Albacete",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1843,
+     "validos": 223335
+    },
+    "3": {
+     "nombre": "Alicante/Alacant",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 4163,
+     "validos": 782921
+    },
+    "4": {
+     "nombre": "Almería",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1153,
+     "validos": 263376
+    },
+    "5": {
+     "nombre": "Ávila",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 894,
+     "validos": 114231
+    },
+    "6": {
+     "nombre": "Badajoz",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2206,
+     "validos": 406434
+    },
+    "7": {
+     "nombre": "Balears, Illes",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 3485,
+     "validos": 412545
+    },
+    "8": {
+     "nombre": "Barcelona",
+     "escanos": 32,
+     "ok": true,
+     "blanco": 18229,
+     "validos": 2832260
+    },
+    "9": {
+     "nombre": "Burgos",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 3121,
+     "validos": 224834
+    },
+    "10": {
+     "nombre": "Cáceres",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1403,
+     "validos": 259479
+    },
+    "11": {
+     "nombre": "Cádiz",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 3054,
+     "validos": 561799
+    },
+    "12": {
+     "nombre": "Castellón/Castelló",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1881,
+     "validos": 287322
+    },
+    "13": {
+     "nombre": "Ciudad Real",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2055,
+     "validos": 299656
+    },
+    "14": {
+     "nombre": "Córdoba",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 2301,
+     "validos": 467598
+    },
+    "15": {
+     "nombre": "A Coruña",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 6136,
+     "validos": 635443
+    },
+    "16": {
+     "nombre": "Cuenca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1064,
+     "validos": 137141
+    },
+    "17": {
+     "nombre": "Girona",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1911,
+     "validos": 300502
+    },
+    "18": {
+     "nombre": "Granada",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 2167,
+     "validos": 464665
+    },
+    "19": {
+     "nombre": "Guadalajara",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1072,
+     "validos": 96091
+    },
+    "20": {
+     "nombre": "Gipuzkoa",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 8775,
+     "validos": 372015
+    },
+    "21": {
+     "nombre": "Huelva",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1185,
+     "validos": 248874
+    },
+    "22": {
+     "nombre": "Huesca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1033,
+     "validos": 133300
+    },
+    "23": {
+     "nombre": "Jaén",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 1683,
+     "validos": 399912
+    },
+    "24": {
+     "nombre": "León",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3440,
+     "validos": 322745
+    },
+    "25": {
+     "nombre": "Lleida",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1618,
+     "validos": 211217
+    },
+    "26": {
+     "nombre": "La Rioja",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2125,
+     "validos": 170310
+    },
+    "27": {
+     "nombre": "Lugo",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1766,
+     "validos": 225895
+    },
+    "28": {
+     "nombre": "Madrid",
+     "escanos": 34,
+     "ok": true,
+     "blanco": 30554,
+     "validos": 3126150
+    },
+    "29": {
+     "nombre": "Málaga",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 3093,
+     "validos": 634901
+    },
+    "30": {
+     "nombre": "Murcia",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 3433,
+     "validos": 656534
+    },
+    "31": {
+     "nombre": "Navarra",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 4495,
+     "validos": 310625
+    },
+    "32": {
+     "nombre": "Ourense",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1472,
+     "validos": 216771
+    },
+    "33": {
+     "nombre": "Asturias",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 6306,
+     "validos": 691381
+    },
+    "34": {
+     "nombre": "Palencia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1250,
+     "validos": 121263
+    },
+    "35": {
+     "nombre": "Las Palmas",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 3029,
+     "validos": 420189
+    },
+    "36": {
+     "nombre": "Pontevedra",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 4388,
+     "validos": 507121
+    },
+    "37": {
+     "nombre": "Salamanca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2775,
+     "validos": 234664
+    },
+    "38": {
+     "nombre": "Santa Cruz de Tenerife",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 2076,
+     "validos": 389329
+    },
+    "39": {
+     "nombre": "Cantabria",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 4252,
+     "validos": 329344
+    },
+    "40": {
+     "nombre": "Segovia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1249,
+     "validos": 95833
+    },
+    "41": {
+     "nombre": "Sevilla",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 6106,
+     "validos": 970301
+    },
+    "42": {
+     "nombre": "Soria",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 844,
+     "validos": 58421
+    },
+    "43": {
+     "nombre": "Tarragona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2398,
+     "validos": 320254
+    },
+    "44": {
+     "nombre": "Teruel",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 597,
+     "validos": 90084
+    },
+    "45": {
+     "nombre": "Toledo",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2305,
+     "validos": 320521
+    },
+    "46": {
+     "nombre": "Valencia/València",
+     "escanos": 16,
+     "ok": true,
+     "blanco": 8144,
+     "validos": 1368713
+    },
+    "47": {
+     "nombre": "Valladolid",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3991,
+     "validos": 320468
+    },
+    "48": {
+     "nombre": "Bizkaia",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 8060,
+     "validos": 668191
+    },
+    "49": {
+     "nombre": "Zamora",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1437,
+     "validos": 136589
+    },
+    "50": {
+     "nombre": "Zaragoza",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 3883,
+     "validos": 537237
+    },
+    "51": {
+     "nombre": "Ceuta",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 231,
+     "validos": 29993
+    },
+    "52": {
+     "nombre": "Melilla",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 325,
+     "validos": 26411
+    }
+   },
+   "a_sum_escanos_ok": true,
+   "b_dhondt_ok": true,
+   "c_cargos_ok": true,
+   "fallos": [],
+   "resumen": {
+    "escanos": 350,
+    "provincias_ok": 52,
+    "provincias_total": 52
+   }
+  },
+  {
+   "id": "1996-03-03",
+   "escanos_totales": 350,
+   "provincias": {
+    "1": {
+     "nombre": "Araba/Álava",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2490,
+     "validos": 167426
+    },
+    "2": {
+     "nombre": "Albacete",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2289,
+     "validos": 235774
+    },
+    "3": {
+     "nombre": "Alicante/Alacant",
+     "escanos": 11,
+     "ok": true,
+     "blanco": 6997,
+     "validos": 836850
+    },
+    "4": {
+     "nombre": "Almería",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1890,
+     "validos": 288297
+    },
+    "5": {
+     "nombre": "Ávila",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1171,
+     "validos": 116708
+    },
+    "6": {
+     "nombre": "Badajoz",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 3081,
+     "validos": 427091
+    },
+    "7": {
+     "nombre": "Balears, Illes",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 4318,
+     "validos": 431785
+    },
+    "8": {
+     "nombre": "Barcelona",
+     "escanos": 31,
+     "ok": true,
+     "blanco": 20365,
+     "validos": 2984714
+    },
+    "9": {
+     "nombre": "Burgos",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 3753,
+     "validos": 233277
+    },
+    "10": {
+     "nombre": "Cáceres",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2000,
+     "validos": 274792
+    },
+    "11": {
+     "nombre": "Cádiz",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 5126,
+     "validos": 615757
+    },
+    "12": {
+     "nombre": "Castellón/Castelló",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2559,
+     "validos": 302545
+    },
+    "13": {
+     "nombre": "Ciudad Real",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2632,
+     "validos": 314213
+    },
+    "14": {
+     "nombre": "Córdoba",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 3415,
+     "validos": 494284
+    },
+    "15": {
+     "nombre": "A Coruña",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 6736,
+     "validos": 689269
+    },
+    "16": {
+     "nombre": "Cuenca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1235,
+     "validos": 139803
+    },
+    "17": {
+     "nombre": "Girona",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1739,
+     "validos": 329337
+    },
+    "18": {
+     "nombre": "Granada",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 3749,
+     "validos": 510793
+    },
+    "19": {
+     "nombre": "Guadalajara",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1380,
+     "validos": 103496
+    },
+    "20": {
+     "nombre": "Gipuzkoa",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 7998,
+     "validos": 395013
+    },
+    "21": {
+     "nombre": "Huelva",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1758,
+     "validos": 265126
+    },
+    "22": {
+     "nombre": "Huesca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1980,
+     "validos": 135750
+    },
+    "23": {
+     "nombre": "Jaén",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2639,
+     "validos": 422790
+    },
+    "24": {
+     "nombre": "León",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3586,
+     "validos": 334095
+    },
+    "25": {
+     "nombre": "Lleida",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1601,
+     "validos": 226318
+    },
+    "26": {
+     "nombre": "La Rioja",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2612,
+     "validos": 178226
+    },
+    "27": {
+     "nombre": "Lugo",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1838,
+     "validos": 242256
+    },
+    "28": {
+     "nombre": "Madrid",
+     "escanos": 34,
+     "ok": true,
+     "blanco": 41927,
+     "validos": 3332046
+    },
+    "29": {
+     "nombre": "Málaga",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 6666,
+     "validos": 685476
+    },
+    "30": {
+     "nombre": "Murcia",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 5516,
+     "validos": 702192
+    },
+    "31": {
+     "nombre": "Navarra",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 5480,
+     "validos": 324186
+    },
+    "32": {
+     "nombre": "Ourense",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1583,
+     "validos": 230222
+    },
+    "33": {
+     "nombre": "Asturias",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 6805,
+     "validos": 724075
+    },
+    "34": {
+     "nombre": "Palencia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1688,
+     "validos": 123298
+    },
+    "35": {
+     "nombre": "Las Palmas",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 2919,
+     "validos": 459393
+    },
+    "36": {
+     "nombre": "Pontevedra",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 5526,
+     "validos": 551071
+    },
+    "37": {
+     "nombre": "Salamanca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 3367,
+     "validos": 241712
+    },
+    "38": {
+     "nombre": "Santa Cruz de Tenerife",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 2098,
+     "validos": 419071
+    },
+    "39": {
+     "nombre": "Cantabria",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 5578,
+     "validos": 348000
+    },
+    "40": {
+     "nombre": "Segovia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1514,
+     "validos": 98964
+    },
+    "41": {
+     "nombre": "Sevilla",
+     "escanos": 13,
+     "ok": true,
+     "blanco": 10812,
+     "validos": 1041824
+    },
+    "42": {
+     "nombre": "Soria",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1083,
+     "validos": 58983
+    },
+    "43": {
+     "nombre": "Tarragona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2152,
+     "validos": 349260
+    },
+    "44": {
+     "nombre": "Teruel",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1158,
+     "validos": 91830
+    },
+    "45": {
+     "nombre": "Toledo",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2720,
+     "validos": 340578
+    },
+    "46": {
+     "nombre": "Valencia/València",
+     "escanos": 16,
+     "ok": true,
+     "blanco": 11175,
+     "validos": 1446390
+    },
+    "47": {
+     "nombre": "Valladolid",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 4844,
+     "validos": 337438
+    },
+    "48": {
+     "nombre": "Bizkaia",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 9063,
+     "validos": 698859
+    },
+    "49": {
+     "nombre": "Zamora",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1677,
+     "validos": 139272
+    },
+    "50": {
+     "nombre": "Zaragoza",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 6221,
+     "validos": 546598
+    },
+    "51": {
+     "nombre": "Ceuta",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 395,
+     "validos": 32490
+    },
+    "52": {
+     "nombre": "Melilla",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 441,
+     "validos": 27263
+    }
+   },
+   "a_sum_escanos_ok": true,
+   "b_dhondt_ok": true,
+   "c_cargos_ok": true,
+   "fallos": [],
+   "resumen": {
+    "escanos": 350,
+    "provincias_ok": 52,
+    "provincias_total": 52
+   }
+  },
+  {
+   "id": "2000-03-12",
+   "escanos_totales": 350,
+   "provincias": {
+    "1": {
+     "nombre": "Araba/Álava",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 5163,
+     "validos": 169488
+    },
+    "2": {
+     "nombre": "Albacete",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 3484,
+     "validos": 221539
+    },
+    "3": {
+     "nombre": "Alicante/Alacant",
+     "escanos": 11,
+     "ok": true,
+     "blanco": 9319,
+     "validos": 804968
+    },
+    "4": {
+     "nombre": "Almería",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3931,
+     "validos": 278462
+    },
+    "5": {
+     "nombre": "Ávila",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1842,
+     "validos": 107278
+    },
+    "6": {
+     "nombre": "Badajoz",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 4810,
+     "validos": 398429
+    },
+    "7": {
+     "nombre": "Balears, Illes",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 5943,
+     "validos": 397898
+    },
+    "8": {
+     "nombre": "Barcelona",
+     "escanos": 31,
+     "ok": true,
+     "blanco": 36486,
+     "validos": 2561508
+    },
+    "9": {
+     "nombre": "Burgos",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 5704,
+     "validos": 221883
+    },
+    "10": {
+     "nombre": "Cáceres",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2795,
+     "validos": 258719
+    },
+    "11": {
+     "nombre": "Cádiz",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 6692,
+     "validos": 553667
+    },
+    "12": {
+     "nombre": "Castellón/Castelló",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3751,
+     "validos": 283425
+    },
+    "13": {
+     "nombre": "Ciudad Real",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3655,
+     "validos": 291799
+    },
+    "14": {
+     "nombre": "Córdoba",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 6001,
+     "validos": 461695
+    },
+    "15": {
+     "nombre": "A Coruña",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 9741,
+     "validos": 655387
+    },
+    "16": {
+     "nombre": "Cuenca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1670,
+     "validos": 130621
+    },
+    "17": {
+     "nombre": "Girona",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 4007,
+     "validos": 295047
+    },
+    "18": {
+     "nombre": "Granada",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 5994,
+     "validos": 480242
+    },
+    "19": {
+     "nombre": "Guadalajara",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1895,
+     "validos": 102773
+    },
+    "20": {
+     "nombre": "Gipuzkoa",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 11634,
+     "validos": 323825
+    },
+    "21": {
+     "nombre": "Huelva",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2858,
+     "validos": 245452
+    },
+    "22": {
+     "nombre": "Huesca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 2142,
+     "validos": 125449
+    },
+    "23": {
+     "nombre": "Jaén",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 4033,
+     "validos": 399949
+    },
+    "24": {
+     "nombre": "León",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 4206,
+     "validos": 312334
+    },
+    "25": {
+     "nombre": "Lleida",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2897,
+     "validos": 200563
+    },
+    "26": {
+     "nombre": "La Rioja",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 3265,
+     "validos": 169695
+    },
+    "27": {
+     "nombre": "Lugo",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2506,
+     "validos": 231462
+    },
+    "28": {
+     "nombre": "Madrid",
+     "escanos": 34,
+     "ok": true,
+     "blanco": 58114,
+     "validos": 3095467
+    },
+    "29": {
+     "nombre": "Málaga",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 9250,
+     "validos": 649285
+    },
+    "30": {
+     "nombre": "Murcia",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 7185,
+     "validos": 670684
+    },
+    "31": {
+     "nombre": "Navarra",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 11945,
+     "validos": 302686
+    },
+    "32": {
+     "nombre": "Ourense",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2037,
+     "validos": 224738
+    },
+    "33": {
+     "nombre": "Asturias",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 10985,
+     "validos": 653234
+    },
+    "34": {
+     "nombre": "Palencia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 2251,
+     "validos": 115613
+    },
+    "35": {
+     "nombre": "Las Palmas",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 3969,
+     "validos": 438656
+    },
+    "36": {
+     "nombre": "Pontevedra",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 7419,
+     "validos": 533451
+    },
+    "37": {
+     "nombre": "Salamanca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 4613,
+     "validos": 222748
+    },
+    "38": {
+     "nombre": "Santa Cruz de Tenerife",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 3264,
+     "validos": 401158
+    },
+    "39": {
+     "nombre": "Cantabria",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 8726,
+     "validos": 333268
+    },
+    "40": {
+     "nombre": "Segovia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 2223,
+     "validos": 94584
+    },
+    "41": {
+     "nombre": "Sevilla",
+     "escanos": 13,
+     "ok": true,
+     "blanco": 16727,
+     "validos": 971500
+    },
+    "42": {
+     "nombre": "Soria",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1527,
+     "validos": 54526
+    },
+    "43": {
+     "nombre": "Tarragona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 4136,
+     "validos": 314154
+    },
+    "44": {
+     "nombre": "Teruel",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1193,
+     "validos": 84252
+    },
+    "45": {
+     "nombre": "Toledo",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3624,
+     "validos": 328830
+    },
+    "46": {
+     "nombre": "Valencia/València",
+     "escanos": 16,
+     "ok": true,
+     "blanco": 16128,
+     "validos": 1343042
+    },
+    "47": {
+     "nombre": "Valladolid",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 7117,
+     "validos": 317600
+    },
+    "48": {
+     "nombre": "Bizkaia",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 17584,
+     "validos": 650387
+    },
+    "49": {
+     "nombre": "Zamora",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 2196,
+     "validos": 127935
+    },
+    "50": {
+     "nombre": "Zaragoza",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 7138,
+     "validos": 513159
+    },
+    "51": {
+     "nombre": "Ceuta",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 497,
+     "validos": 30501
+    },
+    "52": {
+     "nombre": "Melilla",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 551,
+     "validos": 26259
+    }
+   },
+   "a_sum_escanos_ok": true,
+   "b_dhondt_ok": true,
+   "c_cargos_ok": true,
+   "fallos": [],
+   "resumen": {
+    "escanos": 350,
+    "provincias_ok": 52,
+    "provincias_total": 52
+   }
+  },
+  {
+   "id": "2004-03-14",
+   "escanos_totales": 350,
+   "provincias": {
+    "1": {
+     "nombre": "Araba/Álava",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2626,
+     "validos": 182340
+    },
+    "2": {
+     "nombre": "Albacete",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 4372,
+     "validos": 235023
+    },
+    "3": {
+     "nombre": "Alicante/Alacant",
+     "escanos": 11,
+     "ok": true,
+     "blanco": 12342,
+     "validos": 889522
+    },
+    "4": {
+     "nombre": "Almería",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 4197,
+     "validos": 305836
+    },
+    "5": {
+     "nombre": "Ávila",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1997,
+     "validos": 113582
+    },
+    "6": {
+     "nombre": "Badajoz",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 5578,
+     "validos": 424220
+    },
+    "7": {
+     "nombre": "Balears, Illes",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 9073,
+     "validos": 470119
+    },
+    "8": {
+     "nombre": "Barcelona",
+     "escanos": 31,
+     "ok": true,
+     "blanco": 27979,
+     "validos": 3043835
+    },
+    "9": {
+     "nombre": "Burgos",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 6046,
+     "validos": 235597
+    },
+    "10": {
+     "nombre": "Cáceres",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 3311,
+     "validos": 272426
+    },
+    "11": {
+     "nombre": "Cádiz",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 11634,
+     "validos": 643639
+    },
+    "12": {
+     "nombre": "Castellón/Castelló",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 5025,
+     "validos": 312174
+    },
+    "13": {
+     "nombre": "Ciudad Real",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 4721,
+     "validos": 306041
+    },
+    "14": {
+     "nombre": "Córdoba",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 8256,
+     "validos": 493991
+    },
+    "15": {
+     "nombre": "A Coruña",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 13347,
+     "validos": 738681
+    },
+    "16": {
+     "nombre": "Cuenca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 2091,
+     "validos": 133760
+    },
+    "17": {
+     "nombre": "Girona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2672,
+     "validos": 357642
+    },
+    "18": {
+     "nombre": "Granada",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 8276,
+     "validos": 522422
+    },
+    "19": {
+     "nombre": "Guadalajara",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 2544,
+     "validos": 119964
+    },
+    "20": {
+     "nombre": "Gipuzkoa",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 5509,
+     "validos": 372792
+    },
+    "21": {
+     "nombre": "Huelva",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 4009,
+     "validos": 275121
+    },
+    "22": {
+     "nombre": "Huesca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 2627,
+     "validos": 134687
+    },
+    "23": {
+     "nombre": "Jaén",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 4951,
+     "validos": 420132
+    },
+    "24": {
+     "nombre": "León",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 5031,
+     "validos": 335135
+    },
+    "25": {
+     "nombre": "Lleida",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1874,
+     "validos": 233283
+    },
+    "26": {
+     "nombre": "La Rioja",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 3827,
+     "validos": 185099
+    },
+    "27": {
+     "nombre": "Lugo",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2935,
+     "validos": 249434
+    },
+    "28": {
+     "nombre": "Madrid",
+     "escanos": 35,
+     "ok": true,
+     "blanco": 72038,
+     "validos": 3501778
+    },
+    "29": {
+     "nombre": "Málaga",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 13022,
+     "validos": 738976
+    },
+    "30": {
+     "nombre": "Murcia",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 10331,
+     "validos": 720775
+    },
+    "31": {
+     "nombre": "Navarra",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 6739,
+     "validos": 339508
+    },
+    "32": {
+     "nombre": "Ourense",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2559,
+     "validos": 239953
+    },
+    "33": {
+     "nombre": "Asturias",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 14453,
+     "validos": 703655
+    },
+    "34": {
+     "nombre": "Palencia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 2362,
+     "validos": 120307
+    },
+    "35": {
+     "nombre": "Las Palmas",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 6049,
+     "validos": 495137
+    },
+    "36": {
+     "nombre": "Pontevedra",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 10009,
+     "validos": 607616
+    },
+    "37": {
+     "nombre": "Salamanca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 4692,
+     "validos": 237653
+    },
+    "38": {
+     "nombre": "Santa Cruz de Tenerife",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 4333,
+     "validos": 471709
+    },
+    "39": {
+     "nombre": "Cantabria",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 8267,
+     "validos": 366826
+    },
+    "40": {
+     "nombre": "Segovia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 2183,
+     "validos": 100096
+    },
+    "41": {
+     "nombre": "Sevilla",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 19960,
+     "validos": 1097156
+    },
+    "42": {
+     "nombre": "Soria",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1255,
+     "validos": 57459
+    },
+    "43": {
+     "nombre": "Tarragona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 3398,
+     "validos": 385013
+    },
+    "44": {
+     "nombre": "Teruel",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1349,
+     "validos": 87982
+    },
+    "45": {
+     "nombre": "Toledo",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 4998,
+     "validos": 360904
+    },
+    "46": {
+     "nombre": "Valencia/València",
+     "escanos": 16,
+     "ok": true,
+     "blanco": 21438,
+     "validos": 1454856
+    },
+    "47": {
+     "nombre": "Valladolid",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 7578,
+     "validos": 348402
+    },
+    "48": {
+     "nombre": "Bizkaia",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 8754,
+     "validos": 693185
+    },
+    "49": {
+     "nombre": "Zamora",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 2525,
+     "validos": 134626
+    },
+    "50": {
+     "nombre": "Zaragoza",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 11703,
+     "validos": 558332
+    },
+    "51": {
+     "nombre": "Ceuta",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 515,
+     "validos": 35691
+    },
+    "52": {
+     "nombre": "Melilla",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 435,
+     "validos": 27207
+    }
+   },
+   "a_sum_escanos_ok": true,
+   "b_dhondt_ok": true,
+   "c_cargos_ok": true,
+   "fallos": [],
+   "resumen": {
+    "escanos": 350,
+    "provincias_ok": 52,
+    "provincias_total": 52
+   }
+  },
+  {
+   "id": "2008-03-09",
+   "escanos_totales": 350,
+   "provincias": {
+    "1": {
+     "nombre": "Araba/Álava",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2588,
+     "validos": 170589
+    },
+    "2": {
+     "nombre": "Albacete",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2717,
+     "validos": 239809
+    },
+    "3": {
+     "nombre": "Alicante/Alacant",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 7535,
+     "validos": 934313
+    },
+    "4": {
+     "nombre": "Almería",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2528,
+     "validos": 325846
+    },
+    "5": {
+     "nombre": "Ávila",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1156,
+     "validos": 114835
+    },
+    "6": {
+     "nombre": "Badajoz",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 3595,
+     "validos": 427515
+    },
+    "7": {
+     "nombre": "Balears, Illes",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 6026,
+     "validos": 473583
+    },
+    "8": {
+     "nombre": "Barcelona",
+     "escanos": 31,
+     "ok": true,
+     "blanco": 42672,
+     "validos": 2799228
+    },
+    "9": {
+     "nombre": "Burgos",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 3236,
+     "validos": 232851
+    },
+    "10": {
+     "nombre": "Cáceres",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2245,
+     "validos": 271965
+    },
+    "11": {
+     "nombre": "Cádiz",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 6639,
+     "validos": 643308
+    },
+    "12": {
+     "nombre": "Castellón/Castelló",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3416,
+     "validos": 317596
+    },
+    "13": {
+     "nombre": "Ciudad Real",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3243,
+     "validos": 310525
+    },
+    "14": {
+     "nombre": "Córdoba",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 5460,
+     "validos": 484711
+    },
+    "15": {
+     "nombre": "A Coruña",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 8783,
+     "validos": 742231
+    },
+    "16": {
+     "nombre": "Cuenca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1259,
+     "validos": 132989
+    },
+    "17": {
+     "nombre": "Girona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 5714,
+     "validos": 333881
+    },
+    "18": {
+     "nombre": "Granada",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 4600,
+     "validos": 530323
+    },
+    "19": {
+     "nombre": "Guadalajara",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1396,
+     "validos": 133598
+    },
+    "20": {
+     "nombre": "Gipuzkoa",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 7513,
+     "validos": 327815
+    },
+    "21": {
+     "nombre": "Huelva",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2603,
+     "validos": 268531
+    },
+    "22": {
+     "nombre": "Huesca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1759,
+     "validos": 132255
+    },
+    "23": {
+     "nombre": "Jaén",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 3223,
+     "validos": 414606
+    },
+    "24": {
+     "nombre": "León",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3638,
+     "validos": 332078
+    },
+    "25": {
+     "nombre": "Lleida",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 3749,
+     "validos": 213528
+    },
+    "26": {
+     "nombre": "La Rioja",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2068,
+     "validos": 188033
+    },
+    "27": {
+     "nombre": "Lugo",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2252,
+     "validos": 247770
+    },
+    "28": {
+     "nombre": "Madrid",
+     "escanos": 35,
+     "ok": true,
+     "blanco": 33539,
+     "validos": 3532381
+    },
+    "29": {
+     "nombre": "Málaga",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 8052,
+     "validos": 764320
+    },
+    "30": {
+     "nombre": "Murcia",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 5649,
+     "validos": 766513
+    },
+    "31": {
+     "nombre": "Navarra",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 5001,
+     "validos": 339230
+    },
+    "32": {
+     "nombre": "Ourense",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1783,
+     "validos": 241986
+    },
+    "33": {
+     "nombre": "Asturias",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 8630,
+     "validos": 695735
+    },
+    "34": {
+     "nombre": "Palencia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1440,
+     "validos": 117964
+    },
+    "35": {
+     "nombre": "Las Palmas",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 4078,
+     "validos": 506456
+    },
+    "36": {
+     "nombre": "Pontevedra",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 6471,
+     "validos": 614501
+    },
+    "37": {
+     "nombre": "Salamanca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2914,
+     "validos": 236394
+    },
+    "38": {
+     "nombre": "Santa Cruz de Tenerife",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 3258,
+     "validos": 492231
+    },
+    "39": {
+     "nombre": "Cantabria",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 4551,
+     "validos": 369806
+    },
+    "40": {
+     "nombre": "Segovia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1292,
+     "validos": 99937
+    },
+    "41": {
+     "nombre": "Sevilla",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 12019,
+     "validos": 1078542
+    },
+    "42": {
+     "nombre": "Soria",
+     "escanos": 2,
+     "ok": true,
+     "blanco": 972,
+     "validos": 56033
+    },
+    "43": {
+     "nombre": "Tarragona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 5139,
+     "validos": 376784
+    },
+    "44": {
+     "nombre": "Teruel",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 944,
+     "validos": 86786
+    },
+    "45": {
+     "nombre": "Toledo",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 3058,
+     "validos": 392630
+    },
+    "46": {
+     "nombre": "Valencia/València",
+     "escanos": 16,
+     "ok": true,
+     "blanco": 12279,
+     "validos": 1492553
+    },
+    "47": {
+     "nombre": "Valladolid",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3795,
+     "validos": 349226
+    },
+    "48": {
+     "nombre": "Bizkaia",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 10581,
+     "validos": 630917
+    },
+    "49": {
+     "nombre": "Zamora",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1580,
+     "validos": 132771
+    },
+    "50": {
+     "nombre": "Zaragoza",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 6917,
+     "validos": 548439
+    },
+    "51": {
+     "nombre": "Ceuta",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 342,
+     "validos": 36364
+    },
+    "52": {
+     "nombre": "Melilla",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 285,
+     "validos": 32055
+    }
+   },
+   "a_sum_escanos_ok": true,
+   "b_dhondt_ok": true,
+   "c_cargos_ok": true,
+   "fallos": [],
+   "resumen": {
+    "escanos": 350,
+    "provincias_ok": 52,
+    "provincias_total": 52
+   }
+  },
+  {
+   "id": "2011-11-20",
+   "escanos_totales": 350,
+   "provincias": {
+    "1": {
+     "nombre": "Araba/Álava",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1924,
+     "validos": 169425
+    },
+    "2": {
+     "nombre": "Albacete",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 3082,
+     "validos": 232322
+    },
+    "3": {
+     "nombre": "Alicante/Alacant",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 10124,
+     "validos": 887427
+    },
+    "4": {
+     "nombre": "Almería",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 3490,
+     "validos": 312923
+    },
+    "5": {
+     "nombre": "Ávila",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1233,
+     "validos": 105976
+    },
+    "6": {
+     "nombre": "Badajoz",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 4832,
+     "validos": 408842
+    },
+    "7": {
+     "nombre": "Balears, Illes",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 7941,
+     "validos": 438272
+    },
+    "8": {
+     "nombre": "Barcelona",
+     "escanos": 31,
+     "ok": true,
+     "blanco": 46738,
+     "validos": 2615465
+    },
+    "9": {
+     "nombre": "Burgos",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 3952,
+     "validos": 214093
+    },
+    "10": {
+     "nombre": "Cáceres",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2941,
+     "validos": 253990
+    },
+    "11": {
+     "nombre": "Cádiz",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 8511,
+     "validos": 620252
+    },
+    "12": {
+     "nombre": "Castellón/Castelló",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 4146,
+     "validos": 296515
+    },
+    "13": {
+     "nombre": "Ciudad Real",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 4016,
+     "validos": 298341
+    },
+    "14": {
+     "nombre": "Córdoba",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 6490,
+     "validos": 468623
+    },
+    "15": {
+     "nombre": "A Coruña",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 12173,
+     "validos": 666317
+    },
+    "16": {
+     "nombre": "Cuenca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1737,
+     "validos": 125092
+    },
+    "17": {
+     "nombre": "Girona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 5572,
+     "validos": 306248
+    },
+    "18": {
+     "nombre": "Granada",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 5294,
+     "validos": 508782
+    },
+    "19": {
+     "nombre": "Guadalajara",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1776,
+     "validos": 132154
+    },
+    "20": {
+     "nombre": "Gipuzkoa",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 4239,
+     "validos": 373967
+    },
+    "21": {
+     "nombre": "Huelva",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3412,
+     "validos": 263507
+    },
+    "22": {
+     "nombre": "Huesca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 2890,
+     "validos": 120570
+    },
+    "23": {
+     "nombre": "Jaén",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 4124,
+     "validos": 403443
+    },
+    "24": {
+     "nombre": "León",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 5470,
+     "validos": 293290
+    },
+    "25": {
+     "nombre": "Lleida",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 4468,
+     "validos": 192439
+    },
+    "26": {
+     "nombre": "La Rioja",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2793,
+     "validos": 173910
+    },
+    "27": {
+     "nombre": "Lugo",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 3628,
+     "validos": 216435
+    },
+    "28": {
+     "nombre": "Madrid",
+     "escanos": 36,
+     "ok": true,
+     "blanco": 35093,
+     "validos": 3373805
+    },
+    "29": {
+     "nombre": "Málaga",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 8350,
+     "validos": 720031
+    },
+    "30": {
+     "nombre": "Murcia",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 6688,
+     "validos": 734686
+    },
+    "31": {
+     "nombre": "Navarra",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 6707,
+     "validos": 331085
+    },
+    "32": {
+     "nombre": "Ourense",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2857,
+     "validos": 204286
+    },
+    "33": {
+     "nombre": "Asturias",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 8392,
+     "validos": 632436
+    },
+    "34": {
+     "nombre": "Palencia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1775,
+     "validos": 106547
+    },
+    "35": {
+     "nombre": "Las Palmas",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 6990,
+     "validos": 472088
+    },
+    "36": {
+     "nombre": "Pontevedra",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 8068,
+     "validos": 558779
+    },
+    "37": {
+     "nombre": "Salamanca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 3223,
+     "validos": 214666
+    },
+    "38": {
+     "nombre": "Santa Cruz de Tenerife",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 5054,
+     "validos": 457822
+    },
+    "39": {
+     "nombre": "Cantabria",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 4157,
+     "validos": 351249
+    },
+    "40": {
+     "nombre": "Segovia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1477,
+     "validos": 92489
+    },
+    "41": {
+     "nombre": "Sevilla",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 13596,
+     "validos": 1060182
+    },
+    "42": {
+     "nombre": "Soria",
+     "escanos": 2,
+     "ok": true,
+     "blanco": 1295,
+     "validos": 51091
+    },
+    "43": {
+     "nombre": "Tarragona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 7106,
+     "validos": 346708
+    },
+    "44": {
+     "nombre": "Teruel",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1694,
+     "validos": 77229
+    },
+    "45": {
+     "nombre": "Toledo",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 4422,
+     "validos": 384943
+    },
+    "46": {
+     "nombre": "Valencia/València",
+     "escanos": 16,
+     "ok": true,
+     "blanco": 14515,
+     "validos": 1423386
+    },
+    "47": {
+     "nombre": "Valladolid",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 4719,
+     "validos": 326333
+    },
+    "48": {
+     "nombre": "Bizkaia",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 7285,
+     "validos": 639880
+    },
+    "49": {
+     "nombre": "Zamora",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 2057,
+     "validos": 118122
+    },
+    "50": {
+     "nombre": "Zaragoza",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 9951,
+     "validos": 513893
+    },
+    "51": {
+     "nombre": "Ceuta",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 498,
+     "validos": 31804
+    },
+    "52": {
+     "nombre": "Melilla",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 496,
+     "validos": 26726
+    }
+   },
+   "a_sum_escanos_ok": true,
+   "b_dhondt_ok": true,
+   "c_cargos_ok": true,
+   "fallos": [],
+   "resumen": {
+    "escanos": 350,
+    "provincias_ok": 52,
+    "provincias_total": 52
+   }
+  },
+  {
+   "id": "2015-12-20",
+   "escanos_totales": 350,
+   "provincias": {
+    "1": {
+     "nombre": "Araba/Álava",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1292,
+     "validos": 179177
+    },
+    "2": {
+     "nombre": "Albacete",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1727,
+     "validos": 231582
+    },
+    "3": {
+     "nombre": "Alicante/Alacant",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 5293,
+     "validos": 905213
+    },
+    "4": {
+     "nombre": "Almería",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2211,
+     "validos": 309896
+    },
+    "5": {
+     "nombre": "Ávila",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 744,
+     "validos": 102017
+    },
+    "6": {
+     "nombre": "Badajoz",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 3117,
+     "validos": 399352
+    },
+    "7": {
+     "nombre": "Balears, Illes",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 3997,
+     "validos": 483970
+    },
+    "8": {
+     "nombre": "Barcelona",
+     "escanos": 31,
+     "ok": true,
+     "blanco": 18119,
+     "validos": 2858407
+    },
+    "9": {
+     "nombre": "Burgos",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2049,
+     "validos": 215787
+    },
+    "10": {
+     "nombre": "Cáceres",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1559,
+     "validos": 248992
+    },
+    "11": {
+     "nombre": "Cádiz",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 6781,
+     "validos": 646537
+    },
+    "12": {
+     "nombre": "Castellón/Castelló",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2093,
+     "validos": 309485
+    },
+    "13": {
+     "nombre": "Ciudad Real",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2282,
+     "validos": 295576
+    },
+    "14": {
+     "nombre": "Córdoba",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 4481,
+     "validos": 467652
+    },
+    "15": {
+     "nombre": "A Coruña",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 7674,
+     "validos": 674183
+    },
+    "16": {
+     "nombre": "Cuenca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 931,
+     "validos": 121095
+    },
+    "17": {
+     "nombre": "Girona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2513,
+     "validos": 332623
+    },
+    "18": {
+     "nombre": "Granada",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 3442,
+     "validos": 510243
+    },
+    "19": {
+     "nombre": "Guadalajara",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 979,
+     "validos": 136268
+    },
+    "20": {
+     "nombre": "Gipuzkoa",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2537,
+     "validos": 389403
+    },
+    "21": {
+     "nombre": "Huelva",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2409,
+     "validos": 259090
+    },
+    "22": {
+     "nombre": "Huesca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1251,
+     "validos": 122145
+    },
+    "23": {
+     "nombre": "Jaén",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2713,
+     "validos": 387500
+    },
+    "24": {
+     "nombre": "León",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2943,
+     "validos": 292401
+    },
+    "25": {
+     "nombre": "Lleida",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2124,
+     "validos": 198669
+    },
+    "26": {
+     "nombre": "La Rioja",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1496,
+     "validos": 177207
+    },
+    "27": {
+     "nombre": "Lugo",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2445,
+     "validos": 203352
+    },
+    "28": {
+     "nombre": "Madrid",
+     "escanos": 36,
+     "ok": true,
+     "blanco": 18751,
+     "validos": 3618918
+    },
+    "29": {
+     "nombre": "Málaga",
+     "escanos": 11,
+     "ok": true,
+     "blanco": 5724,
+     "validos": 776564
+    },
+    "30": {
+     "nombre": "Murcia",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 4511,
+     "validos": 727615
+    },
+    "31": {
+     "nombre": "Navarra",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3714,
+     "validos": 353348
+    },
+    "32": {
+     "nombre": "Ourense",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1749,
+     "validos": 192933
+    },
+    "33": {
+     "nombre": "Asturias",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 5591,
+     "validos": 622967
+    },
+    "34": {
+     "nombre": "Palencia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 993,
+     "validos": 104678
+    },
+    "35": {
+     "nombre": "Las Palmas",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 4111,
+     "validos": 516102
+    },
+    "36": {
+     "nombre": "Pontevedra",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 5481,
+     "validos": 571764
+    },
+    "37": {
+     "nombre": "Salamanca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1997,
+     "validos": 209467
+    },
+    "38": {
+     "nombre": "Santa Cruz de Tenerife",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 3151,
+     "validos": 477929
+    },
+    "39": {
+     "nombre": "Cantabria",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2849,
+     "validos": 350071
+    },
+    "40": {
+     "nombre": "Segovia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 903,
+     "validos": 91836
+    },
+    "41": {
+     "nombre": "Sevilla",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 9968,
+     "validos": 1094021
+    },
+    "42": {
+     "nombre": "Soria",
+     "escanos": 2,
+     "ok": true,
+     "blanco": 679,
+     "validos": 51836
+    },
+    "43": {
+     "nombre": "Tarragona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2684,
+     "validos": 373160
+    },
+    "44": {
+     "nombre": "Teruel",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 883,
+     "validos": 77702
+    },
+    "45": {
+     "nombre": "Toledo",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2325,
+     "validos": 385498
+    },
+    "46": {
+     "nombre": "Valencia/València",
+     "escanos": 15,
+     "ok": true,
+     "blanco": 8747,
+     "validos": 1466154
+    },
+    "47": {
+     "nombre": "Valladolid",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2683,
+     "validos": 328745
+    },
+    "48": {
+     "nombre": "Bizkaia",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 4840,
+     "validos": 654177
+    },
+    "49": {
+     "nombre": "Zamora",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1227,
+     "validos": 113169
+    },
+    "50": {
+     "nombre": "Zaragoza",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 4657,
+     "validos": 533732
+    },
+    "51": {
+     "nombre": "Ceuta",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 413,
+     "validos": 33023
+    },
+    "52": {
+     "nombre": "Melilla",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 299,
+     "validos": 28082
+    }
+   },
+   "a_sum_escanos_ok": true,
+   "b_dhondt_ok": true,
+   "c_cargos_ok": true,
+   "fallos": [],
+   "resumen": {
+    "escanos": 350,
+    "provincias_ok": 52,
+    "provincias_total": 52
+   }
+  },
+  {
+   "id": "2016-06-26",
+   "escanos_totales": 350,
+   "provincias": {
+    "1": {
+     "nombre": "Araba/Álava",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1078,
+     "validos": 167640
+    },
+    "2": {
+     "nombre": "Albacete",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1430,
+     "validos": 219473
+    },
+    "3": {
+     "nombre": "Alicante/Alacant",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 4838,
+     "validos": 875169
+    },
+    "4": {
+     "nombre": "Almería",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2213,
+     "validos": 306674
+    },
+    "5": {
+     "nombre": "Ávila",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 717,
+     "validos": 98917
+    },
+    "6": {
+     "nombre": "Badajoz",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2719,
+     "validos": 377949
+    },
+    "7": {
+     "nombre": "Balears, Illes",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 4226,
+     "validos": 464787
+    },
+    "8": {
+     "nombre": "Barcelona",
+     "escanos": 31,
+     "ok": true,
+     "blanco": 21081,
+     "validos": 2643933
+    },
+    "9": {
+     "nombre": "Burgos",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1812,
+     "validos": 206981
+    },
+    "10": {
+     "nombre": "Cáceres",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1539,
+     "validos": 236205
+    },
+    "11": {
+     "nombre": "Cádiz",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 6938,
+     "validos": 615755
+    },
+    "12": {
+     "nombre": "Castellón/Castelló",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2069,
+     "validos": 299204
+    },
+    "13": {
+     "nombre": "Ciudad Real",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1939,
+     "validos": 279396
+    },
+    "14": {
+     "nombre": "Córdoba",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 4489,
+     "validos": 446818
+    },
+    "15": {
+     "nombre": "A Coruña",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 6693,
+     "validos": 643389
+    },
+    "16": {
+     "nombre": "Cuenca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 823,
+     "validos": 115849
+    },
+    "17": {
+     "nombre": "Girona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2642,
+     "validos": 307853
+    },
+    "18": {
+     "nombre": "Granada",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 3424,
+     "validos": 489540
+    },
+    "19": {
+     "nombre": "Guadalajara",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 822,
+     "validos": 131538
+    },
+    "20": {
+     "nombre": "Gipuzkoa",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2711,
+     "validos": 365493
+    },
+    "21": {
+     "nombre": "Huelva",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2526,
+     "validos": 245819
+    },
+    "22": {
+     "nombre": "Huesca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1204,
+     "validos": 116884
+    },
+    "23": {
+     "nombre": "Jaén",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2545,
+     "validos": 370762
+    },
+    "24": {
+     "nombre": "León",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2397,
+     "validos": 280858
+    },
+    "25": {
+     "nombre": "Lleida",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2156,
+     "validos": 181159
+    },
+    "26": {
+     "nombre": "La Rioja",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1225,
+     "validos": 172982
+    },
+    "27": {
+     "nombre": "Lugo",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2088,
+     "validos": 192957
+    },
+    "28": {
+     "nombre": "Madrid",
+     "escanos": 36,
+     "ok": true,
+     "blanco": 18137,
+     "validos": 3465795
+    },
+    "29": {
+     "nombre": "Málaga",
+     "escanos": 11,
+     "ok": true,
+     "blanco": 6178,
+     "validos": 744858
+    },
+    "30": {
+     "nombre": "Murcia",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 3713,
+     "validos": 713592
+    },
+    "31": {
+     "nombre": "Navarra",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3468,
+     "validos": 335335
+    },
+    "32": {
+     "nombre": "Ourense",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1527,
+     "validos": 186177
+    },
+    "33": {
+     "nombre": "Asturias",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 5374,
+     "validos": 594699
+    },
+    "34": {
+     "nombre": "Palencia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 838,
+     "validos": 100626
+    },
+    "35": {
+     "nombre": "Las Palmas",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 3502,
+     "validos": 502506
+    },
+    "36": {
+     "nombre": "Pontevedra",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 4418,
+     "validos": 544673
+    },
+    "37": {
+     "nombre": "Salamanca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1443,
+     "validos": 202483
+    },
+    "38": {
+     "nombre": "Santa Cruz de Tenerife",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 2783,
+     "validos": 476666
+    },
+    "39": {
+     "nombre": "Cantabria",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2454,
+     "validos": 337567
+    },
+    "40": {
+     "nombre": "Segovia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 615,
+     "validos": 88525
+    },
+    "41": {
+     "nombre": "Sevilla",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 9582,
+     "validos": 1033112
+    },
+    "42": {
+     "nombre": "Soria",
+     "escanos": 2,
+     "ok": true,
+     "blanco": 600,
+     "validos": 49618
+    },
+    "43": {
+     "nombre": "Tarragona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 3060,
+     "validos": 344620
+    },
+    "44": {
+     "nombre": "Teruel",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 704,
+     "validos": 74922
+    },
+    "45": {
+     "nombre": "Toledo",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 1974,
+     "validos": 367503
+    },
+    "46": {
+     "nombre": "Valencia/València",
+     "escanos": 16,
+     "ok": true,
+     "blanco": 8508,
+     "validos": 1419521
+    },
+    "47": {
+     "nombre": "Valladolid",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2234,
+     "validos": 315768
+    },
+    "48": {
+     "nombre": "Bizkaia",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 3907,
+     "validos": 621219
+    },
+    "49": {
+     "nombre": "Zamora",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1010,
+     "validos": 108893
+    },
+    "50": {
+     "nombre": "Zaragoza",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 4124,
+     "validos": 513135
+    },
+    "51": {
+     "nombre": "Ceuta",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 316,
+     "validos": 30837
+    },
+    "52": {
+     "nombre": "Melilla",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 268,
+     "validos": 27121
+    }
+   },
+   "a_sum_escanos_ok": true,
+   "b_dhondt_ok": true,
+   "c_cargos_ok": true,
+   "fallos": [],
+   "resumen": {
+    "escanos": 350,
+    "provincias_ok": 52,
+    "provincias_total": 52
+   }
+  },
+  {
+   "id": "2019-04-28",
+   "escanos_totales": 350,
+   "provincias": {
+    "1": {
+     "nombre": "Araba/Álava",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1075,
+     "validos": 177366
+    },
+    "2": {
+     "nombre": "Albacete",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1705,
+     "validos": 234404
+    },
+    "3": {
+     "nombre": "Alicante/Alacant",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 6222,
+     "validos": 917498
+    },
+    "4": {
+     "nombre": "Almería",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2283,
+     "validos": 328097
+    },
+    "5": {
+     "nombre": "Ávila",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 722,
+     "validos": 102079
+    },
+    "6": {
+     "nombre": "Badajoz",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 3424,
+     "validos": 408393
+    },
+    "7": {
+     "nombre": "Balears, Illes",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 4647,
+     "validos": 518507
+    },
+    "8": {
+     "nombre": "Barcelona",
+     "escanos": 32,
+     "ok": true,
+     "blanco": 16747,
+     "validos": 3120441
+    },
+    "9": {
+     "nombre": "Burgos",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2275,
+     "validos": 219553
+    },
+    "10": {
+     "nombre": "Cáceres",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1770,
+     "validos": 248732
+    },
+    "11": {
+     "nombre": "Cádiz",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 8206,
+     "validos": 667562
+    },
+    "12": {
+     "nombre": "Castellón/Castelló",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2301,
+     "validos": 313393
+    },
+    "13": {
+     "nombre": "Ciudad Real",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2464,
+     "validos": 293907
+    },
+    "14": {
+     "nombre": "Córdoba",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 4755,
+     "validos": 473716
+    },
+    "15": {
+     "nombre": "A Coruña",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 7901,
+     "validos": 677342
+    },
+    "16": {
+     "nombre": "Cuenca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1015,
+     "validos": 119530
+    },
+    "17": {
+     "nombre": "Girona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 1854,
+     "validos": 382275
+    },
+    "18": {
+     "nombre": "Granada",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 3728,
+     "validos": 523843
+    },
+    "19": {
+     "nombre": "Guadalajara",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 996,
+     "validos": 142707
+    },
+    "20": {
+     "nombre": "Gipuzkoa",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2422,
+     "validos": 412126
+    },
+    "21": {
+     "nombre": "Huelva",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2909,
+     "validos": 264569
+    },
+    "22": {
+     "nombre": "Huesca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1271,
+     "validos": 125314
+    },
+    "23": {
+     "nombre": "Jaén",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2524,
+     "validos": 386916
+    },
+    "24": {
+     "nombre": "León",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2899,
+     "validos": 291600
+    },
+    "25": {
+     "nombre": "Lleida",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1479,
+     "validos": 225655
+    },
+    "26": {
+     "nombre": "La Rioja",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1460,
+     "validos": 180832
+    },
+    "27": {
+     "nombre": "Lugo",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2320,
+     "validos": 199998
+    },
+    "28": {
+     "nombre": "Madrid",
+     "escanos": 37,
+     "ok": true,
+     "blanco": 24631,
+     "validos": 3782247
+    },
+    "29": {
+     "nombre": "Málaga",
+     "escanos": 11,
+     "ok": true,
+     "blanco": 7288,
+     "validos": 816868
+    },
+    "30": {
+     "nombre": "Murcia",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 4771,
+     "validos": 769084
+    },
+    "31": {
+     "nombre": "Navarra",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3767,
+     "validos": 366998
+    },
+    "32": {
+     "nombre": "Ourense",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1804,
+     "validos": 192523
+    },
+    "33": {
+     "nombre": "Asturias",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 6858,
+     "validos": 626661
+    },
+    "34": {
+     "nombre": "Palencia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1010,
+     "validos": 106043
+    },
+    "35": {
+     "nombre": "Las Palmas",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 4261,
+     "validos": 545052
+    },
+    "36": {
+     "nombre": "Pontevedra",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 5257,
+     "validos": 576187
+    },
+    "37": {
+     "nombre": "Salamanca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1834,
+     "validos": 210646
+    },
+    "38": {
+     "nombre": "Santa Cruz de Tenerife",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 3352,
+     "validos": 516484
+    },
+    "39": {
+     "nombre": "Cantabria",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2303,
+     "validos": 359104
+    },
+    "40": {
+     "nombre": "Segovia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 779,
+     "validos": 92508
+    },
+    "41": {
+     "nombre": "Sevilla",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 11391,
+     "validos": 1122507
+    },
+    "42": {
+     "nombre": "Soria",
+     "escanos": 2,
+     "ok": true,
+     "blanco": 642,
+     "validos": 52077
+    },
+    "43": {
+     "nombre": "Tarragona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2202,
+     "validos": 418192
+    },
+    "44": {
+     "nombre": "Teruel",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 823,
+     "validos": 78083
+    },
+    "45": {
+     "nombre": "Toledo",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2483,
+     "validos": 396910
+    },
+    "46": {
+     "nombre": "Valencia/València",
+     "escanos": 15,
+     "ok": true,
+     "blanco": 9156,
+     "validos": 1456527
+    },
+    "47": {
+     "nombre": "Valladolid",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2801,
+     "validos": 336554
+    },
+    "48": {
+     "nombre": "Bizkaia",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 4557,
+     "validos": 686960
+    },
+    "49": {
+     "nombre": "Zamora",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1070,
+     "validos": 110645
+    },
+    "50": {
+     "nombre": "Zaragoza",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 4861,
+     "validos": 554407
+    },
+    "51": {
+     "nombre": "Ceuta",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 324,
+     "validos": 37991
+    },
+    "52": {
+     "nombre": "Melilla",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 237,
+     "validos": 33758
+    }
+   },
+   "a_sum_escanos_ok": true,
+   "b_dhondt_ok": true,
+   "c_cargos_ok": true,
+   "fallos": [],
+   "resumen": {
+    "escanos": 350,
+    "provincias_ok": 52,
+    "provincias_total": 52
+   }
+  },
+  {
+   "id": "2019-11-10",
+   "escanos_totales": 350,
+   "provincias": {
+    "1": {
+     "nombre": "Araba/Álava",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 911,
+     "validos": 170855
+    },
+    "2": {
+     "nombre": "Albacete",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1822,
+     "validos": 214304
+    },
+    "3": {
+     "nombre": "Alicante/Alacant",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 6778,
+     "validos": 851716
+    },
+    "4": {
+     "nombre": "Almería",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2661,
+     "validos": 302424
+    },
+    "5": {
+     "nombre": "Ávila",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 755,
+     "validos": 93496
+    },
+    "6": {
+     "nombre": "Badajoz",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 3599,
+     "validos": 370159
+    },
+    "7": {
+     "nombre": "Balears, Illes",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 4668,
+     "validos": 454199
+    },
+    "8": {
+     "nombre": "Barcelona",
+     "escanos": 32,
+     "ok": true,
+     "blanco": 20457,
+     "validos": 2927755
+    },
+    "9": {
+     "nombre": "Burgos",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2626,
+     "validos": 198971
+    },
+    "10": {
+     "nombre": "Cáceres",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1894,
+     "validos": 223257
+    },
+    "11": {
+     "nombre": "Cádiz",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 9221,
+     "validos": 616079
+    },
+    "12": {
+     "nombre": "Castellón/Castelló",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2238,
+     "validos": 294469
+    },
+    "13": {
+     "nombre": "Ciudad Real",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2357,
+     "validos": 268594
+    },
+    "14": {
+     "nombre": "Córdoba",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 5405,
+     "validos": 444376
+    },
+    "15": {
+     "nombre": "A Coruña",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 7307,
+     "validos": 613494
+    },
+    "16": {
+     "nombre": "Cuenca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1002,
+     "validos": 109119
+    },
+    "17": {
+     "nombre": "Girona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2307,
+     "validos": 355702
+    },
+    "18": {
+     "nombre": "Granada",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 4528,
+     "validos": 482779
+    },
+    "19": {
+     "nombre": "Guadalajara",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1148,
+     "validos": 132154
+    },
+    "20": {
+     "nombre": "Gipuzkoa",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 1907,
+     "validos": 382868
+    },
+    "21": {
+     "nombre": "Huelva",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3345,
+     "validos": 250681
+    },
+    "22": {
+     "nombre": "Huesca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1363,
+     "validos": 113597
+    },
+    "23": {
+     "nombre": "Jaén",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3361,
+     "validos": 365106
+    },
+    "24": {
+     "nombre": "León",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2710,
+     "validos": 262679
+    },
+    "25": {
+     "nombre": "Lleida",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1540,
+     "validos": 207356
+    },
+    "26": {
+     "nombre": "La Rioja",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1757,
+     "validos": 164934
+    },
+    "27": {
+     "nombre": "Lugo",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2094,
+     "validos": 180145
+    },
+    "28": {
+     "nombre": "Madrid",
+     "escanos": 37,
+     "ok": true,
+     "blanco": 28783,
+     "validos": 3563147
+    },
+    "29": {
+     "nombre": "Málaga",
+     "escanos": 11,
+     "ok": true,
+     "blanco": 8358,
+     "validos": 756721
+    },
+    "30": {
+     "nombre": "Murcia",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 5253,
+     "validos": 714927
+    },
+    "31": {
+     "nombre": "Navarra",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3451,
+     "validos": 334982
+    },
+    "32": {
+     "nombre": "Ourense",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1666,
+     "validos": 171471
+    },
+    "33": {
+     "nombre": "Asturias",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 7041,
+     "validos": 559745
+    },
+    "34": {
+     "nombre": "Palencia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1015,
+     "validos": 95788
+    },
+    "35": {
+     "nombre": "Las Palmas",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 3975,
+     "validos": 483928
+    },
+    "36": {
+     "nombre": "Pontevedra",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 5142,
+     "validos": 522997
+    },
+    "37": {
+     "nombre": "Salamanca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1982,
+     "validos": 195170
+    },
+    "38": {
+     "nombre": "Santa Cruz de Tenerife",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 3380,
+     "validos": 463579
+    },
+    "39": {
+     "nombre": "Cantabria",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 1667,
+     "validos": 327089
+    },
+    "40": {
+     "nombre": "Segovia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1005,
+     "validos": 85039
+    },
+    "41": {
+     "nombre": "Sevilla",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 13793,
+     "validos": 1053518
+    },
+    "42": {
+     "nombre": "Soria",
+     "escanos": 2,
+     "ok": true,
+     "blanco": 721,
+     "validos": 46410
+    },
+    "43": {
+     "nombre": "Tarragona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2715,
+     "validos": 385419
+    },
+    "44": {
+     "nombre": "Teruel",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 403,
+     "validos": 74130
+    },
+    "45": {
+     "nombre": "Toledo",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2661,
+     "validos": 363474
+    },
+    "46": {
+     "nombre": "Valencia/València",
+     "escanos": 15,
+     "ok": true,
+     "blanco": 10798,
+     "validos": 1390258
+    },
+    "47": {
+     "nombre": "Valladolid",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3147,
+     "validos": 311454
+    },
+    "48": {
+     "nombre": "Bizkaia",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 3806,
+     "validos": 630312
+    },
+    "49": {
+     "nombre": "Zamora",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1206,
+     "validos": 99791
+    },
+    "50": {
+     "nombre": "Zaragoza",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 4989,
+     "validos": 513284
+    },
+    "51": {
+     "nombre": "Ceuta",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 324,
+     "validos": 33395
+    },
+    "52": {
+     "nombre": "Melilla",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 185,
+     "validos": 30932
+    }
+   },
+   "a_sum_escanos_ok": true,
+   "b_dhondt_ok": true,
+   "c_cargos_ok": true,
+   "fallos": [],
+   "resumen": {
+    "escanos": 350,
+    "provincias_ok": 52,
+    "provincias_total": 52
+   }
+  },
+  {
+   "id": "2023-07-23",
+   "escanos_totales": 350,
+   "provincias": {
+    "1": {
+     "nombre": "Araba/Álava",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 722,
+     "validos": 169107
+    },
+    "2": {
+     "nombre": "Albacete",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1834,
+     "validos": 221191
+    },
+    "3": {
+     "nombre": "Alicante/Alacant",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 6575,
+     "validos": 899192
+    },
+    "4": {
+     "nombre": "Almería",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2464,
+     "validos": 321242
+    },
+    "5": {
+     "nombre": "Ávila",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 632,
+     "validos": 97956
+    },
+    "6": {
+     "nombre": "Badajoz",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3225,
+     "validos": 391461
+    },
+    "7": {
+     "nombre": "Balears, Illes",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 4704,
+     "validos": 503280
+    },
+    "8": {
+     "nombre": "Barcelona",
+     "escanos": 32,
+     "ok": true,
+     "blanco": 21059,
+     "validos": 2667478
+    },
+    "9": {
+     "nombre": "Burgos",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1851,
+     "validos": 202569
+    },
+    "10": {
+     "nombre": "Cáceres",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1721,
+     "validos": 235851
+    },
+    "11": {
+     "nombre": "Cádiz",
+     "escanos": 9,
+     "ok": true,
+     "blanco": 7103,
+     "validos": 637098
+    },
+    "12": {
+     "nombre": "Castellón/Castelló",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2655,
+     "validos": 307930
+    },
+    "13": {
+     "nombre": "Ciudad Real",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2353,
+     "validos": 282979
+    },
+    "14": {
+     "nombre": "Córdoba",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 4348,
+     "validos": 448602
+    },
+    "15": {
+     "nombre": "A Coruña",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 5197,
+     "validos": 677702
+    },
+    "16": {
+     "nombre": "Cuenca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 969,
+     "validos": 113808
+    },
+    "17": {
+     "nombre": "Girona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2981,
+     "validos": 322988
+    },
+    "18": {
+     "nombre": "Granada",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 4057,
+     "validos": 502845
+    },
+    "19": {
+     "nombre": "Guadalajara",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1143,
+     "validos": 140913
+    },
+    "20": {
+     "nombre": "Gipuzkoa",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2005,
+     "validos": 376621
+    },
+    "21": {
+     "nombre": "Huelva",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2410,
+     "validos": 256804
+    },
+    "22": {
+     "nombre": "Huesca",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 1217,
+     "validos": 119895
+    },
+    "23": {
+     "nombre": "Jaén",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2497,
+     "validos": 368731
+    },
+    "24": {
+     "nombre": "León",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1577,
+     "validos": 275240
+    },
+    "25": {
+     "nombre": "Lleida",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 2059,
+     "validos": 184539
+    },
+    "26": {
+     "nombre": "La Rioja",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1608,
+     "validos": 174663
+    },
+    "27": {
+     "nombre": "Lugo",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1251,
+     "validos": 198566
+    },
+    "28": {
+     "nombre": "Madrid",
+     "escanos": 37,
+     "ok": true,
+     "blanco": 28960,
+     "validos": 3608673
+    },
+    "29": {
+     "nombre": "Málaga",
+     "escanos": 11,
+     "ok": true,
+     "blanco": 7509,
+     "validos": 788338
+    },
+    "30": {
+     "nombre": "Murcia",
+     "escanos": 10,
+     "ok": true,
+     "blanco": 5034,
+     "validos": 747797
+    },
+    "31": {
+     "nombre": "Navarra",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2890,
+     "validos": 341844
+    },
+    "32": {
+     "nombre": "Ourense",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1109,
+     "validos": 186271
+    },
+    "33": {
+     "nombre": "Asturias",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 6079,
+     "validos": 597032
+    },
+    "34": {
+     "nombre": "Palencia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 833,
+     "validos": 96962
+    },
+    "35": {
+     "nombre": "Las Palmas",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 3062,
+     "validos": 529337
+    },
+    "36": {
+     "nombre": "Pontevedra",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 3865,
+     "validos": 573124
+    },
+    "37": {
+     "nombre": "Salamanca",
+     "escanos": 4,
+     "ok": true,
+     "blanco": 1649,
+     "validos": 199110
+    },
+    "38": {
+     "nombre": "Santa Cruz de Tenerife",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 5088,
+     "validos": 494373
+    },
+    "39": {
+     "nombre": "Cantabria",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 3262,
+     "validos": 350150
+    },
+    "40": {
+     "nombre": "Segovia",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 875,
+     "validos": 88613
+    },
+    "41": {
+     "nombre": "Sevilla",
+     "escanos": 12,
+     "ok": true,
+     "blanco": 10951,
+     "validos": 1059358
+    },
+    "42": {
+     "nombre": "Soria",
+     "escanos": 2,
+     "ok": true,
+     "blanco": 285,
+     "validos": 50769
+    },
+    "43": {
+     "nombre": "Tarragona",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 3168,
+     "validos": 368024
+    },
+    "44": {
+     "nombre": "Teruel",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 410,
+     "validos": 75913
+    },
+    "45": {
+     "nombre": "Toledo",
+     "escanos": 6,
+     "ok": true,
+     "blanco": 2611,
+     "validos": 387200
+    },
+    "46": {
+     "nombre": "Valencia/València",
+     "escanos": 16,
+     "ok": true,
+     "blanco": 10810,
+     "validos": 1437161
+    },
+    "47": {
+     "nombre": "Valladolid",
+     "escanos": 5,
+     "ok": true,
+     "blanco": 2419,
+     "validos": 316309
+    },
+    "48": {
+     "nombre": "Bizkaia",
+     "escanos": 8,
+     "ok": true,
+     "blanco": 3391,
+     "validos": 609693
+    },
+    "49": {
+     "nombre": "Zamora",
+     "escanos": 3,
+     "ok": true,
+     "blanco": 922,
+     "validos": 103410
+    },
+    "50": {
+     "nombre": "Zaragoza",
+     "escanos": 7,
+     "ok": true,
+     "blanco": 4693,
+     "validos": 518705
+    },
+    "51": {
+     "nombre": "Ceuta",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 328,
+     "validos": 33321
+    },
+    "52": {
+     "nombre": "Melilla",
+     "escanos": 1,
+     "ok": true,
+     "blanco": 253,
+     "validos": 27349
+    }
+   },
+   "a_sum_escanos_ok": true,
+   "b_dhondt_ok": true,
+   "c_cargos_ok": true,
+   "fallos": [],
+   "resumen": {
+    "escanos": 350,
+    "provincias_ok": 52,
+    "provincias_total": 52
+   }
+  }
+ ]
+}

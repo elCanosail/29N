@@ -1,0 +1,6250 @@
+{
+ "version": "1.0",
+ "partidos": {
+  "fn": {
+   "nombre": "ASOCIACION POLITICA FUERZA NUEVA",
+   "siglas": [
+    "FN"
+   ],
+   "auto": true
+  },
+  "ppcan": {
+   "nombre": "PARTIDO POPULAR CANARIO",
+   "siglas": [
+    "PPCAN"
+   ],
+   "auto": true
+  },
+  "pdpc": {
+   "nombre": "COALICION ELECT.PACTE DEMOCRATIC PER CATALUNYA",
+   "siglas": [
+    "PDPC"
+   ],
+   "auto": true
+  },
+  "psg": {
+   "nombre": "PARTIDO SOCIALISTA GALEGO",
+   "siglas": [
+    "PSG"
+   ],
+   "auto": false
+  },
+  "uan": {
+   "nombre": "UNION AUTONOMISTA DE NAVARRA",
+   "siglas": [
+    "UAN"
+   ],
+   "auto": true
+  },
+  "pse": {
+   "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE)",
+   "siglas": [
+    "PSE-EE",
+    "PSE-EE (PSOE)",
+    "PSE-EE(PSOE)",
+    "PSE-PSOE"
+   ],
+   "auto": false
+  },
+  "ms": {
+   "nombre": "MOVIMIENTO SOCIALISTA",
+   "siglas": [
+    "MS"
+   ],
+   "auto": true
+  },
+  "anv": {
+   "nombre": "ACCION NACIONALISTA VASCA",
+   "siglas": [
+    "ANV"
+   ],
+   "auto": false
+  },
+  "psoe": {
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+   "siglas": [
+    "PSOE",
+    "PSOE-PROGR.",
+    "PSOE."
+   ],
+   "auto": false
+  },
+  "anepa-cp": {
+   "nombre": "ASOC.NAL. PARA EL ESTUDIO DE PROBLEMAS ACTUALES",
+   "siglas": [
+    "ANEPA-CP"
+   ],
+   "auto": true
+  },
+  "fe": {
+   "nombre": "FALANGE ESPAÑOLA DE LAS JONS AUTENTICA",
+   "siglas": [
+    "FE",
+    "FE DE LAS JONS",
+    "FE de las JONS",
+    "FJONS",
+    "FJONSA"
+   ],
+   "auto": false
+  },
+  "cuir": {
+   "nombre": "CANDIDATURA UNITARIA DE LA IZQUIERDA REGIONALISTA",
+   "siglas": [
+    "CUIR"
+   ],
+   "auto": true
+  },
+  "unidadpopular": {
+   "nombre": "UNIDAD POPULAR",
+   "siglas": [
+    "CUP"
+   ],
+   "auto": false
+  },
+  "indep": {
+   "nombre": "CANDIDATURA INDEP. AL CONGRESO PER PROV. GIRONA",
+   "siglas": [
+    "INDEP"
+   ],
+   "auto": true
+  },
+  "prsv": {
+   "nombre": "PARTIDO RADICAL SOCIALISTA DE VALENCIA",
+   "siglas": [
+    "PRSV"
+   ],
+   "auto": true
+  },
+  "pim": {
+   "nombre": "PARTIDO INDEPENDIENTE DE MADRID",
+   "siglas": [
+    "PIM"
+   ],
+   "auto": true
+  },
+  "uab": {
+   "nombre": "UNIO AUTONOMISTA",
+   "siglas": [
+    "UAB"
+   ],
+   "auto": true
+  },
+  "psuc": {
+   "nombre": "PARTIT SOCIALISTA UNIFICAT DE CATALUNYA",
+   "siglas": [
+    "PSUC",
+    "PSUC-PCE"
+   ],
+   "auto": false
+  },
+  "dscc": {
+   "nombre": "DEMOCRACIAL SOCIAL CRISTIANA DE CATALUÑA",
+   "siglas": [
+    "DSCC"
+   ],
+   "auto": true
+  },
+  "pspv": {
+   "nombre": "PARTIDO SOCIALISTA DEL PAIS VALENCIA",
+   "siglas": [
+    "PSPV"
+   ],
+   "auto": true
+  },
+  "msa": {
+   "nombre": "MOVIMIENTO SOCIALISTA ANDALUZ",
+   "siglas": [
+    "MSA"
+   ],
+   "auto": true
+  },
+  "fut": {
+   "nombre": "FRENTE UNIDAD DE LOS TRABAJADORES",
+   "siglas": [
+    "FUT"
+   ],
+   "auto": true
+  },
+  "mfa": {
+   "nombre": "MONTEJURRA-FEDERALISMO-AUTOGESTION",
+   "siglas": [
+    "MFA"
+   ],
+   "auto": true
+  },
+  "faa": {
+   "nombre": "FRENTE AUTONOMISTA ARAGONES",
+   "siglas": [
+    "FAA"
+   ],
+   "auto": true
+  },
+  "fdi": {
+   "nombre": "FRENTE DEMOCRATICO DE IZQUIERDAS",
+   "siglas": [
+    "FDI"
+   ],
+   "auto": true
+  },
+  "pae": {
+   "nombre": "PARTIDO DE LOS AUTONOMOS ESPAÑOLES PENSIONISTAS",
+   "siglas": [
+    "PAE"
+   ],
+   "auto": true
+  },
+  "rsc": {
+   "nombre": "REFORMA SOCIAL CATALANA",
+   "siglas": [
+    "RSC"
+   ],
+   "auto": true
+  },
+  "cc-ap": {
+   "nombre": "COALICION ELECTORAL CONVIVENCIA CATALANA",
+   "siglas": [
+    "CC-AP"
+   ],
+   "auto": true
+  },
+  "asdci": {
+   "nombre": "ALIANZA SOCIALISTA DEMOCRATICA",
+   "siglas": [
+    "ASDCI"
+   ],
+   "auto": true
+  },
+  "apc": {
+   "nombre": "ACCION POR CEUTA",
+   "siglas": [
+    "APC"
+   ],
+   "auto": true
+  },
+  "ee": {
+   "nombre": "EUSKADIKO EZKERRA - IZQUIERDA PARA EL SOCIALISMO",
+   "siglas": [
+    "EE"
+   ],
+   "auto": false
+  },
+  "ap": {
+   "nombre": "FEDERACION DE PARTIDOS DE ALIANZA POPULAR",
+   "siglas": [
+    "AP"
+   ],
+   "auto": false
+  },
+  "ccia": {
+   "nombre": "CENTRO IZQUIERDA DE ALBACETE",
+   "siglas": [
+    "CCIA"
+   ],
+   "auto": true
+  },
+  "cja": {
+   "nombre": "ASOCIACION CIRCULOS JOSE ANTONIO",
+   "siglas": [
+    "CJA"
+   ],
+   "auto": true
+  },
+  "adec": {
+   "nombre": "ASOCIACION DE ELECTORES DE CEUTA",
+   "siglas": [
+    "ADEC"
+   ],
+   "auto": true
+  },
+  "pnv": {
+   "nombre": "EUSKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+   "siglas": [
+    "EAJ-PNV",
+    "PNV"
+   ],
+   "auto": false
+  },
+  "icu": {
+   "nombre": "COALICION IZQUIERDA CANARIA UNIDA",
+   "siglas": [
+    "ICU"
+   ],
+   "auto": true
+  },
+  "aeicyu": {
+   "nombre": "AGRUPACION ELECTORAL INDEP. DEL CAMPO Y LA CIUDAD",
+   "siglas": [
+    "AEICYU"
+   ],
+   "auto": true
+  },
+  "dcar": {
+   "nombre": "DEMOCRACIA CRISTIANA ARAGONESA",
+   "siglas": [
+    "DCAR"
+   ],
+   "auto": true
+  },
+  "caic": {
+   "nombre": "CANDIDATURA ARAGONESA INDEPENDIENTE DE CENTRO",
+   "siglas": [
+    "CAIC"
+   ],
+   "auto": true
+  },
+  "afn": {
+   "nombre": "ALIANZA FORAL NAVARRA",
+   "siglas": [
+    "AFN"
+   ],
+   "auto": true
+  },
+  "ec-fed": {
+   "nombre": "COALICION ELECTORAL ESQUERRA DE CATALUÑA",
+   "siglas": [
+    "EC-FED"
+   ],
+   "auto": true
+  },
+  "pli": {
+   "nombre": "PARTIDO LIBERAL INDEPENDIENTE",
+   "siglas": [
+    "PLI"
+   ],
+   "auto": true
+  },
+  "unai": {
+   "nombre": "UNION NAVARRA DE IZQUIERDA",
+   "siglas": [
+    "UNAI"
+   ],
+   "auto": true
+  },
+  "cup": {
+   "nombre": "UNITAT POPULAR PER SOCIALISME",
+   "siglas": [
+    "CUPS"
+   ],
+   "auto": false
+  },
+  "an18": {
+   "nombre": "ALIANZA NACIONAL 18 DE JULIO",
+   "siglas": [
+    "AN18"
+   ],
+   "auto": true
+  },
+  "div": {
+   "nombre": "DEMOCRATAS INDEPENDIENTES VASCOS",
+   "siglas": [
+    "DIV"
+   ],
+   "auto": true
+  },
+  "pscan": {
+   "nombre": "PARTIDO SOCIALISTA DE CANARIAS",
+   "siglas": [
+    "PSCAN"
+   ],
+   "auto": true
+  },
+  "adc": {
+   "nombre": "AGRUPACION DE ELECTORES CARLISTAS",
+   "siglas": [
+    "ADC"
+   ],
+   "auto": true
+  },
+  "fdc-edc": {
+   "nombre": "COALICION ELECT. EQUIPO DE LA DEMOCRACIA CRISTIANA",
+   "siglas": [
+    "FDC-EDC"
+   ],
+   "auto": true
+  },
+  "pce-epk": {
+   "nombre": "PARTIDO COMUNISTA EUSKADI-EUSKADIKO PARTIDU KOMUNI",
+   "siglas": [
+    "PCE-EPK"
+   ],
+   "auto": true
+  },
+  "cipye": {
+   "nombre": "CANDIDATOS INDEP. DE LA PEQUEÑA Y MEDIANA EMPRESA",
+   "siglas": [
+    "CIPYE"
+   ],
+   "auto": true
+  },
+  "pcc-pce": {
+   "nombre": "PARTIDO COMUNISTA DE CANARIAS-P.C.E.",
+   "siglas": [
+    "PCC-PCE"
+   ],
+   "auto": true
+  },
+  "rse": {
+   "nombre": "REFORMA SOCIAL ESPAÑOLA",
+   "siglas": [
+    "RSE"
+   ],
+   "auto": true
+  },
+  "uras": {
+   "nombre": "UNION RENOVADORA ASTURIANA",
+   "siglas": [
+    "URAS"
+   ],
+   "auto": true
+  },
+  "psoe-h": {
+   "nombre": "PART. SOCIALISTA OBRERO ESPAÑOL(SECTOR HISTORICO)",
+   "siglas": [
+    "PSOE-H"
+   ],
+   "auto": true
+  },
+  "udc-idcc": {
+   "nombre": "UNIO DEL CENTRE I LA DEM. CRISTIANA DE CATALUNYA",
+   "siglas": [
+    "UDC-IDCC"
+   ],
+   "auto": true
+  },
+  "psde": {
+   "nombre": "PARTIDO SOCIALISTA DEMOCRATICO ESPAÑOL",
+   "siglas": [
+    "PSDE"
+   ],
+   "auto": true
+  },
+  "pdg": {
+   "nombre": "PARTIDO DEMOCRATA GALLEGO",
+   "siglas": [
+    "PDG"
+   ],
+   "auto": true
+  },
+  "dcv": {
+   "nombre": "DEMOCRACIA CRISTIANA VASCA",
+   "siglas": [
+    "DCV"
+   ],
+   "auto": true
+  },
+  "psp": {
+   "nombre": "PARTIDO SOCIALISTA POPULAR - UNIDAD SOCIALISTA",
+   "siglas": [
+    "PSP-US"
+   ],
+   "auto": false
+  },
+  "udib": {
+   "nombre": "UNION DEMOCRATA DE LAS ISLAS BALEARES",
+   "siglas": [
+    "UDIB"
+   ],
+   "auto": true
+  },
+  "bnpg": {
+   "nombre": "BLOQUE NACIONAL POPULAR GALLEGO",
+   "siglas": [
+    "BNPG"
+   ],
+   "auto": true
+  },
+  "bai": {
+   "nombre": "BLOQUE ANDALUZ DE IZQUIERDA",
+   "siglas": [
+    "BAI"
+   ],
+   "auto": true
+  },
+  "aet": {
+   "nombre": "AGRUPACION ELECTORAL DE TRABAJADORES",
+   "siglas": [
+    "AET"
+   ],
+   "auto": true
+  },
+  "fei": {
+   "nombre": "FALANGE ESPAÑOLA INDEPENDIENTE",
+   "siglas": [
+    "FEI"
+   ],
+   "auto": true
+  },
+  "asa": {
+   "nombre": "AGRUP.ELEC. Y PART.INDEP. ACCION SOCIAL AGRARIA",
+   "siglas": [
+    "ASA"
+   ],
+   "auto": true
+  },
+  "fl": {
+   "nombre": "FEDERACION LABORISTA",
+   "siglas": [
+    "FL"
+   ],
+   "auto": true
+  },
+  "fni": {
+   "nombre": "FRENTE NAVARRO INDEPENDIENTE",
+   "siglas": [
+    "FNI"
+   ],
+   "auto": true
+  },
+  "psc": {
+   "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE)",
+   "siglas": [
+    "PSC",
+    "PSC-PSOE"
+   ],
+   "auto": false
+  },
+  "esb": {
+   "nombre": "PARTIDO SOCIALISTA VASCO",
+   "siglas": [
+    "ESB"
+   ],
+   "auto": true
+  },
+  "lliga": {
+   "nombre": "LLIGA DE CATALUNYA PARTIT LIBERAL CATALA",
+   "siglas": [
+    "LLIGA"
+   ],
+   "auto": true
+  },
+  "pprov": {
+   "nombre": "PARTIDO PROVERISTA",
+   "siglas": [
+    "PPROV"
+   ],
+   "auto": true
+  },
+  "ura": {
+   "nombre": "UNIDAD REGIONAL ANDALUZA",
+   "siglas": [
+    "URA"
+   ],
+   "auto": true
+  },
+  "ucd": {
+   "nombre": "UNION DE CENTRO DEMOCRATICO",
+   "siglas": [
+    "UCD"
+   ],
+   "auto": false
+  },
+  "pce": {
+   "nombre": "PARTIDO COMUNISTA DE ESPAÑA",
+   "siglas": [
+    "PCE"
+   ],
+   "auto": false
+  },
+  "pcu": {
+   "nombre": "PUEBLO CANARIO UNIDO",
+   "siglas": [
+    "PCU"
+   ],
+   "auto": true
+  },
+  "gu": {
+   "nombre": "GUIPUZCOA UNIDA",
+   "siglas": [
+    "GU"
+   ],
+   "auto": true
+  },
+  "ir-e": {
+   "nombre": "IZQUIERDA REPUBLICANA DE EUSKADI",
+   "siglas": [
+    "IR-E"
+   ],
+   "auto": true
+  },
+  "cd": {
+   "nombre": "COALICION DEMOCRATICA",
+   "siglas": [
+    "CD"
+   ],
+   "auto": true
+  },
+  "psda": {
+   "nombre": "PARTIDO SOCIAL-DEMOCRATA ANDALUZ",
+   "siglas": [
+    "PSDA"
+   ],
+   "auto": true
+  },
+  "ir": {
+   "nombre": "IZQUIERDA REPUBLICANA",
+   "siglas": [
+    "IR"
+   ],
+   "auto": true
+  },
+  "pnpv": {
+   "nombre": "PARTIT NACIONALISTA DEL PAIS VALENCIA",
+   "siglas": [
+    "PNPV"
+   ],
+   "auto": true
+  },
+  "uf-fi-at": {
+   "nombre": "FALANGE ESPAÑOLA INDEPENDIENTE-UNIDAD FALANGISTA",
+   "siglas": [
+    "UF-FI-AT"
+   ],
+   "auto": true
+  },
+  "urv": {
+   "nombre": "UNIO REGIONAL VALENCIANISTA",
+   "siglas": [
+    "URV"
+   ],
+   "auto": true
+  },
+  "ira-arde": {
+   "nombre": "ALIANZA REPUBLICANA - FRONT VALENCIA",
+   "siglas": [
+    "IRA-ARDE"
+   ],
+   "auto": true
+  },
+  "arde": {
+   "nombre": "ACCION REPUBLICANA DEMOCRATICA ESPAÑOLA",
+   "siglas": [
+    "ARDE"
+   ],
+   "auto": true
+  },
+  "plib": {
+   "nombre": "PARTIDO LIBERAL",
+   "siglas": [
+    "PLIB"
+   ],
+   "auto": true
+  },
+  "poc": {
+   "nombre": "PARTIDO OBRERO Y CAMPESINO",
+   "siglas": [
+    "POC"
+   ],
+   "auto": true
+  },
+  "pg-pog-psg": {
+   "nombre": "UNIDADE GALEGA",
+   "siglas": [
+    "PG-POG-PSG"
+   ],
+   "auto": true
+  },
+  "par": {
+   "nombre": "PARTIDO ARAGONES REGIONALISTA",
+   "siglas": [
+    "PAR"
+   ],
+   "auto": false
+  },
+  "pte": {
+   "nombre": "PARTIDO DEL TRABAJO DE ESPAÑA",
+   "siglas": [
+    "PTE"
+   ],
+   "auto": true
+  },
+  "ufv": {
+   "nombre": "UNION FORAL PAIS VASCO",
+   "siglas": [
+    "UFV"
+   ],
+   "auto": true
+  },
+  "pct": {
+   "nombre": "PARTIDO COMUNISTA DE LOS TRABAJADORES",
+   "siglas": [
+    "PCT"
+   ],
+   "auto": true
+  },
+  "ule": {
+   "nombre": "UNION PARA LA LIBERTAD DE EXPRESION",
+   "siglas": [
+    "ULE"
+   ],
+   "auto": true
+  },
+  "pancal": {
+   "nombre": "PARTIDO NACIONALISTA DE CASTILLA Y LEON",
+   "siglas": [
+    "PANCAL"
+   ],
+   "auto": true
+  },
+  "psin": {
+   "nombre": "PARTIDO SINDICALISTA",
+   "siglas": [
+    "PSIN"
+   ],
+   "auto": true
+  },
+  "ort": {
+   "nombre": "ORGANIZACION REVOLUCIONARIA DE LOS TRABAJADORES",
+   "siglas": [
+    "ORT"
+   ],
+   "auto": true
+  },
+  "bean": {
+   "nombre": "BLOC D'ESQUERRAD'ALLIBERAMENT NACIONAL",
+   "siglas": [
+    "BEAN"
+   ],
+   "auto": true
+  },
+  "ptc-pte": {
+   "nombre": "PARTIT DEL TREBALL DE CATALUNYA",
+   "siglas": [
+    "PTC-PTE"
+   ],
+   "auto": true
+  },
+  "pdpcan": {
+   "nombre": "PARTIDO DEL PAIS CANARIO",
+   "siglas": [
+    "PDPCAN"
+   ],
+   "auto": true
+  },
+  "lcr": {
+   "nombre": "LIGA COMUNISTA REVOLUCIONARIA",
+   "siglas": [
+    "LCR"
+   ],
+   "auto": true
+  },
+  "mcpv-oic": {
+   "nombre": "MOVIMIENTO COMUNISTA-ORGANIZ.IZQUIERDA COMUNISTA",
+   "siglas": [
+    "MCPV-OIC"
+   ],
+   "auto": true
+  },
+  "smim": {
+   "nombre": "SOCIALISTAS DE MALLORCA I MENORCA",
+   "siglas": [
+    "SMIM"
+   ],
+   "auto": true
+  },
+  "oce-br": {
+   "nombre": "ORGANIZACION COMUNISTA DE ESPAÑA BANDERA ROJA",
+   "siglas": [
+    "OCE-BR"
+   ],
+   "auto": true
+  },
+  "upn": {
+   "nombre": "UNION DEL PUEBLO NAVARRO",
+   "siglas": [
+    "UPN"
+   ],
+   "auto": false
+  },
+  "hb": {
+   "nombre": "AGRUPACION ELECTORES HERRI BATASUNA",
+   "siglas": [
+    "HB"
+   ],
+   "auto": false
+  },
+  "pcarl": {
+   "nombre": "PARTIDO CARLISTA",
+   "siglas": [
+    "PCARL"
+   ],
+   "auto": true
+  },
+  "pa": {
+   "nombre": "PARTIDO SOCIALISTA DE ANDALUCIA - PARTIDO ANDALUZ",
+   "siglas": [
+    "PA",
+    "PSA",
+    "PSA-PA"
+   ],
+   "auto": false
+  },
+  "lc": {
+   "nombre": "LIGA COMUNISTA",
+   "siglas": [
+    "LC"
+   ],
+   "auto": true
+  },
+  "cc-ucd": {
+   "nombre": "CENTRISTES DE CATALUNYA",
+   "siglas": [
+    "CC-UCD"
+   ],
+   "auto": true
+  },
+  "mc-oic": {
+   "nombre": "MOVIMIENTO COMUNISTA-ORGANIZ.IZQUIERDA COMUNISTA",
+   "siglas": [
+    "MC-OIC"
+   ],
+   "auto": true
+  },
+  "plc": {
+   "nombre": "PARTIDO LIBERAL DE CATALUÑA",
+   "siglas": [
+    "PLC"
+   ],
+   "auto": true
+  },
+  "ciu": {
+   "nombre": "COALICION CONVERGENCIA Y UNIO",
+   "siglas": [
+    "CIU",
+    "CiU"
+   ],
+   "auto": false
+  },
+  "pre": {
+   "nombre": "PARTIDO RURALISTA ESPAÑOL",
+   "siglas": [
+    "PRE"
+   ],
+   "auto": true
+  },
+  "fe-uf": {
+   "nombre": "FALANGE ESPAÑOLA - UNIDAD FALANGISTA",
+   "siglas": [
+    "FE-UF"
+   ],
+   "auto": true
+  },
+  "mcg-oic": {
+   "nombre": "COALICION MCG (MC-OIC)",
+   "siglas": [
+    "MCG-OIC"
+   ],
+   "auto": true
+  },
+  "un": {
+   "nombre": "PARTIDO UNION NACIONAL",
+   "siglas": [
+    "UN"
+   ],
+   "auto": true
+  },
+  "p-cant": {
+   "nombre": "PARTIDO CANTONAL",
+   "siglas": [
+    "P-CANT"
+   ],
+   "auto": true
+  },
+  "fea": {
+   "nombre": "FALANGE ESPAÑOLA AUTENTICA",
+   "siglas": [
+    "FEA"
+   ],
+   "auto": true
+  },
+  "pippa": {
+   "nombre": "PARTIDO INDEPENDIENTE PRO POLITICA AUSTERA",
+   "siglas": [
+    "PIPPA"
+   ],
+   "auto": true
+  },
+  "cic": {
+   "nombre": "CANDIDATURA INDEPENDIENTE DEL CAMPO",
+   "siglas": [
+    "CIC"
+   ],
+   "auto": true
+  },
+  "cna": {
+   "nombre": "CONCEYU NACIONALISTA ASTUR",
+   "siglas": [
+    "CNA"
+   ],
+   "auto": true
+  },
+  "erfn": {
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA - FRONT NACIONAL",
+   "siglas": [
+    "ERFN"
+   ],
+   "auto": true
+  },
+  "aid": {
+   "nombre": "AGRUPACION INDEPENDIENTE DERECHAS",
+   "siglas": [
+    "AID"
+   ],
+   "auto": true
+  },
+  "ocebr-uce": {
+   "nombre": "ORGANIZ. COMUNISTA DE ESPAÑA B.R.-UNIF.COMUNISTA",
+   "siglas": [
+    "OCEBR-UCE"
+   ],
+   "auto": true
+  },
+  "uce": {
+   "nombre": "UNIFICACION COMUNISTA DE ESPAÑA",
+   "siglas": [
+    "UCE"
+   ],
+   "auto": true
+  },
+  "c-upc": {
+   "nombre": "UNION DEL PUEBLO CANARIO",
+   "siglas": [
+    "C-UPC"
+   ],
+   "auto": true
+  },
+  "cime": {
+   "nombre": "CANDIDATOS INDEPENDIENTES",
+   "siglas": [
+    "CIME"
+   ],
+   "auto": true
+  },
+  "e-catala": {
+   "nombre": "ESTAT CATALA",
+   "siglas": [
+    "E CATALA"
+   ],
+   "auto": true
+  },
+  "ap-pdp-par": {
+   "nombre": "ALIANZA POP.-P.DEMOC.POPULAR-P.ARAGONES REGIONAL.",
+   "siglas": [
+    "AP-PDP-PAR"
+   ],
+   "auto": true
+  },
+  "fic": {
+   "nombre": "FRENTE DE IZQUIERDA COMUNISTA",
+   "siglas": [
+    "FIC"
+   ],
+   "auto": true
+  },
+  "fe-jons": {
+   "nombre": "FALANGE ESPAÑOLA DE LAS J.O.N.S.",
+   "siglas": [
+    "FE-JONS"
+   ],
+   "auto": true
+  },
+  "aci": {
+   "nombre": "AGRUPACION CIUDADANA INDEPENDIENTE",
+   "siglas": [
+    "ACI"
+   ],
+   "auto": true
+  },
+  "fa": {
+   "nombre": "FALANGE AUTENTICA",
+   "siglas": [
+    "FA"
+   ],
+   "auto": true
+  },
+  "pst": {
+   "nombre": "PARTIDO SOCIALISTA DE LOS TRABAJADORES",
+   "siglas": [
+    "PST",
+    "PST."
+   ],
+   "auto": true
+  },
+  "eg": {
+   "nombre": "ESQUERDA GALEGA",
+   "siglas": [
+    "EG"
+   ],
+   "auto": true
+  },
+  "pca-pce": {
+   "nombre": "PARTIDO COMUNISTA DE ANDALUCIA-PCE",
+   "siglas": [
+    "PCA-PCE"
+   ],
+   "auto": true
+  },
+  "psa-psoe": {
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL DE ANDALUCIA",
+   "siglas": [
+    "PSA-PSOE"
+   ],
+   "auto": true
+  },
+  "pnc": {
+   "nombre": "PARTIDO NACIONALISTA CANTABRO",
+   "siglas": [
+    "PNC"
+   ],
+   "auto": true
+  },
+  "pp": {
+   "nombre": "PARTIDO POPULAR / PARTIT POPULAR",
+   "siglas": [
+    "PP"
+   ],
+   "auto": false
+  },
+  "lcr-mc": {
+   "nombre": "COALICION ELECTORAL IZQUIERDA COMUNISTA",
+   "siglas": [
+    "LCR-MC"
+   ],
+   "auto": true
+  },
+  "pcc": {
+   "nombre": "PARTIT DELS COMUNISTES DE CATALUNYA",
+   "siglas": [
+    "PCC"
+   ],
+   "auto": true
+  },
+  "pdb": {
+   "nombre": "PARTIDO DE EL BIERZO",
+   "siglas": [
+    "PDB"
+   ],
+   "auto": true
+  },
+  "mfe": {
+   "nombre": "MOVIMIENTO FALANGISTA DE ESPAÑA",
+   "siglas": [
+    "MFE"
+   ],
+   "auto": true
+  },
+  "lki": {
+   "nombre": "LIGA COMUNISTA IRAULTZAILEA",
+   "siglas": [
+    "LKI"
+   ],
+   "auto": true
+  },
+  "pcoc": {
+   "nombre": "PARTIT COMUNISTA OBRER DE CATALUNYA",
+   "siglas": [
+    "PCOC"
+   ],
+   "auto": true
+  },
+  "cuc": {
+   "nombre": "CANDIDATURA DE UNIDAD COMUNISTA",
+   "siglas": [
+    "CUC"
+   ],
+   "auto": true
+  },
+  "aeba": {
+   "nombre": "AGRUPACION ELECTORAL BLOQUE AGRARIO",
+   "siglas": [
+    "AEBA"
+   ],
+   "auto": true
+  },
+  "ps": {
+   "nombre": "PARTIDO SOCIALISTA",
+   "siglas": [
+    "PS"
+   ],
+   "auto": true
+  },
+  "b-psg": {
+   "nombre": "BLOQUE PSG",
+   "siglas": [
+    "B-PSG"
+   ],
+   "auto": true
+  },
+  "eu": {
+   "nombre": "ESQUERRA UNIDA DE LES ILLES BALEARS",
+   "siglas": [
+    "EU"
+   ],
+   "auto": true
+  },
+  "aegi": {
+   "nombre": "AGRUPACION ELECTORAL GALLEGA INDEPENDIENTE",
+   "siglas": [
+    "AEGI"
+   ],
+   "auto": true
+  },
+  "env-urv": {
+   "nombre": "ESQUERRA NACIONALISTA VALENCIANA - URV",
+   "siglas": [
+    "ENV-URV"
+   ],
+   "auto": true
+  },
+  "pc": {
+   "nombre": "PARTIDO CANTONALISTA",
+   "siglas": [
+    "PC"
+   ],
+   "auto": true
+  },
+  "erc": {
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-CATALUNYA SÍ",
+   "siglas": [
+    "ERC",
+    "ERC-CATSI"
+   ],
+   "auto": false
+  },
+  "upc": {
+   "nombre": "UNION DEL PUEBLO CANARIO",
+   "siglas": [
+    "UPC"
+   ],
+   "auto": true
+  },
+  "m-cat-e": {
+   "nombre": "MOVIMIENTO CATOLICO ESPAÑOL",
+   "siglas": [
+    "M.CAT.E"
+   ],
+   "auto": true
+  },
+  "cc": {
+   "nombre": "COALICION CANARIA-PARTIDO NACIONALISTA CANARIO",
+   "siglas": [
+    "CC",
+    "CC-PNC",
+    "CCa"
+   ],
+   "auto": false
+  },
+  "fe-i": {
+   "nombre": "FALANGE ESPAÑOLA INDEPENDIENTE",
+   "siglas": [
+    "FE (I)",
+    "FE-I"
+   ],
+   "auto": true
+  },
+  "mc-c-l": {
+   "nombre": "MOVIMIENTO COMUNISTA DE CASTILLA-LEON",
+   "siglas": [
+    "MC-C-L"
+   ],
+   "auto": true
+  },
+  "prepal": {
+   "nombre": "PARTIDO REGIONALISTA DEL PAIS LEONES",
+   "siglas": [
+    "PREPAL"
+   ],
+   "auto": true
+  },
+  "emk": {
+   "nombre": "MOVIMIENTO COMUNISTA DE EUSKADI",
+   "siglas": [
+    "EMK"
+   ],
+   "auto": true
+  },
+  "cds": {
+   "nombre": "CENTRO DEMOCRATICO Y SOCIAL/CENTRE DEMOCRATIC I SO",
+   "siglas": [
+    "CDS",
+    "CDS."
+   ],
+   "auto": false
+  },
+  "psg-psoe": {
+   "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PSOE",
+   "siglas": [
+    "PSG-PSOE"
+   ],
+   "auto": true
+  },
+  "se": {
+   "nombre": "SOLIDARIDAD ESPAÑOLA",
+   "siglas": [
+    "SE"
+   ],
+   "auto": true
+  },
+  "eupv": {
+   "nombre": "ESQUERDA UNIDA-IZQUIERDA UNIDA-ALTERNATIVA",
+   "siglas": [
+    "EU-IU",
+    "EUPV"
+   ],
+   "auto": false
+  },
+  "lc-cosi": {
+   "nombre": "LIGA COMUNISTA (C.OBREROS SOCIAL.INTERNACIONALIS.)",
+   "siglas": [
+    "LC (COSI)"
+   ],
+   "auto": true
+  },
+  "ne": {
+   "nombre": "NACIONALISTES D'ESQUERRA",
+   "siglas": [
+    "NE"
+   ],
+   "auto": true
+  },
+  "psm": {
+   "nombre": "COALICION ELECTORAL PSM-NACIONALISTES DE LES ILLES",
+   "siglas": [
+    "PSM"
+   ],
+   "auto": true
+  },
+  "ufm-mfe": {
+   "nombre": "UNIDAD FALANG.MONTAÑESA-MOVIM.FALANG.DE ESPAÑA",
+   "siglas": [
+    "UFM-MFE"
+   ],
+   "auto": true
+  },
+  "idg": {
+   "nombre": "INDEPENDIENTES Y EMIGRANTES DE GALICIA",
+   "siglas": [
+    "IDG"
+   ],
+   "auto": true
+  },
+  "asdc": {
+   "nombre": "ASOCIACION SOCIALDEMOCRATA CANARIA",
+   "siglas": [
+    "ASDC"
+   ],
+   "auto": true
+  },
+  "ap-pdp": {
+   "nombre": "ALIANZA POPULAR - PARTIDO DEMOCRATA POPULAR",
+   "siglas": [
+    "AP-PDP"
+   ],
+   "auto": true
+  },
+  "pcoe": {
+   "nombre": "PARTIDO COMUNISTA OBRERO ESPAÑOL",
+   "siglas": [
+    "PCOE"
+   ],
+   "auto": true
+  },
+  "padl": {
+   "nombre": "PARTIDO ASTURIANO DEMOCRATA LIBERAL",
+   "siglas": [
+    "PADL"
+   ],
+   "auto": true
+  },
+  "pce-m-l": {
+   "nombre": "PARTIDO COMUNISTA DE ESPAÑA (MARXISTA-LENINISTA)",
+   "siglas": [
+    "PCE (M-L)",
+    "PCE-(M.L.)",
+    "PCE/(M.L.)"
+   ],
+   "auto": true
+  },
+  "ap-pdp-uv": {
+   "nombre": "ALIANZA POP.-P.DEMOC.POPULAR-UNION VALENCIANA",
+   "siglas": [
+    "AP-PDP-UV"
+   ],
+   "auto": true
+  },
+  "ce-fcc": {
+   "nombre": "COALICION ELECTORAL FRONT COMUNISTA DE CATALUNYA",
+   "siglas": [
+    "CE-FCC"
+   ],
+   "auto": true
+  },
+  "pce-pv": {
+   "nombre": "P.COMUNISTA DE ESPAÑA-P.COMUN.DEL PAIS VALENCIA",
+   "siglas": [
+    "PCE-PV"
+   ],
+   "auto": true
+  },
+  "pce-pcg": {
+   "nombre": "PARTIDO COMUNISTA DE GALICIA",
+   "siglas": [
+    "PCE-PCG"
+   ],
+   "auto": true
+  },
+  "upn-ap-pdp": {
+   "nombre": "UNION DEL PUEBLO NAVARRO-A.P.-P.D.P.",
+   "siglas": [
+    "UPN-AP-PDP"
+   ],
+   "auto": true
+  },
+  "mce": {
+   "nombre": "MOVIMIENTO COMUNISTA DE EXTREMADURA",
+   "siglas": [
+    "MCE"
+   ],
+   "auto": true
+  },
+  "mca": {
+   "nombre": "MOVIMIENTO COMUNISTA DE ANDALUCIA",
+   "siglas": [
+    "MCA"
+   ],
+   "auto": true
+  },
+  "upv": {
+   "nombre": "UNITAT DEL POBLE VALENCIA",
+   "siglas": [
+    "UPV"
+   ],
+   "auto": true
+  },
+  "ac-cc": {
+   "nombre": "ASAMBLEA CANARIA - COORDINADORA CANARIA",
+   "siglas": [
+    "AC-CC"
+   ],
+   "auto": true
+  },
+  "mc": {
+   "nombre": "MOVIMIENTO COMUNISTA",
+   "siglas": [
+    "MC"
+   ],
+   "auto": true
+  },
+  "ap-pdp-pdl": {
+   "nombre": "ALIANZA POP.-P.DEMOC.POPULAR-P.DEMOC.LIBERAL-UCD",
+   "siglas": [
+    "AP-PDP-PDL-"
+   ],
+   "auto": true
+  },
+  "bng": {
+   "nombre": "BLOQUE NACIONALISTA GALEGO",
+   "siglas": [
+    "BNG"
+   ],
+   "auto": false
+  },
+  "pore": {
+   "nombre": "PARTIDO DE LOS OBREROS REVOLUCIONARIOS DE ESPAÑA",
+   "siglas": [
+    "PORE",
+    "PORE."
+   ],
+   "auto": true
+  },
+  "ap-pl-upn": {
+   "nombre": "COALICION POPULAR",
+   "siglas": [
+    "AP-PL-UPN"
+   ],
+   "auto": true
+  },
+  "pmcn": {
+   "nombre": "PARTIDO MODERADO-CENTRISTAS DE NAVARRA",
+   "siglas": [
+    "PMCN"
+   ],
+   "auto": true
+  },
+  "upr": {
+   "nombre": "UNIDAD  POPULAR REPUBLICANA",
+   "siglas": [
+    "UPR"
+   ],
+   "auto": true
+  },
+  "psg-eg": {
+   "nombre": "PARTIDO SOCIALISTA GALEGO-ESQUERDA GALEGA",
+   "siglas": [
+    "PSG-EG"
+   ],
+   "auto": true
+  },
+  "av": {
+   "nombre": "LISTA ALTERNATIVA VERDE",
+   "siglas": [
+    "AV"
+   ],
+   "auto": true
+  },
+  "psm-en": {
+   "nombre": "PSM ESQUERRA NACIONALISTA",
+   "siglas": [
+    "PSM-EN"
+   ],
+   "auto": true
+  },
+  "prm": {
+   "nombre": "PARTIDO REGIONALISTA MURCIANO",
+   "siglas": [
+    "PRM"
+   ],
+   "auto": true
+  },
+  "pg-eu": {
+   "nombre": "PLATAFORMA GALEGUISTA E DE ESQUERDA UNIDA",
+   "siglas": [
+    "PG-EU"
+   ],
+   "auto": true
+  },
+  "lv": {
+   "nombre": "LOS VERDES DE EXTREMADURA",
+   "siglas": [
+    "LV",
+    "LV."
+   ],
+   "auto": true
+  },
+  "loc": {
+   "nombre": "LIGA OBRERA COMUNISTA",
+   "siglas": [
+    "LOC"
+   ],
+   "auto": true
+  },
+  "ac-inc": {
+   "nombre": "ASAMBLEA CANARIA-IZQUIERDA NACIONALISTA CANARIA",
+   "siglas": [
+    "AC-INC"
+   ],
+   "auto": true
+  },
+  "psuc-ene": {
+   "nombre": "UNIO DE L'ESQUERRA CATALANA",
+   "siglas": [
+    "PSUC-ENE"
+   ],
+   "auto": true
+  },
+  "aic": {
+   "nombre": "COALICION AGRUPACIONES INDEPENDIENTES DE CANARIAS",
+   "siglas": [
+    "AIC"
+   ],
+   "auto": true
+  },
+  "ppc": {
+   "nombre": "PARTIDO PROVERISTA",
+   "siglas": [
+    "PPC"
+   ],
+   "auto": true
+  },
+  "paec": {
+   "nombre": "PARTIDO ESPAÑOL CRISTIANO",
+   "siglas": [
+    "PAEC"
+   ],
+   "auto": true
+  },
+  "cl": {
+   "nombre": "COALICION CONVERGENCIA LEONESISTA",
+   "siglas": [
+    "CL"
+   ],
+   "auto": true
+  },
+  "cn": {
+   "nombre": "CULTURA NATURAL",
+   "siglas": [
+    "CN"
+   ],
+   "auto": true
+  },
+  "adei": {
+   "nombre": "AGRUPACION DE ELECTORES INDEPENDIENTES",
+   "siglas": [
+    "ADEI"
+   ],
+   "auto": true
+  },
+  "cg": {
+   "nombre": "COALICION GALEGA",
+   "siglas": [
+    "CG"
+   ],
+   "auto": true
+  },
+  "pspa": {
+   "nombre": "PARTIDO SOCIALISTA DEL PUEBLO ANDALUZ",
+   "siglas": [
+    "PSPA"
+   ],
+   "auto": true
+  },
+  "prd": {
+   "nombre": "PARTIDO REFORMISTA DEMOCRATICO",
+   "siglas": [
+    "PRD"
+   ],
+   "auto": true
+  },
+  "ap-pdp-pl-c": {
+   "nombre": "COALICION POPULAR",
+   "siglas": [
+    "AP-PDP-PL-C"
+   ],
+   "auto": true
+  },
+  "iu": {
+   "nombre": "IZQUIERDA UNIDA-IZQUIERDA DE CASTILLA-LA MANCHA",
+   "siglas": [
+    "IU",
+    "IU-CA"
+   ],
+   "auto": false
+  },
+  "psdc": {
+   "nombre": "PARTIT SOCIALDEMOCRATA DE CATALUNYA",
+   "siglas": [
+    "PSDC"
+   ],
+   "auto": true
+  },
+  "muc": {
+   "nombre": "MESA PARA LA UNIDAD DE LOS COMUNISTAS",
+   "siglas": [
+    "MUC"
+   ],
+   "auto": true
+  },
+  "ae-aic": {
+   "nombre": "AGRUPACION ELECTORAL\"AGRUP INDEPENDIENTE DE CEUTA\"",
+   "siglas": [
+    "AE-AIC"
+   ],
+   "auto": true
+  },
+  "posi": {
+   "nombre": "PARTIDO OBRERO SOCIALISTA INTERNACIONALISTA",
+   "siglas": [
+    "POSI"
+   ],
+   "auto": true
+  },
+  "cun": {
+   "nombre": "COALICION DE UNIDAD NACIONAL",
+   "siglas": [
+    "CUN"
+   ],
+   "auto": true
+  },
+  "ped": {
+   "nombre": "PARTIDO ESPAÑOL DEMOCRATA",
+   "siglas": [
+    "PED"
+   ],
+   "auto": true
+  },
+  "ca": {
+   "nombre": "COALICION CANDIDATURA POR LA AUTONOMIA",
+   "siglas": [
+    "CA"
+   ],
+   "auto": true
+  },
+  "psdg-psoe": {
+   "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PSOE",
+   "siglas": [
+    "PSDG-PSOE"
+   ],
+   "auto": true
+  },
+  "uv": {
+   "nombre": "UNIO VALENCIANA",
+   "siglas": [
+    "UV"
+   ],
+   "auto": true
+  },
+  "verde": {
+   "nombre": "VERTICE ESPAÑOL REIVINDICACION DESARROLL ECOLOGICO",
+   "siglas": [
+    "VERDE",
+    "VERDE."
+   ],
+   "auto": true
+  },
+  "pec-verde": {
+   "nombre": "PARTIT ECOLOGISTA DE CATALUNYA-VERDE",
+   "siglas": [
+    "PEC-VERDE"
+   ],
+   "auto": true
+  },
+  "ap-pdp-pl": {
+   "nombre": "COALICION POPULAR",
+   "siglas": [
+    "AP-PDP-PL"
+   ],
+   "auto": true
+  },
+  "pcpc": {
+   "nombre": "PARTIDO COMUNISTA DEL PUEBLO DE CATALUNYA",
+   "siglas": [
+    "PCPC"
+   ],
+   "auto": true
+  },
+  "pam": {
+   "nombre": "PARTIDO REGIONAL DE MADRID",
+   "siglas": [
+    "PAM"
+   ],
+   "auto": true
+  },
+  "ceu": {
+   "nombre": "PARTIDO CEUTA UNIDA",
+   "siglas": [
+    "CEU"
+   ],
+   "auto": true
+  },
+  "ea": {
+   "nombre": "EUSKO ALKARTASUNA",
+   "siglas": [
+    "EA"
+   ],
+   "auto": false
+  },
+  "pte-uc": {
+   "nombre": "PARTIDO TRABAJADORES DE EUSKADI-EUSKADIKO LANGILEE",
+   "siglas": [
+    "PTE-UC",
+    "PTE/UC"
+   ],
+   "auto": true
+  },
+  "eve": {
+   "nombre": "LOS VERDES ECOLOGISTAS.",
+   "siglas": [
+    "EVE",
+    "EVE."
+   ],
+   "auto": true
+  },
+  "fpg": {
+   "nombre": "FRENTE POPULAR GALEGA",
+   "siglas": [
+    "FPG"
+   ],
+   "auto": true
+  },
+  "ic": {
+   "nombre": "INICIATIVA PER CATALUNYA",
+   "siglas": [
+    "IC"
+   ],
+   "auto": true
+  },
+  "csd-y-l": {
+   "nombre": "COALICION SOCIALDEMOCRATA Y LIBERAL",
+   "siglas": [
+    "CSD Y L"
+   ],
+   "auto": true
+  },
+  "ev-lv": {
+   "nombre": "ELS VERDS-LLISTA VERDA",
+   "siglas": [
+    "EV-LV"
+   ],
+   "auto": true
+  },
+  "acn": {
+   "nombre": "ASAMBLEA CANARIA NACIONALISTA",
+   "siglas": [
+    "ACN"
+   ],
+   "auto": true
+  },
+  "lve": {
+   "nombre": "LOS VERDES EUROPEOS-LOS VERDES ALTERNATIVOS",
+   "siglas": [
+    "LVE"
+   ],
+   "auto": true
+  },
+  "igc": {
+   "nombre": "INDEPENDIENTES DE GRAN CANARIA",
+   "siglas": [
+    "IGC"
+   ],
+   "auto": true
+  },
+  "coa": {
+   "nombre": "COALICION ALICANTINISTA ALICANTON",
+   "siglas": [
+    "COA"
+   ],
+   "auto": true
+  },
+  "png-pg": {
+   "nombre": "PARTIDO NACIONALISTA GALEGO-PARTIDO GALEGUISTA",
+   "siglas": [
+    "PNG-PG"
+   ],
+   "auto": true
+  },
+  "csd": {
+   "nombre": "COALICION SOCIALDEMOCRATA",
+   "siglas": [
+    "CSD",
+    "CSD."
+   ],
+   "auto": true
+  },
+  "psoe-a": {
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL DE ANDALUCIA",
+   "siglas": [
+    "PSOE-A"
+   ],
+   "auto": true
+  },
+  "pee-lv": {
+   "nombre": "PARTIDO ECOLOGISTA DE EUSKADI (LISTA VERDE)",
+   "siglas": [
+    "PEE-(LV)"
+   ],
+   "auto": true
+  },
+  "sev": {
+   "nombre": "SIETE ESTRELLAS VERDES",
+   "siglas": [
+    "SEV"
+   ],
+   "auto": true
+  },
+  "ua-ch-a": {
+   "nombre": "UNION ARAGONESISTA-CHUNTA ARAGONESISTA",
+   "siglas": [
+    "UA-CH.A"
+   ],
+   "auto": true
+  },
+  "ps-g-psoe": {
+   "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-P.S.O.E.",
+   "siglas": [
+    "PS G/PSOE"
+   ],
+   "auto": true
+  },
+  "pnv-nv": {
+   "nombre": "NACIONALISTAS DE NAVARRA-NAFARROAKO ABERTZALEAK",
+   "siglas": [
+    "PNV-NV"
+   ],
+   "auto": true
+  },
+  "pha": {
+   "nombre": "PARTIDO HUMANISTA DE ANDALUCIA",
+   "siglas": [
+    "PHA"
+   ],
+   "auto": true
+  },
+  "pnem": {
+   "nombre": "PARTIDO NACIONALISTA ESPAÑOL DE MELILLA",
+   "siglas": [
+    "PNEM"
+   ],
+   "auto": true
+  },
+  "pas": {
+   "nombre": "PARTIU ASTURIANISTA",
+   "siglas": [
+    "PAS"
+   ],
+   "auto": true
+  },
+  "prb": {
+   "nombre": "PARTIDO RADICAL BALEAR",
+   "siglas": [
+    "PRB"
+   ],
+   "auto": true
+  },
+  "ar": {
+   "nombre": "ALIANZA POR LA REPUBLICA",
+   "siglas": [
+    "AR"
+   ],
+   "auto": true
+  },
+  "grm": {
+   "nombre": "GRUPO DE RADICALES EN MADRID",
+   "siglas": [
+    "GRM"
+   ],
+   "auto": true
+  },
+  "tagoror": {
+   "nombre": "TAGOROR O ASAMBLEA CONEJERA DE LANZAROTE",
+   "siglas": [
+    "TAGOROR"
+   ],
+   "auto": true
+  },
+  "lv-lv": {
+   "nombre": "LOS VERDES-LISTA VERDE",
+   "siglas": [
+    "LV-LV"
+   ],
+   "auto": true
+  },
+  "iu-icu": {
+   "nombre": "IZQUIERDA UNIDA-IZQUIERDA CANARIA UNIDA",
+   "siglas": [
+    "IU-ICU"
+   ],
+   "auto": true
+  },
+  "ub": {
+   "nombre": "UNIO BALEAR",
+   "siglas": [
+    "UB"
+   ],
+   "auto": true
+  },
+  "iu-eu": {
+   "nombre": "IZQU. UNIDA-ESQUERRA UNIDA DEL PAIS VALENCIA",
+   "siglas": [
+    "IU/EU"
+   ],
+   "auto": true
+  },
+  "c-d-s": {
+   "nombre": "CENTRO DEMOCRATICO Y SOCIAL.",
+   "siglas": [
+    "C.D.S."
+   ],
+   "auto": true
+  },
+  "ruiz-mateos": {
+   "nombre": "AGRUPACION RUIZ-MATEOS-ALIANZA DEMOCR. EUROPEA",
+   "siglas": [
+    "RUIZ-MATEOS"
+   ],
+   "auto": true
+  },
+  "una": {
+   "nombre": "UNIDA NACIONALISTA ASTURIANA",
+   "siglas": [
+    "UNA"
+   ],
+   "auto": true
+  },
+  "pcpg": {
+   "nombre": "PARTIDO COMUNISTA DO POVO GALEGO",
+   "siglas": [
+    "PCPG"
+   ],
+   "auto": true
+  },
+  "ex-u": {
+   "nombre": "EXTREMADURA UNIDA",
+   "siglas": [
+    "EX.U."
+   ],
+   "auto": true
+  },
+  "mv": {
+   "nombre": "MOVIMIENTO VERDE",
+   "siglas": [
+    "MV"
+   ],
+   "auto": true
+  },
+  "i-u": {
+   "nombre": "IZQUIERDA UNIDA-LOS VERDES: LA IZQUIERDA PLURAL/EZ",
+   "siglas": [
+    "I.U."
+   ],
+   "auto": true
+  },
+  "av-mec": {
+   "nombre": "ALTERNATIVA VERDA-MOVIMENT ECOLOG. DE CATALUNYA",
+   "siglas": [
+    "AV-MEC"
+   ],
+   "auto": true
+  },
+  "ph": {
+   "nombre": "PARTIT HUMANISTA DE CATALUNYA",
+   "siglas": [
+    "PH"
+   ],
+   "auto": false
+  },
+  "upn-pp": {
+   "nombre": "UNION DEL PUEBLO NAVARRO EN COALICION CON EL PARTIDO POPULAR",
+   "siglas": [
+    "UPN-PP"
+   ],
+   "auto": true
+  },
+  "r-x-c": {
+   "nombre": "RADICALES POR CANTABRIA",
+   "siglas": [
+    "R. X C."
+   ],
+   "auto": true
+  },
+  "iu-eb": {
+   "nombre": "IZQUIERDA UNIDA-EZKER BATUA DE NAVARRA",
+   "siglas": [
+    "IU-EB"
+   ],
+   "auto": true
+  },
+  "pcpe": {
+   "nombre": "PARTIDO COMUNISTA DEL PUEBLO CASTELLANO-PCPE",
+   "siglas": [
+    "PCPE",
+    "PCPE."
+   ],
+   "auto": true
+  },
+  "psm-ene": {
+   "nombre": "PSM-ENE NACIONALISTES DE LES ILLES BALEARS",
+   "siglas": [
+    "PSM-ENE"
+   ],
+   "auto": true
+  },
+  "pcpa": {
+   "nombre": "PARTIDO COMUNISTA DEL PUEBLO ANDALUZ",
+   "siglas": [
+    "PCPA"
+   ],
+   "auto": true
+  },
+  "p-pr": {
+   "nombre": "PARTIDO PROVERISTA",
+   "siglas": [
+    "P.PR."
+   ],
+   "auto": true
+  },
+  "prgu": {
+   "nombre": "PARTIDO REGIONALISTA DE GUADALAJARA",
+   "siglas": [
+    "PRGU"
+   ],
+   "auto": true
+  },
+  "pp-c-de-g": {
+   "nombre": "PARTIDO POPULAR CENTRISTAS DE GALICIA",
+   "siglas": [
+    "PP-C DE G"
+   ],
+   "auto": true
+  },
+  "phc": {
+   "nombre": "PARTIT HUMANISTA DE CATALUNYA",
+   "siglas": [
+    "PHC"
+   ],
+   "auto": true
+  },
+  "mces": {
+   "nombre": "MONARQUIA CRISTIANA ESPAÑOLA SOCIALDEMOCRATA",
+   "siglas": [
+    "MCES"
+   ],
+   "auto": true
+  },
+  "ev-cec": {
+   "nombre": "ELS VERDS-CONFEDERACIO ECOLOGISTA DE CATALUNYA",
+   "siglas": [
+    "EV-CEC"
+   ],
+   "auto": true
+  },
+  "upl": {
+   "nombre": "UNIÓN DEL PUEBLO LEONÉS",
+   "siglas": [
+    "UPL"
+   ],
+   "auto": true
+  },
+  "urcl": {
+   "nombre": "UNIDAD REGIONALISTA DE CASTILLA Y LEON",
+   "siglas": [
+    "URCL"
+   ],
+   "auto": true
+  },
+  "sees": {
+   "nombre": "SALUD Y ECOLOGIA EN SOLIDARIDAD",
+   "siglas": [
+    "SEES"
+   ],
+   "auto": true
+  },
+  "humanista": {
+   "nombre": "PARTIDO HUMANISTA",
+   "siglas": [
+    "HUMANISTA"
+   ],
+   "auto": true
+  },
+  "os": {
+   "nombre": "OCTUBRE SOCIALISTA",
+   "siglas": [
+    "OS"
+   ],
+   "auto": true
+  },
+  "pgc": {
+   "nombre": "PARTIDO DE GRAN CANARIA",
+   "siglas": [
+    "PGC"
+   ],
+   "auto": true
+  },
+  "arm-pai-mas": {
+   "nombre": "AGRUPACION RUIZ-MATEOS P.A.I.-M.A.S.",
+   "siglas": [
+    "ARM-PAI-MAS"
+   ],
+   "auto": true
+  },
+  "atf": {
+   "nombre": "ASAMBLEA TINERFEÑA",
+   "siglas": [
+    "ATF"
+   ],
+   "auto": true
+  },
+  "verdes": {
+   "nombre": "LOS VERDES DE ANDALUCIA",
+   "siglas": [
+    "VERDES"
+   ],
+   "auto": true
+  },
+  "ecologistas": {
+   "nombre": "LOS ECOLOGISTAS",
+   "siglas": [
+    "ECOLOGISTAS"
+   ],
+   "auto": true
+  },
+  "us": {
+   "nombre": "UNION PROGRESISTA SORIANA",
+   "siglas": [
+    "US"
+   ],
+   "auto": true
+  },
+  "berdeak-lv": {
+   "nombre": "BERDEAK-LOS VERDES",
+   "siglas": [
+    "BERDEAK-LV"
+   ],
+   "auto": true
+  },
+  "pb": {
+   "nombre": "PARTIDO DE EL BIERZO",
+   "siglas": [
+    "PB"
+   ],
+   "auto": true
+  },
+  "ug-eu": {
+   "nombre": "UNIDADE GALEGA-ESQUERDA UNIDA",
+   "siglas": [
+    "UG-EU"
+   ],
+   "auto": true
+  },
+  "aa": {
+   "nombre": "ANDECHA ASTUR",
+   "siglas": [
+    "AA"
+   ],
+   "auto": true
+  },
+  "prim": {
+   "nombre": "PARTIDO REGIONAL INDEPENDIENTE MADRILEÑO",
+   "siglas": [
+    "PRIM"
+   ],
+   "auto": true
+  },
+  "fe-a": {
+   "nombre": "FALANGE ESPAÑOLA AUTENTICA",
+   "siglas": [
+    "FE (A)"
+   ],
+   "auto": true
+  },
+  "ea-eue": {
+   "nombre": "COALICION EUSKO ALKARTASUNA-EUSKAL EZKERRA",
+   "siglas": [
+    "EA-EUE"
+   ],
+   "auto": true
+  },
+  "gil": {
+   "nombre": "GRUPO INDEPENDIENTE LIBERAL",
+   "siglas": [
+    "GIL"
+   ],
+   "auto": true
+  },
+  "app": {
+   "nombre": "AGRUPACION PALENTINA POPULAR",
+   "siglas": [
+    "APP"
+   ],
+   "auto": true
+  },
+  "por": {
+   "nombre": "PARTIDO OBRERO REVOLUCIONARIO",
+   "siglas": [
+    "POR"
+   ],
+   "auto": true
+  },
+  "piap": {
+   "nombre": "PARTIDO DE INTEGRACION POR ALMERIA Y SUS PUEBLOS",
+   "siglas": [
+    "PIAP"
+   ],
+   "auto": true
+  },
+  "pln": {
+   "nombre": "PARTIDO DE LA LEY NATURAL",
+   "siglas": [
+    "PLN"
+   ],
+   "auto": true
+  },
+  "tc-pnc": {
+   "nombre": "TIERRA COMUNERA-PARTIDO NACIONALISTA CASTELLANO",
+   "siglas": [
+    "TC-PNC"
+   ],
+   "auto": true
+  },
+  "cng": {
+   "nombre": "CONVERXENCIA NACIONALISTA GALEGA",
+   "siglas": [
+    "CNG"
+   ],
+   "auto": true
+  },
+  "e-u": {
+   "nombre": "EXTREMADURA UNIDA",
+   "siglas": [
+    "E U"
+   ],
+   "auto": true
+  },
+  "p-tagoror": {
+   "nombre": "PARTIDO TAGOROR",
+   "siglas": [
+    "P. TAGOROR"
+   ],
+   "auto": true
+  },
+  "prc": {
+   "nombre": "PARTIDO REGIONALISTA DE CANTABRIA",
+   "siglas": [
+    "PRC"
+   ],
+   "auto": false
+  },
+  "vg": {
+   "nombre": "OS VERDES DE GALICIA",
+   "siglas": [
+    "VG"
+   ],
+   "auto": true
+  },
+  "aigranc": {
+   "nombre": "PARTIDO AGRUPACION INSULAR DE GRAN CANARIA",
+   "siglas": [
+    "AIGRANC"
+   ],
+   "auto": true
+  },
+  "upca": {
+   "nombre": "UNION PARA EL PROGRESO DE CANTABRIA",
+   "siglas": [
+    "UPCA"
+   ],
+   "auto": true
+  },
+  "uni-d-a": {
+   "nombre": "UNION DEMOCRATICA ALICANTINA",
+   "siglas": [
+    "UNI.D.A"
+   ],
+   "auto": true
+  },
+  "pspc": {
+   "nombre": "PARTIDO SOCIALISTA DEL PUEBLO DE CEUTA",
+   "siglas": [
+    "PSPC"
+   ],
+   "auto": true
+  },
+  "evib": {
+   "nombre": "ELS VERDS DE LES ILLES BALEARS",
+   "siglas": [
+    "EVIB"
+   ],
+   "auto": true
+  },
+  "if": {
+   "nombre": "INDEPENDIENTES FEDERADOS DE ARAGON",
+   "siglas": [
+    "IF"
+   ],
+   "auto": true
+  },
+  "le": {
+   "nombre": "LOS ECOLOGISTAS",
+   "siglas": [
+    "LE"
+   ],
+   "auto": true
+  },
+  "ua": {
+   "nombre": "UNIDAD ALAVESA",
+   "siglas": [
+    "UA"
+   ],
+   "auto": true
+  },
+  "ag": {
+   "nombre": "ALTERNATIVA GALEGA",
+   "siglas": [
+    "AG"
+   ],
+   "auto": true
+  },
+  "ov": {
+   "nombre": "OS VERDES - GRUPO VERDE",
+   "siglas": [
+    "OV"
+   ],
+   "auto": true
+  },
+  "pvpa": {
+   "nombre": "LOS VERDES DEL PAIS ALICANTINO",
+   "siglas": [
+    "PVPA"
+   ],
+   "auto": true
+  },
+  "conceyu": {
+   "nombre": "CONCEYU INDEPENDIENTE D'ASTURIES",
+   "siglas": [
+    "CONCEYU"
+   ],
+   "auto": true
+  },
+  "arm": {
+   "nombre": "AGRUPACION RUIZ-MATEOS-ALIANZA DEMOCR. EUROPEA",
+   "siglas": [
+    "ARM"
+   ],
+   "auto": true
+  },
+  "arm-ade": {
+   "nombre": "AGRUPACION RUIZ-MATEOS-ALIANZA DEMOCR. EUROPEA",
+   "siglas": [
+    "ARM-ADE"
+   ],
+   "auto": true
+  },
+  "udla": {
+   "nombre": "UNION DE AUTONOMIAS",
+   "siglas": [
+    "UDLA"
+   ],
+   "auto": true
+  },
+  "pse-ee-psoe": {
+   "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZQUERRA",
+   "siglas": [
+    "PSE-EE-PSOE",
+    "PSE-EE/PSOE"
+   ],
+   "auto": true
+  },
+  "ev": {
+   "nombre": "ELS VERDS DEL PAIS VALENCIA",
+   "siglas": [
+    "EV"
+   ],
+   "auto": true
+  },
+  "pitrcg": {
+   "nombre": "PART. POLITICO INDEPENDIENTE TOLERANTE REFERENDATA",
+   "siglas": [
+    "PITRCG"
+   ],
+   "auto": true
+  },
+  "iuc": {
+   "nombre": "IZQUIERDA UNIDA DE CANTABRIA: LA IZQUIERDA PLURAL",
+   "siglas": [
+    "IUC"
+   ],
+   "auto": true
+  },
+  "s-e": {
+   "nombre": "SALUD Y ECOLOGIA EN SOLIDARIDAD",
+   "siglas": [
+    "S.E."
+   ],
+   "auto": true
+  },
+  "ummp": {
+   "nombre": "UNIO MALLORQUINA, MENORQUINA I PITIUSA",
+   "siglas": [
+    "UMMP"
+   ],
+   "auto": true
+  },
+  "eu-pv": {
+   "nombre": "ESQUERRA UNIDA DEL PAIS VALENCIA",
+   "siglas": [
+    "EU-PV"
+   ],
+   "auto": true
+  },
+  "ince": {
+   "nombre": "INICIATIVA POR CEUTA",
+   "siglas": [
+    "INCE"
+   ],
+   "auto": true
+  },
+  "ade": {
+   "nombre": "AGRUPACION RUIZ-MATEOS-ALIANZA DEMOCR. EUROPEA",
+   "siglas": [
+    "ADE"
+   ],
+   "auto": true
+  },
+  "prex": {
+   "nombre": "PARTIDO REGIONALISTA EXTREMEÑO",
+   "siglas": [
+    "PREX"
+   ],
+   "auto": true
+  },
+  "uc": {
+   "nombre": "UNION CASTELLANISTA",
+   "siglas": [
+    "UC"
+   ],
+   "auto": true
+  },
+  "fpe": {
+   "nombre": "FRENTE PROGRESISTA DE ESPAÑA",
+   "siglas": [
+    "FPE"
+   ],
+   "auto": true
+  },
+  "p-riojano": {
+   "nombre": "PARTIDO RIOJANO",
+   "siglas": [
+    "P. RIOJANO",
+    "P.RIOJANO"
+   ],
+   "auto": true
+  },
+  "cha": {
+   "nombre": "CHUNTA ARAGONESISTA",
+   "siglas": [
+    "CHA"
+   ],
+   "auto": true
+  },
+  "pcv": {
+   "nombre": "PARTIDO CANTONALISTA DE VALENCIA",
+   "siglas": [
+    "PCV"
+   ],
+   "auto": true
+  },
+  "nps": {
+   "nombre": "COALICION POR UN NUEVO PARTIDO SOCIALISTA",
+   "siglas": [
+    "NPS"
+   ],
+   "auto": true
+  },
+  "eco-verde": {
+   "nombre": "SALUD Y ECOLOGIA EN SOLIDARIDAD",
+   "siglas": [
+    "ECO-VERDE"
+   ],
+   "auto": true
+  },
+  "abe": {
+   "nombre": "ALTERNATIVA BALEAR ESPAÑOLA",
+   "siglas": [
+    "ABE"
+   ],
+   "auto": true
+  },
+  "arcoiris": {
+   "nombre": "ARCOIRIS",
+   "siglas": [
+    "ARCOIRIS"
+   ],
+   "auto": true
+  },
+  "pap": {
+   "nombre": "PARTIDO ANDALUZ DE PROGRESO",
+   "siglas": [
+    "PAP"
+   ],
+   "auto": true
+  },
+  "lg": {
+   "nombre": "PARTIDO DE LA GENTE",
+   "siglas": [
+    "LG"
+   ],
+   "auto": true
+  },
+  "eu-ug": {
+   "nombre": "ESQUERDA UNIDA-UNIDADE GALEGA",
+   "siglas": [
+    "EU-UG"
+   ],
+   "auto": true
+  },
+  "env": {
+   "nombre": "ESQUERRA NACIONALISTA VALENCIANA",
+   "siglas": [
+    "ENV"
+   ],
+   "auto": true
+  },
+  "iulv": {
+   "nombre": "IZQUIERDA UNIDA LOS VERDES-CONVOCATORIA POR ANDALUCIA - ALTERNATIVA",
+   "siglas": [
+    "IULV-CA"
+   ],
+   "auto": false
+  },
+  "pnm": {
+   "nombre": "PARTIDO NACIONALISTA DE MELILLA",
+   "siglas": [
+    "PNM"
+   ],
+   "auto": true
+  },
+  "sos": {
+   "nombre": "SOS NATURALEZA",
+   "siglas": [
+    "SOS"
+   ],
+   "auto": true
+  },
+  "cex": {
+   "nombre": "CONVERGENCIA POR EXTREMADURA",
+   "siglas": [
+    "CEX",
+    "CEx"
+   ],
+   "auto": true
+  },
+  "frepic": {
+   "nombre": "FRENTE POPULAR POR LA INDEPENDENCIA DE CANARIAS",
+   "siglas": [
+    "FREPIC"
+   ],
+   "auto": true
+  },
+  "izegzawen": {
+   "nombre": "IZQUIERDA VERDE DE LAS ISLAS CANARIAS",
+   "siglas": [
+    "IZEGZAWEN"
+   ],
+   "auto": true
+  },
+  "iu-icam": {
+   "nombre": "IZQUIERDA UNIDA-IZQUIERDA DE CASTILLA-LA MANCHA",
+   "siglas": [
+    "IU-ICAM"
+   ],
+   "auto": true
+  },
+  "dsa": {
+   "nombre": "DINAMICA SOCIAL ARAGONESA",
+   "siglas": [
+    "DSA"
+   ],
+   "auto": true
+  },
+  "pcn": {
+   "nombre": "PARTIDO CANARIO NACIONALISTA",
+   "siglas": [
+    "PCN"
+   ],
+   "auto": true
+  },
+  "vdpa": {
+   "nombre": "VOZ DEL PUEBLO ANDALUZ",
+   "siglas": [
+    "VDPA"
+   ],
+   "auto": true
+  },
+  "alas": {
+   "nombre": "AGRUPACION LIBERAL AUTONOMISTA Y SOCIAL",
+   "siglas": [
+    "ALAS"
+   ],
+   "auto": true
+  },
+  "piz": {
+   "nombre": "PARTIDO INTERZAMORANO",
+   "siglas": [
+    "PIZ"
+   ],
+   "auto": true
+  },
+  "um": {
+   "nombre": "UNIO MALLORQUINA",
+   "siglas": [
+    "UM"
+   ],
+   "auto": true
+  },
+  "upra": {
+   "nombre": "UNION PROVINCIAL ALICANTINA",
+   "siglas": [
+    "UPRA"
+   ],
+   "auto": true
+  },
+  "pec": {
+   "nombre": "PARTIT ECOLOGISTA DE CATALUNYA",
+   "siglas": [
+    "PEC"
+   ],
+   "auto": true
+  },
+  "uad": {
+   "nombre": "UNIDAD ANDALUZA DEMOCRATICA",
+   "siglas": [
+    "UAD"
+   ],
+   "auto": true
+  },
+  "prv": {
+   "nombre": "PARTIDO ROJI-VERDE",
+   "siglas": [
+    "PRV"
+   ],
+   "auto": true
+  },
+  "aun": {
+   "nombre": "ALIANZA POR LA UNIDAD NACIONAL",
+   "siglas": [
+    "AUN",
+    "AuN"
+   ],
+   "auto": true
+  },
+  "iu-lv": {
+   "nombre": "IZQUIERDA UNIDA-LOS VERDES: LA IZQUIERDA PLURAL/EZ",
+   "siglas": [
+    "IU-LV"
+   ],
+   "auto": true
+  },
+  "lae": {
+   "nombre": "LIGA AUTONOMA ESPAÑOLA",
+   "siglas": [
+    "LAE"
+   ],
+   "auto": true
+  },
+  "picc": {
+   "nombre": "PLATAFORMA INDEPENDIENTE CIUDADANA DE CATALUÑA",
+   "siglas": [
+    "PICC"
+   ],
+   "auto": true
+  },
+  "iu-cl": {
+   "nombre": "IZQUIERDA UNIDA DE CASTILLA Y LEON",
+   "siglas": [
+    "IU-CL"
+   ],
+   "auto": true
+  },
+  "icv-gorordo": {
+   "nombre": "INIC.CIUDADANA VASCA/EUSKAL HURITARREN EGITEKOAK",
+   "siglas": [
+    "ICV-GORORDO"
+   ],
+   "auto": true
+  },
+  "nr": {
+   "nombre": "NUEVA REGION",
+   "siglas": [
+    "NR"
+   ],
+   "auto": true
+  },
+  "ic-ev": {
+   "nombre": "INICIATIVA PER CATALUNYA-ELS VERDS",
+   "siglas": [
+    "IC-EV"
+   ],
+   "auto": true
+  },
+  "cdn": {
+   "nombre": "CONVERGENCIA DE DEMOCRATAS DE NAVARRA",
+   "siglas": [
+    "CDN"
+   ],
+   "auto": true
+  },
+  "na": {
+   "nombre": "NACION ANDALUZA",
+   "siglas": [
+    "NA",
+    "NA+"
+   ],
+   "auto": false
+  },
+  "ve-ehb": {
+   "nombre": "VERDES EUROPEOS-EUSKAL HERRIKO BERDEAK",
+   "siglas": [
+    "VE-EHB"
+   ],
+   "auto": true
+  },
+  "cr": {
+   "nombre": "COALICION REPUBLICANA",
+   "siglas": [
+    "CR"
+   ],
+   "auto": true
+  },
+  "los-verdes": {
+   "nombre": "LOS VERDES DE GALICIA",
+   "siglas": [
+    "LOS VERDES"
+   ],
+   "auto": true
+  },
+  "eve-aec": {
+   "nombre": "ELS VERDS EUROPEUS-ALTER. ECOLOGISTA DE CATALUNYA",
+   "siglas": [
+    "EVE-AEC"
+   ],
+   "auto": true
+  },
+  "lv-gv": {
+   "nombre": "LOS VERDES-GRUPO VERDE-SOS NATURALEZA",
+   "siglas": [
+    "LV-GV"
+   ],
+   "auto": true
+  },
+  "eu-eg": {
+   "nombre": "ESQUERDA UNIDA-ESQUERDA GALEGA",
+   "siglas": [
+    "EU-EG"
+   ],
+   "auto": true
+  },
+  "prt": {
+   "nombre": "PARTIDO REVOLUCIONARIO DE LOS TRABAJADORES",
+   "siglas": [
+    "PRT"
+   ],
+   "auto": true
+  },
+  "n": {
+   "nombre": "ESTADO NACIONAL EUROPEO",
+   "siglas": [
+    "N"
+   ],
+   "auto": true
+  },
+  "upv-bn": {
+   "nombre": "UNITAT DEL POBLE VALENCIA-BLOC NACIONALISTA",
+   "siglas": [
+    "UPV-BN"
+   ],
+   "auto": true
+  },
+  "aba": {
+   "nombre": "ALIANÇA BALEAR",
+   "siglas": [
+    "ABA"
+   ],
+   "auto": true
+  },
+  "siex": {
+   "nombre": "SOCIALISTAS INDEPENDIENTES DE EXTREMADURA",
+   "siglas": [
+    "SIEX"
+   ],
+   "auto": true
+  },
+  "pp-par": {
+   "nombre": "PARTIDO POPULAR EN COALICIÓN CON EL PARTIDO ARAGON",
+   "siglas": [
+    "PP-PAR"
+   ],
+   "auto": true
+  },
+  "ve-vg": {
+   "nombre": "LOS VERDES EUROPEOS-OS VERDES DE GALICIA",
+   "siglas": [
+    "VE-VG"
+   ],
+   "auto": true
+  },
+  "prcm": {
+   "nombre": "PARTIDO REGIONALISTA DE CASTILLA-LA MANCHA",
+   "siglas": [
+    "PRCM"
+   ],
+   "auto": true
+  },
+  "ic-v": {
+   "nombre": "INICIATIVA PER CATALUNYA-VERDS",
+   "siglas": [
+    "IC-V"
+   ],
+   "auto": true
+  },
+  "eka-pc": {
+   "nombre": "PARTIDO CARLISTA DE EUSKALERRIA-PARTIDO CARLISTA",
+   "siglas": [
+    "EKA-PC",
+    "EKA-PC."
+   ],
+   "auto": true
+  },
+  "ccs": {
+   "nombre": "CONVERGENCIA CIUDADANA DEL SURESTE",
+   "siglas": [
+    "CCS"
+   ],
+   "auto": true
+  },
+  "an": {
+   "nombre": "APROME NACIONALISTA",
+   "siglas": [
+    "AN"
+   ],
+   "auto": true
+  },
+  "mash": {
+   "nombre": "MOVIMIENTO AL SOCIALISMO HUMANISTA",
+   "siglas": [
+    "MASH"
+   ],
+   "auto": true
+  },
+  "eb-iu": {
+   "nombre": "EZKER BATUA-IZQUIERDA UNIDA",
+   "siglas": [
+    "EB-IU"
+   ],
+   "auto": true
+  },
+  "lv-cm": {
+   "nombre": "LOS VERDES-COMUNIDAD DE MADRID",
+   "siglas": [
+    "LV-CM"
+   ],
+   "auto": true
+  },
+  "pp-upm": {
+   "nombre": "PP EN COALICION CON UPM",
+   "siglas": [
+    "PP-UPM"
+   ],
+   "auto": true
+  },
+  "li-lit-ci": {
+   "nombre": "LUCHA INTERNACIONALISTA/NAZIOARTEKO BORROKA",
+   "siglas": [
+    "(LI(LIT-CI))",
+    "LI (LIT-CI)"
+   ],
+   "auto": true
+  },
+  "paviel": {
+   "nombre": "PARTIDO DE ASOCIACION DE VIUDAS Y ESPOSAS LEGALES",
+   "siglas": [
+    "PAVIEL"
+   ],
+   "auto": true
+  },
+  "ii": {
+   "nombre": "INICIATIVA INDEPENDIENTE",
+   "siglas": [
+    "II"
+   ],
+   "auto": true
+  },
+  "au-to-no-mo": {
+   "nombre": "PARTIDO DE LOS AUTONOMOS Y PROFESIONALES",
+   "siglas": [
+    "AU.TO.NO.MO"
+   ],
+   "auto": true
+  },
+  "uc-cds": {
+   "nombre": "UNION CENTRISTA-CENTRO DEMOCRATICO Y SOCIAL",
+   "siglas": [
+    "UC-CDS"
+   ],
+   "auto": true
+  },
+  "cds-uc": {
+   "nombre": "UNION CENTRISTA-CENTRO DEMOCRATICO Y SOCIAL",
+   "siglas": [
+    "CDS-UC"
+   ],
+   "auto": true
+  },
+  "ir-pre": {
+   "nombre": "PARTIDO IZQUIERDA REPUBLICANA-PARTIT REPUBLICA D'ESQUERRA",
+   "siglas": [
+    "IR-PRE"
+   ],
+   "auto": true
+  },
+  "inar": {
+   "nombre": "INICIATIVA ARAGONESA",
+   "siglas": [
+    "INAR"
+   ],
+   "auto": true
+  },
+  "ev-av": {
+   "nombre": "ELS VERDS-ALTERNATIVA VERDA",
+   "siglas": [
+    "EV-AV"
+   ],
+   "auto": true
+  },
+  "ian": {
+   "nombre": "IZQUIERDA ANDALUZA",
+   "siglas": [
+    "IAN"
+   ],
+   "auto": true
+  },
+  "prib": {
+   "nombre": "PARTIDO RENOVADOR DE LAS ISLAS BALEARES",
+   "siglas": [
+    "PRIB"
+   ],
+   "auto": true
+  },
+  "peda": {
+   "nombre": "PARTIDO ESPAÑOL DE AUTONOMOS",
+   "siglas": [
+    "PEDA"
+   ],
+   "auto": true
+  },
+  "cnc": {
+   "nombre": "CONCEJU NACIONALIEGU CANTABRU",
+   "siglas": [
+    "CNC"
+   ],
+   "auto": true
+  },
+  "pade": {
+   "nombre": "PARTIDO DEMOCRATA ESPAÑOL",
+   "siglas": [
+    "PADE"
+   ],
+   "auto": true
+  },
+  "iun-neb": {
+   "nombre": "IZQUIERDA UNIDA DE NAVARRA - NAFARROAKO EZKER BATUA - ALTERNATIVA",
+   "siglas": [
+    "IUN-NEB"
+   ],
+   "auto": true
+  },
+  "blm": {
+   "nombre": "BLOQUE LOCALISTA DE MELILLA",
+   "siglas": [
+    "BLM"
+   ],
+   "auto": true
+  },
+  "upb": {
+   "nombre": "UNION DEL PUEBLO BALEAR",
+   "siglas": [
+    "UPB"
+   ],
+   "auto": true
+  },
+  "pnca": {
+   "nombre": "PARTIDO NACIONALISTA CALO",
+   "siglas": [
+    "PNCA"
+   ],
+   "auto": true
+  },
+  "ec": {
+   "nombre": "ESTAT CATALA",
+   "siglas": [
+    "EC"
+   ],
+   "auto": true
+  },
+  "up-can": {
+   "nombre": "UNIDAD PROGRESISTAS DE CANARIAS",
+   "siglas": [
+    "UP-CAN"
+   ],
+   "auto": true
+  },
+  "bia": {
+   "nombre": "BLOQUE DE LA IZQUIERDA ASTURIANA",
+   "siglas": [
+    "BIA"
+   ],
+   "auto": true
+  },
+  "el-papi": {
+   "nombre": "PARTIDO DE AUTONOMOS, PENSIONISTAS E INDEPENDIENT.",
+   "siglas": [
+    "EL-PAPI"
+   ],
+   "auto": true
+  },
+  "tpc": {
+   "nombre": "TAGOROR PENSIONISTA DE CANARIAS",
+   "siglas": [
+    "TPC"
+   ],
+   "auto": true
+  },
+  "ev-gv": {
+   "nombre": "ELS VERDS-GRUP VERD",
+   "siglas": [
+    "EV-GV"
+   ],
+   "auto": true
+  },
+  "td": {
+   "nombre": "COALICIO TREBALLADORS PER LA DEMOCRACIA",
+   "siglas": [
+    "TD"
+   ],
+   "auto": true
+  },
+  "front-erc": {
+   "nombre": "FRONT PEL PAIS VALENCIA-ERC",
+   "siglas": [
+    "FRONT-ERC"
+   ],
+   "auto": true
+  },
+  "pdep": {
+   "nombre": "PARTIDO DEMOCRATICO DEL PUEBLO",
+   "siglas": [
+    "PDEP"
+   ],
+   "auto": true
+  },
+  "fei-fe-2000": {
+   "nombre": "FALANGE ESPAÑOLA INDEPENDIENTE-FALANGE 2000",
+   "siglas": [
+    "FEI-FE 2000"
+   ],
+   "auto": true
+  },
+  "la-falange": {
+   "nombre": "LA FALANGE",
+   "siglas": [
+    "LA FALANGE"
+   ],
+   "auto": true
+  },
+  "upz": {
+   "nombre": "UNION DEL PUEBLO ZAMORANO",
+   "siglas": [
+    "UPZ"
+   ],
+   "auto": true
+  },
+  "ural": {
+   "nombre": "UNION REGIONALISTA ALMERIENSE",
+   "siglas": [
+    "URAL"
+   ],
+   "auto": true
+  },
+  "plat-es": {
+   "nombre": "PLATAFORMA ESPAÑA 2000",
+   "siglas": [
+    "PLAT. ES."
+   ],
+   "auto": true
+  },
+  "lvrm": {
+   "nombre": "LOS VERDES",
+   "siglas": [
+    "LVRM"
+   ],
+   "auto": true
+  },
+  "prex-crex": {
+   "nombre": "COALICION EXTREMEÑA",
+   "siglas": [
+    "PREX-CREX"
+   ],
+   "auto": true
+  },
+  "b-lv": {
+   "nombre": "BERDEAK-LOS VERDES",
+   "siglas": [
+    "B-LV"
+   ],
+   "auto": true
+  },
+  "csd-l": {
+   "nombre": "COALICION SOCIAL DEMOCRATA Y LIBERAL",
+   "siglas": [
+    "CSD-L"
+   ],
+   "auto": true
+  },
+  "eka": {
+   "nombre": "EKA-PARTIDO CARLISTA",
+   "siglas": [
+    "EKA"
+   ],
+   "auto": true
+  },
+  "pf": {
+   "nombre": "PROGRESISTAS FEDERALES",
+   "siglas": [
+    "PF"
+   ],
+   "auto": true
+  },
+  "pla-esp2000": {
+   "nombre": "PLATAFORMA ESPAÑA 2000",
+   "siglas": [
+    "PLA-ESP2000"
+   ],
+   "auto": true
+  },
+  "dg": {
+   "nombre": "DEMOCRACIA GALEGA",
+   "siglas": [
+    "DG"
+   ],
+   "auto": true
+  },
+  "psdeg": {
+   "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+   "siglas": [
+    "PSDEG-PSOE",
+    "PSdeG-PSOE"
+   ],
+   "auto": false
+  },
+  "um-inme": {
+   "nombre": "C.ILLES BALEARS UNIO MALLORQUINA-INDEP. DE MENORCA",
+   "siglas": [
+    "UM-INME"
+   ],
+   "auto": true
+  },
+  "pcl": {
+   "nombre": "CANDIDATURA INDEP. PARTIDO DE CASTILLA Y LEON",
+   "siglas": [
+    "PCL"
+   ],
+   "auto": true
+  },
+  "cives": {
+   "nombre": "CIVES",
+   "siglas": [
+    "CIVES"
+   ],
+   "auto": true
+  },
+  "euia": {
+   "nombre": "ESQUERRA UNIDA I ALTERNATIVA",
+   "siglas": [
+    "EUIA"
+   ],
+   "auto": true
+  },
+  "bloc-verds": {
+   "nombre": "BLOC NAC. VALENCIA-ELS VERDS-VALENCIANS PEL CANVI",
+   "siglas": [
+    "BLOC-VERDS"
+   ],
+   "auto": true
+  },
+  "pil": {
+   "nombre": "PARTIDO DE INDEPENDIENTES DE LANZAROTE",
+   "siglas": [
+    "PIL"
+   ],
+   "auto": true
+  },
+  "pe2000": {
+   "nombre": "PLATAFORMA ESPAÑA 2000",
+   "siglas": [
+    "PE2000"
+   ],
+   "auto": true
+  },
+  "es2000": {
+   "nombre": "PLATAFORMA ESPAÑA 2000",
+   "siglas": [
+    "ES2000"
+   ],
+   "auto": true
+  },
+  "pkd": {
+   "nombre": "PARTIDO DEL KARMA DEMOCRATICO",
+   "siglas": [
+    "PKD"
+   ],
+   "auto": true
+  },
+  "iu-cm": {
+   "nombre": "IZQUIERDA UNIDA COMUNIDAD DE MADRID-ALTERNATIVA",
+   "siglas": [
+    "IU-CM",
+    "IU-CM."
+   ],
+   "auto": true
+  },
+  "a": {
+   "nombre": "ASAMBLEA DE ANDALUCIA",
+   "siglas": [
+    "A"
+   ],
+   "auto": true
+  },
+  "lf": {
+   "nombre": "LA FALANGE",
+   "siglas": [
+    "LF"
+   ],
+   "auto": true
+  },
+  "ppcr": {
+   "nombre": "PARTIDO POSITIVISTA CRISTIANO",
+   "siglas": [
+    "PPCR",
+    "PPCr"
+   ],
+   "auto": true
+  },
+  "usi": {
+   "nombre": "UNION SALMANTINA INDEPENDIENTE",
+   "siglas": [
+    "USI"
+   ],
+   "auto": true
+  },
+  "unib": {
+   "nombre": "UNION IBERICA",
+   "siglas": [
+    "UNIB"
+   ],
+   "auto": true
+  },
+  "ia": {
+   "nombre": "IZQUIERDA ANDALUZA",
+   "siglas": [
+    "IA"
+   ],
+   "auto": true
+  },
+  "apca": {
+   "nombre": "ALTERNATIVA POPULAR CANARIA",
+   "siglas": [
+    "APCa"
+   ],
+   "auto": true
+  },
+  "gphae": {
+   "nombre": "GRUPO POLITICO HONRADEZ ABSOLUTA ESPAÑOLA",
+   "siglas": [
+    "GPHAE"
+   ],
+   "auto": true
+  },
+  "upsa": {
+   "nombre": "UNION DEL PUEBLO SALMANTINO",
+   "siglas": [
+    "UPSa"
+   ],
+   "auto": true
+  },
+  "ptpre": {
+   "nombre": "PARTIDO DE LOS TRABAJADORES EN PRECARIO",
+   "siglas": [
+    "PTPRE"
+   ],
+   "auto": true
+  },
+  "pcdec": {
+   "nombre": "PARTIT CARLI DE CATALUNYA",
+   "siglas": [
+    "PCdeC"
+   ],
+   "auto": true
+  },
+  "ci": {
+   "nombre": "CAND. INDEPENDIENTE-EL PARTIDO DE CASTILLA Y LEON",
+   "siglas": [
+    "CI"
+   ],
+   "auto": true
+  },
+  "gve": {
+   "nombre": "GRUPO VERDE EUROPEO",
+   "siglas": [
+    "GVE"
+   ],
+   "auto": true
+  },
+  "fyv": {
+   "nombre": "PARTIDO FAMILIA Y VIDA",
+   "siglas": [
+    "FyV"
+   ],
+   "auto": true
+  },
+  "pcpc-pcpe": {
+   "nombre": "PARTIDO COMUNISTA DEL PUEBLO CASTELLANO-PCPE",
+   "siglas": [
+    "PCPC-PCPE"
+   ],
+   "auto": true
+  },
+  "dn": {
+   "nombre": "DEMOCRACIA NACIONAL",
+   "siglas": [
+    "DN"
+   ],
+   "auto": true
+  },
+  "pdn": {
+   "nombre": "PARTIDO DEMOCRATA NACIONAL DE ESPAÑA",
+   "siglas": [
+    "PDN"
+   ],
+   "auto": true
+  },
+  "msr": {
+   "nombre": "MOVIMIENTO SOCIAL REPUBLICANO",
+   "siglas": [
+    "MSR"
+   ],
+   "auto": true
+  },
+  "pmar": {
+   "nombre": "PARTIDO DEL MUTUO APOYO ROMANTICO",
+   "siglas": [
+    "PMAR"
+   ],
+   "auto": true
+  },
+  "ucm": {
+   "nombre": "UNIO CENTRISTES DE MENORCA",
+   "siglas": [
+    "UCM"
+   ],
+   "auto": true
+  },
+  "pfiv": {
+   "nombre": "PARTIDO FAMILIA I VIDA",
+   "siglas": [
+    "PFiV"
+   ],
+   "auto": true
+  },
+  "ias": {
+   "nombre": "IZQUIERDA ASTURIANA",
+   "siglas": [
+    "IAS"
+   ],
+   "auto": true
+  },
+  "asi": {
+   "nombre": "AGRUPACION SOCIAL INDEPENDIENTE",
+   "siglas": [
+    "ASI"
+   ],
+   "auto": true
+  },
+  "l-i-lit-ci": {
+   "nombre": "LLUITA INTERNACIONALISTA",
+   "siglas": [
+    "L.I. (LIT-CI)",
+    "L.I.(LIT-CI)"
+   ],
+   "auto": true
+  },
+  "fde": {
+   "nombre": "FRENTE DEMOCRATICO ESPAÑOL",
+   "siglas": [
+    "FDE"
+   ],
+   "auto": true
+  },
+  "ucl": {
+   "nombre": "UNION CENTRISTA LIBERAL",
+   "siglas": [
+    "UCL"
+   ],
+   "auto": true
+  },
+  "españa-2000": {
+   "nombre": "ESPAÑA 2000",
+   "siglas": [
+    "ESPAÑA 2000"
+   ],
+   "auto": true
+  },
+  "erpv": {
+   "nombre": "ESQUERRA REPUBLICANA DEL PAIS VALENCIA",
+   "siglas": [
+    "ERPV"
+   ],
+   "auto": true
+  },
+  "psm-en-eu-ev-er": {
+   "nombre": "PSM-ENTESA NACIONALISTA,ESQUERRA UNIDA,E.VERDS,ERC",
+   "siglas": [
+    "PSM-EN,EU,EV,ER"
+   ],
+   "auto": true
+  },
+  "ir-erg": {
+   "nombre": "IZQUIERDA REPUBLICANA-ESQUERDA REPUBLICANA GALEGA",
+   "siglas": [
+    "IR-ERG"
+   ],
+   "auto": true
+  },
+  "lvcm": {
+   "nombre": "LOS VERDES DE LA COMUNIDAD DE MADRID",
+   "siglas": [
+    "LVCM"
+   ],
+   "auto": true
+  },
+  "ud-ca": {
+   "nombre": "UNIDAD CASTELLANA",
+   "siglas": [
+    "Ud Ca",
+    "Ud. Ca.",
+    "Ud.Ca"
+   ],
+   "auto": true
+  },
+  "psoe-de-a": {
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL DE ANDALUCIA",
+   "siglas": [
+    "PSOE de A"
+   ],
+   "auto": true
+  },
+  "cdas-cds": {
+   "nombre": "CONVERGENCIA DEMOCRATICA ASTURIANA Y CDS",
+   "siglas": [
+    "CDAS CDS"
+   ],
+   "auto": true
+  },
+  "ei": {
+   "nombre": "EI ESCONS INSUBMISOS-ALTERNATIVA DELS DEMOCRATES DESCONTENTS",
+   "siglas": [
+    "Ei"
+   ],
+   "auto": true
+  },
+  "cenb": {
+   "nombre": "CIUDADANOS EN BLANCO",
+   "siglas": [
+    "CENB",
+    "CenB",
+    "Cenb"
+   ],
+   "auto": true
+  },
+  "p-cannabis": {
+   "nombre": "PART. CANNABIS POR LA LEGALIZACION Y NORMALIZACION",
+   "siglas": [
+    "P.CANNABIS"
+   ],
+   "auto": true
+  },
+  "bloc-ev": {
+   "nombre": "BLOC NACIONALISTA VALENCIA-ESQUERRA VERDA",
+   "siglas": [
+    "BLOC-EV"
+   ],
+   "auto": true
+  },
+  "icv-euia": {
+   "nombre": "INICIATIVA PER CATALUNYA VERDS - ESQUERRA UNIDA I ALTERNATIVA",
+   "siglas": [
+    "ICV-EUiA"
+   ],
+   "auto": true
+  },
+  "pnt": {
+   "nombre": "PARTIDO NACIONAL DE LOS TRABAJADORES",
+   "siglas": [
+    "PNT"
+   ],
+   "auto": true
+  },
+  "amaga": {
+   "nombre": "ALTERNATIVA MAGA NACIONALISTA",
+   "siglas": [
+    "AMAGA"
+   ],
+   "auto": true
+  },
+  "pca": {
+   "nombre": "PARTIDO CARLISTA",
+   "siglas": [
+    "PCA"
+   ],
+   "auto": true
+  },
+  "iu-siex": {
+   "nombre": "C. IZQUIERDA UNIDA-SOCIALISTAS IND. DE EXTREMADURA",
+   "siglas": [
+    "IU-SIEX"
+   ],
+   "auto": true
+  },
+  "adn": {
+   "nombre": "ALIANZA PARA EL DESARROLLO Y LA NATURALEZA",
+   "siglas": [
+    "ADN"
+   ],
+   "auto": true
+  },
+  "psicv": {
+   "nombre": "P.SOCIALDEMOCRATA IND. DE LA COMUNITAT VALENCIANA",
+   "siglas": [
+    "PSICV"
+   ],
+   "auto": true
+  },
+  "ev-ae": {
+   "nombre": "ELS VERDS - L'ALTERNATIVA ECOLOGISTA",
+   "siglas": [
+    "EV-AE"
+   ],
+   "auto": true
+  },
+  "pfyv": {
+   "nombre": "PARTIDO FAMILIA Y VIDA",
+   "siglas": [
+    "PFyV"
+   ],
+   "auto": true
+  },
+  "axgc": {
+   "nombre": "ALTERNATIVA POR GRAN CANARIA",
+   "siglas": [
+    "AxGC"
+   ],
+   "auto": true
+  },
+  "verdes-iuc-ac25": {
+   "nombre": "INICIATIVA LOS VERDES-IZQUIERDA UNIDA-AL.CIUDADANA",
+   "siglas": [
+    "VERDES-IUC-AC25"
+   ],
+   "auto": true
+  },
+  "otradem": {
+   "nombre": "OTRA DEMOCRACIA ES POSIBLE",
+   "siglas": [
+    "OtraDem"
+   ],
+   "auto": true
+  },
+  "i-de-s": {
+   "nombre": "INICIATIVA POR EL DESARROLLO DE SORIA",
+   "siglas": [
+    "I.DE.S."
+   ],
+   "auto": true
+  },
+  "a-iz": {
+   "nombre": "ASAMBLEA DE IZQUIERDAS-INICIATIVA POR ANDALUCIA",
+   "siglas": [
+    "A-IZ"
+   ],
+   "auto": true
+  },
+  "zu": {
+   "nombre": "ZAMORA UNIDA",
+   "siglas": [
+    "ZU"
+   ],
+   "auto": true
+  },
+  "ccse": {
+   "nombre": "CONVERGENCIA CIUDADANA DEL SURESTE",
+   "siglas": [
+    "CCSE"
+   ],
+   "auto": true
+  },
+  "entesa": {
+   "nombre": "ESQUERRA UNIDA PAIS VALENCIA+I.REPUBLICANA:ENTESA",
+   "siglas": [
+    "ENTESA"
+   ],
+   "auto": true
+  },
+  "irv": {
+   "nombre": "IDENTIDAD REINO DE VALENCIA",
+   "siglas": [
+    "IRV"
+   ],
+   "auto": true
+  },
+  "prf": {
+   "nombre": "PARTIDO REPUBLICANO",
+   "siglas": [
+    "PRF"
+   ],
+   "auto": true
+  },
+  "iu-ba": {
+   "nombre": "IZQUIERDA UNIDA BLOQUE POR ASTURIES",
+   "siglas": [
+    "IU-BA"
+   ],
+   "auto": true
+  },
+  "lv-e": {
+   "nombre": "LOS VERDES-ECOPACIFISTAS, ELS VERDS-ECOPACIFISTES",
+   "siglas": [
+    "LV-E"
+   ],
+   "auto": true
+  },
+  "aralar-zutik": {
+   "nombre": "ARALAR-ZUTIK",
+   "siglas": [
+    "ARALAR-ZUTIK"
+   ],
+   "auto": true
+  },
+  "na-bai": {
+   "nombre": "NAFARROA BAI",
+   "siglas": [
+    "NA-BAI",
+    "Na-Bai"
+   ],
+   "auto": true
+  },
+  "onv": {
+   "nombre": "OPCIO NACIONALISTA VALENCIANA",
+   "siglas": [
+    "ONV"
+   ],
+   "auto": true
+  },
+  "p-o-s-i": {
+   "nombre": "PARTIDO OBRERO SOCIALISTA INTERNACIONALISTA",
+   "siglas": [
+    "P.O.S.I."
+   ],
+   "auto": true
+  },
+  "a-u-n": {
+   "nombre": "ALIANZA NACIONAL",
+   "siglas": [
+    "A.u.N."
+   ],
+   "auto": true
+  },
+  "b-n-g": {
+   "nombre": "BLOQUE NACIONALISTA GALEGO",
+   "siglas": [
+    "B.N.G."
+   ],
+   "auto": true
+  },
+  "p-c-p-c": {
+   "nombre": "PARTIT COMUNISTA DEL POBLE DE CATALUNYA",
+   "siglas": [
+    "P.C.P.C."
+   ],
+   "auto": true
+  },
+  "pcua": {
+   "nombre": "PARTIDO CIUDADANOS UNIDOS DE ARAGON",
+   "siglas": [
+    "pCUA"
+   ],
+   "auto": true
+  },
+  "sain": {
+   "nombre": "PARTIDO SOLIDARIDAD Y AUTOGESTION INTERNACIONALISTA",
+   "siglas": [
+    "SAIN",
+    "SAIn"
+   ],
+   "auto": true
+  },
+  "bloc-idpv-ev-ee": {
+   "nombre": "BLOC-INICIATIVA-VERDS",
+   "siglas": [
+    "BLOC-IDPV-EV-EE",
+    "BLOC-IdPV-EV-EE"
+   ],
+   "auto": true
+  },
+  "pxcat": {
+   "nombre": "PARTIT PER CATALUNYA",
+   "siglas": [
+    "PxCat"
+   ],
+   "auto": true
+  },
+  "esquerra": {
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA",
+   "siglas": [
+    "ESQUERRA",
+    "esquerra"
+   ],
+   "auto": true
+  },
+  "pacma": {
+   "nombre": "PARTIDO ANIMALISTA CONTRA EL MALTRATO ANIMAL (PACM",
+   "siglas": [
+    "PACMA"
+   ],
+   "auto": false
+  },
+  "p-s-d": {
+   "nombre": "PARTIDO SOCIAL DEMOCRATA",
+   "siglas": [
+    "P.S.D."
+   ],
+   "auto": true
+  },
+  "psd-fia": {
+   "nombre": "PARTIDO SOCIAL DEMOCRATA-FEDERACION DE LOS INDEPENDIENTES DE ARAGON",
+   "siglas": [
+    "PSD-FIA"
+   ],
+   "auto": true
+  },
+  "c-s": {
+   "nombre": "CIUDADANOS-PARTIDO DE LA CIUDADANÍA (C's)",
+   "siglas": [
+    "C's",
+    "C,S",
+    "C´s"
+   ],
+   "auto": true
+  },
+  "e-v-a-v": {
+   "nombre": "ELS VERDS-ALTERNATIVA VERDA",
+   "siglas": [
+    "E.V.-A.V."
+   ],
+   "auto": true
+  },
+  "pctr": {
+   "nombre": "PARTIDO CENTRISTAS",
+   "siglas": [
+    "PCTR"
+   ],
+   "auto": true
+  },
+  "esquerra-pv": {
+   "nombre": "ESQUERRA REPUBLICANA DEL PAIS VALENCIA-PAIS VALENCIA, SI",
+   "siglas": [
+    "ESQUERRA-PV"
+   ],
+   "auto": true
+  },
+  "extremadura-unida": {
+   "nombre": "EXTREMADURA UNIDA",
+   "siglas": [
+    "EXTREMADURA UNIDA"
+   ],
+   "auto": true
+  },
+  "pnf-no-fumadores": {
+   "nombre": "PARTIDO DE LOS NO-FUMADORES",
+   "siglas": [
+    "PNF (NO-FUMADORES)"
+   ],
+   "auto": true
+  },
+  "pdeal": {
+   "nombre": "PARTIDO DE ALMERIA",
+   "siglas": [
+    "PdeAL"
+   ],
+   "auto": true
+  },
+  "nc-ccn": {
+   "nombre": "NUEVA CANARIAS-CENTRO CANARIO",
+   "siglas": [
+    "NC-CCN"
+   ],
+   "auto": true
+  },
+  "p-h": {
+   "nombre": "PARTIDO HUMANISTA",
+   "siglas": [
+    "P.H."
+   ],
+   "auto": true
+  },
+  "unida": {
+   "nombre": "UNIDA",
+   "siglas": [
+    "UNIDA"
+   ],
+   "auto": true
+  },
+  "ei-add": {
+   "nombre": "ESCONS INSUBMISOS ALTERNATIVA DELS DEMOCRATES DESCONTENTS",
+   "siglas": [
+    "EI-ADD"
+   ],
+   "auto": true
+  },
+  "aes": {
+   "nombre": "ALTERNATIVA ESPAÑOLA",
+   "siglas": [
+    "AES"
+   ],
+   "auto": true
+  },
+  "ave": {
+   "nombre": "ASAMBLEA DE VOTACION ELECTRONICA",
+   "siglas": [
+    "AVE"
+   ],
+   "auto": true
+  },
+  "lvcm-lve": {
+   "nombre": "LOS VERDES COMUNIDAD DE MADRID-LOS VERDES DE EUROPA",
+   "siglas": [
+    "LVCM-LVE"
+   ],
+   "auto": true
+  },
+  "i-c-bur": {
+   "nombre": "INICIATIVA CIUDADANA BURGALESA",
+   "siglas": [
+    "I.C.Bur"
+   ],
+   "auto": true
+  },
+  "p-r-gu": {
+   "nombre": "PARTIDO REGIONALISTA DE GUADALAJARA",
+   "siglas": [
+    "P.R.GU."
+   ],
+   "auto": true
+  },
+  "unitat-per-les-illes": {
+   "nombre": "UNITAT PER LES ILLES",
+   "siglas": [
+    "UNITAT PER LES ILLES"
+   ],
+   "auto": true
+  },
+  "aralar": {
+   "nombre": "PARTIDO POLITICO ARALAR",
+   "siglas": [
+    "aralar"
+   ],
+   "auto": true
+  },
+  "psc-psc-psoe": {
+   "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA",
+   "siglas": [
+    "PSC (PSC-PSOE)"
+   ],
+   "auto": true
+  },
+  "piib": {
+   "nombre": "PARTIT ILLENC DE SES ILLES BALEARS",
+   "siglas": [
+    "PIIB"
+   ],
+   "auto": true
+  },
+  "ctc": {
+   "nombre": "COMUNION TRADICIONALISTA CARLISTA",
+   "siglas": [
+    "CTC"
+   ],
+   "auto": true
+  },
+  "i-u-r-m": {
+   "nombre": "IZQUIERDA UNIDA DE LA REGION DE MURCIA-ALTERNATIVA",
+   "siglas": [
+    "I.U.R.M."
+   ],
+   "auto": true
+  },
+  "cva": {
+   "nombre": "COALICIO VALENCIANA",
+   "siglas": [
+    "CVa"
+   ],
+   "auto": true
+  },
+  "upyd": {
+   "nombre": "UNIÓN PROGRESO Y DEMOCRACIA (UPYD)",
+   "siglas": [
+    "UPYD",
+    "UPyD"
+   ],
+   "auto": true
+  },
+  "f-e-de-las-j-o-n-s": {
+   "nombre": "FALANGE ESPAÑOLA DE LAS J.O.N.S.",
+   "siglas": [
+    "F.E. de las J.O.N.S."
+   ],
+   "auto": true
+  },
+  "p-a-c-m-a": {
+   "nombre": "PARTIT ANTITAURI CONTRA EL MALTRACTAMENT ANIMAL",
+   "siglas": [
+    "P.A.C.M.A",
+    "P.A.C.M.A."
+   ],
+   "auto": true
+  },
+  "paie": {
+   "nombre": "PARTIDO DE ALIANZA IBEROAMERICANA EUROPEA",
+   "siglas": [
+    "PAIE"
+   ],
+   "auto": true
+  },
+  "anc": {
+   "nombre": "ALTERNATIVA NACIONALISTA CANARIA",
+   "siglas": [
+    "ANC"
+   ],
+   "auto": true
+  },
+  "a-m-d": {
+   "nombre": "PARTIDO ALTERNATIVA MOTOR Y DEPORTES",
+   "siglas": [
+    "A.M.D."
+   ],
+   "auto": true
+  },
+  "cdas": {
+   "nombre": "CONVERGENCIA DEMOCRATICA ASTURIANA",
+   "siglas": [
+    "CDAS"
+   ],
+   "auto": true
+  },
+  "li-litci": {
+   "nombre": "LLUITA INTERNACIONALISTA",
+   "siglas": [
+    "LI-LITCI"
+   ],
+   "auto": true
+  },
+  "c-d-es": {
+   "nombre": "CENTRO DEMOCRATICO ESPAÑOL",
+   "siglas": [
+    "C.D.Es."
+   ],
+   "auto": true
+  },
+  "agruci": {
+   "nombre": "AGRUPACION CIUDADANA",
+   "siglas": [
+    "AGRUCI"
+   ],
+   "auto": true
+  },
+  "los-verdes-de-europa": {
+   "nombre": "LOS VERDES DE EUROPA",
+   "siglas": [
+    "LOS VERDES DE EUROPA"
+   ],
+   "auto": true
+  },
+  "d-n": {
+   "nombre": "DEMOCRACIA NACIONAL",
+   "siglas": [
+    "D.N."
+   ],
+   "auto": true
+  },
+  "eu-ev": {
+   "nombre": "ESQUERRA UNIDA - ELS VERDS",
+   "siglas": [
+    "EU-EV"
+   ],
+   "auto": true
+  },
+  "cc-pnc-pil": {
+   "nombre": "COALICION CANARIA-PARTIDO NACIONALISTA CANARIO-PARTIDO DE INDEPENDIENTES DE LANZAROTE",
+   "siglas": [
+    "CC-PNC-PIL"
+   ],
+   "auto": true
+  },
+  "iu-b-a-los-verdes": {
+   "nombre": "IZQUIERDA UNIDA - BLOQUE POR ASTURIES - LOS VERDES",
+   "siglas": [
+    "IU-B.A-LOS VERDES"
+   ],
+   "auto": true
+  },
+  "tc": {
+   "nombre": "TIERRA COMUNERA",
+   "siglas": [
+    "TC"
+   ],
+   "auto": true
+  },
+  "amd": {
+   "nombre": "ALTERNATIVA MOTOR Y DEPORTES",
+   "siglas": [
+    "AMD"
+   ],
+   "auto": true
+  },
+  "u-r-c-l": {
+   "nombre": "UNIDAD REGIONALISTA DE CASTILLA Y LEON",
+   "siglas": [
+    "U.R.C.L."
+   ],
+   "auto": true
+  },
+  "psd": {
+   "nombre": "PARTIDO SOCIAL DEMOCRATA",
+   "siglas": [
+    "PSD"
+   ],
+   "auto": true
+  },
+  "f-a": {
+   "nombre": "FALANGE AUTENTICA",
+   "siglas": [
+    "F.A."
+   ],
+   "auto": true
+  },
+  "i-m-c": {
+   "nombre": "INICIATIVA MERINDADES DE CASTILLA",
+   "siglas": [
+    "I.M.C."
+   ],
+   "auto": true
+  },
+  "axb": {
+   "nombre": "ALIANZA POR BURGOS",
+   "siglas": [
+    "AxB"
+   ],
+   "auto": true
+  },
+  "pum+j": {
+   "nombre": "POR UN MUNDO MÁIS XUSTO/POR UN MUNDO MÁS JUSTO",
+   "siglas": [
+    "PUM+J"
+   ],
+   "auto": true
+  },
+  "p-c-p-e-e-k": {
+   "nombre": "PARTIDO COMUNISTA DE LOS PUEBLOS DE ESPAÑA",
+   "siglas": [
+    "P.C.P.E.-E.K."
+   ],
+   "auto": true
+  },
+  "eupv-ir": {
+   "nombre": "ESQUERRA UNIDA DEL PAIS VALENCIA-IZQUIERDA REPUBLICANA: ESQUERRA UNIDA I REPUBLICANA",
+   "siglas": [
+    "EUPV-IR"
+   ],
+   "auto": true
+  },
+  "cdl": {
+   "nombre": "CENTRO DEMOCRATICO LIBERAL",
+   "siglas": [
+    "CDL"
+   ],
+   "auto": true
+  },
+  "p-l-e-v-e": {
+   "nombre": "PARTIDO LIBERAL DEL EMPLEO Y LA VIVIENDA ESTATAL",
+   "siglas": [
+    "P.L.E.V.E."
+   ],
+   "auto": true
+  },
+  "c-d-l": {
+   "nombre": "CENTRO DEMOCRATICO LIBERAL",
+   "siglas": [
+    "C.D.L."
+   ],
+   "auto": true
+  },
+  "rcn-nok": {
+   "nombre": "REPRESENTACION CANNABICA NAVARRA",
+   "siglas": [
+    "RCN-NOK"
+   ],
+   "auto": true
+  },
+  "p-c": {
+   "nombre": "PARTIDO CARLISTA",
+   "siglas": [
+    "P.C."
+   ],
+   "auto": true
+  },
+  "p-p": {
+   "nombre": "PARTIT POPULAR/PARTIDO POPULAR",
+   "siglas": [
+    "P.P."
+   ],
+   "auto": true
+  },
+  "centristas-pctr": {
+   "nombre": "PARTIDO CENTRISTAS",
+   "siglas": [
+    "Centristas PCTR"
+   ],
+   "auto": true
+  },
+  "n-som": {
+   "nombre": "NOSALTRES SOM",
+   "siglas": [
+    "N som"
+   ],
+   "auto": true
+  },
+  "upd": {
+   "nombre": "UNION PROGRESO Y DEMOCRACIA",
+   "siglas": [
+    "UPD"
+   ],
+   "auto": true
+  },
+  "p-c-p-g": {
+   "nombre": "PARTIDO COMUNISTA DO POVO GALEGO",
+   "siglas": [
+    "P.C.P.G."
+   ],
+   "auto": true
+  },
+  "partido-riojano": {
+   "nombre": "PARTIDO RIOJANO",
+   "siglas": [
+    "PARTIDO RIOJANO"
+   ],
+   "auto": true
+  },
+  "puede": {
+   "nombre": "PARTIDO UNIONISTA ESTADO DE ESPAÑA",
+   "siglas": [
+    "PUEDE"
+   ],
+   "auto": true
+  },
+  "cdes": {
+   "nombre": "CENTRO DEMOCRATICO ESPAÑOL",
+   "siglas": [
+    "CDEs"
+   ],
+   "auto": true
+  },
+  "ek": {
+   "nombre": "PARTIDO COMUNISTA DE LOS PUEBLOS DE ESPAÑA-EUSKAL KOMUNISTAK - PCPE",
+   "siglas": [
+    "EK"
+   ],
+   "auto": true
+  },
+  "o-n-v": {
+   "nombre": "OPCIO NACIONALISTA VALENCIANA",
+   "siglas": [
+    "O.N.V."
+   ],
+   "auto": true
+  },
+  "m-f-e": {
+   "nombre": "MOVIMIENTO FALANGISTA DE ESPAÑA",
+   "siglas": [
+    "M.F.E."
+   ],
+   "auto": true
+  },
+  "pdlpea": {
+   "nombre": "PARTIDO DE LOS PENSIONISTAS EN ACCION",
+   "siglas": [
+    "PDLPEA"
+   ],
+   "auto": true
+  },
+  "eb-b": {
+   "nombre": "EZKER BATUA-BERDEAK-ALTERNATIVA",
+   "siglas": [
+    "EB-B"
+   ],
+   "auto": true
+  },
+  "abla": {
+   "nombre": "ALTERNATIVA EN BLANCO",
+   "siglas": [
+    "ABLA",
+    "aBla"
+   ],
+   "auto": true
+  },
+  "uleg": {
+   "nombre": "UNION POR LEGANES",
+   "siglas": [
+    "ULEG"
+   ],
+   "auto": true
+  },
+  "e-2000": {
+   "nombre": "ESPAÑA-2000",
+   "siglas": [
+    "E-2000"
+   ],
+   "auto": true
+  },
+  "pb-ub": {
+   "nombre": "GENTES DE EL BIERZO",
+   "siglas": [
+    "PB-UB"
+   ],
+   "auto": true
+  },
+  "p-s-o-e": {
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+   "siglas": [
+    "P.S.O.E."
+   ],
+   "auto": true
+  },
+  "mupc": {
+   "nombre": "MOVIMIENTO POR LA UNIDAD DEL PUEBLO CANARIO",
+   "siglas": [
+    "MUPC"
+   ],
+   "auto": true
+  },
+  "partido-carlista": {
+   "nombre": "PARTIDO CARLISTA",
+   "siglas": [
+    "PARTIDO CARLISTA"
+   ],
+   "auto": true
+  },
+  "plci": {
+   "nombre": "PARTIDO DE LAS LIBERTADES CIVILES",
+   "siglas": [
+    "PLCI"
+   ],
+   "auto": true
+  },
+  "pcac": {
+   "nombre": "PARTIT CARLI DE CATALUNYA",
+   "siglas": [
+    "PCaC"
+   ],
+   "auto": true
+  },
+  "frente": {
+   "nombre": "FRENTE ESPAÑOL",
+   "siglas": [
+    "FRENTE"
+   ],
+   "auto": true
+  },
+  "rc": {
+   "nombre": "PARTIT REPUBLICA CATALA",
+   "siglas": [
+    "RC"
+   ],
+   "auto": true
+  },
+  "cnb": {
+   "nombre": "CIUDADANOS EN BLANCO",
+   "siglas": [
+    "CNB"
+   ],
+   "auto": true
+  },
+  "f-e": {
+   "nombre": "FRENTE ESPAÑOL",
+   "siglas": [
+    "F.E",
+    "F.E."
+   ],
+   "auto": true
+  },
+  "ucpic": {
+   "nombre": "UNION CIUDADANA PROGRESISTAS INDEPENDIENTES DE CANARIAS",
+   "siglas": [
+    "UCPIC"
+   ],
+   "auto": true
+  },
+  "p-c-p-e": {
+   "nombre": "PARTIDO COMUNISTA DE LOS PUEBLOS DE ESPAÑA",
+   "siglas": [
+    "P.C.P.E."
+   ],
+   "auto": true
+  },
+  "ixc": {
+   "nombre": "INDEPENDIENTES POR CUENCA",
+   "siglas": [
+    "ixC"
+   ],
+   "auto": true
+  },
+  "p-u-e-d-e": {
+   "nombre": "PARTIDO UNIONISTA ESTADO DE ESPAÑA",
+   "siglas": [
+    "P.U.E.D.E."
+   ],
+   "auto": true
+  },
+  "lv-ev": {
+   "nombre": "LOS VERDES-ELS VERDS",
+   "siglas": [
+    "LV-EV"
+   ],
+   "auto": true
+  },
+  "partido-carlista-eka": {
+   "nombre": "PARTIDO CARLISTA DE EUSKALHERRIA-EUSKALHERRIKO KARLISTA ALDERDIA",
+   "siglas": [
+    "PARTIDO CARLISTA-EKA"
+   ],
+   "auto": true
+  },
+  "p-c-de-c": {
+   "nombre": "PARTIT CARLI DE CATALUNYA",
+   "siglas": [
+    "P. C. de C."
+   ],
+   "auto": true
+  },
+  "l-v": {
+   "nombre": "LOS VERDES-GRUPO VERDE",
+   "siglas": [
+    "L.V."
+   ],
+   "auto": true
+  },
+  "c-t-c": {
+   "nombre": "COMUNION TRADICIONALISTA CARLISTA",
+   "siglas": [
+    "C.T.C."
+   ],
+   "auto": true
+  },
+  "plrv": {
+   "nombre": "PER LA REPUBLICA VALENCIANA",
+   "siglas": [
+    "PLRV",
+    "plRV"
+   ],
+   "auto": true
+  },
+  "unidad-del-pueblo": {
+   "nombre": "UNIDAD DEL PUEBLO",
+   "siglas": [
+    "UNIDAD DEL PUEBLO"
+   ],
+   "auto": true
+  },
+  "iuclm-lv": {
+   "nombre": "IZQUIERDA UNIDA DE CASTILLA-LA MANCHA-LOS VERDES:",
+   "siglas": [
+    "IUCLM-LV"
+   ],
+   "auto": true
+  },
+  "iuv-rm": {
+   "nombre": "IZQUIERDA UNIDA-VERDES DE LA REGION DE MURCIA: LA",
+   "siglas": [
+    "IUV-RM"
+   ],
+   "auto": true
+  },
+  "dec": {
+   "nombre": "DEMOS EL CAMBIO",
+   "siglas": [
+    "DeC"
+   ],
+   "auto": true
+  },
+  "euib": {
+   "nombre": "ESQUERRA UNIDA ILLES BALEARS: LA IZQUIERDA PLURAL",
+   "siglas": [
+    "EUIB"
+   ],
+   "auto": true
+  },
+  "hartos-org": {
+   "nombre": "HARTOS.ORG",
+   "siglas": [
+    "HARTOS.ORG"
+   ],
+   "auto": true
+  },
+  "ccd": {
+   "nombre": "CIUDADANOS DE CENTRO DEMOCRÁTICO",
+   "siglas": [
+    "CCD"
+   ],
+   "auto": true
+  },
+  "iu-pdsc": {
+   "nombre": "IZQUIERDA UNIDA - PARTIDO DEMOCRÁTICO Y SOCIAL DE",
+   "siglas": [
+    "IU-PDSC"
+   ],
+   "auto": true
+  },
+  "p-a": {
+   "nombre": "PARTIDO ANDALUCISTA",
+   "siglas": [
+    "P.A."
+   ],
+   "auto": true
+  },
+  "iu-ix": {
+   "nombre": "IZQUIERDA UNIDA DE ASTURIAS-IZQUIERDA XUNIDA D'AST",
+   "siglas": [
+    "IU-IX"
+   ],
+   "auto": true
+  },
+  "iu-verdes-s": {
+   "nombre": "IZQUIERDA UNIDA VERDES-SOCIALISTAS INDEPENDIENTES",
+   "siglas": [
+    "IU-VERDES-S"
+   ],
+   "auto": true
+  },
+  "pdyc": {
+   "nombre": "PARTIDO DEMOCRATICO Y CONSTITUCIONAL",
+   "siglas": [
+    "PDYC"
+   ],
+   "auto": true
+  },
+  "iucyl": {
+   "nombre": "IZQUIERDA UNIDA DE CASTILLA Y LEON: LA IZQUIERDA P",
+   "siglas": [
+    "IUCyL"
+   ],
+   "auto": true
+  },
+  "+mas+": {
+   "nombre": "MUERTE AL SISTEMA",
+   "siglas": [
+    "+MAS+"
+   ],
+   "auto": true
+  },
+  "eupv-ev": {
+   "nombre": "ESQUERRA UNIDA PAÍS VALENCIÀ-ELS VERDS: L'ESQUERRA",
+   "siglas": [
+    "EUPV-EV"
+   ],
+   "auto": true
+  },
+  "equo": {
+   "nombre": "EQUO",
+   "siglas": [
+    "EQUO",
+    "eQuo"
+   ],
+   "auto": true
+  },
+  "uxv": {
+   "nombre": "UNITS X VALENCIA",
+   "siglas": [
+    "UxV"
+   ],
+   "auto": true
+  },
+  "basta-ya": {
+   "nombre": "BASTA YA, AGRUPACIÓN ABIERTA DE PARTIDOS POLÍTICOS",
+   "siglas": [
+    "BASTA YA"
+   ],
+   "auto": true
+  },
+  "pxc": {
+   "nombre": "PLATAFORMA PER CATALUNYA",
+   "siglas": [
+    "PxC"
+   ],
+   "auto": true
+  },
+  "pirata-cat": {
+   "nombre": "PIRATES DE CATALUNYA",
+   "siglas": [
+    "PIRATA.CAT"
+   ],
+   "auto": true
+  },
+  "rps": {
+   "nombre": "REPUBLICANOS",
+   "siglas": [
+    "RPS"
+   ],
+   "auto": true
+  },
+  "u-c-e": {
+   "nombre": "UNIFICACIÓN COMUNISTA DE ESPAÑA",
+   "siglas": [
+    "U.C.E."
+   ],
+   "auto": true
+  },
+  "iu-cyl": {
+   "nombre": "IZQUIERDA UNIDA DE CASTILLA Y LEÓN: LA IZQUIERDA P",
+   "siglas": [
+    "IU CyL"
+   ],
+   "auto": true
+  },
+  "eb": {
+   "nombre": "ESCAÑOS EN BLANCO/ESCONS EN BLANC",
+   "siglas": [
+    "EB",
+    "Eb"
+   ],
+   "auto": true
+  },
+  "u-c-i-t": {
+   "nombre": "UNION DE CIUDADANOS INDEPENDIENTES DE TOLEDO",
+   "siglas": [
+    "U.C.I.T."
+   ],
+   "auto": true
+  },
+  "iucm-lv": {
+   "nombre": "IZQUIERDA UNIDA DE CASTILLA-LA MANCHA-LOS VERDES:",
+   "siglas": [
+    "IUCM-LV"
+   ],
+   "auto": true
+  },
+  "anticapital": {
+   "nombre": "ANTICAPITALISTAS",
+   "siglas": [
+    "ANTICAPITAL"
+   ],
+   "auto": true
+  },
+  "ssp-sxtf-eq": {
+   "nombre": "SÍ SE PUEDE, SOCIALISTAS POR TENERIFE, EQUO",
+   "siglas": [
+    "SSP-SxTF-EQ"
+   ],
+   "auto": true
+  },
+  "iuc-iph-lv": {
+   "nombre": "IZQUIERDA UNIDA CANARIA-INICIATIVA POR EL HIERRO-L",
+   "siglas": [
+    "IUC-IpH-LV"
+   ],
+   "auto": true
+  },
+  "amaiur": {
+   "nombre": "AMAIUR",
+   "siglas": [
+    "AMAIUR"
+   ],
+   "auto": false
+  },
+  "p-lib": {
+   "nombre": "PARTIDO DE LA LIBERTAD INDIVIDUAL",
+   "siglas": [
+    "P-LIB"
+   ],
+   "auto": true
+  },
+  "prao": {
+   "nombre": "PARTIDO REGIONALISTA POR ANDALUCIA ORIENTAL",
+   "siglas": [
+    "PRAO"
+   ],
+   "auto": true
+  },
+  "acima": {
+   "nombre": "ACCION CIUDADANA POR MALAGA",
+   "siglas": [
+    "ACIMA"
+   ],
+   "auto": true
+  },
+  "h-d": {
+   "nombre": "HIGIENE DEMOCRATICA",
+   "siglas": [
+    "H.D."
+   ],
+   "auto": true
+  },
+  "c-xxi": {
+   "nombre": "CONVERXENCIA VINTEÚN",
+   "siglas": [
+    "C.XXI"
+   ],
+   "auto": true
+  },
+  "andecha": {
+   "nombre": "ANDECHA ASTUR",
+   "siglas": [
+    "ANDECHA"
+   ],
+   "auto": true
+  },
+  "e-a-j-p-n": {
+   "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+   "siglas": [
+    "E.A.J.-P.N."
+   ],
+   "auto": true
+  },
+  "caballas": {
+   "nombre": "COALICION CABALLAS",
+   "siglas": [
+    "Caballas"
+   ],
+   "auto": true
+  },
+  "iuc-cxi": {
+   "nombre": "CANARIAS VERDE Y ROJA: LA IZQUIERDA PLURAL",
+   "siglas": [
+    "IUC-CxI"
+   ],
+   "auto": true
+  },
+  "ri-ca": {
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-CATALUNYA SÍ - ERC",
+   "siglas": [
+    "RI.ca"
+   ],
+   "auto": true
+  },
+  "psm-iv-exm": {
+   "nombre": "PSM-INICIATIVA VERDS-ENTESA-EQUO",
+   "siglas": [
+    "PSM-IV-EXM-"
+   ],
+   "auto": true
+  },
+  "iu-v-siex": {
+   "nombre": "IZQUIERDA UNIDA VERDES-SOCIALISTAS INDEPENDIENTES",
+   "siglas": [
+    "IU-V-SIEX:"
+   ],
+   "auto": true
+  },
+  "p-p-e-u": {
+   "nombre": "PARTIDO POPULAR-EXTREMADURA UNIDA",
+   "siglas": [
+    "P.P-E.U."
+   ],
+   "auto": true
+  },
+  "pcas": {
+   "nombre": "PARTIDO CASTELLANO",
+   "siglas": [
+    "PCAS"
+   ],
+   "auto": true
+  },
+  "internet": {
+   "nombre": "PARTIDO DE INTERNET",
+   "siglas": [
+    "INTERNET"
+   ],
+   "auto": true
+  },
+  "fac": {
+   "nombre": "FORO DE CIUDADANOS",
+   "siglas": [
+    "FAC"
+   ],
+   "auto": true
+  },
+  "izquierda-e": {
+   "nombre": "IZQUIERDA-EZKERRA/LA IZQUIERDA PLURAL",
+   "siglas": [
+    "IZQUIERDA-E"
+   ],
+   "auto": true
+  },
+  "pp-eu": {
+   "nombre": "PARTIDO POPULAR-EXTREMADURA UNIDA",
+   "siglas": [
+    "PP-EU"
+   ],
+   "auto": true
+  },
+  "geroabai": {
+   "nombre": "GEROA BAI",
+   "siglas": [
+    "GBAI"
+   ],
+   "auto": false
+  },
+  "p-r-d-e": {
+   "nombre": "PARTIDO PARA LA REGENERACION DE LA DEMOCRACIA EN E",
+   "siglas": [
+    "P.R.D.E."
+   ],
+   "auto": true
+  },
+  "cc-nc-pnc": {
+   "nombre": "COALICIÓN CANARIA-NUEVA CANARIAS",
+   "siglas": [
+    "CC-NC-PNC"
+   ],
+   "auto": true
+  },
+  "p-r-c": {
+   "nombre": "PARTIDO REGIONALISTA DE CANTABRIA",
+   "siglas": [
+    "P.R.C."
+   ],
+   "auto": true
+  },
+  "eu-v": {
+   "nombre": "ESQUERDA UNIDA-OS VERDES: A ESQUERDA PLURAL",
+   "siglas": [
+    "EU-V"
+   ],
+   "auto": true
+  },
+  "pse-ee-pso": {
+   "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (P",
+   "siglas": [
+    "PSE-EE (PSO"
+   ],
+   "auto": true
+  },
+  "compromís-q": {
+   "nombre": "BLOC-INICIATIVA-VERDS-EQUO-COALICIÓ COMPROMÍS",
+   "siglas": [
+    "COMPROMÍS-Q"
+   ],
+   "auto": true
+  },
+  "eupv-lv": {
+   "nombre": "ESQUERRA UNIDA DEL PAIS VALENCIA-LOS VERDES: L'ESQ",
+   "siglas": [
+    "EUPV-LV"
+   ],
+   "auto": true
+  },
+  "fe-de-las-j": {
+   "nombre": "FALANGE ESPAÑOLA DE LAS J.O.N.S.",
+   "siglas": [
+    "FE de las J"
+   ],
+   "auto": true
+  },
+  "erc-ri-cat": {
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-CATALUNYA SÍ",
+   "siglas": [
+    "ERC-RI.cat"
+   ],
+   "auto": true
+  },
+  "pcal": {
+   "nombre": "PARTIDO DE CASTILLA Y LEÓN",
+   "siglas": [
+    "PCAL"
+   ],
+   "auto": true
+  },
+  "sxt": {
+   "nombre": "SOCIALISTAS POR TERUEL",
+   "siglas": [
+    "SXT"
+   ],
+   "auto": true
+  },
+  "cyd": {
+   "nombre": "FORO CENTRO Y DEMOCRACIA",
+   "siglas": [
+    "CYD"
+   ],
+   "auto": true
+  },
+  "unidad-del": {
+   "nombre": "UNIDAD DEL PUEBLO",
+   "siglas": [
+    "UNIDAD DEL"
+   ],
+   "auto": true
+  },
+  "iucl": {
+   "nombre": "IZQUIERDA UNIDA DE CASTILLA Y LEÓN: LA IZQUIERDA P",
+   "siglas": [
+    "IUCL"
+   ],
+   "auto": true
+  },
+  "cha-iu": {
+   "nombre": "CHUNTA ARAGONESISTA-IZQUIERDA UNIDA, La Izquierda",
+   "siglas": [
+    "CHA-IU"
+   ],
+   "auto": true
+  },
+  "cxxi": {
+   "nombre": "CONVERXENCIA VINTEÚN",
+   "siglas": [
+    "CXXI"
+   ],
+   "auto": true
+  },
+  "pre-r": {
+   "nombre": "PARTIT REPUBLICÀ D'ESQUERRA-REPUBLICANS",
+   "siglas": [
+    "PRE-R"
+   ],
+   "auto": true
+  },
+  "pu-m+j": {
+   "nombre": "BIDEZKO MUNDURANTZ/POR UN MUNDO MÁS JUSTO",
+   "siglas": [
+    "PU M+J"
+   ],
+   "auto": true
+  },
+  "pirata": {
+   "nombre": "PARTIDO PIRATA",
+   "siglas": [
+    "PIRATA"
+   ],
+   "auto": true
+  },
+  "mlgxsí": {
+   "nombre": "MÁLAGA POR SÍ",
+   "siglas": [
+    "mlgXSÍ"
+   ],
+   "auto": true
+  },
+  "ln": {
+   "nombre": "LIBERTAD NAVARRA, LIBERTATE NAFARRA (Ln)",
+   "siglas": [
+    "Ln"
+   ],
+   "auto": true
+  },
+  "unidad-popu": {
+   "nombre": "UNIDAD POPULAR-IZQUIERDA UNIDA",
+   "siglas": [
+    "UNIDAD POPU"
+   ],
+   "auto": true
+  },
+  "iuc-upec": {
+   "nombre": "UNIDAD POPULAR: IZQUIERDA UNIDA CANARIA, UNIDAD PO",
+   "siglas": [
+    "IUC-UPeC"
+   ],
+   "auto": true
+  },
+  "canarias-de": {
+   "nombre": "CANARIAS DECIDE: LOS VERDES, UNIDAD DEL PUEBLO Y A",
+   "siglas": [
+    "CANARIAS DE"
+   ],
+   "auto": true
+  },
+  "cra": {
+   "nombre": "CIUDADANOS RURALES AGRUPADOS",
+   "siglas": [
+    "CRA"
+   ],
+   "auto": true
+  },
+  "iulv-ca-up": {
+   "nombre": "UNIDAD POPULAR: IZQUIERDA UNIDA LOS VERDES-CONVOCA",
+   "siglas": [
+    "IULV-CA, UP"
+   ],
+   "auto": true
+  },
+  "podemos-en": {
+   "nombre": "EN MAREA",
+   "siglas": [
+    "PODEMOS-EN",
+    "PODEMOS-En"
+   ],
+   "auto": true
+  },
+  "podemos-aho": {
+   "nombre": "PODEMOS-Ahora Alto Aragón en Común",
+   "siglas": [
+    "PODEMOS-Aho"
+   ],
+   "auto": true
+  },
+  "iu-upec": {
+   "nombre": "UNIDAD POPULAR: IZQUIERDA UNIDA, UNIDAD POPULAR EN",
+   "siglas": [
+    "IU-UPeC",
+    "IU-UpeC"
+   ],
+   "auto": true
+  },
+  "podemos-com": {
+   "nombre": "COMPROMÍS-PODEMOS-EUPV: A LA VALENCIANA",
+   "siglas": [
+    "PODEMOS-COM"
+   ],
+   "auto": true
+  },
+  "pp-foro": {
+   "nombre": "PARTIDO POPULAR - FORO",
+   "siglas": [
+    "PP-FORO"
+   ],
+   "auto": true
+  },
+  "upb-iu-upe": {
+   "nombre": "UNITAT POPULAR BALEARS: IZQUIERDA UNIDA, UNIDAD PO",
+   "siglas": [
+    "UPB: IU-UPe"
+   ],
+   "auto": true
+  },
+  "erc-catsí": {
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-CATALUNYA SÍ",
+   "siglas": [
+    "ERC-CATSÍ"
+   ],
+   "auto": true
+  },
+  "eupv-upec": {
+   "nombre": "UNITAT POPULAR:ESQUERRA UNIDA DEL PAÍS VALENCIÀ, U",
+   "siglas": [
+    "EUPV-UPeC"
+   ],
+   "auto": true
+  },
+  "iu-b-upec": {
+   "nombre": "UNIDAD POPULAR-ORAIN BATERA:IZQUIERDA UNIDA, BATZA",
+   "siglas": [
+    "IU-B-UPeC"
+   ],
+   "auto": true
+  },
+  "oe": {
+   "nombre": "ONGI ETORRI",
+   "siglas": [
+    "OE"
+   ],
+   "auto": true
+  },
+  "iulv-ca-upe": {
+   "nombre": "UNIDAD POPULAR: IZQUIERDA UNIDA LOS VERDES-CONVOCA",
+   "siglas": [
+    "IULV-CA,UPe"
+   ],
+   "auto": true
+  },
+  "x-esq": {
+   "nombre": "X A ESQUERDA",
+   "siglas": [
+    "X ESQ"
+   ],
+   "auto": true
+  },
+  "upec-iu": {
+   "nombre": "UNIDAD POPULAR: UNIDAD POPULAR EN COMÚN, IZQUIERDA",
+   "siglas": [
+    "UPeC-IU"
+   ],
+   "auto": true
+  },
+  "iu-upec-ias": {
+   "nombre": "UNIDAD POPULAR: IZQUIERDA UNIDA, UNIDAD POPULAR EN",
+   "siglas": [
+    "IU-UPeC-IAS"
+   ],
+   "auto": true
+  },
+  "centro-mode": {
+   "nombre": "LOS VERDES-ECOPACIFISTAS",
+   "siglas": [
+    "CENTRO MODE"
+   ],
+   "auto": true
+  },
+  "podemos-aha": {
+   "nombre": "PODEMOS/AHAL DUGU",
+   "siglas": [
+    "PODEMOS-AHA"
+   ],
+   "auto": true
+  },
+  "ehbildu": {
+   "nombre": "EUSKAL HERRIA BILDU (EH Bildu)",
+   "siglas": [
+    "EH Bildu"
+   ],
+   "auto": false
+  },
+  "en-comú": {
+   "nombre": "\"EN COMÚ PODEM\"",
+   "siglas": [
+    "EN COMÚ"
+   ],
+   "auto": true
+  },
+  "aju": {
+   "nombre": "ANDALUCES DE JAÉN UNIDOS",
+   "siglas": [
+    "AJU"
+   ],
+   "auto": true
+  },
+  "ara-pv": {
+   "nombre": "ARA, PAÍS VALENCIÀ",
+   "siglas": [
+    "ARA, PV"
+   ],
+   "auto": true
+  },
+  "arapv": {
+   "nombre": "ARA, PAÍS VALENCIÀ",
+   "siglas": [
+    "ARAPV"
+   ],
+   "auto": true
+  },
+  "unio-cat": {
+   "nombre": "UNIÓ DEMOCRÀTICA DE CATALUNYA",
+   "siglas": [
+    "Unio.Cat",
+    "unio.cat"
+   ],
+   "auto": true
+  },
+  "upec-iu-izc": {
+   "nombre": "UNIDAD POPULAR: IZQUIERDA UNIDA, UNIDAD POPULAR EN",
+   "siglas": [
+    "UPeC-IU-IZC"
+   ],
+   "auto": true
+  },
+  "recortes-ce": {
+   "nombre": "RECORTES CERO-GRUPO VERDE",
+   "siglas": [
+    "RECORTES CE"
+   ],
+   "auto": true
+  },
+  "compromis": {
+   "nombre": "COMPROMÍS - SUMAR: SUMEM PER GUANYAR - SUMAR",
+   "siglas": [
+    "C",
+    "COMPROMÍS",
+    "MÉS COMPROMÍS"
+   ],
+   "auto": false
+  },
+  "ifem": {
+   "nombre": "INICIATIVA FEMINISTA",
+   "siglas": [
+    "IFem"
+   ],
+   "auto": true
+  },
+  "js-pc": {
+   "nombre": "JUSTIZIA SOCIAL, PARTICIPACIÓN CIUDADANA",
+   "siglas": [
+    "JS,PC"
+   ],
+   "auto": true
+  },
+  "dl": {
+   "nombre": "DEMOCRÀCIA I LLIBERTAT. CONVERGÈNCIA. DEMÒCRATES.",
+   "siglas": [
+    "DL"
+   ],
+   "auto": true
+  },
+  "eb-az": {
+   "nombre": "ESCAÑOS EN BLANCO-AULKI ZURIAK",
+   "siglas": [
+    "EB-AZ"
+   ],
+   "auto": true
+  },
+  "somval": {
+   "nombre": "SOM VALENCIANS",
+   "siglas": [
+    "SOMVAL"
+   ],
+   "auto": true
+  },
+  "cca-pnc": {
+   "nombre": "COALICIÓN CANARIA - PARTIDO NACIONALISTA CANARIO",
+   "siglas": [
+    "CCa-PNC"
+   ],
+   "auto": true
+  },
+  "avant": {
+   "nombre": "AVANT VALENCIANS",
+   "siglas": [
+    "AVANT"
+   ],
+   "auto": true
+  },
+  "x-la-izquie": {
+   "nombre": "X LA IZQUIERDA-LOS VERDES",
+   "siglas": [
+    "X LA IZQUIE"
+   ],
+   "auto": true
+  },
+  "eu-ex": {
+   "nombre": "EXTREMADURA UNIDA-EXTREMEÑOS",
+   "siglas": [
+    "EU-eX"
+   ],
+   "auto": true
+  },
+  "up-upec": {
+   "nombre": "UNIDAD POPULAR: IZQUIERDA UNIDA, UNIDAD POPULAR EN",
+   "siglas": [
+    "UP-UPeC"
+   ],
+   "auto": true
+  },
+  "az": {
+   "nombre": "ESCAÑOS EN BLANCO - AULKI ZURIAK - EB",
+   "siglas": [
+    "AZ"
+   ],
+   "auto": true
+  },
+  "podemos": {
+   "nombre": "PODEMOS",
+   "siglas": [
+    "PODEMOS"
+   ],
+   "auto": false
+  },
+  "cilus": {
+   "nombre": "CIUDADANOS LIBRES UNIDOS",
+   "siglas": [
+    "CILUS"
+   ],
+   "auto": true
+  },
+  "psoe-nca": {
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL-NUEVA CANARIAS",
+   "siglas": [
+    "PSOE-NCa"
+   ],
+   "auto": true
+  },
+  "independien": {
+   "nombre": "INDEPENDIENTES POR ARAGÓN",
+   "siglas": [
+    "INDEPENDIEN",
+    "Independien"
+   ],
+   "auto": true
+  },
+  "fdee": {
+   "nombre": "FORO DEMÓCRATA",
+   "siglas": [
+    "FDEE"
+   ],
+   "auto": true
+  },
+  "en-positiu": {
+   "nombre": "EN POSITIU",
+   "siglas": [
+    "EN POSITIU"
+   ],
+   "auto": true
+  },
+  "ezkerra": {
+   "nombre": "EZKERRA-X LA IZQUIERDA",
+   "siglas": [
+    "EZKERRA"
+   ],
+   "auto": true
+  },
+  "nós": {
+   "nombre": "NÓS-CANDIDATURA GALEGA (BNG-CG-FOGA-PCPG-PG)",
+   "siglas": [
+    "NÓS"
+   ],
+   "auto": true
+  },
+  "pt": {
+   "nombre": "PARTIDO DA TERRA",
+   "siglas": [
+    "PT"
+   ],
+   "auto": true
+  },
+  "soluciona": {
+   "nombre": "SOLUCIONA",
+   "siglas": [
+    "SOLUCIONA"
+   ],
+   "auto": true
+  },
+  "iu-cha-upec": {
+   "nombre": "UNIDAD POPULAR EN ARAGÓN: IZQUIERDA UNIDA, CHUNTA",
+   "siglas": [
+    "IU-CHA-UPeC"
+   ],
+   "auto": true
+  },
+  "pld": {
+   "nombre": "PARTIDO LIBERAL DE DERECHAS",
+   "siglas": [
+    "PLD"
+   ],
+   "auto": true
+  },
+  "el-pi": {
+   "nombre": "EL PI - PROPOSTA PER LES ILLES BALEARS",
+   "siglas": [
+    "EL PI"
+   ],
+   "auto": true
+  },
+  "vox": {
+   "nombre": "VOX",
+   "siglas": [
+    "VOX"
+   ],
+   "auto": false
+  },
+  "up-iulv-ca": {
+   "nombre": "UNIDAD POPULAR: IZQUIERDA UNIDA LOS VERDES - CONVO",
+   "siglas": [
+    "UP: IULV-CA"
+   ],
+   "auto": true
+  },
+  "més": {
+   "nombre": "MÉS",
+   "siglas": [
+    "MÉS"
+   ],
+   "auto": true
+  },
+  "izar": {
+   "nombre": "IZQUIERDA ANTICAPITALISTA REVOLUCIONARIA",
+   "siglas": [
+    "IZAR"
+   ],
+   "auto": true
+  },
+  "fme": {
+   "nombre": "LA FUERZA DE LOS MAYORES DE ESPAÑA",
+   "siglas": [
+    "FME"
+   ],
+   "auto": true
+  },
+  "and": {
+   "nombre": "PARTIDO SOMOS ANDALUCES POR ANDALUCÍA Y LOS PUEBLO",
+   "siglas": [
+    "AND"
+   ],
+   "auto": true
+  },
+  "imc": {
+   "nombre": "INICIATIVA MERINDADES DE CASTILLA",
+   "siglas": [
+    "IMC"
+   ],
+   "auto": true
+  },
+  "podemos-iu": {
+   "nombre": "UNIDAS PODEMOS-ALTOARAGÓN EN COMÚN",
+   "siglas": [
+    "PODEMOS-IU",
+    "PODEMOS-IU-"
+   ],
+   "auto": true
+  },
+  "mas": {
+   "nombre": "MOVIMIENTO ARAGONES SOCIAL",
+   "siglas": [
+    "MAS"
+   ],
+   "auto": true
+  },
+  "udt": {
+   "nombre": "UNIÓN DE TODOS",
+   "siglas": [
+    "UDT"
+   ],
+   "auto": true
+  },
+  "recortes-cero-grupo-verde": {
+   "nombre": "RECORTES CERO-GRUPO VERDE",
+   "siglas": [
+    "RECORTES CERO-GRUPO VERDE"
+   ],
+   "auto": true
+  },
+  "cdc": {
+   "nombre": "CONVERGÈNCIA DEMOCRÀTICA DE CATALUNYA",
+   "siglas": [
+    "CDC"
+   ],
+   "auto": false
+  },
+  "podemos-iu-equo-clias": {
+   "nombre": "UNIDOS PODEMOS",
+   "siglas": [
+    "PODEMOS-IU-EQUO-CLIAS"
+   ],
+   "auto": true
+  },
+  "si": {
+   "nombre": "SOBIRANIA PER A LES ILLES",
+   "siglas": [
+    "SI"
+   ],
+   "auto": true
+  },
+  "alcd": {
+   "nombre": "ALIANZA DE CENTRO DEMOCRÁTICO",
+   "siglas": [
+    "ALCD"
+   ],
+   "auto": true
+  },
+  "ccd-ci": {
+   "nombre": "CIUDADANOS DE CENTRO DEMOCRÁTICO-CANDIDATURA INDEP",
+   "siglas": [
+    "CCD-CI"
+   ],
+   "auto": true
+  },
+  "bng-nós": {
+   "nombre": "BNG-NÓS CANDIDATURA GALEGA",
+   "siglas": [
+    "BNG-NÓS"
+   ],
+   "auto": true
+  },
+  "podemos-iu-equo": {
+   "nombre": "UNIDAS PODEMOS",
+   "siglas": [
+    "PODEMOS-IU-EQUO"
+   ],
+   "auto": true
+  },
+  "ecp": {
+   "nombre": "EN COMÚ PODEM - GUANYEM EL CANVI",
+   "siglas": [
+    "ECP",
+    "ECP-GUANYEM"
+   ],
+   "auto": false
+  },
+  "jxc": {
+   "nombre": "JUNTOS POR CANARIAS",
+   "siglas": [
+    "JXC"
+   ],
+   "auto": true
+  },
+  "centro-moderado": {
+   "nombre": "LOS VERDES-ECOPACIFISTAS",
+   "siglas": [
+    "CENTRO MODERADO"
+   ],
+   "auto": true
+  },
+  "podemos-iu-equo-batzarre": {
+   "nombre": "UNIDOS PODEMOS-ELKARREKIN AHAL DUGU",
+   "siglas": [
+    "PODEMOS-IU-EQUO-BATZARRE"
+   ],
+   "auto": true
+  },
+  "podemos-iu-equo-izca": {
+   "nombre": "UNIDOS PODEMOS",
+   "siglas": [
+    "PODEMOS-IU-EQUO-IZCA"
+   ],
+   "auto": true
+  },
+  "podemos-eui": {
+   "nombre": "UNITS PODEM MÉS",
+   "siglas": [
+    "PODEMOS-EUI"
+   ],
+   "auto": true
+  },
+  "hrts-ln": {
+   "nombre": "HEGOALDE RIOJA-LIBERTAD NAVARRA",
+   "siglas": [
+    "HRTS-Ln"
+   ],
+   "auto": true
+  },
+  "podemos-en-marea-anova-eu": {
+   "nombre": "EN MAREA",
+   "siglas": [
+    "PODEMOS-EN MAREA-ANOVA-EU"
+   ],
+   "auto": true
+  },
+  "up": {
+   "nombre": "UNIDOS PODEMOS",
+   "siglas": [
+    "UNIDOS PODEMOS"
+   ],
+   "auto": false
+  },
+  "podemos-ahal-dugu-iu-equo": {
+   "nombre": "UNIDOS PODEMOS/ELKARREKIN AHAL DUGU",
+   "siglas": [
+    "PODEMOS/AHAL DUGU-IU-EQUO"
+   ],
+   "auto": true
+  },
+  "repo": {
+   "nombre": "RENOVACIO POLITICA",
+   "siglas": [
+    "REPO"
+   ],
+   "auto": true
+  },
+  "entaban": {
+   "nombre": "ENTABAN",
+   "siglas": [
+    "ENTABAN"
+   ],
+   "auto": true
+  },
+  "podemos-iu-equo-segoviemos": {
+   "nombre": "UNIDOS PODEMOS",
+   "siglas": [
+    "PODEMOS-IU-EQUO-SEGOVIEMOS"
+   ],
+   "auto": true
+  },
+  "recortes-cero-gv-pcas-tc": {
+   "nombre": "RECORTES CERO-GRUPO VERDE-PARTIDO CASTELLANO-TIERRA COMUNERA",
+   "siglas": [
+    "RECORTES CERO-GV-PCAS-TC"
+   ],
+   "auto": true
+  },
+  "ahora-canarias": {
+   "nombre": "AHORA CANARIAS: Alternativa Nacionalista Canaria (ANC) y Unidad del Pueblo",
+   "siglas": [
+    "AHORA CANARIAS"
+   ],
+   "auto": true
+  },
+  "vou": {
+   "nombre": "VIVIR OURENSE",
+   "siglas": [
+    "VOU"
+   ],
+   "auto": true
+  },
+  "compromís-2": {
+   "nombre": "COMPROMÍS: BLOC-INICIATIVA-VERDSEQUO",
+   "siglas": [
+    "COMPROMÍS 2"
+   ],
+   "auto": true
+  },
+  "erc-sobiranistes": {
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-SOBIRANISTES",
+   "siglas": [
+    "ERC-SOBIRANISTES"
+   ],
+   "auto": true
+  },
+  "uig-som-cuides": {
+   "nombre": "SOM VALENCIANS EN MOVIMENT",
+   "siglas": [
+    "UIG-SOM-CUIDES"
+   ],
+   "auto": true
+  },
+  "cpm": {
+   "nombre": "COALICION POR MELILLA",
+   "siglas": [
+    "CpM"
+   ],
+   "auto": true
+  },
+  "jf": {
+   "nombre": "PARTIDO DE JUBILADOS POR EL FUTURO. DIGNIDAD Y DEMOCRACIA",
+   "siglas": [
+    "\"JF\""
+   ],
+   "auto": true
+  },
+  "pctg": {
+   "nombre": "PARTIDO COMUNISTA DOS TRABALLADORES DE GALIZA",
+   "siglas": [
+    "PCTG"
+   ],
+   "auto": true
+  },
+  "elak-pcte": {
+   "nombre": "EUSKADIKO LANGILEEN ALDERDI KOMUNISTA/PARTIDO COMUNISTA DE LOS TRABAJADORES DE EUSKADI",
+   "siglas": [
+    "ELAK/PCTE"
+   ],
+   "auto": true
+  },
+  "pcte": {
+   "nombre": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE ESPAÑA",
+   "siglas": [
+    "PCTE"
+   ],
+   "auto": true
+  },
+  "podemos-eu": {
+   "nombre": "EN COMÚN-UNIDAS PODEMOS",
+   "siglas": [
+    "PODEMOS-EU",
+    "PODEMOS-EU-"
+   ],
+   "auto": true
+  },
+  "junts": {
+   "nombre": "JUNTS PER CATALUNYA - JUNTS - JxCAT",
+   "siglas": [
+    "JUNTS",
+    "JxCAT-JUNTS"
+   ],
+   "auto": false
+  },
+  "fia": {
+   "nombre": "FEDERACIÓN DE LOS INDEPENDIENTES DE ARAGÓN",
+   "siglas": [
+    "FIA"
+   ],
+   "auto": true
+  },
+  "solidaria": {
+   "nombre": "PARTIDO DE ACCIÓN SOLIDARIA EUROPEA",
+   "siglas": [
+    "SOLIDARIA"
+   ],
+   "auto": true
+  },
+  "pcte-elak": {
+   "nombre": "PARTIDO COMUNISTA DE LOS TRABAJADORES DE EUSKADI/EUSKADIKO LANGILEEN ALDERDI KOMUNISTA",
+   "siglas": [
+    "PCTE/ELAK"
+   ],
+   "auto": true
+  },
+  "andecha-astur": {
+   "nombre": "ANDECHA ASTUR",
+   "siglas": [
+    "ANDECHA ASTUR"
+   ],
+   "auto": true
+  },
+  "dp": {
+   "nombre": "DEFENSA DE LO PÚBLICO",
+   "siglas": [
+    "DP"
+   ],
+   "auto": true
+  },
+  "emarea": {
+   "nombre": "EN MAREA",
+   "siglas": [
+    "EN MAREA"
+   ],
+   "auto": false
+  },
+  "pr+": {
+   "nombre": "PARTIDO RIOJANO",
+   "siglas": [
+    "PR+"
+   ],
+   "auto": true
+  },
+  "somos-regió": {
+   "nombre": "SOMOS REGIÓN",
+   "siglas": [
+    "SOMOS REGIÓ"
+   ],
+   "auto": true
+  },
+  "podemos-ix-equo": {
+   "nombre": "UNIDAS PODEMOS-XUNIES PODEMOS",
+   "siglas": [
+    "PODEMOS-IX-EQUO"
+   ],
+   "auto": true
+  },
+  "f8": {
+   "nombre": "FEMINISM8",
+   "siglas": [
+    "F8"
+   ],
+   "auto": true
+  },
+  "cs": {
+   "nombre": "CIUDADANOS-PARTIDO DE LA CIUDADANÍA",
+   "siglas": [
+    "Cs"
+   ],
+   "auto": false
+  },
+  "unión-regio": {
+   "nombre": "UNIÓN REGIONALISTA DE CASTILLA Y LEÓN",
+   "siglas": [
+    "UNIÓN REGIO"
+   ],
+   "auto": true
+  },
+  "cnv": {
+   "nombre": "CONVERGENTS",
+   "siglas": [
+    "CNV"
+   ],
+   "auto": true
+  },
+  "izqp": {
+   "nombre": "IZQUIERDA EN POSITIVO",
+   "siglas": [
+    "IZQP"
+   ],
+   "auto": true
+  },
+  "cilu-linares": {
+   "nombre": "CIUDADANOS INDEPENDIENTES DE LINARES UNIDOS",
+   "siglas": [
+    "CILU-LINARES"
+   ],
+   "auto": true
+  },
+  "podemos-iu-lv-ca-equo": {
+   "nombre": "UNIDAS PODEMOS",
+   "siglas": [
+    "PODEMOS-IU LV CA-EQUO"
+   ],
+   "auto": true
+  },
+  "avant-los-verdes": {
+   "nombre": "LOS VERDES ECOPACIFISTAS ADELANTE",
+   "siglas": [
+    "AVANT LOS VERDES",
+    "AVANT-LOS VERDES"
+   ],
+   "auto": true
+  },
+  "c-ex-c-r-ex": {
+   "nombre": "EXTREMEÑOS PREX CREX",
+   "siglas": [
+    "C.Ex-C.R.Ex"
+   ],
+   "auto": true
+  },
+  "pdsje-udec": {
+   "nombre": "PARTIDO DEMÓCRATA SOCIAL JUBILADOS EUROPEOS - UNID",
+   "siglas": [
+    "PDSJE-UDEC"
+   ],
+   "auto": true
+  },
+  "recortes-cero-gv": {
+   "nombre": "RECORTES CERO-GRUPO VERDE",
+   "siglas": [
+    "RECORTES CERO-GV"
+   ],
+   "auto": true
+  },
+  "pctc": {
+   "nombre": "PARTIT COMUNISTA DELS TREBALLADORS DE CATALUNYA",
+   "siglas": [
+    "PCTC"
+   ],
+   "auto": true
+  },
+  "front-repub": {
+   "nombre": "POBLE LLIURE - SOM ALTERNATIVA - PIRATES DE CATALU",
+   "siglas": [
+    "FRONT REPUB"
+   ],
+   "auto": true
+  },
+  "podemos-euib": {
+   "nombre": "UNIDAS PODEMOS-UNIDES PODEM",
+   "siglas": [
+    "PODEMOS-EUIB"
+   ],
+   "auto": true
+  },
+  "nca": {
+   "nombre": "NUEVA CANARIAS",
+   "siglas": [
+    "NCa"
+   ],
+   "auto": true
+  },
+  "cxg": {
+   "nombre": "COMPROMISO POR GALICIA",
+   "siglas": [
+    "CxG"
+   ],
+   "auto": true
+  },
+  "risa": {
+   "nombre": "PARTIDO REPUBLICANO INDEPENDIENTE SOLIDARIO ANDALUZ",
+   "siglas": [
+    "RISA"
+   ],
+   "auto": true
+  },
+  "ppso": {
+   "nombre": "PLATAFORMA DEL PUEBLO SORIANO",
+   "siglas": [
+    "PPSO"
+   ],
+   "auto": true
+  },
+  "pyln": {
+   "nombre": "PUYALON",
+   "siglas": [
+    "PYLN"
+   ],
+   "auto": true
+  },
+  "axsi": {
+   "nombre": "ANDALUCÍA POR SÍ",
+   "siglas": [
+    "AxSI"
+   ],
+   "auto": true
+  },
+  "c-21": {
+   "nombre": "CONVERXENCIA 21",
+   "siglas": [
+    "C 21"
+   ],
+   "auto": true
+  },
+  "podemos-eupv": {
+   "nombre": "UNIDAS PODEMOS-UNIDES PODEM",
+   "siglas": [
+    "PODEMOS-EUPV"
+   ],
+   "auto": true
+  },
+  "avant-adelante-los-verdes": {
+   "nombre": "LOS VERDES ECOPACIFISTAS ADELANTE",
+   "siglas": [
+    "AVANT ADELANTE LOS VERDES"
+   ],
+   "auto": true
+  },
+  "dpl": {
+   "nombre": "DEMOCRACIA PLURAL",
+   "siglas": [
+    "DPL"
+   ],
+   "auto": true
+  },
+  "ara-mes-esquerra": {
+   "nombre": "Veus PROGRESSISTES",
+   "siglas": [
+    "ARA-MES-ESQUERRA"
+   ],
+   "auto": true
+  },
+  "centrados": {
+   "nombre": "CENTRADOS",
+   "siglas": [
+    "centrados"
+   ],
+   "auto": true
+  },
+  "pact": {
+   "nombre": "ACTÚA",
+   "siglas": [
+    "PACT"
+   ],
+   "auto": true
+  },
+  "podemos-iu-equo-berdeak": {
+   "nombre": "ELKARREKIN PODEMOS-UNIDAS PODEMOS",
+   "siglas": [
+    "PODEMOS-IU-EQUO BERDEAK"
+   ],
+   "auto": true
+  },
+  "podemos-iu-batzarre": {
+   "nombre": "UNIDAS PODEMOS",
+   "siglas": [
+    "PODEMOS-IU-BATZARRE"
+   ],
+   "auto": true
+  },
+  "podemos-iu-alto-aragón-en-común": {
+   "nombre": "UNIDAS PODEMOS-ALTOARAGÓN EN COMÚN",
+   "siglas": [
+    "PODEMOS-IU-Alto Aragón en Común"
+   ],
+   "auto": true
+  },
+  "més-esquerra": {
+   "nombre": "MÉS ESQUERRA",
+   "siglas": [
+    "MÉS-ESQUERRA"
+   ],
+   "auto": true
+  },
+  "aunacv": {
+   "nombre": "AUNA COMUNITAT VALENCIANA",
+   "siglas": [
+    "AUNACV"
+   ],
+   "auto": true
+  },
+  "somos-región": {
+   "nombre": "SOMOS REGIÓN",
+   "siglas": [
+    "SOMOS REGIÓN"
+   ],
+   "auto": true
+  },
+  "pdsje": {
+   "nombre": "PARTIDO DEMÓCRATA SOCIAL JUBILADOS EUROPEOS",
+   "siglas": [
+    "PDSJE"
+   ],
+   "auto": true
+  },
+  "cca-pnc-nc": {
+   "nombre": "COALICIÓN CANARIA-NUEVA CANARIAS",
+   "siglas": [
+    "CCa-PNC-NC"
+   ],
+   "auto": true
+  },
+  "más-país-equo": {
+   "nombre": "MÁS PAÍS-EQUO",
+   "siglas": [
+    "MÁS PAÍS-EQUO"
+   ],
+   "auto": true
+  },
+  "m-país": {
+   "nombre": "MÁS PAÍS",
+   "siglas": [
+    "M PAÍS"
+   ],
+   "auto": true
+  },
+  "canda": {
+   "nombre": "CONVERGENCIA ANDALUZA",
+   "siglas": [
+    "CAnda"
+   ],
+   "auto": true
+  },
+  "podemos-iu-lv-ca": {
+   "nombre": "UNIDAS PODEMOS",
+   "siglas": [
+    "PODEMOS-IU LV CA"
+   ],
+   "auto": true
+  },
+  "ecp-guanyem-el-canvi": {
+   "nombre": "EN COMÚ PODEM-GUANYEM EL CANVI",
+   "siglas": [
+    "ECP-GUANYEM EL CANVI"
+   ],
+   "auto": true
+  },
+  "más-país-andalucía": {
+   "nombre": "MÁS PAÍS-ANDALUCÍA",
+   "siglas": [
+    "MÁS PAÍS-ANDALUCÍA"
+   ],
+   "auto": true
+  },
+  "unidos-sí-acps-def": {
+   "nombre": "UNIDOS Actuando por la Democracia",
+   "siglas": [
+    "UNIDOS SÍ-ACPS-DEf"
+   ],
+   "auto": true
+  },
+  "m-país-cha-equo": {
+   "nombre": "MÁS PAÍS-CHUNTA ARAGONESISTA-EQUO",
+   "siglas": [
+    "M PAÍS-CHA-EQUO"
+   ],
+   "auto": true
+  },
+  "axsí": {
+   "nombre": "ANDALUCÍA POR SÍ",
+   "siglas": [
+    "AxSÍ"
+   ],
+   "auto": true
+  },
+  "xav": {
+   "nombre": "POR ÁVILA",
+   "siglas": [
+    "XAV"
+   ],
+   "auto": true
+  },
+  "cup-pr": {
+   "nombre": "CANDIDATURA D'UNITAT POPULAR-PER LA RUPTURA",
+   "siglas": [
+    "CUP-PR"
+   ],
+   "auto": true
+  },
+  "i-fem": {
+   "nombre": "INICIATIVA FEMINISTA",
+   "siglas": [
+    "I.Fem"
+   ],
+   "auto": true
+  },
+  "nc-cca-pnc": {
+   "nombre": "NUEVA CANARIAS-COALICIÓN CANARIA",
+   "siglas": [
+    "NC-CCa-PNC"
+   ],
+   "auto": true
+  },
+  "maspais": {
+   "nombre": "MÁS PAÍS",
+   "siglas": [
+    "MÁS PAÍS"
+   ],
+   "auto": false
+  },
+  "teruel-existe": {
+   "nombre": "AGRUPACIÓN DE ELECTORES \"TERUEL EXISTE\"",
+   "siglas": [
+    "¡TERUEL EXISTE!"
+   ],
+   "auto": true
+  },
+  "podemos-ix": {
+   "nombre": "UNIDAS PODEMOS-XUNÍES PODEMOS",
+   "siglas": [
+    "PODEMOS-IX"
+   ],
+   "auto": true
+  },
+  "unión-regionalista": {
+   "nombre": "UNIÓN REGIONALISTA DE CASTILLA Y LEÓN",
+   "siglas": [
+    "UNIÓN REGIONALISTA"
+   ],
+   "auto": true
+  },
+  "contigo": {
+   "nombre": "CONTIGO SOMOS DEMOCRACIA",
+   "siglas": [
+    "CONTIGO"
+   ],
+   "auto": true
+  },
+  "más-país-candidatura-ecologista": {
+   "nombre": "MÁS PAÍS-CANDIDATURA ECOLOGISTA",
+   "siglas": [
+    "MÁS PAÍS-CANDIDATURA ECOLOGISTA"
+   ],
+   "auto": true
+  },
+  "mdyc": {
+   "nombre": "MOVIMIENTO POR LA DIGNIDAD Y LA CIUDADANÍA DE CEUTA",
+   "siglas": [
+    "MDyC"
+   ],
+   "auto": true
+  },
+  "fo": {
+   "nombre": "FRENTE OBRERO",
+   "siglas": [
+    "FO"
+   ],
+   "auto": true
+  },
+  "u-p-l": {
+   "nombre": "UNIÓN DEL PUEBLO LEONÉS",
+   "siglas": [
+    "U.P.L."
+   ],
+   "auto": true
+  },
+  "ahora-canarias-pcpc": {
+   "nombre": "AHORA CANARIAS-PARTIDO COMUNISTA DEL PUEBLO CANARIO",
+   "siglas": [
+    "AHORA CANARIAS-PCPC"
+   ],
+   "auto": true
+  },
+  "jm+": {
+   "nombre": "JAÉN MERECE MÁS",
+   "siglas": [
+    "JM+"
+   ],
+   "auto": true
+  },
+  "lb": {
+   "nombre": "LIBRES",
+   "siglas": [
+    "LB"
+   ],
+   "auto": true
+  },
+  "sy": {
+   "nombre": "SORIA ¡YA!",
+   "siglas": [
+    "SY"
+   ],
+   "auto": true
+  },
+  "sumar-aragón": {
+   "nombre": "SUMAR ARAGÓN",
+   "siglas": [
+    "SUMAR ARAGÓN"
+   ],
+   "auto": true
+  },
+  "existe": {
+   "nombre": "ARAGÓN EXISTE - COALICIÓN EXISTE",
+   "siglas": [
+    "EXISTE"
+   ],
+   "auto": true
+  },
+  "asturias-existe-ev": {
+   "nombre": "ASTURIAS EXISTE-ESPAÑA VACIADA",
+   "siglas": [
+    "ASTURIAS EXISTE EV"
+   ],
+   "auto": true
+  },
+  "nc-bc": {
+   "nombre": "NUEVA CANARIAS - BLOQUE CANARISTA",
+   "siglas": [
+    "NC-bc"
+   ],
+   "auto": true
+  },
+  "més-per-mallorca-més-per-menorca-sumar": {
+   "nombre": "SUMAR MÉS",
+   "siglas": [
+    "MÉS PER MALLORCA-MÉS PER MENORCA-SUMAR"
+   ],
+   "auto": true
+  },
+  "unidos-si": {
+   "nombre": "UNIDOS POR LA SOLIDARIDAD INTERNACIONAL",
+   "siglas": [
+    "UNIDOS SI"
+   ],
+   "auto": true
+  },
+  "sumar": {
+   "nombre": "SUMAR ANDALUCÍA",
+   "siglas": [
+    "SUMAR"
+   ],
+   "auto": false
+  },
+  "alm": {
+   "nombre": "ALMERIENSES - REGIONALISTAS PRO ALMERÍA",
+   "siglas": [
+    "ALM"
+   ],
+   "auto": true
+  },
+  "psn-psoe": {
+   "nombre": "PARTIDO SOCIALISTA DE NAVARRA-PSOE",
+   "siglas": [
+    "PSN-PSOE"
+   ],
+   "auto": true
+  },
+  "+rds+": {
+   "nombre": "REFERÉNDUM SISTEMA DINERO",
+   "siglas": [
+    "+RDS+"
+   ],
+   "auto": true
+  },
+  "evc": {
+   "nombre": "ENTRE VEÏNS CATALUNYA",
+   "siglas": [
+    "EVC"
+   ],
+   "auto": true
+  },
+  "evb": {
+   "nombre": "ESTAT VALENCIÀ DEL BENESTAR",
+   "siglas": [
+    "EVB"
+   ],
+   "auto": true
+  },
+  "cj": {
+   "nombre": "CAMINANDO JUNTOS",
+   "siglas": [
+    "CJ"
+   ],
+   "auto": true
+  },
+  "españa-vaciada": {
+   "nombre": "ESPAÑA VACIADA",
+   "siglas": [
+    "ESPAÑA VACIADA"
+   ],
+   "auto": true
+  },
+  "u-p-n": {
+   "nombre": "UNION DEL PUEBLO NAVARRO",
+   "siglas": [
+    "U.P.N."
+   ],
+   "auto": true
+  },
+  "psib-psoe": {
+   "nombre": "PARTIDO SOCIALISTA DE ISLAS BALEARES-PSOE",
+   "siglas": [
+    "PSIB-PSOE"
+   ],
+   "auto": true
+  },
+  "por-mi-región": {
+   "nombre": "POR MI REGIÓN",
+   "siglas": [
+    "POR MI REGIÓN"
+   ],
+   "auto": true
+  },
+  "xh": {
+   "nombre": "POR HUELVA",
+   "siglas": [
+    "XH"
+   ],
+   "auto": true
+  },
+  "escaños-en-blanco": {
+   "nombre": "ESCAÑOS EN BLANCO PARA DEJAR ESCAÑOS VACÍOS",
+   "siglas": [
+    "ESCAÑOS EN BLANCO"
+   ],
+   "auto": true
+  },
+  "pdecat-e-ciu": {
+   "nombre": "PARTIT DEMÒCRATA EUROPEU CATALÀ-ESPAI CIU",
+   "siglas": [
+    "PDeCAT-E-CiU"
+   ],
+   "auto": true
+  },
+  "adelante-andalucía": {
+   "nombre": "ADELANTE ANDALUCÍA",
+   "siglas": [
+    "ADELANTE ANDALUCÍA"
+   ],
+   "auto": true
+  },
+  "3e": {
+   "nombre": "TERCERA EDAD EN ACCIÓN",
+   "siglas": [
+    "3e"
+   ],
+   "auto": true
+  },
+  "vb": {
+   "nombre": "VÍA BURGALESA",
+   "siglas": [
+    "VB"
+   ],
+   "auto": true
+  },
+  "ev-pcas-tc": {
+   "nombre": "ESPAÑA VACIADA-PARTIDO CASTELLANO-TIERRA COMUNERA",
+   "siglas": [
+    "EV-PCAS-TC"
+   ],
+   "auto": true
+  },
+  "zsi": {
+   "nombre": "ZAMORA SÍ",
+   "siglas": [
+    "Zsi"
+   ],
+   "auto": true
+  },
+  "fuerza-cívica": {
+   "nombre": "FUERZA CÍVICA",
+   "siglas": [
+    "FUERZA CÍVICA"
+   ],
+   "auto": true
+  },
+  "recortes": {
+   "nombre": "RECORTES CERO",
+   "siglas": [
+    "RECORTES CERO"
+   ],
+   "auto": false
+  },
+  "f-i-a": {
+   "nombre": "FEDERACIÓN DE LOS INDEPENDIENTES DE ARAGÓN",
+   "siglas": [
+    "F.I.A."
+   ],
+   "auto": true
+  },
+  "gitv": {
+   "nombre": "GRUPO INDEPENDIENTE PALENCIA TIERRA VIVA",
+   "siglas": [
+    "GITV"
+   ],
+   "auto": true
+  },
+  "somos-cc": {
+   "nombre": "SOMOS CÁCERES",
+   "siglas": [
+    "Somos Cc"
+   ],
+   "auto": true
+  },
+  "vp": {
+   "nombre": "VAMOS PALENCIA",
+   "siglas": [
+    "VP"
+   ],
+   "auto": true
+  },
+  "escons-en-blanc": {
+   "nombre": "ESCONS EN BLANC",
+   "siglas": [
+    "ESCONS EN BLANC"
+   ],
+   "auto": true
+  },
+  "bqex": {
+   "nombre": "BLOQUE EXTREMEÑO",
+   "siglas": [
+    "BQEX"
+   ],
+   "auto": true
+  },
+  "partido-autónomos": {
+   "nombre": "PARTIDO AUTÓNOMOS",
+   "siglas": [
+    "PARTIDO AUTÓNOMOS"
+   ],
+   "auto": true
+  },
+  "jxg": {
+   "nombre": "JUNTOS POR GRANADA",
+   "siglas": [
+    "JxG"
+   ],
+   "auto": true
+  }
+ }
+}

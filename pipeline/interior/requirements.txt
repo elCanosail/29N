@@ -1,0 +1,7 @@
+# Dependencias del pipeline de ingesta del Ministerio del Interior (29N)
+# Solo este subpipeline. No tocar requirements.txt globales (otros agentes trabajan en paralelo).
+#
+# Todas disponibles en el host de desarrollo (verificado 2026-10-15):
+#   requests 2.31.0 · openpyxl 3.1.5
+requests>=2.28
+openpyxl>=3.1
