@@ -1,0 +1,152 @@
+priority,canonical,grupo,alias,fuente
+1,UNIDAS PODEMOS,izquierda,UNIDAS PODEMOS,Coalición 2016 (Unidos Podemos)
+2,UNIDAS PODEMOS,izquierda,UNIDOS PODEMOS,Coalición 2016
+3,UNIDAS PODEMOS,izquierda,UNIDES PODEM,Coalición 2016 (Cataluña)
+4,UNIDAS PODEMOS,izquierda,EN COMÚ PODEM,Confluencia Cataluña
+5,UNIDAS PODEMOS,izquierda,EN COMUN PODEM,Confluencia Cataluña
+6,UNIDAS PODEMOS,izquierda,EN COMÚ,Confluencia Cataluña
+7,UNIDAS PODEMOS,izquierda,EN COMUN,Confluencia Cataluña
+8,UNIDAS PODEMOS,izquierda,EN MAREA,Confluencia Galicia
+9,UNIDAS PODEMOS,izquierda,COMPROMÍS-PODEMOS,Confluencia C. Valenciana
+10,UNIDAS PODEMOS,izquierda,COMPROMIS-PODEMOS,Confluencia C. Valenciana
+11,UNIDAS PODEMOS,izquierda,PODEMOS-IU,Coalición
+12,UNIDAS PODEMOS,izquierda,PODEMOS-IU-EQUO,Coalición 2016
+13,UNIDAS PODEMOS,izquierda,ADELANTE ANDALUCÍA,Confluencia Andalucía
+14,SUMAR,izquierda,SUMAR,Movimiento Sumar 2023
+15,SUMAR,izquierda,COMPROMÍS-SUMAR,Coalición 2023 C. Valenciana
+16,SUMAR,izquierda,MÉS COMPROMÍS,Coalición C. Valenciana
+17,SUMAR,izquierda,MES COMPROMIS,Coalición C. Valenciana
+18,PODEMOS,izquierda,PODEMOS,Partido
+19,IU,izquierda,IZQUIERDA UNIDA,Partido
+21,IU,izquierda,PCE,Partido Comunista de España
+22,IU,izquierda,PSUC,Cataluña
+23,IU,izquierda,IU-ICV,Coalición Cataluña
+24,IU,izquierda,ICV,Iniciativa per Catalunya Verds
+25,IU,izquierda,EUiA,Esquerra Unida i Alternativa
+26,IU,izquierda,EU-ESQUERRA UNIDA,Comunitat Valenciana
+27,IU,izquierda,ESQUERRA UNIDA,Comunitat Valenciana
+28,IU,izquierda,IU-EUiA,Coalición
+29,IU,izquierda,IU,Partido
+30,PSOE,centroizquierda,PSC-PSOE,Cataluña
+31,PSOE,centroizquierda,PSOE-PSC,Cataluña
+32,PSOE,centroizquierda,PSC,Cataluña
+33,PSOE,centroizquierda,PSE-EE,País Vasco
+34,PSOE,centroizquierda,PSE,País Vasco
+35,PSOE,centroizquierda,PSdG,Galicia
+36,PSOE,centroizquierda,PSG,Galicia
+37,PSOE,centroizquierda,PSIB,Islas Baleares
+39,PSOE,centroizquierda,PSOE,Partido
+40,PP,derecha,ALIANZA POPULAR,1982-
+41,PP,derecha,AP-PDP,Coalición 1982
+42,PP,derecha,AP-PDP/PP,Coalición evolutiva
+43,PP,derecha,AP/PP,Coalición evolutiva
+44,PP,derecha,PARTIDO POPULAR,Partido
+45,PP,derecha,AP,Alianza Popular 1977-1989
+46,PP,derecha,COALICIÓN POPULAR,Coalición 1986
+47,PP,derecha,COALICION POPULAR,Coalición 1986
+48,PP,derecha,PP,Partido Popular (AP desde 1989)
+49,VOX,derecha,VOX,Partido
+50,CIUDADANOS,centro,CIUDADANOS-PARTIDO DE LA CIUDADANÍA,Partido
+51,CIUDADANOS,centro,CIUDADANOS,Partido
+52,CIUDADANOS,centro,Cs,Partido
+53,CIUDADANOS,centro,C's,Partido
+54,CDS,centro,CDS,Centro Democrático y Social
+55,CDS,centro,CENTRO DEMOCRÁTICO Y SOCIAL,Centro Democrático y Social
+56,UCD,centro,UCD,Unión de Centro Democrático
+57,UCD,centro,UNIÓN DE CENTRO DEMOCRÁTICO,Unión de Centro Democrático
+58,ERC,nacionalista,ESQUERRA REPUBLICANA DE CATALUNYA,Cataluña
+59,ERC,nacionalista,ESQUERRA REPUBLICANA,Cataluña
+60,ERC,nacionalista,ERC-CATSI,Cataluña
+61,ERC,nacionalista,ERC,Cataluña
+62,JXCAT,nacionalista,JUNTS PER CATALUNYA,Cataluña 2020-
+63,JXCAT,nacionalista,JUNTS,Cataluña 2020-
+64,JXCAT,nacionalista,JXCAT,Cataluña 2017-2019
+65,JXCAT,nacionalista,JxCat,Cataluña 2017-2019
+66,JXCAT,nacionalista,PDECAT,Cataluña
+67,JXCAT,nacionalista,PDECAT (JxCAT),Cataluña (etiqueta combinada CIS)
+68,JXCAT,nacionalista,DEMOCRÀCIA I LLIBERTAT,Cataluña 2015
+69,JXCAT,nacionalista,CONVERGÈNCIA,CDC/Convergència
+70,JXCAT,nacionalista,CONVERGENCIA,CDC/Convergència
+71,JXCAT,nacionalista,CIU,Convergència i Unió
+72,JXCAT,nacionalista,CONVERGÈNCIA I UNIÓ,Convergència i Unió
+73,JXCAT,nacionalista,JUNTS PEL SÍ,Coalición 2015
+74,PNV,nacionalista,EAJ-PNV,País Vasco
+75,PNV,nacionalista,EAJ-PN,País Vasco
+76,PNV,nacionalista,PNV,País Vasco
+77,PNV,nacionalista,EAJ,País Vasco
+78,EH BILDU,nacionalista,EH BILDU,País Vasco
+79,EH BILDU,nacionalista,EH-BILDU,País Vasco
+80,EH BILDU,nacionalista,BILDU,País Vasco
+81,EH BILDU,nacionalista,AMAIUR,Coalición 2011
+82,EH BILDU,nacionalista,EUSKAL HERRITARROK,País Vasco (precedente)
+83,EH BILDU,nacionalista,HERRI BATASUNA,País Vasco (precedente)
+84,EH BILDU,nacionalista,HB,País Vasco (precedente)
+85,EH BILDU,nacionalista,EH,País Vasco (precedente)
+86,BNG,nacionalista,BLOQUE NACIONALISTA GALEGO,Galicia
+87,BNG,nacionalista,BNG,Galicia
+88,CUP,nacionalista,CANDIDATURA D'UNITAT POPULAR,Cataluña
+89,CUP,nacionalista,CUP,Cataluña
+90,CC,nacionalista,COALICIÓN CANARIA,Canarias
+91,CC,nacionalista,COALICION CANARIA,Canarias
+92,CC,nacionalista,CCa-NC,Canarias
+93,CC,nacionalista,CC-PNC,Canarias
+94,CC,nacionalista,CC-PNC-NC,Canarias 2019 (coal.)
+95,CC,nacionalista,CCA,Canarias
+95,NC,nacionalista,NUEVA CANARIAS,Canarias
+96,NC,nacionalista,NUEVA CANARIA,Canarias
+97,NC,nacionalista,NC,Canarias (si no es No contesta)
+98,NA+,nacionalista,NAVARRA SUMA,Navarra 2019 (UPN+PP+Cs)
+100,NA+,nacionalista,UPN,Unión del Pueblo Navarro
+101,NA+,nacionalista,UNIÓN DEL PUEBLO NAVARRO,Unión del Pueblo Navarro
+102,NA+,nacionalista,NA+,Navarra Suma
+103,COMPROMIS,nacionalista,MÉS COMPROMÍS,C. Valenciana
+104,COMPROMIS,nacionalista,COMPROMÍS,C. Valenciana
+105,COMPROMIS,nacionalista,COMPROMIS,C. Valenciana
+106,COMPROMIS,nacionalista,BLOC NACIONALISTA,C. Valenciana
+107,COMPROMIS,nacionalista,MÉS (PSM-ENTESA),C. Valenciana
+108,COMPROMIS,nacionalista,BLOC,C. Valenciana
+109,UPYD,centro,UNIÓN PROGRESO Y DEMOCRACIA,2007-2015
+110,UPYD,centro,UPyD,2007-2015
+111,PACMA,otros,PACMA,Animalista
+112,PRC,nacionalista,PARTIDO REGIONALISTA DE CANTABRIA,Cantabria
+113,PRC,nacionalista,PRC,Cantabria
+114,GEROA BAI,nacionalista,GEROA BAI,Navarra
+115,MÁS PAÍS,izquierda,MÁS PAÍS,2019
+116,MÁS PAÍS,izquierda,MAS PAIS,2019
+117,MÁS PAÍS,izquierda,MÁS MADRID,Más Madrid
+118,PAR,nacionalista,PARTIDO ARAGONÉS,Aragón
+119,PAR,nacionalista,PAR,Aragón
+120,CHA,nacionalista,CHUNTA ARAGONESISTA,Aragón
+121,CHA,nacionalista,CHA,Aragón
+122,FORO,nacionalista,FORO ASTURIAS,Asturias
+123,FORO,nacionalista,FAC,Asturias
+124,FORO,nacionalista,FORO,Asturias
+125,PI,nacionalista,PROPOSTA PER LES ILLES BALEARS,Baleares
+126,PI,nacionalista,PI,Baleares
+127,OTROS,otros,OTRO PARTIDO,Otros
+128,OTROS,otros,OTROS PARTIDOS,Otros
+129,OTROS,otros,OTROS,Otros
+130,OTROS,otros,OTROS PARTIDOS POLÍTICOS,Otros
+131,EN BLANCO,novoto,VOTO EN BLANCO,Voto en blanco
+132,EN BLANCO,novoto,VOTO BLANCO,Voto en blanco
+133,EN BLANCO,novoto,BLANCO,Voto en blanco
+134,EN BLANCO,novoto,EN BLANCO,Voto en blanco
+135,VOTO NULO,novoto,VOTO NULO,Voto nulo
+136,VOTO NULO,novoto,NULO,Voto nulo
+137,ABSTENCION,novoto,NO VOTARÁ,Abstención declarada
+138,ABSTENCION,novoto,NO VOTARA,Abstención declarada
+139,ABSTENCION,novoto,NO VOTARÍA,Abstención declarada
+140,ABSTENCION,novoto,NO VOTARIA,Abstención declarada
+141,ABSTENCION,novoto,ABSTENCIÓN,Abstención declarada
+142,ABSTENCION,novoto,ABSTENCION,Abstención declarada
+143,ABSTENCION,novoto,SE ABSTENDRÁ,Abstención declarada
+144,ABSTENCION,novoto,NO VOTÓ,Abstención declarada
+145,NO DECIDIDO,indeciso,NO LO TIENE DECIDIDO AÚN,No decidido
+146,NO DECIDIDO,indeciso,NO DECIDIDO,No decidido
+147,NO DECIDIDO,indeciso,DUDA,No decidido
+148,NO DECIDIDO,indeciso,INDECISO,No decidido
+149,NS,nsnc,N.S.,No sabe
+150,NS,nsnc,NO SABE,No sabe
+151,NS,nsnc,NS,No sabe
+152,NC,nsnc,N.C.,No contesta
+153,NC,nsnc,NO CONTESTA,No contesta

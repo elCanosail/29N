@@ -1,0 +1,45 @@
+[
+ {
+  "estudio": "3141",
+  "variable": "P7R",
+  "filas_comparadas": 13,
+  "max_delta": 0.05,
+  "discrepancias": [],
+  "publicado_no_reproducido": [],
+  "ok": true
+ },
+ {
+  "estudio": "3242",
+  "variable": "P10R",
+  "filas_comparadas": 19,
+  "max_delta": 0.14,
+  "discrepancias": [],
+  "publicado_no_reproducido": [],
+  "ok": true
+ },
+ {
+  "estudio": "3263",
+  "variable": "P9R",
+  "filas_comparadas": 25,
+  "max_delta": 0.04,
+  "discrepancias": [],
+  "publicado_no_reproducido": [],
+  "ok": true
+ },
+ {
+  "estudio": "3411",
+  "variable": "INTENCIONGR",
+  "filas_comparadas": 16,
+  "max_delta": 0.83,
+  "discrepancias": [
+   {
+    "partido": "OTROS",
+    "publicado": 1.7,
+    "microdatos": 0.87,
+    "delta": 0.83
+   }
+  ],
+  "publicado_no_reproducido": [],
+  "ok": false
+ }
+]

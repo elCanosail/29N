@@ -1,0 +1,14 @@
+# Dependencias del pipeline CIS (pipeline/cis/)
+#
+# El pipeline funciona SOLO con la biblioteca estándar de Python 3.11+
+# (urllib, zipfile, json, csv, re, subprocess). No requiere paquetes de terceros.
+#
+# Opcionales (no usados por defecto; el camino DA####+ES#### es universal):
+#   pyreadstat>=1.2      # lectura directa de los .sav SPSS si se prefiere
+#
+# Herramienta externa usada para la validación (no es un paquete Python):
+#   poppler-utils        # proporciona `pdftotext -layout` para extraer la
+#                        # tabla "Voto directo en la encuesta" de los PDF.
+#
+# Nota: NO editar ningún requirements.txt global del repositorio (otro agente
+# trabaja en paralelo). Este archivo es el único ámbito de dependencias del CIS.

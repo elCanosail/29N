@@ -1,0 +1,376 @@
+[
+ {
+  "estudio": "1135",
+  "fecha_trabajo": "01/06/1977",
+  "slug": "preelectoral-elecciones-generales-1977-iii-",
+  "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-1977-iii-",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 1977,
+  "n": 27260,
+  "suma_pesos": 27260.07,
+  "variable_voto": "P8R",
+  "n_partidos": 6,
+  "etiquetas_sin_mapear": [
+   "A quien le dijesen (su marido, alcalde, la TV, Suárez, etc.)",
+   "BNPG",
+   "Democràcia i Catalunya",
+   "FDC/EDC",
+   "No identificables",
+   "No procede",
+   "No quiere contestar",
+   "None",
+   "Otras candidaturas",
+   "PSP (Unidad socialista)"
+  ],
+  "candidatas": [
+   "P8R",
+   "P703R",
+   "P702R",
+   "P701R",
+   "P3R"
+  ]
+ },
+ {
+  "estudio": "1181",
+  "fecha_trabajo": "25/01/1979",
+  "slug": "preelectoral-elecciones-generales-1979-i-",
+  "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-1979-i-",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 1979,
+  "n": 25516,
+  "suma_pesos": 25515.94,
+  "variable_voto": "P2",
+  "n_partidos": 9,
+  "etiquetas_sin_mapear": [
+   "10 Consultar tarjeta A",
+   "11 Consultar tarjeta A",
+   "12 Consultar tarjeta A",
+   "13 Consultar tarjeta A",
+   "14 Consultar tarjeta A",
+   "15 Consultar tarjeta A",
+   "16 Consultar tarjeta A",
+   "17 Consultar tarjeta A",
+   "18 Consultar tarjeta A",
+   "19 Consultar tarjeta A",
+   "21 Consultar tarjeta A",
+   "22 Consultar tarjeta A",
+   "25 Consultar tarjeta A",
+   "CD",
+   "No va a votar",
+   "None",
+   "ORT",
+   "PTE",
+   "UN"
+  ],
+  "candidatas": [
+   "P2",
+   "P2R",
+   "P4R",
+   "P3R",
+   "P2BR"
+  ]
+ },
+ {
+  "estudio": "1183",
+  "fecha_trabajo": "01/02/1979",
+  "slug": "preelectoral-elecciones-generales-1979-ii-",
+  "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-1979-ii-",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 1979,
+  "n": 24395,
+  "suma_pesos": 24395.0,
+  "variable_voto": "P2_43TAR",
+  "n_partidos": 9,
+  "etiquetas_sin_mapear": [
+   "CD",
+   "Falange Española-Unidad Falangista",
+   "Izquierda Republicana",
+   "LCR",
+   "No procede",
+   "No va a votar",
+   "Organización Comunista de España (Bandera Roja)",
+   "Partit del Treball de Catalunya (PTE)"
+  ],
+  "candidatas": [
+   "P2_43TAR",
+   "P2_25LER",
+   "P2_17GER",
+   "P2_08BAR",
+   "P2R"
+  ]
+ },
+ {
+  "estudio": "1324",
+  "fecha_trabajo": "29/09/1982",
+  "slug": "preelectoral-elecciones-generales-1982-ii-",
+  "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-1982-ii-",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 1982,
+  "n": 24793,
+  "suma_pesos": 24793.0,
+  "variable_voto": "P8R",
+  "n_partidos": 9,
+  "etiquetas_sin_mapear": [
+   "CD",
+   "None"
+  ],
+  "candidatas": [
+   "P8R",
+   "P3",
+   "VOTOSIMG",
+   "P8",
+   "P4"
+  ]
+ },
+ {
+  "estudio": "1326",
+  "fecha_trabajo": "18/10/1982",
+  "slug": "preelectoral-elecciones-generales-1982-iii-",
+  "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-1982-iii-",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 1982,
+  "n": 24832,
+  "suma_pesos": 24832.0,
+  "variable_voto": "P8R",
+  "n_partidos": 9,
+  "etiquetas_sin_mapear": [
+   "CD",
+   "None"
+  ],
+  "candidatas": [
+   "P8R",
+   "P3",
+   "VOTOSIMG",
+   "P8",
+   "P4"
+  ]
+ },
+ {
+  "estudio": "1533",
+  "fecha_trabajo": "13/05/1986",
+  "slug": "preelectoral-elecciones-generales-en-galicia-1986",
+  "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-en-galicia-1986",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 1986,
+  "n": 1800,
+  "suma_pesos": 1799.88,
+  "variable_voto": "P22",
+  "n_partidos": 7,
+  "etiquetas_sin_mapear": [
+   "CG",
+   "None",
+   "PCG/PC"
+  ],
+  "candidatas": [
+   "P22",
+   "P22A",
+   "P19",
+   "P19B11",
+   "P19B10"
+  ]
+ },
+ {
+  "estudio": "1542",
+  "fecha_trabajo": "01/07/1986",
+  "slug": "postelectoral-elecciones-generales-1986-i-y-autonomicas-de-andalucia",
+  "url": "https://www.cis.es/es/estudios/postelectoral-elecciones-generales-1986-i-y-autonomicas-de-andalucia",
+  "tipo": "postelectoral",
+  "ambito": "Andalucía",
+  "eleccion": "generales",
+  "anio": 1986,
+  "n": 8286,
+  "suma_pesos": 8286.0,
+  "variable_voto": "P22R",
+  "n_partidos": 13,
+  "etiquetas_sin_mapear": [
+   "EE",
+   "No recuerda",
+   "None"
+  ],
+  "candidatas": [
+   "P22R",
+   "P55",
+   "P22",
+   "P44",
+   "P41"
+  ]
+ },
+ {
+  "estudio": "7789",
+  "fecha_trabajo": "05/09/1989",
+  "slug": "preelectoral-elecciones-generales-1989.-muestra-total",
+  "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-1989.-muestra-total",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 1989,
+  "n": 27421,
+  "suma_pesos": 27421.02,
+  "variable_voto": "P19",
+  "n_partidos": 16,
+  "etiquetas_sin_mapear": [
+   "AC-INC",
+   "AIC",
+   "CG",
+   "EA",
+   "EE",
+   "EU",
+   "None",
+   "PA",
+   "PRP",
+   "PSM",
+   "UM",
+   "UPV",
+   "UV"
+  ],
+  "candidatas": [
+   "P19",
+   "VOTOSIMG",
+   "P20",
+   "P19A",
+   "P27"
+  ]
+ },
+ {
+  "estudio": "1842",
+  "fecha_trabajo": "01/11/1989",
+  "slug": "postelectoral-elecciones-generales-1989",
+  "url": "https://www.cis.es/es/estudios/postelectoral-elecciones-generales-1989",
+  "tipo": "postelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 1989,
+  "n": 3084,
+  "suma_pesos": 3084.0,
+  "variable_voto": "P11",
+  "n_partidos": 10,
+  "etiquetas_sin_mapear": [
+   "No procede",
+   "None",
+   "PA (solo Andalucía)",
+   "UV (solo C. Valenciana)"
+  ],
+  "candidatas": [
+   "P11",
+   "P24",
+   "RECUERDO",
+   "P10A",
+   "P23"
+  ]
+ },
+ {
+  "estudio": "3141",
+  "fecha_trabajo": "04/05/2016",
+  "slug": "preelectoral-elecciones-generales-2016",
+  "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-2016",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2016,
+  "n": 17488,
+  "suma_pesos": 17487.99,
+  "variable_voto": "P7R",
+  "n_partidos": 14,
+  "etiquetas_sin_mapear": [
+   "CC"
+  ],
+  "candidatas": [
+   "P7",
+   "VOTOSIMG",
+   "P8",
+   "P7R",
+   "VOTOSIMGR"
+  ]
+ },
+ {
+  "estudio": "3242",
+  "fecha_trabajo": "01/03/2019",
+  "slug": "macrobarometro-de-marzo-2019.-preelectoral-elecciones-generales-2019",
+  "url": "https://www.cis.es/es/estudios/macrobarometro-de-marzo-2019.-preelectoral-elecciones-generales-2019",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2019,
+  "n": 16194,
+  "suma_pesos": 16193.95,
+  "variable_voto": "P10R",
+  "n_partidos": 19,
+  "etiquetas_sin_mapear": [],
+  "candidatas": [
+   "P10",
+   "P10R",
+   "VOTOSIMG",
+   "P9B02",
+   "P9B01"
+  ]
+ },
+ {
+  "estudio": "3263",
+  "fecha_trabajo": "01/10/2019",
+  "slug": "macrobarometro-de-octubre-2019.-preelectoral-elecciones-generales-2019",
+  "url": "https://www.cis.es/es/estudios/macrobarometro-de-octubre-2019.-preelectoral-elecciones-generales-2019",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2019,
+  "n": 17650,
+  "suma_pesos": 17650.0,
+  "variable_voto": "P9R",
+  "n_partidos": 25,
+  "etiquetas_sin_mapear": [
+   "Coalición por Melilla",
+   "MÉS Esquerra",
+   "Teruel Existe",
+   "UPL"
+  ],
+  "candidatas": [
+   "P9R",
+   "P9BR",
+   "P9",
+   "VOTOSIMG",
+   "P9B"
+  ]
+ },
+ {
+  "estudio": "3411",
+  "fecha_trabajo": "08/06/2023",
+  "slug": "preelectoral-elecciones-generales-2023",
+  "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-2023",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2023,
+  "n": 29201,
+  "suma_pesos": 29201.0,
+  "variable_voto": "INTENCIONGR",
+  "n_partidos": 21,
+  "etiquetas_sin_mapear": [
+   "Adelante",
+   "España Vaciada",
+   "Existe",
+   "Jaén Merece Más",
+   "Por Ávila",
+   "Soria Ya",
+   "UPL"
+  ],
+  "candidatas": [
+   "INTENCIONGR",
+   "INTENCIONGALTERR",
+   "INTENCIONGALTER",
+   "P9R",
+   "INTENCIONG"
+  ]
+ }
+]
