@@ -27,5 +27,8 @@ credentials*
 secrets*
 !credentials.example*
 
+# Vercel CLI (directorio de link del proyecto)
+.vercel/
+
 # Sistema
 .DS_Store
