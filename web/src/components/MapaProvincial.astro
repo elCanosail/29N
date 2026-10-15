@@ -92,8 +92,8 @@ const grupos = [...new Set(filas.map((p) => p.ganador))].sort();
 </figure>
 
 <style>
-  .mapa { margin: 0; }
-  .mapa__marco { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .mapa { margin: 0; min-width: 0; }
+  .mapa__marco { overflow-x: auto; min-width: 0; -webkit-overflow-scrolling: touch; }
   .mapa__rejilla {
     display: grid;
     grid-template-columns: repeat(11, minmax(0, 1fr));
