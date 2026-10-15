@@ -87,7 +87,7 @@ Web que expone el histórico completo de encuestas electorales españolas (CIS e
 
 ### Fase 5 — Web y publicación — CERRADA 15-10-2026
 - [x] Web conectada a datos reales (Fase 5 parte 1): sync-data.py reproducible (8 JSON), portada con bandas de intervalo, cartograma 52 provincias sin JS, 67 encuestas con ficha y filtros, timeline 16 elecciones, metodología con veredicto TimesFM vs baseline sin maquillar. Build exit 0, astro check 0 errores
-- [x] Deploy Vercel: **https://29n-eta.vercel.app** (proyecto elcanoapps/29n, framework astro fijado en vercel.json, token verificado en almacén de secretos). Smoke test: 200 en las 5 rutas del dominio correcto. NOTA: el dominio canónico 29n.vercel.app está ocupado por un proyecto ajeno (vercel.app es espacio global); si Chema quiere URL limpia, dominio propio o renombrar proyecto
+- [x] Deploy Vercel: **https://encuestas29n.vercel.app** (proyecto elcanoapps/encuestas29n, framework astro fijado en vercel.json, token verificado en almacén de secretos). Smoke test: 200 en las 5 rutas. Historial del dominio: 29n.vercel.app ocupado por proyecto ajeno (vercel.app es espacio global) → renombrado del proyecto y Chema eligió encuestas29n.vercel.app (15-10-2026); 29n-eta retirado
 - [~] Pendiente honrado: verificación visual en navegador (daltonismo, zoom 200%) y dominio propio si Chema quiere
 
 ### Fase 5 — Web y publicación (semanas 5-6)
