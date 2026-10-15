@@ -70,18 +70,22 @@ método.
 
 ---
 
-## No-features (por disciplina)
+## Selección de Chema (15-10-2026, 20:49)
 
-- Simulador de escenarios «¿qué pasaría si…?»: especulación, no predicción.
-- Predicciones diarias: ruido, y el modelo está pensado para la fecha.
-- Gamificación ni quizzes: diluyen la herramienta.
+**En construcción:**
 
-## Prioridad sugerida
+1. **Trazabilidad** — ya viva; se mantiene como contrato.
+2. **Explorador de microdatos CIS 1977–2025** — agregados precalculados por cruce
+   (provincia × edad × ideología × año) → JSON estático + UI de filtros sin servidor.
+3. **Simulador «¿qué pasaría si…?»** — con diseño honesto: sliders por partido
+   acotados al IC95 del backtest (el error propio del modelo), redistribución
+   proporcional sobre la base 23J y D'Hondt en cliente. Etiquetado como
+   exploratorio y dentro del error del modelo.
+4. **Cron diario de exploración de nuevas encuestas hasta el 29N** — ingesta
+   automática de nuevos estudios CIS (pipeline validado), detección de candidatas
+   privadas (electografica, imop; GAD3/Sigma Dos con anti-bot → candidatas para
+   curación manual), regeneración de datos y aviso en el chat.
 
-1. **Feature 3** (efectos de casa, página por encuestador) — la más
-   periodística y la más barata: los datos ya están calculados.
-2. **Feature 6** (página de descargas del corpus) — refuerza la marca y es
-   casi gratis.
-3. **Feature 4** (explorador de microdatos) — la más única y defensable;
-   requiere diseño de agregados.
-4. **Feature 5** (CSV de la proyección) — redondea el mapa.
+**Descartadas por ahora:** efectos de casa como página dedicada (los datos
+siguen en sesgo.json y metodología), CSV de proyección y corpus descargable
+como páginas dedicadas (el repo público ya cumple ese papel).
