@@ -196,6 +196,8 @@ No hay más de un primario visible por vista. Radio global: 4 px (nada pill, nad
 
 ### Layout por secciones
 
+**Regla general de jerarquía (Chema, 15-10-2026):** en la zona hero y la parte alta de cada página manda la información visual (gráficos, mapas, barras, tablas). Las explicaciones, aclaraciones y prosa bajan a la zona inferior. La cabecera de página se limita a eyebrow + titular + una sola línea de entrada; los párrafos largos de contexto, abajo.
+
 **Home — "el resultado, luego el desglose":**
 1. Cabecera: titular "29N, estimación de resultados" (Newsreader grande) + intro corta: proyección del resultado del 29N con intervalos; el desglose completo debajo y en secciones. Lenguaje de todo el sitio: estimación, proyección o predicción con intervalos — nunca "datos electorales" como propuesta de valor; el dato es el medio, la estimación es el producto.
 2. Bloque héroe 1 — **el resultado en escaños y porcentaje**: escaños estimados por partido (sumas del modelo provincial, 10.000 simulaciones D'Hondt) con su porcentaje de voto, y ficha de cada segmento al pasar el puntero (CSS puro, sin JavaScript). Intervalo al 95 % plegable debajo. Línea mono: "Objetivo 29N · método: media ponderada + swing proporcional · backtest MAE publicado".

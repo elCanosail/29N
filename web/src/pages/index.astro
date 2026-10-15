@@ -91,10 +91,7 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
     <h1 class="display medida entrada entrada--1">29N, estimación de resultados</h1>
 
     <p class="titular-intro medida entrada entrada--2">
-      Proyección del resultado de las elecciones del 29 de noviembre a partir de medio
-      siglo de encuestas (CIS y encuestadores privados) y de todos los escrutinios
-      oficiales desde 1977. Primero el resultado; debajo, el desglose: voto a voto,
-      provincia a provincia y el método al descubierto.
+      Proyección del resultado del 29N con intervalos. El desglose, debajo.
     </p>
 
     <p class="portada__una entrada entrada--3">
@@ -142,19 +139,7 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
       />
     </details>
 
-    <aside class="aviso-metodo" aria-labelledby="aviso-escanos-titulo">
-      <p class="eyebrow" id="aviso-escanos-titulo">Qué es esta estimación</p>
-      <p>
-        Es la proyección del modelo, ni encuesta ni sondeo de intención: cada simulación
-        reparte los 350 escaños con D'Hondt en las 52 provincias. Los intervalos reflejan
-        el error que el método cometió en las últimas cinco elecciones, publicado sin
-        maquillaje en la metodología.
-      </p>
-      <p class="nota">
-        <a href="/prediccion/">Desglose por provincia →</a>
-        <a href="/metodologia/#validacion">Ver el backtest completo →</a>
-      </p>
-    </aside>
+    
   </section>
 
   <!-- 2. Bloque héroe: estimación de voto estatal con intervalos ------------ -->
@@ -190,13 +175,7 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
       />
     </details>
 
-    <aside class="aviso-metodo" aria-labelledby="aviso-titulo">
-      <p class="eyebrow" id="aviso-titulo">Advertencia metodológica</p>
-      <p>{meta.advertencia}</p>
-      <p class="nota">
-        <a href="/metodologia/#validacion">Ver el backtest completo (MAE por partido y por elección) →</a>
-      </p>
-    </aside>
+    
   </section>
 
   <!-- 2b. De dónde viene el número: serie reciente -------------------------- -->
@@ -265,7 +244,34 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
   </section>
 
   <!-- 4. Banda de metodología: la firma de confianza ----------------------- -->
-  <section class="metodologia" aria-labelledby="metodologia-titulo">
+    <!-- Aclaraciones y método: la zona baja (regla de jerarquía) -------------- -->
+  <section class="aclaraciones" aria-labelledby="aclaraciones-titulo">
+    <div class="contenedor aclaraciones__inner">
+      <h2 class="visualmente-oculto" id="aclaraciones-titulo">Aclaraciones y método</h2>
+<aside class="aviso-metodo" aria-labelledby="aviso-escanos-titulo">
+      <p class="eyebrow" id="aviso-escanos-titulo">Qué es esta estimación</p>
+      <p>
+        Es la proyección del modelo, ni encuesta ni sondeo de intención: cada simulación
+        reparte los 350 escaños con D'Hondt en las 52 provincias. Los intervalos reflejan
+        el error que el método cometió en las últimas cinco elecciones, publicado sin
+        maquillaje en la metodología.
+      </p>
+      <p class="nota">
+        <a href="/prediccion/">Desglose por provincia →</a>
+        <a href="/metodologia/#validacion">Ver el backtest completo →</a>
+      </p>
+    </aside>
+<aside class="aviso-metodo" aria-labelledby="aviso-titulo">
+      <p class="eyebrow" id="aviso-titulo">Advertencia metodológica</p>
+      <p>{meta.advertencia}</p>
+      <p class="nota">
+        <a href="/metodologia/#validacion">Ver el backtest completo (MAE por partido y por elección) →</a>
+      </p>
+    </aside>
+    </div>
+  </section>
+
+<section class="metodologia" aria-labelledby="metodologia-titulo">
     <div class="contenedor metodologia__inner">
       <p class="eyebrow" id="metodologia-titulo">Compromisos metodológicos</p>
       <ol class="metodologia__lista">
@@ -281,6 +287,13 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
 </Base>
 
 <style>
+  .aclaraciones__inner {
+    display: grid;
+    gap: var(--s-4);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .aclaraciones__inner .aviso-metodo { margin: 0; }
+
   .portada { padding-block: var(--s-6) var(--s-5); }
   .portada__una {
     font-family: var(--f-titular);

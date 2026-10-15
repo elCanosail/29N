@@ -39,27 +39,12 @@ function filasProvincia(p: (typeof provincias)[number]) {
       <p class="eyebrow entrada">Predicción provincial · swing + D'Hondt</p>
       <h1 class="medida entrada entrada--1">Predicción 29N</h1>
       <p class="titular-intro entrada entrada--2">
-        Escaños por provincia sobre el escrutinio real de 23J, con el intervalo del
-        95 % de 10 000 simulaciones. El mapa es la recompensa, no el gancho: primero,
-        qué predecimos y qué no.
+        Escaños por provincia con el intervalo del 95 % de 10 000 simulaciones.
       </p>
     </header>
 
     <!-- El encabezado no vende: el mapa es la recompensa, no el gancho -->
-    <section class="limites" aria-labelledby="limites-titulo">
-      <h2 id="limites-titulo">Qué predecimos y qué no</h2>
-      <ul class="limites__lista">
-        {limites.map((l) => <li>{l}</li>)}
-      </ul>
-      <p class="nota">
-        Método: {meta.metodo} · base {meta.base_provincial} · {entero(meta.n_runs)} simulaciones
-        (semilla {meta.seed}). Coherencia verificada: la suma de medias de escaños es{' '}
-        <strong>{num(meta.coherencia?.suma_medias_escanos, 1)}</strong> y el agregado provincial
-        coincide con la predicción estatal con una desviación máxima de{' '}
-        <strong>{num(meta.coherencia?.max_desviacion_votos_pp, 3)} pp</strong>.
-        <a href="/metodologia/#modelo">Ver metodología →</a>
-      </p>
-    </section>
+    
 
     <!-- Predicción nacional de escaños, con banda -->
     <section class="seccion--compacta" aria-labelledby="nacional-titulo">
@@ -196,6 +181,21 @@ function filasProvincia(p: (typeof provincias)[number]) {
           público (<code>docs/notes/mrp.md</code>).
         </p>
       </aside>
+    </section>
+
+    <section class="limites" aria-labelledby="limites-titulo">
+      <h2 id="limites-titulo">Qué predecimos y qué no</h2>
+      <ul class="limites__lista">
+        {limites.map((l) => <li>{l}</li>)}
+      </ul>
+      <p class="nota">
+        Método: {meta.metodo} · base {meta.base_provincial} · {entero(meta.n_runs)} simulaciones
+        (semilla {meta.seed}). Coherencia verificada: la suma de medias de escaños es{' '}
+        <strong>{num(meta.coherencia?.suma_medias_escanos, 1)}</strong> y el agregado provincial
+        coincide con la predicción estatal con una desviación máxima de{' '}
+        <strong>{num(meta.coherencia?.max_desviacion_votos_pp, 3)} pp</strong>.
+        <a href="/metodologia/#modelo">Ver metodología →</a>
+      </p>
     </section>
   </div>
 </Base>
