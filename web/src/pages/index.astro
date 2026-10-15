@@ -3,10 +3,11 @@ import Base from '../layouts/Base.astro';
 import IntervalBand from '../components/IntervalBand.astro';
 import SerieLinea from '../components/SerieLinea.astro';
 import forecast from '../data/forecast.json';
+import seatsData from '../data/seats.json';
 import seriesData from '../data/series.json';
 import encuestasData from '../data/encuestas.json';
 import eleccionesData from '../data/elecciones.json';
-import { pct, num, entero, fechaLarga } from '../lib/format';
+import { num, entero, fechaLarga } from '../lib/format';
 import { colorPartido } from '../lib/partidos';
 
 const meta = forecast.meta;
@@ -21,6 +22,17 @@ const aFila = (p: (typeof forecast.partidos)[number]) => ({
 });
 const filasTop = top.map(aFila);
 const filasResto = resto.map(aFila);
+
+// El resultado en escaños: sumas del modelo provincial (10.000 simulaciones D'Hondt).
+const nacional = seatsData.nacional.map((p: {partido: string; media: number; ic95: number[]}) => ({
+  etiqueta: p.partido,
+  punto: p.media,
+  p10: p.ic95[0],
+  p90: p.ic95[1],
+  color: colorPartido(p.partido),
+}));
+const topNacional = nacional.slice(0, 4);
+const restoNacional = nacional.slice(4);
 
 // Serie reciente: últimos 36 meses, cuatro partidos grandes.
 const meses = seriesData.meses as string[];
@@ -52,32 +64,77 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
 <Base titulo="Portada">
   <!-- 1. Cabecera editorial: titular + la «una» del día -------------------- -->
   <section class="contenedor portada">
-    <p class="eyebrow entrada">Datos electorales de España · 1977–2026</p>
+    <p class="eyebrow entrada">Estimación de resultados · elecciones generales de España</p>
 
-    <h1 class="display medida entrada entrada--1">
-      Todo el dato electoral español,<br />con intervalos y no titulares.
-    </h1>
+    <h1 class="display medida entrada entrada--1">29N, estimación de resultados</h1>
 
     <p class="titular-intro medida entrada entrada--2">
-      Histórico de encuestas (CIS y encuestadores privados), resultados oficiales de
-      todas las generales desde 1977 y una predicción provincial auditable. El valor
-      es el método, no el resultado.
+      Proyección del resultado de las elecciones del 29 de noviembre a partir de medio
+      siglo de encuestas (CIS y encuestadores privados) y de todos los escrutinios
+      oficiales desde 1977. Primero el resultado; debajo, el desglose: voto a voto,
+      provincia a provincia y el método al descubierto.
     </p>
 
     <p class="portada__una entrada entrada--3">
       <a href="/prediccion/">
-        Predicción del 29N · <span class="mono">{fechaLarga('2026-11-29')}</span>:
-        PP {pct(filasTop[0].punto)} <span class="mono">({num(filasTop[0].p10)}–{num(filasTop[0].p90)})</span>,
-        PSOE {pct(filasTop[1].punto)} <span class="mono">({num(filasTop[1].p10)}–{num(filasTop[1].p90)})</span> →
+        El desglose completo: los 350 escaños provincia a provincia, con su intervalo
+        del 95 % <span class="mono">{fechaLarga('2026-11-29')}</span> →
       </a>
     </p>
   </section>
 
-  <!-- 2. Bloque héroe: predicción estatal con intervalos reales ------------- -->
+  <!-- 1b. Bloque héroe: el resultado en escaños ----------------------------- -->
+  <section class="contenedor seccion seccion--compacta" aria-labelledby="resultado-titulo">
+    <div class="heroe__cabecera">
+      <div>
+        <p class="eyebrow" id="resultado-titulo">El resultado · escaños estimados 29N · intervalo del 95 %</p>
+        <h2>350 escaños en juego, partido a partido</h2>
+      </div>
+      <p class="heroe__meta mono">
+        Objetivo {meta.mes_predicho} · 10.000 simulaciones D'Hondt provincia a provincia
+      </p>
+    </div>
+
+    <IntervalBand
+      filas={topNacional}
+      max={170}
+      unidad="escaños"
+      descripcion={`Estimación de escaños para el 29N: ${topNacional[0].etiqueta} ${num(topNacional[0].punto, 1)}, ${topNacional[1].etiqueta} ${num(topNacional[1].punto, 1)}, ${topNacional[2].etiqueta} ${num(topNacional[2].punto, 1)} y ${topNacional[3].etiqueta} ${num(topNacional[3].punto, 1)}, con su intervalo del 95 %.`}
+      pie={`Modelo: media ponderada de encuestas + swing proporcional provincial · 10.000 simulaciones con reparto D'Hondt por provincia · intervalo: percentiles 2,5–97,5 de la simulación`}
+      lectura={`La suma de las medias es exactamente 350 escaños. El intervalo de ${topNacional[3].etiqueta} (${num(topNacional[3].p10)}–${num(topNacional[3].p90)}) es el más ancho de los grandes porque su error en el backtest es el mayor del universo modelado: es honesto, no un defecto.`}
+    />
+
+    <details class="heroe__resto">
+      <summary>Ver los 13 partidos del universo modelado (con su intervalo)</summary>
+      <IntervalBand
+        filas={restoNacional}
+        max={170}
+        unidad="escaños"
+        descripcion="Estimación de escaños para el 29N del resto de partidos del universo modelado, con su intervalo del 95 %."
+        pie="Mismo método y misma simulación que el gráfico anterior."
+      />
+    </details>
+
+    <aside class="aviso-metodo" aria-labelledby="aviso-escanos-titulo">
+      <p class="eyebrow" id="aviso-escanos-titulo">Qué es esta estimación</p>
+      <p>
+        Es la proyección del modelo, ni encuesta ni sondeo de intención: cada simulación
+        reparte los 350 escaños con D'Hondt en las 52 provincias. Los intervalos reflejan
+        el error que el método cometió en las últimas cinco elecciones, publicado sin
+        maquillaje en la metodología.
+      </p>
+      <p class="nota">
+        <a href="/prediccion/">Desglose por provincia →</a>
+        <a href="/metodologia/#validacion">Ver el backtest completo →</a>
+      </p>
+    </aside>
+  </section>
+
+  <!-- 2. Bloque héroe: estimación de voto estatal con intervalos ------------ -->
   <section class="contenedor seccion seccion--compacta" aria-labelledby="heroe-titulo">
     <div class="heroe__cabecera">
       <div>
-        <p class="eyebrow" id="heroe-titulo">Predicción estatal 29N · intervalo del 80 %</p>
+        <p class="eyebrow" id="heroe-titulo">El detalle · estimación de voto estatal · intervalo del 80 %</p>
         <h2>Qué dicen las encuestas sobre el 29N</h2>
       </div>
       <p class="heroe__meta mono">
@@ -130,9 +187,10 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
     />
   </section>
 
-  <!-- 3. Tres entradas asimétricas (2/3 + 1/3, escalonadas) ---------------- -->
+  <!-- 3. El desglose: tres entradas asimétricas (2/3 + 1/3, escalonadas) --- -->
   <section class="contenedor seccion entradas" aria-labelledby="entradas-titulo">
-    <h2 class="visualmente-oculto" id="entradas-titulo">Secciones del proyecto</h2>
+    <p class="eyebrow" id="entradas-titulo">El desglose</p>
+    <h2 class="visualmente-oculto">Secciones del proyecto</h2>
 
     <a class="entrada-link entrada-link--a" href="/encuestas/">
       <p class="eyebrow">Explorador de encuestas</p>
@@ -167,7 +225,7 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
     </a>
 
     <a class="entrada-link entrada-link--c" href="/prediccion/">
-      <p class="eyebrow">Predicción provincial 29N</p>
+      <p class="eyebrow">Proyección provincial 29N</p>
       <h3>Qué predecimos y qué no</h3>
       <p class="entrada-link__texto">
         Escaños por provincia con su intervalo del 95 %, la suma cuadrada con la

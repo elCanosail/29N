@@ -188,11 +188,12 @@ No hay más de un primario visible por vista. Radio global: 4 px (nada pill, nad
 
 ### Layout por secciones
 
-**Home — "portada de gaceta":**
-1. Cabecera + titular Newsreader grande con la una editorial del día ("Última predicción: 12 de octubre. Los intervalos han cambiado así →") enlazada a la predicción.
-2. Bloque héroe de datos: la serie estatal de intención de voto con bandas de intervalo, a ancho completo del contenedor, con anotaciones en el lienzo. Debajo, una línea mono: "Modelo: TimesFM v2 · Backtest MAE: 3,1 pts · Última encuesta: CIS-3482".
-3. Tres entradas asimétricas (no grid de tarjetas): **Explorador de encuestas** (con contador mono de encuestas indexadas), **Resultados 1977–2023** (mini-sparkline real con etiqueta, no decorativa: enlaza a la elección), **Predicción provincial** (mapa en miniatura). Composición 2/3 + 1/3 con desplazamiento vertical escalonado.
-4. Banda de metodología: fondo `--papel-2`, borde superior 2 px `--tinta`, texto corto con los 5 compromisos metodológicos del README y enlace a la página completa. Es la firma de confianza del sitio: visible sin scroll excesivo.
+**Home — "el resultado, luego el desglose":**
+1. Cabecera: titular "29N, estimación de resultados" (Newsreader grande) + intro corta: proyección del resultado del 29N con intervalos; el desglose completo debajo y en secciones. Lenguaje de todo el sitio: estimación, proyección o predicción con intervalos — nunca "datos electorales" como propuesta de valor; el dato es el medio, la estimación es el producto.
+2. Bloque héroe 1 — **el resultado en escaños**: escaños estimados por partido (sumas del modelo provincial, 10.000 simulaciones D'Hondt), con su intervalo al 95 %, a ancho completo. Línea mono: "Objetivo 29N · método: media ponderada + swing proporcional · backtest MAE publicado".
+3. Bloque héroe 2 — el detalle en voto: estimación estatal de intención de voto con intervalo del 80 % (cuantiles del backtest) y, debajo, la serie ponderada que alimenta el modelo.
+4. Tres entradas asimétricas (no grid de tarjetas) — **el desglose**: **Explorador de encuestas** (contador mono de encuestas indexadas), **Resultados 1977–2023**, **Proyección provincial** (mapa en miniatura). Composición 2/3 + 1/3 con desplazamiento vertical escalonado.
+5. Banda de metodología: fondo `--papel-2`, borde superior 2 px `--tinta`, los 5 compromisos metodológicos y enlace a la página completa. Firma de confianza del sitio.
 
 **Explorador de encuestas:**
 - Layout de dos columnas: filtros a la izquierda (320 px, sticky) + tabla de resultados a la derecha.
