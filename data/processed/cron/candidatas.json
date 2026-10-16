@@ -10,5 +10,13 @@
  {
   "url": "https://www.imop.es/encuesta-de-imop-insights-para-vanitatis-sobre-el-estado-de-la-corona",
   "detectada": "2026-10-15"
+ },
+ {
+  "url": "https://www.imop.es/encuesta-electoral-andalucia",
+  "detectada": "2026-10-16"
+ },
+ {
+  "url": "https://www.imop.es/barometro-de-innovacion-financiera-bif",
+  "detectada": "2026-10-16"
  }
 ]
