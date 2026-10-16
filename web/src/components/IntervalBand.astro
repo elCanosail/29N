@@ -21,6 +21,8 @@ export interface FilaIntervalo {
   p90: number;
   /** claro oscuro opcional para la muestra de partido (--p-xx) */
   color?: string;
+  /** escaños estimados opcionales, para mostrarlos junto al valor */
+  escanos?: number;
 }
 
 interface Props {
@@ -50,6 +52,7 @@ const tope = max ?? Math.max(1, ...filas.map((f) => Math.max(f.p90, f.punto))) *
 const pos = (v: number) => Math.max(0, Math.min(100, (v / tope) * 100));
 const f = (v: number) => num(v, dec);
 const ticks = [0, 0.25, 0.5, 0.75, 1].map((t) => t * tope);
+const conEscanos = filas.some((x) => x.escanos !== undefined);
 ---
 
 <figure class="bandas">
@@ -76,6 +79,7 @@ const ticks = [0, 0.25, 0.5, 0.75, 1].map((t) => t * tope);
           <span class="fila__valor mono">
             {f(fila.punto)}<span class="fila__unidad"> {unidad}</span>
             <span class="fila__ic">({f(fila.p10)}–{f(fila.p90)})</span>
+            {fila.escanos !== undefined && <span class="fila__sec">· {num(fila.escanos, 1)} esc.</span>}
           </span>
         </div>
       ))}
@@ -99,7 +103,7 @@ const ticks = [0, 0.25, 0.5, 0.75, 1].map((t) => t * tope);
     {filas.length > 0 ? (
       <table class="tabla-datos">
         <thead>
-          <tr><th scope="col">Serie</th><th scope="col" class="der">Punto</th><th scope="col" class="der">Límite inf. (p10)</th><th scope="col" class="der">Límite sup. (p90)</th></tr>
+          <tr><th scope="col">Serie</th><th scope="col" class="der">Punto</th><th scope="col" class="der">Límite inf. (p10)</th><th scope="col" class="der">Límite sup. (p90)</th>{conEscanos && <th scope="col" class="der">Escanos est.</th>}</tr>
         </thead>
         <tbody>
           {filas.map((fila) => (
@@ -108,6 +112,7 @@ const ticks = [0, 0.25, 0.5, 0.75, 1].map((t) => t * tope);
               <td class="mono der">{f(fila.punto)} {unidad}</td>
               <td class="mono der">{f(fila.p10)} {unidad}</td>
               <td class="mono der">{f(fila.p90)} {unidad}</td>
+              {conEscanos && <td class="mono der">{fila.escanos !== undefined ? num(fila.escanos, 1) : '—'}</td>}
             </tr>
           ))}
         </tbody>
@@ -190,6 +195,7 @@ const ticks = [0, 0.25, 0.5, 0.75, 1].map((t) => t * tope);
   .fila__valor { font-size: var(--t-data); text-align: right; white-space: nowrap; }
   .fila__unidad { color: var(--tinta-2); }
   .fila__ic { color: var(--tinta-2); margin-left: var(--s-2); }
+  .fila__sec { color: var(--tinta-3); margin-left: var(--s-2); }
 
   .bandas__esqueleto { display: grid; gap: var(--s-3); padding: var(--s-5) 0; }
   .bandas__esqueleto .skeleton { height: 12px; }

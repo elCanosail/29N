@@ -17,12 +17,18 @@ const top = forecast.partidos.slice(0, 4);
 // Cuenta atrás al día de la votación (2026-11-29); el cliente la recalcula al cargar.
 const diasRestantes = Math.max(0, Math.ceil((Date.parse('2026-11-29T00:00:00Z') - Date.now()) / 86400000));
 const resto = forecast.partidos.slice(4);
+// Escaños estimados por partido (del modelo provincial), para pintarlos junto
+// al voto en las bandas de la sección «Qué dicen las encuestas».
+const escanosPorPartido = Object.fromEntries(
+  seatsData.nacional.map((p: {partido: string; media: number}) => [p.partido, p.media]),
+);
 const aFila = (p: (typeof forecast.partidos)[number]) => ({
   etiqueta: p.partido,
   punto: p.punto,
   p10: p.p10,
   p90: p.p90,
   color: colorPartido(p.partido),
+  escanos: escanosPorPartido[p.partido] as number | undefined,
 });
 const filasTop = top.map(aFila);
 const filasResto = resto.map(aFila);
@@ -144,7 +150,7 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
       filas={filasTop}
       max={45}
       unidad="%"
-      descripcion={`Predicción estatal 29N: los cuatro primeros partidos con su intervalo del 80 %. PP ${num(filasTop[0].punto)} por ciento, PSOE ${num(filasTop[1].punto)}, VOX ${num(filasTop[2].punto)}, Sumar ${num(filasTop[3].punto)}.`}
+      descripcion={`Predicción estatal 29N: los cuatro primeros partidos con su intervalo del 80 % y su estimación de escaños. PP ${num(filasTop[0].punto)} por ciento, PSOE ${num(filasTop[1].punto)}, VOX ${num(filasTop[2].punto)}, Sumar ${num(filasTop[3].punto)}. Escaños estimados: PP ${num(filasTop[0].escanos ?? 0)}, PSOE ${num(filasTop[1].escanos ?? 0)}, VOX ${num(filasTop[2].escanos ?? 0)}, Sumar ${num(filasTop[3].escanos ?? 0)}.`}
       pie={`Método: ${meta.metodo_primario === 'baseline' ? 'media ponderada de encuestas (baseline)' : meta.metodo_primario} · Backtest MAE: ${num(meta.backtest_mae?.baseline, 3)} pp (n = ${meta.backtest_mae?.n}) · Intervalos empíricos, no probabilidad de resultado`}
       lectura={`La línea marca el punto y la banda el intervalo del 80 % (cuantiles 0,1–0,9 de los errores del backtest). El intervalo de Sumar (±${num((filasTop[3].p90 - filasTop[3].p10) / 2, 1)} pp) es ancho porque su familia arrastra el descalabro de Podemos en 2015–2019: es honesto, no un defecto.`}
     />
