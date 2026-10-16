@@ -26,13 +26,21 @@ import os
 import re
 import sys
 import urllib.request
+from urllib.parse import urljoin
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"}
 LIMITE = datetime.date(2026, 11, 29)
 CATALOGO_URL = ("https://www.cis.es/es/estudios/catalogo?catalogo=estudio"
                 "&sort=createDateBDE-&t=0&delta=200&start=0")
-LISTINGS = ["https://www.electografica.com/", "https://www.imop.es/"]
+# imop.es: la home y la sección de noticias — fue donde se publicó la
+# pre-electoral para El Confidencial que el cron se saltó (16-10-2026).
+LISTINGS = ["https://www.electografica.com/", "https://www.imop.es/",
+            "https://www.imop.es/noticias/"]
+# Un slug CIS es electoral (interesa al modelo) solo si nombra generales,
+# europeas o legislativas: excluye barómetros, temáticos y autonómicas o
+# municipales, que no alimentan la predicción del 29N.
+PATRON_ELECTORAL = re.compile(r"generales|europeas|parlamento-europeo|legislativas", re.I)
 
 
 def informe(msg):
@@ -59,8 +67,10 @@ def explora_privados(conocidas):
         except Exception as exc:
             informe(f"- ⚠ {url}: error de acceso ({exc})")
             continue
-        for m in re.finditer(r'href="(https?://[^"]+)"', html):
-            u = m.group(1).rstrip("/")
+        for m in re.finditer(r'href="([^"]+)"', html):
+            u = urljoin(url, m.group(1)).rstrip("/")
+            if not u.startswith("http"):
+                continue
             bajo = u.lower()
             if any(p in bajo for p in ("encuesta", "sondeo", "barometro", "barómetro")) \
                     and u not in conocidas and u not in candidatas:
@@ -102,7 +112,10 @@ def explora_cis():
     if os.path.exists(cat):
         for e in json.load(open(cat, encoding="utf-8")):
             conocidos.add((e.get("slug") or "").rstrip("/"))
-    return sorted(slugs - conocidos - {""})
+    nuevos = sorted(slugs - conocidos - {""})
+    # Solo los plausiblemente electorales interesan al modelo; el resto
+    # (barómetros, temáticos, autonómicas) se cuenta y se descarta.
+    return [s for s in nuevos if PATRON_ELECTORAL.search(s)], len(nuevos)
 
 
 def main():
@@ -130,18 +143,21 @@ def main():
     informe("")
 
     try:
-        nuevos_cis = explora_cis()
+        nuevos_cis, total_cis = explora_cis()
     except Exception as exc:
         informe(f"- ⚠ CIS: comprobación con navegador fallida "
                 f"({type(exc).__name__}: {exc})")
         nuevos_cis = None
+        total_cis = 0
     if nuevos_cis:
-        informe(f"- 🏛️ {len(nuevos_cis)} estudios CIS nuevos detectados en la primera "
-                "página del catálogo (pendientes de catalogar e ingesta):")
+        informe(f"- 🏛️ {len(nuevos_cis)} estudios CIS nuevos plausiblemente electorales "
+                f"(de {total_cis} nuevos en la primera página; el resto son "
+                "barómetros, temáticos o autonómicas, sin interés para el 29N):")
         for s in nuevos_cis[:10]:
             informe(f"  - {s}")
     elif nuevos_cis is not None:
-        informe("- 🏛️ Sin estudios CIS nuevos en la primera página del catálogo.")
+        informe(f"- 🏛️ Sin estudios CIS nuevos electorales en la primera página "
+                f"({total_cis} nuevos no electorales descartados).")
     informe("")
     informe("_Exploración v1 (detección). La ingesta con curación se hace con el "
             "pipeline validado — regla de la ficha técnica._")
