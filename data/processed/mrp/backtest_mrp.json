@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-15",
+ "generado": "2026-10-16",
  "metrica": "MAE provincial en % sobre voto válido, normalizado al universo (13 partidos modelados + Ciudadanos), 52 provincias",
  "universo": [
   "PP",
@@ -28,6 +28,99 @@
    ],
    "filas_entrenamiento": 17403,
    "filas_entrenamiento_anclado": 17403,
+   "jerarquico": {
+    "tau": 1.0,
+    "tau2": 1.0,
+    "criterio_laplace_max": -32338.628,
+    "rejilla": [
+     {
+      "tau": 0.05,
+      "tau2": 0.0025000000000000005,
+      "criterio_laplace": -34035.961,
+      "loss_penalizada": 34019.919,
+      "converged": true
+     },
+     {
+      "tau": 0.1,
+      "tau2": 0.010000000000000002,
+      "criterio_laplace": -33672.121,
+      "loss_penalizada": 33618.657,
+      "converged": true
+     },
+     {
+      "tau": 0.15,
+      "tau2": 0.0225,
+      "criterio_laplace": -33357.106,
+      "loss_penalizada": 33257.895,
+      "converged": true
+     },
+     {
+      "tau": 0.2,
+      "tau2": 0.04000000000000001,
+      "criterio_laplace": -33111.505,
+      "loss_penalizada": 32964.611,
+      "converged": true
+     },
+     {
+      "tau": 0.3,
+      "tau2": 0.09,
+      "criterio_laplace": -32782.389,
+      "loss_penalizada": 32544.406,
+      "converged": true
+     },
+     {
+      "tau": 0.4,
+      "tau2": 0.16000000000000003,
+      "criterio_laplace": -32587.12,
+      "loss_penalizada": 32268.103,
+      "converged": true
+     },
+     {
+      "tau": 0.5,
+      "tau2": 0.25,
+      "criterio_laplace": -32476.635,
+      "loss_penalizada": 32086.889,
+      "converged": true
+     },
+     {
+      "tau": 0.7,
+      "tau2": 0.48999999999999994,
+      "criterio_laplace": -32368.24,
+      "loss_penalizada": 31860.944,
+      "converged": true
+     },
+     {
+      "tau": 1.0,
+      "tau2": 1.0,
+      "criterio_laplace": -32338.628,
+      "loss_penalizada": 31695.825,
+      "converged": true
+     },
+     {
+      "tau": 1.5,
+      "tau2": 2.25,
+      "criterio_laplace": -32383.012,
+      "loss_penalizada": 31575.568,
+      "converged": true
+     }
+    ],
+    "clases": [
+     "PP",
+     "PSOE",
+     "SUMAR",
+     "ERC",
+     "JXCAT",
+     "PNV",
+     "EH BILDU",
+     "BNG",
+     "CIUDADANOS",
+     "NO_DECIDIDO",
+     "ABSTENCION",
+     "BLANCO",
+     "OTROS",
+     "NULO"
+    ]
+   },
    "censo_periodo": 2021,
    "cobertura_muestras_pp": 61.63,
    "nacional_real": {
@@ -185,6 +278,27 @@
        "CIUDADANOS": 2.1681
       }
      },
+     "mrp_jerarquico": {
+      "mae_global": 1.1009,
+      "mae_partidos_ge1": 1.9839,
+      "mae_ponderado_votos": 1.042,
+      "mae_por_partido": {
+       "PP": 4.3675,
+       "PSOE": 3.0878,
+       "VOX": 0.1686,
+       "SUMAR": 3.2763,
+       "ERC": 0.3701,
+       "JXCAT": 0.413,
+       "PNV": 0.3626,
+       "EH BILDU": 0.222,
+       "BNG": 0.0,
+       "CUP": 0.0,
+       "CC": 0.3294,
+       "NA+": 0.0,
+       "PACMA": 0.8053,
+       "CIUDADANOS": 2.0097
+      }
+     },
      "_mejor_swing": 1.685,
      "_veredicto_global": "MRP gana",
      "_veredicto_big": "MRP gana"
@@ -295,6 +409,27 @@
        "CIUDADANOS": 5.054
       }
      },
+     "mrp_jerarquico": {
+      "mae_global": 1.3416,
+      "mae_partidos_ge1": 2.417,
+      "mae_ponderado_votos": 1.3608,
+      "mae_por_partido": {
+       "PP": 4.4619,
+       "PSOE": 3.167,
+       "VOX": 0.1686,
+       "SUMAR": 3.5054,
+       "ERC": 0.3506,
+       "JXCAT": 0.3982,
+       "PNV": 0.3454,
+       "EH BILDU": 0.3746,
+       "BNG": 0.1857,
+       "CUP": 0.0,
+       "CC": 0.3294,
+       "NA+": 0.0,
+       "PACMA": 0.8053,
+       "CIUDADANOS": 4.6903
+      }
+     },
      "_mejor_swing": 2.0494,
      "_veredicto_global": "MRP gana",
      "_veredicto_big": "MRP gana"
@@ -309,6 +444,99 @@
    ],
    "filas_entrenamiento": 34864,
    "filas_entrenamiento_anclado": 34864,
+   "jerarquico": {
+    "tau": 1.0,
+    "tau2": 1.0,
+    "criterio_laplace_max": -64957.008,
+    "rejilla": [
+     {
+      "tau": 0.05,
+      "tau2": 0.0025000000000000005,
+      "criterio_laplace": -68372.449,
+      "loss_penalizada": 68342.403,
+      "converged": true
+     },
+     {
+      "tau": 0.1,
+      "tau2": 0.010000000000000002,
+      "criterio_laplace": -67423.072,
+      "loss_penalizada": 67331.64,
+      "converged": true
+     },
+     {
+      "tau": 0.15,
+      "tau2": 0.0225,
+      "criterio_laplace": -66710.658,
+      "loss_penalizada": 66551.99,
+      "converged": true
+     },
+     {
+      "tau": 0.2,
+      "tau2": 0.04000000000000001,
+      "criterio_laplace": -66218.41,
+      "loss_penalizada": 65995.096,
+      "converged": true
+     },
+     {
+      "tau": 0.3,
+      "tau2": 0.09,
+      "criterio_laplace": -65630.798,
+      "loss_penalizada": 65293.711,
+      "converged": true
+     },
+     {
+      "tau": 0.4,
+      "tau2": 0.16000000000000003,
+      "criterio_laplace": -65321.735,
+      "loss_penalizada": 64889.945,
+      "converged": true
+     },
+     {
+      "tau": 0.5,
+      "tau2": 0.25,
+      "criterio_laplace": -65155.784,
+      "loss_penalizada": 64644.047,
+      "converged": true
+     },
+     {
+      "tau": 0.7,
+      "tau2": 0.48999999999999994,
+      "criterio_laplace": -65010.511,
+      "loss_penalizada": 64370.412,
+      "converged": true
+     },
+     {
+      "tau": 1.0,
+      "tau2": 1.0,
+      "criterio_laplace": -64957.008,
+      "loss_penalizada": 64170.512,
+      "converged": true
+     },
+     {
+      "tau": 1.5,
+      "tau2": 2.25,
+      "criterio_laplace": -65013.963,
+      "loss_penalizada": 64051.451,
+      "converged": true
+     }
+    ],
+    "clases": [
+     "PP",
+     "PSOE",
+     "SUMAR",
+     "ERC",
+     "JXCAT",
+     "PNV",
+     "EH BILDU",
+     "BNG",
+     "CIUDADANOS",
+     "NO_DECIDIDO",
+     "ABSTENCION",
+     "BLANCO",
+     "OTROS",
+     "NULO"
+    ]
+   },
    "censo_periodo": 2021,
    "cobertura_muestras_pp": 61.966,
    "nacional_real": {
@@ -466,6 +694,27 @@
        "CIUDADANOS": 1.6568
       }
      },
+     "mrp_jerarquico": {
+      "mae_global": 0.9339,
+      "mae_partidos_ge1": 1.5242,
+      "mae_ponderado_votos": 0.8836,
+      "mae_por_partido": {
+       "PP": 3.6694,
+       "PSOE": 3.1047,
+       "VOX": 0.1609,
+       "SUMAR": 2.1042,
+       "ERC": 0.3132,
+       "JXCAT": 0.197,
+       "PNV": 0.2741,
+       "EH BILDU": 0.2173,
+       "BNG": 0.187,
+       "CUP": 0.0,
+       "CC": 0.3156,
+       "NA+": 0.0,
+       "PACMA": 1.0292,
+       "CIUDADANOS": 1.502
+      }
+     },
      "_mejor_swing": 0.2795,
      "_veredicto_global": "swing gana",
      "_veredicto_big": "swing gana"
@@ -576,6 +825,27 @@
        "CIUDADANOS": 3.6809
       }
      },
+     "mrp_jerarquico": {
+      "mae_global": 1.3652,
+      "mae_partidos_ge1": 2.2573,
+      "mae_ponderado_votos": 1.5093,
+      "mae_por_partido": {
+       "PP": 6.287,
+       "PSOE": 2.9763,
+       "VOX": 0.1609,
+       "SUMAR": 3.5964,
+       "ERC": 0.2962,
+       "JXCAT": 0.2819,
+       "PNV": 0.2621,
+       "EH BILDU": 0.3786,
+       "BNG": 0.1988,
+       "CUP": 0.0,
+       "CC": 0.3156,
+       "NA+": 0.0,
+       "PACMA": 1.0292,
+       "CIUDADANOS": 3.3294
+      }
+     },
      "_mejor_swing": 1.346,
      "_veredicto_global": "swing gana",
      "_veredicto_big": "swing gana"
@@ -590,6 +860,103 @@
    ],
    "filas_entrenamiento": 51151,
    "filas_entrenamiento_anclado": 50910,
+   "jerarquico": {
+    "tau": 1.5,
+    "tau2": 2.25,
+    "criterio_laplace_max": -96752.486,
+    "rejilla": [
+     {
+      "tau": 0.05,
+      "tau2": 0.0025000000000000005,
+      "criterio_laplace": -102635.795,
+      "loss_penalizada": 102595.665,
+      "converged": true
+     },
+     {
+      "tau": 0.1,
+      "tau2": 0.010000000000000002,
+      "criterio_laplace": -100946.794,
+      "loss_penalizada": 100830.039,
+      "converged": true
+     },
+     {
+      "tau": 0.15,
+      "tau2": 0.0225,
+      "criterio_laplace": -99775.771,
+      "loss_penalizada": 99578.698,
+      "converged": true
+     },
+     {
+      "tau": 0.2,
+      "tau2": 0.04000000000000001,
+      "criterio_laplace": -98983.442,
+      "loss_penalizada": 98710.604,
+      "converged": true
+     },
+     {
+      "tau": 0.3,
+      "tau2": 0.09,
+      "criterio_laplace": -98051.311,
+      "loss_penalizada": 97645.637,
+      "converged": true
+     },
+     {
+      "tau": 0.4,
+      "tau2": 0.16000000000000003,
+      "criterio_laplace": -97542.09,
+      "loss_penalizada": 97025.016,
+      "converged": true
+     },
+     {
+      "tau": 0.5,
+      "tau2": 0.25,
+      "criterio_laplace": -97238.487,
+      "loss_penalizada": 96626.806,
+      "converged": true
+     },
+     {
+      "tau": 0.7,
+      "tau2": 0.48999999999999994,
+      "criterio_laplace": -96942.25,
+      "loss_penalizada": 96174.894,
+      "converged": true
+     },
+     {
+      "tau": 1.0,
+      "tau2": 1.0,
+      "criterio_laplace": -96817.273,
+      "loss_penalizada": 95872.988,
+      "converged": true
+     },
+     {
+      "tau": 1.5,
+      "tau2": 2.25,
+      "criterio_laplace": -96752.486,
+      "loss_penalizada": 95594.36,
+      "converged": true
+     }
+    ],
+    "clases": [
+     "PP",
+     "PSOE",
+     "VOX",
+     "SUMAR",
+     "ERC",
+     "JXCAT",
+     "PNV",
+     "EH BILDU",
+     "BNG",
+     "CUP",
+     "CC",
+     "PACMA",
+     "CIUDADANOS",
+     "NO_DECIDIDO",
+     "BLANCO",
+     "ABSTENCION",
+     "NULO",
+     "OTROS"
+    ]
+   },
    "censo_periodo": 2021,
    "cobertura_muestras_pp": 55.179,
    "nacional_real": {
@@ -747,6 +1114,27 @@
        "CIUDADANOS": 2.3433
       }
      },
+     "mrp_jerarquico": {
+      "mae_global": 1.1214,
+      "mae_partidos_ge1": 1.4651,
+      "mae_ponderado_votos": 0.9116,
+      "mae_por_partido": {
+       "PP": 2.5622,
+       "PSOE": 3.9719,
+       "VOX": 2.4291,
+       "SUMAR": 2.4144,
+       "ERC": 0.3152,
+       "JXCAT": 0.2081,
+       "PNV": 0.1977,
+       "EH BILDU": 0.1249,
+       "BNG": 0.1476,
+       "CUP": 0.0,
+       "CC": 0.2899,
+       "NA+": 0.6115,
+       "PACMA": 0.4676,
+       "CIUDADANOS": 1.9599
+      }
+     },
      "_mejor_swing": 1.0767,
      "_veredicto_global": "swing gana",
      "_veredicto_big": "swing gana"
@@ -857,6 +1245,27 @@
        "CIUDADANOS": 4.3472
       }
      },
+     "mrp_jerarquico": {
+      "mae_global": 2.3276,
+      "mae_partidos_ge1": 3.1204,
+      "mae_ponderado_votos": 2.1459,
+      "mae_por_partido": {
+       "PP": 8.4737,
+       "PSOE": 4.8863,
+       "VOX": 7.8132,
+       "SUMAR": 3.3912,
+       "ERC": 0.2896,
+       "JXCAT": 0.4693,
+       "PNV": 0.2735,
+       "EH BILDU": 0.4417,
+       "BNG": 0.1538,
+       "CUP": 0.1512,
+       "CC": 0.4658,
+       "NA+": 0.6115,
+       "PACMA": 0.4483,
+       "CIUDADANOS": 4.7168
+      }
+     },
      "_mejor_swing": 2.1875,
      "_veredicto_global": "swing gana",
      "_veredicto_big": "swing gana"
@@ -871,6 +1280,104 @@
    ],
    "filas_entrenamiento": 51279,
    "filas_entrenamiento_anclado": 51038,
+   "jerarquico": {
+    "tau": 1.5,
+    "tau2": 2.25,
+    "criterio_laplace_max": -94830.165,
+    "rejilla": [
+     {
+      "tau": 0.05,
+      "tau2": 0.0025000000000000005,
+      "criterio_laplace": -101371.899,
+      "loss_penalizada": 101331.643,
+      "converged": true
+     },
+     {
+      "tau": 0.1,
+      "tau2": 0.010000000000000002,
+      "criterio_laplace": -99466.196,
+      "loss_penalizada": 99348.516,
+      "converged": true
+     },
+     {
+      "tau": 0.15,
+      "tau2": 0.0225,
+      "criterio_laplace": -98116.705,
+      "loss_penalizada": 97917.095,
+      "converged": true
+     },
+     {
+      "tau": 0.2,
+      "tau2": 0.04000000000000001,
+      "criterio_laplace": -97233.452,
+      "loss_penalizada": 96956.526,
+      "converged": true
+     },
+     {
+      "tau": 0.3,
+      "tau2": 0.09,
+      "criterio_laplace": -96177.537,
+      "loss_penalizada": 95765.082,
+      "converged": true
+     },
+     {
+      "tau": 0.4,
+      "tau2": 0.16000000000000003,
+      "criterio_laplace": -95648.325,
+      "loss_penalizada": 95122.157,
+      "converged": true
+     },
+     {
+      "tau": 0.5,
+      "tau2": 0.25,
+      "criterio_laplace": -95309.396,
+      "loss_penalizada": 94687.936,
+      "converged": true
+     },
+     {
+      "tau": 0.7,
+      "tau2": 0.48999999999999994,
+      "criterio_laplace": -94994.741,
+      "loss_penalizada": 94216.963,
+      "converged": true
+     },
+     {
+      "tau": 1.0,
+      "tau2": 1.0,
+      "criterio_laplace": -94843.82,
+      "loss_penalizada": 93887.691,
+      "converged": true
+     },
+     {
+      "tau": 1.5,
+      "tau2": 2.25,
+      "criterio_laplace": -94830.165,
+      "loss_penalizada": 93658.646,
+      "converged": true
+     }
+    ],
+    "clases": [
+     "PP",
+     "PSOE",
+     "VOX",
+     "SUMAR",
+     "ERC",
+     "JXCAT",
+     "PNV",
+     "EH BILDU",
+     "BNG",
+     "CUP",
+     "CC",
+     "NA+",
+     "PACMA",
+     "CIUDADANOS",
+     "NO_DECIDIDO",
+     "ABSTENCION",
+     "NULO",
+     "OTROS",
+     "BLANCO"
+    ]
+   },
    "censo_periodo": 2021,
    "cobertura_muestras_pp": 51.37,
    "nacional_real": {
@@ -1028,6 +1535,27 @@
        "CIUDADANOS": 1.4455
       }
      },
+     "mrp_jerarquico": {
+      "mae_global": 1.0658,
+      "mae_partidos_ge1": 1.3934,
+      "mae_ponderado_votos": 0.8551,
+      "mae_por_partido": {
+       "PP": 3.4257,
+       "PSOE": 3.552,
+       "VOX": 2.3152,
+       "SUMAR": 2.1785,
+       "ERC": 0.3404,
+       "JXCAT": 0.2092,
+       "PNV": 0.2532,
+       "EH BILDU": 0.3791,
+       "BNG": 0.1904,
+       "CUP": 0.1912,
+       "CC": 0.3603,
+       "NA+": 0.1019,
+       "PACMA": 0.335,
+       "CIUDADANOS": 1.089
+      }
+     },
      "_mejor_swing": 0.475,
      "_veredicto_global": "swing gana",
      "_veredicto_big": "swing gana"
@@ -1138,6 +1666,27 @@
        "CIUDADANOS": 3.2049
       }
      },
+     "mrp_jerarquico": {
+      "mae_global": 2.2521,
+      "mae_partidos_ge1": 3.0035,
+      "mae_ponderado_votos": 2.2339,
+      "mae_por_partido": {
+       "PP": 3.6677,
+       "PSOE": 8.9547,
+       "VOX": 10.12,
+       "SUMAR": 2.252,
+       "ERC": 0.4938,
+       "JXCAT": 0.662,
+       "PNV": 0.2874,
+       "EH BILDU": 0.5523,
+       "BNG": 0.1849,
+       "CUP": 0.3207,
+       "CC": 0.3465,
+       "NA+": 0.4412,
+       "PACMA": 0.5224,
+       "CIUDADANOS": 2.7242
+      }
+     },
      "_mejor_swing": 2.0276,
      "_veredicto_global": "swing gana",
      "_veredicto_big": "swing gana"
@@ -1157,6 +1706,104 @@
    ],
    "filas_entrenamiento": 85043,
    "filas_entrenamiento_anclado": 80523,
+   "jerarquico": {
+    "tau": 1.5,
+    "tau2": 2.25,
+    "criterio_laplace_max": -174372.67,
+    "rejilla": [
+     {
+      "tau": 0.05,
+      "tau2": 0.0025000000000000005,
+      "criterio_laplace": -182321.56,
+      "loss_penalizada": 182258.629,
+      "converged": true
+     },
+     {
+      "tau": 0.1,
+      "tau2": 0.010000000000000002,
+      "criterio_laplace": -180115.86,
+      "loss_penalizada": 179945.789,
+      "converged": true
+     },
+     {
+      "tau": 0.15,
+      "tau2": 0.0225,
+      "criterio_laplace": -178460.127,
+      "loss_penalizada": 178185.656,
+      "converged": true
+     },
+     {
+      "tau": 0.2,
+      "tau2": 0.04000000000000001,
+      "criterio_laplace": -177299.11,
+      "loss_penalizada": 176931.297,
+      "converged": true
+     },
+     {
+      "tau": 0.3,
+      "tau2": 0.09,
+      "criterio_laplace": -175982.56,
+      "loss_penalizada": 175458.759,
+      "converged": true
+     },
+     {
+      "tau": 0.4,
+      "tau2": 0.16000000000000003,
+      "criterio_laplace": -175284.811,
+      "loss_penalizada": 174635.637,
+      "converged": true
+     },
+     {
+      "tau": 0.5,
+      "tau2": 0.25,
+      "criterio_laplace": -174918.877,
+      "loss_penalizada": 174167.552,
+      "converged": true
+     },
+     {
+      "tau": 0.7,
+      "tau2": 0.48999999999999994,
+      "criterio_laplace": -174559.198,
+      "loss_penalizada": 173640.725,
+      "converged": true
+     },
+     {
+      "tau": 1.0,
+      "tau2": 1.0,
+      "criterio_laplace": -174403.407,
+      "loss_penalizada": 173297.992,
+      "converged": true
+     },
+     {
+      "tau": 1.5,
+      "tau2": 2.25,
+      "criterio_laplace": -174372.67,
+      "loss_penalizada": 173048.748,
+      "converged": true
+     }
+    ],
+    "clases": [
+     "PP",
+     "PSOE",
+     "VOX",
+     "SUMAR",
+     "ERC",
+     "JXCAT",
+     "PNV",
+     "EH BILDU",
+     "BNG",
+     "CUP",
+     "CC",
+     "NA+",
+     "PACMA",
+     "CIUDADANOS",
+     "NO_DECIDIDO",
+     "OTROS",
+     "NULO",
+     "BLANCO",
+     "ABSTENCION"
+    ]
+   },
    "censo_periodo": 2023,
    "cobertura_muestras_pp": 61.896,
    "nacional_real": {
@@ -1314,6 +1961,27 @@
        "CIUDADANOS": 0.0
       }
      },
+     "mrp_jerarquico": {
+      "mae_global": 0.9277,
+      "mae_partidos_ge1": 1.5556,
+      "mae_ponderado_votos": 0.7308,
+      "mae_por_partido": {
+       "PP": 4.7186,
+       "PSOE": 3.2486,
+       "VOX": 1.6995,
+       "SUMAR": 2.2378,
+       "ERC": 0.1225,
+       "JXCAT": 0.1653,
+       "PNV": 0.0856,
+       "EH BILDU": 0.1668,
+       "BNG": 0.0442,
+       "CUP": 0.0326,
+       "CC": 0.1759,
+       "NA+": 0.0215,
+       "PACMA": 0.2696,
+       "CIUDADANOS": 0.0
+      }
+     },
      "_mejor_swing": 0.6477,
      "_veredicto_global": "swing gana",
      "_veredicto_big": "swing gana"
@@ -1424,6 +2092,27 @@
        "CIUDADANOS": 0.766
       }
      },
+     "mrp_jerarquico": {
+      "mae_global": 1.6262,
+      "mae_partidos_ge1": 2.6166,
+      "mae_ponderado_votos": 1.4495,
+      "mae_por_partido": {
+       "PP": 6.63,
+       "PSOE": 3.0858,
+       "VOX": 1.7229,
+       "SUMAR": 8.1253,
+       "ERC": 0.1037,
+       "JXCAT": 0.4886,
+       "PNV": 0.2811,
+       "EH BILDU": 0.4954,
+       "BNG": 0.3887,
+       "CUP": 0.1308,
+       "CC": 0.1786,
+       "NA+": 0.0498,
+       "PACMA": 0.2719,
+       "CIUDADANOS": 0.8146
+      }
+     },
      "_mejor_swing": 1.3242,
      "_veredicto_global": "swing gana",
      "_veredicto_big": "swing gana"
@@ -1453,6 +2142,17 @@
     1.6384
    ],
    "mae_partidos_ge1_medio": 2.6643
+  },
+  "A_objetivo_nacional_real|mrp_jerarquico": {
+   "mae_global_medio": 1.0299,
+   "mae_global_por_eleccion": [
+    1.1009,
+    0.9339,
+    1.1214,
+    1.0658,
+    0.9277
+   ],
+   "mae_partidos_ge1_medio": 1.5844
   },
   "A_objetivo_nacional_real|mrp_anclado": {
    "mae_global_medio": 0.8641,
@@ -1519,6 +2219,17 @@
    ],
    "mae_partidos_ge1_medio": 2.6643
   },
+  "B_objetivo_nacional_encuestas|mrp_jerarquico": {
+   "mae_global_medio": 1.7825,
+   "mae_global_por_eleccion": [
+    1.3416,
+    1.3652,
+    2.3276,
+    2.2521,
+    1.6262
+   ],
+   "mae_partidos_ge1_medio": 2.683
+  },
   "B_objetivo_nacional_encuestas|mrp_anclado": {
    "mae_global_medio": 1.7163,
    "mae_global_por_eleccion": [
@@ -1582,5 +2293,5 @@
   "mrp_especificado_gana": false,
   "mejor_variante_mrp_gana": false
  },
- "segundos_totales": 37.3
+ "segundos_totales": 380.6
 }

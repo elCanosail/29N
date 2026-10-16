@@ -39,6 +39,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import mrp_core as M  # noqa: E402
+import mrp_hier as H  # noqa: E402
 
 OUT = M.MRP / "backtest_mrp.json"
 
@@ -123,6 +124,22 @@ def main() -> int:
             print(f"  [aviso] anclado no ajustable: {exc}")
             mrp_anch, anch_rows = None, 0
 
+        # Variante multinivel (jerárquica): provincia como efecto aleatorio con
+        # varianza τ² estimada por evidencia (Laplace). Ver pipeline/mrp/mrp_hier.py.
+        try:
+            mh, logh = H.fit_mrp_hier(u, universe)
+            P_h = H.predict_cells_hier(mh, censo)
+            mrp_hier_raw = H.poststratify_hier(P_h, censo, mh.classes, universe)
+            hier_info = {"tau": logh["tau_seleccionado"],
+                         "tau2": logh["tau2_seleccionado"],
+                         "criterio_laplace_max": round(logh["criterio_laplace_max"], 3),
+                         "rejilla": logh["grid"],
+                         "clases": logh["clases"]}
+            print(f"  [jerárquico] τ seleccionado = {logh['tau_seleccionado']:.2f}")
+        except Exception as exc:  # noqa: BLE001
+            print(f"  [aviso] jerárquico no ajustable: {exc}")
+            mrp_hier_raw, hier_info = None, {"error": str(exc)}
+
         # --- Referencias reales -------------------------------------------------
         real = inter.provincial_shares(eid, universe)
         real_nat = inter.national_shares(eid, universe)
@@ -141,6 +158,7 @@ def main() -> int:
             "estudios_entrenamiento": studies,
             "filas_entrenamiento": n_rows,
             "filas_entrenamiento_anclado": anch_rows,
+            "jerarquico": hier_info,
             "censo_periodo": cp,
             "cobertura_muestras_pp": round(float(sum(wtot.values()) /
                                                   u["peso"].sum() * 100), 3),
@@ -173,6 +191,9 @@ def main() -> int:
             if mrp_anch is not None:
                 anch_cal, _, _, _ = M.calibrate(mrp_anch, target, w, universe)
                 methods["mrp_anclado"] = anch_cal
+            if mrp_hier_raw is not None:
+                hier_cal, _, _, _ = M.calibrate(mrp_hier_raw, target, w, universe)
+                methods["mrp_jerarquico"] = hier_cal
             t = {}
             for mname, pred in methods.items():
                 a = mae(pred, real, universe, provs)
@@ -192,6 +213,7 @@ def main() -> int:
                                    else "swing gana")
             res["tests"][tname] = t
             print(f"  [{tname}] MAE global  MRP {t['mrp']['mae_global']:.3f} | "
+                  f"MRP_jer {t.get('mrp_jerarquico',{}).get('mae_global', float('nan')):.3f} | "
                   f"MRP_anc {t.get('mrp_anclado',{}).get('mae_global', float('nan')):.3f} | "
                   f"swing {t['swing']['mae_global']:.3f} | swing_fix {t['swing_fix']['mae_global']:.3f}"
                   f"  -> {t['_veredicto_global']}")
@@ -202,7 +224,7 @@ def main() -> int:
     # --- Agregados --------------------------------------------------------------
     agg = {}
     for tname in ("A_objetivo_nacional_real", "B_objetivo_nacional_encuestas"):
-        for mname in ("mrp", "mrp_crudo", "mrp_anclado", "swing", "swing_fix"):
+        for mname in ("mrp", "mrp_crudo", "mrp_jerarquico", "mrp_anclado", "swing", "swing_fix"):
             if any(mname not in report["elecciones"][e]["tests"][tname]
                    for e in report["elecciones"]):
                 continue

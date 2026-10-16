@@ -30,6 +30,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import mrp_core as M  # noqa: E402
+import mrp_hier as H  # noqa: E402
 
 CUT = "2026-11-29"
 WINDOW_DAYS = 1095
@@ -68,6 +69,22 @@ def main() -> int:
                                                   M.MODELED_PARTIES)
     nat_cal = {p: round(float(sum(w[c] * cal[c][p] for c in cal)), 3)
                for p in M.MODELED_PARTIES}
+
+    # --- Variante multinivel (jerárquica) del 29N, para contraste ------------
+    mh, logh = H.fit_mrp_hier(u, M.MODELED_PARTIES)
+    Ph = H.predict_cells_hier(mh, censo)
+    raw_h = H.poststratify_hier(Ph, censo, mh.classes, M.MODELED_PARTIES)
+    cal_h, ratios_h, it_h, dev_h = M.calibrate(raw_h, target, w, M.MODELED_PARTIES)
+    nat_raw_h = {p: round(float(sum(w[c] * raw_h[c][p] for c in raw_h)), 3)
+                 for p in M.MODELED_PARTIES}
+    nat_cal_h = {p: round(float(sum(w[c] * cal_h[c][p] for c in cal_h)), 3)
+                 for p in M.MODELED_PARTIES}
+    provincias_h = {
+        str(c): {"nombre": names.get(c, str(c)), "escanos": escanos.get(c),
+                 "partidos": {p: {"crudo": round(raw_h[c][p], 3),
+                                   "calibrado": round(cal_h[c][p], 3)}
+                              for p in M.MODELED_PARTIES}}
+        for c in sorted(raw_h)}
 
     # Celdas de post-estratificación (provincia × sexo × edad × estudios)
     cols = ["provincia", "sexo", "edad_grupo", "edu_grupo", "poblacion"] + M.MODELED_PARTIES
@@ -123,6 +140,20 @@ def main() -> int:
             "iteraciones": cal_iters,
             "desviacion_max_pp": round(cal_dev, 4),
             "ratios": {p: round(ratios[p], 4) for p in M.MODELED_PARTIES},
+        },
+        "variante_jerarquica": {
+            "metodo": "multinivel: demografía (fija) + provincia (efecto aleatorio, "
+                      "τ² por evidencia Laplace)",
+            "tau_seleccionado": logh["tau_seleccionado"],
+            "tau2_seleccionado": logh["tau2_seleccionado"],
+            "nacional": {"crudo": nat_raw_h, "calibrado": nat_cal_h,
+                         "forecast_objetivo": {p: round(target[p], 3)
+                                               for p in M.MODELED_PARTIES}},
+            "calibracion": {"iteraciones": it_h, "desviacion_max_pp": round(dev_h, 4)},
+            "provincias": provincias_h,
+            "nota": "No adoptada: en el backtest provincial queda al mismo nivel "
+                    "que la variante de efectos fijos y por detrás del swing; "
+                    "ver docs/notes/mrp-estado.md.",
         },
         "provincias": provincias,
         "celdas_poststrat": {"columnas": cols, "filas": filas},

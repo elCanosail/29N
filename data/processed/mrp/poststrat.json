@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-15",
+  "generado": "2026-10-16",
   "objetivo": "29N 2026-11-29",
   "metodo": "MRP pragmático: logits multinomiales (demo × provincia) + post-estratificación censal INE 66600",
   "adoptado": false,
@@ -99,6 +99,3081 @@
    "NA+": 53.7267,
    "PACMA": 1.3962
   }
+ },
+ "variante_jerarquica": {
+  "metodo": "multinivel: demografía (fija) + provincia (efecto aleatorio, τ² por evidencia Laplace)",
+  "tau_seleccionado": 1.0,
+  "tau2_seleccionado": 1.0,
+  "nacional": {
+   "crudo": {
+    "PP": 28.834,
+    "PSOE": 38.913,
+    "VOX": 11.488,
+    "SUMAR": 13.47,
+    "ERC": 1.531,
+    "JXCAT": 2.253,
+    "PNV": 0.78,
+    "EH BILDU": 1.198,
+    "BNG": 1.043,
+    "CUP": 0.028,
+    "CC": 0.157,
+    "NA+": 0.009,
+    "PACMA": 0.297
+   },
+   "calibrado": {
+    "PP": 35.395,
+    "PSOE": 29.149,
+    "VOX": 20.594,
+    "SUMAR": 7.106,
+    "ERC": 1.73,
+    "JXCAT": 1.517,
+    "PNV": 1.037,
+    "EH BILDU": 1.589,
+    "BNG": 0.77,
+    "CUP": 0.272,
+    "CC": 0.163,
+    "NA+": 0.267,
+    "PACMA": 0.412
+   },
+   "forecast_objetivo": {
+    "PP": 35.406,
+    "PSOE": 29.146,
+    "VOX": 20.595,
+    "SUMAR": 7.104,
+    "ERC": 1.724,
+    "JXCAT": 1.511,
+    "PNV": 1.039,
+    "EH BILDU": 1.591,
+    "BNG": 0.77,
+    "CUP": 0.272,
+    "CC": 0.163,
+    "NA+": 0.267,
+    "PACMA": 0.412
+   }
+  },
+  "calibracion": {
+   "iteraciones": 3,
+   "desviacion_max_pp": 0.011
+  },
+  "provincias": {
+   "1": {
+    "nombre": "Araba/Álava",
+    "escanos": 4,
+    "partidos": {
+     "PP": {
+      "crudo": 9.958,
+      "calibrado": 13.243
+     },
+     "PSOE": {
+      "crudo": 51.824,
+      "calibrado": 41.209
+     },
+     "VOX": {
+      "crudo": 4.682,
+      "calibrado": 9.091
+     },
+     "SUMAR": {
+      "crudo": 13.949,
+      "calibrado": 7.747
+     },
+     "ERC": {
+      "crudo": 0.401,
+      "calibrado": 0.43
+     },
+     "JXCAT": {
+      "crudo": 0.41,
+      "calibrado": 0.262
+     },
+     "PNV": {
+      "crudo": 8.998,
+      "calibrado": 13.072
+     },
+     "EH BILDU": {
+      "crudo": 8.943,
+      "calibrado": 13.043
+     },
+     "BNG": {
+      "crudo": 0.386,
+      "calibrado": 0.294
+     },
+     "CUP": {
+      "crudo": 0.044,
+      "calibrado": 0.429
+     },
+     "CC": {
+      "crudo": 0.081,
+      "calibrado": 0.092
+     },
+     "NA+": {
+      "crudo": 0.019,
+      "calibrado": 0.638
+     },
+     "PACMA": {
+      "crudo": 0.307,
+      "calibrado": 0.451
+     }
+    }
+   },
+   "2": {
+    "nombre": "Albacete",
+    "escanos": 4,
+    "partidos": {
+     "PP": {
+      "crudo": 28.639,
+      "calibrado": 34.175
+     },
+     "PSOE": {
+      "crudo": 44.536,
+      "calibrado": 31.777
+     },
+     "VOX": {
+      "crudo": 15.704,
+      "calibrado": 27.363
+     },
+     "SUMAR": {
+      "crudo": 9.602,
+      "calibrado": 4.785
+     },
+     "ERC": {
+      "crudo": 0.262,
+      "calibrado": 0.252
+     },
+     "JXCAT": {
+      "crudo": 0.258,
+      "calibrado": 0.148
+     },
+     "PNV": {
+      "crudo": 0.192,
+      "calibrado": 0.25
+     },
+     "EH BILDU": {
+      "crudo": 0.278,
+      "calibrado": 0.363
+     },
+     "BNG": {
+      "crudo": 0.259,
+      "calibrado": 0.177
+     },
+     "CUP": {
+      "crudo": 0.02,
+      "calibrado": 0.179
+     },
+     "CC": {
+      "crudo": 0.059,
+      "calibrado": 0.06
+     },
+     "NA+": {
+      "crudo": 0.008,
+      "calibrado": 0.228
+     },
+     "PACMA": {
+      "crudo": 0.184,
+      "calibrado": 0.243
+     }
+    }
+   },
+   "3": {
+    "nombre": "Alicante/Alacant",
+    "escanos": 12,
+    "partidos": {
+     "PP": {
+      "crudo": 32.526,
+      "calibrado": 40.978
+     },
+     "PSOE": {
+      "crudo": 38.349,
+      "calibrado": 28.889
+     },
+     "VOX": {
+      "crudo": 10.745,
+      "calibrado": 19.766
+     },
+     "SUMAR": {
+      "crudo": 17.499,
+      "calibrado": 9.207
+     },
+     "ERC": {
+      "crudo": 0.121,
+      "calibrado": 0.123
+     },
+     "JXCAT": {
+      "crudo": 0.197,
+      "calibrado": 0.119
+     },
+     "PNV": {
+      "crudo": 0.094,
+      "calibrado": 0.129
+     },
+     "EH BILDU": {
+      "crudo": 0.148,
+      "calibrado": 0.205
+     },
+     "BNG": {
+      "crudo": 0.119,
+      "calibrado": 0.086
+     },
+     "CUP": {
+      "crudo": 0.011,
+      "calibrado": 0.104
+     },
+     "CC": {
+      "crudo": 0.03,
+      "calibrado": 0.032
+     },
+     "NA+": {
+      "crudo": 0.005,
+      "calibrado": 0.143
+     },
+     "PACMA": {
+      "crudo": 0.157,
+      "calibrado": 0.219
+     }
+    }
+   },
+   "4": {
+    "nombre": "Almería",
+    "escanos": 6,
+    "partidos": {
+     "PP": {
+      "crudo": 40.548,
+      "calibrado": 46.96
+     },
+     "PSOE": {
+      "crudo": 38.31,
+      "calibrado": 26.529
+     },
+     "VOX": {
+      "crudo": 12.586,
+      "calibrado": 21.284
+     },
+     "SUMAR": {
+      "crudo": 7.147,
+      "calibrado": 3.457
+     },
+     "ERC": {
+      "crudo": 0.218,
+      "calibrado": 0.204
+     },
+     "JXCAT": {
+      "crudo": 0.247,
+      "calibrado": 0.138
+     },
+     "PNV": {
+      "crudo": 0.175,
+      "calibrado": 0.221
+     },
+     "EH BILDU": {
+      "crudo": 0.247,
+      "calibrado": 0.314
+     },
+     "BNG": {
+      "crudo": 0.238,
+      "calibrado": 0.158
+     },
+     "CUP": {
+      "crudo": 0.021,
+      "calibrado": 0.182
+     },
+     "CC": {
+      "crudo": 0.066,
+      "calibrado": 0.065
+     },
+     "NA+": {
+      "crudo": 0.009,
+      "calibrado": 0.246
+     },
+     "PACMA": {
+      "crudo": 0.188,
+      "calibrado": 0.241
+     }
+    }
+   },
+   "5": {
+    "nombre": "Ávila",
+    "escanos": 3,
+    "partidos": {
+     "PP": {
+      "crudo": 41.008,
+      "calibrado": 42.041
+     },
+     "PSOE": {
+      "crudo": 21.949,
+      "calibrado": 13.455
+     },
+     "VOX": {
+      "crudo": 25.802,
+      "calibrado": 38.626
+     },
+     "SUMAR": {
+      "crudo": 9.551,
+      "calibrado": 4.089
+     },
+     "ERC": {
+      "crudo": 0.286,
+      "calibrado": 0.237
+     },
+     "JXCAT": {
+      "crudo": 0.307,
+      "calibrado": 0.151
+     },
+     "PNV": {
+      "crudo": 0.219,
+      "calibrado": 0.245
+     },
+     "EH BILDU": {
+      "crudo": 0.309,
+      "calibrado": 0.347
+     },
+     "BNG": {
+      "crudo": 0.274,
+      "calibrado": 0.161
+     },
+     "CUP": {
+      "crudo": 0.023,
+      "calibrado": 0.176
+     },
+     "CC": {
+      "crudo": 0.061,
+      "calibrado": 0.054
+     },
+     "NA+": {
+      "crudo": 0.007,
+      "calibrado": 0.187
+     },
+     "PACMA": {
+      "crudo": 0.205,
+      "calibrado": 0.232
+     }
+    }
+   },
+   "6": {
+    "nombre": "Badajoz",
+    "escanos": 5,
+    "partidos": {
+     "PP": {
+      "crudo": 32.425,
+      "calibrado": 37.809
+     },
+     "PSOE": {
+      "crudo": 44.425,
+      "calibrado": 30.974
+     },
+     "VOX": {
+      "crudo": 15.74,
+      "calibrado": 26.8
+     },
+     "SUMAR": {
+      "crudo": 6.317,
+      "calibrado": 3.076
+     },
+     "ERC": {
+      "crudo": 0.185,
+      "calibrado": 0.174
+     },
+     "JXCAT": {
+      "crudo": 0.182,
+      "calibrado": 0.102
+     },
+     "PNV": {
+      "crudo": 0.134,
+      "calibrado": 0.171
+     },
+     "EH BILDU": {
+      "crudo": 0.204,
+      "calibrado": 0.261
+     },
+     "BNG": {
+      "crudo": 0.188,
+      "calibrado": 0.126
+     },
+     "CUP": {
+      "crudo": 0.014,
+      "calibrado": 0.124
+     },
+     "CC": {
+      "crudo": 0.037,
+      "calibrado": 0.037
+     },
+     "NA+": {
+      "crudo": 0.006,
+      "calibrado": 0.161
+     },
+     "PACMA": {
+      "crudo": 0.143,
+      "calibrado": 0.184
+     }
+    }
+   },
+   "7": {
+    "nombre": "Balears, Illes",
+    "escanos": 8,
+    "partidos": {
+     "PP": {
+      "crudo": 31.276,
+      "calibrado": 38.203
+     },
+     "PSOE": {
+      "crudo": 42.284,
+      "calibrado": 30.883
+     },
+     "VOX": {
+      "crudo": 12.67,
+      "calibrado": 22.598
+     },
+     "SUMAR": {
+      "crudo": 11.752,
+      "calibrado": 5.995
+     },
+     "ERC": {
+      "crudo": 0.352,
+      "calibrado": 0.347
+     },
+     "JXCAT": {
+      "crudo": 0.64,
+      "calibrado": 0.376
+     },
+     "PNV": {
+      "crudo": 0.141,
+      "calibrado": 0.189
+     },
+     "EH BILDU": {
+      "crudo": 0.298,
+      "calibrado": 0.399
+     },
+     "BNG": {
+      "crudo": 0.202,
+      "calibrado": 0.142
+     },
+     "CUP": {
+      "crudo": 0.018,
+      "calibrado": 0.166
+     },
+     "CC": {
+      "crudo": 0.047,
+      "calibrado": 0.049
+     },
+     "NA+": {
+      "crudo": 0.008,
+      "calibrado": 0.234
+     },
+     "PACMA": {
+      "crudo": 0.311,
+      "calibrado": 0.419
+     }
+    }
+   },
+   "8": {
+    "nombre": "Barcelona",
+    "escanos": 32,
+    "partidos": {
+     "PP": {
+      "crudo": 11.041,
+      "calibrado": 15.994
+     },
+     "PSOE": {
+      "crudo": 38.885,
+      "calibrado": 33.68
+     },
+     "VOX": {
+      "crudo": 7.558,
+      "calibrado": 15.988
+     },
+     "SUMAR": {
+      "crudo": 18.009,
+      "calibrado": 10.894
+     },
+     "ERC": {
+      "crudo": 10.036,
+      "calibrado": 11.72
+     },
+     "JXCAT": {
+      "crudo": 13.666,
+      "calibrado": 9.509
+     },
+     "PNV": {
+      "crudo": 0.111,
+      "calibrado": 0.176
+     },
+     "EH BILDU": {
+      "crudo": 0.117,
+      "calibrado": 0.186
+     },
+     "BNG": {
+      "crudo": 0.098,
+      "calibrado": 0.081
+     },
+     "CUP": {
+      "crudo": 0.085,
+      "calibrado": 0.906
+     },
+     "CC": {
+      "crudo": 0.026,
+      "calibrado": 0.032
+     },
+     "NA+": {
+      "crudo": 0.007,
+      "calibrado": 0.257
+     },
+     "PACMA": {
+      "crudo": 0.361,
+      "calibrado": 0.578
+     }
+    }
+   },
+   "9": {
+    "nombre": "Burgos",
+    "escanos": 4,
+    "partidos": {
+     "PP": {
+      "crudo": 33.892,
+      "calibrado": 44.564
+     },
+     "PSOE": {
+      "crudo": 41.387,
+      "calibrado": 32.539
+     },
+     "VOX": {
+      "crudo": 5.632,
+      "calibrado": 10.814
+     },
+     "SUMAR": {
+      "crudo": 17.301,
+      "calibrado": 9.5
+     },
+     "ERC": {
+      "crudo": 0.288,
+      "calibrado": 0.305
+     },
+     "JXCAT": {
+      "crudo": 0.336,
+      "calibrado": 0.212
+     },
+     "PNV": {
+      "crudo": 0.233,
+      "calibrado": 0.334
+     },
+     "EH BILDU": {
+      "crudo": 0.325,
+      "calibrado": 0.468
+     },
+     "BNG": {
+      "crudo": 0.289,
+      "calibrado": 0.218
+     },
+     "CUP": {
+      "crudo": 0.03,
+      "calibrado": 0.295
+     },
+     "CC": {
+      "crudo": 0.064,
+      "calibrado": 0.072
+     },
+     "NA+": {
+      "crudo": 0.011,
+      "calibrado": 0.37
+     },
+     "PACMA": {
+      "crudo": 0.212,
+      "calibrado": 0.308
+     }
+    }
+   },
+   "10": {
+    "nombre": "Cáceres",
+    "escanos": 4,
+    "partidos": {
+     "PP": {
+      "crudo": 33.144,
+      "calibrado": 39.418
+     },
+     "PSOE": {
+      "crudo": 43.372,
+      "calibrado": 30.843
+     },
+     "VOX": {
+      "crudo": 13.801,
+      "calibrado": 23.967
+     },
+     "SUMAR": {
+      "crudo": 8.406,
+      "calibrado": 4.175
+     },
+     "ERC": {
+      "crudo": 0.217,
+      "calibrado": 0.208
+     },
+     "JXCAT": {
+      "crudo": 0.221,
+      "calibrado": 0.126
+     },
+     "PNV": {
+      "crudo": 0.162,
+      "calibrado": 0.211
+     },
+     "EH BILDU": {
+      "crudo": 0.232,
+      "calibrado": 0.303
+     },
+     "BNG": {
+      "crudo": 0.215,
+      "calibrado": 0.147
+     },
+     "CUP": {
+      "crudo": 0.018,
+      "calibrado": 0.161
+     },
+     "CC": {
+      "crudo": 0.05,
+      "calibrado": 0.051
+     },
+     "NA+": {
+      "crudo": 0.006,
+      "calibrado": 0.187
+     },
+     "PACMA": {
+      "crudo": 0.155,
+      "calibrado": 0.203
+     }
+    }
+   },
+   "11": {
+    "nombre": "Cádiz",
+    "escanos": 9,
+    "partidos": {
+     "PP": {
+      "crudo": 28.589,
+      "calibrado": 34.293
+     },
+     "PSOE": {
+      "crudo": 40.381,
+      "calibrado": 28.963
+     },
+     "VOX": {
+      "crudo": 16.171,
+      "calibrado": 28.325
+     },
+     "SUMAR": {
+      "crudo": 13.686,
+      "calibrado": 6.856
+     },
+     "ERC": {
+      "crudo": 0.144,
+      "calibrado": 0.139
+     },
+     "JXCAT": {
+      "crudo": 0.149,
+      "calibrado": 0.086
+     },
+     "PNV": {
+      "crudo": 0.117,
+      "calibrado": 0.153
+     },
+     "EH BILDU": {
+      "crudo": 0.17,
+      "calibrado": 0.224
+     },
+     "BNG": {
+      "crudo": 0.152,
+      "calibrado": 0.104
+     },
+     "CUP": {
+      "crudo": 0.014,
+      "calibrado": 0.125
+     },
+     "CC": {
+      "crudo": 0.033,
+      "calibrado": 0.034
+     },
+     "NA+": {
+      "crudo": 0.006,
+      "calibrado": 0.184
+     },
+     "PACMA": {
+      "crudo": 0.387,
+      "calibrado": 0.513
+     }
+    }
+   },
+   "12": {
+    "nombre": "Castellón/Castelló",
+    "escanos": 5,
+    "partidos": {
+     "PP": {
+      "crudo": 37.296,
+      "calibrado": 48.042
+     },
+     "PSOE": {
+      "crudo": 36.776,
+      "calibrado": 28.326
+     },
+     "VOX": {
+      "crudo": 6.436,
+      "calibrado": 12.105
+     },
+     "SUMAR": {
+      "crudo": 18.25,
+      "calibrado": 9.817
+     },
+     "ERC": {
+      "crudo": 0.235,
+      "calibrado": 0.244
+     },
+     "JXCAT": {
+      "crudo": 0.184,
+      "calibrado": 0.114
+     },
+     "PNV": {
+      "crudo": 0.137,
+      "calibrado": 0.193
+     },
+     "EH BILDU": {
+      "crudo": 0.201,
+      "calibrado": 0.284
+     },
+     "BNG": {
+      "crudo": 0.19,
+      "calibrado": 0.14
+     },
+     "CUP": {
+      "crudo": 0.016,
+      "calibrado": 0.152
+     },
+     "CC": {
+      "crudo": 0.036,
+      "calibrado": 0.04
+     },
+     "NA+": {
+      "crudo": 0.006,
+      "calibrado": 0.204
+     },
+     "PACMA": {
+      "crudo": 0.238,
+      "calibrado": 0.338
+     }
+    }
+   },
+   "13": {
+    "nombre": "Ciudad Real",
+    "escanos": 5,
+    "partidos": {
+     "PP": {
+      "crudo": 30.427,
+      "calibrado": 35.043
+     },
+     "PSOE": {
+      "crudo": 44.081,
+      "calibrado": 30.356
+     },
+     "VOX": {
+      "crudo": 17.955,
+      "calibrado": 30.195
+     },
+     "SUMAR": {
+      "crudo": 6.459,
+      "calibrado": 3.107
+     },
+     "ERC": {
+      "crudo": 0.182,
+      "calibrado": 0.169
+     },
+     "JXCAT": {
+      "crudo": 0.177,
+      "calibrado": 0.098
+     },
+     "PNV": {
+      "crudo": 0.134,
+      "calibrado": 0.168
+     },
+     "EH BILDU": {
+      "crudo": 0.199,
+      "calibrado": 0.251
+     },
+     "BNG": {
+      "crudo": 0.182,
+      "calibrado": 0.12
+     },
+     "CUP": {
+      "crudo": 0.014,
+      "calibrado": 0.116
+     },
+     "CC": {
+      "crudo": 0.041,
+      "calibrado": 0.041
+     },
+     "NA+": {
+      "crudo": 0.005,
+      "calibrado": 0.154
+     },
+     "PACMA": {
+      "crudo": 0.143,
+      "calibrado": 0.182
+     }
+    }
+   },
+   "14": {
+    "nombre": "Córdoba",
+    "escanos": 6,
+    "partidos": {
+     "PP": {
+      "crudo": 32.458,
+      "calibrado": 41.53
+     },
+     "PSOE": {
+      "crudo": 46.05,
+      "calibrado": 35.231
+     },
+     "VOX": {
+      "crudo": 7.829,
+      "calibrado": 14.628
+     },
+     "SUMAR": {
+      "crudo": 12.133,
+      "calibrado": 6.483
+     },
+     "ERC": {
+      "crudo": 0.239,
+      "calibrado": 0.246
+     },
+     "JXCAT": {
+      "crudo": 0.23,
+      "calibrado": 0.142
+     },
+     "PNV": {
+      "crudo": 0.18,
+      "calibrado": 0.252
+     },
+     "EH BILDU": {
+      "crudo": 0.258,
+      "calibrado": 0.362
+     },
+     "BNG": {
+      "crudo": 0.235,
+      "calibrado": 0.173
+     },
+     "CUP": {
+      "crudo": 0.022,
+      "calibrado": 0.207
+     },
+     "CC": {
+      "crudo": 0.053,
+      "calibrado": 0.058
+     },
+     "NA+": {
+      "crudo": 0.008,
+      "calibrado": 0.258
+     },
+     "PACMA": {
+      "crudo": 0.304,
+      "calibrado": 0.43
+     }
+    }
+   },
+   "15": {
+    "nombre": "A Coruña",
+    "escanos": 8,
+    "partidos": {
+     "PP": {
+      "crudo": 28.799,
+      "calibrado": 37.855
+     },
+     "PSOE": {
+      "crudo": 39.146,
+      "calibrado": 30.768
+     },
+     "VOX": {
+      "crudo": 6.442,
+      "calibrado": 12.364
+     },
+     "SUMAR": {
+      "crudo": 6.437,
+      "calibrado": 3.534
+     },
+     "ERC": {
+      "crudo": 0.186,
+      "calibrado": 0.197
+     },
+     "JXCAT": {
+      "crudo": 0.206,
+      "calibrado": 0.13
+     },
+     "PNV": {
+      "crudo": 0.164,
+      "calibrado": 0.235
+     },
+     "EH BILDU": {
+      "crudo": 0.194,
+      "calibrado": 0.279
+     },
+     "BNG": {
+      "crudo": 18.185,
+      "calibrado": 13.714
+     },
+     "CUP": {
+      "crudo": 0.028,
+      "calibrado": 0.27
+     },
+     "CC": {
+      "crudo": 0.061,
+      "calibrado": 0.069
+     },
+     "NA+": {
+      "crudo": 0.012,
+      "calibrado": 0.379
+     },
+     "PACMA": {
+      "crudo": 0.141,
+      "calibrado": 0.205
+     }
+    }
+   },
+   "16": {
+    "nombre": "Cuenca",
+    "escanos": 3,
+    "partidos": {
+     "PP": {
+      "crudo": 38.523,
+      "calibrado": 44.098
+     },
+     "PSOE": {
+      "crudo": 33.851,
+      "calibrado": 23.17
+     },
+     "VOX": {
+      "crudo": 15.257,
+      "calibrado": 25.502
+     },
+     "SUMAR": {
+      "crudo": 10.438,
+      "calibrado": 4.99
+     },
+     "ERC": {
+      "crudo": 0.329,
+      "calibrado": 0.304
+     },
+     "JXCAT": {
+      "crudo": 0.338,
+      "calibrado": 0.186
+     },
+     "PNV": {
+      "crudo": 0.241,
+      "calibrado": 0.301
+     },
+     "EH BILDU": {
+      "crudo": 0.354,
+      "calibrado": 0.444
+     },
+     "BNG": {
+      "crudo": 0.323,
+      "calibrado": 0.212
+     },
+     "CUP": {
+      "crudo": 0.022,
+      "calibrado": 0.19
+     },
+     "CC": {
+      "crudo": 0.082,
+      "calibrado": 0.081
+     },
+     "NA+": {
+      "crudo": 0.008,
+      "calibrado": 0.228
+     },
+     "PACMA": {
+      "crudo": 0.233,
+      "calibrado": 0.294
+     }
+    }
+   },
+   "17": {
+    "nombre": "Girona",
+    "escanos": 6,
+    "partidos": {
+     "PP": {
+      "crudo": 14.593,
+      "calibrado": 19.016
+     },
+     "PSOE": {
+      "crudo": 38.432,
+      "calibrado": 29.946
+     },
+     "VOX": {
+      "crudo": 13.77,
+      "calibrado": 26.201
+     },
+     "SUMAR": {
+      "crudo": 5.979,
+      "calibrado": 3.254
+     },
+     "ERC": {
+      "crudo": 7.552,
+      "calibrado": 7.933
+     },
+     "JXCAT": {
+      "crudo": 18.48,
+      "calibrado": 11.567
+     },
+     "PNV": {
+      "crudo": 0.224,
+      "calibrado": 0.319
+     },
+     "EH BILDU": {
+      "crudo": 0.328,
+      "calibrado": 0.469
+     },
+     "BNG": {
+      "crudo": 0.29,
+      "calibrado": 0.217
+     },
+     "CUP": {
+      "crudo": 0.029,
+      "calibrado": 0.283
+     },
+     "CC": {
+      "crudo": 0.064,
+      "calibrado": 0.072
+     },
+     "NA+": {
+      "crudo": 0.011,
+      "calibrado": 0.367
+     },
+     "PACMA": {
+      "crudo": 0.248,
+      "calibrado": 0.357
+     }
+    }
+   },
+   "18": {
+    "nombre": "Granada",
+    "escanos": 7,
+    "partidos": {
+     "PP": {
+      "crudo": 36.782,
+      "calibrado": 45.473
+     },
+     "PSOE": {
+      "crudo": 37.252,
+      "calibrado": 27.537
+     },
+     "VOX": {
+      "crudo": 9.899,
+      "calibrado": 17.871
+     },
+     "SUMAR": {
+      "crudo": 15.113,
+      "calibrado": 7.803
+     },
+     "ERC": {
+      "crudo": 0.156,
+      "calibrado": 0.155
+     },
+     "JXCAT": {
+      "crudo": 0.161,
+      "calibrado": 0.096
+     },
+     "PNV": {
+      "crudo": 0.121,
+      "calibrado": 0.163
+     },
+     "EH BILDU": {
+      "crudo": 0.169,
+      "calibrado": 0.229
+     },
+     "BNG": {
+      "crudo": 0.161,
+      "calibrado": 0.114
+     },
+     "CUP": {
+      "crudo": 0.017,
+      "calibrado": 0.157
+     },
+     "CC": {
+      "crudo": 0.033,
+      "calibrado": 0.035
+     },
+     "NA+": {
+      "crudo": 0.006,
+      "calibrado": 0.19
+     },
+     "PACMA": {
+      "crudo": 0.13,
+      "calibrado": 0.177
+     }
+    }
+   },
+   "19": {
+    "nombre": "Guadalajara",
+    "escanos": 3,
+    "partidos": {
+     "PP": {
+      "crudo": 31.563,
+      "calibrado": 38.484
+     },
+     "PSOE": {
+      "crudo": 37.956,
+      "calibrado": 27.673
+     },
+     "VOX": {
+      "crudo": 13.289,
+      "calibrado": 23.66
+     },
+     "SUMAR": {
+      "crudo": 15.43,
+      "calibrado": 7.857
+     },
+     "ERC": {
+      "crudo": 0.301,
+      "calibrado": 0.296
+     },
+     "JXCAT": {
+      "crudo": 0.297,
+      "calibrado": 0.174
+     },
+     "PNV": {
+      "crudo": 0.218,
+      "calibrado": 0.29
+     },
+     "EH BILDU": {
+      "crudo": 0.329,
+      "calibrado": 0.44
+     },
+     "BNG": {
+      "crudo": 0.299,
+      "calibrado": 0.209
+     },
+     "CUP": {
+      "crudo": 0.024,
+      "calibrado": 0.22
+     },
+     "CC": {
+      "crudo": 0.05,
+      "calibrado": 0.053
+     },
+     "NA+": {
+      "crudo": 0.011,
+      "calibrado": 0.332
+     },
+     "PACMA": {
+      "crudo": 0.232,
+      "calibrado": 0.312
+     }
+    }
+   },
+   "20": {
+    "nombre": "Gipuzkoa",
+    "escanos": 6,
+    "partidos": {
+     "PP": {
+      "crudo": 8.524,
+      "calibrado": 10.31
+     },
+     "PSOE": {
+      "crudo": 44.202,
+      "calibrado": 31.97
+     },
+     "VOX": {
+      "crudo": 2.649,
+      "calibrado": 4.678
+     },
+     "SUMAR": {
+      "crudo": 7.494,
+      "calibrado": 3.786
+     },
+     "ERC": {
+      "crudo": 0.687,
+      "calibrado": 0.67
+     },
+     "JXCAT": {
+      "crudo": 0.348,
+      "calibrado": 0.202
+     },
+     "PNV": {
+      "crudo": 18.4,
+      "calibrado": 24.313
+     },
+     "EH BILDU": {
+      "crudo": 16.726,
+      "calibrado": 22.189
+     },
+     "BNG": {
+      "crudo": 0.46,
+      "calibrado": 0.319
+     },
+     "CUP": {
+      "crudo": 0.043,
+      "calibrado": 0.381
+     },
+     "CC": {
+      "crudo": 0.074,
+      "calibrado": 0.077
+     },
+     "NA+": {
+      "crudo": 0.02,
+      "calibrado": 0.606
+     },
+     "PACMA": {
+      "crudo": 0.372,
+      "calibrado": 0.498
+     }
+    }
+   },
+   "21": {
+    "nombre": "Huelva",
+    "escanos": 5,
+    "partidos": {
+     "PP": {
+      "crudo": 25.603,
+      "calibrado": 31.922
+     },
+     "PSOE": {
+      "crudo": 52.746,
+      "calibrado": 39.322
+     },
+     "VOX": {
+      "crudo": 12.57,
+      "calibrado": 22.885
+     },
+     "SUMAR": {
+      "crudo": 7.568,
+      "calibrado": 3.94
+     },
+     "ERC": {
+      "crudo": 0.225,
+      "calibrado": 0.226
+     },
+     "JXCAT": {
+      "crudo": 0.228,
+      "calibrado": 0.137
+     },
+     "PNV": {
+      "crudo": 0.163,
+      "calibrado": 0.221
+     },
+     "EH BILDU": {
+      "crudo": 0.334,
+      "calibrado": 0.456
+     },
+     "BNG": {
+      "crudo": 0.32,
+      "calibrado": 0.229
+     },
+     "CUP": {
+      "crudo": 0.016,
+      "calibrado": 0.149
+     },
+     "CC": {
+      "crudo": 0.045,
+      "calibrado": 0.049
+     },
+     "NA+": {
+      "crudo": 0.007,
+      "calibrado": 0.222
+     },
+     "PACMA": {
+      "crudo": 0.176,
+      "calibrado": 0.242
+     }
+    }
+   },
+   "22": {
+    "nombre": "Huesca",
+    "escanos": 3,
+    "partidos": {
+     "PP": {
+      "crudo": 39.301,
+      "calibrado": 44.166
+     },
+     "PSOE": {
+      "crudo": 40.183,
+      "calibrado": 27.001
+     },
+     "VOX": {
+      "crudo": 14.982,
+      "calibrado": 24.585
+     },
+     "SUMAR": {
+      "crudo": 3.298,
+      "calibrado": 1.548
+     },
+     "ERC": {
+      "crudo": 0.301,
+      "calibrado": 0.273
+     },
+     "JXCAT": {
+      "crudo": 0.32,
+      "calibrado": 0.173
+     },
+     "PNV": {
+      "crudo": 0.226,
+      "calibrado": 0.278
+     },
+     "EH BILDU": {
+      "crudo": 0.328,
+      "calibrado": 0.405
+     },
+     "BNG": {
+      "crudo": 0.302,
+      "calibrado": 0.194
+     },
+     "CUP": {
+      "crudo": 0.028,
+      "calibrado": 0.235
+     },
+     "CC": {
+      "crudo": 0.059,
+      "calibrado": 0.057
+     },
+     "NA+": {
+      "crudo": 0.009,
+      "calibrado": 0.264
+     },
+     "PACMA": {
+      "crudo": 0.661,
+      "calibrado": 0.821
+     }
+    }
+   },
+   "23": {
+    "nombre": "Jaén",
+    "escanos": 5,
+    "partidos": {
+     "PP": {
+      "crudo": 27.026,
+      "calibrado": 31.853
+     },
+     "PSOE": {
+      "crudo": 36.319,
+      "calibrado": 25.596
+     },
+     "VOX": {
+      "crudo": 18.865,
+      "calibrado": 32.468
+     },
+     "SUMAR": {
+      "crudo": 16.107,
+      "calibrado": 7.928
+     },
+     "ERC": {
+      "crudo": 0.28,
+      "calibrado": 0.266
+     },
+     "JXCAT": {
+      "crudo": 0.271,
+      "calibrado": 0.154
+     },
+     "PNV": {
+      "crudo": 0.228,
+      "calibrado": 0.294
+     },
+     "EH BILDU": {
+      "crudo": 0.3,
+      "calibrado": 0.388
+     },
+     "BNG": {
+      "crudo": 0.281,
+      "calibrado": 0.19
+     },
+     "CUP": {
+      "crudo": 0.026,
+      "calibrado": 0.23
+     },
+     "CC": {
+      "crudo": 0.067,
+      "calibrado": 0.068
+     },
+     "NA+": {
+      "crudo": 0.01,
+      "calibrado": 0.282
+     },
+     "PACMA": {
+      "crudo": 0.218,
+      "calibrado": 0.284
+     }
+    }
+   },
+   "24": {
+    "nombre": "León",
+    "escanos": 4,
+    "partidos": {
+     "PP": {
+      "crudo": 27.997,
+      "calibrado": 34.998
+     },
+     "PSOE": {
+      "crudo": 47.413,
+      "calibrado": 35.44
+     },
+     "VOX": {
+      "crudo": 12.1,
+      "calibrado": 22.087
+     },
+     "SUMAR": {
+      "crudo": 11.319,
+      "calibrado": 5.909
+     },
+     "ERC": {
+      "crudo": 0.195,
+      "calibrado": 0.197
+     },
+     "JXCAT": {
+      "crudo": 0.218,
+      "calibrado": 0.131
+     },
+     "PNV": {
+      "crudo": 0.153,
+      "calibrado": 0.209
+     },
+     "EH BILDU": {
+      "crudo": 0.209,
+      "calibrado": 0.286
+     },
+     "BNG": {
+      "crudo": 0.19,
+      "calibrado": 0.136
+     },
+     "CUP": {
+      "crudo": 0.019,
+      "calibrado": 0.178
+     },
+     "CC": {
+      "crudo": 0.044,
+      "calibrado": 0.047
+     },
+     "NA+": {
+      "crudo": 0.006,
+      "calibrado": 0.193
+     },
+     "PACMA": {
+      "crudo": 0.136,
+      "calibrado": 0.188
+     }
+    }
+   },
+   "25": {
+    "nombre": "Lleida",
+    "escanos": 4,
+    "partidos": {
+     "PP": {
+      "crudo": 15.415,
+      "calibrado": 21.217
+     },
+     "PSOE": {
+      "crudo": 26.633,
+      "calibrado": 21.919
+     },
+     "VOX": {
+      "crudo": 10.133,
+      "calibrado": 20.366
+     },
+     "SUMAR": {
+      "crudo": 13.891,
+      "calibrado": 7.985
+     },
+     "ERC": {
+      "crudo": 9.291,
+      "calibrado": 10.31
+     },
+     "JXCAT": {
+      "crudo": 22.954,
+      "calibrado": 15.176
+     },
+     "PNV": {
+      "crudo": 0.319,
+      "calibrado": 0.48
+     },
+     "EH BILDU": {
+      "crudo": 0.432,
+      "calibrado": 0.652
+     },
+     "BNG": {
+      "crudo": 0.436,
+      "calibrado": 0.345
+     },
+     "CUP": {
+      "crudo": 0.04,
+      "calibrado": 0.408
+     },
+     "CC": {
+      "crudo": 0.103,
+      "calibrado": 0.122
+     },
+     "NA+": {
+      "crudo": 0.015,
+      "calibrado": 0.509
+     },
+     "PACMA": {
+      "crudo": 0.336,
+      "calibrado": 0.511
+     }
+    }
+   },
+   "26": {
+    "nombre": "La Rioja",
+    "escanos": 4,
+    "partidos": {
+     "PP": {
+      "crudo": 45.569,
+      "calibrado": 53.485
+     },
+     "PSOE": {
+      "crudo": 34.747,
+      "calibrado": 24.386
+     },
+     "VOX": {
+      "crudo": 9.249,
+      "calibrado": 15.852
+     },
+     "SUMAR": {
+      "crudo": 8.949,
+      "calibrado": 4.386
+     },
+     "ERC": {
+      "crudo": 0.25,
+      "calibrado": 0.236
+     },
+     "JXCAT": {
+      "crudo": 0.262,
+      "calibrado": 0.148
+     },
+     "PNV": {
+      "crudo": 0.183,
+      "calibrado": 0.234
+     },
+     "EH BILDU": {
+      "crudo": 0.271,
+      "calibrado": 0.349
+     },
+     "BNG": {
+      "crudo": 0.249,
+      "calibrado": 0.168
+     },
+     "CUP": {
+      "crudo": 0.023,
+      "calibrado": 0.2
+     },
+     "CC": {
+      "crudo": 0.046,
+      "calibrado": 0.046
+     },
+     "NA+": {
+      "crudo": 0.009,
+      "calibrado": 0.259
+     },
+     "PACMA": {
+      "crudo": 0.194,
+      "calibrado": 0.251
+     }
+    }
+   },
+   "27": {
+    "nombre": "Lugo",
+    "escanos": 4,
+    "partidos": {
+     "PP": {
+      "crudo": 45.276,
+      "calibrado": 53.871
+     },
+     "PSOE": {
+      "crudo": 34.94,
+      "calibrado": 24.858
+     },
+     "VOX": {
+      "crudo": 6.859,
+      "calibrado": 11.918
+     },
+     "SUMAR": {
+      "crudo": 2.312,
+      "calibrado": 1.149
+     },
+     "ERC": {
+      "crudo": 0.227,
+      "calibrado": 0.218
+     },
+     "JXCAT": {
+      "crudo": 0.256,
+      "calibrado": 0.146
+     },
+     "PNV": {
+      "crudo": 0.194,
+      "calibrado": 0.252
+     },
+     "EH BILDU": {
+      "crudo": 0.248,
+      "calibrado": 0.324
+     },
+     "BNG": {
+      "crudo": 9.248,
+      "calibrado": 6.313
+     },
+     "CUP": {
+      "crudo": 0.022,
+      "calibrado": 0.197
+     },
+     "CC": {
+      "crudo": 0.068,
+      "calibrado": 0.069
+     },
+     "NA+": {
+      "crudo": 0.008,
+      "calibrado": 0.235
+     },
+     "PACMA": {
+      "crudo": 0.342,
+      "calibrado": 0.45
+     }
+    }
+   },
+   "28": {
+    "nombre": "Madrid",
+    "escanos": 37,
+    "partidos": {
+     "PP": {
+      "crudo": 33.579,
+      "calibrado": 41.198
+     },
+     "PSOE": {
+      "crudo": 37.382,
+      "calibrado": 27.424
+     },
+     "VOX": {
+      "crudo": 12.042,
+      "calibrado": 21.574
+     },
+     "SUMAR": {
+      "crudo": 15.889,
+      "calibrado": 8.141
+     },
+     "ERC": {
+      "crudo": 0.094,
+      "calibrado": 0.093
+     },
+     "JXCAT": {
+      "crudo": 0.083,
+      "calibrado": 0.049
+     },
+     "PNV": {
+      "crudo": 0.066,
+      "calibrado": 0.088
+     },
+     "EH BILDU": {
+      "crudo": 0.228,
+      "calibrado": 0.307
+     },
+     "BNG": {
+      "crudo": 0.08,
+      "calibrado": 0.056
+     },
+     "CUP": {
+      "crudo": 0.016,
+      "calibrado": 0.147
+     },
+     "CC": {
+      "crudo": 0.019,
+      "calibrado": 0.02
+     },
+     "NA+": {
+      "crudo": 0.007,
+      "calibrado": 0.204
+     },
+     "PACMA": {
+      "crudo": 0.514,
+      "calibrado": 0.697
+     }
+    }
+   },
+   "29": {
+    "nombre": "Málaga",
+    "escanos": 11,
+    "partidos": {
+     "PP": {
+      "crudo": 37.23,
+      "calibrado": 42.177
+     },
+     "PSOE": {
+      "crudo": 31.79,
+      "calibrado": 21.534
+     },
+     "VOX": {
+      "crudo": 17.634,
+      "calibrado": 29.171
+     },
+     "SUMAR": {
+      "crudo": 12.354,
+      "calibrado": 5.845
+     },
+     "ERC": {
+      "crudo": 0.157,
+      "calibrado": 0.144
+     },
+     "JXCAT": {
+      "crudo": 0.171,
+      "calibrado": 0.093
+     },
+     "PNV": {
+      "crudo": 0.13,
+      "calibrado": 0.161
+     },
+     "EH BILDU": {
+      "crudo": 0.173,
+      "calibrado": 0.215
+     },
+     "BNG": {
+      "crudo": 0.164,
+      "calibrado": 0.107
+     },
+     "CUP": {
+      "crudo": 0.018,
+      "calibrado": 0.15
+     },
+     "CC": {
+      "crudo": 0.039,
+      "calibrado": 0.038
+     },
+     "NA+": {
+      "crudo": 0.007,
+      "calibrado": 0.201
+     },
+     "PACMA": {
+      "crudo": 0.132,
+      "calibrado": 0.166
+     }
+    }
+   },
+   "30": {
+    "nombre": "Murcia",
+    "escanos": 10,
+    "partidos": {
+     "PP": {
+      "crudo": 32.622,
+      "calibrado": 36.762
+     },
+     "PSOE": {
+      "crudo": 39.719,
+      "calibrado": 26.763
+     },
+     "VOX": {
+      "crudo": 19.229,
+      "calibrado": 31.64
+     },
+     "SUMAR": {
+      "crudo": 7.337,
+      "calibrado": 3.453
+     },
+     "ERC": {
+      "crudo": 0.164,
+      "calibrado": 0.149
+     },
+     "JXCAT": {
+      "crudo": 0.164,
+      "calibrado": 0.089
+     },
+     "PNV": {
+      "crudo": 0.129,
+      "calibrado": 0.159
+     },
+     "EH BILDU": {
+      "crudo": 0.262,
+      "calibrado": 0.324
+     },
+     "BNG": {
+      "crudo": 0.168,
+      "calibrado": 0.109
+     },
+     "CUP": {
+      "crudo": 0.017,
+      "calibrado": 0.141
+     },
+     "CC": {
+      "crudo": 0.041,
+      "calibrado": 0.04
+     },
+     "NA+": {
+      "crudo": 0.007,
+      "calibrado": 0.197
+     },
+     "PACMA": {
+      "crudo": 0.14,
+      "calibrado": 0.174
+     }
+    }
+   },
+   "31": {
+    "nombre": "Navarra",
+    "escanos": 5,
+    "partidos": {
+     "PP": {
+      "crudo": 35.971,
+      "calibrado": 42.414
+     },
+     "PSOE": {
+      "crudo": 36.895,
+      "calibrado": 26.012
+     },
+     "VOX": {
+      "crudo": 6.59,
+      "calibrado": 11.347
+     },
+     "SUMAR": {
+      "crudo": 8.474,
+      "calibrado": 4.173
+     },
+     "ERC": {
+      "crudo": 0.373,
+      "calibrado": 0.355
+     },
+     "JXCAT": {
+      "crudo": 0.384,
+      "calibrado": 0.218
+     },
+     "PNV": {
+      "crudo": 1.152,
+      "calibrado": 1.483
+     },
+     "EH BILDU": {
+      "crudo": 9.351,
+      "calibrado": 12.092
+     },
+     "BNG": {
+      "crudo": 0.358,
+      "calibrado": 0.242
+     },
+     "CUP": {
+      "crudo": 0.046,
+      "calibrado": 0.405
+     },
+     "CC": {
+      "crudo": 0.07,
+      "calibrado": 0.07
+     },
+     "NA+": {
+      "crudo": 0.027,
+      "calibrado": 0.787
+     },
+     "PACMA": {
+      "crudo": 0.309,
+      "calibrado": 0.403
+     }
+    }
+   },
+   "32": {
+    "nombre": "Ourense",
+    "escanos": 4,
+    "partidos": {
+     "PP": {
+      "crudo": 42.393,
+      "calibrado": 53.886
+     },
+     "PSOE": {
+      "crudo": 31.563,
+      "calibrado": 23.989
+     },
+     "VOX": {
+      "crudo": 3.219,
+      "calibrado": 5.975
+     },
+     "SUMAR": {
+      "crudo": 7.057,
+      "calibrado": 3.746
+     },
+     "ERC": {
+      "crudo": 0.246,
+      "calibrado": 0.252
+     },
+     "JXCAT": {
+      "crudo": 0.269,
+      "calibrado": 0.164
+     },
+     "PNV": {
+      "crudo": 0.203,
+      "calibrado": 0.282
+     },
+     "EH BILDU": {
+      "crudo": 0.258,
+      "calibrado": 0.36
+     },
+     "BNG": {
+      "crudo": 14.514,
+      "calibrado": 10.584
+     },
+     "CUP": {
+      "crudo": 0.021,
+      "calibrado": 0.194
+     },
+     "CC": {
+      "crudo": 0.074,
+      "calibrado": 0.08
+     },
+     "NA+": {
+      "crudo": 0.008,
+      "calibrado": 0.24
+     },
+     "PACMA": {
+      "crudo": 0.176,
+      "calibrado": 0.247
+     }
+    }
+   },
+   "33": {
+    "nombre": "Asturias",
+    "escanos": 7,
+    "partidos": {
+     "PP": {
+      "crudo": 26.455,
+      "calibrado": 36.079
+     },
+     "PSOE": {
+      "crudo": 45.874,
+      "calibrado": 37.409
+     },
+     "VOX": {
+      "crudo": 6.722,
+      "calibrado": 13.386
+     },
+     "SUMAR": {
+      "crudo": 19.781,
+      "calibrado": 11.266
+     },
+     "ERC": {
+      "crudo": 0.159,
+      "calibrado": 0.175
+     },
+     "JXCAT": {
+      "crudo": 0.182,
+      "calibrado": 0.119
+     },
+     "PNV": {
+      "crudo": 0.137,
+      "calibrado": 0.204
+     },
+     "EH BILDU": {
+      "crudo": 0.274,
+      "calibrado": 0.41
+     },
+     "BNG": {
+      "crudo": 0.163,
+      "calibrado": 0.127
+     },
+     "CUP": {
+      "crudo": 0.022,
+      "calibrado": 0.22
+     },
+     "CC": {
+      "crudo": 0.042,
+      "calibrado": 0.049
+     },
+     "NA+": {
+      "crudo": 0.008,
+      "calibrado": 0.282
+     },
+     "PACMA": {
+      "crudo": 0.181,
+      "calibrado": 0.273
+     }
+    }
+   },
+   "34": {
+    "nombre": "Palencia",
+    "escanos": 3,
+    "partidos": {
+     "PP": {
+      "crudo": 40.366,
+      "calibrado": 50.141
+     },
+     "PSOE": {
+      "crudo": 44.523,
+      "calibrado": 33.069
+     },
+     "VOX": {
+      "crudo": 5.848,
+      "calibrado": 10.607
+     },
+     "SUMAR": {
+      "crudo": 7.512,
+      "calibrado": 3.897
+     },
+     "ERC": {
+      "crudo": 0.293,
+      "calibrado": 0.293
+     },
+     "JXCAT": {
+      "crudo": 0.325,
+      "calibrado": 0.194
+     },
+     "PNV": {
+      "crudo": 0.22,
+      "calibrado": 0.298
+     },
+     "EH BILDU": {
+      "crudo": 0.328,
+      "calibrado": 0.446
+     },
+     "BNG": {
+      "crudo": 0.284,
+      "calibrado": 0.202
+     },
+     "CUP": {
+      "crudo": 0.025,
+      "calibrado": 0.228
+     },
+     "CC": {
+      "crudo": 0.057,
+      "calibrado": 0.06
+     },
+     "NA+": {
+      "crudo": 0.009,
+      "calibrado": 0.273
+     },
+     "PACMA": {
+      "crudo": 0.211,
+      "calibrado": 0.29
+     }
+    }
+   },
+   "35": {
+    "nombre": "Las Palmas",
+    "escanos": 8,
+    "partidos": {
+     "PP": {
+      "crudo": 17.781,
+      "calibrado": 22.369
+     },
+     "PSOE": {
+      "crudo": 46.646,
+      "calibrado": 35.088
+     },
+     "VOX": {
+      "crudo": 16.195,
+      "calibrado": 29.75
+     },
+     "SUMAR": {
+      "crudo": 15.607,
+      "calibrado": 8.2
+     },
+     "ERC": {
+      "crudo": 0.25,
+      "calibrado": 0.254
+     },
+     "JXCAT": {
+      "crudo": 0.229,
+      "calibrado": 0.138
+     },
+     "PNV": {
+      "crudo": 0.278,
+      "calibrado": 0.382
+     },
+     "EH BILDU": {
+      "crudo": 0.342,
+      "calibrado": 0.472
+     },
+     "BNG": {
+      "crudo": 0.609,
+      "calibrado": 0.44
+     },
+     "CUP": {
+      "crudo": 0.026,
+      "calibrado": 0.239
+     },
+     "CC": {
+      "crudo": 1.55,
+      "calibrado": 1.671
+     },
+     "NA+": {
+      "crudo": 0.011,
+      "calibrado": 0.334
+     },
+     "PACMA": {
+      "crudo": 0.477,
+      "calibrado": 0.663
+     }
+    }
+   },
+   "36": {
+    "nombre": "Pontevedra",
+    "escanos": 7,
+    "partidos": {
+     "PP": {
+      "crudo": 29.284,
+      "calibrado": 38.238
+     },
+     "PSOE": {
+      "crudo": 44.239,
+      "calibrado": 34.54
+     },
+     "VOX": {
+      "crudo": 7.242,
+      "calibrado": 13.809
+     },
+     "SUMAR": {
+      "crudo": 10.084,
+      "calibrado": 5.499
+     },
+     "ERC": {
+      "crudo": 0.209,
+      "calibrado": 0.22
+     },
+     "JXCAT": {
+      "crudo": 0.212,
+      "calibrado": 0.133
+     },
+     "PNV": {
+      "crudo": 0.334,
+      "calibrado": 0.477
+     },
+     "EH BILDU": {
+      "crudo": 0.226,
+      "calibrado": 0.323
+     },
+     "BNG": {
+      "crudo": 7.923,
+      "calibrado": 5.936
+     },
+     "CUP": {
+      "crudo": 0.023,
+      "calibrado": 0.221
+     },
+     "CC": {
+      "crudo": 0.054,
+      "calibrado": 0.06
+     },
+     "NA+": {
+      "crudo": 0.01,
+      "calibrado": 0.313
+     },
+     "PACMA": {
+      "crudo": 0.16,
+      "calibrado": 0.231
+     }
+    }
+   },
+   "37": {
+    "nombre": "Salamanca",
+    "escanos": 4,
+    "partidos": {
+     "PP": {
+      "crudo": 27.458,
+      "calibrado": 35.249
+     },
+     "PSOE": {
+      "crudo": 47.806,
+      "calibrado": 36.695
+     },
+     "VOX": {
+      "crudo": 10.057,
+      "calibrado": 18.852
+     },
+     "SUMAR": {
+      "crudo": 13.111,
+      "calibrado": 7.029
+     },
+     "ERC": {
+      "crudo": 0.259,
+      "calibrado": 0.268
+     },
+     "JXCAT": {
+      "crudo": 0.281,
+      "calibrado": 0.173
+     },
+     "PNV": {
+      "crudo": 0.202,
+      "calibrado": 0.283
+     },
+     "EH BILDU": {
+      "crudo": 0.287,
+      "calibrado": 0.404
+     },
+     "BNG": {
+      "crudo": 0.252,
+      "calibrado": 0.186
+     },
+     "CUP": {
+      "crudo": 0.028,
+      "calibrado": 0.262
+     },
+     "CC": {
+      "crudo": 0.056,
+      "calibrado": 0.062
+     },
+     "NA+": {
+      "crudo": 0.008,
+      "calibrado": 0.26
+     },
+     "PACMA": {
+      "crudo": 0.195,
+      "calibrado": 0.276
+     }
+    }
+   },
+   "38": {
+    "nombre": "Santa Cruz de Tenerife",
+    "escanos": 7,
+    "partidos": {
+     "PP": {
+      "crudo": 31.305,
+      "calibrado": 36.856
+     },
+     "PSOE": {
+      "crudo": 30.955,
+      "calibrado": 21.791
+     },
+     "VOX": {
+      "crudo": 15.751,
+      "calibrado": 27.077
+     },
+     "SUMAR": {
+      "crudo": 16.251,
+      "calibrado": 7.99
+     },
+     "ERC": {
+      "crudo": 0.225,
+      "calibrado": 0.213
+     },
+     "JXCAT": {
+      "crudo": 0.233,
+      "calibrado": 0.132
+     },
+     "PNV": {
+      "crudo": 0.175,
+      "calibrado": 0.225
+     },
+     "EH BILDU": {
+      "crudo": 0.255,
+      "calibrado": 0.329
+     },
+     "BNG": {
+      "crudo": 0.236,
+      "calibrado": 0.159
+     },
+     "CUP": {
+      "crudo": 0.025,
+      "calibrado": 0.218
+     },
+     "CC": {
+      "crudo": 4.226,
+      "calibrado": 4.263
+     },
+     "NA+": {
+      "crudo": 0.01,
+      "calibrado": 0.286
+     },
+     "PACMA": {
+      "crudo": 0.354,
+      "calibrado": 0.46
+     }
+    }
+   },
+   "39": {
+    "nombre": "Cantabria",
+    "escanos": 5,
+    "partidos": {
+     "PP": {
+      "crudo": 31.85,
+      "calibrado": 38.456
+     },
+     "PSOE": {
+      "crudo": 37.207,
+      "calibrado": 26.863
+     },
+     "VOX": {
+      "crudo": 13.781,
+      "calibrado": 24.298
+     },
+     "SUMAR": {
+      "crudo": 15.129,
+      "calibrado": 7.629
+     },
+     "ERC": {
+      "crudo": 0.239,
+      "calibrado": 0.233
+     },
+     "JXCAT": {
+      "crudo": 0.257,
+      "calibrado": 0.149
+     },
+     "PNV": {
+      "crudo": 0.18,
+      "calibrado": 0.238
+     },
+     "EH BILDU": {
+      "crudo": 0.409,
+      "calibrado": 0.542
+     },
+     "BNG": {
+      "crudo": 0.236,
+      "calibrado": 0.163
+     },
+     "CUP": {
+      "crudo": 0.027,
+      "calibrado": 0.244
+     },
+     "CC": {
+      "crudo": 0.043,
+      "calibrado": 0.045
+     },
+     "NA+": {
+      "crudo": 0.01,
+      "calibrado": 0.299
+     },
+     "PACMA": {
+      "crudo": 0.631,
+      "calibrado": 0.842
+     }
+    }
+   },
+   "40": {
+    "nombre": "Segovia",
+    "escanos": 3,
+    "partidos": {
+     "PP": {
+      "crudo": 29.913,
+      "calibrado": 33.599
+     },
+     "PSOE": {
+      "crudo": 40.792,
+      "calibrado": 27.397
+     },
+     "VOX": {
+      "crudo": 20.765,
+      "calibrado": 34.058
+     },
+     "SUMAR": {
+      "crudo": 7.224,
+      "calibrado": 3.389
+     },
+     "ERC": {
+      "crudo": 0.195,
+      "calibrado": 0.177
+     },
+     "JXCAT": {
+      "crudo": 0.209,
+      "calibrado": 0.113
+     },
+     "PNV": {
+      "crudo": 0.144,
+      "calibrado": 0.176
+     },
+     "EH BILDU": {
+      "crudo": 0.219,
+      "calibrado": 0.27
+     },
+     "BNG": {
+      "crudo": 0.194,
+      "calibrado": 0.125
+     },
+     "CUP": {
+      "crudo": 0.018,
+      "calibrado": 0.148
+     },
+     "CC": {
+      "crudo": 0.036,
+      "calibrado": 0.035
+     },
+     "NA+": {
+      "crudo": 0.006,
+      "calibrado": 0.16
+     },
+     "PACMA": {
+      "crudo": 0.285,
+      "calibrado": 0.354
+     }
+    }
+   },
+   "41": {
+    "nombre": "Sevilla",
+    "escanos": 12,
+    "partidos": {
+     "PP": {
+      "crudo": 28.505,
+      "calibrado": 36.626
+     },
+     "PSOE": {
+      "crudo": 45.529,
+      "calibrado": 34.98
+     },
+     "VOX": {
+      "crudo": 9.838,
+      "calibrado": 18.458
+     },
+     "SUMAR": {
+      "crudo": 14.888,
+      "calibrado": 7.989
+     },
+     "ERC": {
+      "crudo": 0.183,
+      "calibrado": 0.19
+     },
+     "JXCAT": {
+      "crudo": 0.168,
+      "calibrado": 0.104
+     },
+     "PNV": {
+      "crudo": 0.133,
+      "calibrado": 0.186
+     },
+     "EH BILDU": {
+      "crudo": 0.193,
+      "calibrado": 0.271
+     },
+     "BNG": {
+      "crudo": 0.178,
+      "calibrado": 0.131
+     },
+     "CUP": {
+      "crudo": 0.024,
+      "calibrado": 0.227
+     },
+     "CC": {
+      "crudo": 0.042,
+      "calibrado": 0.046
+     },
+     "NA+": {
+      "crudo": 0.011,
+      "calibrado": 0.351
+     },
+     "PACMA": {
+      "crudo": 0.309,
+      "calibrado": 0.439
+     }
+    }
+   },
+   "42": {
+    "nombre": "Soria",
+    "escanos": 2,
+    "partidos": {
+     "PP": {
+      "crudo": 27.568,
+      "calibrado": 33.152
+     },
+     "PSOE": {
+      "crudo": 43.492,
+      "calibrado": 31.273
+     },
+     "VOX": {
+      "crudo": 15.654,
+      "calibrado": 27.487
+     },
+     "SUMAR": {
+      "crudo": 11.423,
+      "calibrado": 5.737
+     },
+     "ERC": {
+      "crudo": 0.31,
+      "calibrado": 0.301
+     },
+     "JXCAT": {
+      "crudo": 0.349,
+      "calibrado": 0.202
+     },
+     "PNV": {
+      "crudo": 0.234,
+      "calibrado": 0.308
+     },
+     "EH BILDU": {
+      "crudo": 0.347,
+      "calibrado": 0.458
+     },
+     "BNG": {
+      "crudo": 0.297,
+      "calibrado": 0.205
+     },
+     "CUP": {
+      "crudo": 0.028,
+      "calibrado": 0.252
+     },
+     "CC": {
+      "crudo": 0.064,
+      "calibrado": 0.066
+     },
+     "NA+": {
+      "crudo": 0.009,
+      "calibrado": 0.262
+     },
+     "PACMA": {
+      "crudo": 0.224,
+      "calibrado": 0.297
+     }
+    }
+   },
+   "43": {
+    "nombre": "Tarragona",
+    "escanos": 6,
+    "partidos": {
+     "PP": {
+      "crudo": 15.278,
+      "calibrado": 20.645
+     },
+     "PSOE": {
+      "crudo": 42.403,
+      "calibrado": 34.262
+     },
+     "VOX": {
+      "crudo": 10.999,
+      "calibrado": 21.704
+     },
+     "SUMAR": {
+      "crudo": 11.434,
+      "calibrado": 6.453
+     },
+     "ERC": {
+      "crudo": 6.203,
+      "calibrado": 6.758
+     },
+     "JXCAT": {
+      "crudo": 12.594,
+      "calibrado": 8.175
+     },
+     "PNV": {
+      "crudo": 0.201,
+      "calibrado": 0.296
+     },
+     "EH BILDU": {
+      "crudo": 0.292,
+      "calibrado": 0.432
+     },
+     "BNG": {
+      "crudo": 0.273,
+      "calibrado": 0.211
+     },
+     "CUP": {
+      "crudo": 0.028,
+      "calibrado": 0.278
+     },
+     "CC": {
+      "crudo": 0.057,
+      "calibrado": 0.066
+     },
+     "NA+": {
+      "crudo": 0.011,
+      "calibrado": 0.382
+     },
+     "PACMA": {
+      "crudo": 0.227,
+      "calibrado": 0.339
+     }
+    }
+   },
+   "44": {
+    "nombre": "Teruel",
+    "escanos": 3,
+    "partidos": {
+     "PP": {
+      "crudo": 36.014,
+      "calibrado": 44.365
+     },
+     "PSOE": {
+      "crudo": 18.274,
+      "calibrado": 13.46
+     },
+     "VOX": {
+      "crudo": 13.594,
+      "calibrado": 24.453
+     },
+     "SUMAR": {
+      "crudo": 30.523,
+      "calibrado": 15.703
+     },
+     "ERC": {
+      "crudo": 0.256,
+      "calibrado": 0.255
+     },
+     "JXCAT": {
+      "crudo": 0.287,
+      "calibrado": 0.17
+     },
+     "PNV": {
+      "crudo": 0.216,
+      "calibrado": 0.29
+     },
+     "EH BILDU": {
+      "crudo": 0.288,
+      "calibrado": 0.389
+     },
+     "BNG": {
+      "crudo": 0.254,
+      "calibrado": 0.179
+     },
+     "CUP": {
+      "crudo": 0.02,
+      "calibrado": 0.186
+     },
+     "CC": {
+      "crudo": 0.066,
+      "calibrado": 0.07
+     },
+     "NA+": {
+      "crudo": 0.007,
+      "calibrado": 0.208
+     },
+     "PACMA": {
+      "crudo": 0.199,
+      "calibrado": 0.271
+     }
+    }
+   },
+   "45": {
+    "nombre": "Toledo",
+    "escanos": 6,
+    "partidos": {
+     "PP": {
+      "crudo": 43.718,
+      "calibrado": 48.065
+     },
+     "PSOE": {
+      "crudo": 33.525,
+      "calibrado": 22.039
+     },
+     "VOX": {
+      "crudo": 16.389,
+      "calibrado": 26.311
+     },
+     "SUMAR": {
+      "crudo": 5.38,
+      "calibrado": 2.47
+     },
+     "ERC": {
+      "crudo": 0.152,
+      "calibrado": 0.135
+     },
+     "JXCAT": {
+      "crudo": 0.149,
+      "calibrado": 0.079
+     },
+     "PNV": {
+      "crudo": 0.113,
+      "calibrado": 0.135
+     },
+     "EH BILDU": {
+      "crudo": 0.171,
+      "calibrado": 0.206
+     },
+     "BNG": {
+      "crudo": 0.23,
+      "calibrado": 0.145
+     },
+     "CUP": {
+      "crudo": 0.011,
+      "calibrado": 0.093
+     },
+     "CC": {
+      "crudo": 0.032,
+      "calibrado": 0.03
+     },
+     "NA+": {
+      "crudo": 0.005,
+      "calibrado": 0.14
+     },
+     "PACMA": {
+      "crudo": 0.125,
+      "calibrado": 0.152
+     }
+    }
+   },
+   "46": {
+    "nombre": "Valencia/València",
+    "escanos": 16,
+    "partidos": {
+     "PP": {
+      "crudo": 36.686,
+      "calibrado": 44.412
+     },
+     "PSOE": {
+      "crudo": 34.204,
+      "calibrado": 24.759
+     },
+     "VOX": {
+      "crudo": 11.709,
+      "calibrado": 20.699
+     },
+     "SUMAR": {
+      "crudo": 15.86,
+      "calibrado": 8.018
+     },
+     "ERC": {
+      "crudo": 0.297,
+      "calibrado": 0.29
+     },
+     "JXCAT": {
+      "crudo": 0.183,
+      "calibrado": 0.106
+     },
+     "PNV": {
+      "crudo": 0.11,
+      "calibrado": 0.145
+     },
+     "EH BILDU": {
+      "crudo": 0.439,
+      "calibrado": 0.583
+     },
+     "BNG": {
+      "crudo": 0.143,
+      "calibrado": 0.099
+     },
+     "CUP": {
+      "crudo": 0.021,
+      "calibrado": 0.19
+     },
+     "CC": {
+      "crudo": 0.032,
+      "calibrado": 0.033
+     },
+     "NA+": {
+      "crudo": 0.008,
+      "calibrado": 0.253
+     },
+     "PACMA": {
+      "crudo": 0.308,
+      "calibrado": 0.412
+     }
+    }
+   },
+   "47": {
+    "nombre": "Valladolid",
+    "escanos": 5,
+    "partidos": {
+     "PP": {
+      "crudo": 39.193,
+      "calibrado": 43.536
+     },
+     "PSOE": {
+      "crudo": 36.536,
+      "calibrado": 24.267
+     },
+     "VOX": {
+      "crudo": 17.277,
+      "calibrado": 28.024
+     },
+     "SUMAR": {
+      "crudo": 5.819,
+      "calibrado": 2.699
+     },
+     "ERC": {
+      "crudo": 0.191,
+      "calibrado": 0.171
+     },
+     "JXCAT": {
+      "crudo": 0.211,
+      "calibrado": 0.113
+     },
+     "PNV": {
+      "crudo": 0.151,
+      "calibrado": 0.183
+     },
+     "EH BILDU": {
+      "crudo": 0.209,
+      "calibrado": 0.255
+     },
+     "BNG": {
+      "crudo": 0.191,
+      "calibrado": 0.122
+     },
+     "CUP": {
+      "crudo": 0.022,
+      "calibrado": 0.183
+     },
+     "CC": {
+      "crudo": 0.039,
+      "calibrado": 0.038
+     },
+     "NA+": {
+      "crudo": 0.008,
+      "calibrado": 0.224
+     },
+     "PACMA": {
+      "crudo": 0.151,
+      "calibrado": 0.186
+     }
+    }
+   },
+   "48": {
+    "nombre": "Bizkaia",
+    "escanos": 8,
+    "partidos": {
+     "PP": {
+      "crudo": 13.272,
+      "calibrado": 15.781
+     },
+     "PSOE": {
+      "crudo": 29.837,
+      "calibrado": 21.212
+     },
+     "VOX": {
+      "crudo": 5.381,
+      "calibrado": 9.342
+     },
+     "SUMAR": {
+      "crudo": 16.857,
+      "calibrado": 8.37
+     },
+     "ERC": {
+      "crudo": 0.605,
+      "calibrado": 0.58
+     },
+     "JXCAT": {
+      "crudo": 0.255,
+      "calibrado": 0.146
+     },
+     "PNV": {
+      "crudo": 11.682,
+      "calibrado": 15.172
+     },
+     "EH BILDU": {
+      "crudo": 21.432,
+      "calibrado": 27.948
+     },
+     "BNG": {
+      "crudo": 0.235,
+      "calibrado": 0.16
+     },
+     "CUP": {
+      "crudo": 0.037,
+      "calibrado": 0.321
+     },
+     "CC": {
+      "crudo": 0.06,
+      "calibrado": 0.061
+     },
+     "NA+": {
+      "crudo": 0.016,
+      "calibrado": 0.473
+     },
+     "PACMA": {
+      "crudo": 0.331,
+      "calibrado": 0.435
+     }
+    }
+   },
+   "49": {
+    "nombre": "Zamora",
+    "escanos": 3,
+    "partidos": {
+     "PP": {
+      "crudo": 62.384,
+      "calibrado": 71.031
+     },
+     "PSOE": {
+      "crudo": 25.632,
+      "calibrado": 17.451
+     },
+     "VOX": {
+      "crudo": 3.994,
+      "calibrado": 6.641
+     },
+     "SUMAR": {
+      "crudo": 6.43,
+      "calibrado": 3.057
+     },
+     "ERC": {
+      "crudo": 0.263,
+      "calibrado": 0.241
+     },
+     "JXCAT": {
+      "crudo": 0.289,
+      "calibrado": 0.158
+     },
+     "PNV": {
+      "crudo": 0.207,
+      "calibrado": 0.258
+     },
+     "EH BILDU": {
+      "crudo": 0.283,
+      "calibrado": 0.354
+     },
+     "BNG": {
+      "crudo": 0.245,
+      "calibrado": 0.16
+     },
+     "CUP": {
+      "crudo": 0.021,
+      "calibrado": 0.174
+     },
+     "CC": {
+      "crudo": 0.062,
+      "calibrado": 0.061
+     },
+     "NA+": {
+      "crudo": 0.006,
+      "calibrado": 0.183
+     },
+     "PACMA": {
+      "crudo": 0.183,
+      "calibrado": 0.231
+     }
+    }
+   },
+   "50": {
+    "nombre": "Zaragoza",
+    "escanos": 7,
+    "partidos": {
+     "PP": {
+      "crudo": 29.126,
+      "calibrado": 34.786
+     },
+     "PSOE": {
+      "crudo": 36.443,
+      "calibrado": 26.026
+     },
+     "VOX": {
+      "crudo": 16.981,
+      "calibrado": 29.615
+     },
+     "SUMAR": {
+      "crudo": 16.441,
+      "calibrado": 8.201
+     },
+     "ERC": {
+      "crudo": 0.165,
+      "calibrado": 0.159
+     },
+     "JXCAT": {
+      "crudo": 0.176,
+      "calibrado": 0.101
+     },
+     "PNV": {
+      "crudo": 0.121,
+      "calibrado": 0.158
+     },
+     "EH BILDU": {
+      "crudo": 0.183,
+      "calibrado": 0.24
+     },
+     "BNG": {
+      "crudo": 0.165,
+      "calibrado": 0.113
+     },
+     "CUP": {
+      "crudo": 0.019,
+      "calibrado": 0.171
+     },
+     "CC": {
+      "crudo": 0.033,
+      "calibrado": 0.033
+     },
+     "NA+": {
+      "crudo": 0.007,
+      "calibrado": 0.212
+     },
+     "PACMA": {
+      "crudo": 0.14,
+      "calibrado": 0.185
+     }
+    }
+   },
+   "51": {
+    "nombre": "Ceuta",
+    "escanos": 1,
+    "partidos": {
+     "PP": {
+      "crudo": 21.058,
+      "calibrado": 24.867
+     },
+     "PSOE": {
+      "crudo": 48.137,
+      "calibrado": 33.99
+     },
+     "VOX": {
+      "crudo": 20.183,
+      "calibrado": 34.802
+     },
+     "SUMAR": {
+      "crudo": 8.978,
+      "calibrado": 4.428
+     },
+     "ERC": {
+      "crudo": 0.462,
+      "calibrado": 0.44
+     },
+     "JXCAT": {
+      "crudo": 0.233,
+      "calibrado": 0.132
+     },
+     "PNV": {
+      "crudo": 0.168,
+      "calibrado": 0.217
+     },
+     "EH BILDU": {
+      "crudo": 0.268,
+      "calibrado": 0.347
+     },
+     "BNG": {
+      "crudo": 0.251,
+      "calibrado": 0.17
+     },
+     "CUP": {
+      "crudo": 0.015,
+      "calibrado": 0.129
+     },
+     "CC": {
+      "crudo": 0.048,
+      "calibrado": 0.048
+     },
+     "NA+": {
+      "crudo": 0.006,
+      "calibrado": 0.177
+     },
+     "PACMA": {
+      "crudo": 0.194,
+      "calibrado": 0.254
+     }
+    }
+   },
+   "52": {
+    "nombre": "Melilla",
+    "escanos": 1,
+    "partidos": {
+     "PP": {
+      "crudo": 17.547,
+      "calibrado": 25.011
+     },
+     "PSOE": {
+      "crudo": 67.9,
+      "calibrado": 57.869
+     },
+     "VOX": {
+      "crudo": 4.561,
+      "calibrado": 9.492
+     },
+     "SUMAR": {
+      "crudo": 7.994,
+      "calibrado": 4.759
+     },
+     "ERC": {
+      "crudo": 0.332,
+      "calibrado": 0.381
+     },
+     "JXCAT": {
+      "crudo": 0.329,
+      "calibrado": 0.225
+     },
+     "PNV": {
+      "crudo": 0.231,
+      "calibrado": 0.36
+     },
+     "EH BILDU": {
+      "crudo": 0.373,
+      "calibrado": 0.584
+     },
+     "BNG": {
+      "crudo": 0.35,
+      "calibrado": 0.286
+     },
+     "CUP": {
+      "crudo": 0.02,
+      "calibrado": 0.213
+     },
+     "CC": {
+      "crudo": 0.081,
+      "calibrado": 0.099
+     },
+     "NA+": {
+      "crudo": 0.008,
+      "calibrado": 0.29
+     },
+     "PACMA": {
+      "crudo": 0.273,
+      "calibrado": 0.43
+     }
+    }
+   }
+  },
+  "nota": "No adoptada: en el backtest provincial queda al mismo nivel que la variante de efectos fijos y por detrás del swing; ver docs/notes/mrp-estado.md."
  },
  "provincias": {
   "1": {
@@ -46822,5 +49897,5 @@
    ]
   ]
  },
- "segundos": 3.7
+ "segundos": 34.5
 }

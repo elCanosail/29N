@@ -1,0 +1,84 @@
+{
+ "generado": "2026-10-16",
+ "objetivo": "Cuantificar el supuesto de censo (§2): el backtest 2015-2019 usa la estructura 2021 porque la serie 66600 arranca ahí.",
+ "nota_censo_2011": "El Censo 2011 (INE) no ofrece descarga CSV/API por provincia × edad × estudios; no es replicable aquí.",
+ "censos_probados": [
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "elecciones": {
+  "2015-12-20": {
+   "mae_por_censo": {
+    "2021": 1.0986,
+    "2022": 1.0989,
+    "2023": 1.1003,
+    "2024": 1.1006
+   },
+   "censo_backtest_principal": 2021,
+   "rango_mae_entre_censos": 0.002,
+   "swing_mejor": 1.685,
+   "gap_mrp_vs_swing_en_2021": -0.5864,
+   "conclusion": "robusto: el supuesto censal mueve el MAE menos que la brecha a batir"
+  },
+  "2016-06-26": {
+   "mae_por_censo": {
+    "2021": 0.9325,
+    "2022": 0.9332,
+    "2023": 0.9348,
+    "2024": 0.9355
+   },
+   "censo_backtest_principal": 2021,
+   "rango_mae_entre_censos": 0.003,
+   "swing_mejor": 0.2795,
+   "gap_mrp_vs_swing_en_2021": 0.653,
+   "conclusion": "robusto: el supuesto censal mueve el MAE menos que la brecha a batir"
+  },
+  "2019-04-28": {
+   "mae_por_censo": {
+    "2021": 1.1328,
+    "2022": 1.1326,
+    "2023": 1.1335,
+    "2024": 1.1339
+   },
+   "censo_backtest_principal": 2021,
+   "rango_mae_entre_censos": 0.0013,
+   "swing_mejor": 1.0767,
+   "gap_mrp_vs_swing_en_2021": 0.0561,
+   "conclusion": "robusto: el supuesto censal mueve el MAE menos que la brecha a batir"
+  },
+  "2019-11-10": {
+   "mae_por_censo": {
+    "2021": 1.0796,
+    "2022": 1.0791,
+    "2023": 1.0799,
+    "2024": 1.0805
+   },
+   "censo_backtest_principal": 2021,
+   "rango_mae_entre_censos": 0.0014,
+   "swing_mejor": 0.475,
+   "gap_mrp_vs_swing_en_2021": 0.6046,
+   "conclusion": "robusto: el supuesto censal mueve el MAE menos que la brecha a batir"
+  },
+  "2023-07-23": {
+   "mae_por_censo": {
+    "2021": 0.9413,
+    "2022": 0.9408,
+    "2023": 0.9404,
+    "2024": 0.9401
+   },
+   "censo_backtest_principal": 2023,
+   "rango_mae_entre_censos": 0.0012,
+   "swing_mejor": 0.6477,
+   "gap_mrp_vs_swing_en_2021": 0.2936,
+   "conclusion": "robusto: el supuesto censal mueve el MAE menos que la brecha a batir"
+  }
+ },
+ "resumen": {
+  "rango_mae_medio_entre_censos_pp": 0.0018,
+  "rango_mae_max_entre_censos_pp": 0.003,
+  "interpretacion": "Si el rango máximo entre censos (2021-2024) es mucho menor que la brecha MRP-swing (~0,2 pp en la media), el supuesto de censo de §2 no es el que decide el veredicto."
+ },
+ "segundos": 34.9
+}
