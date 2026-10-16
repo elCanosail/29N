@@ -101,7 +101,7 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
 
     <BarraEscanos
       filas={filasReparto}
-      descripcion={`Reparto de escaños, estimación 29N frente al resultado real de 23J: ${filasReparto.slice(0, 4).map((f) => `${f.partido} ${num(f.estimacionEscanos, 1)} esc y ${num(f.estimacionPct, 1)} % frente a ${entero(f.realEscanos)} esc y ${num(f.realPct, 1)} %`).join('; ')}. El triángulo indica los escaños de más o de menos frente al 23J real.`}
+      descripcion={`Reparto de escaños, estimación 29N frente al resultado real de 23J: ${filasReparto.slice(0, 4).map((f) => `${f.partido} ${num(f.estimacionEscanos, 1)} esc y ${num(f.estimacionPct, 1)} % frente a ${entero(f.realEscanos)} esc y ${num(f.realPct, 1)} %`).join('; ')}. El triángulo indica los escaños de más o de menos frente al 23J real. En la barra del 23J, los partidos del acuerdo de gobierno aparecen agrupados a la izquierda, empezando por el PSOE.`}
       pie={`Estimación: media ponderada de encuestas + swing proporcional provincial + 10.000 simulaciones D'Hondt · ▲▼ = escaños de más o de menos frente al 23J real · ${meta.mes_predicho}`}
       lectura={`La comparación se hace por familias políticas idénticas a las del modelo (PSOE incluye PSC, PSE-EE, PSdeG, PSIB-PSOE y PSN-PSOE; SUMAR incluye ECP, Compromís, Sumar Aragón y Més). La precisión de cada estimación —media nunca sin su intervalo— está en el desglose de abajo.`}
     />

@@ -55,6 +55,17 @@ const orden = [...filas].sort((a, b) => b.estimacionEscanos - a.estimacionEscano
 const vox = orden.find((f) => f.partido === 'VOX');
 const orden29n = orden.filter((f) => f.partido !== 'VOX');
 if (vox) orden29n.splice(1, 0, vox);
+// En el 23J real, el bloque de gobierno va unido a la izquierda pero con cada
+// partido independiente (Chema, 16-oct): PSOE primero y después los socios del
+// acuerdo de investidura; el resto sigue el orden de la estimación.
+const MIEMBROS_BLOQUE = ['PSOE', 'SUMAR', 'ERC', 'EH Bildu', 'PNV', 'BNG', 'CC'];
+const esBloque = (p: string) => MIEMBROS_BLOQUE.includes(p);
+const orden23j = [
+  ...MIEMBROS_BLOQUE
+    .map((p) => orden.find((f) => f.partido === p))
+    .filter((f): f is (typeof orden)[number] => Boolean(f)),
+  ...orden29n.filter((f) => !esBloque(f.partido)),
+];
 const delta = (f: (typeof orden)[number]) => f.estimacionEscanos - f.realEscanos;
 const conDelta = orden.some((f) => Math.abs(delta(f)) > 0.05);
 const anchoPct = (v: number) => (v / 350) * 100;
@@ -100,7 +111,7 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
     </p>
     <div class="reparto__barra-marco">
       <div class="reparto__barra" aria-hidden="true">
-        {orden29n.map((f) => (
+        {orden23j.map((f) => (
           <span
             class="reparto__tramo"
             style={`flex:${Math.max(f.realEscanos, 0.001)};background:${colorPartido(f.partido)}`}
