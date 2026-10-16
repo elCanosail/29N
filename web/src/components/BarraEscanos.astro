@@ -49,6 +49,20 @@ const {
 } = Astro.props as Props;
 
 const orden = [...filas].sort((a, b) => b.estimacionEscanos - a.estimacionEscanos);
+// Orden editorial (Chema, 16-oct): en la estimación VOX va segundo — es probable
+// que se sume al bloque del PP para alcanzar la mayoría absoluta.
+const vox = orden.find((f) => f.partido === 'VOX');
+const orden29n = orden.filter((f) => f.partido !== 'VOX');
+if (vox) orden29n.splice(1, 0, vox);
+// El 23J real se agrupa como bloque de gobierno (PSOE + SUMAR + el resto del
+// acuerdo de investidura) para mostrar la coalición que alcanzó la mayoría.
+const MIEMBROS_BLOQUE = ['PSOE', 'SUMAR', 'ERC', 'EH Bildu', 'PNV', 'BNG', 'CC'];
+const esBloque = (p: string) => MIEMBROS_BLOQUE.includes(p);
+const miembrosBloque = orden.filter((f) => esBloque(f.partido));
+const bloqueEscanos = miembrosBloque.reduce((s, f) => s + f.realEscanos, 0);
+const bloquePct = miembrosBloque.reduce((s, f) => s + f.realPct, 0);
+const desgloseBloque = miembrosBloque.map((f) => `${f.partido} ${entero(f.realEscanos)}`).join(' · ');
+const bloqueSigla = 'PSOE + socios';
 const delta = (f: (typeof orden)[number]) => f.estimacionEscanos - f.realEscanos;
 const conDelta = orden.some((f) => Math.abs(delta(f)) > 0.05);
 const anchoPct = (v: number) => (v / 350) * 100;
@@ -67,7 +81,7 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
     </p>
     <div class="reparto__barra-marco">
       <div class="reparto__barra" aria-hidden="true">
-        {orden.map((f) => (
+        {orden29n.map((f) => (
           <span
             class="reparto__tramo"
             style={`flex:${Math.max(f.estimacionEscanos, 0.001)};background:${colorPartido(f.partido)}`}
@@ -94,22 +108,43 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
     </p>
     <div class="reparto__barra-marco">
       <div class="reparto__barra" aria-hidden="true">
-        {orden.map((f) => (
-          <span
-            class="reparto__tramo"
-            style={`flex:${Math.max(f.realEscanos, 0.001)};background:${colorPartido(f.partido)}`}
-          >
-            {anchoPct(f.realEscanos) >= 8.5 && (
-              <span class={`reparto__tramo__texto ${TEXTO_TINTA[f.partido] ? 'reparto__tramo__texto--tinta' : ''}`}>{sigla(f.partido)}</span>
-            )}
-            {anchoPct(f.realEscanos) >= 9 && (
-              <span class={`reparto__tramo__texto reparto__tramo__num ${TEXTO_TINTA[f.partido] ? 'reparto__tramo__texto--tinta' : ''}`}>{entero(f.realEscanos)}</span>
-            )}
-            <span class="reparto__tip mono">
-              <strong>{f.partido}</strong> · 23J: {entero(f.realEscanos)} escaños ({num(f.realPct, 1)} %)
+        {orden29n.map((f) => {
+          if (esBloque(f.partido)) {
+            if (f.partido !== 'PSOE') return null;
+            return (
+              <span
+                class="reparto__tramo reparto__tramo--bloque"
+                style={`flex:${Math.max(bloqueEscanos, 0.001)};background:${colorPartido('PSOE')}`}
+              >
+                {anchoPct(bloqueEscanos) >= 8.5 && (
+                  <span class="reparto__tramo__texto">{bloqueSigla}</span>
+                )}
+                {anchoPct(bloqueEscanos) >= 9 && (
+                  <span class="reparto__tramo__texto reparto__tramo__num">{entero(bloqueEscanos)}</span>
+                )}
+                <span class="reparto__tip mono">
+                  <strong>Bloque de gobierno</strong> · 23J: {entero(bloqueEscanos)} escaños ({num(bloquePct, 1)} %) — {desgloseBloque}
+                </span>
+              </span>
+            );
+          }
+          return (
+            <span
+              class="reparto__tramo"
+              style={`flex:${Math.max(f.realEscanos, 0.001)};background:${colorPartido(f.partido)}`}
+            >
+              {anchoPct(f.realEscanos) >= 8.5 && (
+                <span class={`reparto__tramo__texto ${TEXTO_TINTA[f.partido] ? 'reparto__tramo__texto--tinta' : ''}`}>{sigla(f.partido)}</span>
+              )}
+              {anchoPct(f.realEscanos) >= 9 && (
+                <span class={`reparto__tramo__texto reparto__tramo__num ${TEXTO_TINTA[f.partido] ? 'reparto__tramo__texto--tinta' : ''}`}>{entero(f.realEscanos)}</span>
+              )}
+              <span class="reparto__tip mono">
+                <strong>{f.partido}</strong> · 23J: {entero(f.realEscanos)} escaños ({num(f.realPct, 1)} %)
+              </span>
             </span>
-          </span>
-        ))}
+          );
+        })}
       </div>
       <span class="reparto__mayoria" aria-hidden="true"></span>
       <span class="reparto__mayoria__etiqueta mono" aria-hidden="true">mayoría absoluta · 176</span>
@@ -211,6 +246,13 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
   }
   .reparto__tramo__texto--tinta { color: var(--tinta); }
   .reparto__tramo__num { font-size: 0.7rem; font-weight: 600; }
+  .reparto__tramo--bloque {
+    background-image: repeating-linear-gradient(
+      135deg,
+      transparent 0 6px,
+      rgba(255, 255, 255, 0.28) 6px 7px
+    );
+  }
 
   /* Ficha al pasar el puntero: CSS puro, sin JavaScript.
      display:none fuera de hover: un tooltip invisible NO puede ensanchar
