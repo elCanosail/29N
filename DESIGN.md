@@ -1,6 +1,6 @@
 # DESIGN.md — 29N
 
-Sistema de diseño de la web pública de 29N: histórico de encuestas (CIS + encuestadores privados), resultados oficiales 1977–2023 y predicción provincial del 29N con TimesFM. Audiencia: periodistas y público general. Contenido en español.
+Sistema de diseño de la web pública de 29N: histórico de encuestas (CIS + encuestadores privados), resultados oficiales 1977–2023 y predicción provincial del 29N con media ponderada de encuestas + swing proporcional (TimesFM evaluado y descartado en backtest). Audiencia: periodistas y público general. Contenido en español.
 
 Formato: especificación de [Google Stitch para DESIGN.md](https://stitch.withgoogle.com/docs/design-md/specification/).
 
@@ -220,7 +220,7 @@ No hay más de un primario visible por vista. Radio global: 4 px (nada pill, nad
 
 **Predicción provincial:**
 - Mapa coroplético a la izquierda (60 %), panel de provincia a la derecha (40 %), sincronizados en ambos sentidos.
-- Panel de provincia: nombre + cabecera, serie histórica de resultados reales (líneas de partido) y **banda de predicción TimesFM** (`--intervalo`) con línea central de mediana en `--tinta`. Lectura obligatoria bajo el gráfico: "Con los datos disponibles, el intervalo del 90 % para X es [a, b]. El modelo no afina más: aquí está el error del backtest →".
+- Panel de provincia: nombre + cabecera, serie histórica de resultados reales (líneas de partido) y **banda de predicción del modelo** (`--intervalo`) con línea central de mediana en `--tinta`. Lectura obligatoria bajo el gráfico: "Con los datos disponibles, el intervalo del 90 % para X es [a, b]. El modelo no afina más: aquí está el error del backtest →".
 - Controles: elección del nivel de agregación (provincia / autonomía / estatal) y del partido.
 - Encabezado de sección que **no vende**: "Qué predecimos y qué no" antes del mapa. El mapa es la recompensa, no el gancho.
 
