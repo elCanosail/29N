@@ -22,7 +22,8 @@ const esActiva = (href: string) =>
   <div class="contenedor cabecera__inner">
     <a class="marca" href="/" aria-label="29N.info — portada">
       <span class="marca__sigla">29N<span class="marca__dominio">.info</span></span>
-      <span class="marca__descriptor">Modelo de Predicción de Resultados Electorales</span>
+      <span class="marca__descriptor marca__descriptor--completo">Modelo de Predicción de Resultados Electorales</span>
+      <span class="marca__descriptor marca__descriptor--movil">Modelo de predicción de datos electorales</span>
     </a>
 
     <nav class="nav-escritorio" aria-label="Secciones">
@@ -163,8 +164,17 @@ const esActiva = (href: string) =>
   }
   .nav-movil a[aria-current='page'] { border-bottom: 3px solid var(--tinta); }
 
+  .marca__descriptor--movil { display: none; }
+
   @media (max-width: 767px) {
     .nav-escritorio { display: none; }
     .nav-movil { display: block; }
+    /* En móvil el descriptor pasa bajo el logo (apilado) y el botón Menú
+       sube a la línea del logo, esquina superior derecha (Chema 16-oct). */
+    .cabecera__inner { align-items: flex-start; }
+    .marca { flex-direction: column; align-items: flex-start; gap: 2px; }
+    .marca__descriptor { max-width: none; }
+    .marca__descriptor--completo { display: none; }
+    .marca__descriptor--movil { display: block; }
   }
 </style>
