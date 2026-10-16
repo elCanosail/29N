@@ -25,6 +25,7 @@ const dataset = {
   anios: 2025 - 1977 + 1,
 };
 const nEncuestasPrivadas = encuestasData.encuestas.length;
+const entrevistasFmt = dataset.nEntrevistas.toLocaleString('es-ES');
 const resto = forecast.partidos.slice(4);
 // Escaños estimados por partido (del modelo provincial), para pintarlos junto
 // al voto en las bandas de la sección «Qué dicen las encuestas».
@@ -201,10 +202,10 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
     <div
       class="dataset"
       role="img"
-      aria-label={`El dataset del modelo: ${num(dataset.nEntrevistas, 0)} entrevistas individuales del CIS en ${dataset.nEstudios} estudios con microdatos, ${dataset.anios} años de historia (1977–2025), 52 provincias, ${nEncuestasPrivadas} encuestas privadas indexadas y 10.000 simulaciones D'Hondt por estimación.`}
+      aria-label={`El dataset del modelo: ${entrevistasFmt} entrevistas individuales del CIS en ${dataset.nEstudios} estudios con microdatos, ${dataset.anios} años de historia (1977–2025), 52 provincias, ${nEncuestasPrivadas} encuestas privadas indexadas y 10.000 simulaciones D'Hondt por estimación.`}
     >
       <div class="dataset__cifra">
-        <span class="dataset__numero dataset__numero--acento">{num(dataset.nEntrevistas, 0)}</span>
+        <span class="dataset__numero dataset__numero--acento">{entrevistasFmt}</span>
         <span class="dataset__etiqueta">entrevistas individuales del CIS</span>
       </div>
       <div class="dataset__cifra">
