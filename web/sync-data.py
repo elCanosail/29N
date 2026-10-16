@@ -136,11 +136,13 @@ def gen_forecast() -> int:
         partidos.append({
             "partido": nombre,
             "punto": round(d["punto"], 3),
+            "p025": round(q.get("0.025", d["punto"]), 2),
             "p10": round(q.get("0.1", d["punto"]), 2),
             "p20": round(q.get("0.2", d["punto"]), 2),
             "p50": round(q.get("0.5", d["punto"]), 2),
             "p80": round(q.get("0.8", d["punto"]), 2),
             "p90": round(q.get("0.9", d["punto"]), 2),
+            "p975": round(q.get("0.975", d["punto"]), 2),
             "sd_error_backtest": round(d.get("sd_error_backtest", 0.0), 2),
             "punto_timesfm": round(d.get("punto_timesfm", d["punto"]), 2),
         })
@@ -155,6 +157,7 @@ def gen_forecast() -> int:
             "motivo_metodo": meta.get("motivo_metodo"),
             "backtest_mae": meta.get("backtest_mae"),
             "intervalos": meta.get("intervalos"),
+            "calibracion_intervalos": meta.get("calibracion_intervalos"),
             "normalizacion": meta.get("normalizacion"),
             "timesfm": meta.get("timesfm"),
             "advertencia": meta.get("advertencia"),

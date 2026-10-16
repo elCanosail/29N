@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-15",
+  "generado": "2026-10-16",
   "objetivo": "29N — elecciones generales 2026-11-29",
   "mes_predicho": "2026-11",
   "ultimo_mes_con_dato": "2026-10-01",
@@ -13,9 +13,23 @@
    "n": 59
   },
   "intervalos": {
-   "tipo": "empiricos (errores del backtest del metodo primario)",
-   "nivel": "80% central (q0.1..q0.9)",
+   "tipo": "empiricos (errores del backtest del metodo primario), recalibrados",
+   "nivel": "bandas 80% (p10-p90) y 95% (p2,5-p97,5) centrales",
    "sd_agrupada_pp": 2.789
+  },
+  "calibracion_intervalos": {
+   "aplicada": true,
+   "metodo": "banda(L) = punto ± k_L·z·σ; k_L de calibracion_intervalos.json",
+   "factores": {
+    "0.80": 1.2806,
+    "0.95": 1.8977
+   },
+   "niveles_aplicados": [
+    "0.80",
+    "0.95"
+   ],
+   "fuente": "data/processed/modelo/calibracion_intervalos.json",
+   "nota": "El punto no cambia: k solo escala la semianchura. Los escaños D'Hondt (sigma intacta en sd_error_backtest) quedan idénticos."
   },
   "normalizacion": {
    "procedimiento": "renormalizado al universo modelado (suma = 100)",
@@ -29,149 +43,175 @@
    "n_series": 13,
    "per_core_batch_size": 13
   },
-  "advertencia": "Punto = baseline (ultima media ponderada), que empata en el backtest con TimesFM; TimesFM NO mejora al baseline (ver docs/notes/modelo.md). Intervalos empiricos, no calibrados como probabilidad de resultado."
+  "advertencia": "Punto = baseline (ultima media ponderada), que empata en el backtest con TimesFM; TimesFM NO mejora al baseline (ver docs/notes/modelo.md). Intervalos empiricos recalibrados a su cobertura nominal con un factor agrupado (ver docs/notes/calibracion-intervalos.md); siguen siendo bandas simetricas, no una probabilidad de resultado."
  },
  "partidos": [
   {
    "partido": "PP",
    "punto": 35.406,
-   "p10": 31.93,
+   "p025": 25.32,
+   "p10": 30.95,
    "p20": 33.12,
    "p50": 35.41,
    "p80": 37.69,
-   "p90": 38.88,
+   "p90": 39.86,
+   "p975": 45.49,
    "sd_error_backtest": 2.71,
    "punto_timesfm": 35.18
   },
   {
    "partido": "PSOE",
    "punto": 29.146,
-   "p10": 23.53,
+   "p025": 12.84,
+   "p10": 21.95,
    "p20": 25.46,
    "p50": 29.15,
    "p80": 32.84,
-   "p90": 34.77,
+   "p90": 36.34,
+   "p975": 45.46,
    "sd_error_backtest": 4.38,
    "punto_timesfm": 29.24
   },
   {
    "partido": "VOX",
    "punto": 20.595,
-   "p10": 16.63,
+   "p025": 9.08,
+   "p10": 15.51,
    "p20": 17.99,
    "p50": 20.59,
    "p80": 23.2,
-   "p90": 24.56,
+   "p90": 25.68,
+   "p975": 32.11,
    "sd_error_backtest": 3.1,
    "punto_timesfm": 20.55
   },
   {
    "partido": "SUMAR",
    "punto": 7.104,
+   "p025": 0.0,
    "p10": 0.0,
    "p20": 1.12,
    "p50": 7.1,
    "p80": 13.09,
-   "p90": 16.22,
+   "p90": 18.77,
+   "p975": 33.55,
    "sd_error_backtest": 7.11,
    "punto_timesfm": 7.24
   },
   {
    "partido": "ERC",
    "punto": 1.724,
-   "p10": 0.88,
+   "p025": 0.0,
+   "p10": 0.65,
    "p20": 1.17,
    "p50": 1.72,
    "p80": 2.28,
-   "p90": 2.56,
+   "p90": 2.8,
+   "p975": 4.16,
    "sd_error_backtest": 0.66,
    "punto_timesfm": 1.72
   },
   {
    "partido": "EH BILDU",
    "punto": 1.591,
-   "p10": 1.31,
+   "p025": 0.78,
+   "p10": 1.23,
    "p20": 1.41,
    "p50": 1.59,
    "p80": 1.77,
-   "p90": 1.87,
+   "p90": 1.95,
+   "p975": 2.4,
    "sd_error_backtest": 0.22,
    "punto_timesfm": 1.61
   },
   {
    "partido": "JXCAT",
    "punto": 1.511,
-   "p10": 1.26,
+   "p025": 0.79,
+   "p10": 1.19,
    "p20": 1.35,
    "p50": 1.51,
    "p80": 1.67,
-   "p90": 1.76,
+   "p90": 1.83,
+   "p975": 2.23,
    "sd_error_backtest": 0.19,
    "punto_timesfm": 1.53
   },
   {
    "partido": "PNV",
    "punto": 1.039,
-   "p10": 0.91,
+   "p025": 0.67,
+   "p10": 0.88,
    "p20": 0.95,
    "p50": 1.04,
    "p80": 1.12,
-   "p90": 1.17,
+   "p90": 1.2,
+   "p975": 1.41,
    "sd_error_backtest": 0.1,
    "punto_timesfm": 1.03
   },
   {
    "partido": "BNG",
    "punto": 0.77,
-   "p10": 0.42,
+   "p025": 0.0,
+   "p10": 0.32,
    "p20": 0.54,
    "p50": 0.77,
    "p80": 1.0,
-   "p90": 1.12,
+   "p90": 1.22,
+   "p975": 1.8,
    "sd_error_backtest": 0.28,
    "punto_timesfm": 0.77
   },
   {
    "partido": "PACMA",
    "punto": 0.412,
+   "p025": 0.0,
    "p10": 0.0,
    "p20": 0.0,
    "p50": 0.41,
    "p80": 0.85,
-   "p90": 1.09,
+   "p90": 1.28,
+   "p975": 2.37,
    "sd_error_backtest": 0.53,
    "punto_timesfm": 0.42
   },
   {
    "partido": "CUP",
    "punto": 0.272,
+   "p025": 0.0,
    "p10": 0.0,
    "p20": 0.0,
    "p50": 0.27,
    "p80": 0.65,
-   "p90": 0.84,
+   "p90": 1.0,
+   "p975": 1.93,
    "sd_error_backtest": 0.45,
    "punto_timesfm": 0.27
   },
   {
    "partido": "NA+",
    "punto": 0.267,
-   "p10": 0.02,
+   "p025": 0.0,
+   "p10": 0.0,
    "p20": 0.1,
    "p50": 0.27,
    "p80": 0.43,
-   "p90": 0.52,
+   "p90": 0.58,
+   "p975": 0.99,
    "sd_error_backtest": 0.19,
    "punto_timesfm": 0.27
   },
   {
    "partido": "CC",
    "punto": 0.163,
+   "p025": 0.0,
    "p10": 0.0,
    "p20": 0.05,
    "p50": 0.16,
    "p80": 0.28,
-   "p90": 0.34,
+   "p90": 0.39,
+   "p975": 0.68,
    "sd_error_backtest": 0.14,
    "punto_timesfm": 0.16
   }

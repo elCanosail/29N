@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-15",
+  "generado": "2026-10-16",
   "objetivo": "29N — elecciones generales 2026-11-29",
   "mes_predicho": "2026-11",
   "ultimo_mes_con_dato": "2026-10-01",
@@ -15,9 +15,23 @@
    "n": 59
   },
   "intervalos": {
-   "tipo": "empiricos (errores del backtest del metodo primario)",
-   "nivel": "80% central (q0.1..q0.9)",
+   "tipo": "empiricos (errores del backtest del metodo primario), recalibrados",
+   "nivel": "bandas 80% (p10-p90) y 95% (p2,5-p97,5) centrales",
    "sd_agrupada_pp": 2.789
+  },
+  "calibracion_intervalos": {
+   "aplicada": true,
+   "metodo": "banda(L) = punto ± k_L·z·σ; k_L de calibracion_intervalos.json",
+   "factores": {
+    "0.80": 1.2806,
+    "0.95": 1.8977
+   },
+   "niveles_aplicados": [
+    "0.80",
+    "0.95"
+   ],
+   "fuente": "data/processed/modelo/calibracion_intervalos.json",
+   "nota": "El punto no cambia: k solo escala la semianchura. Los escaños D'Hondt (sigma intacta en sd_error_backtest) quedan idénticos."
   },
   "timesfm": {
    "checkpoint": "google/timesfm-2.5-200m-pytorch",
@@ -31,7 +45,7 @@
    "suma_puntos_baseline_cruda": 90.521,
    "suma_puntos_timesfm_cruda": 90.374
   },
-  "advertencia": "Punto = baseline (ultima media ponderada), que empata en el backtest con TimesFM; TimesFM NO mejora al baseline (ver docs/notes/modelo.md). Intervalos empiricos, no calibrados como probabilidad de resultado."
+  "advertencia": "Punto = baseline (ultima media ponderada), que empata en el backtest con TimesFM; TimesFM NO mejora al baseline (ver docs/notes/modelo.md). Intervalos empiricos recalibrados a su cobertura nominal con un factor agrupado (ver docs/notes/calibracion-intervalos.md); siguen siendo bandas simetricas, no una probabilidad de resultado."
  },
  "punto": {
   "PP": 35.178,

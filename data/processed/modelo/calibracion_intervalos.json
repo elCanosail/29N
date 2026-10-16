@@ -1,0 +1,197 @@
+{
+ "generado": "2026-10-16",
+ "metodo_primario": "baseline",
+ "protocolo": "backtest.py (5 elecciones; errores del baseline, real ≥ 0,1 %)",
+ "estimador": "k_L = quantile_L(|err|/σ_LOO) / z_{(1+L)/2}; agrupado; σ LOO",
+ "n_observaciones": 59,
+ "n_elecciones": 5,
+ "factores": {
+  "0.60": {
+   "nivel_nominal_pct": 60.0,
+   "aplicado": false,
+   "z": 0.8416,
+   "k": 0.8491,
+   "cobertura_antes_honesta_pct": 66.1,
+   "cobertura_despues_honesta_pct": 59.3,
+   "cobertura_antes_publicada_pct": 64.4,
+   "cobertura_despues_publicada_pct": 57.6,
+   "semianchura_media_antes_pp": 1.402,
+   "semianchura_media_despues_pp": 1.19
+  },
+  "0.80": {
+   "nivel_nominal_pct": 80.0,
+   "aplicado": true,
+   "z": 1.2816,
+   "k": 1.2806,
+   "cobertura_antes_honesta_pct": 74.6,
+   "cobertura_despues_honesta_pct": 79.7,
+   "cobertura_antes_publicada_pct": 76.3,
+   "cobertura_despues_publicada_pct": 84.7,
+   "semianchura_media_antes_pp": 2.135,
+   "semianchura_media_despues_pp": 2.734
+  },
+  "0.95": {
+   "nivel_nominal_pct": 95.0,
+   "aplicado": true,
+   "z": 1.96,
+   "k": 1.8977,
+   "cobertura_antes_honesta_pct": 81.4,
+   "cobertura_despues_honesta_pct": 94.9,
+   "cobertura_antes_publicada_pct": 89.8,
+   "cobertura_despues_publicada_pct": 100.0,
+   "semianchura_media_antes_pp": 3.265,
+   "semianchura_media_despues_pp": 6.195
+  }
+ },
+ "validacion_loo_del_estimador": {
+  "0.60": {
+   "nivel_nominal_pct": 60.0,
+   "cobertura_loo_pct": 62.7,
+   "k_por_fold": [
+    0.8491,
+    0.9437,
+    0.7198,
+    0.8243,
+    0.9994
+   ],
+   "k_rango": [
+    0.7198,
+    0.9994
+   ],
+   "detalle": {
+    "2015-12-20": {
+     "k_estimado": 0.8491,
+     "n": 10,
+     "aciertos": 6,
+     "cobertura_pct": 60.0
+    },
+    "2016-06-26": {
+     "k_estimado": 0.9437,
+     "n": 11,
+     "aciertos": 9,
+     "cobertura_pct": 81.8
+    },
+    "2019-04-28": {
+     "k_estimado": 0.7198,
+     "n": 12,
+     "aciertos": 4,
+     "cobertura_pct": 33.3
+    },
+    "2019-11-10": {
+     "k_estimado": 0.8243,
+     "n": 13,
+     "aciertos": 7,
+     "cobertura_pct": 53.8
+    },
+    "2023-07-23": {
+     "k_estimado": 0.9994,
+     "n": 13,
+     "aciertos": 11,
+     "cobertura_pct": 84.6
+    }
+   }
+  },
+  "0.80": {
+   "nivel_nominal_pct": 80.0,
+   "cobertura_loo_pct": 79.7,
+   "k_por_fold": [
+    1.1114,
+    1.4602,
+    1.1766,
+    1.0276,
+    1.5363
+   ],
+   "k_rango": [
+    1.0276,
+    1.5363
+   ],
+   "detalle": {
+    "2015-12-20": {
+     "k_estimado": 1.1114,
+     "n": 10,
+     "aciertos": 7,
+     "cobertura_pct": 70.0
+    },
+    "2016-06-26": {
+     "k_estimado": 1.4602,
+     "n": 11,
+     "aciertos": 10,
+     "cobertura_pct": 90.9
+    },
+    "2019-04-28": {
+     "k_estimado": 1.1766,
+     "n": 12,
+     "aciertos": 9,
+     "cobertura_pct": 75.0
+    },
+    "2019-11-10": {
+     "k_estimado": 1.0276,
+     "n": 13,
+     "aciertos": 9,
+     "cobertura_pct": 69.2
+    },
+    "2023-07-23": {
+     "k_estimado": 1.5363,
+     "n": 13,
+     "aciertos": 12,
+     "cobertura_pct": 92.3
+    }
+   }
+  },
+  "0.95": {
+   "nivel_nominal_pct": 95.0,
+   "cobertura_loo_pct": 94.9,
+   "k_por_fold": [
+    1.7873,
+    1.9804,
+    1.9164,
+    1.8231,
+    1.8231
+   ],
+   "k_rango": [
+    1.7873,
+    1.9804
+   ],
+   "detalle": {
+    "2015-12-20": {
+     "k_estimado": 1.7873,
+     "n": 10,
+     "aciertos": 9,
+     "cobertura_pct": 90.0
+    },
+    "2016-06-26": {
+     "k_estimado": 1.9804,
+     "n": 11,
+     "aciertos": 11,
+     "cobertura_pct": 100.0
+    },
+    "2019-04-28": {
+     "k_estimado": 1.9164,
+     "n": 12,
+     "aciertos": 12,
+     "cobertura_pct": 100.0
+    },
+    "2019-11-10": {
+     "k_estimado": 1.8231,
+     "n": 13,
+     "aciertos": 12,
+     "cobertura_pct": 92.3
+    },
+    "2023-07-23": {
+     "k_estimado": 1.8231,
+     "n": 13,
+     "aciertos": 12,
+     "cobertura_pct": 92.3
+    }
+   }
+  }
+ },
+ "advertencias": [
+  "Solo se aplican los niveles aprobados 0,80 (p10–p90) y 0,95 (p2,5–p97,5). El nivel 0,60 se estima como diagnóstico y NO se aplica.",
+  "El factor es agrupado (un k para los 13 partidos): una SD por partido con n≤5 no permite estimar un factor por partido. Los partidos de cola pesada (SUMAR) empujan k al alza para todos.",
+  "El estimador se apoya en 5 elecciones (59 observaciones partido×elección, correlacionadas dentro de cada cita). El IC del factor es el del LOO, no el de un IC binomial sobre 59 puntos independientes.",
+  "La cobertura 'después' honesta ≈ nominal es optimista por construcción (mismo conjunto para estimar y medir). La columna LOO es la honesta.",
+  "La recalibración solo ensancha bandas simétricas: corrige anchura, no asimetría ni sesgo del punto.",
+  "No se modifica σ (`sd_error_backtest`) ni el punto: los escaños D'Hondt quedan idénticos (provincial.py consume solo punto + σ)."
+ ]
+}

@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-15",
+  "generado": "2026-10-16",
   "objetivo": "29N — elecciones generales 2026-11-29",
   "mes_predicho": "2026-11",
   "ultimo_mes_con_dato": "2026-10-01",
@@ -15,9 +15,23 @@
    "n": 59
   },
   "intervalos": {
-   "tipo": "empiricos (errores del backtest del metodo primario)",
-   "nivel": "80% central (q0.1..q0.9)",
+   "tipo": "empiricos (errores del backtest del metodo primario), recalibrados",
+   "nivel": "bandas 80% (p10-p90) y 95% (p2,5-p97,5) centrales",
    "sd_agrupada_pp": 2.789
+  },
+  "calibracion_intervalos": {
+   "aplicada": true,
+   "metodo": "banda(L) = punto ± k_L·z·σ; k_L de calibracion_intervalos.json",
+   "factores": {
+    "0.80": 1.2806,
+    "0.95": 1.8977
+   },
+   "niveles_aplicados": [
+    "0.80",
+    "0.95"
+   ],
+   "fuente": "data/processed/modelo/calibracion_intervalos.json",
+   "nota": "El punto no cambia: k solo escala la semianchura. Los escaños D'Hondt (sigma intacta en sd_error_backtest) quedan idénticos."
   },
   "timesfm": {
    "checkpoint": "google/timesfm-2.5-200m-pytorch",
@@ -31,21 +45,19 @@
    "suma_puntos_baseline_cruda": 90.521,
    "suma_puntos_timesfm_cruda": 90.374
   },
-  "advertencia": "Punto = baseline (ultima media ponderada), que empata en el backtest con TimesFM; TimesFM NO mejora al baseline (ver docs/notes/modelo.md). Intervalos empiricos, no calibrados como probabilidad de resultado."
+  "advertencia": "Punto = baseline (ultima media ponderada), que empata en el backtest con TimesFM; TimesFM NO mejora al baseline (ver docs/notes/modelo.md). Intervalos empiricos recalibrados a su cobertura nominal con un factor agrupado (ver docs/notes/calibracion-intervalos.md); siguen siendo bandas simetricas, no una probabilidad de resultado."
  },
  "partidos": {
   "PP": {
    "punto": 35.406,
    "cuantiles": {
-    "0.1": 31.93,
+    "0.025": 25.318,
+    "0.1": 30.955,
     "0.2": 33.123,
-    "0.3": 33.984,
-    "0.4": 34.719,
     "0.5": 35.406,
-    "0.6": 36.093,
-    "0.7": 36.828,
     "0.8": 37.689,
-    "0.9": 38.882
+    "0.9": 39.857,
+    "0.975": 45.494
    },
    "sd_error_backtest": 2.712,
    "punto_timesfm": 35.178,
@@ -65,15 +77,13 @@
   "PSOE": {
    "punto": 29.146,
    "cuantiles": {
-    "0.1": 23.527,
+    "0.025": 12.836,
+    "0.1": 21.95,
     "0.2": 25.456,
-    "0.3": 26.847,
-    "0.4": 28.035,
     "0.5": 29.146,
-    "0.6": 30.257,
-    "0.7": 31.446,
     "0.8": 32.837,
-    "0.9": 34.766
+    "0.9": 36.343,
+    "0.975": 45.456
    },
    "sd_error_backtest": 4.385,
    "punto_timesfm": 29.243,
@@ -93,15 +103,13 @@
   "VOX": {
    "punto": 20.595,
    "cuantiles": {
-    "0.1": 16.626,
+    "0.025": 9.076,
+    "0.1": 15.512,
     "0.2": 17.988,
-    "0.3": 18.971,
-    "0.4": 19.81,
     "0.5": 20.595,
-    "0.6": 21.38,
-    "0.7": 22.219,
     "0.8": 23.201,
-    "0.9": 24.564
+    "0.9": 25.678,
+    "0.975": 32.114
    },
    "sd_error_backtest": 3.097,
    "punto_timesfm": 20.553,
@@ -121,15 +129,13 @@
   "SUMAR": {
    "punto": 7.104,
    "cuantiles": {
+    "0.025": 0.0,
     "0.1": 0.0,
     "0.2": 1.119,
-    "0.3": 3.375,
-    "0.4": 5.302,
     "0.5": 7.104,
-    "0.6": 8.906,
-    "0.7": 10.833,
     "0.8": 13.089,
-    "0.9": 16.218
+    "0.9": 18.775,
+    "0.975": 33.555
    },
    "sd_error_backtest": 7.111,
    "punto_timesfm": 7.242,
@@ -149,15 +155,13 @@
   "ERC": {
    "punto": 1.724,
    "cuantiles": {
-    "0.1": 0.884,
+    "0.025": 0.0,
+    "0.1": 0.649,
     "0.2": 1.173,
-    "0.3": 1.38,
-    "0.4": 1.558,
     "0.5": 1.724,
-    "0.6": 1.89,
-    "0.7": 2.068,
     "0.8": 2.276,
-    "0.9": 2.564
+    "0.9": 2.799,
+    "0.975": 4.161
    },
    "sd_error_backtest": 0.655,
    "punto_timesfm": 1.722,
@@ -177,15 +181,13 @@
   "JXCAT": {
    "punto": 1.511,
    "cuantiles": {
-    "0.1": 1.262,
+    "0.025": 0.79,
+    "0.1": 1.193,
     "0.2": 1.347,
-    "0.3": 1.409,
-    "0.4": 1.461,
     "0.5": 1.511,
-    "0.6": 1.56,
-    "0.7": 1.612,
     "0.8": 1.674,
-    "0.9": 1.759
+    "0.9": 1.829,
+    "0.975": 2.231
    },
    "sd_error_backtest": 0.194,
    "punto_timesfm": 1.531,
@@ -205,15 +207,13 @@
   "PNV": {
    "punto": 1.039,
    "cuantiles": {
-    "0.1": 0.911,
+    "0.025": 0.667,
+    "0.1": 0.875,
     "0.2": 0.955,
-    "0.3": 0.986,
-    "0.4": 1.013,
     "0.5": 1.039,
-    "0.6": 1.064,
-    "0.7": 1.091,
     "0.8": 1.123,
-    "0.9": 1.167
+    "0.9": 1.203,
+    "0.975": 1.411
    },
    "sd_error_backtest": 0.1,
    "punto_timesfm": 1.03,
@@ -233,15 +233,13 @@
   "EH BILDU": {
    "punto": 1.591,
    "cuantiles": {
-    "0.1": 1.312,
+    "0.025": 0.782,
+    "0.1": 1.234,
     "0.2": 1.408,
-    "0.3": 1.477,
-    "0.4": 1.536,
     "0.5": 1.591,
-    "0.6": 1.646,
-    "0.7": 1.705,
     "0.8": 1.774,
-    "0.9": 1.87
+    "0.9": 1.948,
+    "0.975": 2.4
    },
    "sd_error_backtest": 0.217,
    "punto_timesfm": 1.606,
@@ -261,15 +259,13 @@
   "BNG": {
    "punto": 0.77,
    "cuantiles": {
-    "0.1": 0.416,
+    "0.025": 0.0,
+    "0.1": 0.316,
     "0.2": 0.537,
-    "0.3": 0.625,
-    "0.4": 0.7,
     "0.5": 0.77,
-    "0.6": 0.84,
-    "0.7": 0.915,
     "0.8": 1.003,
-    "0.9": 1.125
+    "0.9": 1.224,
+    "0.975": 1.799
    },
    "sd_error_backtest": 0.277,
    "punto_timesfm": 0.77,
@@ -289,15 +285,13 @@
   "CUP": {
    "punto": 0.272,
    "cuantiles": {
+    "0.025": 0.0,
     "0.1": 0.0,
     "0.2": 0.0,
-    "0.3": 0.038,
-    "0.4": 0.159,
     "0.5": 0.272,
-    "0.6": 0.385,
-    "0.7": 0.506,
     "0.8": 0.648,
-    "0.9": 0.844
+    "0.9": 1.004,
+    "0.975": 1.932
    },
    "sd_error_backtest": 0.446,
    "punto_timesfm": 0.274,
@@ -317,15 +311,13 @@
   "CC": {
    "punto": 0.163,
    "cuantiles": {
+    "0.025": 0.0,
     "0.1": 0.0,
     "0.2": 0.046,
-    "0.3": 0.09,
-    "0.4": 0.128,
     "0.5": 0.163,
-    "0.6": 0.198,
-    "0.7": 0.236,
     "0.8": 0.28,
-    "0.9": 0.342
+    "0.9": 0.392,
+    "0.975": 0.681
    },
    "sd_error_backtest": 0.139,
    "punto_timesfm": 0.162,
@@ -345,15 +337,13 @@
   "NA+": {
    "punto": 0.267,
    "cuantiles": {
-    "0.1": 0.019,
+    "0.025": 0.0,
+    "0.1": 0.0,
     "0.2": 0.104,
-    "0.3": 0.166,
-    "0.4": 0.218,
     "0.5": 0.267,
-    "0.6": 0.316,
-    "0.7": 0.369,
     "0.8": 0.43,
-    "0.9": 0.516
+    "0.9": 0.585,
+    "0.975": 0.988
    },
    "sd_error_backtest": 0.194,
    "punto_timesfm": 0.273,
@@ -373,15 +363,13 @@
   "PACMA": {
    "punto": 0.412,
    "cuantiles": {
+    "0.025": 0.0,
     "0.1": 0.0,
     "0.2": 0.0,
-    "0.3": 0.136,
-    "0.4": 0.279,
     "0.5": 0.412,
-    "0.6": 0.545,
-    "0.7": 0.688,
     "0.8": 0.855,
-    "0.9": 1.087
+    "0.9": 1.276,
+    "0.975": 2.371
    },
    "sd_error_backtest": 0.527,
    "punto_timesfm": 0.416,

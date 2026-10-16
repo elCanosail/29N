@@ -7,7 +7,10 @@ Produce la predicción estatal por partido a **nov-2026** con:
     con TimesFM (ver `docs/notes/modelo.md`). Regla de honestidad: se usa el
     que mejor mide, no el que mejor vende.
   - **intervalos**: empíricos, de la desviación de los errores de ese método en
-    el backtest (por partido; el error agrupado si n<4). 80 % central.
+    el backtest (por partido; el error agrupado si n<4), **recalibrados** a su
+    cobertura nominal con el factor multiplicativo de `calibracion.py`
+    (`banda(L) = punto ± k_L·z·σ`; el punto NO cambia). Se publican las bandas
+    del 80 % (p10–p90) y del 95 % (p2,5–p97,5).
   - además se publica el forecast **TimesFM** (punto + cuantiles nativos) como
     contraste.
 
@@ -32,6 +35,10 @@ CHECKPOINT = "google/timesfm-2.5-200m-pytorch"
 QUANTILE_LEVELS = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 QUANTILE_COLUMNS = list(range(1, 10))
 POINT_COLUMN = 5
+
+# Cuantiles del forecast publicado. Los nativos de TimesFM solo llegan a
+# q0.1..q0.9; 0,025/0,975 añaden la banda del 95 % recalibrada y 0,5 es el punto.
+PUBLISHED_LEVELS = [0.025, 0.1, 0.2, 0.5, 0.8, 0.9, 0.975]
 
 
 # --------------------------------------------------------------------------- #
@@ -137,6 +144,14 @@ def main() -> int:
     backtest = json.loads(bt_path.read_text(encoding="utf-8"))
     metodo, sd_party, pooled_sd = party_error_sd(backtest, parties)
 
+    # Recalibración de intervalos (multiplicativa, sin tocar el punto). Import
+    # local para evitar el ciclo de importación (calibracion usa z_value de aquí).
+    import calibracion
+    factores = calibracion.cargar_factores()
+    if factores is None:
+        print("AVISO: sin calibracion_intervalos.json — bandas sin recalibrar")
+        print("       ejecuta antes: python pipeline/modelo/calibracion.py")
+
     # Series hasta el último mes con dato; objetivo nov-2026.
     grid = C.month_grid()
     last = last_data_month(obs)
@@ -176,8 +191,11 @@ def main() -> int:
     out_partidos = {}
     for p in parties:
         s = sd_party[p]
-        q = {str(lv): round(max(0.0, prim[p] + z_value(lv) * s), 3)
-             for lv in QUANTILE_LEVELS}
+        # Cuantiles publicados = punto ± k_L·z·σ (k=1 en niveles no recalibrados).
+        # El punto (q0,5, z=0) queda EXACTAMENTE igual: la calibración solo toca
+        # la semianchura.
+        q = {str(lv): round(calibracion.calibrar_cuantil(prim[p], s, lv, factores), 3)
+             for lv in PUBLISHED_LEVELS}
         out_partidos[p] = {
             "punto": round(prim[p], 3),
             "cuantiles": q,
@@ -203,9 +221,20 @@ def main() -> int:
             "n": backtest["n_observaciones_mae"],
         },
         "intervalos": {
-            "tipo": "empiricos (errores del backtest del metodo primario)",
-            "nivel": "80% central (q0.1..q0.9)",
+            "tipo": "empiricos (errores del backtest del metodo primario), recalibrados",
+            "nivel": "bandas 80% (p10-p90) y 95% (p2,5-p97,5) centrales",
             "sd_agrupada_pp": round(pooled_sd, 3),
+        },
+        "calibracion_intervalos": {
+            "aplicada": factores is not None,
+            "metodo": "banda(L) = punto ± k_L·z·σ; k_L de calibracion_intervalos.json",
+            "factores": {f"{k:.2f}": round(v, 4) for k, v in (factores or {}).items()},
+            "niveles_aplicados": ["0.80", "0.95"],
+            "fuente": "data/processed/modelo/calibracion_intervalos.json",
+            "nota": (
+                "El punto no cambia: k solo escala la semianchura. Los escaños "
+                "D'Hondt (sigma intacta en sd_error_backtest) quedan idénticos."
+            ),
         },
         "timesfm": {"checkpoint": CHECKPOINT, "backend": "torch (CPU)",
                     "n_series": len(parties), "per_core_batch_size": len(parties)},
@@ -218,7 +247,9 @@ def main() -> int:
         "advertencia": (
             "Punto = baseline (ultima media ponderada), que empata en el backtest "
             "con TimesFM; TimesFM NO mejora al baseline (ver docs/notes/modelo.md). "
-            "Intervalos empiricos, no calibrados como probabilidad de resultado."
+            "Intervalos empiricos recalibrados a su cobertura nominal con un factor "
+            "agrupado (ver docs/notes/calibracion-intervalos.md); siguen siendo "
+            "bandas simetricas, no una probabilidad de resultado."
         ),
     }
 
