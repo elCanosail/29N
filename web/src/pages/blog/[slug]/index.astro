@@ -1,0 +1,174 @@
+---
+/**
+ * /blog/[slug]/ — plantilla de artículo (estética gaceta, JSON-LD BlogPosting).
+ * La ruta sale del id de la entrada (nombre del fichero .md).
+ */
+import Base from '../../../layouts/Base.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { getCollection, render } from 'astro:content';
+import { fechaCorta } from '../../../lib/format';
+
+export async function getStaticPaths() {
+  const entradas = await getCollection('blog');
+  return entradas.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, description, pubDate, updated, keyword } = entry.data;
+
+const palabras = entry.body?.split(/\s+/).length ?? 0;
+const lectura = Math.max(1, Math.ceil(palabras / 200));
+const url = new URL(Astro.url.pathname, Astro.site);
+
+/** FAQPage por artículo (solo donde hay bloque FAQ real). */
+const FAQ: Record<string, { p: string; r: string }[]> = {
+  'como-leer-una-encuesta-electoral': [
+    {
+      p: '¿Qué es el margen de error de una encuesta?',
+      r: 'Es el intervalo dentro del cual puede estar el valor real con una confianza determinada, habitualmente el 95 %. Se aproxima con 1/√n: con n=1.000, unos ±3,2 puntos. Un 32 % con ese margen puede corresponder a un apoyo real entre el 28,8 % y el 35,2 %.',
+    },
+    {
+      p: '¿Por qué difieren las encuestas?',
+      r: 'Por azar muestral, por fechas de campo distintas, por universos y bases de cálculo diferentes y por el «efecto casa» (técnica y ponderación propias de cada encuestador). Divergencias de 2-4 puntos entre casas el mismo mes son lo normal, no una anomalía.',
+    },
+    {
+      p: '¿Qué debe incluir una ficha técnica?',
+      r: 'Financiador, ámbito y universo, fechas del trabajo de campo, número de entrevistas, técnica, sistema de muestreo y ponderación, margen de error y base de los porcentajes. La LOREG española exige estos datos a las encuestas publicadas durante una campaña electoral.',
+    },
+    {
+      p: '¿Qué significa que un porcentaje es «sobre censo»?',
+      r: 'Que se calcula sobre todos los mayores de edad del censo, incluidos abstencionistas y respuestas NS/NC. Es la base habitual del CIS, y por eso sus cifras son más bajas que las de las casas privadas, que suelen publicar sobre voto válido. Compararlas sin normalizar produce errores groseros.',
+    },
+  ],
+};
+
+const faq = FAQ[entry.id] ?? [];
+const jsonLd: Record<string, unknown>[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    description,
+    datePublished: pubDate.toISOString(),
+    dateModified: (updated ?? pubDate).toISOString(),
+    author: { '@type': 'Organization', name: '29N', url: 'https://29n.info' },
+    publisher: { '@type': 'Organization', name: '29N', url: 'https://29n.info' },
+    mainEntityOfPage: url.toString(),
+    inLanguage: 'es-ES',
+    keywords: keyword,
+  },
+];
+if (faq.length > 0) {
+  jsonLd.push({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.p,
+      acceptedAnswer: { '@type': 'Answer', text: f.r },
+    })),
+  });
+}
+const jsonLdHtml = `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`;
+---
+
+<Base titulo={title} descripcion={description} ogImage={`/og/${entry.id}.png`}>
+  <div class="contenedor">
+    <Breadcrumbs items={[{ label: 'Blog', href: '/blog/' }, { label: title }]} />
+
+    <article class="articulo">
+      <header class="articulo__cab">
+        <p class="eyebrow">Blog · {keyword}</p>
+        <h1 class="articulo__titulo">{title}</h1>
+        <p class="articulo__meta mono">
+          <time datetime={pubDate.toISOString()}>{fechaCorta(pubDate.toISOString())}</time>
+          · {lectura} min de lectura
+          {updated && pubDate.toISOString() !== updated.toISOString() && (
+            <span> · actualizado {fechaCorta(updated.toISOString())}</span>
+          )}
+        </p>
+      </header>
+
+      <div class="prose-gaceta">
+        <Content />
+      </div>
+
+      <footer class="articulo__pie">
+        <p>
+          Este análisis forma parte del proyecto 29N: predicción de las elecciones
+          generales con datos propios y metodología reproducible. La base del artículo
+          está en la <a href="/metodologia/">metodología</a> y el
+          <a href="/encuestas/">explorador de encuestas</a>.
+        </p>
+      </footer>
+    </article>
+
+    <Fragment set:html={jsonLdHtml} />
+  </div>
+</Base>
+
+<style>
+  .articulo { max-width: 74ch; }
+  .articulo__cab { padding-block: var(--s-4) var(--s-4); border-bottom: var(--borde-regla); margin-bottom: var(--s-4); }
+  .articulo__titulo {
+    font-family: var(--f-titular);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 var(--s-2);
+  }
+  .articulo__meta { margin: 0; font-size: 0.75rem; color: var(--tinta-2); }
+
+  /* Cuerpo del artículo — la gaceta aplica al markdown renderizado. */
+  .prose-gaceta { font-size: 1.0625rem; line-height: 1.65; }
+  .prose-gaceta :global(h2) {
+    font-family: var(--f-titular);
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: var(--s-6) 0 var(--s-2);
+    padding-top: var(--s-3);
+    border-top: var(--borde-regla);
+  }
+  .prose-gaceta :global(h3) { font-size: 1.15rem; margin: var(--s-4) 0 var(--s-1); }
+  .prose-gaceta :global(p) { margin: 0 0 var(--s-3); }
+  .prose-gaceta :global(a) { color: var(--enlace); text-decoration: underline; text-underline-offset: 0.2em; }
+  .prose-gaceta :global(ul), .prose-gaceta :global(ol) { margin: 0 0 var(--s-3); padding-left: 1.4em; }
+  .prose-gaceta :global(li) { margin-bottom: 0.4em; }
+  .prose-gaceta :global(blockquote) {
+    margin: var(--s-3) 0;
+    padding: var(--s-2) var(--s-3);
+    border-left: 3px solid var(--intervalo-borde);
+    background: var(--papel-2);
+    font-style: italic;
+  }
+  .prose-gaceta :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    margin: var(--s-3) 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .prose-gaceta :global(th) { text-align: left; border-bottom: 2px solid var(--tinta); padding: 6px 10px; }
+  .prose-gaceta :global(td) { border-bottom: var(--borde-regla); padding: 6px 10px; }
+  .prose-gaceta :global(code) {
+    font-family: var(--f-mono);
+    font-size: 0.85em;
+    background: var(--papel-3);
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+  .prose-gaceta :global(strong) { color: var(--tinta); }
+
+  .articulo__pie {
+    margin-top: var(--s-6);
+    padding-top: var(--s-3);
+    border-top: var(--borde-tinta);
+    font-size: var(--t-small);
+    color: var(--tinta-2);
+  }
+  .articulo__pie a { color: var(--enlace); }
+</style>

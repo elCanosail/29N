@@ -20,10 +20,12 @@ import Footer from '../components/Footer.astro';
 interface Props {
   titulo: string;
   descripcion?: string;
+  ogImage?: string;
 }
 const {
   titulo,
   descripcion = 'Histórico de encuestas electorales españolas, resultados oficiales 1977–2023 y predicción provincial con intervalos.',
+  ogImage,
 } = Astro.props as Props;
 
 const tituloCompleto = titulo === 'Portada' ? '29N, estimación de resultados' : `${titulo} · 29N`;
@@ -42,6 +44,8 @@ const tituloCompleto = titulo === 'Portada' ? '29N, estimación de resultados' :
     <meta property="og:description" content={descripcion} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
+    {ogImage && <meta property="og:image" content={new URL(ogImage, Astro.site ?? Astro.url).toString()} />}
+    {ogImage && <meta name="twitter:card" content="summary_large_image" />}
   </head>
   <body>
     <a class="salto-contenido" href="#contenido">Saltar al contenido</a>

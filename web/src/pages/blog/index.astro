@@ -1,0 +1,70 @@
+---
+/**
+ * /blog/ — índice editorial del blog de 29N (docs/plans/blog.md).
+ * Lista de gaceta: fecha, titular, entradilla. Sin grid de cards.
+ */
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getCollection } from 'astro:content';
+import { fechaCorta } from '../../lib/format';
+
+const entradas = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate - a.data.pubDate,
+);
+---
+
+<Base
+  titulo="Blog"
+  descripcion="Blog de 29N: pedagogía electoral y análisis con datos propios — encuestas, coaliciones, ley D'Hondt y el modelo de predicción del 29N."
+>
+  <div class="contenedor">
+    <Breadcrumbs items={[{ label: 'Blog' }]} />
+
+    <header class="cabecera-pagina">
+      <p class="eyebrow entrada">Blog · 29N</p>
+      <h1 class="medida entrada entrada--1">El 29N, explicado con datos</h1>
+      <p class="titular-intro entrada entrada--2">
+        Pedagogía electoral y análisis propio: cómo leemos las encuestas, qué dice el
+        registro de coaliciones y cómo funciona el modelo. Cada cifra, con su fuente.
+      </p>
+    </header>
+
+    {entradas.length === 0 && (
+      <p class="nota">Las primeras entradas se publican en los próximos días.</p>
+    )}
+
+    <ol class="lista-blog">
+      {entradas.map((e) => (
+        <li class="lista-blog__entrada">
+          <p class="mono lista-blog__fecha">
+            <time datetime={e.data.pubDate.toISOString()}>{fechaCorta(e.data.pubDate.toISOString())}</time>
+          </p>
+          <h2 class="lista-blog__titulo">
+            <a href={`/blog/${e.id}/`}>{e.data.title}</a>
+          </h2>
+          <p class="lista-blog__entradilla">{e.data.description}</p>
+          <p class="mono lista-blog__keyword">{e.data.keyword}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</Base>
+
+<style>
+  .cabecera-pagina { padding-block: var(--s-5) var(--s-5); border-bottom: var(--borde-regla); margin-bottom: var(--s-5); }
+
+  .lista-blog { list-style: none; margin: 0; padding: 0; max-width: 72ch; }
+  .lista-blog__entrada {
+    padding-block: var(--s-4);
+    border-bottom: var(--borde-regla);
+  }
+  .lista-blog__fecha { margin: 0 0 var(--s-1); font-size: 0.75rem; color: var(--tinta-2); }
+  .lista-blog__titulo { margin: 0 0 var(--s-2); font-family: var(--f-titular); font-size: 1.5rem; line-height: 1.2; }
+  .lista-blog__titulo a {
+    color: var(--tinta);
+    text-decoration: none;
+  }
+  .lista-blog__titulo a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+  .lista-blog__entradilla { margin: 0 0 var(--s-2); color: var(--tinta-2); line-height: 1.5; }
+  .lista-blog__keyword { margin: 0; font-size: 0.6875rem; color: var(--tinta-3); text-transform: uppercase; letter-spacing: 0.05em; }
+</style>

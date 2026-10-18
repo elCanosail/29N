@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://29n.info/sitemap-index.xml

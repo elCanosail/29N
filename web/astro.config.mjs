@@ -1,15 +1,17 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 // 29N — web pública.
 // Salida 100% estática: la web solo lee JSON ya calculado por el pipeline
 // (decisión de arquitectura en docs/plan.md: "la web solo lee, no calcula").
 //
-// Nota: `site` se fija antes del deploy en Vercel (pendiente de Fase 5).
-// No se inventa un dominio aquí para no publicar metadatos falsos.
+// `site` es el dominio canónico (requerido por sitemap y canonical URLs).
 export default defineConfig({
+  site: 'https://29n.info',
   output: 'static',
   trailingSlash: 'always',
+  integrations: [sitemap()],
   build: {
     format: 'directory',
   },
