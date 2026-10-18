@@ -72,6 +72,7 @@ Web que expone el histórico completo de encuestas electorales españolas (CIS e
 - [~] Scoring: MAE 23J calculado (Simple Lógica 1,73 … Imop 2,32) — valida el pipeline, n=1-3 por encuestador: NO es ranking fiable todavía. Scoring histórico robusto requiere serie 2015-2023
 - [x] Esquema unificado con CIS (partidos canónicos del diccionario) + log de exclusiones público (8 exclusiones con motivo)
 - [x] Correcciones de sondeo previo: "Hand Research" y "Cercle d'Estudis" no existen como encuestadores de generales (excluidos; homólogo real: CEO, ámbito catalán)
+- [x] 18-10-2026, decisión Chema: la curación diaria ingiere directamente las encuestas claras y relevantes (intención de voto electoral con ficha técnica verificable) sin supervisión; las dudosas (ficha inaccesible, faltan n/fechas/universo, formato ambiguo) escalan a Chema; las no electorales se descartan con una línea. Implementado en la automatización `29n-exploracion-diaria`
 
 ### Fase 4 — Modelo (semana 4-5) — CERRADA 15-10-2026
 - [x] Serie ponderada por partido con pesos de calidad (recencia exponencial, √n, scoring de encuestador, corrección EB de sesgo de casa restada)

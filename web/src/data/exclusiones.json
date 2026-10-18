@@ -1,8 +1,8 @@
 {
  "meta": {
-  "n": 79,
+  "n": 84,
   "n_cis": 71,
-  "n_privados": 8,
+  "n_privados": 13,
   "nota": "Una encuesta que no pasa validación no desaparece: se documenta con su motivo."
  },
  "exclusiones": [
@@ -795,6 +795,56 @@
    "eleccion": null,
    "motivo": "Tracking diario del 23J (entregas intermedias, p.ej. 14/07/2023 y 15/07/2023 en elDiario.es): se registra solo la entrega final (16/07/2023) por ser la que incluye ficha técnica con tamaño muestral (1.600) y fechas de campo; el resto de entregas diarias no se han podido cotejar con ficha técnica propia en esta sesión.",
    "url": null
+  },
+  {
+   "origen": "cron",
+   "id": null,
+   "casa": "Imop",
+   "slug": "encuesta-telefonica",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "Página comercial de servicios de Imop; no es un estudio publicado",
+   "url": "https://www.imop.es/encuesta-telefonica"
+  },
+  {
+   "origen": "cron",
+   "id": null,
+   "casa": "Imop",
+   "slug": "encuestas-online",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "Página comercial de servicios de Imop; no es un estudio publicado",
+   "url": "https://www.imop.es/encuestas-online"
+  },
+  {
+   "origen": "cron",
+   "id": null,
+   "casa": "Imop",
+   "slug": "encuesta-de-imop-insights-para-vanitatis-sobre-el-estado-de-la-corona",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "Imagen de la Corona (2022); no es intención de voto electoral",
+   "url": "https://www.imop.es/encuesta-de-imop-insights-para-vanitatis-sobre-el-estado-de-la-corona"
+  },
+  {
+   "origen": "cron",
+   "id": null,
+   "casa": "Imop",
+   "slug": "barometro-de-innovacion-financiera-bif",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "Sondeo a clientes financieros (2021); no es electoral",
+   "url": "https://www.imop.es/barometro-de-innovacion-financiera-bif"
+  },
+  {
+   "origen": "cron",
+   "id": null,
+   "casa": "Imop",
+   "slug": "encuesta-electoral-andalucia",
+   "tipo": null,
+   "eleccion": "autonómica",
+   "motivo": "Autonómicas andaluzas 2022; fuera de ámbito (29N = generales) y sin ficha técnica publicada en la página",
+   "url": "https://www.imop.es/encuesta-electoral-andalucia"
   }
  ]
 }

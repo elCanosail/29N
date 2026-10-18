@@ -55,6 +55,12 @@ def urls_conocidas():
         for e in datos.get("encuestas", []):
             if e.get("url"):
                 conocidas.add(e["url"].rstrip("/"))
+    # Las excluidas con motivo documentado no vuelven a aparecer como candidatas.
+    excl = os.path.join(REPO, "web", "src", "data", "exclusiones.json")
+    if os.path.exists(excl):
+        for x in json.load(open(excl, encoding="utf-8")).get("exclusiones", []):
+            if x.get("url"):
+                conocidas.add(x["url"].rstrip("/"))
     return conocidas
 
 
