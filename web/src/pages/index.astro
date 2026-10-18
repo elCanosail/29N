@@ -8,9 +8,8 @@ import seatsData from '../data/seats.json';
 import repartoData from '../data/reparto23.json';
 import seriesData from '../data/series.json';
 import encuestasData from '../data/encuestas.json';
-import eleccionesData from '../data/elecciones.json';
 import microdatosPorAnio from '../data/microdatos/por_anio.json';
-import { num, entero, fechaLarga } from '../lib/format';
+import { num, entero } from '../lib/format';
 import { colorPartido } from '../lib/partidos';
 
 const meta = forecast.meta;
@@ -87,8 +86,6 @@ const coloresSerie: Record<string, string> = Object.fromEntries(
   partidosSerie.map((p) => [p, colorPartido(p)]),
 );
 
-const ultima = eleccionesData.elecciones[eleccionesData.elecciones.length - 1];
-const topEscrutinio = ultima.candidaturas.slice(0, 5);
 
 const compromisos = [
   'Todo dato de la web es trazable a su fuente y clicable.',
@@ -254,25 +251,6 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
       </p>
     </a>
 
-    <a class="entrada-link entrada-link--b" href="/resultados/">
-      <p class="eyebrow">Resultados 1977–2023</p>
-      <h3>Escrutinio oficial, provincia a provincia</h3>
-      <p class="entrada-link__texto">
-        Escaños y porcentajes de cada general, con comparador entre dos elecciones.
-      </p>
-      <ul class="mini-escrutinio mono">
-        {topEscrutinio.map((c) => (
-          <li>
-            <span class="mini-escrutinio__n">{entero(c.escanos)}</span>
-            <span class="mini-escrutinio__s">{c.sigla}</span>
-          </li>
-        ))}
-      </ul>
-      <p class="mono entrada-link__dato">
-        {fechaLarga(ultima.fecha)} · escaños de las cinco primeras candidaturas →
-      </p>
-    </a>
-
     <a class="entrada-link entrada-link--c" href="/prediccion/">
       <p class="eyebrow">Proyección provincial 29N</p>
       <h3>Qué predecimos y qué no</h3>
@@ -415,27 +393,15 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
     border-top: var(--borde-regla);
   }
   .entrada-link--a { grid-column: 1 / span 2; }
-  .entrada-link--b { grid-column: 3; margin-top: var(--s-6); }
   .entrada-link--c { grid-column: 2 / span 2; margin-top: var(--s-7); }
   .entrada-link h3 { margin-bottom: var(--s-2); font-family: var(--f-titular); font-size: 1.4rem; }
   .entrada-link:hover h3 { text-decoration: underline; text-underline-offset: 0.18em; }
   .entrada-link__texto { font-size: var(--t-small); line-height: var(--lh-small); color: var(--tinta-2); max-width: 46ch; }
   .entrada-link__dato { margin: 0; font-size: 0.8125rem; color: var(--tinta-2); }
 
-  .mini-escrutinio {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--s-3);
-    margin: var(--s-4) 0 var(--s-3);
-    padding: 0;
-  }
-  .mini-escrutinio__n { font-size: 1.4rem; font-weight: 500; margin-right: 0.25em; }
-  .mini-escrutinio__s { font-size: 0.8125rem; color: var(--tinta-2); }
-
   @media (max-width: 900px) {
     .entradas { grid-template-columns: 1fr; gap: var(--s-5); }
-    .entrada-link--a, .entrada-link--b, .entrada-link--c { grid-column: 1; margin-top: 0; }
+    .entrada-link--a, .entrada-link--c { grid-column: 1; margin-top: 0; }
   }
 
   /* --- Banda de metodología (fondo --papel-2, borde superior 2 px) ------- */
