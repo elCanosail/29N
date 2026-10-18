@@ -78,6 +78,7 @@ Los colores de partido son una convención que la audiencia (periodistas) ya con
 | NA+ / UPN | `--p-na` | `oklch(0.36 0.08 255)` | Azul muy oscuro; separado de PP por luminosidad. |
 | PACMA | `--p-pacma` | `oklch(0.60 0.15 340)` | Magenta-rosa (marca del partido). |
 | PNV | `--p-pnv` | `oklch(0.45 0.09 170)` | Verde-teal oscuro; separado de VOX (145) y JXCAT (230). |
+| Sumar · Frente Amplio | `--p-sumar` | `oklch(0.50 0.13 320)` | **Criterio 29N (18-10-2026):** la coalición registrada Frente Amplio (IU + Movimiento Sumar + Más Madrid + Comuns) se muestra y canonicaliza en la familia verde-púrpura de Sumar (alias `FRENTE AMPLIO` → `SUMAR` en `party_aliases.csv`). Podemos concurre en solitario y mantiene serie y color propios; las variantes territoriales lideradas por fuerzas regionalistas (ChA-Aragón, UPC-Canarias, Compromís-Front Valencià) no se mapean en bloque: caso por caso en curación. |
 | Otros | `--p-otros` | `oklch(0.60 0.01 260)` | Gris tinta. |
 
 Reglas de partido:

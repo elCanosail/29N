@@ -6,11 +6,9 @@
  */
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import DataTable from '../../components/DataTable.astro';
 import encuestasData from '../../data/encuestas.json';
 import exclusionesData from '../../data/exclusiones.json';
 import { num, entero, campo, fechaCorta } from '../../lib/format';
-import type { Columna, Fila } from '../../lib/tipos';
 
 const encuestas = [...encuestasData.encuestas].sort((a, b) =>
   (b.fecha_trabajo ?? '').localeCompare(a.fecha_trabajo ?? ''),
@@ -45,6 +43,13 @@ const COLOR_PARTIDO: Record<string, string> = {
   Cs: 'var(--p-cs)',
   PACMA: 'var(--p-pacma)',
   BNG: 'var(--p-bng)',
+  // Coalición registrada para el 29N: Frente Amplio (IU+MS+MM+Comuns) → familia Sumar.
+  'FRENTE AMPLIO': 'var(--p-sumar)',
+};
+/** Etiquetas cortas de barra cuando la sigla registrada no cabe. */
+const ETIQUETA_PARTIDO: Record<string, string> = {
+  'FRENTE AMPLIO': 'F. Amplio (Sumar)',
+};
 };
 /** No son opciones partidistas: no se dibujan como barras. */
 const SIN_BARRA = new Set(['EN BLANCO', 'ABSTENCION', 'NS']);
@@ -92,21 +97,6 @@ elecciones.forEach((_, i) => {
   if (i > 0) reglas.push(`.mosaico:has(#fe-${i}:checked) [data-fila]:not([data-eleccion="${i}"]){display:none}`);
 });
 const cssFiltros = `<style>${reglas.join('')}</style>`;
-
-const colsExclusiones: Columna[] = [
-  { clave: 'id', etiqueta: 'ID encuesta', tipo: 'mono' },
-  { clave: 'origen', etiqueta: 'Origen' },
-  { clave: 'casa', etiqueta: 'Casa / estudio' },
-  { clave: 'motivo', etiqueta: 'Motivo de exclusión' },
-];
-const etiquetaOrigen = (o: string | null) =>
-  o === 'CIS' ? 'CIS' : o === 'cron' ? 'Cron de exploración' : 'Encuestadores';
-const filasExclusiones: Fila[] = exclusionesData.exclusiones.map((x) => ({
-  id: x.id ?? '—',
-  origen: etiquetaOrigen(x.origen ?? null),
-  casa: x.casa ?? x.slug ?? '—',
-  motivo: (x.motivo ?? '—').replace(/\s+/g, ' ').trim(),
-}));
 ---
 
 <Base
@@ -199,7 +189,7 @@ const filasExclusiones: Fila[] = exclusionesData.exclusiones.map((x) => ({
               >
                 {barras.map((b) => (
                   <div class="barra">
-                    <span class="barra__partido">{b.partido}</span>
+                    <span class="barra__partido">{ETIQUETA_PARTIDO[b.partido] ?? b.partido}</span>
                     <span class="barra__pista" aria-hidden="true">
                       <span
                         class="barra__fill"
@@ -233,21 +223,6 @@ const filasExclusiones: Fila[] = exclusionesData.exclusiones.map((x) => ({
       <span class="mono">:has()</span>, se muestran todas en lugar de un resultado falso.
     </p>
 
-    <section class="seccion--compacta seccion-exclusiones" aria-labelledby="exclusiones-titulo">
-      <h2 id="exclusiones-titulo">Log de exclusiones</h2>
-      <p class="medida nota">
-        Las encuestas que no pasaron validación, con su motivo. No desaparecen: se
-        documentan. También está en la <a href="/metodologia/#exclusiones">metodología</a>.
-      </p>
-      <DataTable
-        id="tabla-exclusiones"
-        columnas={colsExclusiones}
-        filas={filasExclusiones}
-        vacio="No hay exclusiones registradas."
-        nota={`${entero(exclusionesData.meta.n)} entradas (${entero(exclusionesData.meta.n_cis)} del CIS, ${entero(exclusionesData.meta.n_privados)} de encuestadores y cron).`}
-      />
-    </section>
-
     <aside class="aviso-loreg" aria-labelledby="loreg-titulo">
       <p class="eyebrow" id="loreg-titulo">Norma aplicada</p>
       <p>
@@ -257,6 +232,12 @@ const filasExclusiones: Fila[] = exclusionesData.exclusiones.map((x) => ({
         antes y después de esa ventana.
       </p>
     </aside>
+
+    <p class="nota pie-exclusiones">
+      Los descartes de curación no desaparecen: quedan documentados con su motivo en el
+      <a href="/metodologia/#exclusiones">log de exclusiones</a>
+      ({entero(exclusionesData.meta.n)} entradas).
+    </p>
   </div>
 </Base>
 
@@ -415,8 +396,14 @@ const filasExclusiones: Fila[] = exclusionesData.exclusiones.map((x) => ({
 
   .nota-filtrado { margin-top: var(--s-4); }
 
-  .seccion-exclusiones { margin-top: var(--s-6); border-top: var(--borde-regla); padding-top: var(--s-4); }
-  .seccion-exclusiones h2 { font-size: 1.3rem; }
+  .pie-exclusiones {
+    margin-top: var(--s-5);
+    padding-top: var(--s-3);
+    border-top: var(--borde-regla);
+    font-size: 0.8125rem;
+    color: var(--tinta-2);
+  }
+  .pie-exclusiones a { color: var(--enlace); }
 
   .aviso-loreg {
     margin-top: var(--s-6);
