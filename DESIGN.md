@@ -186,6 +186,24 @@ No hay más de un primario visible por vista. Radio global: 4 px (nada pill, nad
 
 ---
 
+### Explorador mosaico de encuestas (v2 — 18-10-2026)
+
+La página `/encuestas/` es un **mosaico de recortes**: una tarjeta por encuesta, una gráfica de barras por tarjeta. Panel de datos vestido de gaceta: sin sombras ni radios de SaaS; las tarjetas se separan por reglas de 1 px y aire, como recortes de periódico clavados en una pared de redacción.
+
+**Anatomía de tarjeta:**
+1. **Cabecera:** casa encuestadora en Newsreader 600 + chip de alcance a la derecha. El chip lleva un punto lleno (estatal) o hueco (autonómico) con el nombre de la CCAA si aplica: el alcance se lee sin leer texto.
+2. **Meta en Plex Mono:** fecha de campo · n · elección · base («sobre censo» cuando aplica).
+3. **Gráfica de barras horizontales:** partidos ordenados por % descendente, máx. 6 barras; el resto se agrega en «Otros» (tinta terciaria). Cada barra usa su color de partido (§2), pista en `--papel-3`, valor en mono a la derecha. **Escala relativa al máximo de la tarjeta** (la barra mayor ocupa la pista completa): la comparación es intra-tarjeta, nunca inter-tarjeta. `EN BLANCO`, `ABSTENCIÓN` y `NS` no se dibujan: no son opciones partidistas.
+4. **Pie:** enlace subrayado a la ficha técnica publicada.
+
+**Encabezado:** titular «Todas las encuestas en un único lugar» (Newsreader, entrada escalonada). Contador N = total · CIS · privados en mono sobre el mosaico.
+
+**Filtros (móvil primero):** tira compacta de tres filas de chips con scroll horizontal (casa · año · elección), una por dimensión. Sin JavaScript: radios nativos + `:has()` ocultan tarjetas (AND entre dimensiones); el chip activo se invierte a tinta sobre papel. Los gráficos mandan: los filtros nunca roban más de tres filas de viewport.
+
+**Ritmo del mosaico:** la encuesta estatal más reciente abre en tarjeta doble; el resto fluye en grid `auto-fill minmax(320px, 1fr)`, orden por fecha de trabajo descendente.
+
+**Log de exclusiones:** permanece como tabla bajo el mosaico — el descarte documentado es parte del mismo panel.
+
 ## 5. Principios de layout
 
 - **Grid editorial:** contenedor máximo 1200 px; el contenido de prosa vive en una columna de 68 ch alineada a la izquierda, con margen asimétrico para notas al margen (200–280 px) en desktop. Nada centrado por defecto: titulares y textos a la izquierda, como un pliego.
