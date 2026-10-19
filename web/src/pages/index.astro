@@ -234,7 +234,7 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
     </p>
   </section>
 
-  <!-- 3. El desglose: tres entradas asimétricas (2/3 + 1/3, escalonadas) --- -->
+  <!-- 3. El desglose: tres entradas asimétricas (2/3 + 1/3 + 2/3, escalonadas) -->
   <section class="contenedor seccion entradas" aria-labelledby="entradas-titulo">
     <p class="eyebrow" id="entradas-titulo">El desglose</p>
     <h2 class="visualmente-oculto">Secciones del proyecto</h2>
@@ -249,6 +249,18 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
       <p class="mono entrada-link__dato">
         N = {entero(encuestasData.meta.n)} encuestas indexadas · {entero(encuestasData.meta.n_cis)} del CIS,{' '}
         {entero(encuestasData.meta.n_privados)} de privados →
+      </p>
+    </a>
+
+    <a class="entrada-link entrada-link--b" href="/simulador/">
+      <p class="eyebrow">Simulador 29N</p>
+      <h3>Qué pasaría si el voto se moviera</h3>
+      <p class="entrada-link__texto">
+        Mueve el voto de los trece partidos dentro del margen del modelo y mira
+        cómo se reparten los 350 escaños, provincia a provincia.
+      </p>
+      <p class="mono entrada-link__dato">
+        350 escaños · D'Hondt por provincia · escenario exploratorio →
       </p>
     </a>
 
@@ -394,6 +406,7 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
     border-top: var(--borde-regla);
   }
   .entrada-link--a { grid-column: 1 / span 2; }
+  .entrada-link--b { grid-column: 3; margin-top: var(--s-6); }
   .entrada-link--c { grid-column: 2 / span 2; margin-top: var(--s-7); }
   .entrada-link h3 { margin-bottom: var(--s-2); font-family: var(--f-titular); font-size: 1.4rem; }
   .entrada-link:hover h3 { text-decoration: underline; text-underline-offset: 0.18em; }
@@ -402,7 +415,7 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
 
   @media (max-width: 900px) {
     .entradas { grid-template-columns: 1fr; gap: var(--s-5); }
-    .entrada-link--a, .entrada-link--c { grid-column: 1; margin-top: 0; }
+    .entrada-link--a, .entrada-link--b, .entrada-link--c { grid-column: 1; margin-top: 0; }
   }
 
   /* --- Banda de metodología (fondo --papel-2, borde superior 2 px) ------- */
