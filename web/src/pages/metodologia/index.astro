@@ -198,10 +198,16 @@ const cisResumen = (sesgo.resumen as Record<string, unknown>)?.CIS_comparacion_m
               la tabla de encuestas.
             </p>
             <p>
-              El espacio de la izquierda estatal cambia de marca (IU → Podemos → Sumar) y se
-              modela como <strong>una sola familia</strong> para no generar partidos fantasma.
-              Los identificadores de partido del Interior se canonicalizan con un diccionario
-              propio (fusiones, refundaciones, siglas autonómicas como PSC o PSE).
+              El espacio de la izquierda estatal cambia de marca (IU → Podemos → Sumar →
+              Frente Amplio) y se modela como <strong>una sola familia</strong> para no generar
+              partidos fantasma. En el 29N la papeleta de esa familia es el
+              <strong>Frente Amplio</strong> (IU, Movimiento Sumar, Más Madrid y Comuns): Sumar
+              concurre dentro de la coalición, no como marca propia. Podemos presenta lista
+              separada salvo en Canarias y País Valencià, donde hay candidatura unitaria; el
+              modelo no publica una estimación separada de Podemos porque las encuestas
+              nacionales de la ventana no la ofrecen con muestra suficiente. Los identificadores
+              de partido del Interior se canonicalizan con un diccionario propio (fusiones,
+              refundaciones, siglas autonómicas como PSC o PSE).
             </p>
           </div>
           <aside class="nota-margen bloque__nota">
@@ -258,8 +264,8 @@ const cisResumen = (sesgo.resumen as Record<string, unknown>)?.CIS_comparacion_m
 
             <p>
               Estos son los números por partido. Ser mejor «de media» no significa serlo en
-              todos: TimesFM gana en PP y Sumar, pero pierde donde importa —los partidos
-              grandes—.
+              todos: TimesFM gana en PP y el espacio de la izquierda (clave histórica SUMAR),
+              pero pierde donde importa —los partidos grandes—.
             </p>
             <DataTable
               id="tabla-mae"

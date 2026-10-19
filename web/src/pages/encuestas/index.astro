@@ -46,16 +46,31 @@ const COLOR_PARTIDO: Record<string, string> = {
   // Coalición registrada para el 29N: Frente Amplio (IU+MS+MM+Comuns) → familia Sumar.
   'FRENTE AMPLIO': 'var(--p-sumar)',
 };
-/** Etiquetas cortas de barra cuando la sigla registrada no cabe. */
-const ETIQUETA_PARTIDO: Record<string, string> = {
-  'FRENTE AMPLIO': 'F. Amplio (Sumar)',
+/**
+ * Etiqueta visible según la era de la encuesta. La clave del dataset no cambia
+ * (SUMAR): en 2026 esa clave es la coalición Frente Amplio; en 2023-2025, Sumar.
+ * En Cataluña la marca de la coalición es Comuns.
+ */
+const etiquetaPartido = (
+  partido: string,
+  e: {anio?: number | null; ambito?: string | null},
+): string => {
+  if (partido === 'SUMAR') {
+    if ((e.anio ?? 0) >= 2026) return e.ambito === 'Cataluña' ? 'Comuns' : 'Frente Amplio';
+    return 'Sumar';
+  }
+  if (partido === 'UNIDAS PODEMOS' && (e.anio ?? 0) >= 2026) return 'Podemos';
+  return partido;
 };
+/** Etiquetas cortas de barra cuando la sigla registrada no cabe. */
+const ETIQUETA_PARTIDO: Record<string, string> = {};
 /** No son opciones partidistas: no se dibujan como barras. */
 const SIN_BARRA = new Set(['EN BLANCO', 'ABSTENCION', 'NS']);
 const MAX_BARRAS = 6;
 
 interface Barra {
   partido: string;
+  clave: string;
   pct: number;
   color: string;
   otros: boolean;
@@ -65,18 +80,19 @@ const barrasDe = (e: (typeof encuestas)[number]): Barra[] => {
   const votos = (e.partidos ?? {}) as Record<string, unknown>;
   const pares = Object.entries(votos)
     .filter(([p]) => !SIN_BARRA.has(p))
-    .map(([p, v]) => ({ partido: p, pct: Number(v) || 0 }))
+    .map(([p, v]) => ({ clave: p, partido: etiquetaPartido(p, e), pct: Number(v) || 0 }))
     .sort((a, b) => b.pct - a.pct);
   if (pares.length === 0) return [];
   const top = pares.slice(0, MAX_BARRAS).map<Barra>((b) => ({
     partido: b.partido,
+    clave: b.clave,
     pct: b.pct,
-    color: COLOR_PARTIDO[b.partido] ?? 'var(--tinta-3)',
+    color: COLOR_PARTIDO[b.clave] ?? 'var(--tinta-3)',
     otros: false,
   }));
   const resto =
     pares.slice(MAX_BARRAS).reduce((s, x) => s + x.pct, 0) + (Number(votos['OTROS']) || 0);
-  if (resto > 0) top.push({ partido: 'Otros', pct: Math.round(resto * 10) / 10, color: 'var(--tinta-3)', otros: true });
+  if (resto > 0) top.push({ partido: 'Otros', clave: 'OTROS', pct: Math.round(resto * 10) / 10, color: 'var(--tinta-3)', otros: true });
   return top;
 };
 

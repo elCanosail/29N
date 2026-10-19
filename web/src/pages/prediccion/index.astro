@@ -5,14 +5,19 @@ import IntervalBand from '../../components/IntervalBand.astro';
 import MapaProvincial from '../../components/MapaProvincial.astro';
 import seats from '../../data/seats.json';
 import { num, entero } from '../../lib/format';
-import { colorPartido } from '../../lib/partidos';
+import { colorPartido, nombre29N } from '../../lib/partidos';
 
 const provincias = seats.provincias;
 const nacional = seats.nacional;
 const meta = seats.meta;
 const filasNacional = nacional
   .filter((p) => p.media > 0 || p.ic95[1] > 0)
-  .map((p) => ({ etiqueta: p.partido, punto: p.media, p10: p.ic95[0], p90: p.ic95[1], color: colorPartido(p.partido) }));
+  .map((p) => ({ etiqueta: nombre29N(p.partido), punto: p.media, p10: p.ic95[0], p90: p.ic95[1], color: colorPartido(p.partido) }));
+const provinciasMapa = provincias.map((p) => ({
+  ...p,
+  ganadorClave: p.ganador,
+  ganador: nombre29N(p.ganador),
+}));
 
 const datosMapa = Object.fromEntries(
   provincias.map((p) => [
@@ -34,7 +39,7 @@ const limites = [
 function filasProvincia(p: (typeof provincias)[number]) {
   return p.partidos
     .filter((x) => x.media >= 0.15 || x.ic95[1] >= 1)
-    .map((x) => ({ etiqueta: x.partido, punto: x.media, p10: x.ic95[0], p90: x.ic95[1], color: colorPartido(x.partido) }));
+    .map((x) => ({ etiqueta: nombre29N(x.partido), punto: x.media, p10: x.ic95[0], p90: x.ic95[1], color: colorPartido(x.partido) }));
 }
 ---
 
@@ -86,7 +91,7 @@ function filasProvincia(p: (typeof provincias)[number]) {
         <select id="p-partido">
           <option value="">Ganador esperado</option>
           {nacional.map((p) => (
-            <option value={p.partido}>{p.partido}</option>
+            <option value={p.partido}>{nombre29N(p.partido)}</option>
           ))}
         </select>
       </div>
@@ -102,7 +107,7 @@ function filasProvincia(p: (typeof provincias)[number]) {
       <div class="panel-mapa">
         <h2 id="mapa-titulo">Cartograma provincial</h2>
         <MapaProvincial
-          provincias={provincias}
+          provincias={provinciasMapa}
           descripcion="Cartograma de las 52 provincias con el partido de más escaños esperados el 29N."
         />
         <p class="nota mono" id="mapa-partido-actual" hidden></p>
@@ -123,14 +128,14 @@ function filasProvincia(p: (typeof provincias)[number]) {
             <p class="eyebrow">Provincia seleccionada · código {p.codigo}</p>
             <h3 class="prov-panel__nombre">{p.nombre}</h3>
             <p class="mono prov-panel__meta">
-              {entero(p.escanos)} escaños en juego · ganador esperado: <strong>{p.ganador}</strong>
+              {entero(p.escanos)} escaños en juego · ganador esperado: <strong>{nombre29N(p.ganador)}</strong>
             </p>
             <IntervalBand
               filas={filasProvincia(p)}
               max={p.escanos}
               unidad="esc."
-              descripcion={`${p.nombre}: partido más probable ${p.ganador}, ${entero(p.escanos)} escaños en juego.`}
-              lectura={`Con los datos disponibles, el intervalo del 95 % de ${p.ganador} en ${p.nombre} es el que muestra la banda. El modelo no afina más: aquí está el error del backtest →`}
+              descripcion={`${p.nombre}: partido más probable ${nombre29N(p.ganador)}, ${entero(p.escanos)} escaños en juego.`}
+              lectura={`Con los datos disponibles, el intervalo del 95 % de ${nombre29N(p.ganador)} en ${p.nombre} es el que muestra la banda. El modelo no afina más: aquí está el error del backtest →`}
             />
             <p class="nota">
               <a href="/metodologia/#validacion">Cómo se valida este intervalo →</a>
@@ -174,7 +179,7 @@ function filasProvincia(p: (typeof provincias)[number]) {
                 return (
                   <tr>
                     <th scope="row"><a href={`#prov-${p.codigo}`}>{p.nombre}</a></th>
-                    <td>{g ? g.partido : '—'}</td>
+                    <td>{g ? nombre29N(g.partido) : '—'}</td>
                     <td class="mono der">{g ? num(g.media, 1) : '—'}</td>
                     <td class="mono der">{g ? `${entero(g.ic95[0])}–${entero(g.ic95[1])}` : '—'}</td>
                     <td class="mono der">{g ? num(g.p_ge1 * 100, 0) + ' %' : '—'}</td>

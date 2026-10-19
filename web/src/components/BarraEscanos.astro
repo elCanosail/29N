@@ -16,10 +16,13 @@
  * mejora de puntero, no el único camino).
  */
 import { num, entero } from '../lib/format';
-import { colorPartido, sigla } from '../lib/partidos';
+import { colorPartido, sigla, sigla29N } from '../lib/partidos';
 
 export interface FilaReparto {
+  /** etiqueta visible del 29N (puede diferir de la clave histórica). */
   partido: string;
+  /** clave de datos del modelo (SUMAR), para color y orden. */
+  clave?: string;
   /** escaños estimados 29N (media de la simulación) */
   estimacionEscanos: number;
   /** % de voto estimado 29N (serie ponderada, sobre votos válidos) */
@@ -48,12 +51,13 @@ const {
   lectura,
 } = Astro.props as Props;
 
+const clave = (f: FilaReparto) => f.clave ?? f.partido;
 const orden = [...filas].sort((a, b) => b.estimacionEscanos - a.estimacionEscanos);
 // Orden editorial (Chema, 16-oct): en la estimación VOX va segundo — es probable
 // que se sume al bloque del PP para alcanzar la mayoría absoluta. Las dos barras
 // comparten orden para que la comparación sea directa.
-const vox = orden.find((f) => f.partido === 'VOX');
-const orden29n = orden.filter((f) => f.partido !== 'VOX');
+const vox = orden.find((f) => clave(f) === 'VOX');
+const orden29n = orden.filter((f) => clave(f) !== 'VOX');
 if (vox) orden29n.splice(1, 0, vox);
 // En el 23J real, el bloque de gobierno va unido a la izquierda pero con cada
 // partido independiente (Chema, 16-oct): PSOE primero y después los socios del
@@ -62,9 +66,9 @@ const MIEMBROS_BLOQUE = ['PSOE', 'SUMAR', 'ERC', 'EH BILDU', 'PNV', 'BNG', 'CC']
 const esBloque = (p: string) => MIEMBROS_BLOQUE.includes(p);
 const orden23j = [
   ...MIEMBROS_BLOQUE
-    .map((p) => orden.find((f) => f.partido === p))
+    .map((p) => orden.find((f) => clave(f) === p))
     .filter((f): f is (typeof orden)[number] => Boolean(f)),
-  ...orden29n.filter((f) => !esBloque(f.partido)),
+  ...orden29n.filter((f) => !esBloque(clave(f))),
 ];
 const delta = (f: (typeof orden)[number]) => f.estimacionEscanos - f.realEscanos;
 const conDelta = orden.some((f) => Math.abs(delta(f)) > 0.05);
@@ -87,13 +91,13 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
         {orden29n.filter((f) => f.estimacionEscanos > 0).map((f) => (
           <span
             class="reparto__tramo"
-            style={`flex:${Math.max(f.estimacionEscanos, 0.001)};background:${colorPartido(f.partido)}`}
+            style={`flex:${Math.max(f.estimacionEscanos, 0.001)};background:${colorPartido(clave(f))}`}
           >
             {anchoPct(f.estimacionEscanos) >= 8.5 && (
-              <span class={`reparto__tramo__texto ${TEXTO_TINTA[f.partido] ? 'reparto__tramo__texto--tinta' : ''}`}>{sigla(f.partido)}</span>
+              <span class={`reparto__tramo__texto ${TEXTO_TINTA[clave(f)] ? 'reparto__tramo__texto--tinta' : ''}`}>{sigla29N(clave(f))}</span>
             )}
             {anchoPct(f.estimacionEscanos) >= 9 && (
-              <span class={`reparto__tramo__texto reparto__tramo__num ${TEXTO_TINTA[f.partido] ? 'reparto__tramo__texto--tinta' : ''}`}>{entero(f.estimacionEscanos)}</span>
+              <span class={`reparto__tramo__texto reparto__tramo__num ${TEXTO_TINTA[clave(f)] ? 'reparto__tramo__texto--tinta' : ''}`}>{entero(f.estimacionEscanos)}</span>
             )}
             <span class="reparto__tip mono">
               <strong>{f.partido}</strong> · 29N: {num(f.estimacionEscanos, 1)} escaños ({num(f.estimacionPct, 1)} %)
@@ -114,16 +118,16 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
         {orden23j.filter((f) => f.realEscanos > 0).map((f) => (
           <span
             class="reparto__tramo"
-            style={`flex:${Math.max(f.realEscanos, 0.001)};background:${colorPartido(f.partido)}`}
+            style={`flex:${Math.max(f.realEscanos, 0.001)};background:${colorPartido(clave(f))}`}
           >
             {anchoPct(f.realEscanos) >= 8.5 && (
-              <span class={`reparto__tramo__texto ${TEXTO_TINTA[f.partido] ? 'reparto__tramo__texto--tinta' : ''}`}>{sigla(f.partido)}</span>
+              <span class={`reparto__tramo__texto ${TEXTO_TINTA[clave(f)] ? 'reparto__tramo__texto--tinta' : ''}`}>{sigla(clave(f))}</span>
             )}
             {anchoPct(f.realEscanos) >= 9 && (
-              <span class={`reparto__tramo__texto reparto__tramo__num ${TEXTO_TINTA[f.partido] ? 'reparto__tramo__texto--tinta' : ''}`}>{entero(f.realEscanos)}</span>
+              <span class={`reparto__tramo__texto reparto__tramo__num ${TEXTO_TINTA[clave(f)] ? 'reparto__tramo__texto--tinta' : ''}`}>{entero(f.realEscanos)}</span>
             )}
             <span class="reparto__tip mono">
-              <strong>{f.partido}</strong> · 23J: {entero(f.realEscanos)} escaños ({num(f.realPct, 1)} %)
+              <strong>{clave(f)}</strong> · 23J: {entero(f.realEscanos)} escaños ({num(f.realPct, 1)} %)
             </span>
           </span>
         ))}
@@ -145,7 +149,7 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
     {orden.map((f) => (
       <div class="reparto__fila">
         <span class="reparto__col reparto__col--partido">
-          <span class="reparto__muestra" style={`background:${colorPartido(f.partido)}`} aria-hidden="true"></span>
+          <span class="reparto__muestra" style={`background:${colorPartido(clave(f))}`} aria-hidden="true"></span>
           {f.partido}
         </span>
         <span class="reparto__col mono reparto__num">{num(f.estimacionEscanos, 1)}</span>

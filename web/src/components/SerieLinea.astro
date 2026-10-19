@@ -15,13 +15,16 @@ interface Props {
   series: Record<string, number[]>;
   partidos: string[];
   colores: Record<string, string>;
+  /** etiqueta visible por clave de serie (la clave histórica no cambia). */
+  etiquetas?: Record<string, string>;
   descripcion: string;
   max?: number;
   pie?: string;
   lectura?: string;
 }
 
-const { meses, series, partidos, colores, descripcion, max, pie, lectura } = Astro.props as Props;
+const { meses, series, partidos, colores, etiquetas = {}, descripcion, max, pie, lectura } = Astro.props as Props;
+const etiqueta = (p: string) => etiquetas[p] ?? p;
 
 const W = 720;
 const H = 250;
@@ -44,23 +47,23 @@ const ultimo = (p: string) => {
 // Etiquetas finales sin colisión: se ordenan por altura y se separan un mínimo
 // de 13 unidades; el punto queda en su valor real, la etiqueta se desplaza.
 const GAP_ETIQUETA = 13;
-const etiquetas = partidos
+const etiquetasColision = partidos
   .map((p) => ({ p, yReal: y(ultimo(p)), y: y(ultimo(p)) }))
   .sort((a, b) => a.y - b.y);
-for (let i = 1; i < etiquetas.length; i++) {
-  if (etiquetas[i].y - etiquetas[i - 1].y < GAP_ETIQUETA) {
-    etiquetas[i].y = etiquetas[i - 1].y + GAP_ETIQUETA;
+for (let i = 1; i < etiquetasColision.length; i++) {
+  if (etiquetasColision[i].y - etiquetasColision[i - 1].y < GAP_ETIQUETA) {
+    etiquetasColision[i].y = etiquetasColision[i - 1].y + GAP_ETIQUETA;
   }
 }
 const topeEtiqueta = H - 12;
-const desborde = etiquetas.length ? etiquetas[etiquetas.length - 1].y - topeEtiqueta : 0;
-if (desborde > 0) for (const e of etiquetas) e.y -= desborde;
+const desborde = etiquetasColision.length ? etiquetasColision[etiquetasColision.length - 1].y - topeEtiqueta : 0;
+if (desborde > 0) for (const e of etiquetasColision) e.y -= desborde;
 const sueloEtiqueta = PAD.s + 4;
-if (etiquetas.length && etiquetas[0].y < sueloEtiqueta) {
-  const empuje = sueloEtiqueta - etiquetas[0].y;
-  for (const e of etiquetas) e.y += empuje;
+if (etiquetasColision.length && etiquetasColision[0].y < sueloEtiqueta) {
+  const empuje = sueloEtiqueta - etiquetasColision[0].y;
+  for (const e of etiquetasColision) e.y += empuje;
 }
-const yEtiqueta: Record<string, number> = Object.fromEntries(etiquetas.map((e) => [e.p, e.y]));
+const yEtiqueta: Record<string, number> = Object.fromEntries(etiquetasColision.map((e) => [e.p, e.y]));
 
 // Ticks de año: primer índice de cada año distinto (robusto aunque la serie
 // no empiece en enero).
@@ -98,7 +101,7 @@ meses.forEach((m, i) => {
             y={yEtiqueta[p] + 4}
             class="etiqueta"
             style={`fill:${colores[p]}`}
-          >{p}</text>
+          >{etiqueta(p)}</text>
         </>
       ))}
       <text x={PAD.a} y={PAD.s - 6} class="eje">% sobre voto válido · media ponderada de encuestas</text>
@@ -112,7 +115,7 @@ meses.forEach((m, i) => {
     <summary>Últimos 12 meses, en tabla</summary>
     <table class="tabla-datos">
       <thead>
-        <tr><th scope="col">Mes</th>{partidos.map((p) => <th scope="col" class="der">{p}</th>)}</tr>
+        <tr><th scope="col">Mes</th>{partidos.map((p) => <th scope="col" class="der">{etiqueta(p)}</th>)}</tr>
       </thead>
       <tbody>
         {meses.slice(-12).map((m, k, arr) => {

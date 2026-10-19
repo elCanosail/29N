@@ -12,13 +12,16 @@
  * es el único canal: cada celda escribe su sigla. El mapa no es el único camino
  * al dato (DESIGN.md §7.3): hay tabla paralela con las mismas cifras.
  */
-import { colorPartido, sigla } from '../lib/partidos';
+import { colorPartido, sigla29N } from '../lib/partidos';
 
 interface ProvinciaMapa {
   codigo: number;
   nombre: string;
   escanos: number;
+  /** etiqueta visible del ganador (puede cambiar de marca en el 29N). */
   ganador: string;
+  /** clave de datos para color y sigla (SUMAR); si falta, se usa ganador. */
+  ganadorClave?: string;
 }
 
 interface Props {
@@ -57,19 +60,20 @@ const grupos = [...new Set(filas.map((p) => p.ganador))].sort();
   <div class="mapa__rejilla" role="group" aria-label={descripcion ?? 'Cartograma de provincias'}>
     {filas.map((p) => {
       const [col, row] = LAYOUT[p.codigo];
+      const clave = p.ganadorClave ?? p.ganador;
       return (
         <a
           class="celda"
           href={`#prov-${p.codigo}`}
           data-prov={p.codigo}
-          data-c={colorPartido(p.ganador)}
-          data-gan={sigla(p.ganador)}
+          data-c={colorPartido(clave)}
+          data-gan={sigla29N(clave)}
           title={`${p.nombre}: ${p.ganador}, ${p.escanos} escaños en juego`}
-          style={`grid-column:${col};grid-row:${row};--c:${colorPartido(p.ganador)}`}
+          style={`grid-column:${col};grid-row:${row};--c:${colorPartido(clave)}`}
           aria-label={`${p.nombre}: ${p.ganador}, ${p.escanos} escaños en juego`}
         >
           <span class="celda__abrev">{abrev(p.nombre)}</span>
-          <span class="celda__gan mono">{sigla(p.ganador)}</span>
+          <span class="celda__gan mono">{sigla29N(clave)}</span>
         </a>
       );
     })}

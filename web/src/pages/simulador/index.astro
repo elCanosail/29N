@@ -18,7 +18,7 @@ import base23 from '../../data/base23.json';
 import forecast from '../../data/forecast.json';
 import seats from '../../data/seats.json';
 import { num, entero } from '../../lib/format';
-import { colorPartido } from '../../lib/partidos';
+import { colorPartido, nombre29N } from '../../lib/partidos';
 
 const PARTIDOS = base23.partidos;
 
@@ -45,6 +45,7 @@ const inicial = [...PARTIDOS]
 const totalInicial = inicial.reduce((s, f) => s + f.escanos, 0);
 
 const colores = Object.fromEntries(PARTIDOS.map((p) => [p, colorPartido(p)]));
+const nombres = Object.fromEntries(PARTIDOS.map((p) => [p, nombre29N(p)]));
 
 const definicion = [
   ['Swing', 'El voto de cada partido se redistribuye de forma proporcional sobre la base de 23J: cada provincia conserva su geografía de voto. No es un swing aditivo (el mismo ±pp en toda España): ese rompería a los partidos de apoyo concentrado, como documenta el modelo.'],
@@ -93,7 +94,7 @@ const definicion = [
               <span
                 class="reparto__tramo"
                 style={`flex:${Math.max(f.escanos, 0.001)};background:${colorPartido(f.partido)}`}
-                title={`${f.partido}: ${entero(f.escanos)} escaños`}
+                title={`${nombre29N(f.partido)}: ${entero(f.escanos)} escaños`}
               ></span>
             ))}
           </div>
@@ -115,7 +116,7 @@ const definicion = [
               <div class="reparto__fila">
                 <span class="reparto__col reparto__col--partido">
                   <span class="reparto__muestra" style={`background:${colorPartido(f.partido)}`} aria-hidden="true"></span>
-                  {f.partido}
+                  {nombre29N(f.partido)}
                 </span>
                 <span class="reparto__col mono reparto__num">{entero(f.escanos)}</span>
                 <span class="reparto__col mono reparto__num">{num(0, 0)}</span>
@@ -131,7 +132,7 @@ const definicion = [
         <p class="reparto__lectura">
           Escenario central del modelo: PP {entero(central.get('PP') ?? 0)},
           PSOE {entero(central.get('PSOE') ?? 0)}, VOX {entero(central.get('VOX') ?? 0)},
-          SUMAR {entero(central.get('SUMAR') ?? 0)}. Mueve los controles de abajo para
+          Frente Amplio {entero(central.get('SUMAR') ?? 0)}. Mueve los controles de abajo para
           explorar dentro de la banda p10–p90.
         </p>
       </figure>
@@ -153,7 +154,7 @@ const definicion = [
             <div class="slider">
               <label for={`sl-${p}`}>
                 <span class="slider__muestra" style={`background:${colorPartido(p)}`} aria-hidden="true"></span>
-                <span class="slider__nombre">{p}</span>
+                <span class="slider__nombre">{nombre29N(p)}</span>
                 <output class="mono slider__valor" for={`sl-${p}`} id={`out-${p}`}>{num(punto[p] ?? 0, 1)} %</output>
               </label>
               <input
@@ -213,6 +214,7 @@ const definicion = [
   <script type="application/json" id="d-forecast" set:html={JSON.stringify(forecast)} />
   <script type="application/json" id="d-central" set:html={JSON.stringify(Object.fromEntries(PARTIDOS.map((p) => [p, central.get(p) ?? 0])))} />
   <script type="application/json" id="d-colores" set:html={JSON.stringify(colores)} />
+  <script type="application/json" id="d-nombres" set:html={JSON.stringify(nombres)} />
 
   <script is:inline>
   (function () {
@@ -220,6 +222,7 @@ const definicion = [
     var forecast = JSON.parse(document.getElementById('d-forecast').textContent);
     var central = JSON.parse(document.getElementById('d-central').textContent);
     var colores = JSON.parse(document.getElementById('d-colores').textContent);
+    var NOMBRES = JSON.parse(document.getElementById('d-nombres').textContent);
 
     var PARTIDOS = base.partidos;
     var provincias = base.provincias;
@@ -368,7 +371,7 @@ const definicion = [
         span.className = 'reparto__tramo';
         span.style.flex = String(Math.max(escaños[p], 0.001));
         span.style.background = colores[p] || 'var(--p-otros)';
-        span.title = p + ': ' + escaños[p] + ' escaños';
+        span.title = (NOMBRES[p] || p) + ': ' + escaños[p] + ' escaños';
         barra.appendChild(span);
       });
       if (pie) pie.textContent = totalEsc + ' escaños · escenario simulado';
@@ -384,7 +387,7 @@ const definicion = [
         fila.innerHTML =
           '<span class="reparto__col reparto__col--partido">' +
             '<span class="reparto__muestra" style="background:' + (colores[p] || 'var(--p-otros)') + '" aria-hidden="true"></span>' +
-            p +
+            (NOMBRES[p] || p) +
           '</span>' +
           '<span class="reparto__col mono reparto__num">' + escaños[p] + '</span>' +
           '<span class="reparto__col mono reparto__num"><span class="reparto__delta ' + clase + '">' +

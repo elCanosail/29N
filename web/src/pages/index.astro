@@ -10,7 +10,7 @@ import seriesData from '../data/series.json';
 import encuestasData from '../data/encuestas.json';
 import microdatosPorAnio from '../data/microdatos/por_anio.json';
 import { num, entero } from '../lib/format';
-import { colorPartido } from '../lib/partidos';
+import { colorPartido, nombre29N } from '../lib/partidos';
 
 const meta = forecast.meta;
 const top = forecast.partidos.slice(0, 4);
@@ -32,7 +32,7 @@ const escanosPorPartido = Object.fromEntries(
   seatsData.nacional.map((p: {partido: string; media: number}) => [p.partido, p.media]),
 );
 const aFila = (p: (typeof forecast.partidos)[number]) => ({
-  etiqueta: p.partido,
+  etiqueta: nombre29N(p.partido),
   punto: p.punto,
   p10: p.p10,
   p90: p.p90,
@@ -44,7 +44,8 @@ const filasResto = resto.map(aFila);
 
 // El resultado en escaños: sumas del modelo provincial (10.000 simulaciones D'Hondt).
 const nacional = seatsData.nacional.map((p: {partido: string; media: number; ic95: number[]}) => ({
-  etiqueta: p.partido,
+  clave: p.partido,
+  etiqueta: nombre29N(p.partido),
   punto: p.media,
   p10: p.ic95[0],
   p90: p.ic95[1],
@@ -66,10 +67,11 @@ const pct29N = Object.fromEntries(
 const filasReparto = nacional
   .map((p) => ({
     partido: p.etiqueta,
+    clave: p.clave,
     estimacionEscanos: p.punto,
-    estimacionPct: pct29N[p.etiqueta] ?? 0,
-    realEscanos: real23[p.etiqueta]?.escanos ?? 0,
-    realPct: real23[p.etiqueta]?.pct ?? 0,
+    estimacionPct: pct29N[p.clave] ?? 0,
+    realEscanos: real23[p.clave]?.escanos ?? 0,
+    realPct: real23[p.clave]?.pct ?? 0,
   }))
   .filter((f) => f.estimacionEscanos >= 0.1 || f.realEscanos > 0);
 
@@ -116,7 +118,7 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
       filas={filasReparto}
       descripcion={`Reparto de escaños, estimación 29N frente al resultado real de 23J: ${filasReparto.slice(0, 4).map((f) => `${f.partido} ${num(f.estimacionEscanos, 1)} esc y ${num(f.estimacionPct, 1)} % frente a ${entero(f.realEscanos)} esc y ${num(f.realPct, 1)} %`).join('; ')}. El triángulo indica los escaños de más o de menos frente al 23J real. En la barra del 23J, los partidos del acuerdo de gobierno aparecen agrupados a la izquierda, empezando por el PSOE.`}
       pie={`Estimación: media ponderada de encuestas + swing proporcional provincial + 10.000 simulaciones D'Hondt · ▲▼ = escaños de más o de menos frente al 23J real · ${meta.mes_predicho}`}
-      lectura={`La comparación se hace por familias políticas idénticas a las del modelo (PSOE incluye PSC, PSE-EE, PSdeG, PSIB-PSOE y PSN-PSOE; SUMAR incluye ECP, Compromís, Sumar Aragón y Més). La precisión de cada estimación —media nunca sin su intervalo— está en el desglose de abajo.`}
+      lectura={`La comparación se hace por familias políticas idénticas a las del modelo (PSOE incluye PSC, PSE-EE, PSdeG, PSIB-PSOE y PSN-PSOE; Frente Amplio incluye IU, Más Madrid, Comuns, Sumar Aragón y Més, y en 23J concurrió como Sumar). La precisión de cada estimación —media nunca sin su intervalo— está en el desglose de abajo.`}
     />
 
     <details class="heroe__resto">
@@ -157,9 +159,9 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
       filas={filasTop}
       max={45}
       unidad="%"
-      descripcion={`Predicción estatal 29N: los cuatro primeros partidos con su intervalo del 80 % y su estimación de escaños. PP ${num(filasTop[0].punto)} por ciento, PSOE ${num(filasTop[1].punto)}, VOX ${num(filasTop[2].punto)}, Sumar ${num(filasTop[3].punto)}. Escaños estimados: PP ${num(filasTop[0].escanos ?? 0)}, PSOE ${num(filasTop[1].escanos ?? 0)}, VOX ${num(filasTop[2].escanos ?? 0)}, Sumar ${num(filasTop[3].escanos ?? 0)}.`}
+      descripcion={`Predicción estatal 29N: los cuatro primeros partidos con su intervalo del 80 % y su estimación de escaños. PP ${num(filasTop[0].punto)} por ciento, PSOE ${num(filasTop[1].punto)}, VOX ${num(filasTop[2].punto)}, ${filasTop[3].etiqueta} ${num(filasTop[3].punto)}. Escaños estimados: PP ${num(filasTop[0].escanos ?? 0)}, PSOE ${num(filasTop[1].escanos ?? 0)}, VOX ${num(filasTop[2].escanos ?? 0)}, ${filasTop[3].etiqueta} ${num(filasTop[3].escanos ?? 0)}.`}
       pie={`Método: ${meta.metodo_primario === 'baseline' ? 'media ponderada de encuestas (baseline)' : meta.metodo_primario} · Backtest MAE: ${num(meta.backtest_mae?.baseline, 3)} pp (n = ${meta.backtest_mae?.n}) · Intervalos empíricos, no probabilidad de resultado`}
-      lectura={`La línea marca el punto y la banda el intervalo del 80 % (cuantiles 0,1–0,9 de los errores del backtest). El intervalo de Sumar (±${num((filasTop[3].p90 - filasTop[3].p10) / 2, 1)} pp) es ancho porque su familia arrastra el descalabro de Podemos en 2015–2019: es honesto, no un defecto.`}
+      lectura={`La línea marca el punto y la banda el intervalo del 80 % (cuantiles 0,1–0,9 de los errores del backtest). El intervalo de ${filasTop[3].etiqueta} (±${num((filasTop[3].p90 - filasTop[3].p10) / 2, 1)} pp) es ancho porque su familia arrastra el descalabro de Podemos en 2015–2019: es honesto, no un defecto. El 29N la izquierda del PSOE concurre dividida: Frente Amplio y Podemos van por separado salvo en Canarias y País Valencià, donde hay lista única.`}
     />
 
     <details class="heroe__resto">
@@ -185,9 +187,10 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
       series={seriesV}
       partidos={[...partidosSerie]}
       colores={coloresSerie}
-      descripcion={`Media ponderada de encuestas, últimos 36 meses: PP ${num(ultimoDe('PP'), 1)} por ciento, PSOE ${num(ultimoDe('PSOE'), 1)}, VOX ${num(ultimoDe('VOX'), 1)}, Sumar ${num(ultimoDe('SUMAR'), 1)}.`}
+      etiquetas={{ SUMAR: 'Frente Amplio' }}
+      descripcion={`Media ponderada de encuestas, últimos 36 meses: PP ${num(ultimoDe('PP'), 1)} por ciento, PSOE ${num(ultimoDe('PSOE'), 1)}, VOX ${num(ultimoDe('VOX'), 1)}, Frente Amplio ${num(ultimoDe('SUMAR'), 1)}.`}
       pie="Serie mensual ponderada × recencia (vida media 45 días) × muestra × calidad, corregida por efectos de casa."
-      lectura="Esta línea es un promedio de encuestas, no un resultado ni una predicción; por eso va sin banda. La predicción con intervalo está arriba. El corpus completo arranca en 1979 y está en el explorador de encuestas."
+      lectura="Esta línea es un promedio de encuestas, no un resultado ni una predicción; por eso va sin banda. La predicción con intervalo está arriba. La serie mantiene la clave histórica SUMAR: el espacio cambió de marca (IU → Podemos → Sumar → Frente Amplio) y se modela como una sola familia para no fabricar partidos fantasma. El corpus completo arranca en 1979 y está en el explorador de encuestas."
     />
   </section>
 

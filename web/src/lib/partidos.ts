@@ -57,11 +57,30 @@ export const COLOR_PARTIDO: Record<string, string> = {
   PACMA: 'var(--p-pacma)',
 };
 
+/**
+ * Nombres de candidatura del 29N. La familia del modelo conserva sus claves
+ * históricas (SUMAR), pero la papeleta de 2026 es Frente Amplio: Sumar concurre
+ * dentro de la coalición, no como marca propia.
+ */
+export const NOMBRE_29N: Record<string, string> = {
+  SUMAR: 'Frente Amplio',
+};
+
+/** Nombre de la candidatura en el 29N; el resto de partidos no cambia. */
+export function nombre29N(partido: string): string {
+  return NOMBRE_29N[partido] ?? partido;
+}
+
+/** Sigla para etiquetas directas del 29N (el 23J conserva SUMAR). */
+export function sigla29N(partido: string): string {
+  return partido === 'SUMAR' ? 'F. Amplio' : sigla(partido);
+}
+
 export const NOMBRE_GRUPO: Record<GrupoPartido, string> = {
   pp: 'PP',
   psoe: 'PSOE',
   vox: 'VOX',
-  sumar: 'Sumar y espacio a su izquierda',
+  sumar: 'Frente Amplio (familia Sumar)',
   cs: 'Ciudadanos',
   nacionalistas: 'Nacionalistas (ERC, JxCat, BNG, Bildu, CUP, CC)',
   pnv: 'PNV y familia navarra',

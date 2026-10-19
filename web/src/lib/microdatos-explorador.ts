@@ -384,7 +384,7 @@ function renderIdeologiaPartido(d: Datos): Render {
     svg,
     aria: 'Ideología media autoubicada por partido votado, escala 1 izquierda a 10 derecha.',
     pie: 'Media (punto) y rango p25–p75 (barra) de autoubicación 1-10 por intención de voto.',
-    lectura: 'El orden va de izquierda (CUP, Bildu, Sumar) a derecha (VOX, PP). La barra gris cubre la mitad central de cada electorado: partidos con media parecida pueden tener electorados muy distintos en dispersión.',
+    lectura: 'El orden va de izquierda (CUP, Bildu, familia Sumar) a derecha (VOX, PP). La barra gris cubre la mitad central de cada electorado: partidos con media parecida pueden tener electorados muy distintos en dispersión.',
     tabla: t,
   };
 }
