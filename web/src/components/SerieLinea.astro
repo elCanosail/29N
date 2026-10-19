@@ -35,13 +35,39 @@ const refsY = [0, 0.25, 0.5, 0.75, 1].map((t) => t * tope);
 const trazo = (valores: number[]) =>
   valores.map((v, i) => `${i === 0 ? 'M' : 'L'}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
 
-// Ticks de año: primer índice de cada año distinto.
+// Valor final de cada serie (para etiqueta directa y punto de cierre).
+const ultimo = (p: string) => {
+  const vals = series[p] ?? [];
+  return vals.length ? vals[vals.length - 1] : 0;
+};
+
+// Etiquetas finales sin colisión: se ordenan por altura y se separan un mínimo
+// de 13 unidades; el punto queda en su valor real, la etiqueta se desplaza.
+const GAP_ETIQUETA = 13;
+const etiquetas = partidos
+  .map((p) => ({ p, yReal: y(ultimo(p)), y: y(ultimo(p)) }))
+  .sort((a, b) => a.y - b.y);
+for (let i = 1; i < etiquetas.length; i++) {
+  if (etiquetas[i].y - etiquetas[i - 1].y < GAP_ETIQUETA) {
+    etiquetas[i].y = etiquetas[i - 1].y + GAP_ETIQUETA;
+  }
+}
+const topeEtiqueta = H - 12;
+const desborde = etiquetas.length ? etiquetas[etiquetas.length - 1].y - topeEtiqueta : 0;
+if (desborde > 0) for (const e of etiquetas) e.y -= desborde;
+const sueloEtiqueta = PAD.s + 4;
+if (etiquetas.length && etiquetas[0].y < sueloEtiqueta) {
+  const empuje = sueloEtiqueta - etiquetas[0].y;
+  for (const e of etiquetas) e.y += empuje;
+}
+const yEtiqueta: Record<string, number> = Object.fromEntries(etiquetas.map((e) => [e.p, e.y]));
+
+// Ticks de año: primer índice de cada año distinto (robusto aunque la serie
+// no empiece en enero).
 const ticksX: { i: number; etiqueta: string }[] = [];
 meses.forEach((m, i) => {
   const anio = m.slice(0, 4);
-  if (ticksX.length === 0 || ticksX[ticksX.length - 1].etiqueta !== anio) {
-    if (i % 12 === 0 || ticksX.length === 0) ticksX.push({ i, etiqueta: anio });
-  }
+  if (i === 0 || meses[i - 1].slice(0, 4) !== anio) ticksX.push({ i, etiqueta: anio });
 });
 ---
 
@@ -60,9 +86,16 @@ meses.forEach((m, i) => {
       {partidos.map((p) => (
         <>
           <path d={trazo(series[p] ?? [])} class="linea" style={`stroke:${colores[p]}`}></path>
+          <circle
+            cx={W - PAD.d}
+            cy={y(ultimo(p))}
+            r="2.6"
+            class="punto"
+            style={`fill:${colores[p]}`}
+          ></circle>
           <text
             x={W - PAD.d + 6}
-            y={y((series[p] ?? [0])[(series[p] ?? [0]).length - 1]) + 4}
+            y={yEtiqueta[p] + 4}
             class="etiqueta"
             style={`fill:${colores[p]}`}
           >{p}</text>
@@ -101,8 +134,15 @@ meses.forEach((m, i) => {
   .serie__svg { width: 100%; height: auto; display: block; }
   .rejilla { stroke: var(--regla); stroke-width: 1; fill: none; }
   .linea { fill: none; stroke-width: 2; stroke-linejoin: round; }
+  .punto { stroke: var(--papel); stroke-width: 1.5; }
   .eje { font-family: var(--f-mono); font-size: 11px; fill: var(--tinta-3); }
   .etiqueta { font-family: var(--f-mono); font-size: 12px; font-weight: 500; }
+  /* En pantallas estrechas el SVG se desplaza en horizontal en vez de
+     encogerse: un texto de 11px en un viewBox de 720 se leería a ~6px. */
+  @container (max-width: 620px) {
+    .serie__cuerpo { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .serie__svg { min-width: 560px; }
+  }
   .serie__pie { margin: var(--s-3) 0 0; color: var(--tinta-2); font-size: 0.8125rem; }
   .serie__lectura { margin: var(--s-2) 0 0; max-width: var(--medida); font-size: var(--t-small); line-height: var(--lh-small); color: var(--tinta-2); }
   .serie__datos { margin-top: var(--s-3); }

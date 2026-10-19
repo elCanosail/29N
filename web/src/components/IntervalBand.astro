@@ -58,8 +58,12 @@ const conEscanos = filas.some((x) => x.escanos !== undefined);
 <figure class="bandas">
   {filas.length > 0 ? (
     <div class="bandas__cuerpo" role="img" aria-label={descripcion}>
-      <div class="bandas__eje" aria-hidden="true">
-        {ticks.map((t) => <span class="bandas__tick mono">{f(t)}</span>)}
+      <div class="fila fila--eje" aria-hidden="true">
+        <span></span>
+        <span class="bandas__eje">
+          {ticks.map((t) => <span class="bandas__tick mono">{f(t)}</span>)}
+        </span>
+        <span></span>
       </div>
 
       {filas.map((fila) => (
@@ -132,7 +136,16 @@ const conEscanos = filas.some((x) => x.escanos !== undefined);
     padding: var(--s-4) 0;
   }
 
-  .bandas__cuerpo { container-type: inline-size; }
+  /* Una sola rejilla para todas las filas: la columna de valores se dimensiona
+     con la celda más ancha del conjunto, de modo que todas las pistas miden
+     exactamente lo mismo y las barras son comparables entre filas (con una
+     rejilla por fila, el ancho de la pista variaba según el texto del valor). */
+  .bandas__cuerpo {
+    container-type: inline-size;
+    display: grid;
+    grid-template-columns: 30% 1fr auto;
+    column-gap: var(--s-3);
+  }
 
   .bandas__eje {
     display: flex;
@@ -141,19 +154,18 @@ const conEscanos = filas.some((x) => x.escanos !== undefined);
     color: var(--tinta-3);
     border-bottom: var(--borde-regla);
     padding-bottom: var(--s-1);
-    margin-left: 30%;
-    width: 70%;
   }
   .bandas__tick { font-family: var(--f-mono); }
 
   .fila {
+    grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: 30% 1fr auto;
+    grid-template-columns: subgrid;
     align-items: center;
-    gap: var(--s-3);
     padding: var(--s-2) 0;
     border-bottom: 1px solid transparent;
   }
+  .fila--eje { padding: 0 0 var(--s-1); }
   .fila:hover { background: var(--papel-2); }
 
   .fila__etiqueta {
@@ -221,8 +233,8 @@ const conEscanos = filas.some((x) => x.escanos !== undefined);
   .tabla-datos .der { text-align: right; padding-right: 0; }
 
   @container (max-width: 620px) {
-    .bandas__eje { display: none; }
-    .fila { grid-template-columns: 1fr; gap: var(--s-1); }
+    .fila--eje { display: none; }
+    .fila { grid-template-columns: 1fr; row-gap: var(--s-1); }
     .fila__pista { order: 2; }
     .fila__valor { text-align: left; }
   }

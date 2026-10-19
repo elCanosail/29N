@@ -84,7 +84,7 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
     </p>
     <div class="reparto__barra-marco">
       <div class="reparto__barra" aria-hidden="true">
-        {orden29n.map((f) => (
+        {orden29n.filter((f) => f.estimacionEscanos > 0).map((f) => (
           <span
             class="reparto__tramo"
             style={`flex:${Math.max(f.estimacionEscanos, 0.001)};background:${colorPartido(f.partido)}`}
@@ -111,7 +111,7 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
     </p>
     <div class="reparto__barra-marco">
       <div class="reparto__barra" aria-hidden="true">
-        {orden23j.map((f) => (
+        {orden23j.filter((f) => f.realEscanos > 0).map((f) => (
           <span
             class="reparto__tramo"
             style={`flex:${Math.max(f.realEscanos, 0.001)};background:${colorPartido(f.partido)}`}
