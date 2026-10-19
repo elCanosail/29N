@@ -29,13 +29,14 @@ publica «Comuns» y «Podemos» por separado.
 
 ## Decisión
 
-1. **29N:** la candidatura se presenta como **Frente Amplio** en portada,
-   predicción, simulador, mapa y comparativa de escaños. La sigla de mapa es
-   **F. Amplio**.
+1. **29N:** la candidatura se presenta como **Frente A** en portada, predicción,
+   simulador, mapa y comparativa de escaños (etiqueta corta de **Frente
+   Amplio**, la denominación oficial de la coalición). La sigla de mapa es
+   **Frente A**.
 2. **Histórico:** la clave interna `SUMAR` no cambia. La serie 1977–2026 se
    sigue modelando como una sola familia (IU → Podemos → Sumar → Frente Amplio)
    para no fabricar partidos fantasma. En las encuestas de 2023–2025 la etiqueta
-   visible sigue siendo **Sumar**; en 2026 pasa a **Frente Amplio**.
+   visible sigue siendo **Sumar**; en 2026 pasa a **Frente A**.
 3. **Cataluña:** la encuesta del CEO de 2026 se etiqueta **Comuns** (la marca de
    la coalición en Cataluña), no Frente Amplio.
 4. **Podemos:** se muestra como **Podemos** cuando la encuesta lo publica
@@ -50,9 +51,9 @@ publica «Comuns» y «Podemos» por separado.
 - `web/src/lib/partidos.ts`: `NOMBRE_29N`, `nombre29N()` y `sigla29N()`.
 - Portada: etiquetas de bandas, texto, serie y comparativa 23J.
 - `BarraEscanos`: separa clave de datos (`SUMAR`) y etiqueta visible; el 29N
-  usa «F. Amplio» y el 23J conserva «SUMAR».
+  usa «Frente A» y el 23J conserva «SUMAR».
 - `SerieLinea`: acepta etiquetas visibles sin cambiar las claves de serie.
-- `/encuestas/`: etiqueta por era y ámbito (Sumar, Frente Amplio, Comuns,
+- `/encuestas/`: etiqueta por era y ámbito (Sumar, Frente A, Comuns,
   Podemos).
 - `/prediccion/`, `/simulador/` y cartograma: nombre y sigla del 29N.
 - Metodología y microdatos: explican la familia y la división del voto.
