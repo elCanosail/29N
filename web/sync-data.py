@@ -398,6 +398,7 @@ def gen_reparto23() -> int:
                 "agregados por familia política para ser comparables con el universo "
                 "modelado: PSOE incluye PSC, PSE-EE, PSdeG, PSIB-PSOE y PSN-PSOE; SUMAR "
                 "incluye ECP, Compromís, Sumar Aragón y Més per Mallorca-Ménorca. "
+                "En el 29N esa familia concurre como Frente Amplio. "
                 "Candidaturas sin escaños no aparecen."
             ),
         },
