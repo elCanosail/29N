@@ -4,6 +4,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import IntervalBand from '../../components/IntervalBand.astro';
 import MapaProvincial from '../../components/MapaProvincial.astro';
 import seats from '../../data/seats.json';
+import ccaaMap from '../../data/provincias-ccaa.json';
 import { num, entero } from '../../lib/format';
 import { colorPartido, nombre29N } from '../../lib/partidos';
 
@@ -41,6 +42,67 @@ function filasProvincia(p: (typeof provincias)[number]) {
     .filter((x) => x.media >= 0.15 || x.ic95[1] >= 1)
     .map((x) => ({ etiqueta: nombre29N(x.partido), punto: x.media, p10: x.ic95[0], p90: x.ic95[1], color: colorPartido(x.partido) }));
 }
+
+// --- Agregación por comunidad autónoma --------------------------------
+// Las CCAA no son circunscripción electoral (LOREG art. 161): esta sección no
+// es un modelo autonómico, es la suma de las medias provinciales ya
+// publicadas. La esperanza es aditiva; los intervalos no (no se suman
+// intervalos provinciales, así que a nivel autonómico no se publican).
+const provinciaPorCodigo = new Map(provincias.map((p) => [String(p.codigo), p]));
+
+const filasCCAA = ccaaMap.ccaa.map((c) => {
+  const provs = c.provincias.flatMap((code) => {
+    const p = provinciaPorCodigo.get(String(code));
+    return p ? [p] : [];
+  });
+  const escanos = provs.reduce((acc, p) => acc + p.escanos, 0);
+  // Medias en céntimos de escaño: cada media publicada (2 decimales) pasa a
+  // entero y la suma es aritmética entera exacta. Así el redondeo comercial a
+  // un decimal no depende del orden en coma flotante (los .x5 exactos no
+  // oscilan entre 8,3 y 8,4 según cómo se agrupen las sumas).
+  const medias: Record<string, number> = {};
+  for (const p of provs) {
+    for (const x of p.partidos) {
+      medias[x.partido] = (medias[x.partido] ?? 0) + Math.round(x.media * 100);
+    }
+  }
+  return { codigo: c.codigo, nombre: c.nombre, escanos, medias };
+});
+
+/** Céntimos de escaño → un decimal (redondeo comercial, mitad arriba). */
+const dec1 = (cents: number) => Math.round(cents / 10) / 10;
+
+const sumaEscanosCCAA = filasCCAA.reduce((acc, c) => acc + c.escanos, 0);
+// Compromiso del sitio: la suma autonómica ES la estatal. Si un cambio de
+// datos rompe la coherencia, el build falla antes que publicarla mal.
+if (sumaEscanosCCAA !== 350) {
+  throw new Error(`Coherencia CCAA rota: las 52 provincias suman ${sumaEscanosCCAA} escaños en juego, no 350. Revisar seats.json y provincias-ccaa.json.`);
+}
+
+const filasCCAAOrden = [...filasCCAA].sort(
+  (a, b) => b.escanos - a.escanos || a.nombre.localeCompare(b.nombre, 'es'),
+);
+
+// Columnas: las diez fuerzas con media estatal ≥ 1,5 escaños, en el orden
+// nacional ya publicado; el resto del universo modelado (NA+, CUP, PACMA…)
+// se agrega en «Otros», tal como está en las medias, sin recalcular nada.
+const partidosCCAA = nacional.filter((p) => p.media >= 1.5).map((p) => p.partido);
+const centOtros = (medias: Record<string, number>) =>
+  Object.entries(medias).reduce(
+    (acc, [partido, cents]) => (partidosCCAA.includes(partido) ? acc : acc + cents),
+    0,
+  );
+const totalCCAAporPartido = Object.fromEntries(
+  partidosCCAA.map((partido) => [
+    partido,
+    filasCCAA.reduce((acc, c) => acc + (c.medias[partido] ?? 0), 0),
+  ]),
+) as Record<string, number>;
+const totalCCAAOtros = filasCCAA.reduce((acc, c) => acc + centOtros(c.medias), 0);
+const sumaCentMediasCCAA = filasCCAA.reduce(
+  (acc, c) => acc + Object.values(c.medias).reduce((a, b) => a + b, 0),
+  0,
+);
 ---
 
 <Base
@@ -73,6 +135,76 @@ function filasProvincia(p: (typeof provincias)[number]) {
         pie={`D'Hondt por provincia · ${entero(meta.n_runs)} simulaciones · escenario central = mediana de la simulación`}
         lectura="El punto es la media de escaños y la banda el intervalo del 95 % de las 10 000 simulaciones. Ningún partido se publica con un escaño puntual: el reparto depende de cómo se rompan los empates en las últimas circunscripciones."
       />
+    </section>
+
+    <!-- Agregación por comunidad autónoma: suma de lo ya publicado, sin modelo nuevo -->
+    <section class="seccion--compacta" aria-labelledby="ccaa-titulo">
+      <p class="eyebrow" id="ccaa-titulo">Por comunidad autónoma · agregación del modelo provincial</p>
+      <h2>Los mismos 350 escaños, agrupados en 19 comunidades</h2>
+      <p class="medida nota ccaa-intro">
+        Las comunidades autónomas no son circunscripción electoral: el Congreso se
+        reparte provincia a provincia. Esta tabla suma las medias publicadas de las
+        provincias de cada comunidad. No es un modelo autonómico ni añade precisión:
+        es la misma predicción provincial, leída en otro nivel. Los intervalos
+        provinciales no se suman (sumar intervalos no es estadísticamente válido),
+        así que aquí no se publican; los intervalos por partido y provincia siguen
+        en la <a href="#tabla-paralela-titulo">tabla paralela</a> y los nacionales,
+        en la sección superior.
+      </p>
+
+      <figure class="tabla-ccaa">
+        <p class="tabla-ccaa__meta mono">
+          Agregación propia de la predicción provincial publicada (generada el {meta.generado})
+          · correspondencia provincia–comunidad: división territorial oficial (INE)
+        </p>
+        <div class="tabla-ccaa__marco">
+          <table>
+            <caption class="visualmente-oculto">
+              Escaños estimados para el 29N por comunidad autónoma: media por partido sumada de sus provincias y escaños en juego
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Comunidad</th>
+                <th scope="col" class="der">Escaños</th>
+                {partidosCCAA.map((partido) => (
+                  <th scope="col" class="der">{nombre29N(partido)}</th>
+                ))}
+                <th scope="col" class="der">Otros</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filasCCAAOrden.map((c) => (
+                <tr>
+                  <th scope="row">{c.nombre}</th>
+                  <td class="mono der">{entero(c.escanos)}</td>
+                  {partidosCCAA.map((partido) => (
+                    <td class="mono der">{c.medias[partido] ? num(dec1(c.medias[partido]), 1) : '—'}</td>
+                  ))}
+                  <td class="mono der">{centOtros(c.medias) > 0 ? num(dec1(centOtros(c.medias)), 1) : '—'}</td>
+                </tr>
+              ))}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row">Total</th>
+                <td class="mono der">{entero(sumaEscanosCCAA)}</td>
+                {partidosCCAA.map((partido) => (
+                  <td class="mono der">{num(dec1(totalCCAAporPartido[partido]), 1)}</td>
+                ))}
+                <td class="mono der">{num(dec1(totalCCAAOtros), 1)}</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <figcaption class="nota ccaa-pie">
+          Medias de escaños: suma de las medias provinciales publicadas, cada una con
+          su intervalo en el desglose provincial. Las medias se publican a un decimal y
+          su suma ({num(dec1(sumaCentMediasCCAA), 1)}) difiere de los 350 escaños en
+          juego solo por el redondeo de cada media provincial (el propio modelo
+          declara una desviación de {num(meta.coherencia?.desviacion_escanos, 2)} escaños sobre 350).
+          «Otros» reúne el resto del universo modelado (NA+, CUP, PACMA…).
+        </figcaption>
+      </figure>
     </section>
 
     <section class="controles" aria-labelledby="controles-titulo">
@@ -327,6 +459,33 @@ function filasProvincia(p: (typeof provincias)[number]) {
   .tabla-prov .der { text-align: right; padding-right: 0; }
   .tabla-prov tbody tr:hover td, .tabla-prov tbody tr:hover th { background: var(--papel-3); }
   .tabla-prov a { font-family: var(--f-body); }
+
+  /* Agregación por CCAA: misma gramática que la tabla provincial, con
+     primera columna fija porque supera las 8 columnas (DESIGN.md §8). */
+  .ccaa-intro { margin: 0 0 var(--s-4); }
+  .tabla-ccaa { margin: 0 0 var(--s-2); }
+  .tabla-ccaa__meta { margin: 0 0 var(--s-2); font-size: var(--t-small); color: var(--tinta-2); }
+  .tabla-ccaa__marco { overflow-x: auto; border-top: var(--borde-tinta); }
+  .tabla-ccaa table { width: 100%; border-collapse: collapse; font-size: var(--t-data); }
+  .tabla-ccaa th, .tabla-ccaa td { text-align: left; padding: var(--s-2) var(--s-3) var(--s-2) 0; border-bottom: var(--borde-regla); white-space: nowrap; }
+  .tabla-ccaa thead th { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--tinta-2); }
+  .tabla-ccaa .der { text-align: right; padding-right: 0; }
+  .tabla-ccaa tbody tr:hover td, .tabla-ccaa tbody tr:hover th { background: var(--papel-3); }
+  .tabla-ccaa thead th:first-child, .tabla-ccaa tbody th, .tabla-ccaa tfoot th {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--papel);
+    border-right: var(--borde-regla);
+  }
+  .tabla-ccaa tbody tr:hover th { background: var(--papel-3); }
+  .tabla-ccaa tfoot th, .tabla-ccaa tfoot td { border-top: 2px solid var(--tinta); border-bottom: none; font-weight: 600; }
+  .ccaa-pie { margin: var(--s-2) 0 0; max-width: 78ch; }
+  @media (max-width: 767px) {
+    .tabla-ccaa thead th:first-child, .tabla-ccaa tbody th, .tabla-ccaa tfoot th {
+      box-shadow: 6px 0 8px -6px oklch(0.24 0.02 260 / 0.35);
+    }
+  }
 
   .aviso-mrp {
     margin-top: var(--s-5);

@@ -1,0 +1,29 @@
+{
+ "meta": {
+  "descripcion": "Correspondencia provincia→comunidad autónoma según la división territorial oficial (códigos INE). Los códigos de provincia son los mismos que usa seats.json y base23.json.",
+  "advertencia": "Las comunidades autónomas NO son circunscripción electoral al Congreso: cada provincia reparte sus escaños por separado (LOREG art. 161). Esta correspondencia solo sirve para agregar outputs provinciales ya publicados; no define ningún reparto autonómico.",
+  "n_provincias": 52,
+  "n_ccaa": 19
+ },
+ "ccaa": [
+  {"codigo": "01", "nombre": "Andalucía", "provincias": [4, 11, 14, 18, 21, 23, 29, 41]},
+  {"codigo": "02", "nombre": "Aragón", "provincias": [22, 44, 50]},
+  {"codigo": "03", "nombre": "Asturias", "provincias": [33]},
+  {"codigo": "04", "nombre": "Illes Balears", "provincias": [7]},
+  {"codigo": "05", "nombre": "Canarias", "provincias": [35, 38]},
+  {"codigo": "06", "nombre": "Cantabria", "provincias": [39]},
+  {"codigo": "07", "nombre": "Castilla y León", "provincias": [5, 9, 24, 34, 37, 40, 42, 47, 49]},
+  {"codigo": "08", "nombre": "Castilla-La Mancha", "provincias": [2, 13, 16, 19, 45]},
+  {"codigo": "09", "nombre": "Cataluña", "provincias": [8, 17, 25, 43]},
+  {"codigo": "10", "nombre": "Comunidad Valenciana", "provincias": [3, 12, 46]},
+  {"codigo": "11", "nombre": "Extremadura", "provincias": [6, 10]},
+  {"codigo": "12", "nombre": "Galicia", "provincias": [15, 27, 32, 36]},
+  {"codigo": "13", "nombre": "Comunidad de Madrid", "provincias": [28]},
+  {"codigo": "14", "nombre": "Región de Murcia", "provincias": [30]},
+  {"codigo": "15", "nombre": "Comunidad Foral de Navarra", "provincias": [31]},
+  {"codigo": "16", "nombre": "País Vasco", "provincias": [1, 20, 48]},
+  {"codigo": "17", "nombre": "La Rioja", "provincias": [26]},
+  {"codigo": "18", "nombre": "Ceuta", "provincias": [51]},
+  {"codigo": "19", "nombre": "Melilla", "provincias": [52]}
+ ]
+}
