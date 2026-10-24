@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import IntervalBand from '../components/IntervalBand.astro';
+import HorquillasEscanos from '../components/HorquillasEscanos.astro';
 import BarraEscanos from '../components/BarraEscanos.astro';
 import SerieLinea from '../components/SerieLinea.astro';
 import forecast from '../data/forecast.json';
@@ -51,8 +52,36 @@ const nacional = seatsData.nacional.map((p: {partido: string; media: number; ic9
   p90: p.ic95[1],
   color: colorPartido(p.partido),
 }));
-const topNacional = nacional.slice(0, 4);
-const restoNacional = nacional.slice(4);
+
+// Versión sobria de las horquillas (plan horquillas-imop-29n.md §B): las
+// bandas de precisión de la portada con media, mediana y línea de mayoría,
+// en un único gráfico. Mismo criterio que la predicción: los escaños 23J
+// vienen de reparto23.json (agregación canónica de elecciones.json).
+const escanos23JHome = Object.fromEntries(
+  (repartoData.familias as { partido: string; escanos: number }[]).map((f) => [f.partido, f.escanos]),
+);
+const filasHorquillaHome = (seatsData.nacional as {
+  partido: string;
+  media: number;
+  ic95: number[];
+  central_escenario: number;
+  p_ge1: number;
+}[]).map((p) => ({
+  partido: p.partido,
+  etiqueta: nombre29N(p.partido),
+  color: colorPartido(p.partido),
+  media: p.media,
+  min: p.ic95[0],
+  max: p.ic95[1],
+  central: p.central_escenario,
+  pGe1: p.p_ge1,
+  esc23: escanos23JHome[p.partido] ?? 0,
+  delta23: p.media - (escanos23JHome[p.partido] ?? 0),
+}));
+const topHorquillaHome = [...filasHorquillaHome].sort((a, b) => b.media - a.media).slice(0, 3);
+const descripcionHorquillaHome = `Escaños estimados del 29N con su horquilla del 95 %: ${topHorquillaHome
+  .map((f) => `${f.etiqueta} ${num(f.media, 1)} (${f.min}–${f.max})`)
+  .join('; ')}. La línea discontinua marca la mayoría absoluta (176), que ningún partido alcanza dentro de su horquilla.`;
 
 // Comparación 23J: escaños, votos y % agregados por familia (ver reparto23.json).
 const real23 = Object.fromEntries(
@@ -122,20 +151,13 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
     />
 
     <details class="heroe__resto">
-      <summary>Ver la precisión: banda de cada estimación (p10–p90), los 13 partidos</summary>
-      <IntervalBand
-        filas={topNacional}
-        max={170}
-        unidad="escaños"
-        descripcion={`Estimación de escaños para el 29N: ${topNacional[0].etiqueta} ${num(topNacional[0].punto, 1)}, ${topNacional[1].etiqueta} ${num(topNacional[1].punto, 1)}, ${topNacional[2].etiqueta} ${num(topNacional[2].punto, 1)} y ${topNacional[3].etiqueta} ${num(topNacional[3].punto, 1)}, con su intervalo del 95 %.`}
-        pie={`Modelo: media ponderada de encuestas + swing proporcional provincial · 10.000 simulaciones con reparto D'Hondt por provincia · intervalo: percentiles 2,5–97,5 de la simulación`}
-      />
-      <IntervalBand
-        filas={restoNacional}
-        max={170}
-        unidad="escaños"
-        descripcion="Estimación de escaños para el 29N del resto de partidos del universo modelado, con su intervalo del 95 %."
-        pie="Mismo método y misma simulación que el gráfico anterior."
+      <summary>Ver la precisión: horquilla del 95 % de cada partido, media y mediana</summary>
+      <HorquillasEscanos
+        filas={filasHorquillaHome}
+        conTabla={false}
+        tope={180}
+        descripcion={descripcionHorquillaHome}
+        pie="Banda = intervalo del 95 % de 10.000 simulaciones D'Hondt provincia a provincia · punto = media · trazo = mediana del escenario central · línea discontinua = mayoría absoluta (176)"
       />
     </details>
 
