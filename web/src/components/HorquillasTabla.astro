@@ -1,0 +1,188 @@
+---
+/**
+ * HorquillasTabla — la tabla-resumen de las horquillas de escaños.
+ * (Plan docs/plans/horquillas-imop-29n.md §B · DESIGN.md §4-Tablas, §7.5)
+ *
+ * Los mismos números que el gráfico de HorquillasEscanos, en tabla: media,
+ * horquilla IC95, mediana del escenario central, P(≥1 escaño), escaños reales
+ * del 23J (familias del modelo, reparto23.json) y Δ frente al 23J.
+ *
+ * Se renderiza dos veces en el sitio: visible bajo el gráfico en /prediccion
+ * (jerarquía electomanía propia: gráfico primero, tabla después) y dentro de
+ * <details> en la portada. Cifras en Plex Mono tabular, alineadas a la derecha;
+ * el delta lleva signo explícito (+/−) además del color (DESIGN.md §7.2).
+ *
+ * Solo tokens semánticos de tokens.css; componente estático, sin JavaScript.
+ */
+
+export interface FilaHorquillaTabla {
+  /** clave del modelo (seats.json → nacional[].partido) */
+  partido: string;
+  /** nombre visible (29N: Frente A, etc.) */
+  etiqueta: string;
+  /** token CSS de partido (lib/partidos) */
+  color: string;
+  media: number;
+  /** ic95[0] — extremo inferior de la horquilla */
+  min: number;
+  /** ic95[1] — extremo superior de la horquilla */
+  max: number;
+  /** central_escenario: mediana del escenario central */
+  central: number;
+  /** probabilidad de obtener al menos un escaño (0–1) */
+  pGe1?: number;
+  /** escaños reales del 23J (familias del modelo, reparto23.json) */
+  esc23?: number;
+  /** media 29N − escaños reales 23J */
+  delta23?: number;
+}
+
+interface Props {
+  filas: FilaHorquillaTabla[];
+}
+
+import { num, entero } from '../lib/format';
+
+const { filas } = Astro.props as Props;
+
+// Orden por media descendente: el mismo del gráfico, garantizado aquí también.
+const filasOrden = [...filas].sort((a, b) => b.media - a.media);
+
+const sumaMedias = filasOrden.reduce((acc, f) => acc + f.media, 0);
+const suma23 = filasOrden.reduce((acc, f) => acc + (f.esc23 ?? 0), 0);
+const deltaTotal = sumaMedias - suma23;
+
+const horquillaTxt = (f: FilaHorquillaTabla) =>
+  f.max === f.min ? entero(f.min) : `${entero(f.min)}–${entero(f.max)}`;
+
+/** Delta con signo tipográfico explícito (− U+2212); el valor, siempre en tinta. */
+function deltaDe(d: number | undefined): { signo: string; valor: string; clase: string } {
+  if (d === undefined) return { signo: '', valor: '—', clase: 'plano' };
+  if (d > 0) return { signo: '+', valor: num(d, 1), clase: 'sube' };
+  if (d < 0) return { signo: '−', valor: num(-d, 1), clase: 'baja' };
+  return { signo: '', valor: '0', clase: 'plano' };
+}
+---
+
+<div class="horq-tabla__muro">
+  <table>
+    <caption class="visualmente-oculto">
+      Resumen de escaños del 29N por partido: media, horquilla del 95 %, mediana del
+      escenario central, probabilidad de obtener escaño, escaños reales del 23J y
+      diferencia frente al 23J
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Partido</th>
+        <th scope="col" class="der">Media</th>
+        <th scope="col" class="der">Horquilla (IC95)</th>
+        <th scope="col" class="der">Mediana</th>
+        <th scope="col" class="der">
+          <abbr title="Probabilidad de obtener al menos un escaño">P(≥1 esc.)</abbr>
+        </th>
+        <th scope="col" class="der">Escaños 23J</th>
+        <th scope="col" class="der">
+          <abbr title="Media 29N menos escaños reales del 23J">Δ vs 23J</abbr>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {filasOrden.map((f) => {
+        const d = deltaDe(f.delta23);
+        return (
+          <tr>
+            <th scope="row">
+              <span class="horq-tabla__muestra" style={`background:${f.color}`} aria-hidden="true"></span>
+              {f.etiqueta}
+            </th>
+            <td class="mono der">{num(f.media, 1)}</td>
+            <td class="mono der">{horquillaTxt(f)}</td>
+            <td class="mono der">{entero(f.central)}</td>
+            <td class="mono der">{f.pGe1 !== undefined ? `${num(f.pGe1 * 100, 1)} %` : '—'}</td>
+            <td class="mono der">{f.esc23 !== undefined ? entero(f.esc23) : '—'}</td>
+            <td class="mono der">
+              <span class={`horq-tabla__signo horq-tabla__signo--${d.clase}`}>{d.signo}</span>
+              {d.valor}
+            </td>
+          </tr>
+        );
+      })}
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row">Total</th>
+        <td class="mono der">{num(sumaMedias, 1)}</td>
+        <td class="mono der">—</td>
+        <td class="mono der">—</td>
+        <td class="mono der">—</td>
+        <td class="mono der">{entero(suma23)}</td>
+        <td class="mono der">
+          <span class={`horq-tabla__signo horq-tabla__signo--${deltaDe(deltaTotal).clase}`}>{deltaDe(deltaTotal).signo}</span>
+          {deltaDe(deltaTotal).valor}
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<style>
+  /* La misma gramática que las tablas del sitio (bordes horizontales,
+     cabecera en versalitas, cifras mono a la derecha). Primera columna fija
+     en scroll horizontal de móvil, como la tabla de CCAA. */
+  .horq-tabla__muro { overflow-x: auto; border-top: var(--borde-tinta); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--t-data);
+  }
+  th,
+  td {
+    text-align: left;
+    padding: var(--s-2) var(--s-3) var(--s-2) 0;
+    border-bottom: var(--borde-regla);
+    white-space: nowrap;
+  }
+  thead th {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--tinta-2);
+  }
+  .der { text-align: right; padding-right: 0; }
+  tbody tr:hover th,
+  tbody tr:hover td { background: var(--papel-3); }
+  tbody th {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--papel);
+    border-right: var(--borde-regla);
+    font-weight: 600;
+  }
+  tfoot th,
+  tfoot td {
+    border-top: 2px solid var(--tinta);
+    border-bottom: none;
+    font-weight: 600;
+  }
+
+  .horq-tabla__muestra {
+    inline-size: 12px;
+    block-size: 12px;
+    border-radius: 2px;
+    display: inline-block;
+    vertical-align: -1px;
+    margin-right: var(--s-2);
+  }
+
+  .horq-tabla__signo { font-weight: 700; }
+  .horq-tabla__signo--sube { color: var(--ok); }
+  .horq-tabla__signo--baja { color: var(--alerta); }
+  .horq-tabla__signo--plano { color: var(--tinta-2); }
+
+  @container (max-width: 620px) {
+    tbody th {
+      box-shadow: 6px 0 8px -6px oklch(0.24 0.02 260 / 0.35);
+    }
+  }
+</style>

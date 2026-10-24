@@ -2,8 +2,11 @@
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import IntervalBand from '../../components/IntervalBand.astro';
+import HorquillasEscanos from '../../components/HorquillasEscanos.astro';
 import MapaProvincial from '../../components/MapaProvincial.astro';
 import seats from '../../data/seats.json';
+import base23 from '../../data/base23.json';
+import reparto23 from '../../data/reparto23.json';
 import ccaaMap from '../../data/provincias-ccaa.json';
 import { num, entero } from '../../lib/format';
 import { colorPartido, nombre29N } from '../../lib/partidos';
@@ -11,9 +14,55 @@ import { colorPartido, nombre29N } from '../../lib/partidos';
 const provincias = seats.provincias;
 const nacional = seats.nacional;
 const meta = seats.meta;
-const filasNacional = nacional
-  .filter((p) => p.media > 0 || p.ic95[1] > 0)
-  .map((p) => ({ etiqueta: nombre29N(p.partido), punto: p.media, p10: p.ic95[0], p90: p.ic95[1], color: colorPartido(p.partido) }));
+
+// --- Horquillas de escaños (plan horquillas-imop-29n.md §B) -----------
+// El gráfico y la tabla publican EXACTAMENTE las simulaciones existentes en
+// seats.json: aquí no se calcula ningún número nuevo de modelo.
+// Coherencia dura antes de publicar (mismo criterio que la vista CCAA):
+// el nacional cubre el universo modelado y la suma de medias es 350.
+if (nacional.length !== base23.meta.universo_modelado.length) {
+  throw new Error(
+    `El nacional de seats.json tiene ${nacional.length} partidos y el universo modelado del 23J tiene ${base23.meta.universo_modelado.length}. Revisar seats.json.`,
+  );
+}
+const sumaMediasNacional = nacional.reduce((acc, p) => acc + p.media, 0);
+const toleranciaEscanos = meta.coherencia?.tolerancia ?? 0.1;
+if (
+  Math.abs(sumaMediasNacional - (meta.coherencia?.suma_medias_escanos ?? sumaMediasNacional)) > 0.02 ||
+  Math.abs(sumaMediasNacional - 350) > toleranciaEscanos
+) {
+  throw new Error(
+    `Coherencia nacional rota: la suma de medias de escaños es ${sumaMediasNacional} y el meta declara ${meta.coherencia?.suma_medias_escanos} (tolerancia ${toleranciaEscanos}). Revisar seats.json.`,
+  );
+}
+
+// Escaños reales del 23J por familia del modelo: reparto23.json es la
+// agregación canónica de elecciones.json (23J) que ya publica la portada en
+// su tabla comparativa; recalcular la familia aquí rompería la coherencia
+// del Δ con el resto del sitio.
+const escanos23J = Object.fromEntries(
+  (reparto23.familias as { partido: string; escanos: number }[]).map((f) => [f.partido, f.escanos]),
+);
+
+const filasHorquillas = [...nacional]
+  .sort((a, b) => b.media - a.media)
+  .map((p) => ({
+    partido: p.partido,
+    etiqueta: nombre29N(p.partido),
+    color: colorPartido(p.partido),
+    media: p.media,
+    min: p.ic95[0],
+    max: p.ic95[1],
+    central: p.central_escenario,
+    pGe1: p.p_ge1,
+    esc23: escanos23J[p.partido] ?? 0,
+    delta23: p.media - (escanos23J[p.partido] ?? 0),
+  }));
+
+const topHorquillas = filasHorquillas.slice(0, 3);
+const descripcionHorquillas = `Escaños nacionales del 29N con su horquilla del 95 %: ${topHorquillas
+  .map((f) => `${f.etiqueta} ${num(f.media, 1)} (${entero(f.min)}–${entero(f.max)})`)
+  .join('; ')}. Mayoría absoluta: 176 escaños; ningún partido la alcanza dentro de su horquilla.`;
 const provinciasMapa = provincias.map((p) => ({
   ...p,
   ganadorClave: p.ganador,
@@ -123,17 +172,18 @@ const sumaCentMediasCCAA = filasCCAA.reduce(
     <!-- El encabezado no vende: el mapa es la recompensa, no el gancho -->
     
 
-    <!-- Predicción nacional de escaños, con banda -->
+    <!-- Horquillas de escaños: la visual del reparto nacional (plan §B).
+         Gráfico primero, tabla-resumen después (jerarquía electomanía propia). -->
     <section class="seccion--compacta" aria-labelledby="nacional-titulo">
       <p class="eyebrow" id="nacional-titulo">Nacional · escaños totales</p>
-      <h2>Reparto nacional de escaños (media e intervalo del 95 %)</h2>
-      <IntervalBand
-        filas={filasNacional}
-        max={180}
-        unidad="esc."
-        descripcion={`Escaños nacionales 29N: PP ${num(nacional[0].media, 1)}, PSOE ${num(nacional[1].media, 1)}, VOX ${num(nacional[2].media, 1)}.`}
-        pie={`D'Hondt por provincia · ${entero(meta.n_runs)} simulaciones · escenario central = mediana de la simulación`}
-        lectura="El punto es la media de escaños y la banda el intervalo del 95 % de las 10 000 simulaciones. Ningún partido se publica con un escaño puntual: el reparto depende de cómo se rompan los empates en las últimas circunscripciones."
+      <h2>Reparto nacional de escaños: horquilla del 95 % por partido</h2>
+      <HorquillasEscanos
+        filas={filasHorquillas}
+        conTabla={true}
+        descripcion={descripcionHorquillas}
+        pie={`D'Hondt por provincia · ${entero(meta.n_runs)} simulaciones (semilla ${meta.seed}) · banda = percentiles 2,5–97,5 · punto = media · trazo = mediana del escenario central`}
+        lectura="La banda ámbar es el intervalo del 95 % de las simulaciones: el reparto depende de cómo se rompan los empates en las últimas circunscripciones, así que ningún partido se publica con un escaño puntual. El punto marca la media y el trazo vertical, la mediana del escenario central. Con el IC95 publicado, ningún partido alcanzaría por sí solo la mayoría absoluta (176): el gobierno se decide en las sumas, no en un ganador claro."
+        pieTabla={`Media, mediana y horquilla: ${entero(meta.n_runs)} simulaciones D'Hondt sobre la predicción provincial (seats.json). Escaños 23J: resultado real agregado por las familias del modelo (Ministerio del Interior, vía elecciones.json). Δ: media 29N menos escaños reales del 23J. La suma de medias difiere de 350 en ${num(meta.coherencia?.desviacion_escanos, 2)} escaños por el redondeo a un decimal.`}
       />
     </section>
 

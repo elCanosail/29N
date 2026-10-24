@@ -1,0 +1,408 @@
+---
+/**
+ * HorquillasEscanos — el reparto de escaños como horquillas por partido.
+ * (Plan docs/plans/horquillas-imop-29n.md §B · DESIGN.md §2, §4-Gráficos, §7)
+ *
+ * Estructura inspirada en las horquillas de electomanía.es; el estilo es propio
+ * del sistema 29N: banda íntegra ic95 [min, max] en ámbar --intervalo (color
+ * firma del proyecto, nunca decorativo), marcador central doble (punto = media,
+ * trazo = mediana del escenario central), línea discontinua de mayoría absoluta
+ * y etiquetas min/max en los extremos de cada banda. Sin JavaScript ni
+ * dependencias de charts: markup + CSS con subgrid, como IntervalBand.
+ *
+ * Accesibilidad (DESIGN.md §7): role="img" con la conclusión en el aria-label;
+ * tabla de datos con los mismos números (HorquillasTabla), visible (conTabla)
+ * o en <details> (versión sobria de la portada).
+ *
+ * Solo tokens semánticos de tokens.css: sin colores fijados en el componente.
+ */
+import { num, entero } from '../lib/format';
+import HorquillasTabla from './HorquillasTabla.astro';
+
+export interface FilaHorquilla {
+  /** clave del modelo (seats.json → nacional[].partido) */
+  partido: string;
+  /** nombre visible (29N: Frente A, etc.) */
+  etiqueta: string;
+  /** token CSS de partido (lib/partidos) */
+  color: string;
+  media: number;
+  /** ic95[0] — extremo inferior de la banda */
+  min: number;
+  /** ic95[1] — extremo superior de la banda */
+  max: number;
+  /** central_escenario: mediana del escenario central */
+  central: number;
+  /** probabilidad de obtener al menos un escaño (0–1) */
+  pGe1?: number;
+  /** escaños reales del 23J (familias del modelo, reparto23.json) */
+  esc23?: number;
+  /** media 29N − escaños reales 23J */
+  delta23?: number;
+}
+
+interface Props {
+  filas: FilaHorquilla[];
+  /** escaños de mayoría absoluta; por defecto el Congreso: 176 */
+  mayoria?: number;
+  /** tope de la escala; por defecto el múltiplo de 20 que cubre mayoría y máximos */
+  tope?: number;
+  /** true → tabla-resumen visible (predicción); false → tabla en <details> (home) */
+  conTabla?: boolean;
+  descripcion: string;
+  pie?: string;
+  lectura?: string;
+  /** nota al pie de la tabla-resumen (fuente del 23J, redondeos) */
+  pieTabla?: string;
+}
+
+const {
+  filas,
+  mayoria = 176,
+  tope,
+  conTabla = false,
+  descripcion,
+  pie,
+  lectura,
+  pieTabla,
+} = Astro.props as Props;
+
+// Escala: cubre la mayoría absoluta (con aire para su etiqueta) y el máximo
+// de las bandas; redondeada a múltiplo de 20 para ticks limpios.
+const topeCalculado =
+  tope ?? Math.ceil(Math.max(mayoria * 1.02, ...filas.map((f) => f.max)) / 20) * 20;
+const pos = (v: number) => Math.max(0, Math.min(100, (v / topeCalculado) * 100));
+const posMayoria = pos(mayoria);
+const ticks = [0, 0.25, 0.5, 0.75, 1].map((t) => t * topeCalculado);
+
+// Las filas llegan ordenadas por media descendente; se reordena aquí como
+// garantía del contrato visual (una sola fuente de verdad para el orden).
+const filasOrden = [...filas].sort((a, b) => b.media - a.media);
+
+type Anclaje = 'inicio' | 'centro' | 'final';
+const anclaje = (pct: number): Anclaje => (pct < 5 ? 'inicio' : pct > 95 ? 'final' : 'centro');
+
+interface Extremos {
+  min?: { v: number; ancla: Anclaje };
+  max?: { v: number; ancla: Anclaje };
+  unica?: { txt: string; ancla: Anclaje };
+}
+
+/**
+ * Etiquetas min/max en los extremos de la banda. Si la banda es estrecha
+ * (o puntual), una única etiqueta «min–max» evita solapes; anclada al borde
+ * más próximo para no salirse de la pista.
+ */
+function extremosDe(f: FilaHorquilla): Extremos {
+  if (f.max === f.min) {
+    return { unica: { txt: entero(f.min), ancla: anclaje(pos(f.min)) } };
+  }
+  if (f.max - f.min <= topeCalculado * 0.12) {
+    const mid = pos((f.min + f.max) / 2);
+    return { unica: { txt: `${entero(f.min)}–${entero(f.max)}`, ancla: anclaje(mid) } };
+  }
+  return {
+    min: { v: f.min, ancla: anclaje(pos(f.min)) },
+    max: { v: f.max, ancla: anclaje(pos(f.max)) },
+  };
+}
+---
+
+<div class="horq">
+  <figure class="horq__grafico">
+    <div class="horq__cuerpo" role="img" aria-label={descripcion}>
+      {/* Fila-eje: ticks, línea de mayoría y su anotación en el propio lienzo
+          (DESIGN.md §4: anotación Newsreader itálica con línea guía). */}
+      <div class="fila fila--eje" aria-hidden="true">
+        <span class="fila__etiqueta"></span>
+        <span class="fila__pista fila__pista--eje">
+          <span class="pista__mayoria" style={`left:${posMayoria}%`}></span>
+          <span
+            class={`eje__mayoria ${posMayoria > 60 ? 'eje__mayoria--der' : 'eje__mayoria--izq'}`}
+            style={posMayoria > 60 ? `right:calc(100% - ${posMayoria}%)` : `left:${posMayoria}%`}
+          >
+            Mayoría absoluta · {mayoria}
+          </span>
+          <span class="eje__ticks">
+            {ticks.map((t) => <span class="eje__tick">{entero(t)}</span>)}
+          </span>
+        </span>
+        <span class="fila__valor"></span>
+      </div>
+
+      {filasOrden.map((f) => {
+        const ext = extremosDe(f);
+        return (
+          <div class="fila">
+            <span class="fila__etiqueta">
+              <span class="fila__muestra" style={`background:${f.color}`} aria-hidden="true"></span>
+              {f.etiqueta}
+            </span>
+            <span class="fila__pista">
+              <span class="pista__mayoria" style={`left:${posMayoria}%`}></span>
+              <span
+                class="pista__banda"
+                style={`left:max(${pos(f.min)}%, 0px);width:max(${Math.max(pos(f.max) - pos(f.min), 0)}%, 2px);`}
+              ></span>
+              {ext.unica ? (
+                <span
+                  class={`pista__extremo pista__extremo--${ext.unica.ancla}`}
+                  style={`left:${ext.unica.ancla === 'final' ? pos(f.max) : ext.unica.ancla === 'centro' ? pos((f.min + f.max) / 2) : pos(f.min)}%`}
+                >
+                  {ext.unica.txt}
+                </span>
+              ) : (
+                <span class={`pista__extremo pista__extremo--${ext.min!.ancla}`} style={`left:${pos(ext.min!.v)}%`}>
+                  {entero(ext.min!.v)}
+                </span>
+              )}
+              {!ext.unica && (
+                <span class={`pista__extremo pista__extremo--${ext.max!.ancla}`} style={`left:${pos(ext.max!.v)}%`}>
+                  {entero(ext.max!.v)}
+                </span>
+              )}
+              <span class="pista__central" style={`left:max(${pos(f.central)}%, 1px)`}></span>
+              <span class="pista__media" style={`left:max(${pos(f.media)}%, 4px)`}></span>
+            </span>
+            <span class="fila__valor mono">{num(f.media, 1)}</span>
+          </div>
+        );
+      })}
+    </div>
+
+    <ul class="horq__leyenda">
+      <li><span class="ley__banda" aria-hidden="true"></span>Banda: IC95, intervalo del 95 %</li>
+      <li><span class="ley__media" aria-hidden="true"></span>Punto: media de las simulaciones</li>
+      <li><span class="ley__central" aria-hidden="true"></span>Trazo: mediana (escenario central)</li>
+      <li><span class="ley__mayoria" aria-hidden="true"></span>Mayoría absoluta: {mayoria}</li>
+    </ul>
+
+    {pie && <p class="horq__pie mono">{pie}</p>}
+    {lectura && <p class="horq__lectura">{lectura}</p>}
+  </figure>
+
+  {conTabla ? (
+    <figure class="horq__tabla">
+      <HorquillasTabla filas={filas} />
+      {pieTabla && <figcaption class="horq__pie-tabla nota">{pieTabla}</figcaption>}
+    </figure>
+  ) : (
+    <details class="horq__datos">
+      <summary>Cifras de este gráfico, en tabla</summary>
+      <HorquillasTabla filas={filas} />
+    </details>
+  )}
+</div>
+
+<style>
+  .horq { margin: 0 0 var(--s-5); }
+
+  .horq__grafico {
+    margin: 0;
+    background: var(--papel);
+    border-top: var(--borde-regla);
+    border-bottom: var(--borde-regla);
+    padding: var(--s-4) 0;
+  }
+
+  /* Rejilla única para todas las filas (como IntervalBand): la pista mide
+     exactamente lo mismo en las 13 filas y la línea de mayoría alinea. */
+  .horq__cuerpo {
+    container-type: inline-size;
+    display: grid;
+    grid-template-columns: 30% 1fr auto;
+    column-gap: var(--s-3);
+  }
+
+  .fila {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+    align-items: center;
+    padding: var(--s-2) 0;
+  }
+  .fila:hover { background: var(--papel-2); }
+  .fila--eje { padding: 0 0 var(--s-2); }
+
+  .fila__etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    font-weight: 600;
+    font-size: var(--t-small);
+    min-width: 0;
+  }
+  .fila__muestra {
+    inline-size: 12px;
+    block-size: 12px;
+    border-radius: 2px;
+    flex: 0 0 auto;
+  }
+
+  .fila__pista {
+    position: relative;
+    height: 36px;
+    border-left: 1px solid var(--regla);
+    border-right: 1px solid var(--regla);
+    background-image: linear-gradient(to right, var(--regla) 0 1px, transparent 1px);
+    background-size: 25% 100%;
+  }
+  .fila__pista--eje { height: 42px; }
+
+  /* Línea discontinua de mayoría absoluta: referencia, no dato; por eso es
+     un trazo roto en tinta secundaria que atraviesa banda y eje. */
+  .pista__mayoria {
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    width: 2px;
+    transform: translateX(-50%);
+    background: repeating-linear-gradient(to bottom, var(--tinta-2) 0 5px, transparent 5px 9px);
+  }
+
+  .pista__banda {
+    position: absolute;
+    top: 19px;
+    height: 13px;
+    box-sizing: border-box;
+    background: var(--intervalo);
+    border: 1px solid var(--intervalo-borde);
+    border-radius: 2px;
+  }
+
+  .pista__extremo {
+    position: absolute;
+    top: 0;
+    height: 14px;
+    line-height: 14px;
+    font-family: var(--f-mono);
+    font-size: 0.7rem;
+    color: var(--tinta-2);
+    white-space: nowrap;
+  }
+  .pista__extremo--centro { transform: translateX(-50%); }
+  .pista__extremo--inicio { transform: none; }
+  .pista__extremo--final { transform: translateX(-100%); }
+
+  /* Marcador central doble: trazo (mediana) detrás, punto (media) delante.
+     Formas distintas —no solo color— para lectura sin visión de color. */
+  .pista__central {
+    position: absolute;
+    top: 15px;
+    width: 2px;
+    height: 21px;
+    transform: translateX(-50%);
+    background: var(--tinta);
+  }
+  .pista__media {
+    position: absolute;
+    top: 21px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    background: var(--tinta);
+  }
+
+  .fila__valor {
+    font-size: var(--t-data);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  /* Eje: anotación de mayoría arriba, ticks abajo. */
+  .eje__mayoria {
+    position: absolute;
+    top: 0;
+    font-family: var(--f-titular);
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--tinta-2);
+    white-space: nowrap;
+  }
+  .eje__mayoria--der { padding-right: 8px; }
+  .eje__mayoria--izq { padding-left: 8px; }
+
+  .eje__ticks {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: var(--borde-regla);
+    padding-bottom: 2px;
+  }
+  .eje__tick {
+    font-family: var(--f-mono);
+    font-size: 0.7rem;
+    color: var(--tinta-2);
+  }
+
+  .horq__leyenda {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2) var(--s-4);
+    margin: var(--s-3) 0 0;
+    padding: 0;
+    font-size: var(--t-small);
+    color: var(--tinta-2);
+  }
+  .horq__leyenda li { display: inline-flex; align-items: center; gap: var(--s-2); }
+  .ley__banda {
+    inline-size: 22px;
+    block-size: 10px;
+    box-sizing: border-box;
+    background: var(--intervalo);
+    border: 1px solid var(--intervalo-borde);
+    border-radius: 2px;
+  }
+  .ley__media { inline-size: 9px; block-size: 9px; border-radius: 50%; background: var(--tinta); }
+  .ley__central { inline-size: 2px; block-size: 14px; background: var(--tinta); }
+  .ley__mayoria {
+    inline-size: 2px;
+    block-size: 14px;
+    background: repeating-linear-gradient(to bottom, var(--tinta-2) 0 4px, transparent 4px 7px);
+  }
+
+  .horq__pie { margin: var(--s-3) 0 0; color: var(--tinta-2); font-size: 0.8125rem; }
+  .horq__lectura {
+    margin: var(--s-2) 0 0;
+    max-width: var(--medida);
+    font-size: var(--t-small);
+    line-height: var(--lh-small);
+    color: var(--tinta-2);
+  }
+
+  /* Tabla-resumen: separación y nota al pie; la tabla vive en HorquillasTabla. */
+  .horq__tabla { margin: var(--s-4) 0 0; }
+  .horq__pie-tabla { margin: var(--s-2) 0 0; max-width: 78ch; }
+
+  .horq__datos { margin-top: var(--s-3); }
+  .horq__datos summary {
+    cursor: pointer;
+    font-size: var(--t-small);
+    font-weight: 600;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    color: var(--enlace);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
+  /* Móvil primero (DESIGN.md §8): la pista pasa a ancho completo, la media
+     sube a la línea del nombre y el eje conserva la anotación de mayoría. */
+  @container (max-width: 620px) {
+    .fila { display: flex; flex-wrap: wrap; align-items: baseline; }
+    .fila__etiqueta { order: 1; flex: 1 1 auto; }
+    .fila__valor { order: 2; margin-left: auto; }
+    .fila__pista { order: 3; flex: 1 0 100%; margin-top: var(--s-1); }
+    .fila--eje .fila__etiqueta,
+    .fila--eje .fila__valor { display: none; }
+    .eje__ticks { display: none; }
+    .fila__pista--eje { height: 20px; }
+    .eje__mayoria { font-size: 0.75rem; }
+  }
+</style>
