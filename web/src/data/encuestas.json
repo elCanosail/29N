@@ -1,8 +1,8 @@
 {
  "meta": {
-  "n": 67,
+  "n": 68,
   "n_cis": 35,
-  "n_privados": 32,
+  "n_privados": 33,
   "nota_base": "CIS = voto directo sobre censo (microdato); privados = estimación sobre voto válido. No son directamente comparables sin normalizar.",
   "destacados": [
    "PP",
@@ -63,6 +63,32 @@
   ]
  },
  "encuestas": [
+  {
+   "id": "imop-2026-10-13",
+   "casa": "Imop Insights",
+   "tipo": "encuestador",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-10-13/2026-10-16",
+   "fecha_publicacion": "2026-10-23",
+   "n": 1000,
+   "url": "https://www.imop.es/encuesta-pre-electoral-el-confidencial-ola-2/",
+   "metodologia": "Híbrida: CATI + CAWI (distribución aprox. 45%/55%; en el canal telefónico 70% móvil)",
+   "base": "valido",
+   "partidos": {
+    "PP": 28.5,
+    "PSOE": 27.1,
+    "VOX": 20.0,
+    "SUMAR": 8.9,
+    "ERC": 2.2,
+    "JXCAT": 1.2,
+    "EH BILDU": 1.3,
+    "PNV": 1.0,
+    "BNG": 1.1,
+    "CC": 0.6
+   }
+  },
   {
    "id": "ceo-2026-09-01",
    "casa": "CEO (Centre d'Estudis d'Opinió)",

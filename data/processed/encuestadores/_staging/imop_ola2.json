@@ -1,0 +1,39 @@
+{
+  "encuestas": [
+    {
+      "fuente": "Imop Insights",
+      "estudio_id": "imop-2026-10-13",
+      "fecha_trabajo": "2026-10-13/2026-10-16",
+      "fecha_publicacion": "2026-10-23",
+      "n": 1000,
+      "metodologia": "Híbrida: CATI + CAWI (distribución aprox. 45%/55%; en el canal telefónico 70% móvil)",
+      "ambito": "nacional",
+      "eleccion": "generales 2026",
+      "url": "https://www.imop.es/encuesta-pre-electoral-el-confidencial-ola-2/",
+      "extracto": "[imop.es, ola 2, 23 octubre 2026] «Los partidos de derechas sumarían el 50,2% del voto. El PP seguiría siendo la primera fuerza y Vox pasaría de 33 a 72 diputados. La proyección de escaños sitúa a PP y Vox por encima de la mayoría absoluta. (...) 195 escaños proyectados para PP + Vox: 123 PP + 72 Vox (...). El PP lidera con 28,5 %; Vox sube al 20,0%. El PSOE quedaría a 1,4 puntos del PP. La suma de PP, Vox y SALF llega al 50,2 % del voto estimado. (...) 28,5 % PP · primera fuerza, −4,6 puntos frente a 2023; 27,1 % PSOE · segunda fuerza; 20,0 % Vox · mayor avance, +7,6 puntos frente a 2023. (...) Trabajo de campo: 13–16 oct 2026 · Universo: población censada de 18 años o más · Muestra: 1.000 entrevistas · Fuente: IMOP Insights para El Confidencial. 23 Octubre 2026. Encuesta CATI/CAWI del 13 al 16 de octubre de 2026; muestra de 1.000 entrevistas.» [El Confidencial, ficha técnica del artículo del 23-10-2026] «Fechas de campo: Del 13 al 16 de octubre de 2026. Universo: Personas de 18 años y más censadas y con derecho a voto en las elecciones generales. Tamaño muestral: 1.000 entrevistas. Diseño muestral: Aleatorio estratificado proporcional por CCAA y tamaño de municipio. Control de cuotas por sexo y edad y nivel de estudios. Técnica de entrevista: Metodología híbrida, mediante la combinación de entrevista telefónica (CATI) y entrevista online (CAWI), con una distribución aproximada de 45%/55%. En el canal telefónico, el 70% de las entrevistas se realizó con individuos contactados a través de teléfono móvil. Margen de error: ±3,3 puntos porcentuales en las estimaciones.» [El Confidencial, artículo] «El PP seguirá siendo la fuerza más votada, con el 28,5% de los votos (-1,9%) y 123 escaños, siete menos que hace quince días (...). Vox, que alcanza la simbólica cifra del 20% de los votos (+1%) y 72 escaños (+2). Si al bloque de la derecha se le suma además Se Acabó la Fiesta (SALF), que consigue el 1,2% (-0,2%) de los votos, el total supera la mitad del electorado: 50,2%. (...) Los socialistas se sitúan en el 27,1% (+1,1%) y 113 escaños; y Frente Amplio pasa del 7,6% al 8,9% (+1,3%) y logra catorce escaños. Podemos se mantiene en uno, aunque pierde respaldo: del 2,3% al 1,9% (...) la única diferencia está en el PNV, que pasa de cuatro a cinco, y el BNG, que pierde uno y se queda en dos. El resto de formaciones no varía: ERC (8), Junts (4), Bildu (6), Coalición Canaria (1). Según la previsión de IMOP, la participación en la noche electoral se situará en torno al 73%, frente al 70,4% de 2023.»",
+      "votos": {
+        "PP": 28.5,
+        "PSOE": 27.1,
+        "VOX": 20.0,
+        "SUMAR": 8.9,
+        "ERC": 2.2,
+        "JXCAT": 1.2,
+        "EH BILDU": 1.3,
+        "PNV": 1.0,
+        "BNG": 1.1,
+        "CC": 0.6
+      },
+      "fuente_votos_adicionales": "El Confidencial, artículo del 23-10-2026 (escaños de partidos pequeños) y electografica.com/2026/10/encuesta-imop-insights-261023.html (porcentajes de voto de partidos pequeños; HTTP 200 el 24-10-2026). La web de IMOP solo publica los 4 grandes (criterio idéntico a la ola 1 imop-2026-10-05). SUMAR = «Frente Amplio», nueva marca del espacio Sumar según El Confidencial («Frente Amplio pasa del 7,6% al 8,9%»)."
+    }
+  ],
+  "exclusiones": [
+    {
+      "fuente": "Imop Insights",
+      "motivo": "imop-2026-10-13: Podemos (1,9%) y SALF (1,2%) publicados (El Confidencial y electografica) pero NO incluidos en votos. Podemos canonicaliza a UNIDAS PODEMOS y FAMILY lo plegaría a SUMAR, incorrecto en 2026 porque concurre en solitario (mismo criterio aplicado en la ola 1 imop-2026-10-05; plegarlo alteraría la serie SUMAR sin equivalencia en las olas anteriores: FA 8,9 + Podemos 1,9 ≠ comparable con Sumar/F.A. 7,6 de la ola 1). SALF mapea a OTROS (residual no modelado). UPN y Adelante Andalucía constan con 0,0% en electografica."
+    },
+    {
+      "fuente": "Imop Insights",
+      "motivo": "imop.es estaba caída (HTTP 502 también en la página de la ola 1) durante la sesión del 24-10-2026: la ficha de la ola 2 se verificó vía el artículo de El Confidencial (HTTP 200 con Camoufox, ficha técnica íntegra en el DOM) y el contenido indexado de la propia página de IMOP (título, cifras y ficha resumida). URL de ficha técnica publicada existente: https://www.imop.es/encuesta-pre-electoral-el-confidencial-ola-2/ (fecha de publicación 23 octubre 2026)."
+    }
+  ]
+}
