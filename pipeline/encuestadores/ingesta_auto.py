@@ -181,12 +181,21 @@ def votos_canonicos(c: dict) -> tuple[dict, list[str]]:
     return votos, fuera
 
 
+def _norm(txt: str) -> str:
+    """Minúsculas sin tildes: «SocioMétrica» y «Sociometrica» son la misma casa."""
+    import unicodedata
+    sin = "".join(c for c in unicodedata.normalize("NFD", (txt or "").lower())
+                  if unicodedata.category(c) != "Mn")
+    return re.sub(r"[^a-z0-9]+", "", sin)
+
+
 def ya_ingerida(c: dict, existentes: list[dict]) -> bool:
-    """Duplicado si misma casa y mismo fin de campo (o mismo id)."""
+    """Duplicado si misma casa y mismo fin de campo (o mismo estudio)."""
+    casa = _norm(c.get("casa") or "")
+    fin = (c.get("fecha_trabajo") or "").split("/")[-1]
     for e in existentes:
-        if (e.get("fuente") or "").upper() == (c["casa"] or "").upper() and \
-                (e.get("fecha_trabajo") or "").split("/")[-1] == \
-                (c.get("fecha_trabajo") or "").split("/")[-1]:
+        if _norm(e.get("fuente") or "") == casa and \
+                (e.get("fecha_trabajo") or "").split("/")[-1] == fin:
             return True
     return False
 
@@ -224,7 +233,7 @@ def main() -> int:
     aceptadas, descartadas, escaladas = [], [], []
     for c in candidatas:
         if ya_ingerida(c, existentes) or any(
-                (a["fuente"] or "").upper() == (c["casa"] or "").upper() and
+                _norm(a["fuente"]) == _norm(c.get("casa") or "") and
                 a["fecha_trabajo"] == c.get("fecha_trabajo") for a in aceptadas):
             continue
         ok, motivo = valida(c)
