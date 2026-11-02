@@ -162,14 +162,21 @@ def main() -> int:
         _, vals = C.build_party_series(p, obs)
         hist_series[p] = vals[: cut_idx + 1]
 
-    model = load_model(per_core_batch_size=len(parties),
-                       max_context=len(hist_series[parties[0]]), horizon=horizon)
-    point, quantiles = forecast_batch(model, [hist_series[p] for p in parties], horizon)
-    idx = horizon - 1  # mes objetivo = nov-2026
-
-    ts_point = {p: float(point[i, idx]) for i, p in enumerate(parties)}
-    ts_q = {p: {str(lv): float(quantiles[i, idx, QUANTILE_COLUMNS[k]])
-                for k, lv in enumerate(QUANTILE_LEVELS)} for i, p in enumerate(parties)}
+    # Con la campaña en marcha el dato ya alcanza el mes objetivo (2026-11):
+    # horizonte 0. Pronosticar un mes del que ya hay encuestas sería inventar;
+    # el punto honesto es la serie ponderada del mes y así se declara (nowcast).
+    ahora = horizon <= 0
+    if ahora:
+        ts_point = {p: float(hist_series[p][-1]) for p in parties}
+        ts_q = {p: {} for p in parties}
+    else:
+        model = load_model(per_core_batch_size=len(parties),
+                           max_context=len(hist_series[parties[0]]), horizon=horizon)
+        point, quantiles = forecast_batch(model, [hist_series[p] for p in parties], horizon)
+        idx = horizon - 1  # mes objetivo = nov-2026
+        ts_point = {p: float(point[i, idx]) for i, p in enumerate(parties)}
+        ts_q = {p: {str(lv): float(quantiles[i, idx, QUANTILE_COLUMNS[k]])
+                    for k, lv in enumerate(QUANTILE_LEVELS)} for i, p in enumerate(parties)}
     # baseline = último valor de la serie (media ponderada actual)
     base_point = {p: float(hist_series[p][-1]) for p in parties}
 
@@ -202,7 +209,7 @@ def main() -> int:
             "sd_error_backtest": round(s, 3),
             "punto_timesfm": round(n_ts[p], 3),
             "punto_baseline": round(n_base[p], 3),
-            "cuantiles_timesfm": {k: round(v, 3) for k, v in ts_q[p].items()},
+            "cuantiles_timesfm": {k: round(v, 3) for k, v in ts_q[p].items()} if ts_q[p] else None,
         }
 
     meta = {
@@ -210,7 +217,10 @@ def main() -> int:
         "objetivo": "29N — elecciones generales 2026-11-29",
         "mes_predicho": "2026-11",
         "ultimo_mes_con_dato": last.isoformat(),
-        "horizonte_meses": horizon,
+        "horizonte_meses": max(0, horizon),
+        "modo": ("nowcast — el dato ya alcanza el mes objetivo, no hay forecast "
+                 "que hacer ni que publicar" if ahora else "forecast"),
+        "timesfm_ejecutado": not ahora,
         "historia_meses": cut_idx + 1,
         "metodo_primario": metodo,
         "motivo_metodo": backtest["mae_global"]["verdict"],

@@ -155,6 +155,11 @@ def gen_forecast() -> int:
             "ultimo_mes_con_dato": meta.get("ultimo_mes_con_dato"),
             "metodo_primario": meta.get("metodo_primario"),
             "motivo_metodo": meta.get("motivo_metodo"),
+            # «nowcast» = el dato ya alcanza el mes objetivo y no se pronostica
+            # nada; la web lo dice en vez de vender una proyección que no existe.
+            "modo": meta.get("modo"),
+            "horizonte_meses": meta.get("horizonte_meses"),
+            "timesfm_ejecutado": meta.get("timesfm_ejecutado"),
             "backtest_mae": meta.get("backtest_mae"),
             "intervalos": meta.get("intervalos"),
             "calibracion_intervalos": meta.get("calibracion_intervalos"),

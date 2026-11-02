@@ -322,6 +322,14 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
     </aside>
 <aside class="aviso-metodo" aria-labelledby="aviso-titulo">
       <p class="eyebrow" id="aviso-titulo">Advertencia metodológica</p>
+      {String(meta.modo || '').startsWith('nowcast') && (
+        <p>
+          <strong>Sin proyección de futuro.</strong> El último dato de encuestas ya
+          cubre {meta.mes_predicho}: la cifra publicada es la serie ponderada del
+          mes, no un pronóstico. Cuando el dato vuelva a quedarse atrás, se
+          reanudará el forecast.
+        </p>
+      )}
       <p>{meta.advertencia}</p>
       <p class="nota">
         <a href="/metodologia/#validacion">Ver el backtest completo (MAE por partido y por elección) →</a>
