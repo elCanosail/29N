@@ -88,19 +88,36 @@ def main() -> int:
         return 1
 
     nuevos = sorted(set(os.listdir(STAGING)) - antes)
+    aceptadas = 0
+    for linea in r.stdout.splitlines():
+        if linea.startswith("candidatas:") and "aceptadas:" in linea:
+            try:
+                aceptadas = int(linea.split("aceptadas:")[1].split("·")[0].strip())
+            except ValueError:
+                aceptadas = 0
     if apagon:
         print("\nLas candidatas quedan en cola: se publicarán después del 29N.")
         return 0
-    if args.seco or not nuevos:
-        if not nuevos:
-            print("\nSin encuestas nuevas: no se toca ningún dato.")
+    if args.seco:
+        print(f"\nModo seco: {aceptadas} encuesta(s) habrían entrado; no se ha escrito nada.")
+        return 0
+    if not nuevos:
+        print("\nSin encuestas nuevas: no se toca ningún dato.")
         return 0
 
     print(f"\nFragmento nuevo: {', '.join(nuevos)} — regenerando la cadena")
     for script, etiqueta in CADENA:
         ok, error = corre(script, etiqueta)
         if not ok:
+            # Si la cadena se rompe, el fragmento se retira: dejarlo haría que
+            # mañana no se detectase como «nuevo» y los datos quedarían a medias.
+            for nombre in nuevos:
+                try:
+                    os.remove(os.path.join(STAGING, nombre))
+                except OSError:
+                    pass
             print(f"  ✗ {error}")
+            print(f"  El fragmento {', '.join(nuevos)} se ha retirado: se reintentará mañana.")
             return 1
         print(f"  ✓ {etiqueta}")
 
