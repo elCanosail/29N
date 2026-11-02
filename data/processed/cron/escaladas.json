@@ -1,0 +1,30 @@
+[
+ {
+  "fuente": "Sondaxe",
+  "publicado": "2026-11-01",
+  "url": "https://www.lavozdegalicia.es/noticia/espana/2026/11/01/pp-ganaria-elecciones-23-puntos-ventaja-sobre-psoe/0003_202611G1P26991.htm",
+  "motivo": "la fuente no reproduce ninguna de las tres cifras principales",
+  "detectada": "2026-11-02"
+ },
+ {
+  "fuente": "Winston",
+  "publicado": "2026-10-26",
+  "url": "https://www.electografica.com/2026/10/encuesta-winston-261026.html",
+  "motivo": "la suma de voto publicado no cuadra (81.3 %)",
+  "detectada": "2026-11-02"
+ },
+ {
+  "fuente": "Sigma Dos",
+  "publicado": "2026-11-01",
+  "url": "https://www.sigmados.com/noticia?id=sa0OT7jgxEjay6E",
+  "motivo": "la ficha no responde (https://www.sigmados.com/noticia?id=sa0OT7jgxEjay6E)",
+  "detectada": "2026-11-02"
+ },
+ {
+  "fuente": "Sigma Dos",
+  "publicado": "2026-10-26",
+  "url": "https://www.sigmados.com/noticia?id=OUze2FxEIVfARtu3",
+  "motivo": "la ficha no responde (https://www.sigmados.com/noticia?id=OUze2FxEIVfARtu3)",
+  "detectada": "2026-11-02"
+ }
+]

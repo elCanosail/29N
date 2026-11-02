@@ -1,0 +1,250 @@
+{
+ "encuestas": [
+  {
+   "fuente": "Hamalgama Métrica",
+   "estudio_id": "hamalgama-metrica-2026-10-28",
+   "fecha_trabajo": "2026-10-22/2026-10-28",
+   "fecha_publicacion": "2026-11-02",
+   "n": 1000,
+   "metodologia": "Telefónico",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "url": "https://www.vozpopuli.com/espana/politica/pp-y-vox-suman-ya-un-techo-historico-de-127-millones-de-votos-y-lograrian-205-escanos.html",
+   "extracto": "[Hamalgama Métrica, publicado 2026-11-02; ficha: https://www.vozpopuli.com/espana/politica/pp-y-vox-suman-ya-un-techo-historico-de-127-millones-de-votos-y-lograrian-205-escanos.html] ESPAÑA · Elecciones generales · Encuesta Hamalgama Métrica 02/11/2026. Campo 2026-10-22/2026-10-28, n=1000, método Telefónico. Voto estimado publicado: PP 32.4%, PSOE 26.4%, VOX 19.9%, FA 5.4%, PODEMOS 2.2%, ERC 1.9%, SALF 1.8%, JUNTS 1.7%, EH BILDU 1.3%, EAJ-PNV 0.9%, BNG 0.8%, UPN 0.2%. Suma de lo publicado 94.9 %. Lectura desde electografica.com (https://www.electografica.com/2026/11/encuesta-hamalgama-metrica-261102.html); contraste: 2/3 cifras principales confirmadas.",
+   "votos": {
+    "PP": 32.4,
+    "PSOE": 26.4,
+    "VOX": 19.9,
+    "SUMAR": 5.4,
+    "ERC": 1.9,
+    "JXCAT": 1.7,
+    "EH BILDU": 1.3,
+    "PNV": 0.9,
+    "CC": 0.0
+   },
+   "fuente_votos_adicionales": "Etiquetas publicadas y no ingestadas: PODEMOS (2.2%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; SALF (1.8%): SALF mapea a OTROS (residual no modelado); UPN (0.2%): UPN va dentro del PP en varias casas; su fila suelta no es comparable; ALIANÇA.CAT (0.0%): Aliança Catalana no tiene serie histórica en el modelo.",
+   "fuente_tipo_hint": "prensa"
+  },
+  {
+   "fuente": "Target Point",
+   "estudio_id": "target-point-2026-10-30",
+   "fecha_trabajo": "2026-10-28/2026-10-30",
+   "fecha_publicacion": "2026-11-02",
+   "n": 1024,
+   "metodologia": "Online",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "url": "https://www.eldebate.com/espana/20261102/accidente-frena-psoe-amplia-apoyo-pp-mayoria-absolutisima-derecha_475640.html",
+   "extracto": "[Target Point, publicado 2026-11-02; ficha: https://www.eldebate.com/espana/20261102/accidente-frena-psoe-amplia-apoyo-pp-mayoria-absolutisima-derecha_475640.html] ESPAÑA · Elecciones generales · Encuesta Target Point 02/11/2026. Campo 2026-10-28/2026-10-30, n=1024, método Online. Voto estimado publicado: PP 31.8%, PSOE 25.5%, VOX 19.9%, FA 6.6%, SALF 2.6%, PODEMOS 2.4%. Suma de lo publicado 88.8 %. Lectura desde electografica.com (https://www.electografica.com/2026/11/encuesta-target-point-261102.html); contraste: 2/3 cifras principales confirmadas.",
+   "votos": {
+    "PP": 31.8,
+    "PSOE": 25.5,
+    "VOX": 19.9,
+    "SUMAR": 6.6
+   },
+   "fuente_votos_adicionales": "Etiquetas publicadas y no ingestadas: SALF (2.6%): SALF mapea a OTROS (residual no modelado); PODEMOS (2.4%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie.",
+   "fuente_tipo_hint": "prensa"
+  },
+  {
+   "fuente": "NC Report",
+   "estudio_id": "nc-report-2026-10-29",
+   "fecha_trabajo": "2026-10-26/2026-10-29",
+   "fecha_publicacion": "2026-11-02",
+   "n": 1000,
+   "metodologia": "Telefónico + online",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "url": "https://www.larazon.es/espana/psoe-frena-efecto-remontada-derecha-consolida-mayoria-absoluta_202611026ae783220250123215703bb1.html",
+   "extracto": "[NC Report, publicado 2026-11-02; ficha: https://www.larazon.es/espana/psoe-frena-efecto-remontada-derecha-consolida-mayoria-absoluta_202611026ae783220250123215703bb1.html] ESPAÑA · Elecciones generales · Encuesta NC Report 02/11/2026. Campo 2026-10-26/2026-10-29, n=1000, método Telefónico + online. Voto estimado publicado: PP 33.0%, PSOE 25.6%, VOX 19.3%, FA 6.9%, PODEMOS 2.4%, ERC 2.0%, JUNTS 1.8%, EH BILDU 1.4%, EAJ-PNV 0.9%, BNG 0.8%, CCa-1ºCAN 0.4%. Suma de lo publicado 94.5 %. Lectura desde electografica.com (https://www.electografica.com/2026/11/encuesta-nc-report-261102.html); contraste: 3/3 cifras principales confirmadas.",
+   "votos": {
+    "PP": 33.0,
+    "PSOE": 25.6,
+    "VOX": 19.3,
+    "SUMAR": 6.9,
+    "ERC": 2.0,
+    "JXCAT": 1.8,
+    "EH BILDU": 1.4,
+    "PNV": 0.9,
+    "CC": 0.4
+   },
+   "fuente_votos_adicionales": "Etiquetas publicadas y no ingestadas: PODEMOS (2.4%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; SALF (0.0%): SALF mapea a OTROS (residual no modelado); UPN (0.0%): UPN va dentro del PP en varias casas; su fila suelta no es comparable.",
+   "fuente_tipo_hint": "prensa"
+  },
+  {
+   "fuente": "Sigma Dos",
+   "estudio_id": "sigma-dos-2026-10-30",
+   "fecha_trabajo": "2026-10-29/2026-10-30",
+   "fecha_publicacion": "2026-11-01",
+   "n": 2505,
+   "metodologia": "Telefónico + online",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "url": "https://www.electografica.com/2026/11/encuesta-sigmados-261101.html",
+   "extracto": "[Sigma Dos, publicado 2026-11-01; ficha: https://www.electografica.com/2026/11/encuesta-sigmados-261101.html] ESPAÑA · Elecciones generales · Encuesta Sigma Dos 01/11/2026. Campo 2026-10-29/2026-10-30, n=2505, método Telefónico + online. Voto estimado publicado: PP 31.1%, PSOE 24.6%, VOX 19.3%, FA 7.1%, ERC 3.0%, PODEMOS 1.9%, EH BILDU 1.3%, JUNTS 1.1%, BNG 1.0%, EAJ-PNV 0.9%, COMPROMÍS-FV 0.9%, CCa-1ºCAN 0.4%, UPC 0.4%. Suma de lo publicado 93.0 %. Lectura desde electografica.com (https://www.electografica.com/2026/11/encuesta-sigmados-261101.html); contraste: la ficha es el propio agregador.",
+   "votos": {
+    "PP": 31.1,
+    "PSOE": 24.6,
+    "VOX": 19.3,
+    "SUMAR": 8.4,
+    "ERC": 3.0,
+    "EH BILDU": 1.3,
+    "JXCAT": 1.1,
+    "PNV": 0.9,
+    "CC": 0.4
+   },
+   "fuente_votos_adicionales": "Etiquetas publicadas y no ingestadas: PODEMOS (1.9%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; ALIANÇA.CAT (0.0%): Aliança Catalana no tiene serie histórica en el modelo; SALF (0.0%): SALF mapea a OTROS (residual no modelado); UPN (0.0%): UPN va dentro del PP en varias casas; su fila suelta no es comparable.",
+   "fuente_tipo_hint": "agregador"
+  },
+  {
+   "fuente": "SocioMétrica",
+   "estudio_id": "sociometrica-2026-11-01",
+   "fecha_trabajo": "2026-09-01/2026-11-01",
+   "fecha_publicacion": "2026-11-01",
+   "n": 4893,
+   "metodologia": "Online",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "url": "https://www.elespanol.com/espana/politica/20261101/primer-sondeo-tragedia-pp-vox-amplian-ventaja-sanchez-sigue-cayendo-pese-vaciar-frente-amplio/1003744442810_0.html",
+   "extracto": "[SocioMétrica, publicado 2026-11-01; ficha: https://www.elespanol.com/espana/politica/20261101/primer-sondeo-tragedia-pp-vox-amplian-ventaja-sanchez-sigue-cayendo-pese-vaciar-frente-amplio/1003744442810_0.html] ESPAÑA · Elecciones generales · Encuesta SocioMétrica 01/11/2026. Campo 2026-09-01/2026-11-01, n=4893, método Online. Voto estimado publicado: PP 32.7%, PSOE 26.6%, VOX 19.1%, FA 4.9%, ERC 2.5%, SALF 2.5%, PODEMOS 1.7%, JUNTS 1.4%, EH BILDU 1.4%, BNG 0.9%, COMPROMÍS-FV 0.9%, EAJ-PNV 0.8%, CCa-1ºCAN 0.5%, UPC 0.3%, D21 0.1%. Suma de lo publicado 96.3 %. Lectura desde electografica.com (https://www.electografica.com/2026/11/encuesta-sociometrica-261101.html); contraste: 2/3 cifras principales confirmadas.",
+   "votos": {
+    "PP": 32.7,
+    "PSOE": 26.6,
+    "VOX": 19.1,
+    "SUMAR": 6.1,
+    "ERC": 2.5,
+    "JXCAT": 1.4,
+    "EH BILDU": 1.4,
+    "PNV": 0.8,
+    "CC": 0.5
+   },
+   "fuente_votos_adicionales": "Etiquetas publicadas y no ingestadas: SALF (2.5%): SALF mapea a OTROS (residual no modelado); PODEMOS (1.7%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; UPN (0.0%): UPN va dentro del PP en varias casas; su fila suelta no es comparable; D21 (0.1%): partido sin serie histórica en el modelo; IE (0.0%): partido sin serie histórica en el modelo; EV (0.0%): partido sin serie histórica en el modelo; ALIANÇA.CAT (0.0%): Aliança Catalana no tiene serie histórica en el modelo.",
+   "fuente_tipo_hint": "prensa"
+  },
+  {
+   "fuente": "Sondaxe",
+   "estudio_id": "sondaxe-2026-10-28",
+   "fecha_trabajo": "2026-10-26/2026-10-28",
+   "fecha_publicacion": "2026-11-01",
+   "n": 1200,
+   "metodologia": "Telefónico + online",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "url": "https://www.lavozdegalicia.es/noticia/espana/2026/11/01/pp-ganaria-elecciones-23-puntos-ventaja-sobre-psoe/0003_202611G1P26991.htm",
+   "extracto": "[Sondaxe, publicado 2026-11-01; ficha: https://www.lavozdegalicia.es/noticia/espana/2026/11/01/pp-ganaria-elecciones-23-puntos-ventaja-sobre-psoe/0003_202611G1P26991.htm] ESPAÑA · Elecciones generales · Encuesta Sondaxe 01/11/2026. Campo 2026-10-26/2026-10-28, n=1200, método Telefónico + online. Voto estimado publicado: PP 29.2%, PSOE 26.9%, VOX 19.2%, FA 7.2%, ERC 2.6%, SALF 2.4%, PODEMOS 2.0%, EH BILDU 1.4%, JUNTS 1.3%, EAJ-PNV 0.9%, BNG 0.9%, CCa-1ºCAN 0.3%. Suma de lo publicado 94.3 %. Lectura desde electografica.com (https://www.electografica.com/2026/11/encuesta-sondaxe-261101.html); contraste: 3/3 cifras principales confirmadas.",
+   "votos": {
+    "PP": 29.2,
+    "PSOE": 26.9,
+    "VOX": 19.2,
+    "SUMAR": 7.2,
+    "ERC": 2.6,
+    "EH BILDU": 1.4,
+    "JXCAT": 1.3,
+    "PNV": 0.9,
+    "CC": 0.3
+   },
+   "fuente_votos_adicionales": "Etiquetas publicadas y no ingestadas: SALF (2.4%): SALF mapea a OTROS (residual no modelado); PODEMOS (2.0%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; UPN (0.0%): UPN va dentro del PP en varias casas; su fila suelta no es comparable; ALIANÇA.CAT (0.0%): Aliança Catalana no tiene serie histórica en el modelo.",
+   "fuente_tipo_hint": "prensa"
+  },
+  {
+   "fuente": "NC Report",
+   "estudio_id": "nc-report-2026-10-24",
+   "fecha_trabajo": "2026-10-20/2026-10-24",
+   "fecha_publicacion": "2026-10-26",
+   "n": 1000,
+   "metodologia": "Telefónico + online",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "url": "https://www.larazon.es/espana/18-votantes-socialistas-apoyan-hoy-vox_202610266adea62a3eef771e1ac8d43d.html",
+   "extracto": "[NC Report, publicado 2026-10-26; ficha: https://www.larazon.es/espana/18-votantes-socialistas-apoyan-hoy-vox_202610266adea62a3eef771e1ac8d43d.html] ESPAÑA · Elecciones generales · Encuesta NC Report 26/10/2026. Campo 2026-10-20/2026-10-24, n=1000, método Telefónico + online. Voto estimado publicado: PP 33.1%, PSOE 25.8%, VOX 19.0%, FA 6.6%, PODEMOS 2.6%, ERC 2.0%, JUNTS 1.8%, EH BILDU 1.4%, EAJ-PNV 0.9%, BNG 0.8%, CCa-1ºCAN 0.4%. Suma de lo publicado 94.4 %. Lectura desde electografica.com (https://www.electografica.com/2026/10/encuesta-nc-report-261026.html); contraste: 2/3 cifras principales confirmadas.",
+   "votos": {
+    "PP": 33.1,
+    "PSOE": 25.8,
+    "VOX": 19.0,
+    "SUMAR": 6.6,
+    "ERC": 2.0,
+    "JXCAT": 1.8,
+    "EH BILDU": 1.4,
+    "PNV": 0.9,
+    "CC": 0.4
+   },
+   "fuente_votos_adicionales": "Etiquetas publicadas y no ingestadas: PODEMOS (2.6%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; SALF (0.0%): SALF mapea a OTROS (residual no modelado); UPN (0.0%): UPN va dentro del PP en varias casas; su fila suelta no es comparable.",
+   "fuente_tipo_hint": "prensa"
+  },
+  {
+   "fuente": "SocioMétrica",
+   "estudio_id": "sociometrica-2026-10-25",
+   "fecha_trabajo": "2026-09-01/2026-10-25",
+   "fecha_publicacion": "2026-10-26",
+   "n": 3223,
+   "metodologia": "Online",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "url": "https://www.elespanol.com/espana/politica/20261025/izquierda-no-remonta-sanchez-gana-escanos-costa-frente-podemos-sondeo-noche/1003744434105_0.html",
+   "extracto": "[SocioMétrica, publicado 2026-10-26; ficha: https://www.elespanol.com/espana/politica/20261025/izquierda-no-remonta-sanchez-gana-escanos-costa-frente-podemos-sondeo-noche/1003744434105_0.html] ESPAÑA · Elecciones generales · Encuesta SocioMétrica 26/10/2026. Campo 2026-09-01/2026-10-25, n=3223, método Online. Voto estimado publicado: PP 32.4%, PSOE 27.0%, VOX 18.6%, FA 4.9%, ERC 2.6%, SALF 2.4%, PODEMOS 1.8%, JUNTS 1.7%, EH BILDU 1.3%, BNG 0.9%, COMPROMÍS-FV 0.9%, EAJ-PNV 0.8%, CCa-1ºCAN 0.4%, UPC 0.3%, D21 0.1%, IE 0.1%. Suma de lo publicado 96.2 %. Lectura desde electografica.com (https://www.electografica.com/2026/10/encuesta-sociometrica-261026.html); contraste: 2/3 cifras principales confirmadas.",
+   "votos": {
+    "PP": 32.4,
+    "PSOE": 27.0,
+    "VOX": 18.6,
+    "SUMAR": 6.1,
+    "ERC": 2.6,
+    "JXCAT": 1.7,
+    "EH BILDU": 1.3,
+    "PNV": 0.8,
+    "CC": 0.4
+   },
+   "fuente_votos_adicionales": "Etiquetas publicadas y no ingestadas: SALF (2.4%): SALF mapea a OTROS (residual no modelado); PODEMOS (1.8%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; UPN (0.0%): UPN va dentro del PP en varias casas; su fila suelta no es comparable; D21 (0.1%): partido sin serie histórica en el modelo; IE (0.1%): partido sin serie histórica en el modelo; EV (0.0%): partido sin serie histórica en el modelo; ALIANÇA.CAT (0.0%): Aliança Catalana no tiene serie histórica en el modelo.",
+   "fuente_tipo_hint": "prensa"
+  },
+  {
+   "fuente": "Sigma Dos",
+   "estudio_id": "sigma-dos-2026-10-22",
+   "fecha_trabajo": "2026-10-08/2026-10-22",
+   "fecha_publicacion": "2026-10-26",
+   "n": 3122,
+   "metodologia": "Telefónico + online",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "url": "https://www.electografica.com/2026/10/encuesta-sigmados-261026.html",
+   "extracto": "[Sigma Dos, publicado 2026-10-26; ficha: https://www.electografica.com/2026/10/encuesta-sigmados-261026.html] ESPAÑA · Elecciones generales · Encuesta Sigma Dos 26/10/2026. Campo 2026-10-08/2026-10-22, n=3122, método Telefónico + online. Voto estimado publicado: PP 30.6%, PSOE 26.1%, VOX 19.9%, FA 7.4%, PODEMOS 2.8%, ERC 2.5%, JUNTS 1.2%, EH BILDU 1.2%, EAJ-PNV 0.9%, BNG 0.9%, COMPROMÍS-FV 0.8%, CCa-1ºCAN 0.4%. Suma de lo publicado 94.7 %. Lectura desde electografica.com (https://www.electografica.com/2026/10/encuesta-sigmados-261026.html); contraste: la ficha es el propio agregador.",
+   "votos": {
+    "PP": 30.6,
+    "PSOE": 26.1,
+    "VOX": 19.9,
+    "SUMAR": 8.2,
+    "ERC": 2.5,
+    "JXCAT": 1.2,
+    "EH BILDU": 1.2,
+    "PNV": 0.9,
+    "CC": 0.4
+   },
+   "fuente_votos_adicionales": "Etiquetas publicadas y no ingestadas: PODEMOS (2.8%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; ALIANÇA.CAT (0.0%): Aliança Catalana no tiene serie histórica en el modelo; SALF (0.0%): SALF mapea a OTROS (residual no modelado); UPN (0.0%): UPN va dentro del PP en varias casas; su fila suelta no es comparable.",
+   "fuente_tipo_hint": "agregador"
+  },
+  {
+   "fuente": "Ateneo del Dato",
+   "estudio_id": "ateneo-del-dato-2026-10-22",
+   "fecha_trabajo": "2026-10-20/2026-10-22",
+   "fecha_publicacion": "2026-10-25",
+   "n": 2000,
+   "metodologia": "Online",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "url": "https://www.eldiario.es/politica/bloque-izquierdas-recorta-distancias-pp-vox-mantienen-mayoria-absoluta_1_13611052.html",
+   "extracto": "[Ateneo del Dato, publicado 2026-10-25; ficha: https://www.eldiario.es/politica/bloque-izquierdas-recorta-distancias-pp-vox-mantienen-mayoria-absoluta_1_13611052.html] ESPAÑA · Elecciones generales · Encuesta Ateneo del Dato 25/10/2026. Campo 2026-10-20/2026-10-22, n=2000, método Online. Voto estimado publicado: PP 31.1%, PSOE 27.6%, VOX 19.8%, FA 6.8%, PODEMOS 2.7%. Suma de lo publicado 88.0 %. Lectura desde electografica.com (https://www.electografica.com/2026/10/encuesta-ateneo-del-dato-261025.html); contraste: 3/3 cifras principales confirmadas.",
+   "votos": {
+    "PP": 31.1,
+    "PSOE": 27.6,
+    "VOX": 19.8,
+    "SUMAR": 6.8
+   },
+   "fuente_votos_adicionales": "Etiquetas publicadas y no ingestadas: PODEMOS (2.7%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; SALF (0.0%): SALF mapea a OTROS (residual no modelado).",
+   "fuente_tipo_hint": "prensa"
+  }
+ ],
+ "exclusiones": [
+  {
+   "fuente": "Hamalgama Métrica",
+   "motivo": "Etiquetas publicadas fuera del modelo (se listan en fuente_votos_adicionales de cada encuesta): PODEMOS (2.7%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; SALF (0.0%): SALF mapea a OTROS (residual no modelado)."
+  }
+ ]
+}
