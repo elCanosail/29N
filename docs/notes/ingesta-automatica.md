@@ -85,3 +85,23 @@ decidir por su cuenta un dato en duda.
 - `python3 pipeline/encuestadores/ingesta_auto.py --desde 2026-10-24` — qué
   aceptaría, sin escribir nada.
 - `python3 pipeline/cron_encuestas.py --seco` — la cadena en seco.
+
+## Despliegue (reparado el 2026-11-02)
+
+29n.info estaba sirviendo **404** en producción: el proyecto de Vercel
+(`encuestas29n`) no tenía `rootDirectory`, así que desplegaba la raíz del repo
+—sin `package.json` ni build— y no había nada que servir. El `vercel.json` con
+`outputDirectory: dist` vive en `web/` y Vercel no lo leía.
+
+Corregido por API: `rootDirectory=web`, `framework=astro`. Redeploy verificado:
+29n.info → 200, 78 encuestas, aviso de nowcast presente.
+
+Si alguna vez vuelve el 404 en el dominio: mirar primero esas dos claves del
+proyecto, no el build.
+
+## Credenciales de git en este host
+
+El remoto es `https://github.com/elCanosail/29N.git` sin token en la URL; el
+token vive en `~/.hermes/secrets/github-token-elcanoclaw` y git lo lee por
+`credential.helper`. Así el cron puede hacer push sin guardar secretos en
+`.git/config`.
