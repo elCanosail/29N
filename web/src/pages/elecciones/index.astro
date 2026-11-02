@@ -1,0 +1,74 @@
+---
+/** /elecciones/ — las 16 generales desde 1977, con ganador y participación. */
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import datos from '../../data/elecciones.json';
+import { num, entero, fechaLarga } from '../../lib/format';
+
+type C = { sigla: string; votos: number; escanos: number; pct: number };
+type E = { id: string; fecha: string; camara: string; escanos_totales: number; votos_validos: number; candidaturas: C[] };
+const elecciones = (datos as any).elecciones as E[];
+
+const filas = [...elecciones]
+  .sort((a, b) => b.fecha.localeCompare(a.fecha))
+  .map((e) => {
+    const orden = [...e.candidaturas].sort((a, b) => b.escanos - a.escanos || b.votos - a.votos);
+    const segundo = orden[1];
+    return { e, ganador: orden[0], segundo };
+  });
+---
+
+<Base
+  titulo="Resultados de las elecciones generales desde 1977"
+  descripcion="Las 16 elecciones generales de España desde 1977 con el ganador, sus escaños y sus votos, y el enlace al resultado completo candidatura por candidatura. Cifras oficiales del Ministerio del Interior."
+>
+  <div class="contenedor">
+    <Breadcrumbs items={[{ label: 'Resultados', href: '/resultados/' }, { label: 'Elecciones' }]} />
+
+    <header class="cabecera-pagina">
+      <p class="eyebrow entrada">Resultados oficiales</p>
+      <h1 class="medida entrada entrada--1">Las 16 generales desde 1977</h1>
+      <p class="titular-intro entrada entrada--2">
+        El resultado de cada convocatoria, sin interpretación. Sirve para comparar y para
+        entender de dónde sale la base provincial del modelo.
+      </p>
+    </header>
+
+    <section class="seccion" aria-label="Elecciones">
+      <div class="tabla-envoltura">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th scope="col">Convocatoria</th>
+              <th scope="col">Ganador</th>
+              <th scope="col" class="der">Escaños</th>
+              <th scope="col" class="der">%</th>
+              <th scope="col">Segundo</th>
+              <th scope="col" class="der">Votos válidos</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filas.map(({ e, ganador, segundo }) => (
+              <tr>
+                <td><a href={`/elecciones/${e.id}/`}>{fechaLarga(e.fecha)}</a></td>
+                <td>{ganador?.sigla ?? '—'}</td>
+                <td class="der num">{ganador?.escanos ?? '—'}</td>
+                <td class="der num">{ganador ? num(ganador.pct, 2) : '—'}</td>
+                <td>{segundo?.sigla ?? '—'}</td>
+                <td class="der num">{entero(e.votos_validos)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .tabla-envoltura { overflow-x: auto; }
+  .tabla { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .tabla th, .tabla td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--borde); }
+  .tabla th { font-family: var(--f-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--tinta-2); }
+  .tabla .der { text-align: right; }
+</style>

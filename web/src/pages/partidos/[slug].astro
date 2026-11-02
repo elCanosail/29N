@@ -1,0 +1,141 @@
+---
+/**
+ * /partidos/[slug] — la serie de un partido, su estimación y sus encuestas.
+ *
+ * Es la página que responde «cómo va el PP en las encuestas» sin obligar a leer
+ * un gráfico: cifra del último mes, media de escaños con intervalo y evolución
+ * mensual en tabla.
+ */
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import seriesData from '../../data/series.json';
+import seats from '../../data/seats.json';
+import encuestasData from '../../data/encuestas.json';
+import { num, entero } from '../../lib/format';
+import { colorPartido, nombre29N, sigla as siglaDe } from '../../lib/partidos';
+import { slug } from '../../lib/slug';
+import { dataset } from '../../lib/seo';
+
+const meses = (seriesData as any).meses as string[];
+const series = (seriesData as any).series as Record<string, (number | null)[]>;
+const nacional = ((seats as any).nacional ?? []) as { partido: string; media: number; ic95: [number, number] }[];
+const encuestas = (encuestasData as any).encuestas as { partidos?: Record<string, number>; fecha_trabajo?: string }[];
+
+export function getStaticPaths() {
+  return Object.keys((seriesData as any).series as Record<string, unknown>).map((partido) => ({
+    params: { slug: slug(partido) },
+    props: { partido },
+  }));
+}
+
+const { partido } = Astro.props as { partido: string };
+const valores = series[partido] ?? [];
+const conDato = valores
+  .map((v, i) => ({ mes: meses[i], valor: v }))
+  .filter((x): x is { mes: string; valor: number } => typeof x.valor === 'number');
+const ultimo = conDato[conDato.length - 1];
+const anterior = conDato[conDato.length - 2];
+const delta = ultimo && anterior ? ultimo.valor - anterior.valor : null;
+const escanos = nacional.find((x) => x.partido === partido);
+const nEncuestas = encuestas.filter((e) => e.partidos && partido in e.partidos).length;
+const ultimas = conDato.slice(-13).reverse();
+
+const MESES_CORTOS = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+const mesTxt = (m: string) => {
+  const [a, mm] = m.split('-');
+  return `${MESES_CORTOS[parseInt(mm, 10) - 1]} ${a}`;
+};
+
+const nombre = nombre29N(partido);
+const ruta = `/partidos/${slug(partido)}/`;
+const tituloSeo = `${nombre} en las encuestas: serie y escaños`;
+const descripcion =
+  `${nombre}${ultimo ? ` está en ${num(ultimo.valor)} % en la serie ponderada de ${mesTxt(ultimo.mes)}` : ''}` +
+  `${escanos ? `, con ${num(escanos.media)} escaños estimados (${escanos.ic95[0]}–${escanos.ic95[1]})` : ''}. ` +
+  `Evolución mensual desde 2015 y las ${nEncuestas} encuestas que la alimentan.`;
+
+const jsonLd = dataset({
+  nombre: `Serie de intención de voto · ${nombre}`,
+  descripcion,
+  ruta,
+  actualizado: ultimo?.mes ? `${ultimo.mes}-01` : undefined,
+  cobertura: 'España',
+  variables: ['intención de voto', 'escaños estimados'],
+  creador: '29N',
+});
+---
+
+<Base titulo={tituloSeo} descripcion={descripcion} jsonLd={jsonLd} tipoOg="article">
+  <div class="contenedor">
+    <Breadcrumbs
+      items={[{ label: 'Partidos', href: '/partidos/' }, { label: nombre }]}
+    />
+
+    <header class="cabecera-pagina">
+      <p class="eyebrow entrada">
+        <span class="punto" style={`background:${colorPartido(partido)}`} aria-hidden="true"></span>
+        Serie de intención de voto
+      </p>
+      <h1 class="medida entrada entrada--1">{nombre} en las encuestas</h1>
+      <p class="titular-intro entrada entrada--2">
+        {ultimo ? (
+          <>
+            Último dato de la serie: <strong>{num(ultimo.valor)} %</strong> en {mesTxt(ultimo.mes)}
+            {delta !== null && (
+              <>
+                {' '}({delta >= 0 ? '+' : '−'}{num(Math.abs(delta))} pp respecto al mes anterior)
+              </>
+            )}
+            .
+          </>
+        ) : (
+          'Sin datos en la ventana de la serie.'
+        )}
+        {escanos && (
+          <> Estimación de escaños para el 29N: {num(escanos.media)} ({escanos.ic95[0]}–{escanos.ic95[1]}).</>
+        )}
+      </p>
+    </header>
+
+    <section class="seccion seccion--compacta" aria-labelledby="evolucion">
+      <h2 id="evolucion" class="eyebrow">Últimos 13 meses</h2>
+      <div class="tabla-envoltura">
+        <table class="tabla">
+          <thead>
+            <tr><th scope="col">Mes</th><th scope="col" class="der">{siglaDe(nombre)}</th></tr>
+          </thead>
+          <tbody>
+            {ultimas.map((x) => (
+              <tr>
+                <td>{mesTxt(x.mes)}</td>
+                <td class="der num">{num(x.valor)} %</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="nota">
+        Media ponderada de encuestas sobre voto válido; no es un resultado oficial ni una
+        predicción. <a href="/series/">Serie completa</a> · <a href="/metodologia/#modelo">cómo se pondera</a>.
+      </p>
+    </section>
+
+    <section class="seccion" aria-labelledby="encuestas">
+      <h2 id="encuestas" class="eyebrow">Encuestas que lo incluyen</h2>
+      <p class="medida">
+        {entero(nEncuestas)} encuestas del histórico publican estimación para {nombre}. Se pueden
+        consultar una a una en <a href="/encuestas/">el archivo</a>, o seguir el rastro de quién
+        mide en <a href="/encuestadores/">encuestadores</a>.
+      </p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .tabla-envoltura { overflow-x: auto; max-width: 24rem; }
+  .tabla { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .tabla th, .tabla td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--borde); }
+  .tabla th { font-family: var(--f-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--tinta-2); }
+  .tabla .der { text-align: right; }
+  .punto { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+</style>

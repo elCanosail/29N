@@ -21,14 +21,35 @@ interface Props {
   titulo: string;
   descripcion?: string;
   ogImage?: string;
+  /** Objetos JSON-LD que declara la página (organización, migas, dataset…). */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /** Fuera de los buscadores (p. ej. 404). */
+  noindex?: boolean;
+  tipoOg?: 'website' | 'article' | 'profile';
 }
 const {
   titulo,
   descripcion = 'Histórico de encuestas electorales españolas, resultados oficiales 1977–2023 y predicción provincial con intervalos.',
   ogImage,
+  jsonLd,
+  noindex = false,
+  tipoOg = 'website',
 } = Astro.props as Props;
 
-const tituloCompleto = titulo === 'Portada' ? '29N, estimación de resultados' : `${titulo} · 29N`;
+// La marca no se repite: si el título ya dice 29N, no se le añade otra vez.
+const tituloCompleto =
+  titulo === 'Portada'
+    ? '29N, estimación de resultados'
+    : /29N\s*$/.test(titulo)
+      ? titulo
+      : `${titulo} · 29N`;
+// Autocanónica: cada página declara su URL absoluta, con la barra final que
+// sirve el sitio. Sin esto Google elige por su cuenta entre /x y /x/.
+const canonica = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString();
+const ogAbsoluta = ogImage
+  ? new URL(ogImage, Astro.site ?? Astro.url).toString()
+  : new URL('/og/portada.png', Astro.site ?? Astro.url).toString();
+const bloques = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 
 <!doctype html>
@@ -40,12 +61,22 @@ const tituloCompleto = titulo === 'Portada' ? '29N, estimación de resultados' :
     <meta name="description" content={descripcion} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="color-scheme" content="light" />
+    <link rel="canonical" href={canonica} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <meta property="og:title" content={tituloCompleto} />
     <meta property="og:description" content={descripcion} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={tipoOg} />
     <meta property="og:locale" content="es_ES" />
-    {ogImage && <meta property="og:image" content={new URL(ogImage, Astro.site ?? Astro.url).toString()} />}
-    {ogImage && <meta name="twitter:card" content="summary_large_image" />}
+    <meta property="og:site_name" content="29N" />
+    <meta property="og:url" content={canonica} />
+    <meta property="og:image" content={ogAbsoluta} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={tituloCompleto} />
+    <meta name="twitter:description" content={descripcion} />
+    <meta name="twitter:image" content={ogAbsoluta} />
+    {bloques.map((b) => (
+      <script type="application/ld+json" set:html={JSON.stringify(b)} />
+    ))}
   </head>
   <body>
     <a class="salto-contenido" href="#contenido">Saltar al contenido</a>

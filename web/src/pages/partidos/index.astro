@@ -1,0 +1,96 @@
+---
+/** /partidos/ — índice de series por partido, con el último dato y sus escaños. */
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import seriesData from '../../data/series.json';
+import seats from '../../data/seats.json';
+import { num } from '../../lib/format';
+import { colorPartido, nombre29N } from '../../lib/partidos';
+import { slug } from '../../lib/slug';
+
+const meses = (seriesData as any).meses as string[];
+const series = (seriesData as any).series as Record<string, (number | null)[]>;
+const nacional = ((seats as any).nacional ?? []) as { partido: string; media: number; ic95: [number, number] }[];
+
+const MESES_CORTOS = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+const mesTxt = (m: string) => {
+  const [a, mm] = m.split('-');
+  return `${MESES_CORTOS[parseInt(mm, 10) - 1]} ${a}`;
+};
+
+const filas = Object.entries(series)
+  .map(([partido, valores]) => {
+    const idx = valores.findLastIndex((v) => typeof v === 'number');
+    const s = nacional.find((x) => x.partido === partido);
+    return {
+      partido,
+      nombre: nombre29N(partido),
+      valor: idx >= 0 ? (valores[idx] as number) : null,
+      mes: idx >= 0 ? meses[idx] : null,
+      escanos: s?.media ?? null,
+      ic: s?.ic95 ?? null,
+    };
+  })
+  .sort((a, b) => (b.valor ?? 0) - (a.valor ?? 0));
+---
+
+<Base
+  titulo="Partidos: serie de encuestas y escaños estimados"
+  descripcion="La serie ponderada de intención de voto de cada partido desde 2015, su último dato y los escaños estimados para el 29N con intervalo del 95 %."
+>
+  <div class="contenedor">
+    <Breadcrumbs items={[{ label: 'Partidos' }]} />
+
+    <header class="cabecera-pagina">
+      <p class="eyebrow entrada">Series</p>
+      <h1 class="medida entrada entrada--1">Cómo va cada partido</h1>
+      <p class="titular-intro entrada entrada--2">
+        Último dato de la serie ponderada y estimación de escaños para el 29N. La serie no es un
+        resultado ni una predicción: es la media de lo que publican las encuestas, ponderada.
+      </p>
+    </header>
+
+    <section class="seccion" aria-label="Partidos">
+      <div class="tabla-envoltura">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th scope="col">Partido</th>
+              <th scope="col" class="der">Serie</th>
+              <th scope="col">Mes</th>
+              <th scope="col" class="der">Escaños 29N</th>
+              <th scope="col" class="der">IC 95 %</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filas.map((f) => (
+              <tr>
+                <td>
+                  <span class="punto" style={`background:${colorPartido(f.partido)}`} aria-hidden="true"></span>
+                  <a href={`/partidos/${slug(f.partido)}/`}>{f.nombre}</a>
+                </td>
+                <td class="der num">{f.valor !== null ? `${num(f.valor)} %` : '—'}</td>
+                <td>{f.mes ? mesTxt(f.mes) : '—'}</td>
+                <td class="der num">{f.escanos !== null ? num(f.escanos) : '—'}</td>
+                <td class="der num">{f.ic ? `${f.ic[0]}–${f.ic[1]}` : '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="nota">
+        La suma de las medias de escaños no da 350 exactos por cómo funciona el redondeo del
+        reparto; la desviación es de centésimas y se publica en <a href="/metodologia/#modelo">la metodología</a>.
+      </p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .tabla-envoltura { overflow-x: auto; }
+  .tabla { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .tabla th, .tabla td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--borde); }
+  .tabla th { font-family: var(--f-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--tinta-2); }
+  .tabla .der { text-align: right; }
+  .punto { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; }
+</style>

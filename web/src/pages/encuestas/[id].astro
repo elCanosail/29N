@@ -1,0 +1,256 @@
+---
+/**
+ * /encuestas/[id] — ficha de una encuesta concreta.
+ *
+ * Objetivo: que la encuesta sea una página, no una fila. Responde a búsquedas
+ * del tipo «encuesta Sigma Dos 26 de octubre», lleva su ficha técnica textual y
+ * su fuente original, y enlaza con la casa, la serie y el resto de encuestas.
+ * Todo el contenido sale de datos ya publicados; no se calcula nada nuevo.
+ */
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import encuestasData from '../../data/encuestas.json';
+import fuentes from '../../data/fuentes.json';
+import { num, entero, fechaLarga, fechaCorta, campo } from '../../lib/format';
+import { colorPartido, sigla, nombre29N } from '../../lib/partidos';
+import { slugCasa, slug } from '../../lib/slug';
+import { fichaEncuesta } from '../../lib/seo';
+
+const SIN_BARRA = new Set(['EN BLANCO', 'ABSTENCION', 'NS']);
+const encuestas = [...encuestasData.encuestas].sort((a, b) =>
+  (b.fecha_trabajo ?? '').localeCompare(a.fecha_trabajo ?? ''),
+);
+
+export function getStaticPaths() {
+  // Astro evalúa getStaticPaths en un módulo aparte: se leen los datos aquí.
+  return (encuestasData.encuestas as { id: string }[]).map((e) => ({
+    params: { id: String(e.id).toLowerCase() },
+  }));
+}
+
+const { id } = Astro.params as { id: string };
+const e = encuestas.find((x) => String(x.id).toLowerCase() === id)!;
+const ficha = (fuentes as Record<string, any>)[String(e.id)] ?? {};
+
+const esEstatal = e.ambito === 'nacional' || e.ambito === 'estatal';
+const pares = Object.entries((e.partidos ?? {}) as Record<string, number>)
+  .filter(([p]) => !SIN_BARRA.has(p))
+  .map(([p, v]) => ({ clave: p, pct: Number(v) || 0 }))
+  .sort((a, b) => b.pct - a.pct);
+const maxPct = pares.length ? Math.max(...pares.map((p) => p.pct)) : 0;
+const top = pares.slice(0, 3);
+const etiqueta = (p: string) => (e.anio && e.anio >= 2026 ? nombre29N(p) : p);
+
+const casaSlug = slugCasa(String(e.casa));
+// «5–8 jun 2023» o «29 oct – 2 nov 2023», ya normalizado por format.campo().
+const fechaTrabajoTxt = e.fecha_trabajo ? campo(e.fecha_trabajo) : null;
+
+// Cifras en el título solo cuando son reconocibles: un titular con el partido
+// pequeño de una encuesta antigua confunde más que ayuda al que busca.
+const GRANDES = new Set(['PP', 'PSOE', 'VOX', 'SUMAR', 'UNIDAS PODEMOS', 'IU']);
+const cifraEnTitulo =
+  top.length > 0 && (top[0].pct ?? 0) >= 15 && GRANDES.has(top[0].clave.replace('UNIDAS PODEMOS', 'UNIDAS PODEMOS'));
+const tituloSeo = `${e.casa}${fechaTrabajoTxt ? ` (${fechaTrabajoTxt})` : ''}: ${
+  cifraEnTitulo
+    ? top.map((p) => `${etiqueta(p.clave)} ${num(p.pct)} %`).join(', ')
+    : 'ficha técnica y estimación de voto'
+}`;
+const descripcion =
+  `Encuesta de ${e.casa}${fechaTrabajoTxt ? ` con trabajo de campo del ${fechaTrabajoTxt}` : ''}` +
+  `${e.n ? ` y ${entero(e.n)} entrevistas` : ''}: ` +
+  `${pares.slice(0, 4).map((p) => `${etiqueta(p.clave)} ${num(p.pct)} %`).join(', ')}. ` +
+  `Ficha técnica, metodología y fuente original.`;
+
+const ruta = `/encuestas/${id}/`;
+const jsonLd = fichaEncuesta({
+  casa: String(e.casa),
+  estudio: String(e.id),
+  fechaTrabajo: e.fecha_trabajo ?? null,
+  fechaPublicacion: e.fecha_publicacion ?? null,
+  muestra: e.n ?? null,
+  ambito: e.ambito ?? null,
+  ruta,
+  urlFuente: (ficha.url as string) ?? (e.url as string) ?? null,
+  partidos: pares.slice(0, 6).map((p) => ({ partido: etiqueta(p.clave), pct: p.pct })),
+});
+
+// Vecinas en el tiempo, para que la ficha no sea un callejón sin salida.
+const i = encuestas.findIndex((x) => x.id === e.id);
+const anterior = encuestas[i + 1];
+const siguiente = encuestas[i - 1];
+const href = (x: any) => `/encuestas/${String(x.id).toLowerCase()}/`;
+---
+
+<Base titulo={tituloSeo} descripcion={descripcion} jsonLd={jsonLd} tipoOg="article">
+  <div class="contenedor">
+    <Breadcrumbs
+      items={[
+        { label: 'Encuestas', href: '/encuestas/' },
+        { label: String(e.casa), href: `/encuestadores/${casaSlug}/` },
+        { label: fechaTrabajoTxt ?? String(e.id) },
+      ]}
+    />
+
+    <header class="cabecera-pagina">
+      <p class="eyebrow entrada">
+        Encuesta · {e.casa}{e.tipo ? ` · ${e.tipo}` : ''}
+      </p>
+      <h1 class="medida entrada entrada--1">
+        {e.casa}{fechaTrabajoTxt ? ` · ${fechaTrabajoTxt}` : ''}
+      </h1>
+      {pares.length > 0 && (
+        <p class="titular-intro entrada entrada--2">
+          {pares.slice(0, 4).map((p, k) => (
+            <>
+              {k > 0 && ' · '}
+              <strong>{etiqueta(p.clave)} {num(p.pct)} %</strong>
+            </>
+          ))}{' '}
+          — estimación de voto publicada{esEstatal ? ' para las elecciones generales' : ` en ${e.ambito}`}.
+        </p>
+      )}
+    </header>
+
+    <section class="seccion seccion--compacta" aria-labelledby="ficha">
+      <h2 id="ficha" class="eyebrow">Ficha técnica</h2>
+      <dl class="ficha">
+        <div><dt>Encuestadora</dt><dd><a href={`/encuestadores/${casaSlug}/`}>{e.casa}</a></dd></div>
+        {ficha.fuente_tipo && <div><dt>Tipo de fuente</dt><dd>{ficha.fuente_tipo}</dd></div>}
+        {fechaTrabajoTxt && <div><dt>Trabajo de campo</dt><dd>{fechaTrabajoTxt}</dd></div>}
+        {e.fecha_publicacion && <div><dt>Publicación</dt><dd>{fechaLarga(e.fecha_publicacion)}</dd></div>}
+        {e.n && <div><dt>Muestra</dt><dd>{entero(e.n)} entrevistas</dd></div>}
+        {ficha.metodologia && <div><dt>Metodología</dt><dd>{ficha.metodologia}</dd></div>}
+        <div><dt>Ámbito</dt><dd>{esEstatal ? 'Estatal' : e.ambito}</dd></div>
+        {e.eleccion && <div><dt>Elección</dt><dd>{e.eleccion}</dd></div>}
+        <div>
+          <dt>Base</dt>
+          <dd>
+            {e.base === 'censo'
+              ? 'Voto directo sobre censo (microdato CIS)'
+              : 'Estimación sobre voto válido'}
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    {pares.length > 0 && (
+      <section class="seccion" aria-labelledby="voto">
+        <h2 id="voto" class="eyebrow">Estimación de voto publicada</h2>
+        <ul class="barras">
+          {pares.map((p) => (
+            <li>
+              <span class="barras__et">{sigla(etiqueta(p.clave))}</span>
+              <span class="barras__pista">
+                <span
+                  class="barras__relleno"
+                  style={`width:${maxPct ? (p.pct / maxPct) * 100 : 0}%;background:${colorPartido(p.clave)}`}
+                />
+              </span>
+              <span class="barras__num num">{num(p.pct)} %</span>
+            </li>
+          ))}
+        </ul>
+        <p class="nota">
+          Cifras tal y como las publica la fuente; no se recalculan ni se reponderan aquí.
+          La serie ponderada y la estimación del 29N viven en <a href="/series/">la serie</a> y
+          en <a href="/prediccion/">la predicción</a>.
+        </p>
+      </section>
+    )}
+
+    {(ficha.extracto || e.url) && (
+      <section class="seccion" aria-labelledby="fuente">
+        <h2 id="fuente" class="eyebrow">Fuente original</h2>
+        {ficha.extracto && <blockquote class="cita-fuente">{ficha.extracto}</blockquote>}
+        {e.url && (
+          <p class="nota">
+            <a href={e.url} rel="nofollow noopener" target="_blank">
+              Ver la ficha técnica en {new URL(e.url).hostname.replace('www.', '')} →
+            </a>
+          </p>
+        )}
+        {String(e.id).startsWith('CIS-') && (
+          <p class="nota">
+            Estudio {String(e.id).replace('CIS-', '')} del Banco de Datos del CIS. El voto directo
+            se calcula sobre el censo y no es comparable sin normalizar con las estimaciones de
+            encuestadores privados.
+          </p>
+        )}
+      </section>
+    )}
+
+    <nav class="vecinas" aria-label="Otras encuestas">
+      {anterior ? (
+        <a href={href(anterior)}>
+          <span class="eyebrow">Anterior</span>
+          <span>{anterior.casa} · {fechaCorta(anterior.fecha_trabajo)}</span>
+        </a>
+      ) : (
+        <span />
+      )}
+      {siguiente && (
+        <a href={href(siguiente)} class="vecinas__sig">
+          <span class="eyebrow">Siguiente</span>
+          <span>{siguiente.casa} · {fechaCorta(siguiente.fecha_trabajo)}</span>
+        </a>
+      )}
+    </nav>
+  </div>
+</Base>
+
+<style>
+  .ficha {
+    display: grid;
+    gap: var(--s-2);
+    margin: var(--s-3) 0 0;
+    max-width: 46rem;
+  }
+  .ficha > div {
+    display: grid;
+    grid-template-columns: minmax(8rem, 13rem) 1fr;
+    gap: var(--s-3);
+    padding-block: var(--s-2);
+    border-bottom: 1px solid var(--borde);
+  }
+  .ficha dt {
+    font-family: var(--f-mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--tinta-2);
+  }
+  .ficha dd { margin: 0; }
+
+  .barras { list-style: none; margin: var(--s-3) 0 0; padding: 0; display: grid; gap: 6px; }
+  .barras li {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr 4.5rem;
+    gap: var(--s-2);
+    align-items: center;
+  }
+  .barras__et { font-family: var(--f-mono); font-size: 0.8rem; color: var(--tinta-2); }
+  .barras__pista { background: var(--superficie-2); height: 14px; border-radius: 2px; overflow: hidden; }
+  .barras__relleno { display: block; height: 100%; }
+  .barras__num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  .cita-fuente {
+    margin: var(--s-3) 0 var(--s-2);
+    padding: var(--s-3);
+    border-left: 3px solid var(--borde-fuerte);
+    background: var(--superficie-2);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    max-width: 60rem;
+  }
+
+  .vecinas {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--s-3);
+    margin-block: var(--s-5);
+    border-top: 1px solid var(--borde);
+    padding-top: var(--s-3);
+  }
+  .vecinas a { display: grid; gap: 2px; text-decoration: none; }
+  .vecinas__sig { text-align: right; }
+</style>

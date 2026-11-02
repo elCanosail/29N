@@ -1,0 +1,133 @@
+---
+/**
+ * /prediccion/[provincia] — estimación del 29N en cada circunscripción.
+ *
+ * 52 páginas que responden «cuántos escaños saca X en Sevilla». El dato es el
+ * mismo que ya publica la portada, desagregado, con su intervalo y la
+ * advertencia metodológica a la vista: swing uniforme desde el 23J, no un
+ * modelo provincial propio.
+ */
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import seats from '../../data/seats.json';
+import { num, entero } from '../../lib/format';
+import { colorPartido, sigla, nombre29N } from '../../lib/partidos';
+import { slug } from '../../lib/slug';
+import { dataset } from '../../lib/seo';
+
+const provincias = (seats as any).provincias as {
+  codigo: number;
+  nombre: string;
+  escanos: number;
+  ganador: string;
+  partidos: { partido: string; media: number; ic95: [number, number]; p_ge1: number }[];
+}[];
+
+export function getStaticPaths() {
+  // Astro evalúa getStaticPaths en un módulo aparte: solo ve los imports.
+  return ((seats as any).provincias as { nombre: string }[]).map((p) => ({
+    params: { provincia: slug(p.nombre) },
+    props: { p },
+  }));
+}
+
+const { p } = Astro.props as { p: (typeof provincias)[number] };
+const partidos = [...p.partidos].sort((a, b) => b.media - a.media);
+const ruta = `/prediccion/${slug(p.nombre)}/`;
+const etiqueta = (x: string) => nombre29N(x);
+
+const tituloSeo = `Previsión de escaños en ${p.nombre} para el 29N`;
+const descripcion =
+  `Estimación para el 29N en ${p.nombre} (${p.escanos} escaños): ` +
+  partidos.slice(0, 3).map((x) => `${etiqueta(x.partido)} ${num(x.media)} (${x.ic95[0]}–${x.ic95[1]})`).join(', ') +
+  '. Intervalo del 95 % y método a la vista.';
+
+const jsonLd = dataset({
+  nombre: `Estimación provincial 29N · ${p.nombre}`,
+  descripcion,
+  ruta,
+  actualizado: (seats as any).meta?.generado,
+  cobertura: p.nombre,
+  variables: ['escaños estimados', 'intervalo del 95 %', 'probabilidad de al menos un escaño'],
+  creador: '29N',
+});
+---
+
+<Base titulo={tituloSeo} descripcion={descripcion} jsonLd={jsonLd} tipoOg="article">
+  <div class="contenedor">
+    <Breadcrumbs
+      items={[
+        { label: 'Predicción', href: '/prediccion/' },
+        { label: 'Provincias', href: '/prediccion/' },
+        { label: p.nombre },
+      ]}
+    />
+
+    <header class="cabecera-pagina">
+      <p class="eyebrow entrada">Circunscripción {p.codigo} · 29N</p>
+      <h1 class="medida entrada entrada--1">Previsión de escaños en {p.nombre}</h1>
+      <p class="titular-intro entrada entrada--2">
+        {p.escanos} escaños en juego. La estimación da la victoria a <strong>{etiqueta(p.ganador)}</strong>,
+        con {num(partidos[0]?.media ?? 0)} escaños de media para el primer partido y un intervalo
+        que va de {partidos[0]?.ic95[0] ?? '—'} a {partidos[0]?.ic95[1] ?? '—'}.
+      </p>
+    </header>
+
+    <section class="seccion seccion--compacta" aria-labelledby="tabla">
+      <h2 id="tabla" class="eyebrow">Estimación por partido</h2>
+      <div class="tabla-envoltura">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th scope="col">Partido</th>
+              <th scope="col" class="der">Escaños (media)</th>
+              <th scope="col" class="der">Intervalo 95 %</th>
+              <th scope="col" class="der">P(≥1 escaño)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {partidos.map((x) => (
+              <tr>
+                <td>
+                  <span class="punto" style={`background:${colorPartido(x.partido)}`} aria-hidden="true"></span>
+                  <a href={`/partidos/${slug(x.partido)}/`}>{etiqueta(x.partido)}</a>
+                </td>
+                <td class="der num">{num(x.media, 2)}</td>
+                <td class="der num">{x.ic95[0]}–{x.ic95[1]}</td>
+                <td class="der num">{Math.round(x.p_ge1 * 100)} %</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="nota">
+        {entero(p.escanos)} escaños en juego en esta circunscripción. Los intervalos anchos en
+        partidos pequeños son honestos: con reparto D'Hondt y menos de cinco escaños, un puñado de
+        votos mueve el resultado. <a href="/metodologia/#modelo">Cómo se calcula</a>.
+      </p>
+    </section>
+
+    <section class="seccion" aria-labelledby="contexto">
+      <h2 id="contexto" class="eyebrow">Contexto</h2>
+      <p class="medida">
+        Base: resultado del 23J en {p.nombre}, con swing proporcional uniforme por partido y
+        calibración para cuadrar la suma nacional. No modela terremotos locales ni elasticidades
+        provinciales distintas, y por eso el intervalo se publica en vez de esconderse. El detalle
+        está en <a href="/metodologia/">la metodología</a>.
+      </p>
+      <p class="nota">
+        <a href="/prediccion/">Todas las provincias</a> · <a href="/resultados/">Resultados 1977–2023</a> ·
+        <a href="/encuestas/">Encuestas que alimentan la serie</a>
+      </p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .tabla-envoltura { overflow-x: auto; }
+  .tabla { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .tabla th, .tabla td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--borde); }
+  .tabla th { font-family: var(--f-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--tinta-2); }
+  .tabla .der { text-align: right; }
+  .punto { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; }
+</style>

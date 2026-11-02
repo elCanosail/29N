@@ -129,6 +129,11 @@ const cssFiltros = `<style>${reglas.join('')}</style>`;
         con muestra, fechas de campo y ficha técnica de origen. Cada tarjeta es una encuesta;
         las barras, sus estimaciones.
       </p>
+      <p class="nota nota-intro">
+        Por casa: <a href="/encuestadores/">encuestadores y su error medido</a> · Por partido:
+        <a href="/partidos/">series de intención de voto</a> · Qué queda fuera y por qué:
+        <a href="/exclusiones/">log de exclusiones</a>
+      </p>
     </header>
 
     <Fragment set:html={cssFiltros} />
@@ -219,12 +224,13 @@ const cssFiltros = `<style>${reglas.join('')}</style>`;
               <p class="nota tarjeta__sin-datos">Sin desglose de intención de voto publicado.</p>
             )}
             <footer class="tarjeta__pie">
-              {e.url ? (
-                <a class="tarjeta__ficha" href={e.url} target="_blank" rel="noopener">
-                  Ficha técnica ↗
+              <a class="tarjeta__ficha" href={`/encuestas/${String(e.id).toLowerCase()}/`}>
+                Ver la ficha en 29N →
+              </a>
+              {e.url && (
+                <a class="tarjeta__ficha tarjeta__ficha--fuera" href={e.url} target="_blank" rel="noopener">
+                  Fuente ↗
                 </a>
-              ) : (
-                <span class="tarjeta__ficha tarjeta__ficha--ausente">Sin ficha publicada</span>
               )}
             </footer>
           </article>
@@ -408,6 +414,10 @@ const cssFiltros = `<style>${reglas.join('')}</style>`;
     text-underline-offset: 0.2em;
   }
   .tarjeta__ficha--ausente { color: var(--tinta-3); text-decoration: none; }
+  /* El enlace interno manda; la fuente externa va al lado, más discreta. */
+  .tarjeta__pie { display: flex; flex-wrap: wrap; gap: var(--s-3); align-items: baseline; }
+  .tarjeta__ficha--fuera { color: var(--tinta-2); font-size: 0.75rem; }
+  .nota-intro { margin-top: var(--s-3); max-width: 62rem; }
 
   .nota-filtrado { margin-top: var(--s-4); }
 

@@ -1,0 +1,149 @@
+---
+/**
+ * /glosario — las palabras que aparecen en el sitio, explicadas en una línea.
+ *
+ * Contenido estable: cada término es una respuesta corta y enlaza al sitio
+ * donde se aplica. Sin esto, la mitad de las páginas técnicas son ilegibles
+ * para quien llega desde una búsqueda.
+ */
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { faq } from '../../lib/seo';
+
+const terminos: { t: string; d: string; donde?: string; href?: string }[] = [
+  {
+    t: 'Escaño',
+    d: 'Cada uno de los 350 puestos del Congreso. Se reparten por circunscripción con el método D\'Hondt, no en proporción exacta al voto nacional.',
+    donde: 'Estimación',
+    href: '/prediccion/',
+  },
+  {
+    t: 'Circunscripción',
+    d: 'La provincia, que es la unidad de reparto. Cada una tiene un mínimo de dos escaños (Ceuta y Melilla, uno) y el resto se asigna por población: Soria reparte 2 y Madrid 37.',
+  },
+  {
+    t: 'Método D\'Hondt',
+    d: 'Sistema de reparto por cocientes sucesivos: los votos de cada lista se dividen entre 1, 2, 3… y los escaños van a los cocientes más altos. Favorece a los grandes y castiga la fragmentación.',
+  },
+  {
+    t: 'Barrera electoral',
+    d: 'En el Congreso, el 3 % de los votos válidos en la circunscripción. Por debajo, la candidatura no entra al reparto aunque tenga votos suficientes para un escaño por cociente.',
+  },
+  {
+    t: 'Voto válido',
+    d: 'Votos a candidaturas más votos en blanco. Excluye los nulos. Es la base sobre la que se calculan los porcentajes que publica este sitio.',
+  },
+  {
+    t: 'Voto en blanco',
+    d: 'No es abstención: cuenta como voto válido y entra en el divisor de la barrera y del reparto, aunque no obtiene escaños.',
+  },
+  {
+    t: 'Muestra (n)',
+    d: 'Número de entrevistas de una encuesta. No es el censo ni el número de votantes: es a cuánta gente se preguntó. A más muestra, menor error aleatorio, pero no menor sesgo.',
+  },
+  {
+    t: 'Margen de error',
+    d: 'Rango en el que caería el dato si se repitiera la encuesta muchas veces y no hubiera sesgo. Con n=1.000 ronda ±3 puntos para el conjunto, más en subgrupos.',
+  },
+  {
+    t: 'Intervalo de confianza (IC 95 %)',
+    d: 'Rango que cubre el 95 % de las simulaciones del modelo. Aquí se publica siempre: un número sin intervalo es una opinión con decimales.',
+    donde: 'Predicción',
+    href: '/prediccion/',
+  },
+  {
+    t: 'Sesgo de casa',
+    d: 'Diferencia sistemática entre lo que publica un encuestador y el resultado real. Se mide por casa, con signo, contra resultados oficiales.',
+    donde: 'Encuestadores',
+    href: '/encuestadores/',
+  },
+  {
+    t: 'MAE (error absoluto medio)',
+    d: 'Media de las diferencias en valor absoluto entre estimación y resultado, en puntos porcentuales. Castiga igual equivocarse por arriba que por abajo.',
+    donde: 'Encuestadores',
+    href: '/encuestadores/',
+  },
+  {
+    t: 'Encuesta final',
+    d: 'La última de cada casa con trabajo de campo terminado antes de la votación. Es la que se compara con el resultado real para medir su error.',
+  },
+  {
+    t: 'Microdato',
+    d: 'Registro individual anonimizado de una encuesta del CIS: cada fila es una persona entrevistada. Permite recalcular, no solo leer el titular.',
+    donde: 'Microdatos',
+    href: '/microdatos/',
+  },
+  {
+    t: 'Reponderación',
+    d: 'Ajuste de los pesos de cada encuesta según su tamaño de muestra, antigüedad y calidad de la fuente. Está descrita en la metodología, no es una caja negra.',
+    donde: 'Metodología',
+    href: '/metodologia/#modelo',
+  },
+  {
+    t: 'Swing uniforme',
+    d: 'Mover a todos los partidos el mismo número de puntos en todas las provincias, calibrado para que cuadre el total nacional. Es simple y transparente; no modela terremotos locales.',
+    donde: 'Metodología',
+    href: '/metodologia/#modelo',
+  },
+  {
+    t: 'Estimación de voto',
+    d: 'Lo que la casa calcula que pasará el día de la elección, no el reparto directo de respuestas. Por eso una estimación puede sumar más o menos de 100 %.',
+  },
+  {
+    t: 'Cocina',
+    d: 'Recalcular por cuenta propia los datos de una encuesta ajena. Aquí solo se hace en un caso y se declara: sumar Sumar, Compromís y UPC cuando la casa los publica separados.',
+  },
+];
+
+const jsonLd = faq(terminos.slice(0, 12).map((x) => ({ pregunta: `¿Qué es ${x.t.toLowerCase()}?`, respuesta: x.d })));
+---
+
+<Base
+  titulo="Glosario electoral: escaños, D'Hondt, muestra y margen de error"
+  descripcion="Los términos que aparecen en las encuestas y en el reparto de escaños, explicados en una línea y con el sitio del proyecto donde se aplican."
+  jsonLd={jsonLd}
+>
+  <div class="contenedor">
+    <Breadcrumbs items={[{ label: 'Glosario' }]} />
+
+    <header class="cabecera-pagina">
+      <p class="eyebrow entrada">Glosario</p>
+      <h1 class="medida entrada entrada--1">Las palabras del oficio</h1>
+      <p class="titular-intro entrada entrada--2">
+        {terminos.length} términos en una línea cada uno. Si un concepto no está, es que el sitio
+        tampoco lo usa.
+      </p>
+    </header>
+
+    <section class="seccion" aria-label="Términos">
+      <dl class="glosario">
+        {terminos.map((x) => (
+          <div class="glosario__item">
+            <dt>{x.t}</dt>
+            <dd>
+              {x.d}
+              {x.href && (
+                <span class="glosario__donde">
+                  {' '}→ <a href={x.href}>{x.donde}</a>
+                </span>
+              )}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .glosario { margin: var(--s-4) 0 0; display: grid; gap: var(--s-3); max-width: 62rem; }
+  .glosario__item { border-top: 1px solid var(--borde); padding-top: var(--s-3); }
+  .glosario dt {
+    font-family: var(--f-titular);
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+  }
+  .glosario dd { margin: 0; line-height: 1.55; max-width: 58rem; }
+  .glosario__donde { font-family: var(--f-mono); font-size: 0.78rem; color: var(--tinta-2); white-space: nowrap; }
+</style>

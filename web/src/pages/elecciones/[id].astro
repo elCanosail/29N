@@ -1,0 +1,122 @@
+---
+/**
+ * /elecciones/[id] — resultado oficial de cada general desde 1977.
+ *
+ * Contenido evergreen (el más fácil de posicionar y el que menos se pisa con los
+ * agregadores): cifras del Ministerio del Interior, sin interpretación.
+ */
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import datos from '../../data/elecciones.json';
+import { num, entero, fechaLarga } from '../../lib/format';
+import { colorPartido } from '../../lib/partidos';
+import { dataset } from '../../lib/seo';
+
+type Candidatura = { partido_id: string; nombre: string; sigla: string; votos: number; escanos: number; pct: number };
+type Eleccion = { id: string; fecha: string; camara: string; escanos_totales: number; votos_validos: number; candidaturas: Candidatura[] };
+const elecciones = (datos as any).elecciones as Eleccion[];
+
+export function getStaticPaths() {
+  // Astro evalúa getStaticPaths en un módulo aparte: se lee el JSON aquí.
+  return ((datos as any).elecciones as { id: string }[]).map((e) => ({
+    params: { id: e.id },
+    props: { e },
+  }));
+}
+
+const { e } = Astro.props as { e: Eleccion };
+// Se muestran las candidaturas con representación o con más de un 1 %: el resto
+// son listas testimoniales que solo añaden ruido a la tabla.
+const filas = [...e.candidaturas]
+  .filter((c) => c.escanos > 0 || c.pct >= 1)
+  .sort((a, b) => b.votos - a.votos);
+const resto = e.candidaturas.length - filas.length;
+const ganador = [...e.candidaturas].sort((a, b) => b.escanos - a.escanos || b.votos - a.votos)[0];
+const anyo = e.fecha.slice(0, 4);
+const ruta = `/elecciones/${e.id}/`;
+const tituloSeo = `Resultados elecciones generales del ${fechaLarga(e.fecha)}`;
+const descripcion =
+  `Resultados oficiales de las elecciones generales del ${fechaLarga(e.fecha)}: ` +
+  `${ganador.sigla} ${entero(ganador.escanos)} escaños y ${num(ganador.pct)} % de los votos. ` +
+  'Cifras del Ministerio del Interior, candidatura por candidatura.';
+
+const jsonLd = dataset({
+  nombre: `Resultados electorales · ${fechaLarga(e.fecha)}`,
+  descripcion,
+  ruta,
+  actualizado: e.fecha,
+  cobertura: 'España',
+  variables: ['votos', 'porcentaje', 'escaños'],
+  creador: 'Ministerio del Interior',
+});
+---
+
+<Base titulo={tituloSeo} descripcion={descripcion} jsonLd={jsonLd} tipoOg="article">
+  <div class="contenedor">
+    <Breadcrumbs
+      items={[
+        { label: 'Resultados', href: '/resultados/' },
+        { label: 'Elecciones', href: '/elecciones/' },
+        { label: anyo },
+      ]}
+    />
+
+    <header class="cabecera-pagina">
+      <p class="eyebrow entrada">{e.camara ?? 'Congreso'} · {entero(e.escanos_totales)} escaños</p>
+      <h1 class="medida entrada entrada--1">Elecciones generales del {fechaLarga(e.fecha)}</h1>
+      <p class="titular-intro entrada entrada--2">
+        Ganó <strong>{ganador.sigla}</strong> con {entero(ganador.escanos)} escaños
+        ({num(ganador.pct)} % de los votos). {entero(e.votos_validos)} votos válidos y
+        {entero(e.candidaturas.length)} candidaturas.
+      </p>
+    </header>
+
+    <section class="seccion seccion--compacta" aria-labelledby="resultado">
+      <h2 id="resultado" class="eyebrow">Resultado por candidatura</h2>
+      <div class="tabla-envoltura">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th scope="col">Candidatura</th>
+              <th scope="col" class="der">Votos</th>
+              <th scope="col" class="der">%</th>
+              <th scope="col" class="der">Escaños</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filas.map((c) => (
+              <tr>
+                <td>
+                  <span class="punto" style={`background:${colorPartido(c.sigla)}`} aria-hidden="true"></span>
+                  {c.sigla}
+                </td>
+                <td class="der num">{entero(c.votos)}</td>
+                <td class="der num">{num(c.pct, 2)}</td>
+                <td class="der num">{c.escanos || '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {resto > 0 && (
+        <p class="nota">
+          {resto} candidaturas más sin escaño y por debajo del 1 % de los votos, fuera de la tabla
+          para no intoxicarla. Están en la fuente original.
+        </p>
+      )}
+      <p class="nota">
+        Fuente: <a href="https://descargas.interior.gob.es/datasets/resultados_electorales/" rel="nofollow noopener" target="_blank">Ministerio del Interior</a>.
+        Sin reponderación ni corrección: es el dato oficial.
+      </p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .tabla-envoltura { overflow-x: auto; }
+  .tabla { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .tabla th, .tabla td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--borde); }
+  .tabla th { font-family: var(--f-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--tinta-2); }
+  .tabla .der { text-align: right; }
+  .punto { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; }
+</style>

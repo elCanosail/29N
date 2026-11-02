@@ -1,0 +1,99 @@
+---
+/** /encuestadores/ — índice de casas con su histórico y su error medido. */
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import encuestasData from '../../data/encuestas.json';
+import sesgoData from '../../data/sesgo.json';
+import { num, entero, fechaCorta } from '../../lib/format';
+import { slugCasa } from '../../lib/slug';
+
+const encuestas = encuestasData.encuestas as any[];
+const porCasa = new Map<string, any[]>();
+for (const e of encuestas) {
+  const c = String(e.casa);
+  if (!porCasa.has(c)) porCasa.set(c, []);
+  porCasa.get(c)!.push(e);
+}
+const resumen = (sesgoData as any).resumen ?? {};
+
+const filas = [...porCasa.entries()]
+  .map(([casa, lista]) => {
+    const orden = [...lista].sort((a, b) => (b.fecha_trabajo ?? '').localeCompare(a.fecha_trabajo ?? ''));
+    const s = resumen[casa];
+    const f = s ? s.est ?? s.privado ?? s.micro_censo ?? s.micro_valid ?? null : null;
+    return {
+      casa,
+      slug: slugCasa(casa),
+      n: lista.length,
+      primera: orden[orden.length - 1]?.fecha_trabajo ?? null,
+      ultima: orden[0]?.fecha_trabajo ?? null,
+      mae: f?.mae ?? null,
+      sesgo: f?.sesgo_medio ?? null,
+      nError: f?.n ?? null,
+    };
+  })
+  .sort((a, b) => b.n - a.n || a.casa.localeCompare(b.casa, 'es'));
+---
+
+<Base
+  titulo="Encuestadores: histórico y error medido"
+  descripcion="Las casas encuestadoras que publican intención de voto en España, con cuántas encuestas han entrado al modelo y su error medio medido contra resultados reales."
+>
+  <div class="contenedor">
+    <Breadcrumbs items={[{ label: 'Encuestas', href: '/encuestas/' }, { label: 'Encuestadores' }]} />
+
+    <header class="cabecera-pagina">
+      <p class="eyebrow entrada">Encuestadores</p>
+      <h1 class="medida entrada entrada--1">Quién mide y cuánto se equivoca</h1>
+      <p class="titular-intro entrada entrada--2">
+        {filas.length} casas con encuestas publicadas. Donde hay histórico suficiente se muestra
+        su error absoluto medio (MAE) contra resultados oficiales; donde no, se dice que no hay
+        con qué medirlo.
+      </p>
+    </header>
+
+    <section class="seccion" aria-label="Tabla de encuestadores">
+      <div class="tabla-envoltura">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th scope="col">Casa</th>
+              <th scope="col" class="der">Encuestas</th>
+              <th scope="col">Primera</th>
+              <th scope="col">Última</th>
+              <th scope="col" class="der">MAE</th>
+              <th scope="col" class="der">Sesgo medio</th>
+              <th scope="col" class="der">n</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filas.map((f) => (
+              <tr>
+                <td><a href={`/encuestadores/${f.slug}/`}>{f.casa}</a></td>
+                <td class="der num">{f.n}</td>
+                <td>{fechaCorta(f.primera) || '—'}</td>
+                <td>{fechaCorta(f.ultima) || '—'}</td>
+                <td class="der num">{f.mae !== null ? `${num(f.mae)} pp` : '—'}</td>
+                <td class="der num">{f.sesgo !== null ? `${num(f.sesgo)} pp` : '—'}</td>
+                <td class="der num">{f.nError ?? '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="nota">
+        MAE y sesgo se calculan con las encuestas finales de cada casa frente al resultado real
+        (ver <a href="/metodologia/#validacion">metodología</a>). Con pocas observaciones el número
+        es orientativo: n se muestra para que se pueda juzgar.
+      </p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .tabla-envoltura { overflow-x: auto; }
+  .tabla { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .tabla th, .tabla td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--borde); }
+  .tabla th { font-family: var(--f-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--tinta-2); }
+  .tabla .der { text-align: right; }
+</style>

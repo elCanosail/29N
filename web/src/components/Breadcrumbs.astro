@@ -2,9 +2,14 @@
 /**
  * Breadcrumbs — estilo EU Design System (DESIGN.md §4), separador `/` en mono.
  */
+import { migas as migasLd } from '../lib/seo';
 interface Enlace { label: string; href?: string }
 const { items = [] } = Astro.props as { items: Enlace[] };
+// Las migas se declaran también como datos estructurados: Google las usa para
+// sustituir la URL por la ruta en los resultados de búsqueda.
+const ld = items.length ? migasLd(items) : null;
 ---
+{ld && <script type="application/ld+json" set:html={JSON.stringify(ld)} />}
 {
   items.length > 0 && (
     <nav class="migas" aria-label="Ruta de navegación">

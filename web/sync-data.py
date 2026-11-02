@@ -483,6 +483,12 @@ def gen_encuestas() -> int:
             reg["partidos"][fila["partido_canonico"]] = round(fila["porcentaje"], 2)
     encuestas.extend(agrupado_enc.values())
 
+    # Un solo vocabulario para el alcance: convivían 'nacional' (42) y 'estatal'
+    # (34) para lo mismo, y eso partía los filtros y las páginas de entidad.
+    for e in encuestas:
+        if e.get("ambito") == "estatal":
+            e["ambito"] = "nacional"
+
     # Orden: más reciente primero (por fecha de publicación o de campo).
     def clave_orden(e: dict) -> str:
         return str(e.get("fecha_publicacion") or e.get("fecha_trabajo") or "")
@@ -503,7 +509,13 @@ def gen_encuestas() -> int:
             ),
             "destacados": DESTACADOS,
         },
-        "dimensiones": {"casas": casas, "anios": anios, "elecciones": elecciones_dim},
+        "dimensiones": {
+            "casas": casas,
+            "anios": anios,
+            "elecciones": elecciones_dim,
+            "ambitos": sorted({str(e["ambito"]) for e in encuestas if e.get("ambito")}),
+            "partidos": sorted({p for e in encuestas for p in (e.get("partidos") or {})}),
+        },
         "encuestas": encuestas,
     }
     return escribir("encuestas.json", datos)
@@ -512,6 +524,25 @@ def gen_encuestas() -> int:
 # ---------------------------------------------------------------------------
 # 7. Log de exclusiones
 # ---------------------------------------------------------------------------
+
+def gen_fuentes() -> int:
+    """Ficha textual por estudio: extracto, URL original y partidos publicados.
+
+    Es lo que convierte cada encuesta en una página con fuente citable en vez de
+    una fila de tabla.
+    """
+    src = leer_json(os.path.join(P_ENC, "sources.json"))
+    datos = {}
+    for s in src:
+        datos[s["estudio_id"]] = {
+            "extracto": s.get("extracto"),
+            "url": s.get("url"),
+            "fuente_tipo": s.get("fuente_tipo"),
+            "metodologia": s.get("metodologia"),
+            "partidos_publicados": s.get("partidos_publicados") or [],
+        }
+    return escribir("fuentes.json", datos)
+
 
 def gen_exclusiones() -> int:
     entradas: list[dict] = []
@@ -599,6 +630,7 @@ def main() -> int:
         ("reparto23.json", gen_reparto23),
         ("encuestas.json", gen_encuestas),
         ("exclusiones.json", gen_exclusiones),
+        ("fuentes.json", gen_fuentes),
         ("sesgo.json", gen_sesgo),
     ]
     print(f"sync-data → {os.path.relpath(SALIDA, RAIZ)}")

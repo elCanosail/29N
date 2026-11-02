@@ -1,0 +1,82 @@
+---
+/**
+ * /exclusiones — log público de lo que NO entra y por qué.
+ *
+ * Es una promesa del proyecto (docs/plan.md): una encuesta descartada no
+ * desaparece, queda documentada con su motivo. Esta página la hace visible y
+ * citable; hasta ahora solo existía como JSON y una tabla dentro de metodología.
+ */
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import datos from '../../data/exclusiones.json';
+
+type Ex = { origen: string; id: string; casa: string; slug: string; tipo: string | null; eleccion: string | null; motivo: string; url: string | null };
+const exclusiones = (datos as any).exclusiones as Ex[];
+const meta = (datos as any).meta as { n: number; n_cis: number; n_privados: number; nota: string };
+
+const porMotivo = new Map<string, number>();
+for (const e of exclusiones) porMotivo.set(e.motivo, (porMotivo.get(e.motivo) ?? 0) + 1);
+const motivos = [...porMotivo.entries()].sort((a, b) => b[1] - a[1]);
+---
+
+<Base
+  titulo="Log de exclusiones: qué se descartó y por qué"
+  descripcion={`${meta.n} encuestas descartadas del modelo con su motivo explícito (${meta.n_cis} del CIS y ${meta.n_privados} de encuestadores privados). Ninguna se borra: aquí está cada una con la razón.`}
+>
+  <div class="contenedor">
+    <Breadcrumbs items={[{ label: 'Metodología', href: '/metodologia/' }, { label: 'Exclusiones' }]} />
+
+    <header class="cabecera-pagina">
+      <p class="eyebrow entrada">Trazabilidad</p>
+      <h1 class="medida entrada entrada--1">Lo que se descartó, con su motivo</h1>
+      <p class="titular-intro entrada entrada--2">
+        {meta.n} encuestas no entran al modelo. Ninguna desaparece sin explicación: cada una queda
+        aquí con la razón concreta. {meta.nota}
+      </p>
+    </header>
+
+    <section class="seccion seccion--compacta" aria-labelledby="motivos">
+      <h2 id="motivos" class="eyebrow">Motivos</h2>
+      <ul class="motivos">
+        {motivos.map(([m, n]) => (
+          <li><span class="num">{n}</span> <span>{m}</span></li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="seccion" aria-labelledby="tabla">
+      <h2 id="tabla" class="eyebrow">Listado completo</h2>
+      <div class="tabla-envoltura">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th scope="col">Estudio</th>
+              <th scope="col">Casa</th>
+              <th scope="col">Elección</th>
+              <th scope="col">Motivo</th>
+            </tr>
+          </thead>
+          <tbody>
+            {exclusiones.map((e) => (
+              <tr>
+                <td class="mono">{e.id}</td>
+                <td>{e.casa}</td>
+                <td>{e.eleccion ?? '—'}</td>
+                <td>{e.motivo}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .motivos { list-style: none; margin: var(--s-3) 0 0; padding: 0; display: grid; gap: var(--s-2); max-width: 52rem; }
+  .motivos li { display: grid; grid-template-columns: 3rem 1fr; gap: var(--s-2); border-bottom: 1px solid var(--borde); padding-block: 6px; font-size: 0.9rem; }
+  .tabla-envoltura { overflow-x: auto; }
+  .tabla { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+  .tabla th, .tabla td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--borde); vertical-align: top; }
+  .tabla th { font-family: var(--f-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--tinta-2); }
+</style>

@@ -10,6 +10,8 @@ import reparto23 from '../../data/reparto23.json';
 import ccaaMap from '../../data/provincias-ccaa.json';
 import { num, entero } from '../../lib/format';
 import { colorPartido, nombre29N } from '../../lib/partidos';
+import { slug } from '../../lib/slug';
+import { faq as faqLd, dataset } from '../../lib/seo';
 
 const provincias = seats.provincias;
 const nacional = seats.nacional;
@@ -152,11 +154,49 @@ const sumaCentMediasCCAA = filasCCAA.reduce(
   (acc, c) => acc + Object.values(c.medias).reduce((a, b) => a + b, 0),
   0,
 );
+// Preguntas que la gente escribe en el buscador, respondidas con las cifras que
+// ya publica esta página. Van marcadas como FAQPage y son visibles: nada oculto.
+const primeroNacional = filasHorquillas[0];
+const faq = [
+  {
+    pregunta: '¿Quién gana las elecciones del 29N según 29N?',
+    respuesta: `La estimación da ${primeroNacional ? `${primeroNacional.etiqueta} como primera fuerza con ${num(primeroNacional.media, 1)} escaños (${entero(primeroNacional.min)}–${entero(primeroNacional.max)})` : 'un empate técnico entre las primeras fuerzas'}. Ningún partido alcanza la mayoría absoluta de 176 escaños dentro de su intervalo del 95 %.`,
+  },
+  {
+    pregunta: '¿Cómo se reparten los 350 escaños?',
+    respuesta: 'Por circunscripción: cada provincia elige un número fijo de diputados y los reparte con el método D\'Hondt, con barrera del 3 % de los votos válidos. El reparto provincial es lo que decide el resultado: no es una regla de tres sobre el voto nacional.',
+  },
+  {
+    pregunta: '¿Qué significan los intervalos de escaños?',
+    respuesta: 'El rango cubre el 95 % de las 10.000 simulaciones del modelo. Si un partido tiene 130 escaños con intervalo 106–158, significa que en 19 de cada 20 simulaciones obtiene entre 106 y 158. Publicar el intervalo evita vender una cifra exacta que no lo es.',
+  },
+  {
+    pregunta: '¿De dónde salen los datos?',
+    respuesta: 'De las encuestas publicadas por el CIS y por encuestadores privados, y de los resultados oficiales del Ministerio del Interior desde 1977. Cada encuesta tiene su ficha con muestra, fechas de campo y enlace a la fuente original.',
+  },
+  {
+    pregunta: '¿Se actualiza la estimación?',
+    respuesta: 'Sí: cada día se revisan las encuestas publicadas y, si hay alguna nueva que pase la validación, se regenera la serie y la estimación. Las encuestas descartadas quedan registradas con su motivo en el log de exclusiones.',
+  },
+];
+const jsonLd = [
+  faqLd(faq),
+  dataset({
+    nombre: 'Estimación provincial 29N',
+    descripcion: 'Escaños estimados por provincia para las elecciones generales del 29 de noviembre de 2026, con intervalo del 95 % y probabilidad de al menos un escaño.',
+    ruta: '/prediccion/',
+    actualizado: meta?.generado,
+    cobertura: 'España',
+    variables: ['escaños estimados', 'intervalo del 95 %', 'probabilidad de escaño'],
+    creador: '29N',
+  }),
+];
 ---
 
 <Base
   titulo="Predicción 29N"
   descripcion="Predicción provincial del 29N: escaños por provincia con intervalo del 95 %, coherencia con la predicción estatal y error del backtest publicado."
+  jsonLd={jsonLd}
 >
   <div class="contenedor">
     <Breadcrumbs items={[{ label: 'Predicción 29N' }]} />
@@ -402,6 +442,37 @@ const sumaCentMediasCCAA = filasCCAA.reduce(
         <a href="/metodologia/#modelo">Ver metodología →</a>
       </p>
     </section>
+
+    <section class="seccion seccion--compacta" id="provincias" aria-labelledby="provincias-titulo">
+      <h2 id="provincias-titulo" class="eyebrow">Estimación por provincia</h2>
+      <p class="nota">
+        Cada provincia tiene su página con la estimación por partido, el intervalo y la
+        probabilidad de escaño. El mapa es la vista rápida; esto es el detalle.
+      </p>
+      <ul class="provincias-indice">
+        {provincias.map((p) => (
+          <li>
+            <a href={`/prediccion/${slug(p.nombre)}/`}>
+              <span class="mono">{String(p.codigo).padStart(2, '0')}</span>
+              {p.nombre}
+              <span class="mono provincias-indice__n">{p.escanos}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="seccion" id="faq" aria-labelledby="faq-titulo">
+      <h2 id="faq-titulo" class="eyebrow">Preguntas frecuentes</h2>
+      <dl class="faq">
+        {faq.map((q) => (
+          <div>
+            <dt>{q.pregunta}</dt>
+            <dd>{q.respuesta}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
   </div>
   <script type="application/json" id="datos-mapa" set:html={JSON.stringify(datosMapa)} />
   <script type="application/json" id="partidos-mapa" set:html={JSON.stringify(partidosMapa)} />
@@ -447,6 +518,29 @@ const sumaCentMediasCCAA = filasCCAA.reduce(
 </Base>
 
 <style>
+  .provincias-indice {
+    list-style: none;
+    margin: var(--s-3) 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    gap: 2px var(--s-4);
+  }
+  .provincias-indice a {
+    display: grid;
+    grid-template-columns: 2rem 1fr auto;
+    gap: var(--s-2);
+    padding: 6px 0;
+    border-bottom: 1px solid var(--borde);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .provincias-indice a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+  .provincias-indice__n { color: var(--tinta-2); }
+  .faq { margin: var(--s-3) 0 0; display: grid; gap: var(--s-4); max-width: 62rem; }
+  .faq dt { font-weight: 700; margin-bottom: 4px; }
+  .faq dd { margin: 0; line-height: 1.6; color: var(--tinta-2); }
+
   .cabecera-pagina { padding-block: var(--s-5) var(--s-4); }
 
   .limites {

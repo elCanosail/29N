@@ -1,0 +1,166 @@
+---
+/**
+ * /encuestadores/[slug] — página de una casa encuestadora.
+ *
+ * Qué aporta que no tenga nadie: su histórico medido. Número de encuestas,
+ * cuántas entran al modelo, y —cuando existe— el error medio firmado contra
+ * resultados reales (MAE del backtest). Es la página que un periodista enlaza
+ * cuando pregunta «¿cuánto se equivoca esta casa?».
+ */
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import encuestasData from '../../data/encuestas.json';
+import sesgoData from '../../data/sesgo.json';
+import { num, entero, fechaCorta } from '../../lib/format';
+import { slugCasa } from '../../lib/slug';
+import { dataset } from '../../lib/seo';
+
+const encuestas = [...encuestasData.encuestas].sort((a, b) =>
+  (b.fecha_trabajo ?? '').localeCompare(a.fecha_trabajo ?? ''),
+);
+const casas = [...new Set(encuestas.map((e) => String(e.casa)))].sort((a, b) => a.localeCompare(b, 'es'));
+
+export function getStaticPaths() {
+  // Se recalcula aquí dentro: Astro evalúa getStaticPaths en un módulo aparte
+  // y no siempre ve las constantes del frontmatter.
+  const lista = [...new Set(
+    (encuestasData.encuestas as { casa: string }[]).map((e) => String(e.casa)),
+  )];
+  return lista.map((casa) => ({ params: { slug: slugCasa(casa) }, props: { casa } }));
+}
+
+const { casa } = Astro.props as { casa: string };
+const propias = encuestas.filter((e) => String(e.casa) === casa);
+const estatal = propias.filter((e) => e.ambito === 'nacional' || e.ambito === 'estatal');
+const primera = propias[propias.length - 1];
+const ultima = propias[0];
+
+const sesgo = (sesgoData as any).resumen?.[casa] ?? null;
+// El CIS publica tres mediciones distintas (micro-censo, micro-válido y
+// estimación oficial): se elige la que el proyecto usa para comparar.
+const filaSesgo = sesgo
+  ? sesgo.est ?? sesgo.privado ?? sesgo.micro_censo ?? sesgo.micro_valid ?? null
+  : null;
+
+// Los genéricos de TS no se pueden escribir dentro de la plantilla: el parser
+// los confunde con etiquetas. Se calcula aquí.
+const SIN_BARRA = new Set(['EN BLANCO', 'ABSTENCION', 'NS']);
+const top3 = (e: { partidos?: Record<string, number> | null }): [string, number][] =>
+  Object.entries(e.partidos ?? {})
+    .filter(([p]) => !SIN_BARRA.has(p))
+    .map(([p, v]) => [p, Number(v) || 0] as [string, number])
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3);
+
+const ruta = `/encuestadores/${slugCasa(casa)}/`;
+const tituloSeo = `${casa}: todas sus encuestas electorales`;
+const descripcion =
+  `${propias.length === 1 ? '1 encuesta' : `${propias.length} encuestas`} de ${casa} con ficha técnica, fechas de campo y muestra.` +
+  (filaSesgo ? ` Error medio medido contra resultados reales: ${num(filaSesgo.mae)} pp.` : '');
+
+const jsonLd = [
+  dataset({
+    nombre: `Encuestas de ${casa}`,
+    descripcion,
+    ruta,
+    actualizado: ultima?.fecha_trabajo ?? undefined,
+    cobertura: 'España',
+    variables: ['intención de voto', 'muestra', 'fechas de campo', 'metodología'],
+    creador: '29N',
+  }),
+];
+---
+
+<Base titulo={tituloSeo} descripcion={descripcion} jsonLd={jsonLd}>
+  <div class="contenedor">
+    <Breadcrumbs
+      items={[{ label: 'Encuestas', href: '/encuestas/' }, { label: 'Encuestadores', href: '/encuestadores/' }, { label: casa }]}
+    />
+
+    <header class="cabecera-pagina">
+      <p class="eyebrow entrada">Encuestador</p>
+      <h1 class="medida entrada entrada--1">{casa}</h1>
+      <p class="titular-intro entrada entrada--2">
+        {entero(propias.length)} {propias.length === 1 ? 'encuesta publicada' : 'encuestas publicadas'} entre
+        {' '}{primera?.fecha_trabajo ? fechaCorta(primera.fecha_trabajo) : '—'} y
+        {' '}{ultima?.fecha_trabajo ? fechaCorta(ultima.fecha_trabajo) : '—'}, de las que
+        {' '}{entero(estatal.length)} son estatales. Todas con su ficha técnica y su fuente.
+      </p>
+    </header>
+
+    {filaSesgo && (
+      <section class="seccion seccion--compacta" aria-labelledby="error">
+        <h2 id="error" class="eyebrow">Error medido</h2>
+        <div class="cifras">
+          <div>
+            <span class="cifras__n num">{num(filaSesgo.mae)} pp</span>
+            <span class="cifras__e">Error absoluto medio (MAE) de sus encuestas finales contra el resultado real</span>
+          </div>
+          <div>
+            <span class="cifras__n num">{num(filaSesgo.sesgo_medio)} pp</span>
+            <span class="cifras__e">Sesgo medio firmado (negativo = infravalora al partido medido)</span>
+          </div>
+          <div>
+            <span class="cifras__n num">{entero(filaSesgo.n)}</span>
+            <span class="cifras__e">Encuestas usadas en el cálculo</span>
+          </div>
+        </div>
+        <p class="nota">
+          Calculado contra resultados oficiales del Ministerio del Interior y publicado sin
+          maquillaje en <a href="/metodologia/#validacion">la metodología</a>. Con pocas encuestas
+          por casa el número es orientativo, no un ranking.
+        </p>
+      </section>
+    )}
+
+    <section class="seccion" aria-labelledby="lista">
+      <h2 id="lista" class="eyebrow">Encuestas publicadas</h2>
+      <div class="tabla-envoltura">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th scope="col">Campo</th>
+              <th scope="col">Publicada</th>
+              <th scope="col" class="der">Muestra</th>
+              <th scope="col">Ámbito</th>
+              <th scope="col">Elección</th>
+              <th scope="col">Estimaciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {propias.map((e) => {
+              const pares = top3(e);
+              return (
+                <tr>
+                  <td><a href={`/encuestas/${String(e.id).toLowerCase()}/`}>{fechaCorta(e.fecha_trabajo) || '—'}</a></td>
+                  <td>{fechaCorta(e.fecha_publicacion) || '—'}</td>
+                  <td class="der num">{e.n ? entero(e.n) : '—'}</td>
+                  <td>{e.ambito === 'nacional' || e.ambito === 'estatal' ? 'Estatal' : e.ambito}</td>
+                  <td>{e.eleccion ?? '—'}</td>
+                  <td class="num">{pares.map(([p, v]) => `${p} ${num(v)}`).join(' · ')}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .cifras {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: var(--s-3);
+    margin-block: var(--s-3);
+  }
+  .cifras > div { display: grid; gap: 2px; border-left: 2px solid var(--borde-fuerte); padding-left: var(--s-3); }
+  .cifras__n { font-size: 1.9rem; line-height: 1.1; }
+  .cifras__e { font-size: 0.82rem; color: var(--tinta-2); max-width: 22rem; }
+  .tabla-envoltura { overflow-x: auto; }
+  .tabla { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  .tabla th, .tabla td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--borde); vertical-align: top; }
+  .tabla th { font-family: var(--f-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--tinta-2); }
+  .tabla .der { text-align: right; }
+</style>
