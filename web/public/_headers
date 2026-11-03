@@ -1,0 +1,14 @@
+# Cabeceras de caché para Cloudflare Pages.
+# Los nombres de /_astro/ llevan hash del contenido: si cambia el fichero cambia
+# el nombre, así que se pueden cachear un año sin riesgo de servir algo viejo.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# La tarjeta OG no lleva hash: un día es suficiente y permite cambiarla.
+/og/*
+  Cache-Control: public, max-age=86400
+
+# El HTML se revalida siempre: la portada cambia con cada ingesta.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
