@@ -1,7 +1,14 @@
 # Despliegue en Cloudflare Pages
 
-Estado: **29n.info se sirve desde Cloudflare Pages** (proyecto `29n`). Vercel queda
-como respaldo hasta que el cambio de nameservers esté propagado y verificado.
+Estado (03-11-2026, 00:30 UTC): **la zona está activa en Cloudflare y el DNS ya es suyo,
+pero el sitio todavía se sirve desde Vercel**. Cloudflare no ha emitido el certificado
+de borde (Universal SSL) para `29n.info`, y sin él el proxy no puede servir HTTPS: el
+handshake falla con `alert 40`. Para no dejar el dominio sin servicio, los registros
+apuntan a Vercel **sin proxy** (HTTPS lo termina Vercel, con certificado válido) hasta
+que exista el certificado de Cloudflare.
+
+Comprobado con el registro: los nameservers delegados ya son `kiki` y `marty`
+(RDAP de Identity Digital). La zona pasó a `active` con `activation_check`.
 
 ## Piezas
 
@@ -30,12 +37,34 @@ dashboard (Pages → Connect to Git). Entonces el script local deja de ser neces
 
 ## DNS
 
-Registros creados en la zona nueva:
+Estado actual (el seguro, mientras no haya certificado de borde):
 
-- `CNAME 29n.info → 29n.pages.dev`, proxiado (CNAME flattening en el apex).
-- `CNAME www.29n.info → 29n.pages.dev`, proxiado.
-- Page Rule `www.29n.info/*` → 301 a `https://29n.info/$1`, para no servir dos
-  copias del sitio.
+- `A 29n.info → 76.76.21.21`, **sin proxy** (Vercel termina el TLS).
+- `CNAME www.29n.info → cname.vercel-dns.com`, sin proxy.
+
+Preparado para el corte final:
+
+- Page Rule `www.29n.info/*` → 301 a `https://29n.info/$1` (solo actúa con proxy).
+
+Los registros definitivos serán `CNAME 29n.info → 29n.pages.dev` y
+`CNAME www.29n.info → 29n.pages.dev`, ambos proxiados, en cuanto exista el
+certificado.
+
+## Bloqueo abierto: certificado de borde
+
+Cloudflare no ha emitido el Universal SSL de la zona. Comprobado por SNI contra las
+IPs anycast de la zona (`104.21.61.212`, `172.67.215.101`) y contra otras IPs de
+Cloudflare: `alert 40` en todas, tanto para `29n.info` como para `www.29n.info`.
+El `activation_check` de la zona responde `Zone verified!` y la zona está `active`,
+así que no es un problema de delegación.
+
+El token de la cuenta no tiene permiso de certificados: `/ssl/*` y
+`/ssl/certificate_packs` devuelven `403`/`Authentication error`, y
+`PATCH /ssl/universal/settings` también. Hay que mirarlo en el panel
+(SSL/TLS → Edge Certificates → Universal SSL) o esperar la emisión automática.
+
+Sonda en marcha: `~/.hermes/scripts/29n_espera_cert.sh` consulta el certificado por
+SNI cada 2 minutos y avisa en cuanto exista.
 
 No hay MX ni TXT en el dominio: no hay correo que se pueda romper al mover la zona.
 
