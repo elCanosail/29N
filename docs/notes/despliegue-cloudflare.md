@@ -2,7 +2,9 @@
 
 Estado (03-11-2026, 00:35 UTC): **corte cerrado**. `29n.info` se sirve desde
 Cloudflare Pages a través de la zona de Cloudflare, con certificado propio y HTTP/3.
-Vercel ya no tiene el dominio: queda solo `encuestas29n.vercel.app` como espejo.
+Vercel **no tiene nada**: ni el dominio ni el proyecto. El proyecto `encuestas29n` se
+borró el 03-11-2026 y `encuestas29n.vercel.app` responde ya **404**. Cloudflare Pages es
+el único sitio donde vive 29N.
 
 Cronología del corte, por si vuelve a hacer falta:
 
@@ -17,6 +19,7 @@ Cronología del corte, por si vuelve a hacer falta:
 | 00:29 | Registros a `29n.pages.dev` proxiados y HTTPS forzado |
 | 00:31 | Verificado por Cloudflare: 15 rutas 200, 404 correcto, `www` 301 al apex, contenido idéntico al build |
 | 00:40 | Dominios retirados de Vercel |
+| 03-11, 08:35 | Proyecto Vercel `encuestas29n` **borrado**; su alias pasa a 404 |
 
 **Lección**: el Universal SSL de una zona nueva puede tardar 40 minutos. No se puede
 comprobar por API si el token no tiene permiso de certificados; la prueba fiable es
@@ -77,19 +80,20 @@ build local.
 
 ## Rollback
 
-1. En Cloudflare, cambiar el apex a `A 76.76.21.21` y `www` a `cname.vercel-dns.com`,
-   ambos **sin proxy** (así el TLS lo termina Vercel y no depende de nada nuestro).
-2. Reañadir `29n.info` al proyecto Vercel (`POST /v9/projects/encuestas29n/domains`).
-3. Verificar `200` y cabecera `x-vercel-id`.
+Pages guarda los despliegues anteriores, así que la vuelta atrás es dentro de Cloudflare:
 
-El proyecto Vercel `encuestas29n` sigue existiendo con su integración de Git, así que
-cada push sigue generando un despliegue en `encuestas29n.vercel.app`: es un espejo
-gratis y el camino de vuelta si algo se tuerce.
+1. Dashboard → *Workers & Pages* → `29n` → *Deployments*, elegir el despliegue previo y
+   **Rollback to this deployment**. Tarda segundos y no toca DNS.
+2. O volver a desplegar el commit bueno con `~/.hermes/scripts/29n_pages_deploy.sh`
+   desde ese commit.
+
+**Ya no hay rollback a Vercel**: el proyecto se borró el 03-11-2026 y `encuestas29n.vercel.app`
+devuelve 404. Si algún día hiciera falta, hay que crear un proyecto nuevo y reapuntar el
+DNS a mano; no es un camino que se mantenga vivo.
 
 ## Pendiente
 
 - Nada bloqueante. El despliegue lo hace el cron diario después de pushear.
 - Opcional: conectar el repo a Pages (Pages → Connect to Git) para build en
   Cloudflare; entonces el script local deja de ser necesario.
-- Opcional: borrar el proyecto Vercel y su espejo cuando el corte lleve unos días
-  estable.
+- Hecho: proyecto Vercel borrado (03-11-2026). No queda espejo que mantener.

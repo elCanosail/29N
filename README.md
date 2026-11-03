@@ -11,7 +11,7 @@ Todo el dato electoral español, con predicción honesta y auditable.
 ```
 pipeline/   Ingesta → normalización → validación → predicción (Python)
 data/       Datos normalizados versionados (los crudos se re-descargan)
-web/        Web pública (Astro, desplegada en Vercel)
+web/        Web pública (Astro, desplegada en Cloudflare Pages)
 docs/       Metodología, plan, notas de calidad
 ```
 
