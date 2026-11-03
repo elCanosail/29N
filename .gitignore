@@ -33,3 +33,6 @@ secrets*
 # Sistema
 .DS_Store
 .vercel
+
+# Cloudflare local
+.wrangler/
