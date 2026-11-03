@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Web que expone el histórico completo de encuestas electorales españolas (CIS exhaustivo + encuestadores privados), resultados oficiales de elecciones anteriores, y una predicción provincial del resultado del 29N usando TimesFM (Google Research, open source). Metodología científica, publicación pedagógica y periodística. Hospedado en Vercel.
+Web que expone el histórico completo de encuestas electorales españolas (CIS exhaustivo + encuestadores privados), resultados oficiales de elecciones anteriores, y una predicción provincial del resultado del 29N usando TimesFM (Google Research, open source). Metodología científica, publicación pedagógica y periodística. Hospedado en Cloudflare Pages (`29n.info`).
 
 **Frase del proyecto:** "Todo el dato electoral español, con predicción honesta y auditable."
 
@@ -10,7 +10,7 @@ Web que expone el histórico completo de encuestas electorales españolas (CIS e
 
 - Predicción: TimesFM local (open source, sin coste de inference).
 - Alcance de datos: CIS + Ministerio de Interior + encuestadores privados desde el día uno.
-- Stack web: Astro + datos estáticos (JSON/Parquet), deploy Vercel.
+- Stack web: Astro + datos estáticos (JSON/Parquet), deploy Cloudflare Pages.
 - Nombre: **29N**. Repo nuevo: `elCanosail/29N` (supuesto a confirmar al crear).
 
 ## Fuentes de datos
@@ -45,7 +45,7 @@ Web que expone el histórico completo de encuestas electorales españolas (CIS e
 - `pipeline/` (Python): ingesta → normalización → validación → parquet/JSON. TimesFM corre aquí (batch, no en la web).
 - `data/` versionada en repo (tamaños manejables tras normalizar).
 - `web/` (Astro): histórico de encuestas, explorador de resultados por elección, predicción provincial 29N con mapa + tabla, ficha de cada encuesta con su ficha técnica, página de metodología.
-- Deploy: Vercel. `DESIGN.md` obligatorio en raíz antes de tocar frontend (regla de casa).
+- Deploy: Cloudflare Pages (`~/.hermes/scripts/29n_pages_deploy.sh`). `DESIGN.md` obligatorio en raíz antes de tocar frontend (regla de casa).
 
 ## Fases
 
@@ -119,7 +119,7 @@ Web que expone el histórico completo de encuestas electorales españolas (CIS e
 - **Formulario CIS**: si el scraping automático falla, plan B = descarga asistida por lotes (el formulario es por estudio, ~60 estudios electorales; factible manualmente en sesiones).
 - **Encuestadores privados**: calidad irregular y sin fuente única; mitigado por scoring y log de exclusiones.
 - **Intervalos provinciales anchos** en partidos pequeños: publicar tal cual, es parte del valor científico.
-- **Cupo Vercel**: datos estáticos, sin problema previsto.
+- **Cupo**: datos estáticos, sin problema previsto en Pages.
 
 ## Evidencia y verificación
 
