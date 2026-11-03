@@ -1,14 +1,27 @@
 # Despliegue en Cloudflare Pages
 
-Estado (03-11-2026, 00:30 UTC): **la zona está activa en Cloudflare y el DNS ya es suyo,
-pero el sitio todavía se sirve desde Vercel**. Cloudflare no ha emitido el certificado
-de borde (Universal SSL) para `29n.info`, y sin él el proxy no puede servir HTTPS: el
-handshake falla con `alert 40`. Para no dejar el dominio sin servicio, los registros
-apuntan a Vercel **sin proxy** (HTTPS lo termina Vercel, con certificado válido) hasta
-que exista el certificado de Cloudflare.
+Estado (03-11-2026, 00:35 UTC): **corte cerrado**. `29n.info` se sirve desde
+Cloudflare Pages a través de la zona de Cloudflare, con certificado propio y HTTP/3.
+Vercel ya no tiene el dominio: queda solo `encuestas29n.vercel.app` como espejo.
 
-Comprobado con el registro: los nameservers delegados ya son `kiki` y `marty`
-(RDAP de Identity Digital). La zona pasó a `active` con `activation_check`.
+Cronología del corte, por si vuelve a hacer falta:
+
+| Hora UTC | Hecho |
+|---|---|
+| 23:34 | Zona `29n.info` creada en Cloudflare (pending) |
+| 23:36 | Proyecto Pages `29n` y primer despliegue (221 ficheros) |
+| — | Cambio de nameservers en DonDominio (Chema) |
+| 23:48 | Zona `active` tras `activation_check` (`Zone verified!`) |
+| 23:48–00:27 | Sin certificado de borde: el proxy no puede servir HTTPS. Se devuelven los registros a Vercel sin proxy para no dejar el dominio caído |
+| 00:27 | Universal SSL emitido (Google Trust Services, CN=29n.info) |
+| 00:29 | Registros a `29n.pages.dev` proxiados y HTTPS forzado |
+| 00:31 | Verificado por Cloudflare: 15 rutas 200, 404 correcto, `www` 301 al apex, contenido idéntico al build |
+| 00:40 | Dominios retirados de Vercel |
+
+**Lección**: el Universal SSL de una zona nueva puede tardar 40 minutos. No se puede
+comprobar por API si el token no tiene permiso de certificados; la prueba fiable es
+`openssl s_client -servername <dominio>` contra las IPs anycast de la zona. Conviene
+hacer esa prueba **antes** de mover el DNS, o aceptar una ventana sin HTTPS.
 
 ## Piezas
 
@@ -37,34 +50,22 @@ dashboard (Pages → Connect to Git). Entonces el script local deja de ser neces
 
 ## DNS
 
-Estado actual (el seguro, mientras no haya certificado de borde):
+- `CNAME 29n.info → 29n.pages.dev`, proxiado (CNAME flattening en el apex).
+- `CNAME www.29n.info → 29n.pages.dev`, proxiado.
+- Page Rule `www.29n.info/*` → 301 a `https://29n.info/$1`, para no servir dos copias.
+  Por eso Cloudflare marca el dominio `www` del proyecto Pages como `deactivated`:
+  el que responde es la regla de la zona, antes de llegar a Pages.
+- `always_use_https` y `automatic_https_rewrites` en `on`.
 
-- `A 29n.info → 76.76.21.21`, **sin proxy** (Vercel termina el TLS).
-- `CNAME www.29n.info → cname.vercel-dns.com`, sin proxy.
+Cabeceras de caché en `web/public/_headers`: `/_astro/*` un año `immutable` (los
+nombres llevan hash del contenido), `/og/*` un día, y `nosniff` +
+`strict-origin-when-cross-origin` para todo.
 
-Preparado para el corte final:
+## Certificado
 
-- Page Rule `www.29n.info/*` → 301 a `https://29n.info/$1` (solo actúa con proxy).
-
-Los registros definitivos serán `CNAME 29n.info → 29n.pages.dev` y
-`CNAME www.29n.info → 29n.pages.dev`, ambos proxiados, en cuanto exista el
-certificado.
-
-## Bloqueo abierto: certificado de borde
-
-Cloudflare no ha emitido el Universal SSL de la zona. Comprobado por SNI contra las
-IPs anycast de la zona (`104.21.61.212`, `172.67.215.101`) y contra otras IPs de
-Cloudflare: `alert 40` en todas, tanto para `29n.info` como para `www.29n.info`.
-El `activation_check` de la zona responde `Zone verified!` y la zona está `active`,
-así que no es un problema de delegación.
-
-El token de la cuenta no tiene permiso de certificados: `/ssl/*` y
-`/ssl/certificate_packs` devuelven `403`/`Authentication error`, y
-`PATCH /ssl/universal/settings` también. Hay que mirarlo en el panel
-(SSL/TLS → Edge Certificates → Universal SSL) o esperar la emisión automática.
-
-Sonda en marcha: `~/.hermes/scripts/29n_espera_cert.sh` consulta el certificado por
-SNI cada 2 minutos y avisa en cuanto exista.
+Universal SSL de Cloudflare, emitido por Google Trust Services, válido hasta
+2027-02-01. La sonda `~/.hermes/scripts/29n_espera_cert.sh` sirve para diagnosticar
+(zona activa sin certificado) más que para este dominio ya resuelto.
 
 No hay MX ni TXT en el dominio: no hay correo que se pueda romper al mover la zona.
 
@@ -76,18 +77,19 @@ build local.
 
 ## Rollback
 
-1. En Cloudflare, devolver el `CNAME` del apex a `cname.vercel-dns.com` (proxiado).
-2. Reañadir `29n.info` al proyecto Vercel (`POST /v10/projects/encuestas29n/domains`).
+1. En Cloudflare, cambiar el apex a `A 76.76.21.21` y `www` a `cname.vercel-dns.com`,
+   ambos **sin proxy** (así el TLS lo termina Vercel y no depende de nada nuestro).
+2. Reañadir `29n.info` al proyecto Vercel (`POST /v9/projects/encuestas29n/domains`).
 3. Verificar `200` y cabecera `x-vercel-id`.
 
-El proyecto Vercel `encuestas29n` sigue existiendo y con sus dominios hasta que el
-corte esté cerrado; no se borra nada mientras haya rollback posible.
+El proyecto Vercel `encuestas29n` sigue existiendo con su integración de Git, así que
+cada push sigue generando un despliegue en `encuestas29n.vercel.app`: es un espejo
+gratis y el camino de vuelta si algo se tuerce.
 
 ## Pendiente
 
-- **Cambio de nameservers en DonDominio** (ns1/ns2.dondominio.com →
-  kiki/marty.ns.cloudflare.com). Sin eso, `29n.info` sigue resolviendo a Vercel y el
-  dominio personalizado de Pages queda en `initializing`.
-- Tras la propagación: comprobar `status: active` del dominio en Pages, retirar el
-  dominio de Vercel y desconectar su integración de Git para que no dispare builds
-  fallidos en cada push.
+- Nada bloqueante. El despliegue lo hace el cron diario después de pushear.
+- Opcional: conectar el repo a Pages (Pages → Connect to Git) para build en
+  Cloudflare; entonces el script local deja de ser necesario.
+- Opcional: borrar el proyecto Vercel y su espejo cuando el corte lleve unos días
+  estable.
