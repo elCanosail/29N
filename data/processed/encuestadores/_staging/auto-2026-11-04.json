@@ -1,0 +1,30 @@
+{
+ "encuestas": [
+  {
+   "fuente": "More in Common",
+   "estudio_id": "more-in-common-2026-10-25",
+   "fecha_trabajo": "2026-10-21/2026-10-25",
+   "fecha_publicacion": "2026-11-03",
+   "n": 2210,
+   "metodologia": "Online",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "url": "https://www.electografica.com/2026/11/encuesta-more-in-common-261103.html",
+   "extracto": "[More in Common, publicado 2026-11-03; ficha: https://www.electografica.com/2026/11/encuesta-more-in-common-261103.html] ESPAÑA · Elecciones generales · Encuesta More in Common 03/11/2026. Campo 2026-10-21/2026-10-25, n=2210, método Online. Voto estimado publicado: PP 28.3%, PSOE 27.6%, VOX 20.8%, FA 7.8%, PODEMOS 2.6%, SALF 2.4%. Suma de lo publicado 89.5 %. Lectura desde electografica.com (https://www.electografica.com/2026/11/encuesta-more-in-common-261103.html); contraste: la ficha es el propio agregador.",
+   "votos": {
+    "PP": 28.3,
+    "PSOE": 27.6,
+    "VOX": 20.8,
+    "SUMAR": 7.8
+   },
+   "fuente_votos_adicionales": "Etiquetas publicadas y no ingestadas: PODEMOS (2.6%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; SALF (2.4%): SALF mapea a OTROS (residual no modelado).",
+   "fuente_tipo_hint": "agregador"
+  }
+ ],
+ "exclusiones": [
+  {
+   "fuente": "More in Common",
+   "motivo": "Etiquetas publicadas fuera del modelo (se listan en fuente_votos_adicionales de cada encuesta): PODEMOS (2.6%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; SALF (2.4%): SALF mapea a OTROS (residual no modelado)."
+  }
+ ]
+}

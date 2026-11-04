@@ -1,8 +1,8 @@
 {
  "meta": {
-  "n": 82,
+  "n": 83,
   "n_cis": 71,
-  "n_privados": 11,
+  "n_privados": 12,
   "nota": "Una encuesta que no pasa validación no desaparece: se documenta con su motivo."
  },
  "exclusiones": [
@@ -724,6 +724,16 @@
    "tipo": null,
    "eleccion": null,
    "motivo": "Etiquetas publicadas fuera del modelo (se listan en fuente_votos_adicionales de cada encuesta): PODEMOS (2.7%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; SALF (0.0%): SALF mapea a OTROS (residual no modelado).",
+   "url": null
+  },
+  {
+   "origen": "encuestadores",
+   "id": null,
+   "casa": "More in Common",
+   "slug": "auto-2026-11-04.json",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "Etiquetas publicadas fuera del modelo (se listan en fuente_votos_adicionales de cada encuesta): PODEMOS (2.6%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; SALF (2.4%): SALF mapea a OTROS (residual no modelado).",
    "url": null
   },
   {

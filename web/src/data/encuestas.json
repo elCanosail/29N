@@ -1,8 +1,8 @@
 {
  "meta": {
-  "n": 78,
+  "n": 79,
   "n_cis": 35,
-  "n_privados": 43,
+  "n_privados": 44,
   "nota_base": "CIS = voto directo sobre censo (microdato); privados = estimación sobre voto válido. No son directamente comparables sin normalizar.",
   "destacados": [
    "PP",
@@ -26,6 +26,7 @@
    "GAD3",
    "Hamalgama Métrica",
    "Imop Insights",
+   "More in Common",
    "NC Report",
    "Sigma Dos",
    "Simple Lógica",
@@ -109,6 +110,26 @@
   ]
  },
  "encuestas": [
+  {
+   "id": "more-in-common-2026-10-25",
+   "casa": "More in Common",
+   "tipo": "agregador",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-10-21/2026-10-25",
+   "fecha_publicacion": "2026-11-03",
+   "n": 2210,
+   "url": "https://www.electografica.com/2026/11/encuesta-more-in-common-261103.html",
+   "metodologia": "Online",
+   "base": "valido",
+   "partidos": {
+    "PP": 28.3,
+    "PSOE": 27.6,
+    "VOX": 20.8,
+    "SUMAR": 7.8
+   }
+  },
   {
    "id": "hamalgama-metrica-2026-10-28",
    "casa": "Hamalgama Métrica",
