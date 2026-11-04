@@ -4,12 +4,12 @@
 
 Cadena completa, sin intervención:
 
-  1. `encuestadores/ingesta_auto.py`  descubre, valida y escribe staging.
-  2. `encuestadores/build_dataset.py` normaliza (partidos canónicos, fuentes).
-  3. `modelo/build_series.py`         serie ponderada.
-  4. `modelo/forecast.py`             forecast estatal (baseline + TimesFM).
-  5. `modelo/provincial.py`           desglose provincial + D'Hondt.
-  6. `web/sync-data.py`               JSON de la web.
+  1. `pipeline/encuestadores/ingesta_auto.py`   descubre, valida y escribe staging.
+  2. `pipeline/encuestadores/build_dataset.py`  normaliza (partidos canónicos, fuentes).
+  3. `pipeline/modelo/build_series.py`          serie ponderada.
+  4. `pipeline/modelo/forecast.py`              forecast estatal (baseline + TimesFM).
+  5. `pipeline/modelo/provincial.py`            desglose provincial + D'Hondt.
+  6. `web/sync-data.py`                         JSON de la web.
 
 Códigos de salida (los usa el cron para decidir qué contar):
   0  nada nuevo: silencio
@@ -42,10 +42,10 @@ LIMITE = datetime.date(2026, 11, 29)
 APAGON = datetime.date(2026, 11, 24)  # cinco días antes: no se publican nuevas
 
 CADENA = [
-    ("encuestadores/build_dataset.py", "normalización"),
-    ("modelo/build_series.py", "serie ponderada"),
-    ("modelo/forecast.py", "forecast estatal"),
-    ("modelo/provincial.py", "provincial + D'Hondt"),
+    ("pipeline/encuestadores/build_dataset.py", "normalización"),
+    ("pipeline/modelo/build_series.py", "serie ponderada"),
+    ("pipeline/modelo/forecast.py", "forecast estatal"),
+    ("pipeline/modelo/provincial.py", "provincial + D'Hondt"),
     ("web/sync-data.py", "JSON de la web"),
 ]
 
@@ -125,7 +125,7 @@ def main() -> int:
               encoding="utf-8") as fh:
         total = len(json.load(fh))
     print(f"\nTotal de encuestas de encuestadores privados: {total}")
-    print("Siguiente paso del cron: revisar el diff y publicar (commit + push → Vercel).")
+    print("Siguiente paso del cron: revisar el diff y publicar (rama data + PR → Cloudflare Pages).")
     return 10
 
 
