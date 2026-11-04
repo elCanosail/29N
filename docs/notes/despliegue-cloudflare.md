@@ -44,7 +44,7 @@ hacer esa prueba **antes** de mover el DNS, o aceptar una ventana sin HTTPS.
 ```
 
 El script corre **en esta máquina**, no en GitHub: el token de Cloudflare vive solo
-aquí (`~/.hermes/secrets/cloudflare-token-yuj`, 0600) y no hay que meter un token de
+aquí (`~/.hermes/secrets/cloudflare-token`, 0600) y no hay que meter un token de
 cuenta en los secretos de un repositorio público. El cron diario de encuestas lo
 llama después de pushear, así que una ingesta con datos nuevos se publica sola.
 
