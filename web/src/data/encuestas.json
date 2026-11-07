@@ -1,8 +1,8 @@
 {
  "meta": {
-  "n": 79,
+  "n": 82,
   "n_cis": 35,
-  "n_privados": 44,
+  "n_privados": 47,
   "nota_base": "CIS = voto directo sobre censo (microdato); privados = estimación sobre voto válido. No son directamente comparables sin normalizar.",
   "destacados": [
    "PP",
@@ -22,12 +22,14 @@
    "Ateneo del Dato",
    "CEO (Centre d'Estudis d'Opinió)",
    "CIS",
+   "Celeste-Tel",
    "Demoscopia y Servicios",
    "GAD3",
    "Hamalgama Métrica",
    "Imop Insights",
    "More in Common",
    "NC Report",
+   "SW Demoscopia",
    "Sigma Dos",
    "Simple Lógica",
    "Sociometrica",
@@ -110,6 +112,81 @@
   ]
  },
  "encuestas": [
+  {
+   "id": "sw-demoscopia-2026-11-05",
+   "casa": "SW Demoscopia",
+   "tipo": "agregador",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-10-26/2026-11-05",
+   "fecha_publicacion": "2026-11-06",
+   "n": 4000,
+   "url": "https://media.licdn.com/dms/document/media/v2/D4E1FAQGg7xbSrdGpkg/feedshare-document-pdf-analyzed/B4EaGw8W1yIgAc-/0/1793969976552?e=1795046400&v=beta&t=8IpctmM2_0m4UDTAj-75v3nzr5JpthVu4MZSqSdDO0I",
+   "metodologia": "Telefónico",
+   "base": "valido",
+   "partidos": {
+    "PSOE": 31.0,
+    "PP": 28.5,
+    "VOX": 17.2,
+    "SUMAR": 7.6,
+    "ERC": 2.6,
+    "EH BILDU": 1.3,
+    "JXCAT": 1.2,
+    "PNV": 0.8,
+    "CC": 0.4
+   }
+  },
+  {
+   "id": "celeste-tel-2026-11-03",
+   "casa": "Celeste-Tel",
+   "tipo": "agregador",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-10-29/2026-11-03",
+   "fecha_publicacion": "2026-11-06",
+   "n": 1100,
+   "url": "https://www.electografica.com/2026/11/encuesta-celeste-tel-261106.html",
+   "metodologia": "Telefónico",
+   "base": "valido",
+   "partidos": {
+    "PP": 31.8,
+    "PSOE": 25.7,
+    "VOX": 19.2,
+    "SUMAR": 8.0,
+    "ERC": 2.2,
+    "JXCAT": 1.5,
+    "EH BILDU": 1.4,
+    "PNV": 0.9,
+    "CC": 0.5
+   }
+  },
+  {
+   "id": "sw-demoscopia-2026-11-04",
+   "casa": "SW Demoscopia",
+   "tipo": "agregador",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-10-26/2026-11-04",
+   "fecha_publicacion": "2026-11-05",
+   "n": 3500,
+   "url": "https://media.licdn.com/dms/document/media/v2/D4E1FAQFdGLaJn2XUbg/feedshare-document-pdf-analyzed/B4EaGw7YODGsAY-/0/1793969720040?e=1795046400&v=beta&t=0J8YZ9lUA_paDke-Y4lVvbHW6OZxjHRE5hLawnGzR2s",
+   "metodologia": "Telefónico",
+   "base": "valido",
+   "partidos": {
+    "PSOE": 30.9,
+    "PP": 28.8,
+    "VOX": 17.0,
+    "SUMAR": 7.6,
+    "ERC": 2.6,
+    "EH BILDU": 1.4,
+    "JXCAT": 1.2,
+    "PNV": 0.8,
+    "CC": 0.4
+   }
+  },
   {
    "id": "more-in-common-2026-10-25",
    "casa": "More in Common",

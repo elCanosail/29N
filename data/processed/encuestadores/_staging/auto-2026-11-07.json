@@ -1,0 +1,85 @@
+{
+ "encuestas": [
+  {
+   "fuente": "SW Demoscopia",
+   "estudio_id": "sw-demoscopia-2026-11-05",
+   "fecha_trabajo": "2026-10-26/2026-11-05",
+   "fecha_publicacion": "2026-11-06",
+   "n": 4000,
+   "metodologia": "Telefónico",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "url": "https://media.licdn.com/dms/document/media/v2/D4E1FAQGg7xbSrdGpkg/feedshare-document-pdf-analyzed/B4EaGw8W1yIgAc-/0/1793969976552?e=1795046400&v=beta&t=8IpctmM2_0m4UDTAj-75v3nzr5JpthVu4MZSqSdDO0I",
+   "extracto": "[SW Demoscopia, publicado 2026-11-06; ficha: https://media.licdn.com/dms/document/media/v2/D4E1FAQGg7xbSrdGpkg/feedshare-document-pdf-analyzed/B4EaGw8W1yIgAc-/0/1793969976552?e=1795046400&v=beta&t=8IpctmM2_0m4UDTAj-75v3nzr5JpthVu4MZSqSdDO0I] ESPAÑA · Elecciones generales · Encuesta SW Demoscopia 06/11/2026. Campo 2026-10-26/2026-11-05, n=4000, método Telefónico. Voto estimado publicado: PSOE 31.0%, PP 28.5%, VOX 17.2%, FA 7.6%, ERC 2.6%, SALF 2.0%, EH BILDU 1.3%, JUNTS 1.2%, PODEMOS 1.2%, BNG 0.9%, EAJ-PNV 0.8%, CCa-1ºCAN 0.4%, TERUEL EXISTE 0.1%. Suma de lo publicado 94.8 %. Lectura desde electografica.com (https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261106.html); contraste: 1/3 cifras principales confirmadas.",
+   "votos": {
+    "PSOE": 31.0,
+    "PP": 28.5,
+    "VOX": 17.2,
+    "SUMAR": 7.6,
+    "ERC": 2.6,
+    "EH BILDU": 1.3,
+    "JXCAT": 1.2,
+    "PNV": 0.8,
+    "CC": 0.4
+   },
+   "fuente_votos_adicionales": "Etiquetas publicadas y no ingestadas: SALF (2.0%): SALF mapea a OTROS (residual no modelado); PODEMOS (1.2%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie.",
+   "fuente_tipo_hint": "prensa"
+  },
+  {
+   "fuente": "Celeste-Tel",
+   "estudio_id": "celeste-tel-2026-11-03",
+   "fecha_trabajo": "2026-10-29/2026-11-03",
+   "fecha_publicacion": "2026-11-06",
+   "n": 1100,
+   "metodologia": "Telefónico",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "url": "https://www.electografica.com/2026/11/encuesta-celeste-tel-261106.html",
+   "extracto": "[Celeste-Tel, publicado 2026-11-06; ficha: https://www.electografica.com/2026/11/encuesta-celeste-tel-261106.html] ESPAÑA · Elecciones generales · Encuesta Celeste-Tel 06/11/2026. Campo 2026-10-29/2026-11-03, n=1100, método Telefónico. Voto estimado publicado: PP 31.8%, PSOE 25.7%, VOX 19.2%, FA 6.8%, ERC 2.2%, PODEMOS 1.9%, SALF 1.6%, JUNTS 1.5%, EH BILDU 1.4%, COMPROMÍS-FV 1.2%, EAJ-PNV 0.9%, BNG 0.8%, PACMA 0.7%, CCa-1ºCAN 0.5%. Suma de lo publicado 96.2 %. Lectura desde electografica.com (https://www.electografica.com/2026/11/encuesta-celeste-tel-261106.html); contraste: la ficha es el propio agregador.",
+   "votos": {
+    "PP": 31.8,
+    "PSOE": 25.7,
+    "VOX": 19.2,
+    "SUMAR": 8.0,
+    "ERC": 2.2,
+    "JXCAT": 1.5,
+    "EH BILDU": 1.4,
+    "PNV": 0.9,
+    "CC": 0.5
+   },
+   "fuente_votos_adicionales": "Etiquetas publicadas y no ingestadas: PODEMOS (1.9%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; SALF (1.6%): SALF mapea a OTROS (residual no modelado); UPN (0.0%): UPN va dentro del PP en varias casas; su fila suelta no es comparable.",
+   "fuente_tipo_hint": "agregador"
+  },
+  {
+   "fuente": "SW Demoscopia",
+   "estudio_id": "sw-demoscopia-2026-11-04",
+   "fecha_trabajo": "2026-10-26/2026-11-04",
+   "fecha_publicacion": "2026-11-05",
+   "n": 3500,
+   "metodologia": "Telefónico",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "url": "https://media.licdn.com/dms/document/media/v2/D4E1FAQFdGLaJn2XUbg/feedshare-document-pdf-analyzed/B4EaGw7YODGsAY-/0/1793969720040?e=1795046400&v=beta&t=0J8YZ9lUA_paDke-Y4lVvbHW6OZxjHRE5hLawnGzR2s",
+   "extracto": "[SW Demoscopia, publicado 2026-11-05; ficha: https://media.licdn.com/dms/document/media/v2/D4E1FAQFdGLaJn2XUbg/feedshare-document-pdf-analyzed/B4EaGw7YODGsAY-/0/1793969720040?e=1795046400&v=beta&t=0J8YZ9lUA_paDke-Y4lVvbHW6OZxjHRE5hLawnGzR2s] ESPAÑA · Elecciones generales · Encuesta SW Demoscopia 05/11/2026. Campo 2026-10-26/2026-11-04, n=3500, método Telefónico. Voto estimado publicado: PSOE 30.9%, PP 28.8%, VOX 17.0%, FA 7.6%, ERC 2.6%, SALF 2.0%, EH BILDU 1.4%, JUNTS 1.2%, PODEMOS 1.2%, BNG 0.9%, EAJ-PNV 0.8%, CCa-1ºCAN 0.4%, TERUEL EXISTE 0.1%. Suma de lo publicado 94.9 %. Lectura desde electografica.com (https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261105.html); contraste: 1/3 cifras principales confirmadas.",
+   "votos": {
+    "PSOE": 30.9,
+    "PP": 28.8,
+    "VOX": 17.0,
+    "SUMAR": 7.6,
+    "ERC": 2.6,
+    "EH BILDU": 1.4,
+    "JXCAT": 1.2,
+    "PNV": 0.8,
+    "CC": 0.4
+   },
+   "fuente_votos_adicionales": "Etiquetas publicadas y no ingestadas: SALF (2.0%): SALF mapea a OTROS (residual no modelado); PODEMOS (1.2%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie.",
+   "fuente_tipo_hint": "prensa"
+  }
+ ],
+ "exclusiones": [
+  {
+   "fuente": "SW Demoscopia",
+   "motivo": "Etiquetas publicadas fuera del modelo (se listan en fuente_votos_adicionales de cada encuesta): SALF (2.0%): SALF mapea a OTROS (residual no modelado); PODEMOS (1.2%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie."
+  }
+ ]
+}
