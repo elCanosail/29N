@@ -25,6 +25,22 @@ Gracias por el interés. Este proyecto vive del dato limpio y trazable. Antes de
 1. Abre un issue primero si el cambio es grande (metodología, esquema de datos).
 2. PR pequeño y atómico: una encuesta, un partido, una validación.
 3. Para datos: incluye script de ingesta o CSV normalizado + URL de fuente en la descripción del PR.
+4. **Antes de comitear datos, pasa la guardia**: `python3 pipeline/verificar_datos.py`.
+   Comprueba que ningún JSON lleva marcas de conflicto, que todos parsean y que
+   el total de encuestas no baja respecto a `origin/main`. Si sale con código 1,
+   no se comitea: se arregla.
+
+### Revisión y mezcla
+
+`main` exige una aprobación. Cuando no hay nadie disponible para revisar —ni la
+app de revisión ni una persona— el administrador del repositorio puede fusionar
+saltándose el requisito (`gh pr merge <n> --squash --admin`), y el bypass queda
+en el registro del ruleset. Es la salida de emergencia, no la norma: un PR de
+datos sin revisar debe llevar en el cuerpo qué se verificó y con qué comando.
+
+Lo que se aprendió a golpes: el 8 de noviembre un merge dejó `<<<<<<<` dentro de
+`web/src/data/encuestas.json`; como `astro.config.mjs` hace `JSON.parse` de ese
+fichero, la web no compilaba. La guardia del punto 4 existe por eso.
 
 ## Código
 
