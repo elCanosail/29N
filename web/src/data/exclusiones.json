@@ -1,14 +1,8 @@
 {
  "meta": {
-<<<<<<< HEAD
   "n": 85,
   "n_cis": 71,
   "n_privados": 14,
-=======
-  "n": 84,
-  "n_cis": 71,
-  "n_privados": 13,
->>>>>>> origin/main
   "nota": "Una encuesta que no pasa validación no desaparece: se documenta con su motivo."
  },
  "exclusiones": [
@@ -755,7 +749,6 @@
   {
    "origen": "encuestadores",
    "id": null,
-<<<<<<< HEAD
    "casa": "SW Demoscopia",
    "slug": "auto-2026-11-08.json",
    "tipo": null,
@@ -766,8 +759,6 @@
   {
    "origen": "encuestadores",
    "id": null,
-=======
->>>>>>> origin/main
    "casa": "Imop Insights",
    "slug": "imop_ola2.json",
    "tipo": null,
