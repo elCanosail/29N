@@ -1,14 +1,8 @@
 {
  "meta": {
-<<<<<<< HEAD
   "n": 83,
   "n_cis": 35,
   "n_privados": 48,
-=======
-  "n": 82,
-  "n_cis": 35,
-  "n_privados": 47,
->>>>>>> origin/main
   "nota_base": "CIS = voto directo sobre censo (microdato); privados = estimación sobre voto válido. No son directamente comparables sin normalizar.",
   "destacados": [
    "PP",
@@ -119,7 +113,6 @@
  },
  "encuestas": [
   {
-<<<<<<< HEAD
    "id": "sw-demoscopia-2026-11-06",
    "casa": "SW Demoscopia",
    "tipo": "agregador",
@@ -145,8 +138,6 @@
    }
   },
   {
-=======
->>>>>>> origin/main
    "id": "sw-demoscopia-2026-11-05",
    "casa": "SW Demoscopia",
    "tipo": "agregador",
