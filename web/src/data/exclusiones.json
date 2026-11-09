@@ -1,8 +1,8 @@
 {
  "meta": {
-  "n": 85,
+  "n": 86,
   "n_cis": 71,
-  "n_privados": 14,
+  "n_privados": 15,
   "nota": "Una encuesta que no pasa validación no desaparece: se documenta con su motivo."
  },
  "exclusiones": [
@@ -754,6 +754,16 @@
    "tipo": null,
    "eleccion": null,
    "motivo": "Etiquetas publicadas fuera del modelo (se listan en fuente_votos_adicionales de cada encuesta): SALF (2.1%): SALF mapea a OTROS (residual no modelado); PODEMOS (1.8%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie.",
+   "url": null
+  },
+  {
+   "origen": "encuestadores",
+   "id": null,
+   "casa": "40dB.",
+   "slug": "auto-2026-11-09.json",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "Etiquetas publicadas fuera del modelo (se listan en fuente_votos_adicionales de cada encuesta): PODEMOS (2.2%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; SALF (1.6%): SALF mapea a OTROS (residual no modelado); UPN (0.0%): UPN va dentro del PP en varias casas; su fila suelta no es comparable; ALIANÇA.CAT (0.0%): Aliança Catalana no tiene serie histórica en el modelo.",
    "url": null
   },
   {
