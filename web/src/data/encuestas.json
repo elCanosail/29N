@@ -1,8 +1,8 @@
 {
  "meta": {
-  "n": 91,
+  "n": 95,
   "n_cis": 35,
-  "n_privados": 56,
+  "n_privados": 60,
   "nota_base": "CIS = voto directo sobre censo (microdato); privados = estimación sobre voto válido. No son directamente comparables sin normalizar.",
   "destacados": [
    "PP",
@@ -23,6 +23,8 @@
    "CEO (Centre d'Estudis d'Opinió)",
    "CIS",
    "Celeste-Tel",
+   "DYM",
+   "Data10",
    "Demoscopia y Servicios",
    "GAD3",
    "Hamalgama Métrica",
@@ -113,6 +115,26 @@
  },
  "encuestas": [
   {
+   "id": "dym-2026-11-06",
+   "casa": "DYM",
+   "tipo": "agregador",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-11-04/2026-11-06",
+   "fecha_publicacion": "2026-11-10",
+   "n": 1025,
+   "url": "https://www.electografica.com/2026/11/encuesta-dym-261110.html",
+   "metodologia": "Online",
+   "base": "valido",
+   "partidos": {
+    "PP": 33.1,
+    "PSOE": 27.3,
+    "VOX": 18.6,
+    "SUMAR": 5.6
+   }
+  },
+  {
    "id": "40db-2026-11-04",
    "casa": "40dB",
    "tipo": "prensa",
@@ -179,6 +201,56 @@
     "JXCAT": 1.8,
     "EH BILDU": 1.4,
     "PNV": 0.9,
+    "CC": 0.4
+   }
+  },
+  {
+   "id": "sw-demoscopia-2026-11-08",
+   "casa": "SW Demoscopia",
+   "tipo": "agregador",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-10-26/2026-11-08",
+   "fecha_publicacion": "2026-11-09",
+   "n": 5500,
+   "url": "https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261109.html",
+   "metodologia": "Telefónico",
+   "base": "valido",
+   "partidos": {
+    "PSOE": 31.1,
+    "PP": 28.3,
+    "VOX": 17.3,
+    "SUMAR": 7.6,
+    "ERC": 2.6,
+    "EH BILDU": 1.4,
+    "JXCAT": 1.3,
+    "PNV": 0.8,
+    "CC": 0.4
+   }
+  },
+  {
+   "id": "data10-2026-11-03",
+   "casa": "Data10",
+   "tipo": "agregador",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-11-02/2026-11-03",
+   "fecha_publicacion": "2026-11-09",
+   "n": 1500,
+   "url": "https://okdiario.com/espana/psoe-paga-tragedia-urda-hunde-hasta-97-escanos-mientras-pp-vox-suman-203-20728358",
+   "metodologia": "Telefónico + online",
+   "base": "valido",
+   "partidos": {
+    "PP": 32.7,
+    "PSOE": 24.7,
+    "VOX": 19.8,
+    "SUMAR": 6.9,
+    "ERC": 2.3,
+    "JXCAT": 1.5,
+    "EH BILDU": 1.3,
+    "PNV": 0.7,
     "CC": 0.4
    }
   },
@@ -300,6 +372,31 @@
     "JXCAT": 1.4,
     "PNV": 0.7,
     "CC": 0.5
+   }
+  },
+  {
+   "id": "sw-demoscopia-2026-11-07",
+   "casa": "SW Demoscopia",
+   "tipo": "agregador",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-10-26/2026-11-07",
+   "fecha_publicacion": "2026-11-08",
+   "n": 5000,
+   "url": "https://media.licdn.com/dms/document/media/v2/D4E1FAQGAE9qXXNttEQ/feedshare-document-pdf-analyzed/B4EaG_aoLXHoAY-/0/1794212792892?e=1795046400&v=beta&t=6U4Ors8v0tOSY7JFIkos4PuD311u5woCG319z2cYsdM",
+   "metodologia": "Telefónico",
+   "base": "valido",
+   "partidos": {
+    "PSOE": 31.0,
+    "PP": 28.7,
+    "VOX": 17.3,
+    "SUMAR": 7.6,
+    "ERC": 2.5,
+    "EH BILDU": 1.4,
+    "JXCAT": 1.2,
+    "PNV": 0.8,
+    "CC": 0.4
    }
   },
   {
