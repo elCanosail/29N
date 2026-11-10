@@ -365,6 +365,69 @@
    "CC"
   ]
  },
+ "dym-2026-11-06": {
+  "extracto": "[DYM, publicado 2026-11-10; ficha: https://www.electografica.com/2026/11/encuesta-dym-261110.html] ESPAÑA · Elecciones generales · Encuesta DYM 10/11/2026. Campo 2026-11-04/2026-11-06, n=1025, método Online. Voto estimado publicado: PP 33.1%, PSOE 27.3%, VOX 18.6%, FA 5.6%, PODEMOS 1.9%, SALF 0.4%. Suma de lo publicado 86.9 %. Lectura desde electografica.com (https://www.electografica.com/2026/11/encuesta-dym-261110.html); contraste: la ficha es el propio agregador.",
+  "url": "https://www.electografica.com/2026/11/encuesta-dym-261110.html",
+  "fuente_tipo": "agregador",
+  "metodologia": "Online",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ]
+ },
+ "sw-demoscopia-2026-11-08": {
+  "extracto": "[SW Demoscopia, publicado 2026-11-09; ficha: https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261109.html] ESPAÑA · Elecciones generales · Encuesta SW Demoscopia 09/11/2026. Campo 2026-10-26/2026-11-08, n=5500, método Telefónico. Voto estimado publicado: PSOE 31.1%, PP 28.3%, VOX 17.3%, FA 7.6%, ERC 2.6%, SALF 2.0%, PODEMOS 1.7%, EH BILDU 1.4%, JUNTS 1.3%, UPN-PP 0.2%, BNG 1.0%, EAJ-PNV 0.8%, CCa-1ºCAN 0.4%. Suma de lo publicado 95.7 %. Lectura desde electografica.com (https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261109.html); contraste: la ficha es el propio agregador.",
+  "url": "https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261109.html",
+  "fuente_tipo": "agregador",
+  "metodologia": "Telefónico",
+  "partidos_publicados": [
+   "PSOE",
+   "PP",
+   "VOX",
+   "SUMAR",
+   "ERC",
+   "EH BILDU",
+   "JXCAT",
+   "PNV",
+   "CC"
+  ]
+ },
+ "data10-2026-11-03": {
+  "extracto": "[Data10, publicado 2026-11-09; ficha: https://okdiario.com/espana/psoe-paga-tragedia-urda-hunde-hasta-97-escanos-mientras-pp-vox-suman-203-20728358] ESPAÑA · Elecciones generales · Encuesta Data10 09/11/2026. Campo 2026-11-02/2026-11-03, n=1500, método Telefónico + online. Voto estimado publicado: PP 32.7%, PSOE 24.7%, VOX 19.8%, FA 6.9%, PODEMOS 3.1%, ERC 2.3%, SALF 1.5%, JUNTS 1.5%, EH BILDU 1.3%, BNG 1.0%, EAJ-PNV 0.7%, CCa-1ºCAN 0.4%. Suma de lo publicado 95.9 %. Lectura desde electografica.com (https://www.electografica.com/2026/11/encuesta-data10-261109.html); contraste: 2/3 cifras principales confirmadas.",
+  "url": "https://okdiario.com/espana/psoe-paga-tragedia-urda-hunde-hasta-97-escanos-mientras-pp-vox-suman-203-20728358",
+  "fuente_tipo": "agregador",
+  "metodologia": "Telefónico + online",
+  "partidos_publicados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR",
+   "ERC",
+   "JXCAT",
+   "EH BILDU",
+   "PNV",
+   "CC"
+  ]
+ },
+ "sw-demoscopia-2026-11-07": {
+  "extracto": "[SW Demoscopia, publicado 2026-11-08; ficha: https://media.licdn.com/dms/document/media/v2/D4E1FAQGAE9qXXNttEQ/feedshare-document-pdf-analyzed/B4EaG_aoLXHoAY-/0/1794212792892?e=1795046400&v=beta&t=6U4Ors8v0tOSY7JFIkos4PuD311u5woCG319z2cYsdM] ESPAÑA · Elecciones generales · Encuesta SW Demoscopia 08/11/2026. Campo 2026-10-26/2026-11-07, n=5000, método Telefónico. Voto estimado publicado: PSOE 31.0%, PP 28.7%, VOX 17.3%, FA 7.6%, ERC 2.5%, SALF 2.1%, PODEMOS 1.7%, EH BILDU 1.4%, JUNTS 1.2%, BNG 0.9%, EAJ-PNV 0.8%, CCa-1ºCAN 0.4%. Suma de lo publicado 95.6 %. Lectura desde electografica.com (https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261108.html); contraste: 1/3 cifras principales confirmadas.",
+  "url": "https://media.licdn.com/dms/document/media/v2/D4E1FAQGAE9qXXNttEQ/feedshare-document-pdf-analyzed/B4EaG_aoLXHoAY-/0/1794212792892?e=1795046400&v=beta&t=6U4Ors8v0tOSY7JFIkos4PuD311u5woCG319z2cYsdM",
+  "fuente_tipo": "agregador",
+  "metodologia": "Telefónico",
+  "partidos_publicados": [
+   "PSOE",
+   "PP",
+   "VOX",
+   "SUMAR",
+   "ERC",
+   "EH BILDU",
+   "JXCAT",
+   "PNV",
+   "CC"
+  ]
+ },
  "imop-2026-10-13": {
   "extracto": "[imop.es, ola 2, 23 octubre 2026] «Los partidos de derechas sumarían el 50,2% del voto. El PP seguiría siendo la primera fuerza y Vox pasaría de 33 a 72 diputados. La proyección de escaños sitúa a PP y Vox por encima de la mayoría absoluta. (...) 195 escaños proyectados para PP + Vox: 123 PP + 72 Vox (...). El PP lidera con 28,5 %; Vox sube al 20,0%. El PSOE quedaría a 1,4 puntos del PP. La suma de PP, Vox y SALF llega al 50,2 % del voto estimado. (...) 28,5 % PP · primera fuerza, −4,6 puntos frente a 2023; 27,1 % PSOE · segunda fuerza; 20,0 % Vox · mayor avance, +7,6 puntos frente a 2023. (...) Trabajo de campo: 13–16 oct 2026 · Universo: población censada de 18 años o más · Muestra: 1.000 entrevistas · Fuente: IMOP Insights para El Confidencial. 23 Octubre 2026. Encuesta CATI/CAWI del 13 al 16 de octubre de 2026; muestra de 1.000 entrevistas.» [El Confidencial, ficha técnica del artículo del 23-10-2026] «Fechas de campo: Del 13 al 16 de octubre de 2026. Universo: Personas de 18 años y más censadas y con derecho a voto en las elecciones generales. Tamaño muestral: 1.000 entrevistas. Diseño muestral: Aleatorio estratificado proporcional por CCAA y tamaño de municipio. Control de cuotas por sexo y edad y nivel de estudios. Técnica de entrevista: Metodología híbrida, mediante la combinación de entrevista telefónica (CATI) y entrevista online (CAWI), con una distribución aproximada de 45%/55%. En el canal telefónico, el 70% de las entrevistas se realizó con individuos contactados a través de teléfono móvil. Margen de error: ±3,3 puntos porcentuales en las estimaciones.» [El Confidencial, artículo] «El PP seguirá siendo la fuerza más votada, con el 28,5% de los votos (-1,9%) y 123 escaños, siete menos que hace quince días (...). Vox, que alcanza la simbólica cifra del 20% de los votos (+1%) y 72 escaños (+2). Si al bloque de la derecha se le suma además Se Acabó la Fiesta (SALF), que consigue el 1,2% (-0,2%) de los votos, el total supera la mitad del electorado: 50,2%. (...) Los socialistas se sitúan en el 27,1% (+1,1%) y 113 escaños; y Frente Amplio pasa del 7,6% al 8,9% (+1,3%) y logra catorce escaños. Podemos se mantiene en uno, aunque pierde respaldo: del 2,3% al 1,9% (...) la única diferencia está en el PNV, que pasa de cuatro a cinco, y el BNG, que pierde uno y se queda en dos. El resto de formaciones no varía: ERC (8), Junts (4), Bildu (6), Coalición Canaria (1). Según la previsión de IMOP, la participación en la noche electoral se situará en torno al 73%, frente al 70,4% de 2023.»",
   "url": "https://www.imop.es/encuesta-pre-electoral-el-confidencial-ola-2/",
