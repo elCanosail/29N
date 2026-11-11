@@ -1,8 +1,8 @@
 {
  "meta": {
-  "n": 95,
+  "n": 96,
   "n_cis": 35,
-  "n_privados": 60,
+  "n_privados": 61,
   "nota_base": "CIS = voto directo sobre censo (microdato); privados = estimación sobre voto válido. No son directamente comparables sin normalizar.",
   "destacados": [
    "PP",
@@ -132,6 +132,31 @@
     "PSOE": 27.3,
     "VOX": 18.6,
     "SUMAR": 5.6
+   }
+  },
+  {
+   "id": "sw-demoscopia-2026-11-09",
+   "casa": "SW Demoscopia",
+   "tipo": "agregador",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-10-26/2026-11-09",
+   "fecha_publicacion": "2026-11-10",
+   "n": 6000,
+   "url": "https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261110.html",
+   "metodologia": "Telefónico",
+   "base": "valido",
+   "partidos": {
+    "PSOE": 31.2,
+    "PP": 28.3,
+    "VOX": 17.5,
+    "SUMAR": 7.5,
+    "ERC": 2.6,
+    "EH BILDU": 1.4,
+    "JXCAT": 1.3,
+    "PNV": 0.8,
+    "CC": 0.4
    }
   },
   {
