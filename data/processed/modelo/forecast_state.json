@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-11-10",
+  "generado": "2026-11-11",
   "objetivo": "29N — elecciones generales 2026-11-29",
   "mes_predicho": "2026-11",
   "ultimo_mes_con_dato": "2026-11-01",
@@ -44,186 +44,186 @@
   "normalizacion": {
    "procedimiento": "renormalizado al universo modelado (suma = 100)",
    "cobertura_universo_23J_pct": 97.955,
-   "suma_puntos_baseline_cruda": 92.782,
-   "suma_puntos_timesfm_cruda": 92.782
+   "suma_puntos_baseline_cruda": 92.792,
+   "suma_puntos_timesfm_cruda": 92.792
   },
   "advertencia": "Punto = baseline (ultima media ponderada), que empata en el backtest con TimesFM; TimesFM NO mejora al baseline (ver docs/notes/modelo.md). Intervalos empiricos recalibrados a su cobertura nominal con un factor agrupado (ver docs/notes/calibracion-intervalos.md); siguen siendo bandas simetricas, no una probabilidad de resultado."
  },
  "partidos": {
   "PP": {
-   "punto": 33.157,
+   "punto": 33.011,
    "cuantiles": {
-    "0.025": 23.069,
-    "0.1": 28.706,
-    "0.2": 30.874,
-    "0.5": 33.157,
-    "0.8": 35.44,
-    "0.9": 37.608,
-    "0.975": 43.245
+    "0.025": 22.922,
+    "0.1": 28.559,
+    "0.2": 30.728,
+    "0.5": 33.011,
+    "0.8": 35.293,
+    "0.9": 37.462,
+    "0.975": 43.099
    },
    "sd_error_backtest": 2.712,
-   "punto_timesfm": 33.157,
-   "punto_baseline": 33.157,
+   "punto_timesfm": 33.011,
+   "punto_baseline": 33.011,
    "cuantiles_timesfm": null
   },
   "PSOE": {
-   "punto": 29.984,
+   "punto": 30.176,
    "cuantiles": {
-    "0.025": 13.674,
-    "0.1": 22.787,
-    "0.2": 26.293,
-    "0.5": 29.984,
-    "0.8": 33.674,
-    "0.9": 37.18,
-    "0.975": 46.294
+    "0.025": 13.866,
+    "0.1": 22.98,
+    "0.2": 26.486,
+    "0.5": 30.176,
+    "0.8": 33.867,
+    "0.9": 37.373,
+    "0.975": 46.486
    },
    "sd_error_backtest": 4.385,
-   "punto_timesfm": 29.984,
-   "punto_baseline": 29.984,
+   "punto_timesfm": 30.176,
+   "punto_baseline": 30.176,
    "cuantiles_timesfm": null
   },
   "VOX": {
-   "punto": 20.175,
+   "punto": 20.102,
    "cuantiles": {
-    "0.025": 8.655,
-    "0.1": 15.092,
-    "0.2": 17.568,
-    "0.5": 20.175,
-    "0.8": 22.781,
-    "0.9": 25.257,
-    "0.975": 31.694
+    "0.025": 8.583,
+    "0.1": 15.019,
+    "0.2": 17.495,
+    "0.5": 20.102,
+    "0.8": 22.708,
+    "0.9": 25.185,
+    "0.975": 31.621
    },
    "sd_error_backtest": 3.097,
-   "punto_timesfm": 20.175,
-   "punto_baseline": 20.175,
+   "punto_timesfm": 20.102,
+   "punto_baseline": 20.102,
    "cuantiles_timesfm": null
   },
   "SUMAR": {
-   "punto": 7.58,
+   "punto": 7.607,
    "cuantiles": {
     "0.025": 0.0,
     "0.1": 0.0,
-    "0.2": 1.595,
-    "0.5": 7.58,
-    "0.8": 13.565,
-    "0.9": 19.251,
-    "0.975": 34.031
+    "0.2": 1.621,
+    "0.5": 7.607,
+    "0.8": 13.592,
+    "0.9": 19.278,
+    "0.975": 34.057
    },
    "sd_error_backtest": 7.111,
-   "punto_timesfm": 7.58,
-   "punto_baseline": 7.58,
+   "punto_timesfm": 7.607,
+   "punto_baseline": 7.607,
    "cuantiles_timesfm": null
   },
   "ERC": {
-   "punto": 2.704,
+   "punto": 2.711,
    "cuantiles": {
-    "0.025": 0.266,
-    "0.1": 1.628,
-    "0.2": 2.152,
-    "0.5": 2.704,
-    "0.8": 3.255,
-    "0.9": 3.779,
-    "0.975": 5.141
+    "0.025": 0.273,
+    "0.1": 1.635,
+    "0.2": 2.159,
+    "0.5": 2.711,
+    "0.8": 3.262,
+    "0.9": 3.786,
+    "0.975": 5.148
    },
    "sd_error_backtest": 0.655,
-   "punto_timesfm": 2.704,
-   "punto_baseline": 2.704,
+   "punto_timesfm": 2.711,
+   "punto_baseline": 2.711,
    "cuantiles_timesfm": null
   },
   "JXCAT": {
-   "punto": 1.454,
+   "punto": 1.45,
    "cuantiles": {
-    "0.025": 0.734,
-    "0.1": 1.136,
-    "0.2": 1.291,
-    "0.5": 1.454,
-    "0.8": 1.617,
-    "0.9": 1.772,
-    "0.975": 2.175
+    "0.025": 0.73,
+    "0.1": 1.132,
+    "0.2": 1.287,
+    "0.5": 1.45,
+    "0.8": 1.613,
+    "0.9": 1.768,
+    "0.975": 2.171
    },
    "sd_error_backtest": 0.194,
-   "punto_timesfm": 1.454,
-   "punto_baseline": 1.454,
+   "punto_timesfm": 1.45,
+   "punto_baseline": 1.45,
    "cuantiles_timesfm": null
   },
   "PNV": {
-   "punto": 0.897,
+   "punto": 0.895,
    "cuantiles": {
-    "0.025": 0.525,
-    "0.1": 0.733,
-    "0.2": 0.813,
-    "0.5": 0.897,
-    "0.8": 0.982,
-    "0.9": 1.061,
-    "0.975": 1.269
+    "0.025": 0.523,
+    "0.1": 0.731,
+    "0.2": 0.811,
+    "0.5": 0.895,
+    "0.8": 0.979,
+    "0.9": 1.059,
+    "0.975": 1.267
    },
    "sd_error_backtest": 0.1,
-   "punto_timesfm": 0.897,
-   "punto_baseline": 0.897,
+   "punto_timesfm": 0.895,
+   "punto_baseline": 0.895,
    "cuantiles_timesfm": null
   },
   "EH BILDU": {
-   "punto": 1.487,
+   "punto": 1.488,
    "cuantiles": {
-    "0.025": 0.678,
-    "0.1": 1.13,
-    "0.2": 1.304,
-    "0.5": 1.487,
-    "0.8": 1.67,
-    "0.9": 1.844,
-    "0.975": 2.296
+    "0.025": 0.68,
+    "0.1": 1.132,
+    "0.2": 1.305,
+    "0.5": 1.488,
+    "0.8": 1.671,
+    "0.9": 1.845,
+    "0.975": 2.297
    },
    "sd_error_backtest": 0.217,
-   "punto_timesfm": 1.487,
-   "punto_baseline": 1.487,
+   "punto_timesfm": 1.488,
+   "punto_baseline": 1.488,
    "cuantiles_timesfm": null
   },
   "BNG": {
-   "punto": 1.185,
+   "punto": 1.184,
    "cuantiles": {
     "0.025": 0.156,
     "0.1": 0.731,
     "0.2": 0.952,
-    "0.5": 1.185,
+    "0.5": 1.184,
     "0.8": 1.417,
-    "0.9": 1.639,
-    "0.975": 2.214
+    "0.9": 1.638,
+    "0.975": 2.213
    },
    "sd_error_backtest": 0.277,
-   "punto_timesfm": 1.185,
-   "punto_baseline": 1.185,
+   "punto_timesfm": 1.184,
+   "punto_baseline": 1.184,
    "cuantiles_timesfm": null
   },
   "CUP": {
-   "punto": 0.266,
+   "punto": 0.265,
    "cuantiles": {
     "0.025": 0.0,
     "0.1": 0.0,
     "0.2": 0.0,
-    "0.5": 0.266,
+    "0.5": 0.265,
     "0.8": 0.641,
     "0.9": 0.998,
     "0.975": 1.925
    },
    "sd_error_backtest": 0.446,
-   "punto_timesfm": 0.266,
-   "punto_baseline": 0.266,
+   "punto_timesfm": 0.265,
+   "punto_baseline": 0.265,
    "cuantiles_timesfm": null
   },
   "CC": {
-   "punto": 0.449,
+   "punto": 0.448,
    "cuantiles": {
     "0.025": 0.0,
-    "0.1": 0.221,
-    "0.2": 0.332,
-    "0.5": 0.449,
-    "0.8": 0.567,
-    "0.9": 0.678,
-    "0.975": 0.968
+    "0.1": 0.219,
+    "0.2": 0.331,
+    "0.5": 0.448,
+    "0.8": 0.565,
+    "0.9": 0.677,
+    "0.975": 0.966
    },
    "sd_error_backtest": 0.139,
-   "punto_timesfm": 0.449,
-   "punto_baseline": 0.449,
+   "punto_timesfm": 0.448,
+   "punto_baseline": 0.448,
    "cuantiles_timesfm": null
   },
   "NA+": {
@@ -235,7 +235,7 @@
     "0.5": 0.261,
     "0.8": 0.424,
     "0.9": 0.579,
-    "0.975": 0.982
+    "0.975": 0.981
    },
    "sd_error_backtest": 0.194,
    "punto_timesfm": 0.261,

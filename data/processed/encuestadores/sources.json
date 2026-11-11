@@ -618,6 +618,30 @@
   ]
  },
  {
+  "fuente": "SW Demoscopia",
+  "estudio_id": "sw-demoscopia-2026-11-09",
+  "fecha_trabajo": "2026-10-26/2026-11-09",
+  "fecha_publicacion": "2026-11-10",
+  "n": 6000,
+  "metodologia": "Telefónico",
+  "ambito": "nacional",
+  "eleccion": "generales 2026",
+  "fuente_tipo": "agregador",
+  "url": "https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261110.html",
+  "extracto": "[SW Demoscopia, publicado 2026-11-10; ficha: https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261110.html] ESPAÑA · Elecciones generales · Encuesta SW Demoscopia 10/11/2026. Campo 2026-10-26/2026-11-09, n=6000, método Telefónico. Voto estimado publicado: PSOE 31.2%, PP 28.3%, VOX 17.5%, FA 7.5%, ERC 2.6%, SALF 2.0%, PODEMOS 1.7%, EH BILDU 1.4%, JUNTS 1.3%, BNG 1.0%, EAJ-PNV 0.8%, CCa-1ºCAN 0.4%, UPN-PP 0.2%. Suma de lo publicado 95.9 %. Lectura desde electografica.com (https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261110.html); contraste: la ficha es el propio agregador.",
+  "partidos_publicados": [
+   "PSOE",
+   "PP",
+   "VOX",
+   "SUMAR",
+   "ERC",
+   "EH BILDU",
+   "JXCAT",
+   "PNV",
+   "CC"
+  ]
+ },
+ {
   "fuente": "Imop Insights",
   "estudio_id": "imop-2026-10-13",
   "fecha_trabajo": "2026-10-13/2026-10-16",
