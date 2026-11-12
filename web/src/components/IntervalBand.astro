@@ -6,19 +6,26 @@
  * con su punto y su intervalo. La mediana NUNCA viaja sin su banda.
  *
  * Modos:
- *  - con `filas` → gráfico real (banda p10–p90 en --intervalo, punto en --tinta).
+ *  - con `filas` → gráfico real (banda `ic95_min`–`ic95_max` en --intervalo,
+ *    punto en --tinta).
  *  - sin datos  → esqueleto neutro en --papel-3, sin valores inventados.
  *
  * Accesibilidad (DESIGN.md §7): el gráfico lleva role="img" con la conclusión en
  * el aria-label y una tabla de datos alternativa en <details> con los mismos números.
+ *
+ * Las props se llaman `ic95_min`/`ic95_max` porque lo que dibujan es un
+ * intervalo de confianza al 95 % (cuantiles 2,5–97,5) en las fichas
+ * provinciales. Donde la banda es otra cosa (la portada dibuja el 80 % del
+ * backtest, p10–p90) se declara con `rotulo_inf`/`rotulo_sup`: la cabecera de
+ * la tabla nunca puede decir un cuantil distinto del que muestran los datos.
  */
 import { num } from '../lib/format';
 
 export interface FilaIntervalo {
   etiqueta: string;
   punto: number;
-  p10: number;
-  p90: number;
+  ic95_min: number;
+  ic95_max: number;
   /** claro oscuro opcional para la muestra de partido (--p-xx) */
   color?: string;
   /** escaños estimados opcionales, para mostrarlos junto al valor */
@@ -35,6 +42,9 @@ interface Props {
   pie?: string;
   lectura?: string;
   nota?: string;
+  /** cabeceras de la tabla accesoria: deben nombrar el cuantil que se dibuja */
+  rotulo_inf?: string;
+  rotulo_sup?: string;
 }
 
 const {
@@ -46,9 +56,11 @@ const {
   pie,
   lectura,
   nota,
+  rotulo_inf = 'Límite inf. IC95 (p2,5)',
+  rotulo_sup = 'Límite sup. IC95 (p97,5)',
 } = Astro.props as Props;
 
-const tope = max ?? Math.max(1, ...filas.map((f) => Math.max(f.p90, f.punto))) * 1.05;
+const tope = max ?? Math.max(1, ...filas.map((f) => Math.max(f.ic95_max, f.punto))) * 1.05;
 const pos = (v: number) => Math.max(0, Math.min(100, (v / tope) * 100));
 const f = (v: number) => num(v, dec);
 const ticks = [0, 0.25, 0.5, 0.75, 1].map((t) => t * tope);
@@ -75,14 +87,14 @@ const conEscanos = filas.some((x) => x.escanos !== undefined);
           <span class="fila__pista">
             <span
               class="fila__banda"
-              style={`left:${pos(fila.p10)}%;width:${Math.max(pos(fila.p90) - pos(fila.p10), 0.4)}%;`}
+              style={`left:${pos(fila.ic95_min)}%;width:${Math.max(pos(fila.ic95_max) - pos(fila.ic95_min), 0.4)}%;`}
               aria-hidden="true"
             ></span>
             <span class="fila__punto" style={`left:${pos(fila.punto)}%;`} aria-hidden="true"></span>
           </span>
           <span class="fila__valor mono">
             {f(fila.punto)}<span class="fila__unidad"> {unidad}</span>
-            <span class="fila__ic">({f(fila.p10)}–{f(fila.p90)})</span>
+            <span class="fila__ic">({f(fila.ic95_min)}–{f(fila.ic95_max)})</span>
             {fila.escanos !== undefined && <span class="fila__sec">· {num(fila.escanos, 1)} esc.</span>}
           </span>
         </div>
@@ -107,15 +119,15 @@ const conEscanos = filas.some((x) => x.escanos !== undefined);
     {filas.length > 0 ? (
       <table class="tabla-datos">
         <thead>
-          <tr><th scope="col">Serie</th><th scope="col" class="der">Punto</th><th scope="col" class="der">Límite inf. (p10)</th><th scope="col" class="der">Límite sup. (p90)</th>{conEscanos && <th scope="col" class="der">Escanos est.</th>}</tr>
+          <tr><th scope="col">Serie</th><th scope="col" class="der">Punto</th><th scope="col" class="der">{rotulo_inf}</th><th scope="col" class="der">{rotulo_sup}</th>{conEscanos && <th scope="col" class="der">Escanos est.</th>}</tr>
         </thead>
         <tbody>
           {filas.map((fila) => (
             <tr>
               <th scope="row">{fila.etiqueta}</th>
               <td class="mono der">{f(fila.punto)} {unidad}</td>
-              <td class="mono der">{f(fila.p10)} {unidad}</td>
-              <td class="mono der">{f(fila.p90)} {unidad}</td>
+              <td class="mono der">{f(fila.ic95_min)} {unidad}</td>
+              <td class="mono der">{f(fila.ic95_max)} {unidad}</td>
               {conEscanos && <td class="mono der">{fila.escanos !== undefined ? num(fila.escanos, 1) : '—'}</td>}
             </tr>
           ))}

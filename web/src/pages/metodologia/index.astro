@@ -11,6 +11,8 @@ import sesgo from '../../data/sesgo.json';
 import exclusionesData from '../../data/exclusiones.json';
 import encuestasData from '../../data/encuestas.json';
 import eleccionesData from '../../data/elecciones.json';
+import seats from '../../data/seats.json';
+import casas from '../../data/casas.json';
 import { num, entero } from '../../lib/format';
 import type { Columna, Fila } from '../../lib/tipos';
 
@@ -94,6 +96,20 @@ const filasExcl: Fila[] = exclusionesData.exclusiones.map((x) => ({
 const cisResumen = (sesgo.resumen as Record<string, unknown>)?.CIS_comparacion_mismo_conjunto as
   | { mae_micro_valid: number; mae_est: number; n_micro_valid: number; n_est: number; sesgo_medio_micro_valid: number; sesgo_medio_est: number }
   | undefined;
+
+// Bloques de investidura y último escaño (agregados de las 10.000 simulaciones).
+const bl = seats.bloques as {
+  izquierda: { partidos: string[]; p_ge176: number; media: number; ic95: number[] };
+  derecha: { partidos: string[]; p_ge176: number; media: number; ic95: number[] };
+  p_ninguno: number;
+};
+const pctBloque = (x: number) => num(x * 100, 1);
+
+// MAE por casa (casas.json): solo casas con ≥3 encuestas comparables.
+const casasConMae = casas.casas.filter(
+  (c) => c.mae_pp !== null || c.mae_censo_pp !== null,
+);
+const casasSinMae = casas.casas.length - casasConMae.length;
 ---
 
 <Base
@@ -120,6 +136,8 @@ const cisResumen = (sesgo.resumen as Record<string, unknown>)?.CIS_comparacion_m
         <li><a href="#normalizacion">Normalización</a></li>
         <li><a href="#modelo">Modelo</a></li>
         <li><a href="#validacion">Validación (backtest)</a></li>
+        <li><a href="#bloques">Bloques y último escaño</a></li>
+        <li><a href="#mae-casas">Error de las casas (MAE)</a></li>
         <li><a href="#sesgo">Correcciones de sesgo</a></li>
         <li><a href="#errores">Errores conocidos y límites</a></li>
         <li><a href="#exclusiones">Log de exclusiones</a></li>
@@ -286,6 +304,129 @@ const cisResumen = (sesgo.resumen as Record<string, unknown>)?.CIS_comparacion_m
             Elecciones: 2015-12-20, 2016-06-26, 2019-04-28, 2019-11-10, 2023-07-23.
             <br /><br />
             Peor caso: 2015 (Podemos ~24 % real frente a ~8 % que daban las encuestas CIS).
+          </aside>
+        </section>
+
+        <section class="bloque" id="bloques">
+          <div class="bloque__texto">
+            <h2>Bloques y último escaño</h2>
+            <p>
+              Dos agregados que <strong>no cambian el modelo</strong>: salen de las mismas
+              10.000 simulaciones provinciales que ya producen los escaños. Sirven para
+              responder a la pregunta que el reparto por partidos no responde —¿hay mayoría?—
+              y para saber qué provincias deciden el último escaño del Congreso.
+            </p>
+
+            <h3>Bloques de investidura</h3>
+            <p>
+              La pertenencia a bloques es una <strong>constante pública y versionada</strong>
+              (<span class="mono">pipeline/modelo/bloques.yaml</span>), no lógica oculta:
+              cambiarla cambia los números y queda registrada en el log de cambios.
+              Izquierda = {bl.izquierda.partidos.join(', ')}. Derecha ={' '}
+              {bl.derecha.partidos.join(', ')}. JXCAT, PNV y PACMA no se asignan a ningún
+              bloque: se cuentan partido a partido. Compromís, Més per Mallorca y ECP no
+              tienen línea propia porque el modelo los pliega en SUMAR: en la base de 23J
+              concurren dentro de esa candidatura, así que su escaño ya está contado en la
+              izquierda.
+            </p>
+            <ul class="limites-lista">
+              <li>
+                <strong>Izquierda ≥ 176:</strong>{' '}
+                <span class="mono">{pctBloque(bl.izquierda.p_ge176)} %</span> de las
+                simulaciones. Suma media {num(bl.izquierda.media, 1)} escaños
+                (IC95 {bl.izquierda.ic95[0]}–{bl.izquierda.ic95[1]}).
+              </li>
+              <li>
+                <strong>Derecha ≥ 176:</strong>{' '}
+                <span class="mono">{pctBloque(bl.derecha.p_ge176)} %</span> de las
+                simulaciones. Suma media {num(bl.derecha.media, 1)} escaños
+                (IC95 {bl.derecha.ic95[0]}–{bl.derecha.ic95[1]}).
+              </li>
+              <li>
+                <strong>Ninguno:</strong>{' '}
+                <span class="mono">{pctBloque(bl.p_ninguno)} %</span>. Las tres
+                probabilidades suman 100 %: los bloques son disjuntos, así que un mismo
+                escenario no puede dar mayoría a los dos.
+              </li>
+            </ul>
+
+            <h3 id="ultimo-escano">El último escaño</h3>
+            <p>
+              En cada provincia y en cada simulación, el escaño N de la tabla D'Hondt (el
+              último que se reparte) lo gana un partido A; su rival B es el mejor cociente
+              que se queda fuera, siempre de otro partido. El desempate de cocientes es el
+              mismo del reparto: cociente mayor y, en empate exacto, orden alfabético.
+              Se publica como <span class="mono">ultimo_escano</span> en cada provincia:
+              los dos partidos del duelo, la frecuencia con que cada uno se lleva el escaño
+              (<span class="mono">p_a</span>, <span class="mono">p_b</span>) y la diferencia
+              relativa media de cocientes.
+            </p>
+            <p class="nota">
+              <span class="mono">p_a = victorias de A / (victorias de A + victorias de B)</span>:
+              suman 1 porque reparten solo las simulaciones en que el escaño cae en uno de los
+              dos. En varias provincias —sobre todo en las grandes— un tercer partido gana ese
+              último escaño en parte de las simulaciones: allí el duelo de dos es una
+              simplificación, <span class="mono">p_a</span> <strong>no</strong> es la
+              probabilidad de que gane A, y el margen publicado es el que separa a los dos
+              primeros. La corrida imprime cuántas provincias quedan por debajo del 60 % de
+              cobertura para no perderlo de vista.
+            </p>
+          </div>
+          <aside class="nota-margen bloque__nota">
+            <span class="bloque__nota-marca" aria-hidden="true">§</span>
+            Mayoría absoluta: 176 de 350 escaños.
+            <br /><br />
+            Los bloques son una decisión editorial, no un dato: la lista vive en el repo para
+            poder citarla y rebatirla.
+          </aside>
+        </section>
+
+        <section class="bloque" id="mae-casas">
+          <div class="bloque__texto">
+            <h2>Error de las casas (MAE)</h2>
+            <p>
+              Cada encuesta se cruza con el <strong>resultado oficial de la elección que
+              estima</strong>: error absoluto medio de sus partidos destacados, en puntos de
+              voto válido. Solo entran encuestas cuyo trabajo de campo apunta a una elección
+              ya celebrada —una encuesta que mira al 29N no tiene resultado con el que
+              compararla— y una casa necesita <strong>tres encuestas comparables</strong> para
+              publicar su MAE. Por debajo de eso no hay cifra: «sin dato suficiente».
+            </p>
+            <p>
+              Los privados se miden sobre voto válido. El CIS se mide aparte, sobre censo
+              (<span class="mono">mae_censo_pp</span>), y <strong>nunca se mezcla</strong> con
+              los privados en la misma columna: su voto directo no es comparable sin
+              normalizar. El detalle por partido lleva su propio n y no se debe leer como un
+              MAE de la casa.
+            </p>
+            {casasConMae.length > 0 && (
+              <ul class="limites-lista">
+                {casasConMae.map((c) => (
+                  <li>
+                    <strong>{c.casa}:</strong>{' '}
+                    <span class="mono">
+                      {num(c.mae_pp ?? c.mae_censo_pp ?? 0, 2)} pp
+                    </span>{' '}
+                    sobre {c.base === 'censo' ? 'censo (columna propia)' : 'voto válido'} ·{' '}
+                    {entero(c.n_encuestas)} encuestas comparables ·{' '}
+                    {c.elecciones_cubiertas.join(', ')}
+                  </li>
+                ))}
+              </ul>
+            )}
+            <p class="nota">
+              {entero(casasConMae.length)} de {entero(casas.casas.length)} casas del catálogo
+              tienen encuestas suficientes; las {entero(casasSinMae)} restantes salen sin dato.
+              No se rellena con encuestas de 2026 ni con estimaciones posteriores al 23J: sería
+              comparar contra un resultado que no existe.
+            </p>
+          </div>
+          <aside class="nota-margen bloque__nota">
+            <span class="bloque__nota-marca" aria-hidden="true">§</span>
+            Mínimo: {entero(casas.meta.min_encuestas)} encuestas comparables por casa.
+            <br /><br />
+            El resultado oficial se agrega con la misma canonicalización del modelo, así que
+            «PSOE» incluye PSC, PSE-EE y PSdeG.
           </aside>
         </section>
 

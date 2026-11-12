@@ -23,7 +23,10 @@ más allá de escribir en `web/src/data/`.
 Salidas (todas en `web/src/data/`):
 
     forecast.json      predicción estatal 29N (punto + cuantiles por partido)
-    seats.json         escaños nacionales y por provincia (media + IC95)
+    seats.json         escaños nacionales y por provincia (media + IC95),
+                       bloques de investidura, último escaño y deltas
+    cambios.json       log acumulado de deltas entre corridas (máx. 52)
+    casas.json         MAE por casa frente al resultado oficial (CIS aparte)
     backtest.json      MAE por partido y por elección (veredicto sin maquillar)
     series.json        serie mensual ponderada 2015-01 → 2026-11 (13 partidos)
     elecciones.json    resultados nacionales oficiales de las 16 generales
@@ -40,6 +43,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+from datetime import date
 from typing import Any
 
 # ---------------------------------------------------------------------------
@@ -205,21 +209,52 @@ def gen_seats() -> int:
             })
         filas.sort(key=lambda x: -x["media"])
         ganador = filas[0]["partido"] if filas else "OTROS"
+        ultimo = p.get("ultimo_escano") or {}
         provincias.append({
             "codigo": int(codigo),
             "nombre": p["nombre"],
             "escanos": p["escanos"],
             "ganador": ganador,
             "partidos": filas,
+            "ultimo_escano": {
+                "partidos": list(ultimo.get("partidos", [])),
+                "p_a": ultimo.get("p_a"),
+                "p_b": ultimo.get("p_b"),
+                "diff_medio": ultimo.get("diff_medio"),
+            },
         })
     provincias.sort(key=lambda x: x["codigo"])
 
     datos = {
         "meta": src["meta"],
+        "bloques": src.get("bloques", {}),
         "nacional": nacional,
         "provincias": provincias,
+        "deltas": src.get("deltas", {}),
     }
     return escribir("seats.json", datos)
+
+
+# ---------------------------------------------------------------------------
+# 2b. Bloques y último escaño: notas de lectura para la web
+# ---------------------------------------------------------------------------
+
+
+def gen_cambios() -> int:
+    """Log acumulado de cambios entre corridas (copia literal del pipeline).
+
+    Formato: lista de `{generado, deltas_nacional, deltas_bloques}`, una por
+    corrida, orden cronológico ascendente, tope 52 (lo aplica el pipeline).
+    Sin corrida anterior no hay entrada inventada: los deltas llegan vacíos.
+    """
+    ruta = os.path.join(P_MODELO, "cambios.json")
+    log: list = []
+    if os.path.exists(ruta):
+        cargado = leer_json(ruta)
+        if isinstance(cargado, list):
+            log = cargado
+    log = log[-52:]
+    return escribir("cambios.json", log)
 
 
 # ---------------------------------------------------------------------------
@@ -522,6 +557,186 @@ def gen_encuestas() -> int:
 
 
 # ---------------------------------------------------------------------------
+# 6b. MAE por casa (encuestas vs resultado oficial)
+# ---------------------------------------------------------------------------
+
+# Etiquetas de `encuestas.json.eleccion` que apuntan a una elección ya
+# celebrada — y por tanto comparables con el escrutinio oficial. El resto de
+# etiquetas (generales 2026, «contexto post-23J», proyección en Cataluña,
+# europeas, municipales) no tienen resultado oficial en elecciones.json y
+# quedan fuera del MAE: no se inventa una comparación.
+ELECCION_POR_ETIQUETA = {
+    "generales 2023": "2023-07-23",
+}
+# CIS etiqueta sus estudios generales como «generales» sin fecha: se emparejan
+# con la general más próxima al trabajo de campo dentro de esta ventana.
+CIS_ETIQUETA_GENERAL = "generales"
+CIS_VENTANA_DIAS = 200
+# Una encuesta entra en el MAE si publica al menos 2 de los partidos
+# comparables: con uno solo no hay error medio, hay una cifra truncada.
+MIN_PARTIDOS_COMPARABLES = 2
+# Por casa: menos de 3 encuestas comparables → sin dato suficiente.
+MIN_ENCUESTAS_MAE = 3
+# Partido del set de comparación: presente en el resultado oficial con ≥2 %.
+PARTIDO_MIN_PCT_OFICIAL = 2.0
+
+
+def _fecha_campo(txt: str | None) -> date | None:
+    """Primera fecha de 'YYYY-MM-DD' o 'YYYY-MM-DD/YYYY-MM-DD'."""
+    if not txt:
+        return None
+    try:
+        return date.fromisoformat(str(txt).split("/")[0][:10])
+    except ValueError:
+        return None
+
+
+def _destacados() -> list[str]:
+    """Partidos del MAE: `meta.destacados` del forecast si existe."""
+    ruta = os.path.join(P_MODELO, "forecast_state.json")
+    if os.path.exists(ruta):
+        d = leer_json(ruta).get("meta", {}).get("destacados")
+        if isinstance(d, list) and d:
+            return list(d)
+    return ["PP", "PSOE", "VOX", "SUMAR"]
+
+
+def _oficial_canonico() -> tuple[dict[str, dict[str, float]], list[str]]:
+    """% sobre voto válido por partido canónico y elección.
+
+    Usa la canonicalización del propio pipeline (`party_canon`), la misma con
+    la que se construye el universo modelado: así «PP» incluye AP/PP-PAR y
+    «PSOE» incluye PSC/PSE-EE/PSdeG, y la comparación es manzanas con manzanas.
+    """
+    sys.path.insert(0, os.path.join(RAIZ, "pipeline", "modelo"))
+    import common as modelo_common  # import local: la web no depende del modelo
+
+    inter = modelo_common.Interior()
+    ids = sorted(inter.ids())
+    return {eid: inter.national_canonical(eid) for eid in ids}, ids
+
+
+def _eleccion_cubierta(enc: dict, generales: list[str]) -> str | None:
+    """Elección oficial que estima la encuesta, o None si no es comparable."""
+    etiqueta = enc.get("eleccion")
+    if enc.get("base") == "valido":
+        return ELECCION_POR_ETIQUETA.get(etiqueta)
+    if etiqueta != CIS_ETIQUETA_GENERAL:
+        return None
+    d = _fecha_campo(enc.get("fecha_trabajo"))
+    if d is None:
+        return None
+    mejor = min(generales, key=lambda f: abs((date.fromisoformat(f) - d).days))
+    return mejor if abs((date.fromisoformat(mejor) - d).days) <= CIS_VENTANA_DIAS else None
+
+
+def mae_por_casa(encuestas: list[dict], casas: list[str], oficial: dict[str, dict[str, float]],
+                 generales: list[str], destacados: list[str]) -> list[dict]:
+    """MAE (pp) por casa frente al resultado oficial de la elección cubierta.
+
+    El MAE de una encuesta es la media de |estimación − resultado| sobre los
+    partidos destacados presentes en ambos y con ≥ `PARTIDO_MIN_PCT_OFICIAL`
+    de voto válido oficial. El de la casa es la media de sus encuestas
+    comparables. CIS (base censo) va en `mae_censo_pp` y nunca en `mae_pp`;
+    los privados (base válido) en `mae_pp`/`mae_valido_pp`.
+    """
+    acumulado: dict[str, dict] = {}
+    for enc in encuestas:
+        fecha = _eleccion_cubierta(enc, generales)
+        if not fecha:
+            continue
+        off = oficial.get(fecha, {})
+        errs = []
+        for partido in destacados:
+            valor = (enc.get("partidos") or {}).get(partido)
+            real = off.get(partido)
+            if valor is None or real is None or real < PARTIDO_MIN_PCT_OFICIAL:
+                continue
+            errs.append((partido, abs(float(valor) - float(real))))
+        if len(errs) < MIN_PARTIDOS_COMPARABLES:
+            continue
+        reg = acumulado.setdefault(enc["casa"], {"base": enc.get("base"), "polls": []})
+        reg["polls"].append((fecha, errs))
+
+    base_catalogo = {}
+    for enc in encuestas:
+        base_catalogo.setdefault(enc.get("casa"), enc.get("base"))
+
+    filas = []
+    for casa in casas:
+        reg = acumulado.get(casa, {"base": base_catalogo.get(casa), "polls": []})
+        polls = reg["polls"]
+        n = len(polls)
+        elecciones = sorted({f for f, _ in polls})
+        por_partido = {}
+        for partido in destacados:
+            vals = [e for _, errs in polls for p, e in errs if p == partido]
+            if vals:
+                por_partido[partido] = {"mae": round(sum(vals) / len(vals), 2),
+                                        "n": len(vals)}
+        mae = None
+        if n >= MIN_ENCUESTAS_MAE:
+            mae = round(sum(sum(e for _, e in errs) / len(errs) for _, errs in polls) / n, 2)
+        base = reg["base"] or base_catalogo.get(casa) or "valido"
+        filas.append({
+            "casa": casa,
+            "n_encuestas": n,
+            "elecciones_cubiertas": elecciones,
+            "mae_pp": None if base == "censo" else mae,
+            "mae_por_partido": por_partido,
+            "base": base,
+            "mae_valido_pp": mae if base == "valido" else None,
+            "mae_censo_pp": mae if base == "censo" else None,
+        })
+
+    def clave(f: dict):
+        ef = f["mae_pp"] if f["mae_pp"] is not None else f["mae_censo_pp"]
+        return (ef is None, ef if ef is not None else 0.0, f["casa"])
+
+    filas.sort(key=clave)
+    return filas
+
+
+def gen_casas() -> int:
+    """`casas.json`: MAE por casa con CIS en columna propia, nunca mezclado."""
+    enc = leer_json(os.path.join(SALIDA, "encuestas.json"))
+    oficial, generales = _oficial_canonico()
+    destacados = _destacados()
+    filas = mae_por_casa(enc["encuestas"], enc["dimensiones"]["casas"], oficial,
+                         generales, destacados)
+    seats_meta = leer_json(os.path.join(P_MODELO, "seats.json"))["meta"]
+    datos = {
+        "meta": {
+            # Fecha de la corrida del modelo (no del sistema): sync-data es
+            # determinista y dos ejecuciones seguidas dan el mismo fichero.
+            "generado": seats_meta.get("generado"),
+            "destacados": destacados,
+            "min_encuestas": MIN_ENCUESTAS_MAE,
+            "eleccion_por_etiqueta": ELECCION_POR_ETIQUETA,
+            "ventana_cis_dias": CIS_VENTANA_DIAS,
+            "n_casas": len(filas),
+            "n_casas_con_mae": sum(
+                1 for f in filas if f["mae_pp"] is not None or f["mae_censo_pp"] is not None),
+            "nota": (
+                "MAE = media de |estimación − resultado oficial| en puntos porcentuales "
+                "sobre los partidos destacados (≥2 % de voto válido oficial en esa "
+                "elección). Solo se cruzan encuestas cuyo trabajo de campo apunta a una "
+                "elección ya celebrada; las que miran a 2026 o son posteriores al 23J no "
+                "tienen resultado que comparar y quedan fuera. Privados sobre voto válido "
+                "(mae_pp = mae_valido_pp); CIS sobre censo en mae_censo_pp, nunca en "
+                "mae_pp. `n_encuestas` cuenta solo las encuestas comparables (no el "
+                "catálogo entero). Menos de 3 encuestas comparables → mae_pp null: sin "
+                "dato. `mae_por_partido` se publica siempre que haya al menos una "
+                "encuesta comparable y lleva su propio n, para que el detalle no se lea "
+                "como un MAE de la casa."
+            ),
+        },
+        "casas": filas,
+    }
+    return escribir("casas.json", datos)
+
+
+# ---------------------------------------------------------------------------
 # 7. Log de exclusiones
 # ---------------------------------------------------------------------------
 
@@ -624,11 +839,13 @@ def main() -> int:
     tareas = [
         ("forecast.json", gen_forecast),
         ("seats.json", gen_seats),
+        ("cambios.json", gen_cambios),
         ("backtest.json", gen_backtest),
         ("series.json", gen_series),
         ("elecciones.json", gen_elecciones),
         ("reparto23.json", gen_reparto23),
         ("encuestas.json", gen_encuestas),
+        ("casas.json", gen_casas),
         ("exclusiones.json", gen_exclusiones),
         ("fuentes.json", gen_fuentes),
         ("sesgo.json", gen_sesgo),

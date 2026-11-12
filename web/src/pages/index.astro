@@ -35,8 +35,8 @@ const escanosPorPartido = Object.fromEntries(
 const aFila = (p: (typeof forecast.partidos)[number]) => ({
   etiqueta: nombre29N(p.partido),
   punto: p.punto,
-  p10: p.p10,
-  p90: p.p90,
+  ic95_min: p.p10,
+  ic95_max: p.p90,
   color: colorPartido(p.partido),
   escanos: escanosPorPartido[p.partido] as number | undefined,
 });
@@ -48,8 +48,8 @@ const nacional = seatsData.nacional.map((p: {partido: string; media: number; ic9
   clave: p.partido,
   etiqueta: nombre29N(p.partido),
   punto: p.media,
-  p10: p.ic95[0],
-  p90: p.ic95[1],
+  ic95_min: p.ic95[0],
+  ic95_max: p.ic95[1],
   color: colorPartido(p.partido),
 }));
 
@@ -182,8 +182,10 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
       max={45}
       unidad="%"
       descripcion={`Predicción estatal 29N: los cuatro primeros partidos con su intervalo del 80 % y su estimación de escaños. PP ${num(filasTop[0].punto)} por ciento, PSOE ${num(filasTop[1].punto)}, VOX ${num(filasTop[2].punto)}, ${filasTop[3].etiqueta} ${num(filasTop[3].punto)}. Escaños estimados: PP ${num(filasTop[0].escanos ?? 0)}, PSOE ${num(filasTop[1].escanos ?? 0)}, VOX ${num(filasTop[2].escanos ?? 0)}, ${filasTop[3].etiqueta} ${num(filasTop[3].escanos ?? 0)}.`}
+      rotulo_inf="Límite inf. 80 % (p10)"
+      rotulo_sup="Límite sup. 80 % (p90)"
       pie={`Método: ${meta.metodo_primario === 'baseline' ? 'media ponderada de encuestas (baseline)' : meta.metodo_primario} · Backtest MAE: ${num(meta.backtest_mae?.baseline, 3)} pp (n = ${meta.backtest_mae?.n}) · Intervalos empíricos, no probabilidad de resultado`}
-      lectura={`La línea marca el punto y la banda el intervalo del 80 % (cuantiles 0,1–0,9 de los errores del backtest). El intervalo de ${filasTop[3].etiqueta} (±${num((filasTop[3].p90 - filasTop[3].p10) / 2, 1)} pp) es ancho porque su familia arrastra el descalabro de Podemos en 2015–2019: es honesto, no un defecto. El 29N la izquierda del PSOE concurre dividida: Frente A y Podemos van por separado salvo en Canarias y País Valencià, donde hay lista única.`}
+      lectura={`La línea marca el punto y la banda el intervalo del 80 % (cuantiles 0,1–0,9 de los errores del backtest). El intervalo de ${filasTop[3].etiqueta} (±${num((filasTop[3].ic95_max - filasTop[3].ic95_min) / 2, 1)} pp) es ancho porque su familia arrastra el descalabro de Podemos en 2015–2019: es honesto, no un defecto. El 29N la izquierda del PSOE concurre dividida: Frente A y Podemos van por separado salvo en Canarias y País Valencià, donde hay lista única.`}
     />
 
     <details class="heroe__resto">
@@ -194,6 +196,8 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
         unidad="%"
         descripcion="Predicción estatal 29N para los partidos del universo modelado con menos peso, con su intervalo del 80 %."
         pie="Mismo método y mismo intervalo que el gráfico anterior."
+        rotulo_inf="Límite inf. 80 % (p10)"
+        rotulo_sup="Límite sup. 80 % (p90)"
       />
     </details>
 
