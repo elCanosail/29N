@@ -117,7 +117,6 @@ const claseDelta = (v: number | null) => (v == null || v === 0 ? 'plano' : v > 0
           <span class="hero-bar__eje-marca mono" style={`left:${pct(v)}%`}>{v}</span>
         ))}
         <span class="hero-bar__eje-marca hero-bar__eje-marca--fin mono" style={`left:${pct(TOTAL)}%`}>{TOTAL}</span>
-        <span class="hero-bar__eje-unidad mono">escaños</span>
       </div>
 
       <div class="hero-bar__pista">
@@ -200,7 +199,7 @@ const claseDelta = (v: number | null) => (v == null || v === 0 ? 'plano' : v > 0
       </div>
       <div class="hero-bar__movil-plot" style={`height:${ALTURA_MOVIL}px`}>
         <span class="hero-bar__movil-mayoria" style={`bottom:${(MAYORIA / TOPE_MOVIL) * 100}%`}>
-          <span class="hero-bar__movil-mayoria-et mono">176</span>
+          <span class="hero-bar__movil-mayoria-et mono">mayoría 176</span>
         </span>
         {columnas.map((f) => (
           <span class="hero-bar__col-pista">
@@ -307,15 +306,6 @@ const claseDelta = (v: number | null) => (v == null || v === 0 ? 'plano' : v > 0
   }
   .hero-bar__eje-marca:first-child { transform: none; }
   .hero-bar__eje-marca--fin { transform: translateX(-100%); }
-  .hero-bar__eje-unidad {
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 0.62rem;
-    color: var(--tinta-3);
-    transform: translateX(0);
-    display: none;
-  }
 
   /* --- Barra ----------------------------------------------------------- */
   .hero-bar__pista {
