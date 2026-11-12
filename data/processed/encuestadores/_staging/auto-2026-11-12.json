@@ -1,0 +1,35 @@
+{
+ "encuestas": [
+  {
+   "fuente": "SW Demoscopia",
+   "estudio_id": "sw-demoscopia-2026-11-10",
+   "fecha_trabajo": "2026-10-26/2026-11-10",
+   "fecha_publicacion": "2026-11-11",
+   "n": 6500,
+   "metodologia": "Telefónico",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "url": "https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261111.html",
+   "extracto": "[SW Demoscopia, publicado 2026-11-11; ficha: https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261111.html] ESPAÑA · Elecciones generales · Encuesta SW Demoscopia 11/11/2026. Campo 2026-10-26/2026-11-10, n=6500, método Telefónico. Voto estimado publicado: PSOE 31.4%, PP 28.1%, VOX 17.5%, FA 7.4%, ERC 2.7%, SALF 2.0%, PODEMOS 1.7%, EH BILDU 1.4%, JUNTS 1.2%, BNG 1.0%, EAJ-PNV 0.8%, CCa-1ºCAN 0.4%, UPN-PP 0.2%. Suma de lo publicado 95.8 %. Lectura desde electografica.com (https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261111.html); contraste: la ficha es el propio agregador.",
+   "votos": {
+    "PSOE": 31.4,
+    "PP": 28.1,
+    "VOX": 17.5,
+    "SUMAR": 7.4,
+    "ERC": 2.7,
+    "EH BILDU": 1.4,
+    "JXCAT": 1.2,
+    "PNV": 0.8,
+    "CC": 0.4
+   },
+   "fuente_votos_adicionales": "Etiquetas publicadas y no ingestadas: SALF (2.0%): SALF mapea a OTROS (residual no modelado); PODEMOS (1.7%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie.",
+   "fuente_tipo_hint": "agregador"
+  }
+ ],
+ "exclusiones": [
+  {
+   "fuente": "SW Demoscopia",
+   "motivo": "Etiquetas publicadas fuera del modelo (se listan en fuente_votos_adicionales de cada encuesta): SALF (2.0%): SALF mapea a OTROS (residual no modelado); PODEMOS (1.7%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie."
+  }
+ ]
+}
