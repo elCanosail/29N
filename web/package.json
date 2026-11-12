@@ -8,7 +8,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "test:elecciones": "node scripts/test-elecciones.mjs",
+    "prebuild": "npm run -s test:elecciones"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
