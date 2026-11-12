@@ -1338,5 +1338,95 @@
   "ambito": "estatal",
   "eleccion": "otro",
   "anio": null
+ },
+ {
+  "estudio": "3540",
+  "fecha_trabajo": "10/01/2026",
+  "slug": "barometro-de-enero-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-enero-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026
+ },
+ {
+  "estudio": "3544",
+  "fecha_trabajo": "06/02/2026",
+  "slug": "barometro-de-febrero-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-febrero-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026
+ },
+ {
+  "estudio": "3546",
+  "fecha_trabajo": "06/03/2026",
+  "slug": "barometro-de-marzo-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-marzo-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026
+ },
+ {
+  "estudio": "3557",
+  "fecha_trabajo": "10/04/2026",
+  "slug": "barometro-de-abril-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-abril-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026
+ },
+ {
+  "estudio": "3562",
+  "fecha_trabajo": "18/05/2026",
+  "slug": "barometro-de-mayo-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-mayo-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026
+ },
+ {
+  "estudio": "3567",
+  "fecha_trabajo": "04/06/2026",
+  "slug": "barometro-de-junio-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-junio-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026
+ },
+ {
+  "estudio": "3571",
+  "fecha_trabajo": "06/07/2026",
+  "slug": "barometro-de-julio-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-julio-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026
+ },
+ {
+  "estudio": "3577",
+  "fecha_trabajo": "04/09/2026",
+  "slug": "barometro-de-septiembre-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-septiembre-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026
+ },
+ {
+  "estudio": "3582",
+  "fecha_trabajo": "06/10/2026",
+  "slug": "barometro-de-octubre-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-octubre-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026
  }
 ]

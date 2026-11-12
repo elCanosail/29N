@@ -44,25 +44,25 @@
   "normalizacion": {
    "procedimiento": "renormalizado al universo modelado (suma = 100)",
    "cobertura_universo_23J_pct": 97.955,
-   "suma_puntos_baseline_cruda": 92.796,
-   "suma_puntos_timesfm_cruda": 92.796
+   "suma_puntos_baseline_cruda": 92.395,
+   "suma_puntos_timesfm_cruda": 92.395
   },
   "advertencia": "Punto = baseline (ultima media ponderada), que empata en el backtest con TimesFM; TimesFM NO mejora al baseline (ver docs/notes/modelo.md). Intervalos empiricos recalibrados a su cobertura nominal con un factor agrupado (ver docs/notes/calibracion-intervalos.md); siguen siendo bandas simetricas, no una probabilidad de resultado."
  },
  "punto": {
-  "PP": 32.862,
-  "PSOE": 30.372,
-  "VOX": 20.034,
-  "SUMAR": 7.626,
-  "ERC": 2.724,
-  "JXCAT": 1.439,
-  "PNV": 0.892,
-  "EH BILDU": 1.49,
-  "BNG": 1.184,
-  "CUP": 0.265,
-  "CC": 0.447,
-  "NA+": 0.261,
-  "PACMA": 0.402
+  "PP": 32.684,
+  "PSOE": 30.901,
+  "VOX": 20.125,
+  "SUMAR": 6.936,
+  "ERC": 2.712,
+  "JXCAT": 1.433,
+  "PNV": 0.881,
+  "EH BILDU": 1.48,
+  "BNG": 1.088,
+  "CUP": 0.304,
+  "CC": 0.431,
+  "NA+": 0.078,
+  "PACMA": 0.948
  },
  "cuantiles": {
   "PP": {},

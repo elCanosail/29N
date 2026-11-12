@@ -188,3 +188,67 @@ equivocado), el estudio va a exclusions.json en vez de contaminar polls.jsonl
 (caso 3382, 18/22 filas, max_delta 23,46 pp). Los fallos dispersos (coaliciones
 por era, p.ej. 3411/23J con 1 fila a 0,83 pp) se quedan en el dataset, flaggados
 en validation.json con su mitigacion documentada.
+
+## Barrido 2026 (12-11-2026): los nueve barómetros del año
+
+El catálogo se había quedado en el estudio **3513** (abril 2025): faltaba todo
+2026. Se han ingerido los nueve barómetros con microdato publicado —
+**3540, 3544, 3546, 3557, 3562, 3567, 3571, 3577 y 3582** — y el catálogo pasa
+de 134 a 143 estudios. Encuestas en la web: 97 → 106 (44 CIS + 62 privados).
+
+### Cómo se hizo (procedimiento repetible)
+
+1. **Descubrimiento sin navegador**: la ficha `https://www.cis.es/es/estudios/<slug>`
+   es HTML estático (`barometro-de-<mes>-2026`). El JSON-LD trae `identifier`
+   (nº de estudio) y las URLs de ficha técnica, estimación y `MD<estudio>.zip`.
+   No hace falta Camoufox ni el catálogo JS.
+2. **Fechas de campo**: del PDF **Ficha técnica** (`Fechas de realización`), no
+   del listado. Patrón «del 1 al 6 de octubre de 2026» y «del 7 de octubre al
+   7 de noviembre de 2026».
+3. **Microdato**: `pipeline/cis/fetch_microdata.py --catalog <cat> --only <ids>`
+   (reanudable, pausa 8 s). El `manifest.json` no se versiona.
+4. **PDF → texto sin poppler**: el host no tiene `pdftotext`, así que
+   `published_table()` no podía leer la tabla publicada (y sin tabla no hay
+   validación ni elección razonada de variable). Se instaló `pypdf` en `.venv`
+   y se extrae con `extract_text(extraction_mode="layout")` a
+   `data/raw/cis/estimacion/est<estudio>.txt`. Ojo: `pypdf` **no** está en
+   `requirements.txt` del pipeline (es del host, no del runtime).
+5. **Normalización en temporal + fusión**: `normalize.py` reescribe
+   polls/studies/validation/exclusions completos y solo ve lo descargado en
+   `data/raw/cis`. Con 35 estudios ya publicados y sin su raw, ejecutarlo a
+   pelo los borraría. Se ejecuta con `normalize.OUT` apuntando a un directorio
+   temporal y luego se fusiona por `estudio_id` (el nuevo gana). Repetible.
+
+### Variable elegida y validación
+
+En los nueve, la variable de intención es `INTENCIONG`/`INTENCIONGR`; el
+selector la elige contra la tabla publicada. Resultado: **3582 (octubre) se
+reproduce con Δ máx 0,05 pp**, los otros ocho quedan en 0,29-0,57 pp con 1-5
+filas fuera de la tolerancia de 0,2 (SUMAR, ERC, EN BLANCO y OTROS).
+
+### Criterio nuevo: «Otros partidos» se pliega solo para comparar
+
+La discrepancia sistemática era OTROS: el microdato descarta las etiquetas no
+reconocidas (regla documentada arriba) y la tabla del CIS las agrupa en «Otros
+partidos». `normalize.py` calcula ahora la **masa residual de partidos** (sin
+códigos no-partido) y compara las dos hipótesis:
+
+- directa (OTROS solo con lo que el diccionario ya reconoce),
+- plegada (OTROS + masa residual).
+
+Se marca `ok` con la que mejor reproduce y **ambas** quedan en
+`validation.json` (`max_delta_sin_plegar`, `max_delta_con_residual_en_otros`,
+`residual_plegado_en_otros`, `criterio`). El dato de `polls.jsonl` **no**
+cambia: sigue sin forzar residuales a OTROS.
+
+### Preelectoral 3584: publicado, no ingerido
+
+El 12-11 a las 17:00 el CIS publicó el avance del **3584 «Preelectoral
+elecciones generales 2026»** (45.074 entrevistas, campo 7-30 de octubre). Su
+`MD3584.zip` **no existe todavía** (responde 302): la Carta de Servicios del CIS
+da hasta un mes desde el avance, así que el microdato llega después del 29N.
+
+No se ha ingerido su *estimación de voto* (PSOE 33, PP 25,5, VOX 18,4, FA 4,7)
+porque la serie CIS del modelo es **voto directo sobre censo** (`micro_valid`):
+meter una estimación modelada rompería la serie y la comparación con el resto
+de estudios. Cuando salga el microdato, entra por el procedimiento de arriba.

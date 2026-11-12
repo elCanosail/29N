@@ -428,6 +428,32 @@
   ]
  },
  {
+  "estudio": "3117",
+  "fecha_trabajo": "27/10/2015",
+  "slug": "preelectoral-elecciones-generales-2015.-panel-1-fase-",
+  "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-2015.-panel-1-fase-",
+  "tipo": "preelectoral_panel",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2015,
+  "n": 17452,
+  "suma_pesos": 17450.77,
+  "variable_voto": "P11R",
+  "n_partidos": 20,
+  "residuales_en_otros": [
+   "CC",
+   "MES",
+   "Unió"
+  ],
+  "candidatas": [
+   "P11R",
+   "P11",
+   "VOTOSIM",
+   "P26A",
+   "RVAUTON"
+  ]
+ },
+ {
   "estudio": "7715",
   "fecha_trabajo": "27/10/2015",
   "slug": "preelectoral-y-postelectoral-elecciones-generales-2015.-panel-total-panel-",
@@ -459,32 +485,6 @@
    "P11R",
    "PP48A",
    "PP39A"
-  ]
- },
- {
-  "estudio": "3117",
-  "fecha_trabajo": "27/10/2015",
-  "slug": "preelectoral-elecciones-generales-2015.-panel-1-fase-",
-  "url": "https://www.cis.es/es/estudios/preelectoral-elecciones-generales-2015.-panel-1-fase-",
-  "tipo": "preelectoral_panel",
-  "ambito": "estatal",
-  "eleccion": "generales",
-  "anio": 2015,
-  "n": 17452,
-  "suma_pesos": 17450.77,
-  "variable_voto": "P11R",
-  "n_partidos": 20,
-  "residuales_en_otros": [
-   "CC",
-   "MES",
-   "Unió"
-  ],
-  "candidatas": [
-   "P11R",
-   "P11",
-   "VOTOSIM",
-   "P26A",
-   "RVAUTON"
   ]
  },
  {
@@ -980,6 +980,282 @@
    "CERCANIA",
    "INTENCIONGR",
    "RECUVOTOGR"
+  ]
+ },
+ {
+  "estudio": "3540",
+  "fecha_trabajo": "10/01/2026",
+  "slug": "barometro-de-enero-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-enero-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026,
+  "n": 4006,
+  "suma_pesos": 4006.0,
+  "variable_voto": "INTENCIONGR",
+  "n_partidos": 19,
+  "residuales_en_otros": [
+   "Se Acabó la Fiesta"
+  ],
+  "candidatas": [
+   "INTENCIONGALTER",
+   "INTENCIONG",
+   "SIMPATIA",
+   "INTENCIONGALTERR",
+   "CERCANIA"
+  ]
+ },
+ {
+  "estudio": "3544",
+  "fecha_trabajo": "06/02/2026",
+  "slug": "barometro-de-febrero-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-febrero-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026,
+  "n": 4027,
+  "suma_pesos": 4027.0,
+  "variable_voto": "INTENCIONGR",
+  "n_partidos": 19,
+  "residuales_en_otros": [
+   "Se Acabó la Fiesta"
+  ],
+  "candidatas": [
+   "INTENCIONGALTER",
+   "INTENCIONG",
+   "SIMPATIA",
+   "CERCANIA",
+   "INTENCIONGALTERR"
+  ]
+ },
+ {
+  "estudio": "3546",
+  "fecha_trabajo": "06/03/2026",
+  "slug": "barometro-de-marzo-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-marzo-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026,
+  "n": 4016,
+  "suma_pesos": 4016.0,
+  "variable_voto": "INTENCIONG",
+  "n_partidos": 27,
+  "residuales_en_otros": [
+   "Aliança Catalana",
+   "CDC",
+   "España Vaciada",
+   "Falange Española de las JONS",
+   "Frente Obrero",
+   "PCPE",
+   "Partido Feminista de España",
+   "Partido Libertario",
+   "Recortes Cero",
+   "Se Acabó la Fiesta",
+   "Teruel Existe",
+   "UPL"
+  ],
+  "candidatas": [
+   "INTENCIONGALTER",
+   "INTENCIONG",
+   "SIMPATIA",
+   "CERCANIA",
+   "INTENCIONGR"
+  ]
+ },
+ {
+  "estudio": "3557",
+  "fecha_trabajo": "10/04/2026",
+  "slug": "barometro-de-abril-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-abril-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026,
+  "n": 4020,
+  "suma_pesos": 4020.0,
+  "variable_voto": "INTENCIONG",
+  "n_partidos": 25,
+  "residuales_en_otros": [
+   "Aliança Catalana",
+   "Coalición de izquierdas",
+   "Drago Canarias Verdes",
+   "Falange Española de las JONS",
+   "Frente Obrero",
+   "Los Verdes",
+   "Partido Libertario",
+   "Partido Riojano",
+   "Por un Mundo más Justo (M+J)",
+   "Se Acabó la Fiesta",
+   "Soria Ya"
+  ],
+  "candidatas": [
+   "INTENCIONGALTER",
+   "INTENCIONG",
+   "INTENCIONA",
+   "INTENCIONAR",
+   "SIMPATIA"
+  ]
+ },
+ {
+  "estudio": "3562",
+  "fecha_trabajo": "18/05/2026",
+  "slug": "barometro-de-mayo-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-mayo-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026,
+  "n": 4015,
+  "suma_pesos": 4015.0,
+  "variable_voto": "INTENCIONG",
+  "n_partidos": 28,
+  "residuales_en_otros": [
+   "Aliança Catalana",
+   "Andalucía Por Sí",
+   "Coalición de izquierdas",
+   "Drago Canarias Verdes",
+   "Falange Española de las JONS",
+   "Frente Obrero",
+   "Jaén Merece Más",
+   "Los Verdes",
+   "PCPE",
+   "Partido Libertario",
+   "Por un Mundo más Justo (M+J)",
+   "Se Acabó la Fiesta",
+   "UPL"
+  ],
+  "candidatas": [
+   "INTENCIONGALTER",
+   "INTENCIONG",
+   "INTENCIONA",
+   "INTENCIONAR",
+   "INTENCIONGALTERR"
+  ]
+ },
+ {
+  "estudio": "3567",
+  "fecha_trabajo": "04/06/2026",
+  "slug": "barometro-de-junio-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-junio-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026,
+  "n": 4024,
+  "suma_pesos": 4024.0,
+  "variable_voto": "INTENCIONG",
+  "n_partidos": 28,
+  "residuales_en_otros": [
+   "Aliança Catalana",
+   "Coalición de izquierdas",
+   "Democracia Nacional",
+   "Drago Canarias Verdes",
+   "EQUO",
+   "Falange Española de las JONS",
+   "Frente Obrero",
+   "JUEX",
+   "Jaén Merece Más",
+   "Los Verdes",
+   "PCPE",
+   "Partido Libertario",
+   "Por un Mundo más Justo (M+J)",
+   "Por Ávila",
+   "Se Acabó la Fiesta",
+   "Soria Ya",
+   "UPL"
+  ],
+  "candidatas": [
+   "INTENCIONGALTER",
+   "INTENCIONG",
+   "INTENCIONAR",
+   "INTENCIONA",
+   "SIMPATIA"
+  ]
+ },
+ {
+  "estudio": "3571",
+  "fecha_trabajo": "06/07/2026",
+  "slug": "barometro-de-julio-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-julio-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026,
+  "n": 4020,
+  "suma_pesos": 4020.0,
+  "variable_voto": "INTENCIONG",
+  "n_partidos": 28,
+  "residuales_en_otros": [
+   "Aliança Catalana",
+   "Andalucía Por Sí",
+   "Coalición de izquierdas",
+   "Falange Española de las JONS",
+   "Frente Obrero",
+   "Los Verdes",
+   "Partido Libertario",
+   "Por Andalucía",
+   "Se Acabó la Fiesta",
+   "Teruel Existe",
+   "UPL"
+  ],
+  "candidatas": [
+   "INTENCIONGALTER",
+   "INTENCIONG",
+   "INTENCIONA",
+   "INTENCIONAR",
+   "SIMPATIA"
+  ]
+ },
+ {
+  "estudio": "3577",
+  "fecha_trabajo": "04/09/2026",
+  "slug": "barometro-de-septiembre-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-septiembre-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026,
+  "n": 4042,
+  "suma_pesos": 4042.0,
+  "variable_voto": "INTENCIONGR",
+  "n_partidos": 20,
+  "residuales_en_otros": [
+   "Se Acabó la Fiesta"
+  ],
+  "candidatas": [
+   "INTENCIONGALTER",
+   "INTENCIONG",
+   "INTENCIONA",
+   "INTENCIONAR",
+   "INTENCIONGALTERR"
+  ]
+ },
+ {
+  "estudio": "3582",
+  "fecha_trabajo": "06/10/2026",
+  "slug": "barometro-de-octubre-2026",
+  "url": "https://www.cis.es/es/estudios/barometro-de-octubre-2026",
+  "tipo": "preelectoral",
+  "ambito": "estatal",
+  "eleccion": "generales",
+  "anio": 2026,
+  "n": 5024,
+  "suma_pesos": 5024.0,
+  "variable_voto": "INTENCIONGR",
+  "n_partidos": 20,
+  "residuales_en_otros": [
+   "Coalición de izquierdas",
+   "Se Acabó la Fiesta"
+  ],
+  "candidatas": [
+   "INTENCIONGALTER",
+   "INTENCIONG",
+   "INTENCIONAR",
+   "INTENCIONA",
+   "INTENCIONGR"
   ]
  }
 ]
