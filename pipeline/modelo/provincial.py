@@ -395,6 +395,7 @@ def main() -> int:
 
     # --- Agregados ----------------------------------------------------------
     prov_out = {}
+    cobertura_duelo = {}
     for c, arr in seats_runs.items():
         d = {}
         for i, p in enumerate(parties):
@@ -404,12 +405,18 @@ def main() -> int:
                 "ic95": [int(np.percentile(col, 2.5)), int(np.percentile(col, 97.5))],
                 "prob_ge1": round(float((col >= 1).mean()), 3),
             }
+        ficha = agregar_ultimo_escano(ult_win[c], ult_riv[c], ult_diff[c], parties)
+        # Cobertura del duelo: proporción de corridas en que el escaño lo gana
+        # uno de los dos partidos publicados. No viaja en el JSON (el esquema
+        # fija p_a + p_b = 1); se imprime para que cada corrida avise de las
+        # provincias donde el duelo de dos es una simplificación.
+        ia, ib = pidx[ficha["partidos"][0]], pidx[ficha["partidos"][1]]
+        cobertura_duelo[c] = float(np.isin(ult_win[c], [ia, ib]).mean())
         prov_out[c] = {
             "nombre": names.get(int(c), str(c)),
             "escanos": escanos[c],
             "partidos": d,
-            "ultimo_escano": agregar_ultimo_escano(
-                ult_win[c], ult_riv[c], ult_diff[c], parties),
+            "ultimo_escano": ficha,
         }
 
     national = {}
@@ -483,6 +490,11 @@ def main() -> int:
               f"IC95=[{x['ic95'][0]:3d},{x['ic95'][1]:3d}]  "
               f"({', '.join(x['partidos'])})")
     print(f"    ninguno    p_ge176={p_ninguno:.4f}")
+    peores = sorted(cobertura_duelo.items(), key=lambda kv: kv[1])[:3]
+    bajas = sum(1 for v in cobertura_duelo.values() if v < 0.60)
+    print(f"  Cobertura del duelo por el último escaño: {bajas} provincias < 60 % "
+          f"— peor: "
+          + ", ".join(f"{names.get(int(c), c)} {100 * v:.1f} %" for c, v in peores))
     if deltas:
         print(f"  Deltas vs corrida {deltas.get('contra')}: "
               f"bloques={deltas.get('bloques')}")

@@ -11,6 +11,14 @@
 #   - `fuera_de_bloque` = partidos que no se alinean con ninguno de los dos
 #     bloques en una investidura (se cuentan partido a partido).
 #   - La mayoría absoluta del Congreso es 176 de 350 escaños.
+#   - Solo pueden listarse partidos de MODELED_PARTIES: `load_bloques()`
+#     rechaza cualquier otro nombre en vez de publicar una suma incompleta.
+#
+# Compromís, Més per Mallorca y ECP no aparecen como línea propia porque el
+# modelo los pliega en SUMAR (`party_canon`): en la base de 23J concurren
+# dentro de esa candidatura, así que su escaño ya está contado en el bloque de
+# izquierda. Las marcas antiguas con candidatura propia (COMPROMIS en 2015-16)
+# caen en el residual OTROS, que no reparte escaños en este modelo.
 
 version: 1
 mayoria_absoluta: 176
