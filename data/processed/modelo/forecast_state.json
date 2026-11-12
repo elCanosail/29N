@@ -44,218 +44,218 @@
   "normalizacion": {
    "procedimiento": "renormalizado al universo modelado (suma = 100)",
    "cobertura_universo_23J_pct": 97.955,
-   "suma_puntos_baseline_cruda": 92.796,
-   "suma_puntos_timesfm_cruda": 92.796
+   "suma_puntos_baseline_cruda": 92.395,
+   "suma_puntos_timesfm_cruda": 92.395
   },
   "advertencia": "Punto = baseline (ultima media ponderada), que empata en el backtest con TimesFM; TimesFM NO mejora al baseline (ver docs/notes/modelo.md). Intervalos empiricos recalibrados a su cobertura nominal con un factor agrupado (ver docs/notes/calibracion-intervalos.md); siguen siendo bandas simetricas, no una probabilidad de resultado."
  },
  "partidos": {
   "PP": {
-   "punto": 32.862,
+   "punto": 32.684,
    "cuantiles": {
-    "0.025": 22.774,
-    "0.1": 28.411,
-    "0.2": 30.58,
-    "0.5": 32.862,
-    "0.8": 35.145,
-    "0.9": 37.314,
-    "0.975": 42.95
+    "0.025": 22.596,
+    "0.1": 28.232,
+    "0.2": 30.401,
+    "0.5": 32.684,
+    "0.8": 34.966,
+    "0.9": 37.135,
+    "0.975": 42.772
    },
    "sd_error_backtest": 2.712,
-   "punto_timesfm": 32.862,
-   "punto_baseline": 32.862,
+   "punto_timesfm": 32.684,
+   "punto_baseline": 32.684,
    "cuantiles_timesfm": null
   },
   "PSOE": {
-   "punto": 30.372,
+   "punto": 30.901,
    "cuantiles": {
-    "0.025": 14.062,
-    "0.1": 23.176,
-    "0.2": 26.682,
-    "0.5": 30.372,
-    "0.8": 34.063,
-    "0.9": 37.569,
-    "0.975": 46.682
+    "0.025": 14.591,
+    "0.1": 23.704,
+    "0.2": 27.21,
+    "0.5": 30.901,
+    "0.8": 34.591,
+    "0.9": 38.097,
+    "0.975": 47.211
    },
    "sd_error_backtest": 4.385,
-   "punto_timesfm": 30.372,
-   "punto_baseline": 30.372,
+   "punto_timesfm": 30.901,
+   "punto_baseline": 30.901,
    "cuantiles_timesfm": null
   },
   "VOX": {
-   "punto": 20.034,
+   "punto": 20.125,
    "cuantiles": {
-    "0.025": 8.515,
-    "0.1": 14.951,
-    "0.2": 17.428,
-    "0.5": 20.034,
-    "0.8": 22.641,
-    "0.9": 25.117,
-    "0.975": 31.553
+    "0.025": 8.606,
+    "0.1": 15.042,
+    "0.2": 17.519,
+    "0.5": 20.125,
+    "0.8": 22.732,
+    "0.9": 25.208,
+    "0.975": 31.644
    },
    "sd_error_backtest": 3.097,
-   "punto_timesfm": 20.034,
-   "punto_baseline": 20.034,
+   "punto_timesfm": 20.125,
+   "punto_baseline": 20.125,
    "cuantiles_timesfm": null
   },
   "SUMAR": {
-   "punto": 7.626,
+   "punto": 6.936,
    "cuantiles": {
     "0.025": 0.0,
     "0.1": 0.0,
-    "0.2": 1.641,
-    "0.5": 7.626,
-    "0.8": 13.611,
-    "0.9": 19.297,
-    "0.975": 34.077
+    "0.2": 0.951,
+    "0.5": 6.936,
+    "0.8": 12.921,
+    "0.9": 18.607,
+    "0.975": 33.387
    },
    "sd_error_backtest": 7.111,
-   "punto_timesfm": 7.626,
-   "punto_baseline": 7.626,
+   "punto_timesfm": 6.936,
+   "punto_baseline": 6.936,
    "cuantiles_timesfm": null
   },
   "ERC": {
-   "punto": 2.724,
+   "punto": 2.712,
    "cuantiles": {
-    "0.025": 0.287,
-    "0.1": 1.649,
-    "0.2": 2.173,
-    "0.5": 2.724,
-    "0.8": 3.276,
-    "0.9": 3.8,
-    "0.975": 5.162
+    "0.025": 0.274,
+    "0.1": 1.636,
+    "0.2": 2.16,
+    "0.5": 2.712,
+    "0.8": 3.263,
+    "0.9": 3.787,
+    "0.975": 5.149
    },
    "sd_error_backtest": 0.655,
-   "punto_timesfm": 2.724,
-   "punto_baseline": 2.724,
+   "punto_timesfm": 2.712,
+   "punto_baseline": 2.712,
    "cuantiles_timesfm": null
   },
   "JXCAT": {
-   "punto": 1.439,
+   "punto": 1.433,
    "cuantiles": {
-    "0.025": 0.718,
-    "0.1": 1.121,
-    "0.2": 1.276,
-    "0.5": 1.439,
-    "0.8": 1.602,
-    "0.9": 1.757,
-    "0.975": 2.16
+    "0.025": 0.712,
+    "0.1": 1.115,
+    "0.2": 1.27,
+    "0.5": 1.433,
+    "0.8": 1.596,
+    "0.9": 1.751,
+    "0.975": 2.154
    },
    "sd_error_backtest": 0.194,
-   "punto_timesfm": 1.439,
-   "punto_baseline": 1.439,
+   "punto_timesfm": 1.433,
+   "punto_baseline": 1.433,
    "cuantiles_timesfm": null
   },
   "PNV": {
-   "punto": 0.892,
+   "punto": 0.881,
    "cuantiles": {
-    "0.025": 0.52,
-    "0.1": 0.728,
-    "0.2": 0.808,
-    "0.5": 0.892,
-    "0.8": 0.977,
-    "0.9": 1.057,
-    "0.975": 1.264
+    "0.025": 0.509,
+    "0.1": 0.717,
+    "0.2": 0.797,
+    "0.5": 0.881,
+    "0.8": 0.965,
+    "0.9": 1.045,
+    "0.975": 1.253
    },
    "sd_error_backtest": 0.1,
-   "punto_timesfm": 0.892,
-   "punto_baseline": 0.892,
+   "punto_timesfm": 0.881,
+   "punto_baseline": 0.881,
    "cuantiles_timesfm": null
   },
   "EH BILDU": {
-   "punto": 1.49,
+   "punto": 1.48,
    "cuantiles": {
-    "0.025": 0.681,
-    "0.1": 1.133,
-    "0.2": 1.307,
-    "0.5": 1.49,
-    "0.8": 1.673,
-    "0.9": 1.847,
-    "0.975": 2.299
+    "0.025": 0.671,
+    "0.1": 1.123,
+    "0.2": 1.297,
+    "0.5": 1.48,
+    "0.8": 1.663,
+    "0.9": 1.837,
+    "0.975": 2.289
    },
    "sd_error_backtest": 0.217,
-   "punto_timesfm": 1.49,
-   "punto_baseline": 1.49,
+   "punto_timesfm": 1.48,
+   "punto_baseline": 1.48,
    "cuantiles_timesfm": null
   },
   "BNG": {
-   "punto": 1.184,
+   "punto": 1.088,
    "cuantiles": {
-    "0.025": 0.156,
-    "0.1": 0.73,
-    "0.2": 0.952,
-    "0.5": 1.184,
-    "0.8": 1.417,
-    "0.9": 1.638,
-    "0.975": 2.213
+    "0.025": 0.06,
+    "0.1": 0.635,
+    "0.2": 0.856,
+    "0.5": 1.088,
+    "0.8": 1.321,
+    "0.9": 1.542,
+    "0.975": 2.117
    },
    "sd_error_backtest": 0.277,
-   "punto_timesfm": 1.184,
-   "punto_baseline": 1.184,
+   "punto_timesfm": 1.088,
+   "punto_baseline": 1.088,
    "cuantiles_timesfm": null
   },
   "CUP": {
-   "punto": 0.265,
+   "punto": 0.304,
    "cuantiles": {
     "0.025": 0.0,
     "0.1": 0.0,
     "0.2": 0.0,
-    "0.5": 0.265,
-    "0.8": 0.641,
-    "0.9": 0.998,
-    "0.975": 1.925
+    "0.5": 0.304,
+    "0.8": 0.68,
+    "0.9": 1.037,
+    "0.975": 1.964
    },
    "sd_error_backtest": 0.446,
-   "punto_timesfm": 0.265,
-   "punto_baseline": 0.265,
+   "punto_timesfm": 0.304,
+   "punto_baseline": 0.304,
    "cuantiles_timesfm": null
   },
   "CC": {
-   "punto": 0.447,
+   "punto": 0.431,
    "cuantiles": {
     "0.025": 0.0,
-    "0.1": 0.218,
-    "0.2": 0.329,
-    "0.5": 0.447,
-    "0.8": 0.564,
-    "0.9": 0.675,
-    "0.975": 0.965
+    "0.1": 0.202,
+    "0.2": 0.313,
+    "0.5": 0.431,
+    "0.8": 0.548,
+    "0.9": 0.659,
+    "0.975": 0.949
    },
    "sd_error_backtest": 0.139,
-   "punto_timesfm": 0.447,
-   "punto_baseline": 0.447,
+   "punto_timesfm": 0.431,
+   "punto_baseline": 0.431,
    "cuantiles_timesfm": null
   },
   "NA+": {
-   "punto": 0.261,
-   "cuantiles": {
-    "0.025": 0.0,
-    "0.1": 0.0,
-    "0.2": 0.098,
-    "0.5": 0.261,
-    "0.8": 0.424,
-    "0.9": 0.579,
-    "0.975": 0.981
-   },
-   "sd_error_backtest": 0.194,
-   "punto_timesfm": 0.261,
-   "punto_baseline": 0.261,
-   "cuantiles_timesfm": null
-  },
-  "PACMA": {
-   "punto": 0.402,
+   "punto": 0.078,
    "cuantiles": {
     "0.025": 0.0,
     "0.1": 0.0,
     "0.2": 0.0,
-    "0.5": 0.402,
-    "0.8": 0.845,
-    "0.9": 1.266,
-    "0.975": 2.361
+    "0.5": 0.078,
+    "0.8": 0.241,
+    "0.9": 0.396,
+    "0.975": 0.798
+   },
+   "sd_error_backtest": 0.194,
+   "punto_timesfm": 0.078,
+   "punto_baseline": 0.078,
+   "cuantiles_timesfm": null
+  },
+  "PACMA": {
+   "punto": 0.948,
+   "cuantiles": {
+    "0.025": 0.0,
+    "0.1": 0.084,
+    "0.2": 0.505,
+    "0.5": 0.948,
+    "0.8": 1.391,
+    "0.9": 1.813,
+    "0.975": 2.907
    },
    "sd_error_backtest": 0.527,
-   "punto_timesfm": 0.402,
-   "punto_baseline": 0.402,
+   "punto_timesfm": 0.948,
+   "punto_baseline": 0.948,
    "cuantiles_timesfm": null
   }
  }
