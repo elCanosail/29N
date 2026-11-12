@@ -46,3 +46,9 @@ def run():
 
 if __name__ == "__main__":
     run()
+
+
+def test_dhondt_unitarios():
+    """Wrapper para que `pytest pipeline` ejecute también estos casos."""
+    run()
+
