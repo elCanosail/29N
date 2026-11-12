@@ -12,6 +12,7 @@ import exclusionesData from '../../data/exclusiones.json';
 import encuestasData from '../../data/encuestas.json';
 import eleccionesData from '../../data/elecciones.json';
 import seats from '../../data/seats.json';
+import casas from '../../data/casas.json';
 import { num, entero } from '../../lib/format';
 import type { Columna, Fila } from '../../lib/tipos';
 
@@ -103,6 +104,12 @@ const bl = seats.bloques as {
   p_ninguno: number;
 };
 const pctBloque = (x: number) => num(x * 100, 1);
+
+// MAE por casa (casas.json): solo casas con ≥3 encuestas comparables.
+const casasConMae = casas.casas.filter(
+  (c) => c.mae_pp !== null || c.mae_censo_pp !== null,
+);
+const casasSinMae = casas.casas.length - casasConMae.length;
 ---
 
 <Base
@@ -130,6 +137,7 @@ const pctBloque = (x: number) => num(x * 100, 1);
         <li><a href="#modelo">Modelo</a></li>
         <li><a href="#validacion">Validación (backtest)</a></li>
         <li><a href="#bloques">Bloques y último escaño</a></li>
+        <li><a href="#mae-casas">Error de las casas (MAE)</a></li>
         <li><a href="#sesgo">Correcciones de sesgo</a></li>
         <li><a href="#errores">Errores conocidos y límites</a></li>
         <li><a href="#exclusiones">Log de exclusiones</a></li>
@@ -316,7 +324,10 @@ const pctBloque = (x: number) => num(x * 100, 1);
               cambiarla cambia los números y queda registrada en el log de cambios.
               Izquierda = {bl.izquierda.partidos.join(', ')}. Derecha ={' '}
               {bl.derecha.partidos.join(', ')}. JXCAT, PNV y PACMA no se asignan a ningún
-              bloque: se cuentan partido a partido.
+              bloque: se cuentan partido a partido. Compromís, Més per Mallorca y ECP no
+              tienen línea propia porque el modelo los pliega en SUMAR: en la base de 23J
+              concurren dentro de esa candidatura, así que su escaño ya está contado en la
+              izquierda.
             </p>
             <ul class="limites-lista">
               <li>
@@ -351,12 +362,14 @@ const pctBloque = (x: number) => num(x * 100, 1);
               relativa media de cocientes.
             </p>
             <p class="nota">
-              <span class="mono">p_a</span> y <span class="mono">p_b</span> suman 1 porque
-              reparten solo las simulaciones en que el escaño cae en uno de los dos. En
-              varias provincias —sobre todo en las grandes— un tercer partido gana ese último
-              escaño en parte de las simulaciones: allí el duelo de dos es una simplificación
-              y el margen publicado es el que separa a los dos primeros, no la probabilidad
-              de que gane uno de ellos.
+              <span class="mono">p_a = victorias de A / (victorias de A + victorias de B)</span>:
+              suman 1 porque reparten solo las simulaciones en que el escaño cae en uno de los
+              dos. En varias provincias —sobre todo en las grandes— un tercer partido gana ese
+              último escaño en parte de las simulaciones: allí el duelo de dos es una
+              simplificación, <span class="mono">p_a</span> <strong>no</strong> es la
+              probabilidad de que gane A, y el margen publicado es el que separa a los dos
+              primeros. La corrida imprime cuántas provincias quedan por debajo del 60 % de
+              cobertura para no perderlo de vista.
             </p>
           </div>
           <aside class="nota-margen bloque__nota">
@@ -365,6 +378,55 @@ const pctBloque = (x: number) => num(x * 100, 1);
             <br /><br />
             Los bloques son una decisión editorial, no un dato: la lista vive en el repo para
             poder citarla y rebatirla.
+          </aside>
+        </section>
+
+        <section class="bloque" id="mae-casas">
+          <div class="bloque__texto">
+            <h2>Error de las casas (MAE)</h2>
+            <p>
+              Cada encuesta se cruza con el <strong>resultado oficial de la elección que
+              estima</strong>: error absoluto medio de sus partidos destacados, en puntos de
+              voto válido. Solo entran encuestas cuyo trabajo de campo apunta a una elección
+              ya celebrada —una encuesta que mira al 29N no tiene resultado con el que
+              compararla— y una casa necesita <strong>tres encuestas comparables</strong> para
+              publicar su MAE. Por debajo de eso no hay cifra: «sin dato suficiente».
+            </p>
+            <p>
+              Los privados se miden sobre voto válido. El CIS se mide aparte, sobre censo
+              (<span class="mono">mae_censo_pp</span>), y <strong>nunca se mezcla</strong> con
+              los privados en la misma columna: su voto directo no es comparable sin
+              normalizar. El detalle por partido lleva su propio n y no se debe leer como un
+              MAE de la casa.
+            </p>
+            {casasConMae.length > 0 && (
+              <ul class="limites-lista">
+                {casasConMae.map((c) => (
+                  <li>
+                    <strong>{c.casa}:</strong>{' '}
+                    <span class="mono">
+                      {num(c.mae_pp ?? c.mae_censo_pp ?? 0, 2)} pp
+                    </span>{' '}
+                    sobre {c.base === 'censo' ? 'censo (columna propia)' : 'voto válido'} ·{' '}
+                    {entero(c.n_encuestas)} encuestas comparables ·{' '}
+                    {c.elecciones_cubiertas.join(', ')}
+                  </li>
+                ))}
+              </ul>
+            )}
+            <p class="nota">
+              {entero(casasConMae.length)} de {entero(casas.casas.length)} casas del catálogo
+              tienen encuestas suficientes; las {entero(casasSinMae)} restantes salen sin dato.
+              No se rellena con encuestas de 2026 ni con estimaciones posteriores al 23J: sería
+              comparar contra un resultado que no existe.
+            </p>
+          </div>
+          <aside class="nota-margen bloque__nota">
+            <span class="bloque__nota-marca" aria-hidden="true">§</span>
+            Mínimo: {entero(casas.meta.min_encuestas)} encuestas comparables por casa.
+            <br /><br />
+            El resultado oficial se agrega con la misma canonicalización del modelo, así que
+            «PSOE» incluye PSC, PSE-EE y PSdeG.
           </aside>
         </section>
 

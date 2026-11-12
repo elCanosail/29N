@@ -724,7 +724,11 @@ def gen_casas() -> int:
                 "elección ya celebrada; las que miran a 2026 o son posteriores al 23J no "
                 "tienen resultado que comparar y quedan fuera. Privados sobre voto válido "
                 "(mae_pp = mae_valido_pp); CIS sobre censo en mae_censo_pp, nunca en "
-                "mae_pp. Menos de 3 encuestas comparables → mae_pp null: sin dato."
+                "mae_pp. `n_encuestas` cuenta solo las encuestas comparables (no el "
+                "catálogo entero). Menos de 3 encuestas comparables → mae_pp null: sin "
+                "dato. `mae_por_partido` se publica siempre que haya al menos una "
+                "encuesta comparable y lleva su propio n, para que el detalle no se lea "
+                "como un MAE de la casa."
             ),
         },
         "casas": filas,
