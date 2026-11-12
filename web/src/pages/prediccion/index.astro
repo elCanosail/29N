@@ -91,7 +91,7 @@ const limites = [
 function filasProvincia(p: (typeof provincias)[number]) {
   return p.partidos
     .filter((x) => x.media >= 0.15 || x.ic95[1] >= 1)
-    .map((x) => ({ etiqueta: nombre29N(x.partido), punto: x.media, p10: x.ic95[0], p90: x.ic95[1], color: colorPartido(x.partido) }));
+    .map((x) => ({ etiqueta: nombre29N(x.partido), punto: x.media, ic95_min: x.ic95[0], ic95_max: x.ic95[1], color: colorPartido(x.partido) }));
 }
 
 // --- Agregación por comunidad autónoma --------------------------------

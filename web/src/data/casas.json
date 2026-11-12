@@ -1,0 +1,372 @@
+{
+ "meta": {
+  "generado": "2026-11-12",
+  "destacados": [
+   "PP",
+   "PSOE",
+   "VOX",
+   "SUMAR"
+  ],
+  "min_encuestas": 3,
+  "eleccion_por_etiqueta": {
+   "generales 2023": "2023-07-23"
+  },
+  "ventana_cis_dias": 200,
+  "n_casas": 19,
+  "n_casas_con_mae": 2,
+  "nota": "MAE = media de |estimación − resultado oficial| en puntos porcentuales sobre los partidos destacados (≥2 % de voto válido oficial en esa elección). Solo se cruzan encuestas cuyo trabajo de campo apunta a una elección ya celebrada; las que miran a 2026 o son posteriores al 23J no tienen resultado que comparar y quedan fuera. Privados sobre voto válido (mae_pp = mae_valido_pp); CIS sobre censo en mae_censo_pp, nunca en mae_pp. Menos de 3 encuestas comparables → mae_pp null: sin dato."
+ },
+ "casas": [
+  {
+   "casa": "GAD3",
+   "n_encuestas": 3,
+   "elecciones_cubiertas": [
+    "2023-07-23"
+   ],
+   "mae_pp": 2.14,
+   "mae_por_partido": {
+    "PP": {
+     "mae": 3.78,
+     "n": 3
+    },
+    "PSOE": {
+     "mae": 3.45,
+     "n": 3
+    },
+    "VOX": {
+     "mae": 0.39,
+     "n": 3
+    },
+    "SUMAR": {
+     "mae": 0.93,
+     "n": 3
+    }
+   },
+   "base": "valido",
+   "mae_valido_pp": 2.14,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "CIS",
+   "n_encuestas": 18,
+   "elecciones_cubiertas": [
+    "1977-06-15",
+    "1986-06-22",
+    "1989-10-29",
+    "1993-06-06",
+    "1996-03-03",
+    "2015-12-20",
+    "2016-06-26",
+    "2019-04-28",
+    "2019-11-10",
+    "2023-07-23"
+   ],
+   "mae_pp": null,
+   "mae_por_partido": {
+    "PP": {
+     "mae": 12.16,
+     "n": 18
+    },
+    "PSOE": {
+     "mae": 9.62,
+     "n": 18
+    },
+    "VOX": {
+     "mae": 6.39,
+     "n": 6
+    },
+    "SUMAR": {
+     "mae": 0.32,
+     "n": 3
+    }
+   },
+   "base": "censo",
+   "mae_valido_pp": null,
+   "mae_censo_pp": 10.46
+  },
+  {
+   "casa": "40dB",
+   "n_encuestas": 2,
+   "elecciones_cubiertas": [
+    "2023-07-23"
+   ],
+   "mae_pp": null,
+   "mae_por_partido": {
+    "PP": {
+     "mae": 1.16,
+     "n": 2
+    },
+    "PSOE": {
+     "mae": 3.43,
+     "n": 2
+    },
+    "VOX": {
+     "mae": 1.22,
+     "n": 1
+    },
+    "SUMAR": {
+     "mae": 3.27,
+     "n": 1
+    }
+   },
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "Ateneo del Dato",
+   "n_encuestas": 0,
+   "elecciones_cubiertas": [],
+   "mae_pp": null,
+   "mae_por_partido": {},
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "CEO (Centre d'Estudis d'Opinió)",
+   "n_encuestas": 0,
+   "elecciones_cubiertas": [],
+   "mae_pp": null,
+   "mae_por_partido": {},
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "Celeste-Tel",
+   "n_encuestas": 0,
+   "elecciones_cubiertas": [],
+   "mae_pp": null,
+   "mae_por_partido": {},
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "DYM",
+   "n_encuestas": 0,
+   "elecciones_cubiertas": [],
+   "mae_pp": null,
+   "mae_por_partido": {},
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "Data10",
+   "n_encuestas": 0,
+   "elecciones_cubiertas": [],
+   "mae_pp": null,
+   "mae_por_partido": {},
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "Demoscopia y Servicios",
+   "n_encuestas": 0,
+   "elecciones_cubiertas": [],
+   "mae_pp": null,
+   "mae_por_partido": {},
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "Hamalgama Métrica",
+   "n_encuestas": 0,
+   "elecciones_cubiertas": [],
+   "mae_pp": null,
+   "mae_por_partido": {},
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "Imop Insights",
+   "n_encuestas": 2,
+   "elecciones_cubiertas": [
+    "2023-07-23"
+   ],
+   "mae_pp": null,
+   "mae_por_partido": {
+    "PP": {
+     "mae": 0.79,
+     "n": 2
+    },
+    "PSOE": {
+     "mae": 7.18,
+     "n": 1
+    },
+    "VOX": {
+     "mae": 2.52,
+     "n": 1
+    },
+    "SUMAR": {
+     "mae": 2.4,
+     "n": 2
+    }
+   },
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "More in Common",
+   "n_encuestas": 0,
+   "elecciones_cubiertas": [],
+   "mae_pp": null,
+   "mae_por_partido": {},
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "NC Report",
+   "n_encuestas": 2,
+   "elecciones_cubiertas": [
+    "2023-07-23"
+   ],
+   "mae_pp": null,
+   "mae_por_partido": {
+    "PP": {
+     "mae": 3.54,
+     "n": 2
+    },
+    "PSOE": {
+     "mae": 3.63,
+     "n": 2
+    },
+    "VOX": {
+     "mae": 0.65,
+     "n": 2
+    },
+    "SUMAR": {
+     "mae": 0.58,
+     "n": 2
+    }
+   },
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "SW Demoscopia",
+   "n_encuestas": 0,
+   "elecciones_cubiertas": [],
+   "mae_pp": null,
+   "mae_por_partido": {},
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "Sigma Dos",
+   "n_encuestas": 2,
+   "elecciones_cubiertas": [
+    "2023-07-23"
+   ],
+   "mae_pp": null,
+   "mae_por_partido": {
+    "PP": {
+     "mae": 1.74,
+     "n": 2
+    },
+    "PSOE": {
+     "mae": 3.23,
+     "n": 2
+    },
+    "VOX": {
+     "mae": 1.18,
+     "n": 2
+    },
+    "SUMAR": {
+     "mae": 1.12,
+     "n": 2
+    }
+   },
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "Simple Lógica",
+   "n_encuestas": 1,
+   "elecciones_cubiertas": [
+    "2023-07-23"
+   ],
+   "mae_pp": null,
+   "mae_por_partido": {
+    "PP": {
+     "mae": 0.86,
+     "n": 1
+    },
+    "PSOE": {
+     "mae": 3.08,
+     "n": 1
+    },
+    "VOX": {
+     "mae": 1.52,
+     "n": 1
+    },
+    "SUMAR": {
+     "mae": 1.47,
+     "n": 1
+    }
+   },
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "Sociometrica",
+   "n_encuestas": 2,
+   "elecciones_cubiertas": [
+    "2023-07-23"
+   ],
+   "mae_pp": null,
+   "mae_por_partido": {
+    "PP": {
+     "mae": 0.7,
+     "n": 2
+    },
+    "PSOE": {
+     "mae": 4.83,
+     "n": 2
+    },
+    "VOX": {
+     "mae": 1.97,
+     "n": 2
+    },
+    "SUMAR": {
+     "mae": 0.62,
+     "n": 2
+    }
+   },
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "Sondaxe",
+   "n_encuestas": 0,
+   "elecciones_cubiertas": [],
+   "mae_pp": null,
+   "mae_por_partido": {},
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "Target Point",
+   "n_encuestas": 0,
+   "elecciones_cubiertas": [],
+   "mae_pp": null,
+   "mae_por_partido": {},
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  }
+ ]
+}
