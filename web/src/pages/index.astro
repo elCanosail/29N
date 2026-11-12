@@ -24,7 +24,9 @@ const dataset = {
   nEstudios: microdatosPorAnio.meta.n_estudios,
   anios: 2025 - 1977 + 1,
 };
-const nEncuestasPrivadas = encuestasData.encuestas.length;
+const nEncuestasPrivadas =
+  (encuestasData.meta as { n_privados?: number }).n_privados ??
+  encuestasData.encuestas.filter((e: { casa: string }) => e.casa.toUpperCase() !== 'CIS').length;
 const entrevistasFmt = dataset.nEntrevistas.toLocaleString('es-ES');
 const resto = forecast.partidos.slice(4);
 // Escaños estimados por partido (del modelo provincial), para pintarlos junto
