@@ -7,6 +7,7 @@
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import encuestasData from '../../data/encuestas.json';
+import seatsData from '../../data/seats.json';
 import exclusionesData from '../../data/exclusiones.json';
 import { num, entero, campo, fechaCorta } from '../../lib/format';
 
@@ -170,7 +171,7 @@ const cssFiltros = `<style>${reglas.join('')}</style>`;
 
     <p class="mono contador">
       N = {entero(encuestasData.meta.n)} encuestas · {entero(encuestasData.meta.n_cis)} del CIS ·
-      {entero(encuestasData.meta.n_privados)} de privados · actualizado {fechaCorta('2026-10-15')}
+      {entero(encuestasData.meta.n_privados)} de privados · actualizado {fechaCorta(seatsData.meta.generado)}
     </p>
 
     <div class="mosaico">
