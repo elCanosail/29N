@@ -452,11 +452,6 @@ def main() -> int:
             "max_desviacion_votos_pp": round(max_dev_votes, 4),
             "ok_votos": max_dev_votes <= COHERENCE_TOL,
         },
-        "bloques_definicion": (
-            "Pertenencia editorial en pipeline/modelo/bloques.yaml (versionada). "
-            "Los partidos fuera de bloque (JXCAT, PNV, PACMA) se cuentan partido "
-            "a partido."
-        ),
         "advertencia": (
             "Swing proporcional uniforme: no modela terremotos locales ni "
             "elasticidades provinciales distintas. Intervalos provinciales de "
