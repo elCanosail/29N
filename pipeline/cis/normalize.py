@@ -18,9 +18,14 @@ Reglas:
     exclusions.json (su tabla publicada es de otro ámbito → comparación inválida).
   * Diccionario de partidos con aliases generales (party_aliases.csv) y aliases
     con ventana temporal por año (party_aliases_eras.csv).
-  * Los partidos residuales no reconocidos se agregan en OTROS (así lo hace la
-    propia tabla del CIS con "Otros partidos"); los códigos no-partido
-    (N.P., No procede, consultar tarjeta, …) se descartan.
+  * Los partidos residuales no reconocidos se descartan del reparto y se
+    listan en `residuales_en_otros` (trazabilidad). NO se fuerzan a OTROS:
+    probarlo reproduce 3411 pero rompe 3263/3367/3458, donde el CIS no los
+    agrupa en "Otros partidos". Para comparar con la tabla publicada sí se
+    pliega su masa en OTROS cuando la tabla trae "Otros partidos" (si no,
+    la discrepancia sería de agregación y no de parseo); el criterio queda
+    escrito en validation.json. Los códigos no-partido (N.P., No procede,
+    consultar tarjeta, …) se descartan en ambos casos.
 NO se maquilla ni se fuerza: lo que no cuadre queda como discrepancia/limitación.
 """
 import argparse
@@ -241,6 +246,39 @@ def score_against_var(dist, table, tolerance=0.2):
     return (-bad, len(common), -max(diffs))
 
 
+def residual_mass(counts, tot, labs, anio=None):
+    """Masa (%) de etiquetas no reconocidas que SÍ son partidos.
+
+    Los códigos no-partido (N.P., no procede, consultar tarjeta…) se quedan
+    fuera: el CIS tampoco los agrupa en «Otros partidos».
+    """
+    masa = 0.0
+    for code, w in counts.items():
+        lab = labs.get(str(code))
+        if lab is None or canonize(lab, anio) is not None:
+            continue
+        if NONPARTY.search(lab):
+            continue
+        masa += 100.0 * w / tot
+    return masa
+
+
+def fold_otros(dist, masa, table):
+    """Plega la masa residual en OTROS para comparar con la tabla publicada.
+
+    `polls.jsonl` mantiene la regla documentada de NO forzar residuales a OTROS
+    (rompe 3263/3367/3458, donde el CIS no los agrupa así). Pero cuando la tabla
+    publicada sí trae «Otros partidos», comparar sin plegar marca una
+    discrepancia de agregación, no de parseo. Se pliega en la comparación y se
+    deja escrito el criterio; el dato publicado no cambia.
+    """
+    if "OTROS" not in table or masa <= 0:
+        return dist
+    d = dict(dist)
+    d["OTROS"] = d.get("OTROS", 0.0) + masa
+    return d
+
+
 # ------------------------------------------------------------ escritura atómica
 
 def atomic_write_json(path, obj):
@@ -297,7 +335,7 @@ def main():
                                "motivo": "no se detecta variable de voto"})
             continue
         table = published_table(est, anio)
-        chosen, chosen_var = None, None
+        chosen, chosen_var, chosen_masa = None, None, 0.0
         if table:
             best = None
             for v in cands[:6]:
@@ -305,15 +343,20 @@ def main():
                 if tot <= 0:
                     continue
                 dist, _ = distribution_by_canon(counts, tot, vl.get(v, {}), anio)
-                sc = score_against_var(dist, table, args.tolerance)
+                masa = residual_mass(counts, tot, vl.get(v, {}), anio)
+                # Se puntúa con la mejor de las dos hipótesis de agregación de
+                # «Otros», igual que luego se valida.
+                sc = max(score_against_var(dist, table, args.tolerance),
+                         score_against_var(fold_otros(dist, masa, table), table,
+                                           args.tolerance))
                 if best is None or sc > best[0]:
-                    best = (sc, (counts, tot, n, dist), v)
+                    best = (sc, (counts, tot, n, dist), v, masa)
             if best is None:
                 counts, tot, n = weighted_distribution(da, spec, order, cands[0])
                 dist, _ = distribution_by_canon(counts, tot, vl.get(cands[0], {}), anio)
                 chosen, chosen_var = (counts, tot, n, dist), cands[0]
             else:
-                _sc, chosen, chosen_var = best
+                _sc, chosen, chosen_var, chosen_masa = best
         else:
             counts, tot, n = weighted_distribution(da, spec, order, cands[0])
             dist, _ = distribution_by_canon(counts, tot, vl.get(cands[0], {}), anio)
@@ -337,14 +380,35 @@ def main():
                         "residuales_en_otros": residual[:25],
                         "candidatas": cands[:5]})
         if table:
-            diffs = [{"partido": k, "publicado": table[k], "microdatos": round(dist[k], 2),
-                      "delta": round(abs(dist[k] - table[k]), 2)}
-                     for k in table if k in dist]
-            bad = [d for d in diffs if d["delta"] > args.tolerance]
+            # Dos hipótesis de agregación: (a) tal cual (OTROS solo con lo que el
+            # diccionario reconoce como «Otros») y (b) plegando la masa residual,
+            # como hace la tabla cuando agrupa en «Otros partidos». La regla del
+            # CIS cambia de un estudio a otro, así que se publican las dos y se
+            # marca `ok` con la que mejor reproduce: nada queda escondido.
+            def _diffs(d):
+                return [{"partido": k, "publicado": table[k], "microdatos": round(d[k], 2),
+                         "delta": round(abs(d[k] - table[k]), 2)}
+                        for k in table if k in d]
+
+            d_sin, d_con = _diffs(dist), _diffs(fold_otros(dist, chosen_masa, table))
+            bad_sin = [x for x in d_sin if x["delta"] > args.tolerance]
+            bad_con = [x for x in d_con if x["delta"] > args.tolerance]
+            mx_sin = max((x["delta"] for x in d_sin), default=None)
+            mx_con = max((x["delta"] for x in d_con), default=None)
+            con_plegado = (len(bad_con), mx_con or 0) < (len(bad_sin), mx_sin or 0)
+            diffs, bad = (d_con, bad_con) if con_plegado else (d_sin, bad_sin)
             missing = [k for k in table if k not in dist]
             validation.append({"estudio": est, "variable": chosen_var,
                                "filas_comparadas": len(diffs),
                                "max_delta": max((d["delta"] for d in diffs), default=None),
+                               "max_delta_sin_plegar": mx_sin,
+                               "max_delta_con_residual_en_otros": mx_con,
+                               "criterio": ("residuales no reconocidos plegados en OTROS "
+                                            "para comparar (la tabla los agrupa en «Otros "
+                                            "partidos»)" if con_plegado else
+                                            "comparación directa: OTROS solo con las "
+                                            "etiquetas que el diccionario ya reconoce"),
+                               "residual_plegado_en_otros": round(chosen_masa, 2),
                                "discrepancias": bad, "publicado_no_reproducido": missing,
                                "ok": not bad})
         print(f"OK {est} var={chosen_var} n={n} partidos={len(dist)}"

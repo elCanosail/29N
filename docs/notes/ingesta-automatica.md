@@ -21,6 +21,11 @@ pipeline/cron_encuestas.py                 ← entrada (la llama el cron de Herm
 Códigos de salida: `0` nada nuevo (silencio), `10` encuestas nuevas y web
 regenerada, `1` fallo.
 
+**El CIS no está en esta cadena.** Los barómetros del CIS se ingieren a mano
+cuando publican microdato (procedimiento en `cis-ingest.md` § «Barrido 2026»):
+el catálogo del CIS se pinta por JS y el microdato llega hasta un mes después
+del avance, así que no encaja en un cron diario.
+
 ## De dónde se descubren
 
 `https://www.electografica.com/feeds/posts/default?alt=json` — el feed público

@@ -113,28 +113,6 @@
   "ok": false
  },
  {
-  "estudio": "3500",
-  "variable": "INTENCIONGR",
-  "filas_comparadas": 18,
-  "max_delta": 0.36,
-  "discrepancias": [
-   {
-    "partido": "SUMAR",
-    "publicado": 4.9,
-    "microdatos": 4.63,
-    "delta": 0.27
-   },
-   {
-    "partido": "ABSTENCION",
-    "publicado": 8.5,
-    "microdatos": 8.14,
-    "delta": 0.36
-   }
-  ],
-  "publicado_no_reproducido": [],
-  "ok": false
- },
- {
   "estudio": "3458",
   "variable": "INTENCIONEU",
   "filas_comparadas": 13,
@@ -165,5 +143,254 @@
   ],
   "publicado_no_reproducido": [],
   "ok": false
+ },
+ {
+  "estudio": "3500",
+  "variable": "INTENCIONGR",
+  "filas_comparadas": 18,
+  "max_delta": 0.36,
+  "discrepancias": [
+   {
+    "partido": "SUMAR",
+    "publicado": 4.9,
+    "microdatos": 4.63,
+    "delta": 0.27
+   },
+   {
+    "partido": "ABSTENCION",
+    "publicado": 8.5,
+    "microdatos": 8.14,
+    "delta": 0.36
+   }
+  ],
+  "publicado_no_reproducido": [],
+  "ok": false
+ },
+ {
+  "estudio": "3540",
+  "variable": "INTENCIONGR",
+  "filas_comparadas": 17,
+  "max_delta": 0.52,
+  "max_delta_sin_plegar": 0.52,
+  "max_delta_con_residual_en_otros": 0.73,
+  "criterio": "comparación directa: OTROS solo con las etiquetas que el diccionario ya reconoce",
+  "residual_plegado_en_otros": 1.25,
+  "discrepancias": [
+   {
+    "partido": "OTROS",
+    "publicado": 3.8,
+    "microdatos": 3.28,
+    "delta": 0.52
+   }
+  ],
+  "publicado_no_reproducido": [],
+  "ok": false
+ },
+ {
+  "estudio": "3544",
+  "variable": "INTENCIONGR",
+  "filas_comparadas": 18,
+  "max_delta": 0.49,
+  "max_delta_sin_plegar": 0.49,
+  "max_delta_con_residual_en_otros": 1.36,
+  "criterio": "comparación directa: OTROS solo con las etiquetas que el diccionario ya reconoce",
+  "residual_plegado_en_otros": 1.85,
+  "discrepancias": [
+   {
+    "partido": "OTROS",
+    "publicado": 3.5,
+    "microdatos": 3.01,
+    "delta": 0.49
+   }
+  ],
+  "publicado_no_reproducido": [],
+  "ok": false
+ },
+ {
+  "estudio": "3546",
+  "variable": "INTENCIONG",
+  "filas_comparadas": 17,
+  "max_delta": 0.43,
+  "max_delta_sin_plegar": 2.62,
+  "max_delta_con_residual_en_otros": 0.43,
+  "criterio": "residuales no reconocidos plegados en OTROS para comparar (la tabla los agrupa en «Otros partidos»)",
+  "residual_plegado_en_otros": 2.67,
+  "discrepancias": [
+   {
+    "partido": "SUMAR",
+    "publicado": 4.9,
+    "microdatos": 4.47,
+    "delta": 0.43
+   }
+  ],
+  "publicado_no_reproducido": [],
+  "ok": false
+ },
+ {
+  "estudio": "3557",
+  "variable": "INTENCIONG",
+  "filas_comparadas": 18,
+  "max_delta": 0.4,
+  "max_delta_sin_plegar": 3.76,
+  "max_delta_con_residual_en_otros": 0.4,
+  "criterio": "residuales no reconocidos plegados en OTROS para comparar (la tabla los agrupa en «Otros partidos»)",
+  "residual_plegado_en_otros": 3.42,
+  "discrepancias": [
+   {
+    "partido": "SUMAR",
+    "publicado": 4.1,
+    "microdatos": 3.82,
+    "delta": 0.28
+   },
+   {
+    "partido": "ERC",
+    "publicado": 1.8,
+    "microdatos": 2.04,
+    "delta": 0.24
+   },
+   {
+    "partido": "OTROS",
+    "publicado": 5.4,
+    "microdatos": 5.06,
+    "delta": 0.34
+   },
+   {
+    "partido": "EN BLANCO",
+    "publicado": 3.6,
+    "microdatos": 4.0,
+    "delta": 0.4
+   }
+  ],
+  "publicado_no_reproducido": [],
+  "ok": false
+ },
+ {
+  "estudio": "3562",
+  "variable": "INTENCIONG",
+  "filas_comparadas": 18,
+  "max_delta": 0.29,
+  "max_delta_sin_plegar": 3.01,
+  "max_delta_con_residual_en_otros": 0.29,
+  "criterio": "residuales no reconocidos plegados en OTROS para comparar (la tabla los agrupa en «Otros partidos»)",
+  "residual_plegado_en_otros": 3.19,
+  "discrepancias": [
+   {
+    "partido": "ERC",
+    "publicado": 1.8,
+    "microdatos": 2.05,
+    "delta": 0.25
+   },
+   {
+    "partido": "EN BLANCO",
+    "publicado": 3.4,
+    "microdatos": 3.69,
+    "delta": 0.29
+   }
+  ],
+  "publicado_no_reproducido": [],
+  "ok": false
+ },
+ {
+  "estudio": "3567",
+  "variable": "INTENCIONG",
+  "filas_comparadas": 18,
+  "max_delta": 0.57,
+  "max_delta_sin_plegar": 3.95,
+  "max_delta_con_residual_en_otros": 0.57,
+  "criterio": "residuales no reconocidos plegados en OTROS para comparar (la tabla los agrupa en «Otros partidos»)",
+  "residual_plegado_en_otros": 3.38,
+  "discrepancias": [
+   {
+    "partido": "PP",
+    "publicado": 19.3,
+    "microdatos": 19.09,
+    "delta": 0.21
+   },
+   {
+    "partido": "VOX",
+    "publicado": 11.6,
+    "microdatos": 11.83,
+    "delta": 0.23
+   },
+   {
+    "partido": "SUMAR",
+    "publicado": 4.2,
+    "microdatos": 3.96,
+    "delta": 0.24
+   },
+   {
+    "partido": "OTROS",
+    "publicado": 5.5,
+    "microdatos": 4.93,
+    "delta": 0.57
+   },
+   {
+    "partido": "EN BLANCO",
+    "publicado": 3.2,
+    "microdatos": 3.46,
+    "delta": 0.26
+   }
+  ],
+  "publicado_no_reproducido": [],
+  "ok": false
+ },
+ {
+  "estudio": "3571",
+  "variable": "INTENCIONG",
+  "filas_comparadas": 18,
+  "max_delta": 0.5,
+  "max_delta_sin_plegar": 3.65,
+  "max_delta_con_residual_en_otros": 0.5,
+  "criterio": "residuales no reconocidos plegados en OTROS para comparar (la tabla los agrupa en «Otros partidos»)",
+  "residual_plegado_en_otros": 3.63,
+  "discrepancias": [
+   {
+    "partido": "SUMAR",
+    "publicado": 4.4,
+    "microdatos": 3.9,
+    "delta": 0.5
+   },
+   {
+    "partido": "ERC",
+    "publicado": 1.8,
+    "microdatos": 2.1,
+    "delta": 0.3
+   }
+  ],
+  "publicado_no_reproducido": [],
+  "ok": false
+ },
+ {
+  "estudio": "3577",
+  "variable": "INTENCIONGR",
+  "filas_comparadas": 18,
+  "max_delta": 0.36,
+  "max_delta_sin_plegar": 1.82,
+  "max_delta_con_residual_en_otros": 0.36,
+  "criterio": "residuales no reconocidos plegados en OTROS para comparar (la tabla los agrupa en «Otros partidos»)",
+  "residual_plegado_en_otros": 1.47,
+  "discrepancias": [
+   {
+    "partido": "OTROS",
+    "publicado": 6.0,
+    "microdatos": 5.64,
+    "delta": 0.36
+   }
+  ],
+  "publicado_no_reproducido": [],
+  "ok": false
+ },
+ {
+  "estudio": "3582",
+  "variable": "INTENCIONGR",
+  "filas_comparadas": 18,
+  "max_delta": 0.05,
+  "max_delta_sin_plegar": 1.94,
+  "max_delta_con_residual_en_otros": 0.05,
+  "criterio": "residuales no reconocidos plegados en OTROS para comparar (la tabla los agrupa en «Otros partidos»)",
+  "residual_plegado_en_otros": 1.94,
+  "discrepancias": [],
+  "publicado_no_reproducido": [],
+  "ok": true
  }
 ]
