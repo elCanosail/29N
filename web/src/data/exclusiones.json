@@ -1,8 +1,8 @@
 {
  "meta": {
-  "n": 88,
+  "n": 89,
   "n_cis": 71,
-  "n_privados": 17,
+  "n_privados": 18,
   "nota": "Una encuesta que no pasa validación no desaparece: se documenta con su motivo."
  },
  "exclusiones": [
@@ -781,6 +781,16 @@
    "id": null,
    "casa": "SW Demoscopia",
    "slug": "auto-2026-11-11.json",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "Etiquetas publicadas fuera del modelo (se listan en fuente_votos_adicionales de cada encuesta): SALF (2.0%): SALF mapea a OTROS (residual no modelado); PODEMOS (1.7%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie.",
+   "url": null
+  },
+  {
+   "origen": "encuestadores",
+   "id": null,
+   "casa": "SW Demoscopia",
+   "slug": "auto-2026-11-12.json",
    "tipo": null,
    "eleccion": null,
    "motivo": "Etiquetas publicadas fuera del modelo (se listan en fuente_votos_adicionales de cada encuesta): SALF (2.0%): SALF mapea a OTROS (residual no modelado); PODEMOS (1.7%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie.",
