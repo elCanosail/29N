@@ -21,6 +21,10 @@
   /* --- Colores de significado (datos e incertidumbre) -------------------- */
   --intervalo: oklch(0.82 0.13 85 / 0.6);
   --intervalo-borde: oklch(0.72 0.14 85);
+  /* Marcas finas (ticks de 4 px): el borde de banda no llega a 3:1 sobre papel.
+     0.62/0.14/85 = #AC7D00, 3.52:1; texto en ámbar: 0.55/0.15/80 = 4.71:1. */
+  --intervalo-tick: oklch(0.62 0.14 85);
+  --intervalo-texto: oklch(0.55 0.15 80);
   --alerta: oklch(0.55 0.19 28);
   --ok: oklch(0.45 0.09 155);
 

@@ -10,7 +10,9 @@
     "preview": "astro preview",
     "check": "astro check",
     "test:elecciones": "node scripts/test-elecciones.mjs",
-    "prebuild": "npm run -s test:elecciones"
+    "test:hero": "node scripts/test-hero.mjs",
+    "prebuild": "npm run -s test:elecciones",
+    "postbuild": "npm run -s test:hero"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
