@@ -1,0 +1,204 @@
+---
+/**
+ * Needle29N — P(bloque ≥ 176) en tres cifras-titular.
+ * Issue #15 › PR-4 (componente 1).
+ *
+ * La pregunta que responde: **¿quién puede gobernar?** No qué partido gana
+ * (eso lo cuenta la barra de escaños), sino cuántas de las 10.000 simulaciones
+ * acaban con un bloque por encima de 176.
+ *
+ * Datos: `seats.json.bloques` (PR-2) — `p_ge176` por bloque, `media`/`ic95` de
+ * la suma y `p_ninguno`. Nada más: aquí no se calcula ningún número nuevo.
+ *
+ * Decisiones:
+ *  - Las tres cifras van en tinta, no en color de partido: la pregunta es del
+ *    método (sumas de bloque), no de una marca política.
+ *  - Sin decimales: 6 %, 85 %, 9 % (enteros) y el rango siempre a la vista.
+ *  - La composición literal de cada bloque se publica debajo, enlazada a
+ *    /metodologia/#bloques: cambiar quién está dentro cambia el número.
+ *  - Sin JS: las cifras son texto real; el detalle largo va en `title`.
+ */
+import { entero, num } from '../lib/format';
+
+export interface Bloque {
+  partidos: string[];
+  p_ge176: number;
+  media: number;
+  ic95: number[];
+}
+
+interface Props {
+  izquierda: Bloque;
+  derecha: Bloque;
+  pNinguno: number;
+  /** `seats.json.meta.n_runs` para redactar la probabilidad. */
+  nRuns: number;
+  descripcion?: string;
+}
+
+const { izquierda, derecha, pNinguno, nRuns, descripcion } = Astro.props as Props;
+
+const pct = (p: number) => Math.round(p * 100);
+const pIzq = pct(izquierda.p_ge176);
+const pDer = pct(derecha.p_ge176);
+const pNing = pct(pNinguno);
+const suma = pIzq + pDer + pNing;
+
+const nombreBloque = (partidos: string[]) =>
+  partidos
+    .map((p) => (p === 'SUMAR' ? 'SUMAR' : p))
+    .join(', ')
+    .replace(/, ([^,]*)$/, ' y $1');
+
+const cifras = [
+  {
+    clave: 'izquierda',
+    etiqueta: 'Izquierda',
+    valor: pIzq,
+    bloque: izquierda,
+    composicion: nombreBloque(izquierda.partidos),
+    detalle: `La suma de ${nombreBloque(izquierda.partidos)} alcanza 176 escaños o más en el ${pIzq} % de las ${entero(nRuns)} simulaciones. Media ${num(izquierda.media, 1)} escaños; intervalo del 95 %: ${izquierda.ic95[0]}–${izquierda.ic95[1]}.`,
+  },
+  {
+    clave: 'derecha',
+    etiqueta: 'Derecha',
+    valor: pDer,
+    bloque: derecha,
+    composicion: nombreBloque(derecha.partidos),
+    detalle: `La suma de ${nombreBloque(derecha.partidos)} alcanza 176 escaños o más en el ${pDer} % de las ${entero(nRuns)} simulaciones. Media ${num(derecha.media, 1)} escaños; intervalo del 95 %: ${derecha.ic95[0]}–${derecha.ic95[1]}.`,
+  },
+  {
+    clave: 'ninguno',
+    etiqueta: 'Ningún bloque',
+    valor: pNing,
+    bloque: null,
+    composicion: '',
+    detalle: `En el ${pNing} % de las ${entero(nRuns)} simulaciones ningún bloque alcanza 176 escaños: el Congreso queda sin mayoría y el gobierno depende de acuerdos puntuales.`,
+  },
+];
+
+---
+
+<section class="needle" role="group" aria-label={descripcion ?? 'Probabilidad de cada bloque de alcanzar 176 escaños'}>
+  <div class="needle__cifras">
+    {cifras.map((c) => (
+      <div class={`needle__cifra needle__cifra--${c.clave}`} data-bloque={c.clave} data-pct={c.valor} title={c.detalle}>
+        <p class="needle__etiqueta mono">
+          {c.etiqueta} <span class="needle__signo">≥ 176</span>
+        </p>
+        <p class="needle__valor mono">
+          <span aria-hidden="true">{c.valor}<span class="needle__unidad"> %</span></span>
+          <span class="visualmente-oculto">con probabilidad {c.valor} por ciento de alcanzar 176 escaños</span>
+        </p>
+        {/* Barra de proporción 0–100 %: pegada a la cifra, para que la cifra y su
+            tamaño relativo se lean en el mismo golpe de vista. */}
+        <div class="needle__aguja" aria-hidden="true">
+          <span class="needle__aguja-relleno" style={`width:${c.valor}%`}></span>
+        </div>
+        <p class="needle__rango mono">
+          {c.bloque ? `${c.bloque.ic95[0]}–${c.bloque.ic95[1]} escaños` : 'sin mayoría en el Congreso'}
+        </p>
+        {c.composicion && <p class="needle__composicion">{c.composicion}</p>}
+      </div>
+    ))}
+  </div>
+
+  {suma !== 100 && (
+    <p class="needle__nota mono">
+      Las tres probabilidades suman {suma} %: el redondeo a entero deja {Math.abs(100 - suma)} {(100 - suma) === 1 ? 'punto' : 'puntos'} fuera.
+    </p>
+  )}
+
+  <p class="needle__fuente mono">
+    Las tres se reparten el 100 % de las {entero(nRuns)} simulaciones D'Hondt provincia a provincia · composición de bloques en <a href="/metodologia/#bloques">/metodologia/</a>
+  </p>
+</section>
+
+<style>
+  .needle {
+    margin: var(--s-3) 0 var(--s-5);
+  }
+
+  .needle__cifras {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--s-4);
+  }
+
+  .needle__cifra { min-width: 0; }
+
+  .needle__etiqueta {
+    margin: 0 0 var(--s-1);
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
+    color: var(--tinta-2);
+  }
+  .needle__signo { color: var(--tinta-3); }
+
+  .needle__valor {
+    margin: 0;
+    font-size: clamp(30px, 3.2vw, 40px);
+    line-height: 0.95;
+    font-weight: 500;
+    color: var(--tinta);
+    font-variant-numeric: tabular-nums;
+  }
+  .needle__unidad { font-size: 0.5em; color: var(--tinta-2); }
+
+  .needle__rango {
+    margin: var(--s-1) 0 0;
+    font-size: 0.75rem;
+    color: var(--tinta-2);
+  }
+
+  /* Barra de proporción 0–100 %: pista de papel y relleno de tinta hasta el
+     valor. Tres barras alineadas se comparan de un vistazo; una raya suelta no. */
+  .needle__aguja {
+    height: 10px;
+    margin: var(--s-2) 0 0;
+    background: var(--papel-2);
+    border-right: 1px solid var(--regla);
+  }
+  .needle__aguja-relleno {
+    display: block;
+    height: 100%;
+    background: var(--tinta);
+    min-width: 2px;
+  }
+
+  .needle__composicion {
+    margin: var(--s-1) 0 0;
+    font-size: 0.72rem;
+    line-height: 1.45;
+    color: var(--tinta-3);
+  }
+
+
+  .needle__nota { margin: var(--s-2) 0 0; font-size: 0.72rem; color: var(--alerta); }
+  .needle__fuente {
+    margin: var(--s-2) 0 0;
+    font-size: 0.72rem;
+    color: var(--tinta-3);
+  }
+  .needle__fuente a { color: var(--enlace); }
+
+  @media (max-width: 640px) {
+    .needle__cifras {
+      grid-template-columns: 1fr;
+      gap: var(--s-3);
+    }
+    .needle__cifra {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      column-gap: var(--s-3);
+      align-items: baseline;
+      padding-bottom: var(--s-2);
+      border-bottom: var(--borde-regla);
+    }
+    .needle__etiqueta { grid-column: 1 / -1; margin-bottom: 2px; }
+    .needle__valor { grid-row: 2 / span 2; font-size: 40px; }
+    .needle__rango { grid-column: 2; margin: 0; }
+    .needle__aguja { grid-column: 2; margin-top: 6px; }
+    .needle__composicion { grid-column: 2; margin-top: 2px; }
+  }
+</style>
