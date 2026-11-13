@@ -43,6 +43,8 @@ const inicial = [...PARTIDOS]
   .map((p) => ({ partido: p, escanos: central.get(p) ?? 0, pct: punto[p] ?? 0 }))
   .sort((a, b) => b.escanos - a.escanos || a.partido.localeCompare(b.partido));
 const totalInicial = inicial.reduce((s, f) => s + f.escanos, 0);
+/** Titulares del marcador móvil: los tres primeros del escenario central. */
+const topInicial = inicial.filter((f) => f.escanos > 0).slice(0, 3);
 
 const colores = Object.fromEntries(PARTIDOS.map((p) => [p, colorPartido(p)]));
 const nombres = Object.fromEntries(PARTIDOS.map((p) => [p, nombre29N(p)]));
@@ -90,10 +92,11 @@ const definicion = [
       <figure class="reparto">
         <div class="reparto__cuerpo" id="reparto-cuerpo" role="img" aria-label={`Escenario simulado: PP ${central.get('PP') ?? 0}, PSOE ${central.get('PSOE') ?? 0}, VOX ${central.get('VOX') ?? 0} escaños.`}>
           <div class="reparto__barra" id="barra" aria-hidden="true">
-            {inicial.filter((f) => f.escanos > 0).map((f) => (
+            {inicial.map((f) => (
               <span
                 class="reparto__tramo"
-                style={`flex:${Math.max(f.escanos, 0.001)};background:${colorPartido(f.partido)}`}
+                data-partido={f.partido}
+                style={`flex:${Math.max(f.escanos, 0.001)};background:${colorPartido(f.partido)}${f.escanos > 0 ? '' : ';display:none'}`}
                 title={`${nombre29N(f.partido)}: ${entero(f.escanos)} escaños`}
               ></span>
             ))}
@@ -113,15 +116,15 @@ const definicion = [
           </div>
           <div id="filas">
             {inicial.map((f) => (
-              <div class="reparto__fila">
+              <div class="reparto__fila" data-fila={f.partido}>
                 <span class="reparto__col reparto__col--partido">
                   <span class="reparto__muestra" style={`background:${colorPartido(f.partido)}`} aria-hidden="true"></span>
                   {nombre29N(f.partido)}
                 </span>
-                <span class="reparto__col mono reparto__num">{entero(f.escanos)}</span>
-                <span class="reparto__col mono reparto__num">{num(0, 0)}</span>
-                <span class="reparto__col mono reparto__num">{num(f.pct, 1)}</span>
-                <span class="reparto__col mono reparto__banda">
+                <span class="reparto__col mono reparto__num" data-celda="escanos">{entero(f.escanos)}</span>
+                <span class="reparto__col mono reparto__num"><span class="reparto__delta plano" data-celda="delta">＝ 0</span></span>
+                <span class="reparto__col mono reparto__num" data-celda="pct">{num(f.pct, 1)}</span>
+                <span class="reparto__col mono reparto__banda" data-celda="banda">
                   {num(limites[f.partido]?.min ?? 0, 1)} – {num(limites[f.partido]?.max ?? 0, 1)}
                 </span>
               </div>
@@ -145,6 +148,16 @@ const definicion = [
         <p class="controles__suma mono" id="suma-controles" aria-live="polite">
           Suma de los controles: {num(totalInicial ? PARTIDOS.reduce((s, p) => s + (punto[p] ?? 0), 0) : 0, 1)} % → renormalizado a 100 %
         </p>
+      </div>
+
+      <!-- Marcador que acompaña al dedo: en móvil el reparto queda arriba y el
+           control abajo; sin esto se mueve el voto a ciegas. Solo se muestra en
+           pantallas estrechas (ver CSS). -->
+      <div class="hud" id="hud">
+        <p class="hud__dato mono" id="hud-dato" aria-live="polite">
+          {topInicial.map((f) => `${nombre29N(f.partido)} ${entero(f.escanos)}`).join(' · ')} · {entero(totalInicial)} esc.
+        </p>
+        <button type="button" class="hud__boton mono" id="reset-hud">central</button>
       </div>
 
       <div class="sliders">
@@ -232,7 +245,21 @@ const definicion = [
     var filas = document.getElementById('filas');
     var sumaTxt = document.getElementById('suma-controles');
     var reset = document.getElementById('reset');
+    var hudDato = document.getElementById('hud-dato');
+    var resetHud = document.getElementById('reset-hud');
     if (!cuerpo || !barra || !filas) return;
+
+    // Alto real de la cabecera: el marcador pegado arriba tiene que empezar
+    // justo debajo, y la cabecera cambia de alto entre móvil y escritorio.
+    function medirCabecera() {
+      var cab = document.querySelector('.cabecera');
+      if (cab) {
+        document.documentElement.style.setProperty('--cabecera-alto', cab.offsetHeight + 'px');
+      }
+    }
+    medirCabecera();
+    window.addEventListener('resize', medirCabecera);
+    window.addEventListener('orientationchange', medirCabecera);
 
     // Punto de partida y banda de cada control (p10-p90 del forecast).
     var P = {};
@@ -363,42 +390,44 @@ const definicion = [
         return a < b ? -1 : 1;
       });
 
-      // Barra apilada del reparto resultante.
-      barra.innerHTML = '';
+      // Barra apilada del reparto resultante. Los tramos ya existen en el HTML:
+      // se ajustan, no se recrean. Recrear nodos con createElement les quita el
+      // atributo de scope de Astro y con él todo el CSS del componente.
       orden.forEach(function (p) {
-        if (escaños[p] <= 0) return;
-        var span = document.createElement('span');
-        span.className = 'reparto__tramo';
-        span.style.flex = String(Math.max(escaños[p], 0.001));
-        span.style.background = colores[p] || 'var(--p-otros)';
-        span.title = (NOMBRES[p] || p) + ': ' + escaños[p] + ' escaños';
-        barra.appendChild(span);
+        var tramo = barra.querySelector('[data-partido="' + p + '"]');
+        if (!tramo) return;
+        tramo.style.display = escaños[p] > 0 ? '' : 'none';
+        tramo.style.flex = String(Math.max(escaños[p], 0.001));
+        tramo.title = (NOMBRES[p] || p) + ': ' + escaños[p] + ' escaños';
       });
       if (pie) pie.textContent = totalEsc + ' escaños · escenario simulado';
 
-      // Tabla: escaños, delta sobre el central del modelo y % de voto.
-      filas.innerHTML = '';
+      // Tabla: escaños, delta sobre el central del modelo y % de voto. Se
+      // actualizan las celdas existentes y se reordena moviendo el nodo.
       orden.forEach(function (p) {
+        var fila = filas.querySelector('[data-fila="' + p + '"]');
+        if (!fila) return;
         var d = escaños[p] - (central[p] || 0);
-        var clase = d > 0 ? 'sube' : d < 0 ? 'baja' : 'plano';
-        var flecha = d > 0 ? '▲' : d < 0 ? '▼' : '＝';
-        var fila = document.createElement('div');
-        fila.className = 'reparto__fila';
-        fila.innerHTML =
-          '<span class="reparto__col reparto__col--partido">' +
-            '<span class="reparto__muestra" style="background:' + (colores[p] || 'var(--p-otros)') + '" aria-hidden="true"></span>' +
-            (NOMBRES[p] || p) +
-          '</span>' +
-          '<span class="reparto__col mono reparto__num">' + escaños[p] + '</span>' +
-          '<span class="reparto__col mono reparto__num"><span class="reparto__delta ' + clase + '">' +
-            flecha + ' ' + (d > 0 ? '+' : '') + d +
-          '</span></span>' +
-          '<span class="reparto__col mono reparto__num">' + formNum(rn.target[p], 1) + '</span>' +
-          '<span class="reparto__col mono reparto__banda">' +
-            formNum(P[p] ? P[p].min : 0, 1) + ' – ' + formNum(P[p] ? P[p].max : 0, 1) +
-          '</span>';
+        var celdaEsc = fila.querySelector('[data-celda="escanos"]');
+        if (celdaEsc) celdaEsc.textContent = String(escaños[p]);
+        var celdaDelta = fila.querySelector('[data-celda="delta"]');
+        if (celdaDelta) {
+          celdaDelta.className = 'reparto__delta ' + (d > 0 ? 'sube' : d < 0 ? 'baja' : 'plano');
+          celdaDelta.textContent = (d > 0 ? '▲ +' : d < 0 ? '▼ ' : '＝ ') + d;
+        }
+        var celdaPct = fila.querySelector('[data-celda="pct"]');
+        if (celdaPct) celdaPct.textContent = formNum(rn.target[p], 1);
         filas.appendChild(fila);
       });
+
+      // Marcador móvil: mismos tres primeros, para no mover el voto a ciegas.
+      if (hudDato) {
+        hudDato.textContent = orden
+          .filter(function (p) { return escaños[p] > 0; })
+          .slice(0, 3)
+          .map(function (p) { return (NOMBRES[p] || p) + ' ' + escaños[p]; })
+          .join(' · ') + ' · ' + totalEsc + ' esc.';
+      }
 
       if (cuerpo) {
         cuerpo.setAttribute('aria-label',
@@ -407,18 +436,19 @@ const definicion = [
       }
     }
 
+    function volverCentral() {
+      PARTIDOS.forEach(function (p) {
+        var el = document.getElementById('sl-' + p);
+        if (el) el.value = P[p] ? P[p].punto : 0;
+      });
+      pintar();
+    }
+
     document.querySelectorAll('.sliders input[type="range"]').forEach(function (el) {
       el.addEventListener('input', pintar);
     });
-    if (reset) {
-      reset.addEventListener('click', function () {
-        PARTIDOS.forEach(function (p) {
-          var el = document.getElementById('sl-' + p);
-          if (el) el.value = P[p] ? P[p].punto : 0;
-        });
-        pintar();
-      });
-    }
+    if (reset) reset.addEventListener('click', volverCentral);
+    if (resetHud) resetHud.addEventListener('click', volverCentral);
 
     pintar();
   })();
@@ -577,12 +607,66 @@ const definicion = [
   }
   .definicion dt { font-weight: 700; }
   .definicion dd { margin: 0; font-size: var(--t-small); line-height: var(--lh-small); color: var(--tinta-2); }
+  /* --- Marcador móvil (solo pantallas estrechas) --------------------------- */
+  .hud { display: none; }
+
   @media (max-width: 620px) {
     .definicion { grid-template-columns: 1fr; gap: var(--s-1); }
-    .reparto__fila { grid-template-columns: minmax(76px, 1.3fr) repeat(2, minmax(44px, 0.6fr)); }
+
+    /* Reparto: tres columnas legibles en vez de cinco apretadas. La banda y el
+       % de voto siguen en los controles, donde se mueven. */
+    .reparto { padding: var(--s-3) 0; }
+    .reparto__fila {
+      grid-template-columns: minmax(0, 1fr) 3.25rem 4.25rem;
+      gap: var(--s-1) var(--s-2);
+      padding: var(--s-2) 0;
+      align-items: center;
+    }
     .reparto__fila--cabecera .reparto__col:nth-child(4),
     .reparto__fila--cabecera .reparto__col:nth-child(5),
     .reparto__fila > .reparto__col:nth-child(4),
     .reparto__fila > .reparto__col:nth-child(5) { display: none; }
+    .reparto__num { font-size: 1rem; font-variant-numeric: tabular-nums; }
+    .reparto__col--partido { font-size: 0.9375rem; }
+
+    /* Controles: el marcador se queda pegado bajo la cabecera mientras se
+       arrastra, con el total a la vista. */
+    .hud {
+      display: flex;
+      position: sticky;
+      top: var(--cabecera-alto, var(--header-h));
+      z-index: 10;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--s-2);
+      margin: 0 calc(var(--s-3) * -1) var(--s-3);
+      padding: var(--s-2) var(--s-3);
+      background: var(--papel);
+      border-bottom: var(--borde-tinta);
+      box-shadow: 0 6px 12px -10px oklch(0 0 0 / 0.5);
+    }
+    .hud__dato { margin: 0; font-size: 0.75rem; line-height: 1.3; color: var(--tinta); }
+    .hud__boton {
+      flex: 0 0 auto;
+      font: inherit;
+      font-size: 0.75rem;
+      min-height: 2.5rem;
+      padding: 0 var(--s-2);
+      color: var(--tinta-2);
+      background: transparent;
+      border: 1px solid var(--tinta-3);
+      border-radius: var(--radio);
+      cursor: pointer;
+    }
+    .hud__boton:focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; }
+
+    .controles { padding-block: var(--s-4); }
+    .controles__suma { font-size: 0.75rem; }
+    .sliders { gap: var(--s-3); }
+    /* Dedo, no ratón: el rango necesita caja de toque, no una raya de 16 px. */
+    .slider input[type='range'] { height: 2.25rem; margin: var(--s-1) 0 0; }
+    .slider__banda { font-size: 0.6875rem; }
+    .controles__acciones { gap: var(--s-3); }
+    .boton-secundario { min-height: 2.75rem; width: 100%; }
   }
 </style>
