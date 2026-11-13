@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import IntervalBand from '../components/IntervalBand.astro';
 import HorquillasEscanos from '../components/HorquillasEscanos.astro';
 import BarraEscanos from '../components/BarraEscanos.astro';
+import Needle29N from '../components/Needle29N.astro';
 import SerieLinea from '../components/SerieLinea.astro';
 import forecast from '../data/forecast.json';
 import seatsData from '../data/seats.json';
@@ -85,6 +86,16 @@ const descripcionHorquillaHome = `Escaños estimados del 29N con su horquilla de
   .map((f) => `${f.etiqueta} ${num(f.media, 1)} (${f.min}–${f.max})`)
   .join('; ')}. La línea discontinua marca la mayoría absoluta (176), que ningún partido alcanza dentro de su horquilla.`;
 
+// Bloques editoriales (seats.json.bloques, PR-2): quién puede llegar a 176.
+const bloquesData = (seatsData as {
+  bloques?: {
+    izquierda: { partidos: string[]; p_ge176: number; media: number; ic95: number[] };
+    derecha: { partidos: string[]; p_ge176: number; media: number; ic95: number[] };
+    p_ninguno: number;
+  };
+}).bloques;
+if (!bloquesData) throw new Error('seats.json no trae bloques: PR-4 no puede publicar el needle sin ellos.');
+
 // Comparación 23J: escaños, votos y % agregados por familia (ver reparto23.json).
 const real23 = Object.fromEntries(
   (repartoData.familias as {partido: string; escanos: number; pct: number}[]).map((f) => [
@@ -150,7 +161,17 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
       descripcion={`Reparto de escaños, estimación 29N frente al resultado real de 23J: ${filasReparto.slice(0, 4).map((f) => `${f.partido} ${num(f.estimacionEscanos, 1)} esc y ${num(f.estimacionPct, 1)} % frente a ${entero(f.realEscanos)} esc y ${num(f.realPct, 1)} %`).join('; ')}. El triángulo indica los escaños de más o de menos frente al 23J real. En la barra del 23J, los partidos del acuerdo de gobierno aparecen agrupados a la izquierda, empezando por el PSOE.`}
       pie={`Estimación: media ponderada de encuestas + swing proporcional provincial + 10.000 simulaciones D'Hondt · ▲▼ = escaños de más o de menos frente al 23J real · ${meta.mes_predicho}`}
       lectura={`La comparación se hace por familias políticas idénticas a las del modelo (PSOE incluye PSC, PSE-EE, PSdeG, PSIB-PSOE y PSN-PSOE; Frente A incluye IU, Más Madrid, Comuns, Sumar Aragón y Més, y en 23J concurrió como Sumar). La precisión de cada estimación —media nunca sin su intervalo— está en el desglose de abajo.`}
-    />
+    >
+      <p class="eyebrow needle__anuncio">La pregunta del gobierno · probabilidad de mayoría por bloque</p>
+      <h3 class="needle__titulo">¿Puede alguno de los bloques llegar a 176?</h3>
+      <Needle29N
+        izquierda={bloquesData.izquierda}
+        derecha={bloquesData.derecha}
+        pNinguno={bloquesData.p_ninguno}
+        nRuns={seatsData.meta.n_runs}
+        descripcion={`Probabilidad de que cada bloque alcance 176 escaños en 10.000 simulaciones: izquierda ${Math.round(bloquesData.izquierda.p_ge176 * 100)} %, derecha ${Math.round(bloquesData.derecha.p_ge176 * 100)} %, ninguno ${Math.round(bloquesData.p_ninguno * 100)} %.`}
+      />
+    </BarraEscanos>
 
     <details class="heroe__resto">
       <summary>Ver la precisión: horquilla del 95 % de cada partido, media y mediana</summary>
@@ -165,6 +186,9 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
 
     
   </section>
+
+  <!-- 1b. ¿Quién puede gobernar? Va DENTRO del héroe, después de la barra: la
+       comparación 29N/23J sigue siendo lo primero que se ve. -->
 
   <!-- 2. Bloque héroe: estimación de voto estatal con intervalos ------------ -->
   <section class="contenedor seccion seccion--compacta" aria-labelledby="heroe-titulo">
@@ -368,6 +392,11 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
   .aclaraciones__inner .aviso-metodo { margin: 0; }
 
   .heroe-apertura { padding-top: var(--s-4); }
+
+  /* Bloque de probabilidad por bloque (issue #15 › PR-4): cuelga del reparto,
+     entre la barra y la tabla. La regla la pone el propio componente. */
+  .needle__anuncio { margin: var(--s-6) 0 var(--s-2); }
+  .needle__titulo { margin: 0; }
 
   .dataset {
     display: grid;

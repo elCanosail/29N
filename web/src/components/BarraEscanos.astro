@@ -137,6 +137,11 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
     </div>
   </div>
 
+  <!-- Hueco opcional entre la barra y la tabla: la portada cuelga ahí el bloque
+       de probabilidad por bloque (PR-4), justo después del reparto y antes del
+       detalle. Sin hijos, no se pinta nada y el componente queda igual. -->
+  <slot />
+
   <div class="reparto__comparativa">
     <div class="reparto__fila reparto__fila--cabecera" aria-hidden="true">
       <span class="reparto__col reparto__col--partido">Partido</span>
