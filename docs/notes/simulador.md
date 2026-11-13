@@ -24,9 +24,10 @@ puede moverse.
 
 | Fichero | Qué hace |
 |---|---|
-| `pipeline/simulador/export_base23.py` | Exporta la base provincial 23J a `web/src/data/base23.json`. Verifica que el reparto reproduce `seats.json`. |
+| `pipeline/simulador/export_base23.py` | Exporta la base provincial 23J a `web/src/data/base23.json`. Verifica que el reparto reproduce `seats.json`. **Hay que volver a ejecutarlo cada vez que se regeneren `forecast.json`/`seats.json`.** |
 | `web/src/data/base23.json` | 52 provincias: escaños, votos válidos y % de voto por partido (universo modelado, suma 100 por provincia) + `punto_modelo`. |
 | `web/src/pages/simulador/index.astro` | Página «Simulador 29N». Motor D'Hondt + swing + calibración en JS vanilla, datos embebidos. |
+| `web/scripts/test-simulador.mjs` | Contratos en `postbuild`: el punto de partida casa con `forecast.json` (si `base23.json` se queda atrás, el build falla) y la tabla se sirve desde el HTML. |
 
 ## 1. Base provincial (`base23.json`)
 
@@ -168,3 +169,31 @@ Artefacto: `dist/simulador/index.html` (52 KB), `<title>Simulador 29N · 29N</ti
 Integrar `/simulador/` en la navegación (lo hace el padre en `Header.astro` tras
 revisión) y, si se acepta la recomendación de §3, publicar el punto del forecast
 con más precisión en `forecast.json`.
+
+## 5. Por qué el JS no recrea la tabla (y el móvil)
+
+Dos fallos reales, con su lección:
+
+1. **La tabla salía como un chorizo de números.** El script construía las filas
+   con `createElement`/`innerHTML`. Astro aplica el CSS con un atributo de scope
+   (`data-astro-cid-…`) que se pone en el HTML servido; los nodos creados en
+   tiempo de ejecución no lo llevan, así que `.reparto__fila { display: grid }`
+   no les afectaba y las celdas se quedaban como `<span>` en línea. **Regla: en
+   Astro, si un nodo nace en el cliente, no hereda el CSS con scope.** La tabla
+   se sirve completa desde el HTML (una fila por partido, celdas marcadas con
+   `data-celda`) y el JS solo cambia textos, clases y el orden moviendo nodos
+   existentes con `appendChild`.
+2. **`base23.json` se quedó congelado el 15-10** mientras el modelo se regeneraba:
+   el simulador arrancaba con PP al 35,4 % cuando `forecast.json` publicaba 32,7 %
+   —once escaños de diferencia en reposo, y la suma de controles a 101,8 %. Se
+   regeneró con `export_base23.py` (verificación: escenario central reproducido
+   exactamente) y `test-simulador.mjs` lo vigila en cada build.
+
+En móvil (≤620 px) el reparto pasa a tres columnas (partido, escaños, Δ) —la banda
+y el % de voto viven en los controles, donde se mueven— y sobre los controles se
+pega un **marcador** con los tres primeros partidos, el total de escaños y un
+botón «central». Se pega bajo la cabecera con el alto real medido en JS
+(`--cabecera-alto`), porque la cabecera mide 66 px en escritorio y 135 px en móvil
+y `top: 0` la taparía. El rango nativo pasa a 36 px de alto para que el dedo
+tenga caja de toque.
+

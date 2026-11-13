@@ -11,8 +11,9 @@
     "check": "astro check",
     "test:elecciones": "node scripts/test-elecciones.mjs",
     "test:needle": "node scripts/test-needle.mjs",
+    "test:simulador": "node scripts/test-simulador.mjs",
     "prebuild": "npm run -s test:elecciones",
-    "postbuild": "npm run -s test:needle"
+    "postbuild": "npm run -s test:needle && npm run -s test:simulador"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
