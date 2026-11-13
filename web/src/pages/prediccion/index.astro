@@ -3,7 +3,6 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import IntervalBand from '../../components/IntervalBand.astro';
 import HorquillasEscanos from '../../components/HorquillasEscanos.astro';
-import DeltaDeActualizacion from '../../components/DeltaDeActualizacion.astro';
 import MapaProvincial from '../../components/MapaProvincial.astro';
 import seats from '../../data/seats.json';
 import base23 from '../../data/base23.json';
@@ -208,12 +207,6 @@ const jsonLd = [
       <p class="titular-intro entrada entrada--2">
         Escaños por provincia con el intervalo del 95 % de 10 000 simulaciones.
       </p>
-      <DeltaDeActualizacion
-        generado={meta.generado}
-        nRuns={meta.n_runs}
-        deltas={seats.deltas?.nacional}
-        contra={seats.deltas?.contra}
-      />
     </header>
 
     <!-- El encabezado no vende: el mapa es la recompensa, no el gancho -->
