@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-11-12",
+  "generado": "2026-11-13",
   "objetivo": "29N — elecciones generales 2026-11-29",
   "mes_predicho": "2026-11",
   "ultimo_mes_con_dato": "2026-11-01",
@@ -50,14 +50,14 @@
   "advertencia": "Punto = baseline (ultima media ponderada), que empata en el backtest con TimesFM; TimesFM NO mejora al baseline (ver docs/notes/modelo.md). Intervalos empiricos recalibrados a su cobertura nominal con un factor agrupado (ver docs/notes/calibracion-intervalos.md); siguen siendo bandas simetricas, no una probabilidad de resultado."
  },
  "punto": {
-  "PP": 32.684,
-  "PSOE": 30.901,
-  "VOX": 20.125,
-  "SUMAR": 6.936,
-  "ERC": 2.712,
-  "JXCAT": 1.433,
-  "PNV": 0.881,
-  "EH BILDU": 1.48,
+  "PP": 32.688,
+  "PSOE": 30.806,
+  "VOX": 20.18,
+  "SUMAR": 6.957,
+  "ERC": 2.732,
+  "JXCAT": 1.427,
+  "PNV": 0.885,
+  "EH BILDU": 1.476,
   "BNG": 1.088,
   "CUP": 0.304,
   "CC": 0.431,
