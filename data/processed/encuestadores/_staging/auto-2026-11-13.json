@@ -1,0 +1,39 @@
+{
+ "encuestas": [
+  {
+   "fuente": "Sigma Dos",
+   "estudio_id": "sigma-dos-2026-11-11",
+   "fecha_trabajo": "2026-11-03/2026-11-11",
+   "fecha_publicacion": "2026-11-13",
+   "n": 3120,
+   "metodologia": "Telefónico + online",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "url": "https://www.elmundo.es/elecciones/elecciones-generales/2026/11/12/6af60b3ee4d4d8845c8b4577.html",
+   "extracto": "[Sigma Dos, publicado 2026-11-13; ficha: https://www.elmundo.es/elecciones/elecciones-generales/2026/11/12/6af60b3ee4d4d8845c8b4577.html] ESPAÑA · Elecciones generales · Encuesta Sigma Dos 12/11/2026. Campo 2026-11-03/2026-11-11, n=3120, método Telefónico + online. Voto estimado publicado: PP 30.8%, PSOE 25.3%, VOX 19.6%, FA 5.8%, PODEMOS 1.4%, COMPROMÍS-FV 1.1%, UPC 0.4%, ERC 2.9%, EH BILDU 1.3%, JUNTS 1.2%, BNG 1.0%, EAJ-PNV 0.9%, CCa-1ºCAN 0.4%. Suma de lo publicado 92.1 %. Lectura desde electografica.com (https://www.electografica.com/2026/11/encuesta-sigmados-261113.html); contraste: 3/3 cifras principales confirmadas.",
+   "votos": {
+    "PP": 30.8,
+    "PSOE": 25.3,
+    "VOX": 19.6,
+    "SUMAR": 7.3,
+    "ERC": 2.9,
+    "EH BILDU": 1.3,
+    "JXCAT": 1.2,
+    "PNV": 0.9,
+    "CC": 0.4
+   },
+   "fuente_votos_adicionales": "Etiquetas publicadas y no ingestadas: PODEMOS (1.4%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; ALIANÇA.CAT (0.0%): Aliança Catalana no tiene serie histórica en el modelo; SALF (0.0%): SALF mapea a OTROS (residual no modelado); UPN (0.0%): UPN va dentro del PP en varias casas; su fila suelta no es comparable.",
+   "fuente_tipo_hint": "prensa"
+  }
+ ],
+ "exclusiones": [
+  {
+   "fuente": "Sigma Dos",
+   "motivo": "Etiquetas publicadas fuera del modelo (se listan en fuente_votos_adicionales de cada encuesta): PODEMOS (1.4%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie; ALIANÇA.CAT (0.0%): Aliança Catalana no tiene serie histórica en el modelo; SALF (0.0%): SALF mapea a OTROS (residual no modelado); UPN (0.0%): UPN va dentro del PP en varias casas; su fila suelta no es comparable."
+  },
+  {
+   "fuente": "CIS",
+   "motivo": "2026-11-12: muestra fuera de rango: 45074 (https://www.electografica.com/2026/11/encuesta-cis-261112.html)"
+  }
+ ]
+}
