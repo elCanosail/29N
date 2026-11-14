@@ -44,5 +44,28 @@
    "derecha": 0.4,
    "p_ninguno": -0.3
   }
+ },
+ {
+  "generado": "2026-11-14",
+  "deltas_nacional": {
+   "PP": -2,
+   "PSOE": 1,
+   "VOX": 0,
+   "SUMAR": 1,
+   "ERC": 0,
+   "JXCAT": 0,
+   "PNV": 0,
+   "EH BILDU": 0,
+   "BNG": 0,
+   "CUP": 0,
+   "CC": 0,
+   "NA+": 0,
+   "PACMA": 0
+  },
+  "deltas_bloques": {
+   "izquierda": 0.8,
+   "derecha": -1.6,
+   "p_ninguno": 0.9
+  }
  }
 ]

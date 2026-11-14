@@ -1,8 +1,8 @@
 {
  "meta": {
-  "n": 107,
+  "n": 113,
   "n_cis": 44,
-  "n_privados": 63,
+  "n_privados": 69,
   "nota_base": "CIS = voto directo sobre censo (microdato); privados = estimación sobre voto válido. No son directamente comparables sin normalizar.",
   "destacados": [
    "PP",
@@ -36,7 +36,8 @@
    "Simple Lógica",
    "Sociometrica",
    "Sondaxe",
-   "Target Point"
+   "Target Point",
+   "Winston"
   ],
   "anios": [
    1977,
@@ -115,6 +116,26 @@
  },
  "encuestas": [
   {
+   "id": "40db-2026-11-13",
+   "casa": "40dB",
+   "tipo": "prensa",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-11-10/2026-11-13",
+   "fecha_publicacion": "2026-11-14",
+   "n": 1500,
+   "url": "https://elpais.com/infografias/encuestas40db/2026/11-tracking-electoral/informe_tracking_dia02.pdf",
+   "metodologia": "Online",
+   "base": "valido",
+   "partidos": {
+    "PP": 31.1,
+    "PSOE": 29.8,
+    "VOX": 18.5,
+    "SUMAR": 5.2
+   }
+  },
+  {
    "id": "sigma-dos-2026-11-11",
    "casa": "Sigma Dos",
    "tipo": "prensa",
@@ -136,6 +157,126 @@
     "EH BILDU": 1.3,
     "JXCAT": 1.2,
     "PNV": 0.9,
+    "CC": 0.4
+   }
+  },
+  {
+   "id": "sigma-dos-2026-11-12",
+   "casa": "Sigma Dos",
+   "tipo": "prensa",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-11-03/2026-11-12",
+   "fecha_publicacion": "2026-11-13",
+   "n": 4620,
+   "url": "https://www.elmundo.es/elecciones/elecciones-generales/2026/11/13/6af73a35fdddffb36c8b45a0.html",
+   "metodologia": "Telefónico + online",
+   "base": "valido",
+   "partidos": {
+    "PP": 31.0,
+    "PSOE": 25.4,
+    "VOX": 19.7,
+    "SUMAR": 8.8,
+    "ERC": 2.7,
+    "JXCAT": 1.4,
+    "EH BILDU": 1.4,
+    "PNV": 0.8,
+    "CC": 0.3
+   }
+  },
+  {
+   "id": "sw-demoscopia-2026-11-12",
+   "casa": "SW Demoscopia",
+   "tipo": "agregador",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-10-26/2026-11-12",
+   "fecha_publicacion": "2026-11-13",
+   "n": 7500,
+   "url": "https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261113.html",
+   "metodologia": "Telefónico",
+   "base": "valido",
+   "partidos": {
+    "PSOE": 31.6,
+    "PP": 28.5,
+    "VOX": 17.1,
+    "SUMAR": 7.3,
+    "ERC": 2.7,
+    "EH BILDU": 1.4,
+    "JXCAT": 1.3,
+    "PNV": 0.8,
+    "CC": 0.4
+   }
+  },
+  {
+   "id": "winston-2026-11-08",
+   "casa": "Winston",
+   "tipo": "agregador",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-11-05/2026-11-08",
+   "fecha_publicacion": "2026-11-13",
+   "n": 1501,
+   "url": "https://www.electografica.com/2026/11/encuesta-winston-261113.html",
+   "metodologia": "Online",
+   "base": "valido",
+   "partidos": {
+    "PP": 31.1,
+    "PSOE": 26.4,
+    "VOX": 18.7,
+    "SUMAR": 8.4,
+    "ERC": 2.3,
+    "JXCAT": 1.1,
+    "EH BILDU": 1.1,
+    "PNV": 1.0,
+    "CC": 0.0
+   }
+  },
+  {
+   "id": "40db-2026-11-12",
+   "casa": "40dB",
+   "tipo": "prensa",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-11-10/2026-11-12",
+   "fecha_publicacion": "2026-11-13",
+   "n": 1000,
+   "url": "https://elpais.com/infografias/encuestas40db/2026/11-tracking-electoral/Informe_tracking_dia01.pdf",
+   "metodologia": "Online",
+   "base": "valido",
+   "partidos": {
+    "PP": 31.5,
+    "PSOE": 29.4,
+    "VOX": 18.8,
+    "SUMAR": 5.1
+   }
+  },
+  {
+   "id": "sw-demoscopia-2026-11-11",
+   "casa": "SW Demoscopia",
+   "tipo": "agregador",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-10-26/2026-11-11",
+   "fecha_publicacion": "2026-11-12",
+   "n": 7000,
+   "url": "https://www.electografica.com/2026/11/encuesta-sw-demoscopia-261112.html",
+   "metodologia": "Telefónico",
+   "base": "valido",
+   "partidos": {
+    "PSOE": 31.5,
+    "PP": 28.4,
+    "VOX": 17.2,
+    "SUMAR": 7.3,
+    "ERC": 2.7,
+    "EH BILDU": 1.4,
+    "JXCAT": 1.3,
+    "PNV": 0.8,
     "CC": 0.4
    }
   },
