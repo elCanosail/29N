@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-11-13",
+  "generado": "2026-11-14",
   "destacados": [
    "PP",
    "PSOE",
@@ -12,7 +12,7 @@
    "generales 2023": "2023-07-23"
   },
   "ventana_cis_dias": 200,
-  "n_casas": 19,
+  "n_casas": 20,
   "n_casas_con_mae": 2,
   "nota": "MAE = media de |estimación − resultado oficial| en puntos porcentuales sobre los partidos destacados (≥2 % de voto válido oficial en esa elección). Solo se cruzan encuestas cuyo trabajo de campo apunta a una elección ya celebrada; las que miran a 2026 o son posteriores al 23J no tienen resultado que comparar y quedan fuera. Privados sobre voto válido (mae_pp = mae_valido_pp); CIS sobre censo en mae_censo_pp, nunca en mae_pp. `n_encuestas` cuenta solo las encuestas comparables (no el catálogo entero). Menos de 3 encuestas comparables → mae_pp null: sin dato. `mae_por_partido` se publica siempre que haya al menos una encuesta comparable y lleva su propio n, para que el detalle no se lea como un MAE de la casa."
  },
@@ -360,6 +360,16 @@
   },
   {
    "casa": "Target Point",
+   "n_encuestas": 0,
+   "elecciones_cubiertas": [],
+   "mae_pp": null,
+   "mae_por_partido": {},
+   "base": "valido",
+   "mae_valido_pp": null,
+   "mae_censo_pp": null
+  },
+  {
+   "casa": "Winston",
    "n_encuestas": 0,
    "elecciones_cubiertas": [],
    "mae_pp": null,

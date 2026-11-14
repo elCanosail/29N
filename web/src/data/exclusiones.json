@@ -1,8 +1,8 @@
 {
  "meta": {
-  "n": 91,
+  "n": 93,
   "n_cis": 71,
-  "n_privados": 20,
+  "n_privados": 22,
   "nota": "Una encuesta que no pasa validación no desaparece: se documenta con su motivo."
  },
  "exclusiones": [
@@ -811,6 +811,26 @@
    "id": null,
    "casa": "CIS",
    "slug": "auto-2026-11-13.json",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "2026-11-12: muestra fuera de rango: 45074 (https://www.electografica.com/2026/11/encuesta-cis-261112.html)",
+   "url": null
+  },
+  {
+   "origen": "encuestadores",
+   "id": null,
+   "casa": "40dB.",
+   "slug": "auto-2026-11-14.json",
+   "tipo": null,
+   "eleccion": null,
+   "motivo": "Etiquetas publicadas fuera del modelo (se listan en fuente_votos_adicionales de cada encuesta): SALF (2.0%): SALF mapea a OTROS (residual no modelado); PODEMOS (1.7%): Podemos concurre en solitario en 2026: plegarlo a SUMAR alteraría la serie.",
+   "url": null
+  },
+  {
+   "origen": "encuestadores",
+   "id": null,
+   "casa": "CIS",
+   "slug": "auto-2026-11-14.json",
    "tipo": null,
    "eleccion": null,
    "motivo": "2026-11-12: muestra fuera de rango: 45074 (https://www.electografica.com/2026/11/encuesta-cis-261112.html)",
