@@ -22,7 +22,7 @@
     },
     {
      "partido_id": "psoe",
-     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
      "sigla": "PSOE",
      "votos": 4233607,
      "escanos": 96,
@@ -46,8 +46,8 @@
     },
     {
      "partido_id": "psc",
-     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE)",
-     "sigla": "PSC",
+     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA",
+     "sigla": "PSC-PSOE",
      "votos": 870362,
      "escanos": 15,
      "pct": 4.75
@@ -62,8 +62,8 @@
     },
     {
      "partido_id": "psuc",
-     "nombre": "PARTIT SOCIALISTA UNIFICAT DE CATALUNYA",
-     "sigla": "PSUC",
+     "nombre": "PARTIT SOCIALIST UNIFICAT DE CATALUNYA",
+     "sigla": "PSUC-PCE",
      "votos": 558132,
      "escanos": 8,
      "pct": 3.05
@@ -78,16 +78,16 @@
     },
     {
      "partido_id": "pnv",
-     "nombre": "EUSKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
-     "sigla": "EAJ-PNV",
+     "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+     "sigla": "PNV",
      "votos": 296193,
      "escanos": 8,
      "pct": 1.62
     },
     {
      "partido_id": "pse",
-     "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE)",
-     "sigla": "PSE-EE",
+     "nombre": "PARTIDO SOCIALISTA DE EUSKADI",
+     "sigla": "PSE-PSOE",
      "votos": 267897,
      "escanos": 7,
      "pct": 1.46
@@ -150,7 +150,7 @@
     },
     {
      "partido_id": "indep",
-     "nombre": "CANDIDATURA INDEP. AL CONGRESO PER PROV. GIRONA",
+     "nombre": "INDEPENDIENTE",
      "sigla": "INDEP",
      "votos": 73620,
      "escanos": 1,
@@ -159,7 +159,7 @@
     {
      "partido_id": "fe",
      "nombre": "FALANGE ESPAÑOLA DE LAS JONS AUTENTICA",
-     "sigla": "FE",
+     "sigla": "FJONSA",
      "votos": 71565,
      "escanos": 0,
      "pct": 0.39
@@ -174,7 +174,7 @@
     },
     {
      "partido_id": "ee",
-     "nombre": "EUSKADIKO EZKERRA - IZQUIERDA PARA EL SOCIALISMO",
+     "nombre": "EUSKADIKO EZKERRA",
      "sigla": "EE",
      "votos": 61417,
      "escanos": 1,
@@ -190,7 +190,7 @@
     },
     {
      "partido_id": "pce-epk",
-     "nombre": "PARTIDO COMUNISTA EUSKADI-EUSKADIKO PARTIDU KOMUNI",
+     "nombre": "PARTIDO COMUNISTA DE EUSKADI-EUSKADIKO P. KOMUNI.",
      "sigla": "PCE-EPK",
      "votos": 45916,
      "escanos": 0,
@@ -286,7 +286,7 @@
     },
     {
      "partido_id": "psoe-h",
-     "nombre": "PART. SOCIALISTA OBRERO ESPAÑOL(SECTOR HISTORICO)",
+     "nombre": "P. SOCIALISTA OBRERO ESPAÑOL(SECTOR HISTORICO)",
      "sigla": "PSOE-H",
      "votos": 21242,
      "escanos": 0,
@@ -366,7 +366,7 @@
     },
     {
      "partido_id": "uras",
-     "nombre": "UNION RENOVADORA ASTURIANA",
+     "nombre": "UNIDAD REGIONALISTA",
      "sigla": "URAS",
      "votos": 10821,
      "escanos": 0,
@@ -398,7 +398,7 @@
     },
     {
      "partido_id": "dscc",
-     "nombre": "DEMOCRACIAL SOCIAL CRISTIANA DE CATALUÑA",
+     "nombre": "DEMOCRACIA SOCIAL CRISTIANA DE CATALUÑA",
      "sigla": "DSCC",
      "votos": 9157,
      "escanos": 0,
@@ -502,7 +502,7 @@
     },
     {
      "partido_id": "icu",
-     "nombre": "COALICION IZQUIERDA CANARIA UNIDA",
+     "nombre": "IZQUIERDA CANARIA UNIDA",
      "sigla": "ICU",
      "votos": 4118,
      "escanos": 0,
@@ -614,7 +614,7 @@
     },
     {
      "partido_id": "pae",
-     "nombre": "PARTIDO DE LOS AUTONOMOS ESPAÑOLES PENSIONISTAS",
+     "nombre": "PARTIDO AGRARIO ESPAÑOL",
      "sigla": "PAE",
      "votos": 833,
      "escanos": 0,
@@ -655,7 +655,7 @@
     },
     {
      "partido_id": "psoe",
-     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
      "sigla": "PSOE",
      "votos": 4404049,
      "escanos": 99,
@@ -679,8 +679,8 @@
     },
     {
      "partido_id": "psc",
-     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE)",
-     "sigla": "PSC",
+     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA",
+     "sigla": "PSC-PSOE",
      "votos": 875529,
      "escanos": 17,
      "pct": 4.87
@@ -695,8 +695,8 @@
     },
     {
      "partido_id": "psuc",
-     "nombre": "PARTIT SOCIALISTA UNIFICAT DE CATALUNYA",
-     "sigla": "PSUC",
+     "nombre": "PARTIT SOCIALIST UNIFICAT DE CATALUNYA",
+     "sigla": "PSUC-PCE",
      "votos": 512792,
      "escanos": 8,
      "pct": 2.85
@@ -719,31 +719,31 @@
     },
     {
      "partido_id": "pa",
-     "nombre": "PARTIDO SOCIALISTA DE ANDALUCIA - PARTIDO ANDALUZ",
-     "sigla": "PA",
+     "nombre": "PARTIDO ANDALUCISTA",
+     "sigla": "PSA-PA",
      "votos": 325842,
      "escanos": 5,
      "pct": 1.81
     },
     {
      "partido_id": "pnv",
-     "nombre": "EUSKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
-     "sigla": "EAJ-PNV",
+     "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+     "sigla": "PNV",
      "votos": 296597,
      "escanos": 7,
      "pct": 1.65
     },
     {
      "partido_id": "pse",
-     "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE)",
-     "sigla": "PSE-EE",
+     "nombre": "PARTIDO SOCIALISTA DE EUSKADI",
+     "sigla": "PSE-PSOE",
      "votos": 190235,
      "escanos": 5,
      "pct": 1.06
     },
     {
      "partido_id": "hb",
-     "nombre": "AGRUPACION ELECTORES HERRI BATASUNA",
+     "nombre": "HERRI BATASUNA",
      "sigla": "HB",
      "votos": 172110,
      "escanos": 3,
@@ -783,7 +783,7 @@
     },
     {
      "partido_id": "ee",
-     "nombre": "EUSKADIKO EZKERRA - IZQUIERDA PARA EL SOCIALISMO",
+     "nombre": "EUSKADIKO EZKERRA",
      "sigla": "EE",
      "votos": 85677,
      "escanos": 1,
@@ -839,7 +839,7 @@
     },
     {
      "partido_id": "pce-epk",
-     "nombre": "PARTIDO COMUNISTA EUSKADI-EUSKADIKO PARTIDU KOMUNI",
+     "nombre": "PARTIDO COMUNISTA DE EUSKADI-EUSKADIKO P. KOMUNI.",
      "sigla": "PCE-EPK",
      "votos": 51472,
      "escanos": 0,
@@ -896,7 +896,7 @@
     {
      "partido_id": "fe",
      "nombre": "FALANGE ESPAÑOLA DE LAS JONS AUTENTICA",
-     "sigla": "FE",
+     "sigla": "FJONSA",
      "votos": 30252,
      "escanos": 0,
      "pct": 0.17
@@ -943,7 +943,7 @@
     },
     {
      "partido_id": "psda",
-     "nombre": "PARTIDO SOCIAL-DEMOCRATA ANDALUZ",
+     "nombre": "COALICION POR ARAGON - PSAR",
      "sigla": "PSDA",
      "votos": 19220,
      "escanos": 0,
@@ -1200,7 +1200,7 @@
    "candidaturas": [
     {
      "partido_id": "psoe",
-     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
      "sigla": "PSOE",
      "votos": 5711837,
      "escanos": 117,
@@ -1224,8 +1224,8 @@
     },
     {
      "partido_id": "psc",
-     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE)",
-     "sigla": "PSC",
+     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA",
+     "sigla": "PSC-PSOE",
      "votos": 1575601,
      "escanos": 25,
      "pct": 7.49
@@ -1240,7 +1240,7 @@
     },
     {
      "partido_id": "ciu",
-     "nombre": "COALICION CONVERGENCIA Y UNIO",
+     "nombre": "CONVERGENCIA I UNIO",
      "sigla": "CIU",
      "votos": 772726,
      "escanos": 12,
@@ -1256,7 +1256,7 @@
     },
     {
      "partido_id": "cds",
-     "nombre": "CENTRO DEMOCRATICO Y SOCIAL/CENTRE DEMOCRATIC I SO",
+     "nombre": "CENTRO DEMOCRATICO Y SOCIAL",
      "sigla": "CDS",
      "votos": 604309,
      "escanos": 2,
@@ -1264,7 +1264,7 @@
     },
     {
      "partido_id": "psg-psoe",
-     "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PSOE",
+     "nombre": "PARTIDO SOCIALISTA DE GALICIA-PSOE",
      "sigla": "PSG-PSOE",
      "votos": 426469,
      "escanos": 9,
@@ -1272,7 +1272,7 @@
     },
     {
      "partido_id": "pnv",
-     "nombre": "EUSKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+     "nombre": "PARTIDO NACIONALISTA VASCO-EUZKO ALDERDI JELTZALEA",
      "sigla": "EAJ-PNV",
      "votos": 395656,
      "escanos": 8,
@@ -1280,8 +1280,8 @@
     },
     {
      "partido_id": "pse",
-     "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE)",
-     "sigla": "PSE-EE",
+     "nombre": "PARTIDO SOCIALISTA DE EUSKADI",
+     "sigla": "PSE-PSOE",
      "votos": 348620,
      "escanos": 8,
      "pct": 1.66
@@ -1336,7 +1336,7 @@
     },
     {
      "partido_id": "erc",
-     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-CATALUNYA SÍ",
+     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA",
      "sigla": "ERC",
      "votos": 138118,
      "escanos": 1,
@@ -1377,7 +1377,7 @@
     {
      "partido_id": "pa",
      "nombre": "PARTIDO SOCIALISTA DE ANDALUCIA - PARTIDO ANDALUZ",
-     "sigla": "PA",
+     "sigla": "PSA-PA",
      "votos": 91335,
      "escanos": 0,
      "pct": 0.43
@@ -1440,7 +1440,7 @@
     },
     {
      "partido_id": "cc",
-     "nombre": "COALICION CANARIA-PARTIDO NACIONALISTA CANARIO",
+     "nombre": "CONSERVADORS DE CATALUNYA",
      "sigla": "CC",
      "votos": 28388,
      "escanos": 0,
@@ -1448,7 +1448,7 @@
     },
     {
      "partido_id": "eu",
-     "nombre": "ESQUERRA UNIDA DE LES ILLES BALEARS",
+     "nombre": "EXTREMADURA UNIDA",
      "sigla": "EU",
      "votos": 26148,
      "escanos": 0,
@@ -1472,7 +1472,7 @@
     },
     {
      "partido_id": "pce-epk",
-     "nombre": "PARTIDO COMUNISTA EUSKADI-EUSKADIKO PARTIDU KOMUNI",
+     "nombre": "P.COMUNISTA DE EUSKADI-EUSKADIKO PARTIDO KOMUNIS",
      "sigla": "PCE-EPK",
      "votos": 23098,
      "escanos": 0,
@@ -1528,8 +1528,8 @@
     },
     {
      "partido_id": "eupv",
-     "nombre": "ESQUERDA UNIDA-IZQUIERDA UNIDA-ALTERNATIVA",
-     "sigla": "EU-IU",
+     "nombre": "ESQUERRA UNIDA DEL PAIS VALENCIA",
+     "sigla": "EUPV",
      "votos": 9302,
      "escanos": 0,
      "pct": 0.04
@@ -1560,7 +1560,7 @@
     },
     {
      "partido_id": "env-urv",
-     "nombre": "ESQUERRA NACIONALISTA VALENCIANA - URV",
+     "nombre": "ESQUERRA NACIONALISTA VALENCIANA",
      "sigla": "ENV-URV",
      "votos": 6738,
      "escanos": 0,
@@ -1592,7 +1592,7 @@
     },
     {
      "partido_id": "pnc",
-     "nombre": "PARTIDO NACIONALISTA CANTABRO",
+     "nombre": "PARTIDO NACIONALISTA CANARIO",
      "sigla": "PNC",
      "votos": 5042,
      "escanos": 0,
@@ -1632,7 +1632,7 @@
     },
     {
      "partido_id": "fe-jons",
-     "nombre": "FALANGE ESPAÑOLA DE LAS J.O.N.S.",
+     "nombre": "FALANGE ESPAÑOLA DE LAS JONS",
      "sigla": "FE-JONS",
      "votos": 2528,
      "escanos": 0,
@@ -1665,7 +1665,7 @@
     {
      "partido_id": "fe-i",
      "nombre": "FALANGE ESPAÑOLA INDEPENDIENTE",
-     "sigla": "FE (I)",
+     "sigla": "FE-I",
      "votos": 1862,
      "escanos": 0,
      "pct": 0.01
@@ -1728,7 +1728,7 @@
     },
     {
      "partido_id": "fa",
-     "nombre": "FALANGE AUTENTICA",
+     "nombre": "FALANGE ASTURIANA",
      "sigla": "FA",
      "votos": 532,
      "escanos": 0,
@@ -1744,7 +1744,7 @@
     },
     {
      "partido_id": "pc",
-     "nombre": "PARTIDO CANTONALISTA",
+     "nombre": "PARTIDO CARLISTA",
      "sigla": "PC",
      "votos": 224,
      "escanos": 0,
@@ -1752,7 +1752,7 @@
     },
     {
      "partido_id": "pae",
-     "nombre": "PARTIDO DE LOS AUTONOMOS ESPAÑOLES PENSIONISTAS",
+     "nombre": "PARTIDO AGRARIO ESPAÑOL",
      "sigla": "PAE",
      "votos": 222,
      "escanos": 0,
@@ -1760,7 +1760,7 @@
     },
     {
      "partido_id": "pp",
-     "nombre": "PARTIDO POPULAR / PARTIT POPULAR",
+     "nombre": "PARTIDO PROVERISTA",
      "sigla": "PP",
      "votos": 168,
      "escanos": 0,
@@ -1825,7 +1825,7 @@
    "candidaturas": [
     {
      "partido_id": "psoe",
-     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
      "sigla": "PSOE",
      "votos": 6855691,
      "escanos": 145,
@@ -1841,7 +1841,7 @@
     },
     {
      "partido_id": "cds",
-     "nombre": "CENTRO DEMOCRATICO Y SOCIAL/CENTRE DEMOCRATIC I SO",
+     "nombre": "CENTRO DEMOCRATICO Y SOCIAL",
      "sigla": "CDS",
      "votos": 1861912,
      "escanos": 19,
@@ -1849,15 +1849,15 @@
     },
     {
      "partido_id": "psc",
-     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE)",
-     "sigla": "PSC",
+     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA",
+     "sigla": "PSC-PSOE",
      "votos": 1299733,
      "escanos": 21,
      "pct": 6.43
     },
     {
      "partido_id": "ciu",
-     "nombre": "COALICION CONVERGENCIA Y UNIO",
+     "nombre": "CONVERGENCIA I UNIO",
      "sigla": "CIU",
      "votos": 1014258,
      "escanos": 18,
@@ -1865,7 +1865,7 @@
     },
     {
      "partido_id": "iu",
-     "nombre": "IZQUIERDA UNIDA-IZQUIERDA DE CASTILLA-LA MANCHA",
+     "nombre": "COALICION IZQUIERDA UNIDA",
      "sigla": "IU",
      "votos": 768158,
      "escanos": 6,
@@ -1889,7 +1889,7 @@
     },
     {
      "partido_id": "pnv",
-     "nombre": "EUSKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+     "nombre": "PARTIDO NACIONALISTA VASCO",
      "sigla": "EAJ-PNV",
      "votos": 309610,
      "escanos": 6,
@@ -1897,15 +1897,15 @@
     },
     {
      "partido_id": "pse",
-     "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE)",
-     "sigla": "PSE-EE",
+     "nombre": "PARTIDO SOCIALISTA DE EUSKADI",
+     "sigla": "PSE-PSOE",
      "votos": 287918,
      "escanos": 7,
      "pct": 1.43
     },
     {
      "partido_id": "hb",
-     "nombre": "AGRUPACION ELECTORES HERRI BATASUNA",
+     "nombre": "HERRI BATASUNA",
      "sigla": "HB",
      "votos": 231722,
      "escanos": 5,
@@ -1937,7 +1937,7 @@
     },
     {
      "partido_id": "ee",
-     "nombre": "EUSKADIKO EZKERRA - IZQUIERDA PARA EL SOCIALISMO",
+     "nombre": "EUSKADIKO EZKERRA",
      "sigla": "EE",
      "votos": 107053,
      "escanos": 2,
@@ -1945,7 +1945,7 @@
     },
     {
      "partido_id": "pa",
-     "nombre": "PARTIDO SOCIALISTA DE ANDALUCIA - PARTIDO ANDALUZ",
+     "nombre": "PARTIDO ANDALUCISTA",
      "sigla": "PA",
      "votos": 94008,
      "escanos": 0,
@@ -1953,7 +1953,7 @@
     },
     {
      "partido_id": "erc",
-     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-CATALUNYA SÍ",
+     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA",
      "sigla": "ERC",
      "votos": 84628,
      "escanos": 0,
@@ -2025,7 +2025,7 @@
     },
     {
      "partido_id": "fe-jons",
-     "nombre": "FALANGE ESPAÑOLA DE LAS J.O.N.S.",
+     "nombre": "FALANGE ESPAÑOLA DE LAS JONS",
      "sigla": "FE-JONS",
      "votos": 43449,
      "escanos": 0,
@@ -2057,7 +2057,7 @@
     },
     {
      "partido_id": "lv",
-     "nombre": "LOS VERDES DE EXTREMADURA",
+     "nombre": "LOS VERDES",
      "sigla": "LV",
      "votos": 31909,
      "escanos": 0,
@@ -2113,7 +2113,7 @@
     },
     {
      "partido_id": "eu",
-     "nombre": "ESQUERRA UNIDA DE LES ILLES BALEARS",
+     "nombre": "EXTREMADURA UNIDA",
      "sigla": "EU",
      "votos": 16091,
      "escanos": 0,
@@ -2137,7 +2137,7 @@
     },
     {
      "partido_id": "pec-verde",
-     "nombre": "PARTIT ECOLOGISTA DE CATALUNYA-VERDE",
+     "nombre": "PARTIDO ECOLOGISTA DE CATALUÑA-VERDE",
      "sigla": "PEC-VERDE",
      "votos": 11746,
      "escanos": 0,
@@ -2209,7 +2209,7 @@
     },
     {
      "partido_id": "env-urv",
-     "nombre": "ESQUERRA NACIONALISTA VALENCIANA - URV",
+     "nombre": "ESQUERRA NACIONALISTA VALENCIANA",
      "sigla": "ENV-URV",
      "votos": 2116,
      "escanos": 0,
@@ -2306,7 +2306,7 @@
    "candidaturas": [
     {
      "partido_id": "pp",
-     "nombre": "PARTIDO POPULAR / PARTIT POPULAR",
+     "nombre": "PARTIDO POPULAR",
      "sigla": "PP",
      "votos": 5117049,
      "escanos": 101,
@@ -2314,7 +2314,7 @@
     },
     {
      "partido_id": "psoe",
-     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
      "sigla": "PSOE",
      "votos": 4738126,
      "escanos": 101,
@@ -2322,7 +2322,7 @@
     },
     {
      "partido_id": "psoe-a",
-     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL DE ANDALUCIA",
+     "nombre": "PART. SOCIALISTA OBRERO ESPAÑOL DE ANDALUCIA",
      "sigla": "PSOE-A",
      "votos": 1793717,
      "escanos": 42,
@@ -2330,7 +2330,7 @@
     },
     {
      "partido_id": "cds",
-     "nombre": "CENTRO DEMOCRATICO Y SOCIAL/CENTRE DEMOCRATIC I SO",
+     "nombre": "CENTRO DEMOCRATICO Y SOCIAL",
      "sigla": "CDS",
      "votos": 1606887,
      "escanos": 14,
@@ -2338,7 +2338,7 @@
     },
     {
      "partido_id": "iu",
-     "nombre": "IZQUIERDA UNIDA-IZQUIERDA DE CASTILLA-LA MANCHA",
+     "nombre": "IZQUIERDA UNIDA",
      "sigla": "IU",
      "votos": 1287048,
      "escanos": 12,
@@ -2346,15 +2346,15 @@
     },
     {
      "partido_id": "psc",
-     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE)",
-     "sigla": "PSC",
+     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA",
+     "sigla": "PSC-PSOE",
      "votos": 1123975,
      "escanos": 20,
      "pct": 5.48
     },
     {
      "partido_id": "ciu",
-     "nombre": "COALICION CONVERGENCIA Y UNIO",
+     "nombre": "CONVERGENCIA I UNIO",
      "sigla": "CIU",
      "votos": 1032243,
      "escanos": 18,
@@ -2370,7 +2370,7 @@
     },
     {
      "partido_id": "pnv",
-     "nombre": "EUSKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+     "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
      "sigla": "EAJ-PNV",
      "votos": 252119,
      "escanos": 5,
@@ -2386,7 +2386,7 @@
     },
     {
      "partido_id": "ruiz-mateos",
-     "nombre": "AGRUPACION RUIZ-MATEOS-ALIANZA DEMOCR. EUROPEA",
+     "nombre": "AGRUPACION RUIZ-MATEOS",
      "sigla": "RUIZ-MATEOS",
      "votos": 219883,
      "escanos": 0,
@@ -2394,7 +2394,7 @@
     },
     {
      "partido_id": "hb",
-     "nombre": "AGRUPACION ELECTORES HERRI BATASUNA",
+     "nombre": "HERRI BATASUNA",
      "sigla": "HB",
      "votos": 217278,
      "escanos": 4,
@@ -2402,7 +2402,7 @@
     },
     {
      "partido_id": "pa",
-     "nombre": "PARTIDO SOCIALISTA DE ANDALUCIA - PARTIDO ANDALUZ",
+     "nombre": "PARTIDO ANDALUCISTA",
      "sigla": "PA",
      "votos": 212687,
      "escanos": 2,
@@ -2434,7 +2434,7 @@
     },
     {
      "partido_id": "lve",
-     "nombre": "LOS VERDES EUROPEOS-LOS VERDES ALTERNATIVOS",
+     "nombre": "LOS VERDES ECOLOGISTAS",
      "sigla": "LVE",
      "votos": 109425,
      "escanos": 0,
@@ -2442,7 +2442,7 @@
     },
     {
      "partido_id": "ee",
-     "nombre": "EUSKADIKO EZKERRA - IZQUIERDA PARA EL SOCIALISMO",
+     "nombre": "EUSKADIKO EZKERRA",
      "sigla": "EE",
      "votos": 105238,
      "escanos": 2,
@@ -2450,7 +2450,7 @@
     },
     {
      "partido_id": "upn-pp",
-     "nombre": "UNION DEL PUEBLO NAVARRO EN COALICION CON EL PARTIDO POPULAR",
+     "nombre": "UNION DEL PUEBLO NAVARRO CON PARTIDO POPULAR",
      "sigla": "UPN-PP",
      "votos": 92216,
      "escanos": 3,
@@ -2466,7 +2466,7 @@
     },
     {
      "partido_id": "pte-uc",
-     "nombre": "PARTIDO TRABAJADORES DE EUSKADI-EUSKADIKO LANGILEE",
+     "nombre": "PARTIDO TRABAJADORES DE ESPAÑA-UNIDAD COMUNISTA",
      "sigla": "PTE-UC",
      "votos": 86257,
      "escanos": 0,
@@ -2474,7 +2474,7 @@
     },
     {
      "partido_id": "erc",
-     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-CATALUNYA SÍ",
+     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA",
      "sigla": "ERC",
      "votos": 84756,
      "escanos": 0,
@@ -2506,7 +2506,7 @@
     },
     {
      "partido_id": "aic",
-     "nombre": "COALICION AGRUPACIONES INDEPENDIENTES DE CANARIAS",
+     "nombre": "AGRUPACIONES INDEPENDIENTES DE CANARIAS",
      "sigla": "AIC",
      "votos": 64767,
      "escanos": 1,
@@ -2538,7 +2538,7 @@
     },
     {
      "partido_id": "eu",
-     "nombre": "ESQUERRA UNIDA DE LES ILLES BALEARS",
+     "nombre": "ESQUERDA UNIDA",
      "sigla": "EU",
      "votos": 43645,
      "escanos": 0,
@@ -2554,8 +2554,8 @@
     },
     {
      "partido_id": "lv",
-     "nombre": "LOS VERDES DE EXTREMADURA",
-     "sigla": "LV",
+     "nombre": "LOS VERDES-LISTA VERDE.",
+     "sigla": "LV.",
      "votos": 37531,
      "escanos": 0,
      "pct": 0.18
@@ -2570,7 +2570,7 @@
     },
     {
      "partido_id": "iu-eb",
-     "nombre": "IZQUIERDA UNIDA-EZKER BATUA DE NAVARRA",
+     "nombre": "IZQUIERDA UNIDA-EZKER BATUA",
      "sigla": "IU-EB",
      "votos": 33323,
      "escanos": 0,
@@ -2594,7 +2594,7 @@
     },
     {
      "partido_id": "eve",
-     "nombre": "LOS VERDES ECOLOGISTAS.",
+     "nombre": "ELS VERDS ECOLOGISTES",
      "sigla": "EVE",
      "votos": 26910,
      "escanos": 0,
@@ -2626,7 +2626,7 @@
     },
     {
      "partido_id": "pcpe",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO CASTELLANO-PCPE",
+     "nombre": "PARTIDO COMUNISTA DE LOS PUEBLOS DE ESPAÑA",
      "sigla": "PCPE",
      "votos": 20819,
      "escanos": 0,
@@ -2634,7 +2634,7 @@
     },
     {
      "partido_id": "i-u",
-     "nombre": "IZQUIERDA UNIDA-LOS VERDES: LA IZQUIERDA PLURAL/EZ",
+     "nombre": "IZQUIERDA UNIDA-ESQUERRA UNIDA",
      "sigla": "I.U.",
      "votos": 17555,
      "escanos": 0,
@@ -2642,8 +2642,8 @@
     },
     {
      "partido_id": "csd",
-     "nombre": "COALICION SOCIALDEMOCRATA",
-     "sigla": "CSD",
+     "nombre": "COALICIO SOCIALDEMOCRATA",
+     "sigla": "CSD.",
      "votos": 15207,
      "escanos": 0,
      "pct": 0.07
@@ -2658,7 +2658,7 @@
     },
     {
      "partido_id": "ph",
-     "nombre": "PARTIT HUMANISTA DE CATALUNYA",
+     "nombre": "PARTIDO HUMANISTA",
      "sigla": "PH",
      "votos": 13069,
      "escanos": 0,
@@ -2674,7 +2674,7 @@
     },
     {
      "partido_id": "verde",
-     "nombre": "VERTICE ESPAÑOL REIVINDICACION DESARROLL ECOLOGICO",
+     "nombre": "VERTICE ESPAÑOL REIVINDICAC. DESARROLLO ECOLOGICO",
      "sigla": "VERDE",
      "votos": 11181,
      "escanos": 0,
@@ -2706,7 +2706,7 @@
     },
     {
      "partido_id": "psm-ene",
-     "nombre": "PSM-ENE NACIONALISTES DE LES ILLES BALEARS",
+     "nombre": "COALICION ELECTORAL ESQUERRA NACIONALISTA",
      "sigla": "PSM-ENE",
      "votos": 7989,
      "escanos": 0,
@@ -2746,7 +2746,7 @@
     },
     {
      "partido_id": "ped",
-     "nombre": "PARTIDO ESPAÑOL DEMOCRATA",
+     "nombre": "UNIDAD CENTRISTA-P.E.D.",
      "sigla": "PED",
      "votos": 4942,
      "escanos": 0,
@@ -2858,7 +2858,7 @@
     },
     {
      "partido_id": "pcpc",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO DE CATALUNYA",
+     "nombre": "PARTIDO COMUNISTA DEL PUEBLO CANARIO",
      "sigla": "PCPC",
      "votos": 1500,
      "escanos": 0,
@@ -2995,7 +2995,7 @@
    "candidaturas": [
     {
      "partido_id": "pp",
-     "nombre": "PARTIDO POPULAR / PARTIT POPULAR",
+     "nombre": "PARTIDO POPULAR",
      "sigla": "PP",
      "votos": 8089235,
      "escanos": 138,
@@ -3003,7 +3003,7 @@
     },
     {
      "partido_id": "psoe",
-     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
      "sigla": "PSOE",
      "votos": 4945005,
      "escanos": 86,
@@ -3011,7 +3011,7 @@
     },
     {
      "partido_id": "psoe-a",
-     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL DE ANDALUCIA",
+     "nombre": "PART. SOCIALISTA OBRERO ESPAÑOL DE ANDALUCIA",
      "sigla": "PSOE-A",
      "votos": 2063899,
      "escanos": 37,
@@ -3019,7 +3019,7 @@
     },
     {
      "partido_id": "iu",
-     "nombre": "IZQUIERDA UNIDA-IZQUIERDA DE CASTILLA-LA MANCHA",
+     "nombre": "IZQUIERDA UNIDA",
      "sigla": "IU",
      "votos": 1505815,
      "escanos": 12,
@@ -3027,15 +3027,15 @@
     },
     {
      "partido_id": "psc",
-     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE)",
-     "sigla": "PSC",
+     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA",
+     "sigla": "PSC-PSOE",
      "votos": 1277838,
      "escanos": 18,
      "pct": 5.42
     },
     {
      "partido_id": "ciu",
-     "nombre": "COALICION CONVERGENCIA Y UNIO",
+     "nombre": "CONVERGENCIA I UNIO",
      "sigla": "CIU",
      "votos": 1165783,
      "escanos": 17,
@@ -3051,7 +3051,7 @@
     },
     {
      "partido_id": "cds",
-     "nombre": "CENTRO DEMOCRATICO Y SOCIAL/CENTRE DEMOCRATIC I SO",
+     "nombre": "CENTRO DEMOCRATICO Y SOCIAL",
      "sigla": "CDS",
      "votos": 414740,
      "escanos": 0,
@@ -3060,7 +3060,7 @@
     {
      "partido_id": "pse-ee-psoe",
      "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZQUERRA",
-     "sigla": "PSE-EE-PSOE",
+     "sigla": "PSE-EE/PSOE",
      "votos": 293442,
      "escanos": 7,
      "pct": 1.24
@@ -3091,7 +3091,7 @@
     },
     {
      "partido_id": "cc",
-     "nombre": "COALICION CANARIA-PARTIDO NACIONALISTA CANARIO",
+     "nombre": "COALICION CANARIA",
      "sigla": "CC",
      "votos": 207077,
      "escanos": 4,
@@ -3099,7 +3099,7 @@
     },
     {
      "partido_id": "hb",
-     "nombre": "AGRUPACION ELECTORES HERRI BATASUNA",
+     "nombre": "HERRI BATASUNA",
      "sigla": "HB",
      "votos": 206876,
      "escanos": 2,
@@ -3107,7 +3107,7 @@
     },
     {
      "partido_id": "erc",
-     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-CATALUNYA SÍ",
+     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA",
      "sigla": "ERC",
      "votos": 189632,
      "escanos": 1,
@@ -3115,7 +3115,7 @@
     },
     {
      "partido_id": "par",
-     "nombre": "PARTIDO ARAGONES REGIONALISTA",
+     "nombre": "PARTIDO ARAGONES",
      "sigla": "PAR",
      "votos": 144544,
      "escanos": 1,
@@ -3147,7 +3147,7 @@
     },
     {
      "partido_id": "upn-pp",
-     "nombre": "UNION DEL PUEBLO NAVARRO EN COALICION CON EL PARTIDO POPULAR",
+     "nombre": "UNION DEL PUEBLO NAVARRO-PARTIDO POPULAR",
      "sigla": "UPN-PP",
      "votos": 112228,
      "escanos": 3,
@@ -3155,7 +3155,7 @@
     },
     {
      "partido_id": "iu-eb",
-     "nombre": "IZQUIERDA UNIDA-EZKER BATUA DE NAVARRA",
+     "nombre": "IZQUIERDA UNIDA-EZKER BATUA",
      "sigla": "IU-EB",
      "votos": 102615,
      "escanos": 0,
@@ -3163,7 +3163,7 @@
     },
     {
      "partido_id": "pa",
-     "nombre": "PARTIDO SOCIALISTA DE ANDALUCIA - PARTIDO ANDALUZ",
+     "nombre": "PARTIDO ANDALUCISTA",
      "sigla": "PA",
      "votos": 96513,
      "escanos": 0,
@@ -3171,7 +3171,7 @@
     },
     {
      "partido_id": "verdes",
-     "nombre": "LOS VERDES DE ANDALUCIA",
+     "nombre": "LOS VERDES",
      "sigla": "VERDES",
      "votos": 78970,
      "escanos": 0,
@@ -3187,7 +3187,7 @@
     },
     {
      "partido_id": "lv",
-     "nombre": "LOS VERDES DE EXTREMADURA",
+     "nombre": "LOS VERDES",
      "sigla": "LV",
      "votos": 46816,
      "escanos": 0,
@@ -3211,7 +3211,7 @@
     },
     {
      "partido_id": "iuc",
-     "nombre": "IZQUIERDA UNIDA DE CANTABRIA: LA IZQUIERDA PLURAL",
+     "nombre": "IZQUIERDA UNIDA CANARIA",
      "sigla": "IUC",
      "votos": 40314,
      "escanos": 0,
@@ -3315,7 +3315,7 @@
     },
     {
      "partido_id": "upl",
-     "nombre": "UNIÓN DEL PUEBLO LEONÉS",
+     "nombre": "UNION DEL PUEBLO LEONES",
      "sigla": "UPL",
      "votos": 13097,
      "escanos": 0,
@@ -3363,7 +3363,7 @@
     },
     {
      "partido_id": "pec-verde",
-     "nombre": "PARTIT ECOLOGISTA DE CATALUNYA-VERDE",
+     "nombre": "PARTIT ECOLOGISTA DE CATALUNYA",
      "sigla": "PEC-VERDE",
      "votos": 9249,
      "escanos": 0,
@@ -3387,7 +3387,7 @@
     },
     {
      "partido_id": "ph",
-     "nombre": "PARTIT HUMANISTA DE CATALUNYA",
+     "nombre": "PARTIDO HUMANISTA",
      "sigla": "PH",
      "votos": 8709,
      "escanos": 0,
@@ -3467,7 +3467,7 @@
     },
     {
      "partido_id": "arde",
-     "nombre": "ACCION REPUBLICANA DEMOCRATICA ESPAÑOLA",
+     "nombre": "A.R.D.E. FEDERACION REPUBLICANA",
      "sigla": "ARDE",
      "votos": 3063,
      "escanos": 0,
@@ -3491,7 +3491,7 @@
     },
     {
      "partido_id": "pcpg",
-     "nombre": "PARTIDO COMUNISTA DO POVO GALEGO",
+     "nombre": "PARTIDO COMUNISTA DO POBO GALEGO",
      "sigla": "PCPG",
      "votos": 2217,
      "escanos": 0,
@@ -3499,7 +3499,7 @@
     },
     {
      "partido_id": "arm",
-     "nombre": "AGRUPACION RUIZ-MATEOS-ALIANZA DEMOCR. EUROPEA",
+     "nombre": "AGRUPACION RUIZ-MATEOS",
      "sigla": "ARM",
      "votos": 2128,
      "escanos": 0,
@@ -3523,7 +3523,7 @@
     },
     {
      "partido_id": "pcpe",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO CASTELLANO-PCPE",
+     "nombre": "PARTIDO COMUNISTA DE LOS PUEBLOS DE ESPAÑA",
      "sigla": "PCPE",
      "votos": 1832,
      "escanos": 0,
@@ -3539,7 +3539,7 @@
     },
     {
      "partido_id": "aci",
-     "nombre": "AGRUPACION CIUDADANA INDEPENDIENTE",
+     "nombre": "A.C.I. PANTERAS GRISES DE ESPAÑA",
      "sigla": "ACI",
      "votos": 1644,
      "escanos": 0,
@@ -3547,7 +3547,7 @@
     },
     {
      "partido_id": "ov",
-     "nombre": "OS VERDES - GRUPO VERDE",
+     "nombre": "OS VERDES DE GALICIA",
      "sigla": "OV",
      "votos": 1600,
      "escanos": 0,
@@ -3555,7 +3555,7 @@
     },
     {
      "partido_id": "ev",
-     "nombre": "ELS VERDS DEL PAIS VALENCIA",
+     "nombre": "ELS VERDS",
      "sigla": "EV",
      "votos": 1563,
      "escanos": 0,
@@ -3611,7 +3611,7 @@
     },
     {
      "partido_id": "mce",
-     "nombre": "MOVIMIENTO COMUNISTA DE EXTREMADURA",
+     "nombre": "MOVIMIENTO CATOLICO ESPAÑOL",
      "sigla": "MCE",
      "votos": 1178,
      "escanos": 0,
@@ -3651,7 +3651,7 @@
     },
     {
      "partido_id": "pcpc",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO DE CATALUNYA",
+     "nombre": "PARTIDO COMUNISTA DEL PUEBLO CANARIO",
      "sigla": "PCPC",
      "votos": 884,
      "escanos": 0,
@@ -3787,7 +3787,7 @@
     },
     {
      "partido_id": "lg",
-     "nombre": "PARTIDO DE LA GENTE",
+     "nombre": "LA GENTE",
      "sigla": "LG",
      "votos": 385,
      "escanos": 0,
@@ -3851,7 +3851,7 @@
     },
     {
      "partido_id": "pcc",
-     "nombre": "PARTIT DELS COMUNISTES DE CATALUNYA",
+     "nombre": "PARTIDO CANTONALISTA DE CASTELLON",
      "sigla": "PCC",
      "votos": 158,
      "escanos": 0,
@@ -3900,7 +3900,7 @@
    "candidaturas": [
     {
      "partido_id": "pp",
-     "nombre": "PARTIDO POPULAR / PARTIT POPULAR",
+     "nombre": "PARTIDO POPULAR",
      "sigla": "PP",
      "votos": 9224696,
      "escanos": 146,
@@ -3908,7 +3908,7 @@
     },
     {
      "partido_id": "psoe",
-     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
      "sigla": "PSOE",
      "votos": 5224347,
      "escanos": 80,
@@ -3924,15 +3924,15 @@
     },
     {
      "partido_id": "psc",
-     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE)",
-     "sigla": "PSC",
+     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA",
+     "sigla": "PSC-PSOE",
      "votos": 1531143,
      "escanos": 19,
      "pct": 6.11
     },
     {
      "partido_id": "ciu",
-     "nombre": "COALICION CONVERGENCIA Y UNIO",
+     "nombre": "CONVERGENCIA I UNIO",
      "sigla": "CIU",
      "votos": 1151633,
      "escanos": 16,
@@ -3940,7 +3940,7 @@
     },
     {
      "partido_id": "iu",
-     "nombre": "IZQUIERDA UNIDA-IZQUIERDA DE CASTILLA-LA MANCHA",
+     "nombre": "IZQUIERDA UNIDA",
      "sigla": "IU",
      "votos": 820958,
      "escanos": 7,
@@ -3948,7 +3948,7 @@
     },
     {
      "partido_id": "iulv",
-     "nombre": "IZQUIERDA UNIDA LOS VERDES-CONVOCATORIA POR ANDALUCIA - ALTERNATIVA",
+     "nombre": "IZQUIERDA UNIDA LOS VERDES-CONVOC. POR ANDALUCIA",
      "sigla": "IULV-CA",
      "votos": 582970,
      "escanos": 6,
@@ -3964,7 +3964,7 @@
     },
     {
      "partido_id": "pp-par",
-     "nombre": "PARTIDO POPULAR EN COALICIÓN CON EL PARTIDO ARAGON",
+     "nombre": "PARTIDO POPULAR-PARTIDO ARAGONES",
      "sigla": "PP-PAR",
      "votos": 370975,
      "escanos": 8,
@@ -3972,7 +3972,7 @@
     },
     {
      "partido_id": "pnv",
-     "nombre": "EUSKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+     "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
      "sigla": "EAJ-PNV",
      "votos": 318951,
      "escanos": 5,
@@ -3980,8 +3980,8 @@
     },
     {
      "partido_id": "pse-ee-psoe",
-     "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZQUERRA",
-     "sigla": "PSE-EE-PSOE",
+     "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA",
+     "sigla": "PSE-EE/PSOE",
      "votos": 298499,
      "escanos": 5,
      "pct": 1.19
@@ -3996,15 +3996,15 @@
     },
     {
      "partido_id": "eupv",
-     "nombre": "ESQUERDA UNIDA-IZQUIERDA UNIDA-ALTERNATIVA",
-     "sigla": "EU-IU",
+     "nombre": "ESQUERRA UNIDA DEL PAIS VALENCIA",
+     "sigla": "EUPV",
      "votos": 286582,
      "escanos": 3,
      "pct": 1.14
     },
     {
      "partido_id": "cc",
-     "nombre": "COALICION CANARIA-PARTIDO NACIONALISTA CANARIO",
+     "nombre": "COALICION CANARIA",
      "sigla": "CC",
      "votos": 220418,
      "escanos": 4,
@@ -4020,7 +4020,7 @@
     },
     {
      "partido_id": "hb",
-     "nombre": "AGRUPACION ELECTORES HERRI BATASUNA",
+     "nombre": "HERRI BATASUNA",
      "sigla": "HB",
      "votos": 181304,
      "escanos": 2,
@@ -4028,7 +4028,7 @@
     },
     {
      "partido_id": "erc",
-     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-CATALUNYA SÍ",
+     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA",
      "sigla": "ERC",
      "votos": 167641,
      "escanos": 1,
@@ -4036,7 +4036,7 @@
     },
     {
      "partido_id": "iu-eb",
-     "nombre": "IZQUIERDA UNIDA-EZKER BATUA DE NAVARRA",
+     "nombre": "IZQUIERDA UNIDA-EZKER BATUA",
      "sigla": "IU-EB",
      "votos": 156487,
      "escanos": 2,
@@ -4052,7 +4052,7 @@
     },
     {
      "partido_id": "iu-lv",
-     "nombre": "IZQUIERDA UNIDA-LOS VERDES: LA IZQUIERDA PLURAL/EZ",
+     "nombre": "IZQUIERDA UNIDA-LOS VERDES-COMPROMISO POR EXTRM.",
      "sigla": "IU-LV",
      "votos": 136463,
      "escanos": 1,
@@ -4060,7 +4060,7 @@
     },
     {
      "partido_id": "pa",
-     "nombre": "PARTIDO SOCIALISTA DE ANDALUCIA - PARTIDO ANDALUZ",
+     "nombre": "PARTIDO ANDALUCISTA",
      "sigla": "PA",
      "votos": 134800,
      "escanos": 0,
@@ -4068,7 +4068,7 @@
     },
     {
      "partido_id": "upn-pp",
-     "nombre": "UNION DEL PUEBLO NAVARRO EN COALICION CON EL PARTIDO POPULAR",
+     "nombre": "UNION DEL PUEBLO NAVARRO-PARTIDO POPULAR",
      "sigla": "UPN-PP",
      "votos": 120335,
      "escanos": 2,
@@ -4116,7 +4116,7 @@
     },
     {
      "partido_id": "iuc",
-     "nombre": "IZQUIERDA UNIDA DE CANTABRIA: LA IZQUIERDA PLURAL",
+     "nombre": "IZQUIERDA UNIDA CANARIA",
      "sigla": "IUC",
      "votos": 48172,
      "escanos": 0,
@@ -4124,7 +4124,7 @@
     },
     {
      "partido_id": "uc",
-     "nombre": "UNION CASTELLANISTA",
+     "nombre": "UNION CENTRISTA",
      "sigla": "UC",
      "votos": 44771,
      "escanos": 0,
@@ -4140,7 +4140,7 @@
     },
     {
      "partido_id": "psm-ene",
-     "nombre": "PSM-ENE NACIONALISTES DE LES ILLES BALEARS",
+     "nombre": "COALICION ELECTORAL PSM-ENE",
      "sigla": "PSM-ENE",
      "votos": 24644,
      "escanos": 0,
@@ -4148,7 +4148,7 @@
     },
     {
      "partido_id": "ev",
-     "nombre": "ELS VERDS DEL PAIS VALENCIA",
+     "nombre": "ELS VERDS-LOS VERDES",
      "sigla": "EV",
      "votos": 20402,
      "escanos": 0,
@@ -4156,7 +4156,7 @@
     },
     {
      "partido_id": "lv-gv",
-     "nombre": "LOS VERDES-GRUPO VERDE-SOS NATURALEZA",
+     "nombre": "LOS VERDES-GRUPO VERDE",
      "sigla": "LV-GV",
      "votos": 17177,
      "escanos": 0,
@@ -4164,7 +4164,7 @@
     },
     {
      "partido_id": "cdn",
-     "nombre": "CONVERGENCIA DE DEMOCRATAS DE NAVARRA",
+     "nombre": "CONVERGENCIA DEMOCRATAS DE NAVARRA",
      "sigla": "CDN",
      "votos": 17020,
      "escanos": 0,
@@ -4180,7 +4180,7 @@
     },
     {
      "partido_id": "ph",
-     "nombre": "PARTIT HUMANISTA DE CATALUNYA",
+     "nombre": "PARTIDO HUMANISTA",
      "sigla": "PH",
      "votos": 13482,
      "escanos": 0,
@@ -4204,7 +4204,7 @@
     },
     {
      "partido_id": "upl",
-     "nombre": "UNIÓN DEL PUEBLO LEONÉS",
+     "nombre": "UNION DEL PUEBLO LEONES",
      "sigla": "UPL",
      "votos": 12049,
      "escanos": 0,
@@ -4236,7 +4236,7 @@
     },
     {
      "partido_id": "lv",
-     "nombre": "LOS VERDES DE EXTREMADURA",
+     "nombre": "LOS VERDES DE MADRID",
      "sigla": "LV",
      "votos": 8483,
      "escanos": 0,
@@ -4244,7 +4244,7 @@
     },
     {
      "partido_id": "pcpe",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO CASTELLANO-PCPE",
+     "nombre": "PARTIDO COMUNISTA DE LOS PUEBLOS DE ESPAÑA",
      "sigla": "PCPE",
      "votos": 8024,
      "escanos": 0,
@@ -4260,7 +4260,7 @@
     },
     {
      "partido_id": "cex",
-     "nombre": "CONVERGENCIA POR EXTREMADURA",
+     "nombre": "COALICION EXTREMEÑA",
      "sigla": "CEX",
      "votos": 7312,
      "escanos": 0,
@@ -4285,7 +4285,7 @@
     {
      "partido_id": "p-riojano",
      "nombre": "PARTIDO RIOJANO",
-     "sigla": "P. RIOJANO",
+     "sigla": "P.RIOJANO",
      "votos": 6065,
      "escanos": 0,
      "pct": 0.02
@@ -4324,7 +4324,7 @@
     },
     {
      "partido_id": "verdes",
-     "nombre": "LOS VERDES DE ANDALUCIA",
+     "nombre": "LOS VERDES DE ASTURIES",
      "sigla": "VERDES",
      "votos": 3575,
      "escanos": 0,
@@ -4364,7 +4364,7 @@
     },
     {
      "partido_id": "prepal",
-     "nombre": "PARTIDO REGIONALISTA DEL PAIS LEONES",
+     "nombre": "SALAMANCA, ZAMORA, LEON",
      "sigla": "PREPAL",
      "votos": 2762,
      "escanos": 0,
@@ -4460,7 +4460,7 @@
     },
     {
      "partido_id": "ar",
-     "nombre": "ALIANZA POR LA REPUBLICA",
+     "nombre": "ACCION REPUBLICANA",
      "sigla": "AR",
      "votos": 1237,
      "escanos": 0,
@@ -4468,7 +4468,7 @@
     },
     {
      "partido_id": "picc",
-     "nombre": "PLATAFORMA INDEPENDIENTE CIUDADANA DE CATALUÑA",
+     "nombre": "PLATAFORMA INDEPENDENT CIUTADANA DE CATALUNYA",
      "sigla": "PICC",
      "votos": 1229,
      "escanos": 0,
@@ -4476,7 +4476,7 @@
     },
     {
      "partido_id": "pcpc",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO DE CATALUNYA",
+     "nombre": "PARTIDO COMUNISTA DEL PUEBLO CANARIO",
      "sigla": "PCPC",
      "votos": 1180,
      "escanos": 0,
@@ -4540,7 +4540,7 @@
     },
     {
      "partido_id": "adec",
-     "nombre": "ASOCIACION DE ELECTORES DE CEUTA",
+     "nombre": "ACCION DEMOCRATICA CIUDADANA",
      "sigla": "ADEC",
      "votos": 598,
      "escanos": 0,
@@ -4572,7 +4572,7 @@
     },
     {
      "partido_id": "aba",
-     "nombre": "ALIANÇA BALEAR",
+     "nombre": "ALIANCA BALEAR",
      "sigla": "ABA",
      "votos": 379,
      "escanos": 0,
@@ -4604,7 +4604,7 @@
     },
     {
      "partido_id": "lg",
-     "nombre": "PARTIDO DE LA GENTE",
+     "nombre": "PARTIDO LA GENTE",
      "sigla": "LG",
      "votos": 243,
      "escanos": 0,
@@ -4637,7 +4637,7 @@
    "candidaturas": [
     {
      "partido_id": "pp",
-     "nombre": "PARTIDO POPULAR / PARTIT POPULAR",
+     "nombre": "PARTIDO POPULAR",
      "sigla": "PP",
      "votos": 10157105,
      "escanos": 179,
@@ -4646,22 +4646,22 @@
     {
      "partido_id": "psoe",
      "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
-     "sigla": "PSOE",
+     "sigla": "PSOE-PROGR.",
      "votos": 6111637,
      "escanos": 98,
      "pct": 26.36
     },
     {
      "partido_id": "psc",
-     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE)",
-     "sigla": "PSC",
+     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA",
+     "sigla": "PSC-PSOE",
      "votos": 1150533,
      "escanos": 17,
      "pct": 4.96
     },
     {
      "partido_id": "ciu",
-     "nombre": "COALICION CONVERGENCIA Y UNIO",
+     "nombre": "CONVERGENCIA I UNIO",
      "sigla": "CIU",
      "votos": 970421,
      "escanos": 15,
@@ -4669,7 +4669,7 @@
     },
     {
      "partido_id": "psdeg",
-     "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+     "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA - PSOE - PROGR.",
      "sigla": "PSDEG-PSOE",
      "votos": 389999,
      "escanos": 6,
@@ -4677,7 +4677,7 @@
     },
     {
      "partido_id": "pnv",
-     "nombre": "EUSKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+     "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
      "sigla": "EAJ-PNV",
      "votos": 353953,
      "escanos": 7,
@@ -4685,7 +4685,7 @@
     },
     {
      "partido_id": "iulv",
-     "nombre": "IZQUIERDA UNIDA LOS VERDES-CONVOCATORIA POR ANDALUCIA - ALTERNATIVA",
+     "nombre": "IZQUIERDA UNIDA LOS VERDES-CONVOC. POR ANDALUCIA",
      "sigla": "IULV-CA",
      "votos": 315891,
      "escanos": 3,
@@ -4701,7 +4701,7 @@
     },
     {
      "partido_id": "iu",
-     "nombre": "IZQUIERDA UNIDA-IZQUIERDA DE CASTILLA-LA MANCHA",
+     "nombre": "IZQUIERDA UNIDA",
      "sigla": "IU",
      "votos": 305877,
      "escanos": 1,
@@ -4709,7 +4709,7 @@
     },
     {
      "partido_id": "iu-cm",
-     "nombre": "IZQUIERDA UNIDA COMUNIDAD DE MADRID-ALTERNATIVA",
+     "nombre": "IZQUIERDA UNIDA DE LA COMUNIDAD DE MADRID",
      "sigla": "IU-CM",
      "votos": 282180,
      "escanos": 3,
@@ -4717,7 +4717,7 @@
     },
     {
      "partido_id": "pse-ee-psoe",
-     "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZQUERRA",
+     "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA",
      "sigla": "PSE-EE-PSOE",
      "votos": 266583,
      "escanos": 4,
@@ -4725,7 +4725,7 @@
     },
     {
      "partido_id": "cc",
-     "nombre": "COALICION CANARIA-PARTIDO NACIONALISTA CANARIO",
+     "nombre": "COALICION CANARIA",
      "sigla": "CC",
      "votos": 248261,
      "escanos": 4,
@@ -4733,7 +4733,7 @@
     },
     {
      "partido_id": "pa",
-     "nombre": "PARTIDO SOCIALISTA DE ANDALUCIA - PARTIDO ANDALUZ",
+     "nombre": "PARTIDO ANDALUCISTA",
      "sigla": "PA",
      "votos": 206255,
      "escanos": 1,
@@ -4741,7 +4741,7 @@
     },
     {
      "partido_id": "erc",
-     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-CATALUNYA SÍ",
+     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA",
      "sigla": "ERC",
      "votos": 191632,
      "escanos": 1,
@@ -4749,7 +4749,7 @@
     },
     {
      "partido_id": "eupv",
-     "nombre": "ESQUERDA UNIDA-IZQUIERDA UNIDA-ALTERNATIVA",
+     "nombre": "ESQUERDA UNIDA-IZQUIERDA UNIDA",
      "sigla": "EU-IU",
      "votos": 162531,
      "escanos": 1,
@@ -4757,7 +4757,7 @@
     },
     {
      "partido_id": "upn-pp",
-     "nombre": "UNION DEL PUEBLO NAVARRO EN COALICION CON EL PARTIDO POPULAR",
+     "nombre": "UNION DEL PUEBLO NAVARRO-PARTIDO POPULAR",
      "sigla": "UPN-PP",
      "votos": 150995,
      "escanos": 3,
@@ -4829,7 +4829,7 @@
     },
     {
      "partido_id": "upl",
-     "nombre": "UNIÓN DEL PUEBLO LEONÉS",
+     "nombre": "UNION DEL PUEBLO LEONES",
      "sigla": "UPL",
      "votos": 41690,
      "escanos": 0,
@@ -4837,7 +4837,7 @@
     },
     {
      "partido_id": "par",
-     "nombre": "PARTIDO ARAGONES REGIONALISTA",
+     "nombre": "PARTIDO ARAGONES",
      "sigla": "PAR",
      "votos": 38883,
      "escanos": 0,
@@ -4853,7 +4853,7 @@
     },
     {
      "partido_id": "psm-en",
-     "nombre": "PSM ESQUERRA NACIONALISTA",
+     "nombre": "PSM ENTESA NACIONALISTA",
      "sigla": "PSM-EN",
      "votos": 23482,
      "escanos": 0,
@@ -4861,7 +4861,7 @@
     },
     {
      "partido_id": "iun-neb",
-     "nombre": "IZQUIERDA UNIDA DE NAVARRA - NAFARROAKO EZKER BATUA - ALTERNATIVA",
+     "nombre": "IZQUIERDA UNIDA DE NAVARRA-NAFARROAKO EZKER BATUA",
      "sigla": "IUN-NEB",
      "votos": 23038,
      "escanos": 0,
@@ -4869,7 +4869,7 @@
     },
     {
      "partido_id": "lve",
-     "nombre": "LOS VERDES EUROPEOS-LOS VERDES ALTERNATIVOS",
+     "nombre": "LOS VERDES-ECOPACIFISTAS",
      "sigla": "LVE",
      "votos": 22220,
      "escanos": 0,
@@ -4893,7 +4893,7 @@
     },
     {
      "partido_id": "eu",
-     "nombre": "ESQUERRA UNIDA DE LES ILLES BALEARS",
+     "nombre": "EXTREMADURA UNIDA",
      "sigla": "EU",
      "votos": 20699,
      "escanos": 0,
@@ -4901,7 +4901,7 @@
     },
     {
      "partido_id": "iuc",
-     "nombre": "IZQUIERDA UNIDA DE CANTABRIA: LA IZQUIERDA PLURAL",
+     "nombre": "IZQUIERDA UNIDA CANARIA",
      "sigla": "IUC",
      "votos": 20214,
      "escanos": 0,
@@ -4909,7 +4909,7 @@
     },
     {
      "partido_id": "ph",
-     "nombre": "PARTIT HUMANISTA DE CATALUNYA",
+     "nombre": "PARTIDO HUMANISTA",
      "sigla": "PH",
      "votos": 19683,
      "escanos": 0,
@@ -4933,7 +4933,7 @@
     },
     {
      "partido_id": "verdes",
-     "nombre": "LOS VERDES DE ANDALUCIA",
+     "nombre": "LOS VERDES DE CANARIAS",
      "sigla": "VERDES",
      "votos": 16885,
      "escanos": 0,
@@ -4965,7 +4965,7 @@
     },
     {
      "partido_id": "fe",
-     "nombre": "FALANGE ESPAÑOLA DE LAS JONS AUTENTICA",
+     "nombre": "LA FALANGE",
      "sigla": "FE",
      "votos": 12483,
      "escanos": 0,
@@ -4989,7 +4989,7 @@
     },
     {
      "partido_id": "pcpe",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO CASTELLANO-PCPE",
+     "nombre": "PARTIDO COMUNISTA DE LOS PUEBLOS DE ESPAÑA",
      "sigla": "PCPE",
      "votos": 11490,
      "escanos": 0,
@@ -5029,7 +5029,7 @@
     },
     {
      "partido_id": "cdn",
-     "nombre": "CONVERGENCIA DE DEMOCRATAS DE NAVARRA",
+     "nombre": "CONVERGENCIA DEMOCRATAS DE NAVARRA",
      "sigla": "CDN",
      "votos": 8646,
      "escanos": 0,
@@ -5086,7 +5086,7 @@
     {
      "partido_id": "p-riojano",
      "nombre": "PARTIDO RIOJANO",
-     "sigla": "P. RIOJANO",
+     "sigla": "P.RIOJANO",
      "votos": 6155,
      "escanos": 0,
      "pct": 0.03
@@ -5165,7 +5165,7 @@
     },
     {
      "partido_id": "ar",
-     "nombre": "ALIANZA POR LA REPUBLICA",
+     "nombre": "ACCION REPUBLICANA",
      "sigla": "AR",
      "votos": 2858,
      "escanos": 0,
@@ -5229,7 +5229,7 @@
     },
     {
      "partido_id": "prepal",
-     "nombre": "PARTIDO REGIONALISTA DEL PAIS LEONES",
+     "nombre": "SALAMANCA, ZAMORA, LEON PREPAL",
      "sigla": "PREPAL",
      "votos": 2118,
      "escanos": 0,
@@ -5269,7 +5269,7 @@
     },
     {
      "partido_id": "cds-uc",
-     "nombre": "UNION CENTRISTA-CENTRO DEMOCRATICO Y SOCIAL",
+     "nombre": "CENTRO DEMOCRATICO Y SOCIAL-UNION CENTRISTA",
      "sigla": "CDS-UC",
      "votos": 1774,
      "escanos": 0,
@@ -5277,8 +5277,8 @@
     },
     {
      "partido_id": "li-lit-ci",
-     "nombre": "LUCHA INTERNACIONALISTA/NAZIOARTEKO BORROKA",
-     "sigla": "(LI(LIT-CI))",
+     "nombre": "LLUITA INTERNACIONALISTA",
+     "sigla": "LI (LIT-CI)",
      "votos": 1716,
      "escanos": 0,
      "pct": 0.01
@@ -5293,7 +5293,7 @@
     },
     {
      "partido_id": "ir-pre",
-     "nombre": "PARTIDO IZQUIERDA REPUBLICANA-PARTIT REPUBLICA D'ESQUERRA",
+     "nombre": "IZQUIERDA REPUBLICANA-PARTIT REPUBLICA D'ESQUERRA",
      "sigla": "IR-PRE",
      "votos": 1541,
      "escanos": 0,
@@ -5333,7 +5333,7 @@
     },
     {
      "partido_id": "pcpc",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO DE CATALUNYA",
+     "nombre": "PARTIDO COMUNISTA DEL PUEBLO CANARIO",
      "sigla": "PCPC",
      "votos": 1408,
      "escanos": 0,
@@ -5381,7 +5381,7 @@
     },
     {
      "partido_id": "pc",
-     "nombre": "PARTIDO CANTONALISTA",
+     "nombre": "PARTIDO CARLISTA",
      "sigla": "PC",
      "votos": 1051,
      "escanos": 0,
@@ -5405,7 +5405,7 @@
     },
     {
      "partido_id": "eka",
-     "nombre": "EKA-PARTIDO CARLISTA",
+     "nombre": "PARTIDO CARLISTA",
      "sigla": "EKA",
      "votos": 898,
      "escanos": 0,
@@ -5541,7 +5541,7 @@
     },
     {
      "partido_id": "fn",
-     "nombre": "ASOCIACION POLITICA FUERZA NUEVA",
+     "nombre": "FUERZA NUEVA",
      "sigla": "FN",
      "votos": 343,
      "escanos": 0,
@@ -5573,7 +5573,7 @@
     },
     {
      "partido_id": "un",
-     "nombre": "PARTIDO UNION NACIONAL",
+     "nombre": "UNION NACIONAL",
      "sigla": "UN",
      "votos": 314,
      "escanos": 0,
@@ -5589,7 +5589,7 @@
     },
     {
      "partido_id": "eka-pc",
-     "nombre": "PARTIDO CARLISTA DE EUSKALERRIA-PARTIDO CARLISTA",
+     "nombre": "PARTIDO CARLISTA",
      "sigla": "EKA-PC",
      "votos": 182,
      "escanos": 0,
@@ -5646,7 +5646,7 @@
    "candidaturas": [
     {
      "partido_id": "pp",
-     "nombre": "PARTIDO POPULAR / PARTIT POPULAR",
+     "nombre": "PARTIDO POPULAR",
      "sigla": "PP",
      "votos": 9635491,
      "escanos": 146,
@@ -5654,7 +5654,7 @@
     },
     {
      "partido_id": "psoe",
-     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
      "sigla": "PSOE",
      "votos": 7280206,
      "escanos": 110,
@@ -5662,8 +5662,8 @@
     },
     {
      "partido_id": "psc",
-     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE)",
-     "sigla": "PSC",
+     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA",
+     "sigla": "PSC-PSOE",
      "votos": 1586748,
      "escanos": 21,
      "pct": 6.13
@@ -5678,23 +5678,23 @@
     },
     {
      "partido_id": "ciu",
-     "nombre": "COALICION CONVERGENCIA Y UNIO",
-     "sigla": "CIU",
+     "nombre": "CONVERGENCIA i UNIO",
+     "sigla": "CiU",
      "votos": 835471,
      "escanos": 10,
      "pct": 3.23
     },
     {
      "partido_id": "psdeg",
-     "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PARTIDO SOCIALISTA OBRERO ESPAÑOL",
-     "sigla": "PSDEG-PSOE",
+     "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PSOE",
+     "sigla": "PSdeG-PSOE",
      "votos": 682684,
      "escanos": 10,
      "pct": 2.64
     },
     {
      "partido_id": "erc",
-     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-CATALUNYA SÍ",
+     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA",
      "sigla": "ERC",
      "votos": 638902,
      "escanos": 8,
@@ -5710,7 +5710,7 @@
     },
     {
      "partido_id": "iu",
-     "nombre": "IZQUIERDA UNIDA-IZQUIERDA DE CASTILLA-LA MANCHA",
+     "nombre": "IZQUIERDA UNIDA",
      "sigla": "IU",
      "votos": 360298,
      "escanos": 2,
@@ -5718,15 +5718,15 @@
     },
     {
      "partido_id": "pse",
-     "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE)",
-     "sigla": "PSE-EE",
+     "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA",
+     "sigla": "PSE-EE(PSOE)",
      "votos": 339751,
      "escanos": 7,
      "pct": 1.31
     },
     {
      "partido_id": "iulv",
-     "nombre": "IZQUIERDA UNIDA LOS VERDES-CONVOCATORIA POR ANDALUCIA - ALTERNATIVA",
+     "nombre": "IZQUIERDA UNIDA-VERDES-CONVOCATORIA POR ANDALUCIA",
      "sigla": "IULV-CA",
      "votos": 287374,
      "escanos": 0,
@@ -5734,7 +5734,7 @@
     },
     {
      "partido_id": "cc",
-     "nombre": "COALICION CANARIA-PARTIDO NACIONALISTA CANARIO",
+     "nombre": "COALICION CANARIA",
      "sigla": "CC",
      "votos": 235221,
      "escanos": 3,
@@ -5742,7 +5742,7 @@
     },
     {
      "partido_id": "icv-euia",
-     "nombre": "INICIATIVA PER CATALUNYA VERDS - ESQUERRA UNIDA I ALTERNATIVA",
+     "nombre": "INIC. PER CATALUNYA VERDS-ESQUERRA UNIDA I ALTERN.",
      "sigla": "ICV-EUiA",
      "votos": 234790,
      "escanos": 2,
@@ -5758,7 +5758,7 @@
     },
     {
      "partido_id": "pa",
-     "nombre": "PARTIDO SOCIALISTA DE ANDALUCIA - PARTIDO ANDALUZ",
+     "nombre": "PARTIDO ANDALUCISTA",
      "sigla": "PA",
      "votos": 205995,
      "escanos": 0,
@@ -5766,7 +5766,7 @@
     },
     {
      "partido_id": "upn-pp",
-     "nombre": "UNION DEL PUEBLO NAVARRO EN COALICION CON EL PARTIDO POPULAR",
+     "nombre": "UNION DEL PUEBLO NAVARRO EN COALICION CON EL PP",
      "sigla": "UPN-PP",
      "votos": 127653,
      "escanos": 2,
@@ -5807,7 +5807,7 @@
     {
      "partido_id": "na-bai",
      "nombre": "NAFARROA BAI",
-     "sigla": "NA-BAI",
+     "sigla": "Na-Bai",
      "votos": 61045,
      "escanos": 1,
      "pct": 0.24
@@ -5862,7 +5862,7 @@
     },
     {
      "partido_id": "par",
-     "nombre": "PARTIDO ARAGONES REGIONALISTA",
+     "nombre": "PARTIDO ARAGONES",
      "sigla": "PAR",
      "votos": 36540,
      "escanos": 0,
@@ -5870,7 +5870,7 @@
     },
     {
      "partido_id": "cds",
-     "nombre": "CENTRO DEMOCRATICO Y SOCIAL/CENTRE DEMOCRATIC I SO",
+     "nombre": "CENTRO DEMOCRATICO Y SOCIAL",
      "sigla": "CDS",
      "votos": 33519,
      "escanos": 0,
@@ -5878,7 +5878,7 @@
     },
     {
      "partido_id": "eupv",
-     "nombre": "ESQUERDA UNIDA-IZQUIERDA UNIDA-ALTERNATIVA",
+     "nombre": "ESQUERDA UNIDA-IZQUIERDA UNIDA",
      "sigla": "EU-IU",
      "votos": 31908,
      "escanos": 0,
@@ -5886,7 +5886,7 @@
     },
     {
      "partido_id": "ev-ae",
-     "nombre": "ELS VERDS - L'ALTERNATIVA ECOLOGISTA",
+     "nombre": "ELS VERDS-L'ALTERNATIVA ECOLOGISTA",
      "sigla": "EV-AE",
      "votos": 30528,
      "escanos": 0,
@@ -5902,7 +5902,7 @@
     },
     {
      "partido_id": "fe",
-     "nombre": "FALANGE ESPAÑOLA DE LAS JONS AUTENTICA",
+     "nombre": "LA FALANGE",
      "sigla": "FE",
      "votos": 22577,
      "escanos": 0,
@@ -5910,7 +5910,7 @@
     },
     {
      "partido_id": "iu-lv",
-     "nombre": "IZQUIERDA UNIDA-LOS VERDES: LA IZQUIERDA PLURAL/EZ",
+     "nombre": "IZQUIERDA UNIDA-LOS VERDES",
      "sigla": "IU-LV",
      "votos": 21836,
      "escanos": 0,
@@ -5918,7 +5918,7 @@
     },
     {
      "partido_id": "ph",
-     "nombre": "PARTIT HUMANISTA DE CATALUNYA",
+     "nombre": "PARTIDO HUMANISTA",
      "sigla": "PH",
      "votos": 21605,
      "escanos": 0,
@@ -5926,7 +5926,7 @@
     },
     {
      "partido_id": "iun-neb",
-     "nombre": "IZQUIERDA UNIDA DE NAVARRA - NAFARROAKO EZKER BATUA - ALTERNATIVA",
+     "nombre": "IZQUIERDA UNIDA DE NAVARRA-NAFARROAKO EZKER BATUA",
      "sigla": "IUN-NEB",
      "votos": 19899,
      "escanos": 0,
@@ -5966,7 +5966,7 @@
     },
     {
      "partido_id": "upl",
-     "nombre": "UNIÓN DEL PUEBLO LEONÉS",
+     "nombre": "UNION DEL PUEBLO LEONES",
      "sigla": "UPL",
      "votos": 14160,
      "escanos": 0,
@@ -5990,7 +5990,7 @@
     },
     {
      "partido_id": "lv-gv",
-     "nombre": "LOS VERDES-GRUPO VERDE-SOS NATURALEZA",
+     "nombre": "LOS VERDES-GRUPO VERDE",
      "sigla": "LV-GV",
      "votos": 12749,
      "escanos": 0,
@@ -6022,7 +6022,7 @@
     },
     {
      "partido_id": "pcpe",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO CASTELLANO-PCPE",
+     "nombre": "PARTIDO COMUNISTA DE LOS PUEBLOS DE ESPAÑA",
      "sigla": "PCPE",
      "votos": 8199,
      "escanos": 0,
@@ -6070,7 +6070,7 @@
     },
     {
      "partido_id": "verdes",
-     "nombre": "LOS VERDES DE ANDALUCIA",
+     "nombre": "LOS VERDES DE ASTURIES",
      "sigla": "VERDES",
      "votos": 5013,
      "escanos": 0,
@@ -6102,7 +6102,7 @@
     },
     {
      "partido_id": "pnc",
-     "nombre": "PARTIDO NACIONALISTA CANTABRO",
+     "nombre": "PARTIDO NACIONALISTA CANARIO",
      "sigla": "PNC",
      "votos": 4092,
      "escanos": 0,
@@ -6110,7 +6110,7 @@
     },
     {
      "partido_id": "pcpc",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO DE CATALUNYA",
+     "nombre": "PARTIT COMUNISTA DEL POBLE DE CATALUNYA",
      "sigla": "PCPC",
      "votos": 4078,
      "escanos": 0,
@@ -6118,7 +6118,7 @@
     },
     {
      "partido_id": "eu",
-     "nombre": "ESQUERRA UNIDA DE LES ILLES BALEARS",
+     "nombre": "EXTREMADURA UNIDA",
      "sigla": "EU",
      "votos": 3916,
      "escanos": 0,
@@ -6126,7 +6126,7 @@
     },
     {
      "partido_id": "ir-pre",
-     "nombre": "PARTIDO IZQUIERDA REPUBLICANA-PARTIT REPUBLICA D'ESQUERRA",
+     "nombre": "IZQUIERDA REPUBLICANA-PARTIT REPUBLICA D'ESQUERRA",
      "sigla": "IR-PRE",
      "votos": 3325,
      "escanos": 0,
@@ -6190,7 +6190,7 @@
     },
     {
      "partido_id": "ei",
-     "nombre": "EI ESCONS INSUBMISOS-ALTERNATIVA DELS DEMOCRATES DESCONTENTS",
+     "nombre": "ESCONS INSUBMISOS-ALT. DELS DEMOCRATES DESCONTENTS",
      "sigla": "Ei",
      "votos": 2332,
      "escanos": 0,
@@ -6246,7 +6246,7 @@
     },
     {
      "partido_id": "pae",
-     "nombre": "PARTIDO DE LOS AUTONOMOS ESPAÑOLES PENSIONISTAS",
+     "nombre": "PARTIDO DE LOS AUTONOMOS JUBILADOS Y VIUDAS",
      "sigla": "PAE",
      "votos": 2082,
      "escanos": 0,
@@ -6310,7 +6310,7 @@
     },
     {
      "partido_id": "prepal",
-     "nombre": "PARTIDO REGIONALISTA DEL PAIS LEONES",
+     "nombre": "SALAMANCA, ZAMORA, LEON PREPAL",
      "sigla": "PREPAL",
      "votos": 1322,
      "escanos": 0,
@@ -6334,7 +6334,7 @@
     },
     {
      "partido_id": "pc",
-     "nombre": "PARTIDO CANTONALISTA",
+     "nombre": "PARTIDO CARLISTA",
      "sigla": "PC",
      "votos": 1138,
      "escanos": 0,
@@ -6383,7 +6383,7 @@
     {
      "partido_id": "ppcr",
      "nombre": "PARTIDO POSITIVISTA CRISTIANO",
-     "sigla": "PPCR",
+     "sigla": "PPCr",
      "votos": 892,
      "escanos": 0,
      "pct": 0.0
@@ -6438,7 +6438,7 @@
     },
     {
      "partido_id": "pcpc-pcpe",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO CASTELLANO-PCPE",
+     "nombre": "PARTIDO COMUNISTA DEL PUEBLO CASTELLANO",
      "sigla": "PCPC-PCPE",
      "votos": 702,
      "escanos": 0,
@@ -6558,7 +6558,7 @@
     },
     {
      "partido_id": "un",
-     "nombre": "PARTIDO UNION NACIONAL",
+     "nombre": "UNION NACIONAL",
      "sigla": "UN",
      "votos": 318,
      "escanos": 0,
@@ -6623,7 +6623,7 @@
    "candidaturas": [
     {
      "partido_id": "pp",
-     "nombre": "PARTIDO POPULAR / PARTIT POPULAR",
+     "nombre": "PARTIDO POPULAR",
      "sigla": "PP",
      "votos": 6095534,
      "escanos": 87,
@@ -6631,7 +6631,7 @@
     },
     {
      "partido_id": "psoe",
-     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
      "sigla": "PSOE",
      "votos": 5401192,
      "escanos": 86,
@@ -6639,7 +6639,7 @@
     },
     {
      "partido_id": "p-p",
-     "nombre": "PARTIT POPULAR/PARTIDO POPULAR",
+     "nombre": "PARTIDO POPULAR",
      "sigla": "P.P.",
      "votos": 4049417,
      "escanos": 65,
@@ -6655,16 +6655,16 @@
     },
     {
      "partido_id": "psc",
-     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE)",
-     "sigla": "PSC",
+     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA",
+     "sigla": "PSC-PSOE",
      "votos": 1610411,
      "escanos": 23,
      "pct": 6.26
     },
     {
      "partido_id": "ciu",
-     "nombre": "COALICION CONVERGENCIA Y UNIO",
-     "sigla": "CIU",
+     "nombre": "CONVERGENCIA I UNIO",
+     "sigla": "CiU",
      "votos": 779425,
      "escanos": 10,
      "pct": 3.03
@@ -6672,7 +6672,7 @@
     {
      "partido_id": "psdeg",
      "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PARTIDO SOCIALISTA OBRERO ESPAÑOL",
-     "sigla": "PSDEG-PSOE",
+     "sigla": "PSdeG-PSOE",
      "votos": 750492,
      "escanos": 10,
      "pct": 2.92
@@ -6688,14 +6688,14 @@
     {
      "partido_id": "pse",
      "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE)",
-     "sigla": "PSE-EE",
+     "sigla": "PSE-EE (PSOE)",
      "votos": 430690,
      "escanos": 9,
      "pct": 1.67
     },
     {
      "partido_id": "pnv",
-     "nombre": "EUSKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+     "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
      "sigla": "EAJ-PNV",
      "votos": 306128,
      "escanos": 6,
@@ -6703,8 +6703,8 @@
     },
     {
      "partido_id": "upyd",
-     "nombre": "UNIÓN PROGRESO Y DEMOCRACIA (UPYD)",
-     "sigla": "UPYD",
+     "nombre": "UNION PROGRESO Y DEMOCRACIA",
+     "sigla": "UPyD",
      "votos": 303001,
      "escanos": 1,
      "pct": 1.18
@@ -6719,7 +6719,7 @@
     },
     {
      "partido_id": "iulv",
-     "nombre": "IZQUIERDA UNIDA LOS VERDES-CONVOCATORIA POR ANDALUCIA - ALTERNATIVA",
+     "nombre": "IZQUIERDA UNIDA LOS VERDES-CONVOCATORIA POR ANDALUCIA-ALTERNATIVA",
      "sigla": "IULV-CA",
      "votos": 230335,
      "escanos": 0,
@@ -6727,7 +6727,7 @@
     },
     {
      "partido_id": "icv-euia",
-     "nombre": "INICIATIVA PER CATALUNYA VERDS - ESQUERRA UNIDA I ALTERNATIVA",
+     "nombre": "INICIATIVA PER CATALUNYA VERDS-ESQUERRA UNIDA I ALTERNATIVA",
      "sigla": "ICV-EUiA",
      "votos": 183338,
      "escanos": 1,
@@ -6736,7 +6736,7 @@
     {
      "partido_id": "iu-cm",
      "nombre": "IZQUIERDA UNIDA COMUNIDAD DE MADRID-ALTERNATIVA",
-     "sigla": "IU-CM",
+     "sigla": "IU-CM.",
      "votos": 164595,
      "escanos": 1,
      "pct": 0.64
@@ -6744,7 +6744,7 @@
     {
      "partido_id": "cc",
      "nombre": "COALICION CANARIA-PARTIDO NACIONALISTA CANARIO",
-     "sigla": "CC",
+     "sigla": "CC-PNC",
      "votos": 143526,
      "escanos": 2,
      "pct": 0.56
@@ -6767,7 +6767,7 @@
     },
     {
      "partido_id": "iu",
-     "nombre": "IZQUIERDA UNIDA-IZQUIERDA DE CASTILLA-LA MANCHA",
+     "nombre": "IZQUIERDA UNIDA-ALTERNATIVA",
      "sigla": "IU",
      "votos": 89933,
      "escanos": 0,
@@ -6799,7 +6799,7 @@
     },
     {
      "partido_id": "ca",
-     "nombre": "COALICION CANDIDATURA POR LA AUTONOMIA",
+     "nombre": "COALICION ANDALUCISTA",
      "sigla": "CA",
      "votos": 68679,
      "escanos": 0,
@@ -6839,7 +6839,7 @@
     },
     {
      "partido_id": "c-s",
-     "nombre": "CIUDADANOS-PARTIDO DE LA CIUDADANÍA (C's)",
+     "nombre": "CIUDADANOS-PARTIDO DE LA CIUDADANIA",
      "sigla": "C's",
      "votos": 46313,
      "escanos": 0,
@@ -6847,7 +6847,7 @@
     },
     {
      "partido_id": "i-u",
-     "nombre": "IZQUIERDA UNIDA-LOS VERDES: LA IZQUIERDA PLURAL/EZ",
+     "nombre": "IZQUIERDA UNIDA-ALTERNATIVA",
      "sigla": "I.U.",
      "votos": 42164,
      "escanos": 0,
@@ -6855,7 +6855,7 @@
     },
     {
      "partido_id": "par",
-     "nombre": "PARTIDO ARAGONES REGIONALISTA",
+     "nombre": "PARTIDO ARAGONES",
      "sigla": "PAR",
      "votos": 40054,
      "escanos": 0,
@@ -6887,7 +6887,7 @@
     },
     {
      "partido_id": "aralar",
-     "nombre": "PARTIDO POLITICO ARALAR",
+     "nombre": "ARALAR",
      "sigla": "aralar",
      "votos": 29989,
      "escanos": 0,
@@ -6896,14 +6896,14 @@
     {
      "partido_id": "bloc-idpv-ev-ee",
      "nombre": "BLOC-INICIATIVA-VERDS",
-     "sigla": "BLOC-IDPV-EV-EE",
+     "sigla": "BLOC-IdPV-EV-EE",
      "votos": 29760,
      "escanos": 0,
      "pct": 0.12
     },
     {
      "partido_id": "lv-gv",
-     "nombre": "LOS VERDES-GRUPO VERDE-SOS NATURALEZA",
+     "nombre": "LOS VERDES-GRUPO VERDE",
      "sigla": "LV-GV",
      "votos": 27321,
      "escanos": 0,
@@ -6911,7 +6911,7 @@
     },
     {
      "partido_id": "pacma",
-     "nombre": "PARTIDO ANIMALISTA CONTRA EL MALTRATO ANIMAL (PACM",
+     "nombre": "PARTIDO ANTITAURINO CONTRA EL MALTRATO ANIMAL",
      "sigla": "PACMA",
      "votos": 25890,
      "escanos": 0,
@@ -6935,7 +6935,7 @@
     },
     {
      "partido_id": "pum+j",
-     "nombre": "POR UN MUNDO MÁIS XUSTO/POR UN MUNDO MÁS JUSTO",
+     "nombre": "POR UN MUNDO MAS JUSTO",
      "sigla": "PUM+J",
      "votos": 23318,
      "escanos": 0,
@@ -6943,7 +6943,7 @@
     },
     {
      "partido_id": "verdes",
-     "nombre": "LOS VERDES DE ANDALUCIA",
+     "nombre": "LOS VERDES",
      "sigla": "VERDES",
      "votos": 23095,
      "escanos": 0,
@@ -6959,8 +6959,8 @@
     },
     {
      "partido_id": "p-a-c-m-a",
-     "nombre": "PARTIT ANTITAURI CONTRA EL MALTRACTAMENT ANIMAL",
-     "sigla": "P.A.C.M.A",
+     "nombre": "PARTIDO ANTITAURINO CONTRA EL MALTRATO ANIMAL",
+     "sigla": "P.A.C.M.A.",
      "votos": 18905,
      "escanos": 0,
      "pct": 0.07
@@ -6976,7 +6976,7 @@
     {
      "partido_id": "cenb",
      "nombre": "CIUDADANOS EN BLANCO",
-     "sigla": "CENB",
+     "sigla": "Cenb",
      "votos": 13755,
      "escanos": 0,
      "pct": 0.05
@@ -6991,8 +6991,8 @@
     },
     {
      "partido_id": "fe",
-     "nombre": "FALANGE ESPAÑOLA DE LAS JONS AUTENTICA",
-     "sigla": "FE",
+     "nombre": "FALANGE ESPAÑOLA DE LAS JONS",
+     "sigla": "FE de las JONS",
      "votos": 12777,
      "escanos": 0,
      "pct": 0.05
@@ -7007,7 +7007,7 @@
     },
     {
      "partido_id": "iuc",
-     "nombre": "IZQUIERDA UNIDA DE CANTABRIA: LA IZQUIERDA PLURAL",
+     "nombre": "IZQUIERDA UNIDA CANARIA-ALTERNATIVA",
      "sigla": "IUC",
      "votos": 12472,
      "escanos": 0,
@@ -7015,7 +7015,7 @@
     },
     {
      "partido_id": "ev-lv",
-     "nombre": "ELS VERDS-LLISTA VERDA",
+     "nombre": "ELS VERDS-LOS VERDES",
      "sigla": "EV-LV",
      "votos": 11943,
      "escanos": 0,
@@ -7031,7 +7031,7 @@
     },
     {
      "partido_id": "pcpe",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO CASTELLANO-PCPE",
+     "nombre": "PARTIDO COMUNISTA DE LOS PUEBLOS DE ESPAÑA",
      "sigla": "PCPE",
      "votos": 10624,
      "escanos": 0,
@@ -7039,7 +7039,7 @@
     },
     {
      "partido_id": "lve",
-     "nombre": "LOS VERDES EUROPEOS-LOS VERDES ALTERNATIVOS",
+     "nombre": "LOS VERDES DE EUROPA",
      "sigla": "LVE",
      "votos": 9960,
      "escanos": 0,
@@ -7063,7 +7063,7 @@
     },
     {
      "partido_id": "ph",
-     "nombre": "PARTIT HUMANISTA DE CATALUNYA",
+     "nombre": "PARTIDO HUMANISTA",
      "sigla": "PH",
      "votos": 8612,
      "escanos": 0,
@@ -7103,7 +7103,7 @@
     },
     {
      "partido_id": "e-2000",
-     "nombre": "ESPAÑA-2000",
+     "nombre": "ESPAÑA 2000",
      "sigla": "E-2000",
      "votos": 6906,
      "escanos": 0,
@@ -7119,7 +7119,7 @@
     },
     {
      "partido_id": "esquerra-pv",
-     "nombre": "ESQUERRA REPUBLICANA DEL PAIS VALENCIA-PAIS VALENCIA, SI",
+     "nombre": "ESQUERRA REPUBLICANA DEL PAIS VALENCIA-PAIS VALENCIA SI",
      "sigla": "ESQUERRA-PV",
      "votos": 6607,
      "escanos": 0,
@@ -7167,7 +7167,7 @@
     },
     {
      "partido_id": "upl",
-     "nombre": "UNIÓN DEL PUEBLO LEONÉS",
+     "nombre": "UNION DEL PUEBLO LEONES",
      "sigla": "UPL",
      "votos": 4509,
      "escanos": 0,
@@ -7175,7 +7175,7 @@
     },
     {
      "partido_id": "lv",
-     "nombre": "LOS VERDES DE EXTREMADURA",
+     "nombre": "LOS VERDES",
      "sigla": "LV",
      "votos": 4354,
      "escanos": 0,
@@ -7191,8 +7191,8 @@
     },
     {
      "partido_id": "sain",
-     "nombre": "PARTIDO SOLIDARIDAD Y AUTOGESTION INTERNACIONALISTA",
-     "sigla": "SAIN",
+     "nombre": "SOLIDARIDAD Y AUTOGESTION INTERNACIONALISTA",
+     "sigla": "SAIn",
      "votos": 3885,
      "escanos": 0,
      "pct": 0.02
@@ -7279,7 +7279,7 @@
     },
     {
      "partido_id": "a-m-d",
-     "nombre": "PARTIDO ALTERNATIVA MOTOR Y DEPORTES",
+     "nombre": "ALTERNATIVA MOTOR Y DEPORTES",
      "sigla": "A.M.D.",
      "votos": 2453,
      "escanos": 0,
@@ -7287,7 +7287,7 @@
     },
     {
      "partido_id": "ir-pre",
-     "nombre": "PARTIDO IZQUIERDA REPUBLICANA-PARTIT REPUBLICA D'ESQUERRA",
+     "nombre": "IZQUIERDA REPUBLICANA-PARTIT REPUBLICA D'ESQUERRA",
      "sigla": "IR-PRE",
      "votos": 2370,
      "escanos": 0,
@@ -7303,7 +7303,7 @@
     },
     {
      "partido_id": "los-verdes",
-     "nombre": "LOS VERDES DE GALICIA",
+     "nombre": "LOS VERDES",
      "sigla": "LOS VERDES",
      "votos": 2082,
      "escanos": 0,
@@ -7327,8 +7327,8 @@
     },
     {
      "partido_id": "aun",
-     "nombre": "ALIANZA POR LA UNIDAD NACIONAL",
-     "sigla": "AUN",
+     "nombre": "ALIANZA NACIONAL",
+     "sigla": "AuN",
      "votos": 1805,
      "escanos": 0,
      "pct": 0.01
@@ -7351,7 +7351,7 @@
     },
     {
      "partido_id": "pfiv",
-     "nombre": "PARTIDO FAMILIA I VIDA",
+     "nombre": "PARTIT FAMILIA I VIDA",
      "sigla": "PFiV",
      "votos": 1523,
      "escanos": 0,
@@ -7391,7 +7391,7 @@
     },
     {
      "partido_id": "c-d-s",
-     "nombre": "CENTRO DEMOCRATICO Y SOCIAL.",
+     "nombre": "CENTRO DEMOCRATICO SOCIAL",
      "sigla": "C.D.S.",
      "votos": 1248,
      "escanos": 0,
@@ -7487,7 +7487,7 @@
     },
     {
      "partido_id": "fe-jons",
-     "nombre": "FALANGE ESPAÑOLA DE LAS J.O.N.S.",
+     "nombre": "FALANGE ESPAÑOLA DE LAS JONS",
      "sigla": "FE-JONS",
      "votos": 753,
      "escanos": 0,
@@ -7591,7 +7591,7 @@
     },
     {
      "partido_id": "irv",
-     "nombre": "IDENTIDAD REINO DE VALENCIA",
+     "nombre": "IDENTITAT REGNE DE VALENCIA",
      "sigla": "IRV",
      "votos": 449,
      "escanos": 0,
@@ -7680,14 +7680,14 @@
     {
      "partido_id": "l-i-lit-ci",
      "nombre": "LLUITA INTERNACIONALISTA",
-     "sigla": "L.I. (LIT-CI)",
+     "sigla": "L.I.(LIT-CI)",
      "votos": 321,
      "escanos": 0,
      "pct": 0.0
     },
     {
      "partido_id": "pcpg",
-     "nombre": "PARTIDO COMUNISTA DO POVO GALEGO",
+     "nombre": "PARTIDO COMUNISTA DO POBO GALEGO",
      "sigla": "PCPG",
      "votos": 319,
      "escanos": 0,
@@ -7695,7 +7695,7 @@
     },
     {
      "partido_id": "pc",
-     "nombre": "PARTIDO CANTONALISTA",
+     "nombre": "PARTIDO CARLISTA",
      "sigla": "PC",
      "votos": 313,
      "escanos": 0,
@@ -7704,7 +7704,7 @@
     {
      "partido_id": "ppcr",
      "nombre": "PARTIDO POSITIVISTA CRISTIANO",
-     "sigla": "PPCR",
+     "sigla": "PPCr",
      "votos": 300,
      "escanos": 0,
      "pct": 0.0
@@ -7743,7 +7743,7 @@
     },
     {
      "partido_id": "li-litci",
-     "nombre": "LLUITA INTERNACIONALISTA",
+     "nombre": "LUCHA INTERNACIONALISTA",
      "sigla": "LI-LITCI",
      "votos": 208,
      "escanos": 0,
@@ -7768,14 +7768,14 @@
     {
      "partido_id": "ud-ca",
      "nombre": "UNIDAD CASTELLANA",
-     "sigla": "Ud Ca",
+     "sigla": "Ud. Ca.",
      "votos": 198,
      "escanos": 0,
      "pct": 0.0
     },
     {
      "partido_id": "li-lit-ci",
-     "nombre": "LUCHA INTERNACIONALISTA/NAZIOARTEKO BORROKA",
+     "nombre": "LLUITA INTERNACIONALISTA",
      "sigla": "(LI(LIT-CI))",
      "votos": 193,
      "escanos": 0,
@@ -7808,7 +7808,7 @@
     {
      "partido_id": "eka-pc",
      "nombre": "PARTIDO CARLISTA DE EUSKALERRIA-PARTIDO CARLISTA",
-     "sigla": "EKA-PC",
+     "sigla": "EKA-PC.",
      "votos": 166,
      "escanos": 0,
      "pct": 0.0
@@ -7879,7 +7879,7 @@
     },
     {
      "partido_id": "cds",
-     "nombre": "CENTRO DEMOCRATICO Y SOCIAL/CENTRE DEMOCRATIC I SO",
+     "nombre": "CENTRO DEMOCRATICO Y SOCIAL",
      "sigla": "CDS",
      "votos": 114,
      "escanos": 0,
@@ -7959,7 +7959,7 @@
     },
     {
      "partido_id": "an",
-     "nombre": "APROME NACIONALISTA",
+     "nombre": "ALIANZA NACIONAL",
      "sigla": "AN",
      "votos": 17,
      "escanos": 0,
@@ -7976,7 +7976,7 @@
    "candidaturas": [
     {
      "partido_id": "p-p",
-     "nombre": "PARTIT POPULAR/PARTIDO POPULAR",
+     "nombre": "PARTIDO POPULAR",
      "sigla": "P.P.",
      "votos": 7820243,
      "escanos": 140,
@@ -7992,7 +7992,7 @@
     },
     {
      "partido_id": "pp",
-     "nombre": "PARTIDO POPULAR / PARTIT POPULAR",
+     "nombre": "PARTIDO POPULAR",
      "sigla": "PP",
      "votos": 2241068,
      "escanos": 30,
@@ -8000,7 +8000,7 @@
     },
     {
      "partido_id": "psoe",
-     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
      "sigla": "PSOE",
      "votos": 1174429,
      "escanos": 16,
@@ -8008,39 +8008,39 @@
     },
     {
      "partido_id": "upyd",
-     "nombre": "UNIÓN PROGRESO Y DEMOCRACIA (UPYD)",
-     "sigla": "UPYD",
+     "nombre": "UNIÓN PROGRESO Y DEMOCRACIA",
+     "sigla": "UPyD",
      "votos": 1143225,
      "escanos": 5,
      "pct": 4.7
     },
     {
      "partido_id": "ciu",
-     "nombre": "COALICION CONVERGENCIA Y UNIO",
-     "sigla": "CIU",
+     "nombre": "CONVERGÈNCIA I UNIÓ",
+     "sigla": "CiU",
      "votos": 1015691,
      "escanos": 16,
      "pct": 4.17
     },
     {
      "partido_id": "psc",
-     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE)",
-     "sigla": "PSC",
+     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA",
+     "sigla": "PSC-PSOE",
      "votos": 922547,
      "escanos": 14,
      "pct": 3.79
     },
     {
      "partido_id": "psdeg",
-     "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PARTIDO SOCIALISTA OBRERO ESPAÑOL",
-     "sigla": "PSDEG-PSOE",
+     "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA - PSOE",
+     "sigla": "PSdeG-PSOE",
      "votos": 457633,
      "escanos": 6,
      "pct": 1.88
     },
     {
      "partido_id": "iulv",
-     "nombre": "IZQUIERDA UNIDA LOS VERDES-CONVOCATORIA POR ANDALUCIA - ALTERNATIVA",
+     "nombre": "IZQUIERDA UNIDA LOS VERDES-CONVOCATORIA POR ANDALU",
      "sigla": "IULV-CA",
      "votos": 360212,
      "escanos": 2,
@@ -8064,7 +8064,7 @@
     },
     {
      "partido_id": "iu-lv",
-     "nombre": "IZQUIERDA UNIDA-LOS VERDES: LA IZQUIERDA PLURAL/EZ",
+     "nombre": "IZQUIERDA UNIDA-LOS VERDES: LA IZQUIERDA PLURAL",
      "sigla": "IU-LV",
      "votos": 308009,
      "escanos": 3,
@@ -8072,7 +8072,7 @@
     },
     {
      "partido_id": "icv-euia",
-     "nombre": "INICIATIVA PER CATALUNYA VERDS - ESQUERRA UNIDA I ALTERNATIVA",
+     "nombre": "INICIATIVA PER CATALUNYA VERDS-ESQUERRA UNIDA I AL",
      "sigla": "ICV-EUiA",
      "votos": 280152,
      "escanos": 3,
@@ -8096,7 +8096,7 @@
     },
     {
      "partido_id": "pnv",
-     "nombre": "EUSKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+     "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
      "sigla": "EAJ-PNV",
      "votos": 208683,
      "escanos": 3,
@@ -8144,7 +8144,7 @@
     },
     {
      "partido_id": "upn-pp",
-     "nombre": "UNION DEL PUEBLO NAVARRO EN COALICION CON EL PARTIDO POPULAR",
+     "nombre": "UNIÓN DEL PUEBLO NAVARRO EN COALICIÓN CON EL PARTI",
      "sigla": "UPN-PP",
      "votos": 126516,
      "escanos": 2,
@@ -8176,7 +8176,7 @@
     },
     {
      "partido_id": "pacma",
-     "nombre": "PARTIDO ANIMALISTA CONTRA EL MALTRATO ANIMAL (PACM",
+     "nombre": "PARTIDO ANIMALISTA CONTRA EL MALTRATO ANIMAL",
      "sigla": "PACMA",
      "votos": 102144,
      "escanos": 0,
@@ -8192,8 +8192,8 @@
     },
     {
      "partido_id": "eb",
-     "nombre": "ESCAÑOS EN BLANCO/ESCONS EN BLANC",
-     "sigla": "EB",
+     "nombre": "ESCAÑOS EN BLANCO",
+     "sigla": "Eb",
      "votos": 97673,
      "escanos": 0,
      "pct": 0.4
@@ -8208,7 +8208,7 @@
     },
     {
      "partido_id": "cha-iu",
-     "nombre": "CHUNTA ARAGONESISTA-IZQUIERDA UNIDA, La Izquierda",
+     "nombre": "CHUNTA ARAGONESISTA-IZQUIERDA UNIDA, LA IZQUIERDA",
      "sigla": "CHA-IU",
      "votos": 74944,
      "escanos": 1,
@@ -8224,7 +8224,7 @@
     },
     {
      "partido_id": "pa",
-     "nombre": "PARTIDO SOCIALISTA DE ANDALUCIA - PARTIDO ANDALUZ",
+     "nombre": "PARTIDO ANDALUCISTA",
      "sigla": "PA",
      "votos": 72079,
      "escanos": 0,
@@ -8304,7 +8304,7 @@
     },
     {
      "partido_id": "pum+j",
-     "nombre": "POR UN MUNDO MÁIS XUSTO/POR UN MUNDO MÁS JUSTO",
+     "nombre": "POR UN MUNDO MÁS JUSTO",
      "sigla": "PUM+J",
      "votos": 26172,
      "escanos": 0,
@@ -8392,7 +8392,7 @@
     },
     {
      "partido_id": "i-u",
-     "nombre": "IZQUIERDA UNIDA-LOS VERDES: LA IZQUIERDA PLURAL/EZ",
+     "nombre": "IZQUIERDA UNIDA-LA IZQUIERDA PLURAL",
      "sigla": "I.U.",
      "votos": 14912,
      "escanos": 0,
@@ -8432,7 +8432,7 @@
     },
     {
      "partido_id": "ph",
-     "nombre": "PARTIT HUMANISTA DE CATALUNYA",
+     "nombre": "PARTIDO HUMANISTA",
      "sigla": "PH",
      "votos": 10132,
      "escanos": 0,
@@ -8456,7 +8456,7 @@
     },
     {
      "partido_id": "erpv",
-     "nombre": "ESQUERRA REPUBLICANA DEL PAIS VALENCIA",
+     "nombre": "ESQUERRA REPUBLICANA DEL PAÍS VALENCIÀ",
      "sigla": "ERPV",
      "votos": 7450,
      "escanos": 0,
@@ -8464,8 +8464,8 @@
     },
     {
      "partido_id": "sain",
-     "nombre": "PARTIDO SOLIDARIDAD Y AUTOGESTION INTERNACIONALISTA",
-     "sigla": "SAIN",
+     "nombre": "SOLIDARIDAD Y AUTOGESTION INTERNACIONALISTA",
+     "sigla": "SAIn",
      "votos": 6863,
      "escanos": 0,
      "pct": 0.03
@@ -8488,7 +8488,7 @@
     },
     {
      "partido_id": "esquerra",
-     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA",
+     "nombre": "ESQUERRA REPUBLICANA",
      "sigla": "ESQUERRA",
      "votos": 4681,
      "escanos": 0,
@@ -8496,7 +8496,7 @@
     },
     {
      "partido_id": "pcpe",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO CASTELLANO-PCPE",
+     "nombre": "PARTIDO COMUNISTA DE LOS PUEBLOS DE ESPAÑA",
      "sigla": "PCPE",
      "votos": 4259,
      "escanos": 0,
@@ -8544,7 +8544,7 @@
     },
     {
      "partido_id": "uce",
-     "nombre": "UNIFICACION COMUNISTA DE ESPAÑA",
+     "nombre": "UNIFICACIÓN COMUNISTA DE ESPAÑA",
      "sigla": "UCE",
      "votos": 2716,
      "escanos": 0,
@@ -8624,7 +8624,7 @@
     },
     {
      "partido_id": "pcpc",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO DE CATALUNYA",
+     "nombre": "PARTIT COMUNISTA DEL POBLE DE CATALUNYA",
      "sigla": "PCPC",
      "votos": 1547,
      "escanos": 0,
@@ -8649,7 +8649,7 @@
     {
      "partido_id": "cex",
      "nombre": "CONVERGENCIA POR EXTREMADURA",
-     "sigla": "CEX",
+     "sigla": "CEx",
      "votos": 1090,
      "escanos": 0,
      "pct": 0.0
@@ -8688,7 +8688,7 @@
     },
     {
      "partido_id": "pfyv",
-     "nombre": "PARTIDO FAMILIA Y VIDA",
+     "nombre": "FAMILIA Y VIDA",
      "sigla": "PFyV",
      "votos": 829,
      "escanos": 0,
@@ -8792,7 +8792,7 @@
     },
     {
      "partido_id": "lv-gv",
-     "nombre": "LOS VERDES-GRUPO VERDE-SOS NATURALEZA",
+     "nombre": "LOS VERDES-GRUPO VERDE",
      "sigla": "LV-GV",
      "votos": 293,
      "escanos": 0,
@@ -8841,7 +8841,7 @@
    "candidaturas": [
     {
      "partido_id": "pp",
-     "nombre": "PARTIDO POPULAR / PARTIT POPULAR",
+     "nombre": "PARTIDO POPULAR",
      "sigla": "PP",
      "votos": 6717462,
      "escanos": 112,
@@ -8849,7 +8849,7 @@
     },
     {
      "partido_id": "psoe",
-     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
      "sigla": "PSOE",
      "votos": 4224420,
      "escanos": 69,
@@ -8857,7 +8857,7 @@
     },
     {
      "partido_id": "c-s",
-     "nombre": "CIUDADANOS-PARTIDO DE LA CIUDADANÍA (C's)",
+     "nombre": "CIUDADANOS-PARTIDO DE LA CIUDADANÍA",
      "sigla": "C's",
      "votos": 3514528,
      "escanos": 40,
@@ -8873,7 +8873,7 @@
     },
     {
      "partido_id": "en-comú",
-     "nombre": "\"EN COMÚ PODEM\"",
+     "nombre": "EN COMÚ PODEM",
      "sigla": "EN COMÚ",
      "votos": 929880,
      "escanos": 12,
@@ -8881,7 +8881,7 @@
     },
     {
      "partido_id": "podemos-com",
-     "nombre": "COMPROMÍS-PODEMOS-EUPV: A LA VALENCIANA",
+     "nombre": "COMPROMÍS-PODEMOS-ÉS EL MOMENT",
      "sigla": "PODEMOS-COM",
      "votos": 598817,
      "escanos": 8,
@@ -8889,8 +8889,8 @@
     },
     {
      "partido_id": "psc",
-     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE)",
-     "sigla": "PSC",
+     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA",
+     "sigla": "PSC-PSOE",
      "votos": 590274,
      "escanos": 8,
      "pct": 2.34
@@ -8914,7 +8914,7 @@
     {
      "partido_id": "podemos-en",
      "nombre": "EN MAREA",
-     "sigla": "PODEMOS-EN",
+     "sigla": "PODEMOS-En",
      "votos": 410698,
      "escanos": 6,
      "pct": 1.63
@@ -8929,15 +8929,15 @@
     },
     {
      "partido_id": "psdeg",
-     "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PARTIDO SOCIALISTA OBRERO ESPAÑOL",
-     "sigla": "PSDEG-PSOE",
+     "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PSOE",
+     "sigla": "PSdeG-PSOE",
      "votos": 350220,
      "escanos": 6,
      "pct": 1.39
     },
     {
      "partido_id": "podemos-aha",
-     "nombre": "PODEMOS/AHAL DUGU",
+     "nombre": "PODEMOS-AHAL DUGU",
      "sigla": "PODEMOS-AHA",
      "votos": 317674,
      "escanos": 5,
@@ -8945,7 +8945,7 @@
     },
     {
      "partido_id": "pnv",
-     "nombre": "EUSKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+     "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
      "sigla": "EAJ-PNV",
      "votos": 302316,
      "escanos": 6,
@@ -8961,7 +8961,7 @@
     },
     {
      "partido_id": "pacma",
-     "nombre": "PARTIDO ANIMALISTA CONTRA EL MALTRATO ANIMAL (PACM",
+     "nombre": "PARTIDO ANIMALISTA CONTRA EL MALTRATO ANIMAL",
      "sigla": "PACMA",
      "votos": 220369,
      "escanos": 0,
@@ -8969,7 +8969,7 @@
     },
     {
      "partido_id": "ehbildu",
-     "nombre": "EUSKAL HERRIA BILDU (EH Bildu)",
+     "nombre": "EUSKAL HERRIA BILDU",
      "sigla": "EH Bildu",
      "votos": 219125,
      "escanos": 2,
@@ -8993,7 +8993,7 @@
     },
     {
      "partido_id": "pp-foro",
-     "nombre": "PARTIDO POPULAR - FORO",
+     "nombre": "PARTIDO POPULAR-FORO",
      "sigla": "PP-FORO",
      "votos": 187568,
      "escanos": 3,
@@ -9001,7 +9001,7 @@
     },
     {
      "partido_id": "upyd",
-     "nombre": "UNIÓN PROGRESO Y DEMOCRACIA (UPYD)",
+     "nombre": "UNIÓN PROGRESO Y DEMOCRACIA",
      "sigla": "UPYD",
      "votos": 155153,
      "escanos": 0,
@@ -9009,7 +9009,7 @@
     },
     {
      "partido_id": "eupv-upec",
-     "nombre": "UNITAT POPULAR:ESQUERRA UNIDA DEL PAÍS VALENCIÀ, U",
+     "nombre": "UNITAT POPULAR: ESQUERRA UNIDA DEL PAÍS VALENCIÀ,",
      "sigla": "EUPV-UPeC",
      "votos": 111963,
      "escanos": 0,
@@ -9026,14 +9026,14 @@
     {
      "partido_id": "erc",
      "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-CATALUNYA SÍ",
-     "sigla": "ERC",
+     "sigla": "ERC-CATSI",
      "votos": 109589,
      "escanos": 2,
      "pct": 0.43
     },
     {
      "partido_id": "upn-pp",
-     "nombre": "UNION DEL PUEBLO NAVARRO EN COALICION CON EL PARTIDO POPULAR",
+     "nombre": "UNIÓN DEL PUEBLO NAVARRO EN COALICIÓN CON EL PARTI",
      "sigla": "UPN-PP",
      "votos": 102244,
      "escanos": 2,
@@ -9041,7 +9041,7 @@
     },
     {
      "partido_id": "cca-pnc",
-     "nombre": "COALICIÓN CANARIA - PARTIDO NACIONALISTA CANARIO",
+     "nombre": "COALICIÓN CANARIA-PARTIDO NACIONALISTA CANARIO",
      "sigla": "CCa-PNC",
      "votos": 81917,
      "escanos": 1,
@@ -9049,7 +9049,7 @@
     },
     {
      "partido_id": "compromis",
-     "nombre": "COMPROMÍS - SUMAR: SUMEM PER GUANYAR - SUMAR",
+     "nombre": "COMPROMÍS-PODEMOS-ÉS EL MOMENT - PODEMOS",
      "sigla": "C",
      "votos": 74732,
      "escanos": 1,
@@ -9066,7 +9066,7 @@
     {
      "partido_id": "unio-cat",
      "nombre": "UNIÓ DEMOCRÀTICA DE CATALUNYA",
-     "sigla": "Unio.Cat",
+     "sigla": "unio.cat",
      "votos": 65388,
      "escanos": 0,
      "pct": 0.26
@@ -9089,7 +9089,7 @@
     },
     {
      "partido_id": "pse",
-     "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE)",
+     "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (P",
      "sigla": "PSE-EE",
      "votos": 51764,
      "escanos": 1,
@@ -9153,7 +9153,7 @@
     },
     {
      "partido_id": "pcpe",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO CASTELLANO-PCPE",
+     "nombre": "PARTIDO COMUNISTA DE LOS PUEBLOS DE ESPAÑA",
      "sigla": "PCPE",
      "votos": 22351,
      "escanos": 0,
@@ -9193,7 +9193,7 @@
     },
     {
      "partido_id": "el-pi",
-     "nombre": "EL PI - PROPOSTA PER LES ILLES BALEARS",
+     "nombre": "EL PI - PROPOSTA PER LES ILLES",
      "sigla": "EL PI",
      "votos": 12910,
      "escanos": 0,
@@ -9225,7 +9225,7 @@
     },
     {
      "partido_id": "pcpc",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO DE CATALUNYA",
+     "nombre": "PARTIT COMUNISTA DEL POBLE DE CATALUNYA",
      "sigla": "PCPC",
      "votos": 8828,
      "escanos": 0,
@@ -9233,7 +9233,7 @@
     },
     {
      "partido_id": "eb",
-     "nombre": "ESCAÑOS EN BLANCO/ESCONS EN BLANC",
+     "nombre": "ESCAÑOS EN BLANCO",
      "sigla": "EB",
      "votos": 8566,
      "escanos": 0,
@@ -9241,7 +9241,7 @@
     },
     {
      "partido_id": "fe-de-las-j",
-     "nombre": "FALANGE ESPAÑOLA DE LAS J.O.N.S.",
+     "nombre": "FALANGE ESPAÑOLA DE LAS JONS",
      "sigla": "FE de las J",
      "votos": 7495,
      "escanos": 0,
@@ -9265,7 +9265,7 @@
     },
     {
      "partido_id": "pum+j",
-     "nombre": "POR UN MUNDO MÁIS XUSTO/POR UN MUNDO MÁS JUSTO",
+     "nombre": "POR UN MUNDO MÁS JUSTO",
      "sigla": "PUM+J",
      "votos": 4586,
      "escanos": 0,
@@ -9273,8 +9273,8 @@
     },
     {
      "partido_id": "sain",
-     "nombre": "PARTIDO SOLIDARIDAD Y AUTOGESTION INTERNACIONALISTA",
-     "sigla": "SAIN",
+     "nombre": "SOLIDARIDAD Y AUTOGESTIÓN INTERNACIONALISTA",
+     "sigla": "SAIn",
      "votos": 4400,
      "escanos": 0,
      "pct": 0.02
@@ -9305,7 +9305,7 @@
     },
     {
      "partido_id": "p-lib",
-     "nombre": "PARTIDO DE LA LIBERTAD INDIVIDUAL",
+     "nombre": "PARTIDO LIBERTARIO",
      "sigla": "P-LIB",
      "votos": 2854,
      "escanos": 0,
@@ -9313,7 +9313,7 @@
     },
     {
      "partido_id": "ph",
-     "nombre": "PARTIT HUMANISTA DE CATALUNYA",
+     "nombre": "PARTIDO HUMANISTA",
      "sigla": "PH",
      "votos": 2846,
      "escanos": 0,
@@ -9369,7 +9369,7 @@
     },
     {
      "partido_id": "prepal",
-     "nombre": "PARTIDO REGIONALISTA DEL PAIS LEONES",
+     "nombre": "PARTIDO REGIONALISTA DEL PAÍS LEONÉS",
      "sigla": "PREPAL",
      "votos": 1419,
      "escanos": 0,
@@ -9409,7 +9409,7 @@
     },
     {
      "partido_id": "ln",
-     "nombre": "LIBERTAD NAVARRA, LIBERTATE NAFARRA (Ln)",
+     "nombre": "LIBERTAD NAVARRA, LIBERTATE NAFARRA",
      "sigla": "Ln",
      "votos": 1026,
      "escanos": 0,
@@ -9466,7 +9466,7 @@
     {
      "partido_id": "independien",
      "nombre": "INDEPENDIENTES POR ARAGÓN",
-     "sigla": "INDEPENDIEN",
+     "sigla": "Independien",
      "votos": 676,
      "escanos": 0,
      "pct": 0.0
@@ -9546,7 +9546,7 @@
    "candidaturas": [
     {
      "partido_id": "pp",
-     "nombre": "PARTIDO POPULAR / PARTIT POPULAR",
+     "nombre": "PARTIDO POPULAR",
      "sigla": "PP",
      "votos": 7372172,
      "escanos": 126,
@@ -9554,7 +9554,7 @@
     },
     {
      "partido_id": "psoe",
-     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
      "sigla": "PSOE",
      "votos": 4151236,
      "escanos": 66,
@@ -9562,7 +9562,7 @@
     },
     {
      "partido_id": "c-s",
-     "nombre": "CIUDADANOS-PARTIDO DE LA CIUDADANÍA (C's)",
+     "nombre": "CIUDADANOS-PARTIDO DE LA CIUDADANÍA",
      "sigla": "C's",
      "votos": 3141570,
      "escanos": 32,
@@ -9570,15 +9570,15 @@
     },
     {
      "partido_id": "podemos-iu",
-     "nombre": "UNIDAS PODEMOS-ALTOARAGÓN EN COMÚN",
-     "sigla": "PODEMOS-IU",
+     "nombre": "UNIDOS PODEMOS POR ANDALUCÍA",
+     "sigla": "PODEMOS-IU-",
      "votos": 1073040,
      "escanos": 15,
      "pct": 4.46
     },
     {
      "partido_id": "ecp",
-     "nombre": "EN COMÚ PODEM - GUANYEM EL CANVI",
+     "nombre": "EN COMÚ PODEM-GUANYEM EL CANVI",
      "sigla": "ECP",
      "votos": 853102,
      "escanos": 12,
@@ -9586,7 +9586,7 @@
     },
     {
      "partido_id": "podemos-iu-equo",
-     "nombre": "UNIDAS PODEMOS",
+     "nombre": "UNIDOS PODEMOS",
      "sigla": "PODEMOS-IU-EQUO",
      "votos": 784257,
      "escanos": 11,
@@ -9610,7 +9610,7 @@
     },
     {
      "partido_id": "erc-catsí",
-     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-CATALUNYA SÍ",
+     "nombre": "ESQUERRA REPUBLICANA/CATALUNYA SÍ",
      "sigla": "ERC-CATSÍ",
      "votos": 632234,
      "escanos": 9,
@@ -9618,8 +9618,8 @@
     },
     {
      "partido_id": "psc",
-     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE)",
-     "sigla": "PSC",
+     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA",
+     "sigla": "PSC-PSOE",
      "votos": 559870,
      "escanos": 7,
      "pct": 2.33
@@ -9634,8 +9634,8 @@
     },
     {
      "partido_id": "psdeg",
-     "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PARTIDO SOCIALISTA OBRERO ESPAÑOL",
-     "sigla": "PSDEG-PSOE",
+     "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PSOE",
+     "sigla": "PSdeG-PSOE",
      "votos": 348014,
      "escanos": 6,
      "pct": 1.45
@@ -9658,7 +9658,7 @@
     },
     {
      "partido_id": "pnv",
-     "nombre": "EUSKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+     "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
      "sigla": "EAJ-PNV",
      "votos": 287014,
      "escanos": 5,
@@ -9666,7 +9666,7 @@
     },
     {
      "partido_id": "pacma",
-     "nombre": "PARTIDO ANIMALISTA CONTRA EL MALTRATO ANIMAL (PACM",
+     "nombre": "PARTIDO ANIMALISTA CONTRA EL MALTRATO ANIMAL",
      "sigla": "PACMA",
      "votos": 286702,
      "escanos": 0,
@@ -9690,7 +9690,7 @@
     },
     {
      "partido_id": "pp-foro",
-     "nombre": "PARTIDO POPULAR - FORO",
+     "nombre": "PARTIDO POPULAR-FORO",
      "sigla": "PP-FORO",
      "votos": 209632,
      "escanos": 3,
@@ -9698,7 +9698,7 @@
     },
     {
      "partido_id": "ehbildu",
-     "nombre": "EUSKAL HERRIA BILDU (EH Bildu)",
+     "nombre": "EUSKAL HERRIA BILDU",
      "sigla": "EH Bildu",
      "votos": 184713,
      "escanos": 2,
@@ -9706,8 +9706,8 @@
     },
     {
      "partido_id": "pse",
-     "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE)",
-     "sigla": "PSE-EE",
+     "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA(PSOE)",
+     "sigla": "PSE-EE (PSOE)",
      "votos": 164255,
      "escanos": 3,
      "pct": 0.68
@@ -9722,7 +9722,7 @@
     },
     {
      "partido_id": "upn-pp",
-     "nombre": "UNION DEL PUEBLO NAVARRO EN COALICION CON EL PARTIDO POPULAR",
+     "nombre": "UNIÓN DEL PUEBLO NAVARRO EN COALICIÓN CON EL PARTI",
      "sigla": "UPN-PP",
      "votos": 106976,
      "escanos": 2,
@@ -9738,7 +9738,7 @@
     },
     {
      "partido_id": "cca-pnc",
-     "nombre": "COALICIÓN CANARIA - PARTIDO NACIONALISTA CANARIO",
+     "nombre": "COALICIÓN CANARIA-PARTIDO NACIONALISTA CANARIO",
      "sigla": "CCa-PNC",
      "votos": 78253,
      "escanos": 1,
@@ -9762,8 +9762,8 @@
     },
     {
      "partido_id": "upyd",
-     "nombre": "UNIÓN PROGRESO Y DEMOCRACIA (UPYD)",
-     "sigla": "UPYD",
+     "nombre": "UNIÓN PROGRESO Y DEMOCRACIA",
+     "sigla": "UPyD",
      "votos": 50247,
      "escanos": 0,
      "pct": 0.21
@@ -9786,7 +9786,7 @@
     },
     {
      "partido_id": "pcpe",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO CASTELLANO-PCPE",
+     "nombre": "PARTIDO COMUNISTA DE LOS PUEBLOS DE ESPAÑA",
      "sigla": "PCPE",
      "votos": 20730,
      "escanos": 0,
@@ -9810,7 +9810,7 @@
     },
     {
      "partido_id": "eb",
-     "nombre": "ESCAÑOS EN BLANCO/ESCONS EN BLANC",
+     "nombre": "ESCAÑOS EN BLANCO",
      "sigla": "EB",
      "votos": 10643,
      "escanos": 0,
@@ -9818,7 +9818,7 @@
     },
     {
      "partido_id": "fe-de-las-j",
-     "nombre": "FALANGE ESPAÑOLA DE LAS J.O.N.S.",
+     "nombre": "FALANGE ESPAÑOLA DE LAS JONS",
      "sigla": "FE de las J",
      "votos": 9909,
      "escanos": 0,
@@ -9850,7 +9850,7 @@
     },
     {
      "partido_id": "pcpc",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO DE CATALUNYA",
+     "nombre": "PARTIT COMUNISTA DEL POBLE DE CATALUNYA",
      "sigla": "PCPC",
      "votos": 5897,
      "escanos": 0,
@@ -9858,15 +9858,15 @@
     },
     {
      "partido_id": "sain",
-     "nombre": "PARTIDO SOLIDARIDAD Y AUTOGESTION INTERNACIONALISTA",
-     "sigla": "SAIN",
+     "nombre": "SOLIDARIDAD Y AUTOGESTIÓN INTERNACIONALISTA",
+     "sigla": "SAIn",
      "votos": 3110,
      "escanos": 0,
      "pct": 0.01
     },
     {
      "partido_id": "ph",
-     "nombre": "PARTIT HUMANISTA DE CATALUNYA",
+     "nombre": "PARTIDO HUMANISTA",
      "sigla": "PH",
      "votos": 3012,
      "escanos": 0,
@@ -9882,7 +9882,7 @@
     },
     {
      "partido_id": "p-lib",
-     "nombre": "PARTIDO DE LA LIBERTAD INDIVIDUAL",
+     "nombre": "PARTIDO LIBERTARIO",
      "sigla": "P-LIB",
      "votos": 2996,
      "escanos": 0,
@@ -9946,7 +9946,7 @@
     },
     {
      "partido_id": "pfyv",
-     "nombre": "PARTIDO FAMILIA Y VIDA",
+     "nombre": "FAMILIA Y VIDA",
      "sigla": "PFyV",
      "votos": 846,
      "escanos": 0,
@@ -9970,7 +9970,7 @@
     },
     {
      "partido_id": "mas",
-     "nombre": "MOVIMIENTO ARAGONES SOCIAL",
+     "nombre": "MOVIMIENTO ARAGONÉS SOCIAL",
      "sigla": "MAS",
      "votos": 723,
      "escanos": 0,
@@ -9994,7 +9994,7 @@
     },
     {
      "partido_id": "prepal",
-     "nombre": "PARTIDO REGIONALISTA DEL PAIS LEONES",
+     "nombre": "PARTIDO REGIONALISTA DEL PAÍS LEONÉS",
      "sigla": "PREPAL",
      "votos": 668,
      "escanos": 0,
@@ -10002,7 +10002,7 @@
     },
     {
      "partido_id": "ln",
-     "nombre": "LIBERTAD NAVARRA, LIBERTATE NAFARRA (Ln)",
+     "nombre": "LIBERTAD NAVARRA, LIBERTATE NAFARRA",
      "sigla": "Ln",
      "votos": 622,
      "escanos": 0,
@@ -10050,7 +10050,7 @@
     },
     {
      "partido_id": "fe",
-     "nombre": "FALANGE ESPAÑOLA DE LAS JONS AUTENTICA",
+     "nombre": "LA FALANGE",
      "sigla": "FE",
      "votos": 254,
      "escanos": 0,
@@ -10099,7 +10099,7 @@
    "candidaturas": [
     {
      "partido_id": "psoe",
-     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
      "sigla": "PSOE",
      "votos": 5768701,
      "escanos": 97,
@@ -10107,7 +10107,7 @@
     },
     {
      "partido_id": "pp",
-     "nombre": "PARTIDO POPULAR / PARTIT POPULAR",
+     "nombre": "PARTIDO POPULAR",
      "sigla": "PP",
      "votos": 4261473,
      "escanos": 65,
@@ -10164,30 +10164,30 @@
     {
      "partido_id": "ecp",
      "nombre": "EN COMÚ PODEM - GUANYEM EL CANVI",
-     "sigla": "ECP",
+     "sigla": "ECP-GUANYEM",
      "votos": 615665,
      "escanos": 7,
      "pct": 2.35
     },
     {
      "partido_id": "psdeg",
-     "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PARTIDO SOCIALISTA OBRERO ESPAÑOL",
-     "sigla": "PSDEG-PSOE",
+     "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PARTIDO SOCIALI",
+     "sigla": "PSdeG-PSOE",
      "votos": 528195,
      "escanos": 10,
      "pct": 2.02
     },
     {
      "partido_id": "junts",
-     "nombre": "JUNTS PER CATALUNYA - JUNTS - JxCAT",
-     "sigla": "JUNTS",
+     "nombre": "JUNTS PER CATALUNYA-JUNTS",
+     "sigla": "JxCAT-JUNTS",
      "votos": 500787,
      "escanos": 7,
      "pct": 1.91
     },
     {
      "partido_id": "pnv",
-     "nombre": "EUSKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+     "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
      "sigla": "EAJ-PNV",
      "votos": 395884,
      "escanos": 6,
@@ -10195,7 +10195,7 @@
     },
     {
      "partido_id": "podemos-eupv",
-     "nombre": "UNIDAS PODEMOS-UNIDES PODEM",
+     "nombre": "UNIDAS PODEMOS",
      "sigla": "PODEMOS-EUPV",
      "votos": 382798,
      "escanos": 5,
@@ -10203,7 +10203,7 @@
     },
     {
      "partido_id": "pacma",
-     "nombre": "PARTIDO ANIMALISTA CONTRA EL MALTRATO ANIMAL (PACM",
+     "nombre": "PARTIDO ANIMALISTA CONTRA EL MALTRATO ANIMAL",
      "sigla": "PACMA",
      "votos": 328299,
      "escanos": 0,
@@ -10211,7 +10211,7 @@
     },
     {
      "partido_id": "ehbildu",
-     "nombre": "EUSKAL HERRIA BILDU (EH Bildu)",
+     "nombre": "EUSKAL HERRIA BILDU",
      "sigla": "EH Bildu",
      "votos": 259647,
      "escanos": 4,
@@ -10220,7 +10220,7 @@
     {
      "partido_id": "pse",
      "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE)",
-     "sigla": "PSE-EE",
+     "sigla": "PSE-EE (PSOE)",
      "votos": 253989,
      "escanos": 4,
      "pct": 0.97
@@ -10228,7 +10228,7 @@
     {
      "partido_id": "podemos-eu",
      "nombre": "EN COMÚN-UNIDAS PODEMOS",
-     "sigla": "PODEMOS-EU",
+     "sigla": "PODEMOS-EU-",
      "votos": 238061,
      "escanos": 2,
      "pct": 0.91
@@ -10251,7 +10251,7 @@
     },
     {
      "partido_id": "cca-pnc",
-     "nombre": "COALICIÓN CANARIA - PARTIDO NACIONALISTA CANARIO",
+     "nombre": "COALICION CANARIA-PARTIDO NACIONALISTA CANARIO",
      "sigla": "CCa-PNC",
      "votos": 137664,
      "escanos": 2,
@@ -10275,8 +10275,8 @@
     },
     {
      "partido_id": "na",
-     "nombre": "NACION ANDALUZA",
-     "sigla": "NA",
+     "nombre": "NAVARRA SUMA",
+     "sigla": "NA+",
      "votos": 107619,
      "escanos": 2,
      "pct": 0.41
@@ -10307,7 +10307,7 @@
     },
     {
      "partido_id": "podemos-iu-equo-batzarre",
-     "nombre": "UNIDOS PODEMOS-ELKARREKIN AHAL DUGU",
+     "nombre": "UNIDAS PODEMOS",
      "sigla": "PODEMOS-IU-EQUO-BATZARRE",
      "votos": 68393,
      "escanos": 1,
@@ -10363,7 +10363,7 @@
     },
     {
      "partido_id": "pum+j",
-     "nombre": "POR UN MUNDO MÁIS XUSTO/POR UN MUNDO MÁS JUSTO",
+     "nombre": "POR UN MUNDO MÁS JUSTO",
      "sigla": "PUM+J",
      "votos": 21863,
      "escanos": 0,
@@ -10380,7 +10380,7 @@
     {
      "partido_id": "podemos-iu",
      "nombre": "UNIDAS PODEMOS-ALTOARAGÓN EN COMÚN",
-     "sigla": "PODEMOS-IU",
+     "sigla": "PODEMOS-IU-",
      "votos": 17151,
      "escanos": 0,
      "pct": 0.07
@@ -10427,7 +10427,7 @@
     },
     {
      "partido_id": "pcpe",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO CASTELLANO-PCPE",
+     "nombre": "PARTIDO COMUNISTA DE LOS PUEBLOS DE ESPAÑA",
      "sigla": "PCPE",
      "votos": 7505,
      "escanos": 0,
@@ -10435,7 +10435,7 @@
     },
     {
      "partido_id": "eb",
-     "nombre": "ESCAÑOS EN BLANCO/ESCONS EN BLANC",
+     "nombre": "ESCAÑOS EN BLANCO",
      "sigla": "EB",
      "votos": 7072,
      "escanos": 0,
@@ -10459,7 +10459,7 @@
     },
     {
      "partido_id": "pcpc",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO DE CATALUNYA",
+     "nombre": "PARTIT COMUNISTA DEL POBLE DE CATALUNYA",
      "sigla": "PCPC",
      "votos": 4859,
      "escanos": 0,
@@ -10475,7 +10475,7 @@
     },
     {
      "partido_id": "ph",
-     "nombre": "PARTIT HUMANISTA DE CATALUNYA",
+     "nombre": "PARTIDO HUMANISTA",
      "sigla": "PH",
      "votos": 4495,
      "escanos": 0,
@@ -10491,7 +10491,7 @@
     },
     {
      "partido_id": "erpv",
-     "nombre": "ESQUERRA REPUBLICANA DEL PAIS VALENCIA",
+     "nombre": "ESQUERRA REPUBLICANA DEL PAÍS VALENCIÀ",
      "sigla": "ERPV",
      "votos": 4236,
      "escanos": 0,
@@ -10499,7 +10499,7 @@
     },
     {
      "partido_id": "avant-adelante-los-verdes",
-     "nombre": "LOS VERDES ECOPACIFISTAS ADELANTE",
+     "nombre": "AVANT ADELANTE LOS VERDES",
      "sigla": "AVANT ADELANTE LOS VERDES",
      "votos": 4149,
      "escanos": 0,
@@ -10516,14 +10516,14 @@
     {
      "partido_id": "avant-los-verdes",
      "nombre": "LOS VERDES ECOPACIFISTAS ADELANTE",
-     "sigla": "AVANT LOS VERDES",
+     "sigla": "AVANT-LOS VERDES",
      "votos": 3183,
      "escanos": 0,
      "pct": 0.01
     },
     {
      "partido_id": "ahora-canarias",
-     "nombre": "AHORA CANARIAS: Alternativa Nacionalista Canaria (ANC) y Unidad del Pueblo",
+     "nombre": "AHORA CANARIAS: Alternativa Nacionalista Canaria ANC y Unidad del Pueblo",
      "sigla": "AHORA CANARIAS",
      "votos": 3037,
      "escanos": 0,
@@ -10595,7 +10595,7 @@
     },
     {
      "partido_id": "p-lib",
-     "nombre": "PARTIDO DE LA LIBERTAD INDIVIDUAL",
+     "nombre": "PARTIDO LIBERTARIO",
      "sigla": "P-LIB",
      "votos": 1216,
      "escanos": 0,
@@ -10643,7 +10643,7 @@
     },
     {
      "partido_id": "fia",
-     "nombre": "FEDERACIÓN DE LOS INDEPENDIENTES DE ARAGÓN",
+     "nombre": "FEDERACION DE LOS INDEPENDIENTES DE ARAGON",
      "sigla": "FIA",
      "votos": 785,
      "escanos": 0,
@@ -10651,7 +10651,7 @@
     },
     {
      "partido_id": "fe-de-las-j",
-     "nombre": "FALANGE ESPAÑOLA DE LAS J.O.N.S.",
+     "nombre": "FALANGE ESPAÑOLA DE LAS JONS",
      "sigla": "FE de las J",
      "votos": 646,
      "escanos": 0,
@@ -10780,7 +10780,7 @@
    "candidaturas": [
     {
      "partido_id": "psoe",
-     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
      "sigla": "PSOE",
      "votos": 5362648,
      "escanos": 96,
@@ -10788,7 +10788,7 @@
     },
     {
      "partido_id": "pp",
-     "nombre": "PARTIDO POPULAR / PARTIT POPULAR",
+     "nombre": "PARTIDO POPULAR",
      "sigla": "PP",
      "votos": 4917095,
      "escanos": 87,
@@ -10812,7 +10812,7 @@
     },
     {
      "partido_id": "podemos-iu",
-     "nombre": "UNIDAS PODEMOS-ALTOARAGÓN EN COMÚN",
+     "nombre": "UNIDAS PODEMOS",
      "sigla": "PODEMOS-IU",
      "votos": 1241677,
      "escanos": 12,
@@ -10828,8 +10828,8 @@
     },
     {
      "partido_id": "psc",
-     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE)",
-     "sigla": "PSC",
+     "nombre": "PARTIT DELS SOCIALISTES DE CATALUNYA",
+     "sigla": "PSC-PSOE",
      "votos": 794666,
      "escanos": 12,
      "pct": 3.28
@@ -10852,23 +10852,23 @@
     },
     {
      "partido_id": "junts",
-     "nombre": "JUNTS PER CATALUNYA - JUNTS - JxCAT",
-     "sigla": "JUNTS",
+     "nombre": "JUNTS PER CATALUNYA-JUNTS",
+     "sigla": "JxCAT-JUNTS",
      "votos": 530225,
      "escanos": 8,
      "pct": 2.19
     },
     {
      "partido_id": "psdeg",
-     "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PARTIDO SOCIALISTA OBRERO ESPAÑOL",
-     "sigla": "PSDEG-PSOE",
+     "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PSOE",
+     "sigla": "PSdeG-PSOE",
      "votos": 407489,
      "escanos": 8,
      "pct": 1.68
     },
     {
      "partido_id": "pnv",
-     "nombre": "EUSKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+     "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
      "sigla": "EAJ-PNV",
      "votos": 379002,
      "escanos": 6,
@@ -10884,7 +10884,7 @@
     },
     {
      "partido_id": "ehbildu",
-     "nombre": "EUSKAL HERRIA BILDU (EH Bildu)",
+     "nombre": "EUSKAL HERRIA BILDU",
      "sigla": "EH Bildu",
      "votos": 277621,
      "escanos": 5,
@@ -10908,7 +10908,7 @@
     },
     {
      "partido_id": "pacma",
-     "nombre": "PARTIDO ANIMALISTA CONTRA EL MALTRATO ANIMAL (PACM",
+     "nombre": "PARTIDO ANIMALISTA CONTRA EL MALTRATO ANIMAL",
      "sigla": "PACMA",
      "votos": 228856,
      "escanos": 0,
@@ -10917,7 +10917,7 @@
     {
      "partido_id": "pse",
      "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE)",
-     "sigla": "PSE-EE",
+     "sigla": "PSE-EE (PSOE)",
      "votos": 227396,
      "escanos": 4,
      "pct": 0.94
@@ -10932,15 +10932,15 @@
     },
     {
      "partido_id": "compromis",
-     "nombre": "COMPROMÍS - SUMAR: SUMEM PER GUANYAR - SUMAR",
-     "sigla": "C",
+     "nombre": "MÉS COMPROMÍS",
+     "sigla": "MÉS COMPROMÍS",
      "votos": 176287,
      "escanos": 1,
      "pct": 0.73
     },
     {
      "partido_id": "pp-foro",
-     "nombre": "PARTIDO POPULAR - FORO",
+     "nombre": "PARTIDO POPULAR-FORO",
      "sigla": "PP-FORO",
      "votos": 129945,
      "escanos": 2,
@@ -10956,8 +10956,8 @@
     },
     {
      "partido_id": "na",
-     "nombre": "NACION ANDALUZA",
-     "sigla": "NA",
+     "nombre": "NAVARRA SUMA",
+     "sigla": "NA+",
      "votos": 99078,
      "escanos": 2,
      "pct": 0.41
@@ -11028,7 +11028,7 @@
     },
     {
      "partido_id": "pum+j",
-     "nombre": "POR UN MUNDO MÁIS XUSTO/POR UN MUNDO MÁS JUSTO",
+     "nombre": "POR UN MUNDO MÁS JUSTO",
      "sigla": "PUM+J",
      "votos": 27272,
      "escanos": 0,
@@ -11124,7 +11124,7 @@
     },
     {
      "partido_id": "cpm",
-     "nombre": "COALICION POR MELILLA",
+     "nombre": "COALICIÓN POR MELILLA",
      "sigla": "CpM",
      "votos": 8955,
      "escanos": 0,
@@ -11148,7 +11148,7 @@
     },
     {
      "partido_id": "pcpe",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO CASTELLANO-PCPE",
+     "nombre": "PARTIDO COMUNISTA DE LOS PUEBLOS DE ESPAÑA",
      "sigla": "PCPE",
      "votos": 7052,
      "escanos": 0,
@@ -11156,7 +11156,7 @@
     },
     {
      "partido_id": "eb",
-     "nombre": "ESCAÑOS EN BLANCO/ESCONS EN BLANC",
+     "nombre": "ESCAÑOS EN BLANCO",
      "sigla": "EB",
      "votos": 5970,
      "escanos": 0,
@@ -11164,7 +11164,7 @@
     },
     {
      "partido_id": "erpv",
-     "nombre": "ESQUERRA REPUBLICANA DEL PAIS VALENCIA",
+     "nombre": "ESQUERRA REPUBLICANA DEL PAÍS VALENCIÀ",
      "sigla": "ERPV",
      "votos": 5875,
      "escanos": 0,
@@ -11180,7 +11180,7 @@
     },
     {
      "partido_id": "avant-adelante-los-verdes",
-     "nombre": "LOS VERDES ECOPACIFISTAS ADELANTE",
+     "nombre": "AVANT ADELANTE LOS VERDES",
      "sigla": "AVANT ADELANTE LOS VERDES",
      "votos": 5011,
      "escanos": 0,
@@ -11196,7 +11196,7 @@
     },
     {
      "partido_id": "pcpc",
-     "nombre": "PARTIDO COMUNISTA DEL PUEBLO DE CATALUNYA",
+     "nombre": "PARTIT COMUNISTA DEL POBLE DE CATALUNYA",
      "sigla": "PCPC",
      "votos": 3337,
      "escanos": 0,
@@ -11204,7 +11204,7 @@
     },
     {
      "partido_id": "verdes",
-     "nombre": "LOS VERDES DE ANDALUCIA",
+     "nombre": "LOS VERDES",
      "sigla": "VERDES",
      "votos": 3186,
      "escanos": 0,
@@ -11212,7 +11212,7 @@
     },
     {
      "partido_id": "ph",
-     "nombre": "PARTIT HUMANISTA DE CATALUNYA",
+     "nombre": "PARTIDO HUMANISTA",
      "sigla": "PH",
      "votos": 3150,
      "escanos": 0,
@@ -11316,7 +11316,7 @@
     },
     {
      "partido_id": "p-lib",
-     "nombre": "PARTIDO DE LA LIBERTAD INDIVIDUAL",
+     "nombre": "PARTIDO LIBERTARIO",
      "sigla": "P-LIB",
      "votos": 1171,
      "escanos": 0,
@@ -11348,7 +11348,7 @@
     },
     {
      "partido_id": "prepal",
-     "nombre": "PARTIDO REGIONALISTA DEL PAIS LEONES",
+     "nombre": "PARTIDO REGIONALISTA DEL PAÍS LEONÉS",
      "sigla": "PREPAL",
      "votos": 941,
      "escanos": 0,
@@ -11380,8 +11380,8 @@
     },
     {
      "partido_id": "fe",
-     "nombre": "FALANGE ESPAÑOLA DE LAS JONS AUTENTICA",
-     "sigla": "FE",
+     "nombre": "FALANGE ESPAÑOLA DE LAS JONS",
+     "sigla": "FE de las JONS",
      "votos": 616,
      "escanos": 0,
      "pct": 0.0
@@ -11420,7 +11420,7 @@
     },
     {
      "partido_id": "avant-los-verdes",
-     "nombre": "LOS VERDES ECOPACIFISTAS ADELANTE",
+     "nombre": "AVANT ADELANTE LOS VERDES",
      "sigla": "AVANT LOS VERDES",
      "votos": 405,
      "escanos": 0,
@@ -11476,7 +11476,7 @@
     },
     {
      "partido_id": "los-verdes",
-     "nombre": "LOS VERDES DE GALICIA",
+     "nombre": "LOS VERDES",
      "sigla": "LOS VERDES",
      "votos": 101,
      "escanos": 0,
@@ -11509,7 +11509,7 @@
    "candidaturas": [
     {
      "partido_id": "pp",
-     "nombre": "PARTIDO POPULAR / PARTIT POPULAR",
+     "nombre": "PARTIDO POPULAR",
      "sigla": "PP",
      "votos": 8160837,
      "escanos": 137,
@@ -11517,7 +11517,7 @@
     },
     {
      "partido_id": "psoe",
-     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+     "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
      "sigla": "PSOE",
      "votos": 5576280,
      "escanos": 85,
@@ -11533,7 +11533,7 @@
     },
     {
      "partido_id": "sumar",
-     "nombre": "SUMAR ANDALUCÍA",
+     "nombre": "SUMAR",
      "sigla": "SUMAR",
      "votos": 1977380,
      "escanos": 18,
@@ -11549,7 +11549,7 @@
     },
     {
      "partido_id": "ecp",
-     "nombre": "EN COMÚ PODEM - GUANYEM EL CANVI",
+     "nombre": "SUMAR - EN COMÚ PODEM - SUMAR",
      "sigla": "ECP",
      "votos": 497617,
      "escanos": 7,
@@ -11557,15 +11557,15 @@
     },
     {
      "partido_id": "psdeg",
-     "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PARTIDO SOCIALISTA OBRERO ESPAÑOL",
-     "sigla": "PSDEG-PSOE",
+     "nombre": "PARTIDO DOS SOCIALISTAS DE GALICIA-PSOE",
+     "sigla": "PSdeG-PSOE",
      "votos": 486832,
      "escanos": 7,
      "pct": 1.97
     },
     {
      "partido_id": "erc",
-     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-CATALUNYA SÍ",
+     "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA",
      "sigla": "ERC",
      "votos": 466020,
      "escanos": 7,
@@ -11574,7 +11574,7 @@
     {
      "partido_id": "compromis",
      "nombre": "COMPROMÍS - SUMAR: SUMEM PER GUANYAR - SUMAR",
-     "sigla": "C",
+     "sigla": "COMPROMÍS",
      "votos": 402813,
      "escanos": 4,
      "pct": 1.63
@@ -11589,7 +11589,7 @@
     },
     {
      "partido_id": "ehbildu",
-     "nombre": "EUSKAL HERRIA BILDU (EH Bildu)",
+     "nombre": "EUSKAL HERRIA BILDU",
      "sigla": "EH Bildu",
      "votos": 335129,
      "escanos": 6,
@@ -11598,14 +11598,14 @@
     {
      "partido_id": "pse",
      "nombre": "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE)",
-     "sigla": "PSE-EE",
+     "sigla": "PSE-EE (PSOE)",
      "votos": 291932,
      "escanos": 5,
      "pct": 1.18
     },
     {
      "partido_id": "pnv",
-     "nombre": "EUSKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+     "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
      "sigla": "EAJ-PNV",
      "votos": 277289,
      "escanos": 5,
@@ -11613,7 +11613,7 @@
     },
     {
      "partido_id": "pacma",
-     "nombre": "PARTIDO ANIMALISTA CONTRA EL MALTRATO ANIMAL (PACM",
+     "nombre": "PARTIDO ANIMALISTA CON EL MEDIO AMBIENTE",
      "sigla": "PACMA",
      "votos": 169237,
      "escanos": 0,
@@ -11637,8 +11637,8 @@
     },
     {
      "partido_id": "cc",
-     "nombre": "COALICION CANARIA-PARTIDO NACIONALISTA CANARIO",
-     "sigla": "CC",
+     "nombre": "COALICIÓN CANARIA",
+     "sigla": "CCa",
      "votos": 116363,
      "escanos": 1,
      "pct": 0.47
@@ -11717,7 +11717,7 @@
     },
     {
      "partido_id": "pum+j",
-     "nombre": "POR UN MUNDO MÁIS XUSTO/POR UN MUNDO MÁS JUSTO",
+     "nombre": "POR UN MUNDO MÁS JUSTO",
      "sigla": "PUM+J",
      "votos": 23290,
      "escanos": 0,
@@ -11813,15 +11813,15 @@
     },
     {
      "partido_id": "fe",
-     "nombre": "FALANGE ESPAÑOLA DE LAS JONS AUTENTICA",
-     "sigla": "FE",
+     "nombre": "FALANGE ESPAÑOLA DE LAS J.O.N.S.",
+     "sigla": "FE de las JONS",
      "votos": 4683,
      "escanos": 0,
      "pct": 0.02
     },
     {
      "partido_id": "par",
-     "nombre": "PARTIDO ARAGONES REGIONALISTA",
+     "nombre": "PARTIDO ARAGONÉS",
      "sigla": "PAR",
      "votos": 4173,
      "escanos": 0,
@@ -11845,7 +11845,7 @@
     },
     {
      "partido_id": "ph",
-     "nombre": "PARTIT HUMANISTA DE CATALUNYA",
+     "nombre": "PARTIDO HUMANISTA",
      "sigla": "PH",
      "votos": 2902,
      "escanos": 0,
@@ -11925,7 +11925,7 @@
     },
     {
      "partido_id": "cpm",
-     "nombre": "COALICION POR MELILLA",
+     "nombre": "COALICIÓN POR MELILLA",
      "sigla": "CpM",
      "votos": 1298,
      "escanos": 0,
@@ -11949,7 +11949,7 @@
     },
     {
      "partido_id": "prepal",
-     "nombre": "PARTIDO REGIONALISTA DEL PAIS LEONES",
+     "nombre": "PARTIDO REGIONALISTA DEL PAÍS LEONÉS",
      "sigla": "PREPAL",
      "votos": 964,
      "escanos": 0,
@@ -11998,7 +11998,7 @@
     {
      "partido_id": "ud-ca",
      "nombre": "UNIDAD CASTELLANA",
-     "sigla": "Ud Ca",
+     "sigla": "Ud.Ca",
      "votos": 463,
      "escanos": 0,
      "pct": 0.0
@@ -12069,7 +12069,7 @@
     },
     {
      "partido_id": "ccd",
-     "nombre": "CIUDADANOS DE CENTRO DEMOCRÁTICO",
+     "nombre": "COALICIÓN DE CENTRO DEMOCRÁTICO",
      "sigla": "CCD",
      "votos": 153,
      "escanos": 0,

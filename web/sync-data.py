@@ -336,9 +336,43 @@ def gen_series(desde: str = "2015-01") -> int:
 # 5. Resultados oficiales (16 generales)
 # ---------------------------------------------------------------------------
 
+def nombres_por_eleccion() -> dict[tuple[str, str], tuple[str, str]]:
+    """(elección, partido_id) → (nombre, sigla) según la etiqueta de ESA convocatoria.
+
+    `partidos.json` guarda un único nombre por `partido_id`, y un id puede reunir
+    candidaturas distintas con los años: `na` fue Nación Andaluza en 1996 y 2000
+    (3.505 votos) y Navarra Suma en 2019 (107.619 y 99.078, con 2 escaños);
+    `compromis` va de la coalición con Podemos en 2015 a Més Compromís en 2019 y
+    a Compromís-Sumar en 2023. Coger el nombre del agregado publica un nombre
+    anacrónico en el histórico, así que aquí manda la etiqueta de cada elección.
+    """
+    ruta = os.path.join(P_INTERIOR, "results_provincial.jsonl")
+    pesos: dict[tuple[str, str], dict[tuple[str, str], list[int]]] = {}
+    with open(ruta, encoding="utf-8") as fh:
+        for linea in fh:
+            r = json.loads(linea)
+            lab = r["candidatura"].strip()
+            if " - " in lab:
+                nombre, sigla = lab.rsplit(" - ", 1)
+            else:
+                nombre = sigla = lab
+            clave = (nombre.strip(), sigla.strip())
+            k = (r["eleccion"], r["partido_id"])
+            pesos.setdefault(k, {})
+            # Manda el número de provincias, no los votos: la misma candidatura
+            # se presenta con etiqueta regional en unas y estatal en otras (IU en
+            # 1993 aparece con diez nombres), y el nombre que la identifica es el
+            # que usa en más circunscripciones. Los votos desempatan.
+            casilla = pesos[k].setdefault(clave, [0, 0])
+            casilla[0] += 1
+            casilla[1] += int(r["votos"])
+    return {k: max(v.items(), key=lambda kv: tuple(kv[1]))[0] for k, v in pesos.items()}
+
+
 def gen_elecciones() -> int:
     src = leer_json(os.path.join(P_INTERIOR, "elections.json"))
     partidos_meta = leer_json(os.path.join(P_INTERIOR, "partidos.json"))["partidos"]
+    nombres = nombres_por_eleccion()
 
     elecciones = []
     for el in src["elecciones"]:
@@ -348,10 +382,14 @@ def gen_elecciones() -> int:
             pid = c["partido_id"]
             info = partidos_meta.get(pid, {})
             siglas = (info.get("siglas") or [None])[0]
+            nombre, sigla = nombres.get(
+                (el["id"], pid),
+                (info.get("nombre", pid.upper()), siglas or pid.upper()),
+            )
             cands.append({
                 "partido_id": pid,
-                "nombre": info.get("nombre", pid.upper()),
-                "sigla": siglas or pid.upper(),
+                "nombre": nombre,
+                "sigla": sigla,
                 "votos": c["votos"],
                 "escanos": c["escanos"],
                 "pct": round(100.0 * c["votos"] / validos, 2) if validos else 0.0,

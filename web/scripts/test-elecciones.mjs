@@ -144,6 +144,42 @@ for (const e of elecciones) {
   );
 }
 
+// ── nombre de cada candidatura: el de SU convocatoria, no el del agregado ───
+// `partido_id` reúne candidaturas distintas con los años y el nombre salía del
+// agregado: la fila de Navarra Suma (2 escaños en 2019) se publicaba como
+// «NACIÓN ANDALUZA», y Compromís aparecía con la marca de Sumar desde 2015.
+const candDe = (idEleccion, pid) =>
+  elecciones.find((e) => e.id === idEleccion)?.candidaturas.find((c) => c.partido_id === pid);
+
+const casos = [
+  ['2019-11-10', 'na', /NAVARRA SUMA/i, 2, 'Navarra Suma se publicaba como Nación Andaluza'],
+  ['2019-04-28', 'na', /NAVARRA SUMA/i, 2, 'Navarra Suma (28A) se publicaba como Nación Andaluza'],
+  ['1996-03-03', 'na', /ANDALUZA/i, 0, 'Nación Andaluza (1996) no puede llamarse Navarra Suma'],
+  ['2019-11-10', 'compromis', /COMPROMÍS/i, 1, 'Compromís en 2019 no llevaba la marca de Sumar'],
+  ['2015-12-20', 'compromis', /COMPROMÍS/i, 1, 'Compromís en 2015 no llevaba la marca de Sumar'],
+  ['2023-07-23', 'compromis', /SUMAR/i, 4, 'Compromís-Sumar en 2023 sí lleva Sumar'],
+  ['1993-06-06', 'iu', /^IZQUIERDA UNIDA$/i, 12, 'IU en 1993 con nombre estatal, no el de una federación'],
+  ['1982-10-28', 'pp', /PROVERISTA/i, 0, 'en 1982 el PP no existía: esa fila son 168 votos de otro partido'],
+];
+for (const [id, pid, re, escanos, fallo] of casos) {
+  const c = candDe(id, pid);
+  ok(!!c, `${id} · ${pid}: no está en elecciones.json`);
+  if (!c) continue;
+  ok(re.test(c.nombre), `${id} · ${pid}: «${c.nombre}» — ${fallo}`);
+  ok(c.escanos === escanos, `${id} · ${pid}: ${c.escanos} escaños, se esperaban ${escanos}`);
+}
+
+// Un nombre con marca posterior a su convocatoria delata el error de raíz.
+for (const e of elecciones) {
+  if (e.id >= '2023-07-23') continue;
+  for (const c of e.candidaturas) {
+    ok(
+      !/\bSUMAR\b/i.test(c.nombre),
+      `${e.id} · ${c.sigla}: «${c.nombre}» lleva la marca Sumar, que es de 2023`,
+    );
+  }
+}
+
 console.log(
   `\ntest:elecciones — ${comprobaciones} comprobaciones, ${fallos} fallos` +
     ` · ${elecciones.length} elecciones · ${filas.length} filas provinciales`,
