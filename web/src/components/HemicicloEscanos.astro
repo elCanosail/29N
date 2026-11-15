@@ -207,8 +207,8 @@ const descripcionCompleta = `${descripcion} Estimación 29N, de izquierda a dere
             data-partido={p.clave}
             cx={p.x}
             cy={p.y}
-            r="3.1"
-            style={`fill:${p.color}`}
+            r="3.4"
+            style={`fill:none;stroke:${p.color};stroke-width:1.8`}
           />
         ))}
       </g>
@@ -228,6 +228,11 @@ const descripcionCompleta = `${descripcion} Estimación 29N, de izquierda a dere
       </g>
 
 
+
+      <g class="hemi__hueco" aria-hidden="true">
+        <text class="hemi__hueco-titulo mono" x={CX} y={CY - 30} text-anchor="middle">23J</text>
+        <text class="hemi__hueco-sub" x={CX} y={CY - 14} text-anchor="middle">resultado real</text>
+      </g>
 
       <g class="hemi__mayoria" aria-hidden="true">
         <line class="hemi__mayoria-linea" x1={marca.x1} y1={marca.y1} x2={marca.x2} y2={marca.y2} />
@@ -297,12 +302,23 @@ const descripcionCompleta = `${descripcion} Estimación 29N, de izquierda a dere
 
   .hemi__escano { stroke: none; }
   /* El anillo del 23J es contexto, no protagonista: mismo color, menos peso. */
-  .hemi__escano--23j { opacity: 0.62; }
+  /* Hueco, no macizo: se lee como «la vez anterior», no como un segundo gráfico. */
+  .hemi__escano--23j { opacity: 0.7; }
 
 
   /* La cabecera ya dice 29N/23J: repetirlo en cada fila es ruido, sobre todo en móvil. */
   .hemi__leyenda-eleccion { display: none; }
 
+
+  .hemi__hueco-titulo {
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    fill: var(--tinta-2);
+  }
+  .hemi__hueco-sub {
+    font-size: 11px;
+    fill: var(--tinta-2);
+  }
 
   .hemi__mayoria-linea {
     stroke: var(--tinta);
@@ -389,5 +405,6 @@ const descripcionCompleta = `${descripcion} Estimación 29N, de izquierda a dere
     .hemi__mayoria-etiqueta { display: none; }
     /* Y el anillo del 23J, con puntos de ~2 px, no se lee: la comparación va en la leyenda. */
     .hemi__anillo--23j { display: none; }
+    .hemi__hueco { display: none; }
   }
 </style>
