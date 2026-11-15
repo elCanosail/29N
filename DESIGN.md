@@ -166,6 +166,13 @@ No hay más de un primario visible por vista. Radio global: 4 px (nada pill, nad
 - La leyenda sustituye al color cuando hay más de 6 series: etiquetas directas al final de la línea, no leyenda aparte.
 - Tooltips: caja de `--tinta` con texto `--papel`, radio 4 px, contenido en mono: fecha, valor, intervalo, fuente.
 
+### Hemiciclo de escaños
+
+- Una fila por arco, escaños como puntos a tamaño constante; el reparto se lee de izquierda a derecha en orden ideológico, no de coalición.
+- El anillo de comparación (la elección anterior) va **por dentro, más fino y atenuado**: es contexto, y sus cifras viven en la leyenda y en el `aria-label`, nunca solo en el color.
+- La mayoría absoluta es una marca **fuera del arco** con su etiqueta en mono («mayoría absoluta · 176»); no se dibuja una línea que atraviese escaños.
+- Los intervalos no se superponen al reparto (§ regla 15): van debajo del gráfico.
+
 ### Mapa provincial
 
 - Coroplético sobre silueta de provincias, categorías por quantiles o pasos fijos declarados en la leyenda (la leyenda muestra los cortes exactos, nunca "bajo/medio/alto" a secas).
