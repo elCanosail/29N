@@ -1,0 +1,393 @@
+---
+/**
+ * HemicicloEscanos — los 350 escaños en semicírculo (estilo El País), con el
+ * 23J como anillo interior de comparación. Encargo: /tmp/hemiciclo-spec.md.
+ *
+ * Todo se genera en el frontmatter con funciones puras: el markup solo recorre
+ * arrays ya calculados. Sin JavaScript de cliente, sin dependencias nuevas.
+ *
+ * Decisiones de geometría (y un ajuste que el encargo pide explicitar):
+ *  - 10 filas, centro (500, 520), radios 190→430 el anillo 29N y 90→150 el 23J.
+ *  - Las cuotas por fila son `π·r_i/30` (proporcionales al radio). Esa densidad
+ *    solo da ~330 puntos en el anillo grande: para llegar a 350 EXACTOS se
+ *    normalizan al total y se cierran con el método de resto mayor. El resultado
+ *    es una separación uniforme de ~27,8 px entre escaños del 29N (r=8,5) y de
+ *    ~10,8 px en el 23J (r=4,5): puntos separados, nunca solapados.
+ *  - Asignación por ÁNGULO, no por fila: se juntan todas las posiciones
+ *    (fila, ángulo), se ordenan de izquierda (π) a derecha (0) y se reparten en
+ *    el orden ideológico de partidos. Cada uno recibe un sector angular continuo
+ *    que atraviesa las diez filas → cuñas radiales, no manchas.
+ *  - Reparto entero: las medias decimales se cierran a 350 por resto mayor, tanto
+ *    en la estimación como en el 23J. No se inventa ninguna cifra.
+ *  - La incertidumbre NO se dibuja: el hemiciclo es la estimación puntual; los
+ *    intervalos del 95 % van en texto debajo y en el desglose (regla #15).
+ *  - Colores solo desde `colorPartido(clave)`; siglas desde `sigla29N`.
+ */
+import { entero } from '../lib/format';
+import { colorPartido, sigla29N } from '../lib/partidos';
+
+export interface FilaHemi {
+  /** etiqueta visible del 29N (puede ser «Frente A»). */
+  partido: string;
+  /** clave de datos del modelo, para color, sigla y orden. */
+  clave?: string;
+  /** escaños estimados 29N (media de las simulaciones, decimal). */
+  escanos: number;
+  /** escaños reales del 23J. */
+  escanos23j?: number;
+}
+
+interface Props {
+  filas: FilaHemi[];
+  total?: number;
+  mayoria?: number;
+  descripcion: string;
+  pie?: string;
+}
+
+const { filas, total = 350, mayoria = 176, descripcion, pie } = Astro.props as Props;
+
+/** Orden ideológico, NO de coalición (fijado por el encargo). */
+const ORDEN: string[] = [
+  'SUMAR', 'PSOE', 'ERC', 'EH BILDU', 'BNG', 'CUP', 'PNV', 'JXCAT', 'CC', 'NA+', 'PP', 'VOX',
+];
+
+const claveDe = (f: FilaHemi) => f.clave ?? f.partido;
+const porClave = new Map(filas.map((f) => [claveDe(f), f]));
+// Se respeta el orden fijo; una clave nueva que el modelo añada va al final,
+// para que ningún escaño se quede sin dibujar.
+const partidos: FilaHemi[] = [
+  ...ORDEN.filter((k) => porClave.has(k)).map((k) => porClave.get(k) as FilaHemi),
+  ...filas.filter((f) => !ORDEN.includes(claveDe(f))),
+];
+
+/** Método de resto mayor: cuotas proporcionales → enteros que suman `total`. */
+function restoMayor(cuotas: number[], total: number): number[] {
+  if (cuotas.length === 0) return [];
+  const suma = cuotas.reduce((a, b) => a + b, 0);
+  const escaladas = suma > 0
+    ? cuotas.map((c) => (c * total) / suma)
+    : cuotas.map(() => total / cuotas.length);
+  const suelos = escaladas.map(Math.floor);
+  const restos = escaladas
+    .map((c, i) => ({ i, r: c - suelos[i] }))
+    .sort((a, b) => b.r - a.r || a.i - b.i);
+  let falta = total - suelos.reduce((a, b) => a + b, 0);
+  let k = 0;
+  while (falta > 0) {
+    suelos[restos[k % restos.length].i] += 1;
+    falta -= 1;
+    k += 1;
+  }
+  return suelos;
+}
+
+const rep29 = restoMayor(partidos.map((f) => Math.max(0, f.escanos)), total);
+const rep23 = restoMayor(partidos.map((f) => Math.max(0, f.escanos23j ?? 0)), total);
+
+const FILAS = 10;
+const CX = 500;
+const CY = 520;
+const radios29 = Array.from({ length: FILAS }, (_, i) => 190 + (i * (430 - 190)) / (FILAS - 1));
+const radios23 = Array.from({ length: FILAS }, (_, i) => 90 + (i * (150 - 90)) / (FILAS - 1));
+
+/** n_i = π·r_i/30, normalizado a `total` y cerrado por resto mayor. */
+function filasDelAnillo(radios: number[], total: number): number[] {
+  return restoMayor(radios.map((r) => (Math.PI * r) / 30), total);
+}
+const n29 = filasDelAnillo(radios29, total);
+const n23 = filasDelAnillo(radios23, total);
+
+interface Punto { x: number; y: number; ang: number; clave: string; color: string; }
+interface Posicion { ang: number; fila: number; r: number; }
+
+/** Todas las posiciones (fila, ángulo), de π (izquierda) a 0 (derecha). */
+function posiciones(radios: number[], porFila: number[]): Posicion[] {
+  const out: Posicion[] = [];
+  porFila.forEach((n, fila) => {
+    for (let j = 0; j < n; j += 1) {
+      out.push({ ang: Math.PI * (1 - (j + 0.5) / n), fila, r: radios[fila] });
+    }
+  });
+  return out.sort((a, b) => b.ang - a.ang || a.fila - b.fila);
+}
+const pos29 = posiciones(radios29, n29);
+const pos23 = posiciones(radios23, n23);
+
+/**
+ * Asignación por ÁNGULO, no por fila: las posiciones de todas las filas se
+ * ordenan de izquierda a derecha y se reparten en el orden de partidos. Cada
+ * partido recibe un bloque CONTIGUO de ángulos (un sector, atravesando las diez
+ * filas) → cuña radial continua, no manchas. Es la convención de un hemiciclo:
+ * lo que ordena es el eje ideológico angular, no el anillo al que pertenezca
+ * cada punto.
+ */
+function asignar(pos: Posicion[], reparto: number[]): Punto[] {
+  const out: Punto[] = [];
+  let cursor = 0;
+  partidos.forEach((f, idx) => {
+    const color = colorPartido(claveDe(f));
+    for (let k = 0; k < reparto[idx]; k += 1) {
+      const p = pos[cursor];
+      cursor += 1;
+      out.push({
+        x: +(CX + p.r * Math.cos(p.ang)).toFixed(2),
+        y: +(CY - p.r * Math.sin(p.ang)).toFixed(2),
+        ang: p.ang,
+        clave: claveDe(f),
+        color,
+      });
+    }
+  });
+  return out;
+}
+const puntos29 = asignar(pos29, rep29);
+const puntos23 = asignar(pos23, rep23);
+
+// Marca de mayoría: sobre la posición angular del escaño `mayoria` (el 176 en
+// el orden de lectura, ya que `pos29` está ordenada de izquierda a derecha).
+const angMayoria = pos29[Math.min(mayoria, pos29.length) - 1].ang;
+const marca = {
+  x1: +(CX + 432 * Math.cos(angMayoria)).toFixed(2),
+  y1: +(CY - 432 * Math.sin(angMayoria)).toFixed(2),
+  x2: +(CX + 465 * Math.cos(angMayoria)).toFixed(2),
+  y2: +(CY - 465 * Math.sin(angMayoria)).toFixed(2),
+  xEtiqueta: +(CX + 480 * Math.cos(angMayoria)).toFixed(2),
+  yEtiqueta: +(CY - 480 * Math.sin(angMayoria)).toFixed(2),
+};
+
+// Etiquetas de arco: solo ≥ 24 escaños, en el ángulo medio de su cuña.
+interface Etiqueta { clave: string; sigla: string; n: number; x: number; y: number; ancla: string; }
+const etiquetas: Etiqueta[] = [];
+partidos.forEach((f, idx) => {
+  if (rep29[idx] < 24) return;
+  const angs = puntos29.filter((p) => p.clave === claveDe(f)).map((p) => p.ang);
+  const medio = angs.reduce((a, b) => a + b, 0) / angs.length;
+  etiquetas.push({
+    clave: claveDe(f),
+    sigla: sigla29N(claveDe(f)),
+    n: rep29[idx],
+    x: +(CX + 465 * Math.cos(medio)).toFixed(2),
+    y: +(CY - 465 * Math.sin(medio)).toFixed(2),
+    ancla: Math.abs(Math.cos(medio)) < 0.35 ? 'middle' : Math.cos(medio) > 0 ? 'start' : 'end',
+  });
+});
+
+// Leyenda: una fila por partido con escaños 29N y 23J, en el mismo orden.
+// Incluye los que tienen 0 en un anillo pero escaños en el otro (CUP, NA+):
+// así no se pierde ningún escaño de la comparación y ambas columnas suman 350.
+interface FilaLeyenda { clave: string; sigla: string; color: string; n29: number; n23: number; }
+const leyenda: FilaLeyenda[] = partidos.map((f, idx) => ({
+  clave: claveDe(f),
+  sigla: sigla29N(claveDe(f)),
+  color: colorPartido(claveDe(f)),
+  n29: rep29[idx],
+  n23: rep23[idx],
+}));
+
+const repartoTexto = leyenda.map((f) => `${f.sigla} ${f.n29}`).join(', ');
+const repartoTexto23 = leyenda.filter((f) => f.n23 > 0).map((f) => `${f.sigla} ${f.n23}`).join(', ');
+const descripcionCompleta = `${descripcion} Estimación 29N, de izquierda a derecha: ${repartoTexto}. Resultado real del 23J en el anillo interior: ${repartoTexto23}. Ambas sumas son ${total} escaños y la mayoría absoluta se alcanza al llegar a ${mayoria}.`;
+---
+
+<figure class="hemi">
+  <div class="hemi__cuerpo">
+    <svg
+      class="hemi__svg"
+      viewBox="0 0 1000 560"
+      role="img"
+      aria-label={descripcionCompleta}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g class="hemi__anillo hemi__anillo--23j" aria-hidden="true">
+        {puntos23.map((p) => (
+          <circle
+            class="hemi__escano hemi__escano--23j"
+            data-anillo="23j"
+            data-partido={p.clave}
+            cx={p.x}
+            cy={p.y}
+            r="3.1"
+            style={`fill:${p.color}`}
+          />
+        ))}
+      </g>
+
+      <g class="hemi__anillo hemi__anillo--29n" aria-hidden="true">
+        {puntos29.map((p) => (
+          <circle
+            class="hemi__escano"
+            data-anillo="29n"
+            data-partido={p.clave}
+            cx={p.x}
+            cy={p.y}
+            r="8.5"
+            style={`fill:${p.color}`}
+          />
+        ))}
+      </g>
+
+
+
+      <g class="hemi__mayoria" aria-hidden="true">
+        <line class="hemi__mayoria-linea" x1={marca.x1} y1={marca.y1} x2={marca.x2} y2={marca.y2} />
+        <text
+          class="hemi__mayoria-etiqueta mono"
+          x={marca.xEtiqueta}
+          y={marca.yEtiqueta}
+          text-anchor="middle"
+          dominant-baseline="middle"
+        >mayoría absoluta · {mayoria}</text>
+      </g>
+
+      <g class="hemi__etiquetas-arco" aria-hidden="true">
+        {etiquetas.map((e) => (
+          <g class="hemi__arco-etiqueta" data-partido={e.clave}>
+            <text class="hemi__arco-sigla" x={e.x} y={e.y} text-anchor={e.ancla}>{e.sigla}</text>
+            <text class="hemi__arco-num mono" x={e.x} y={e.y + 17} text-anchor={e.ancla}>{entero(e.n)}</text>
+          </g>
+        ))}
+      </g>
+    </svg>
+  </div>
+
+  <div class="hemi__leyenda-cabecera mono" aria-hidden="true">
+    <span>Partido</span>
+    <span>29N</span>
+    <span>23J</span>
+  </div>
+  <ul class="hemi__leyenda">
+    {leyenda.map((f) => (
+      <li
+        class="hemi__leyenda-fila"
+        data-partido={f.clave}
+        data-escanos-29n={f.n29}
+        data-escanos-23j={f.n23}
+      >
+        <span class="hemi__leyenda-partido">
+          <span class="hemi__muestra" style={`background:${f.color}`} aria-hidden="true"></span>
+          {f.sigla}
+        </span>
+        <span class="hemi__leyenda-cifra mono">
+          <span class="hemi__leyenda-eleccion" aria-hidden="true">29N</span> {f.n29}
+        </span>
+        <span class="hemi__leyenda-cifra mono">
+          <span class="hemi__leyenda-eleccion" aria-hidden="true">23J</span> {f.n23}
+        </span>
+      </li>
+    ))}
+  </ul>
+
+  {pie && <p class="hemi__pie mono">{pie}</p>}
+</figure>
+
+<style>
+  .hemi {
+    margin: 0 0 var(--s-5);
+    background: transparent;
+  }
+
+  .hemi__cuerpo { width: 100%; }
+  .hemi__svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    shape-rendering: geometricPrecision;
+  }
+
+  .hemi__escano { stroke: none; }
+  /* El anillo del 23J es contexto, no protagonista: mismo color, menos peso. */
+  .hemi__escano--23j { opacity: 0.62; }
+
+
+  /* La cabecera ya dice 29N/23J: repetirlo en cada fila es ruido, sobre todo en móvil. */
+  .hemi__leyenda-eleccion { display: none; }
+
+
+  .hemi__mayoria-linea {
+    stroke: var(--tinta);
+    stroke-width: 2;
+    stroke-dasharray: 6 5;
+  }
+  .hemi__mayoria-etiqueta {
+    font-size: 15px;
+    font-weight: 700;
+    fill: var(--tinta);
+  }
+
+  .hemi__arco-sigla {
+    font-family: var(--f-body);
+    font-size: 17px;
+    font-weight: 700;
+    fill: var(--tinta);
+  }
+  .hemi__arco-num {
+    font-size: 13px;
+    fill: var(--tinta-2);
+  }
+
+  .hemi__leyenda {
+    list-style: none;
+    margin: var(--s-3) 0 0;
+    padding: 0;
+    max-width: 520px;
+    border-top: var(--borde-tinta);
+  }
+  .hemi__leyenda-cabecera {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 80px 80px;
+    gap: var(--s-2);
+    max-width: 520px;
+    margin: var(--s-4) 0 0;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--tinta-2);
+  }
+  .hemi__leyenda-cabecera span:not(:first-child) { text-align: right; }
+
+  .hemi__leyenda-fila {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 80px 80px;
+    gap: var(--s-2);
+    align-items: baseline;
+    padding: 5px 0;
+    border-bottom: var(--borde-regla);
+    font-size: var(--t-small);
+  }
+  .hemi__leyenda-partido {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    font-weight: 600;
+    min-width: 0;
+  }
+  .hemi__muestra {
+    inline-size: 11px;
+    block-size: 11px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+  }
+  .hemi__leyenda-cifra {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .hemi__pie {
+    margin: var(--s-3) 0 0;
+    max-width: var(--medida);
+    font-size: 0.8125rem;
+    line-height: var(--lh-small);
+    color: var(--tinta-2);
+  }
+
+  /* En móvil mandan la leyenda y sus cifras: las etiquetas del arco se ocultan. */
+  @media (max-width: 640px) {
+    .hemi__etiquetas-arco { display: none; }
+    /* A 390 px la etiqueta del SVG cae a ~4 px: el dato va en el pie. */
+    .hemi__mayoria-etiqueta { display: none; }
+    /* Y el anillo del 23J, con puntos de ~2 px, no se lee: la comparación va en la leyenda. */
+    .hemi__anillo--23j { display: none; }
+  }
+</style>

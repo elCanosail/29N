@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import IntervalBand from '../components/IntervalBand.astro';
 import HorquillasEscanos from '../components/HorquillasEscanos.astro';
 import BarraEscanos from '../components/BarraEscanos.astro';
+import HemicicloEscanos from '../components/HemicicloEscanos.astro';
 import Needle29N from '../components/Needle29N.astro';
 import SerieLinea from '../components/SerieLinea.astro';
 import forecast from '../data/forecast.json';
@@ -117,6 +118,17 @@ const filasReparto = nacional
   }))
   .filter((f) => f.estimacionEscanos >= 0.1 || f.realEscanos > 0);
 
+// Hemiciclo: la estimación puntual (media) y el 23J real, sin intervalos
+// superpuestos. La incertidumbre queda debajo, en las horquillas del desglose.
+const filasHemiciclo = filasReparto.map((f) => ({
+  partido: f.partido,
+  clave: f.clave,
+  escanos: f.estimacionEscanos,
+  escanos23j: f.realEscanos,
+}));
+const descripcionHemiciclo = `Hemiciclo con la estimación del modelo 29N para los 350 escaños y, en el anillo interior, el resultado real del 23J. La marca discontinua señala la mayoría absoluta de 176 escaños.`;
+const pieHemiciclo = `Cada punto es un escaño · anillo exterior: estimación 29N · interior: resultado real del 23J · media de 10.000 simulaciones D'Hondt provincia a provincia · mayoría absoluta ${176} escaños · los intervalos del 95 % y los escaños de diferencia están en el detalle de abajo`;
+
 // Serie reciente: últimos 36 meses, cuatro partidos grandes.
 const meses = seriesData.meses as string[];
 const corte = Math.max(0, meses.length - 36);
@@ -156,25 +168,32 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
       </p>
     </div>
 
-    <BarraEscanos
-      filas={filasReparto}
-      descripcion={`Reparto de escaños, estimación 29N frente al resultado real de 23J: ${filasReparto.slice(0, 4).map((f) => `${f.partido} ${num(f.estimacionEscanos, 1)} esc y ${num(f.estimacionPct, 1)} % frente a ${entero(f.realEscanos)} esc y ${num(f.realPct, 1)} %`).join('; ')}. El triángulo indica los escaños de más o de menos frente al 23J real. En la barra del 23J, los partidos del acuerdo de gobierno aparecen agrupados a la izquierda, empezando por el PSOE.`}
-      pie={`Estimación: media ponderada de encuestas + swing proporcional provincial + 10.000 simulaciones D'Hondt · ▲▼ = escaños de más o de menos frente al 23J real · ${meta.mes_predicho}`}
-      lectura={`La comparación se hace por familias políticas idénticas a las del modelo (PSOE incluye PSC, PSE-EE, PSdeG, PSIB-PSOE y PSN-PSOE; Frente A incluye IU, Más Madrid, Comuns, Sumar Aragón y Més, y en 23J concurrió como Sumar). La precisión de cada estimación —media nunca sin su intervalo— está en el desglose de abajo.`}
-    >
-      <p class="eyebrow needle__anuncio">La pregunta del gobierno · probabilidad de mayoría por bloque</p>
-      <h3 class="needle__titulo">¿Puede alguno de los bloques llegar a 176?</h3>
-      <Needle29N
-        izquierda={bloquesData.izquierda}
-        derecha={bloquesData.derecha}
-        pNinguno={bloquesData.p_ninguno}
-        nRuns={seatsData.meta.n_runs}
-        descripcion={`Probabilidad de que cada bloque alcance 176 escaños en 10.000 simulaciones: izquierda ${Math.round(bloquesData.izquierda.p_ge176 * 100)} %, derecha ${Math.round(bloquesData.derecha.p_ge176 * 100)} %, ninguno ${Math.round(bloquesData.p_ninguno * 100)} %.`}
-      />
-    </BarraEscanos>
+    <HemicicloEscanos
+      filas={filasHemiciclo}
+      total={350}
+      mayoria={176}
+      descripcion={descripcionHemiciclo}
+      pie={pieHemiciclo}
+    />
+
+    <p class="eyebrow needle__anuncio">La pregunta del gobierno · probabilidad de mayoría por bloque</p>
+    <h3 class="needle__titulo">¿Puede alguno de los bloques llegar a 176?</h3>
+    <Needle29N
+      izquierda={bloquesData.izquierda}
+      derecha={bloquesData.derecha}
+      pNinguno={bloquesData.p_ninguno}
+      nRuns={seatsData.meta.n_runs}
+      descripcion={`Probabilidad de que cada bloque alcance 176 escaños en 10.000 simulaciones: izquierda ${Math.round(bloquesData.izquierda.p_ge176 * 100)} %, derecha ${Math.round(bloquesData.derecha.p_ge176 * 100)} %, ninguno ${Math.round(bloquesData.p_ninguno * 100)} %.`}
+    />
 
     <details class="heroe__resto">
-      <summary>Ver la precisión: horquilla del 95 % de cada partido, media y mediana</summary>
+      <summary>Ver el detalle: barras del 23J, escaños de diferencia e intervalos del 95 %</summary>
+      <BarraEscanos
+        filas={filasReparto}
+        descripcion={`Reparto de escaños, estimación 29N frente al resultado real de 23J: ${filasReparto.slice(0, 4).map((f) => `${f.partido} ${num(f.estimacionEscanos, 1)} esc y ${num(f.estimacionPct, 1)} % frente a ${entero(f.realEscanos)} esc y ${num(f.realPct, 1)} %`).join('; ')}. El triángulo indica los escaños de más o de menos frente al 23J real. En la barra del 23J, los partidos del acuerdo de gobierno aparecen agrupados a la izquierda, empezando por el PSOE.`}
+        pie={`Estimación: media ponderada de encuestas + swing proporcional provincial + 10.000 simulaciones D'Hondt · ▲▼ = escaños de más o de menos frente al 23J real · ${meta.mes_predicho}`}
+        lectura={`La comparación se hace por familias políticas idénticas a las del modelo (PSOE incluye PSC, PSE-EE, PSdeG, PSIB-PSOE y PSN-PSOE; Frente A incluye IU, Más Madrid, Comuns, Sumar Aragón y Més, y en 23J concurrió como Sumar). La precisión de cada estimación —media nunca sin su intervalo— está en el desglose de abajo.`}
+      />
       <HorquillasEscanos
         filas={filasHorquillaHome}
         conTabla={false}
