@@ -1,0 +1,133 @@
+---
+/**
+ * TablaReparto — la tabla comparativa que sostiene el gráfico de escaños.
+ *
+ * Se separó de BarraEscanos cuando la portada pasó a mostrar las barras en el
+ * bloque héroe y la tabla en la sección de detalle: el mismo dato, en dos
+ * sitios distintos de la página, sin duplicar el gráfico ni esconder la tabla
+ * dentro de un desplegable.
+ */
+import { num, entero } from '../lib/format';
+import { colorPartido } from '../lib/partidos';
+
+export interface FilaReparto {
+  partido: string;
+  clave?: string;
+  estimacionEscanos: number;
+  estimacionPct: number;
+  realEscanos: number;
+  realPct: number;
+}
+
+interface Props {
+  filas: FilaReparto[];
+  descripcion: string;
+  lectura?: string;
+  pie?: string;
+}
+
+const { filas, descripcion, lectura, pie } = Astro.props as Props;
+
+const clave = (f: FilaReparto) => f.clave ?? f.partido;
+const orden = [...filas].sort((a, b) => b.estimacionEscanos - a.estimacionEscanos);
+const delta = (f: FilaReparto) => f.estimacionEscanos - f.realEscanos;
+const conDelta = orden.some((f) => Math.abs(delta(f)) > 0.05);
+const flecha = (v: number) => (v > 0.05 ? '▲' : v < -0.05 ? '▼' : '＝');
+const clase = (v: number) => (v > 0.05 ? 'sube' : v < -0.05 ? 'baja' : 'plano');
+const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
+---
+
+<figure class="reparto-tabla" role="img" aria-label={descripcion}>
+  <div class="reparto__comparativa">
+    <div class="reparto__fila reparto__fila--cabecera" aria-hidden="true">
+      <span class="reparto__col reparto__col--partido">Partido</span>
+      <span class="reparto__col">Esc. 29N</span>
+      <span class="reparto__col">Esc. 23J</span>
+      <span class="reparto__col">Δ esc.</span>
+      <span class="reparto__col">% 29N</span>
+      <span class="reparto__col">% 23J</span>
+    </div>
+    {orden.map((f) => (
+      <div class="reparto__fila">
+        <span class="reparto__col reparto__col--partido">
+          <span class="reparto__muestra" style={`background:${colorPartido(clave(f))}`} aria-hidden="true"></span>
+          {f.partido}
+        </span>
+        <span class="reparto__col mono reparto__num">{num(f.estimacionEscanos, 1)}</span>
+        <span class="reparto__col mono reparto__num">{entero(f.realEscanos)}</span>
+        <span class="reparto__col mono reparto__num">
+          {conDelta && <span class={`reparto__delta ${clase(delta(f))}`}>{flecha(delta(f))} {signado(delta(f))}</span>}
+        </span>
+        <span class="reparto__col mono reparto__num">{num(f.estimacionPct, 1)}</span>
+        <span class="reparto__col mono reparto__num">{num(f.realPct, 1)}</span>
+      </div>
+    ))}
+  </div>
+  {lectura && <p class="reparto__lectura">{lectura}</p>}
+  {pie && <p class="reparto__pie mono">{pie}</p>}
+</figure>
+
+<style>
+  .reparto-tabla {
+    margin: 0 0 var(--s-5);
+    padding: 0;
+  }
+  .reparto__comparativa {
+    margin: 0;
+    border-top: var(--borde-regla);
+  }
+  .reparto__fila {
+    display: grid;
+    grid-template-columns: minmax(72px, 1.3fr) repeat(5, minmax(46px, 0.65fr));
+    gap: var(--s-1) var(--s-2);
+    align-items: baseline;
+    padding: var(--s-1) 0;
+    border-bottom: var(--borde-regla);
+  }
+  .reparto__fila--cabecera {
+    font-family: var(--f-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--tinta-2);
+    border-bottom: var(--borde-tinta);
+  }
+  .reparto__col--partido {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    font-weight: 600;
+    min-width: 0;
+  }
+  .reparto__fila--cabecera .reparto__col { text-align: right; }
+  .reparto__fila--cabecera .reparto__col--partido { text-align: left; }
+  .reparto__num { text-align: right; }
+  .reparto__muestra {
+    inline-size: 12px;
+    block-size: 12px;
+    border-radius: 2px;
+    flex: 0 0 auto;
+  }
+  .reparto__delta.sube { color: var(--ok); }
+  .reparto__delta.baja { color: var(--alerta); }
+  .reparto__delta.plano { color: var(--tinta-3); }
+  .reparto__lectura {
+    margin: var(--s-3) 0 0;
+    font-size: var(--t-small);
+    color: var(--tinta-2);
+    max-width: 68ch;
+  }
+  .reparto__pie {
+    margin: var(--s-2) 0 0;
+    font-size: 0.7rem;
+    color: var(--tinta-3);
+  }
+
+  @media (max-width: 640px) {
+    .reparto__fila {
+      grid-template-columns: minmax(64px, 1.2fr) repeat(3, minmax(40px, 0.7fr));
+    }
+    .reparto__fila .reparto__col:nth-child(5),
+    .reparto__fila .reparto__col:nth-child(6) { display: none; }
+  }
+</style>

@@ -142,32 +142,6 @@ const signado = (v: number) => (v > 0 ? `+${num(v, 1)}` : num(v, 1));
        detalle. Sin hijos, no se pinta nada y el componente queda igual. -->
   <slot />
 
-  <div class="reparto__comparativa">
-    <div class="reparto__fila reparto__fila--cabecera" aria-hidden="true">
-      <span class="reparto__col reparto__col--partido">Partido</span>
-      <span class="reparto__col">Esc. 29N</span>
-      <span class="reparto__col">Esc. 23J</span>
-      <span class="reparto__col">Δ esc.</span>
-      <span class="reparto__col">% 29N</span>
-      <span class="reparto__col">% 23J</span>
-    </div>
-    {orden.map((f) => (
-      <div class="reparto__fila">
-        <span class="reparto__col reparto__col--partido">
-          <span class="reparto__muestra" style={`background:${colorPartido(clave(f))}`} aria-hidden="true"></span>
-          {f.partido}
-        </span>
-        <span class="reparto__col mono reparto__num">{num(f.estimacionEscanos, 1)}</span>
-        <span class="reparto__col mono reparto__num">{entero(f.realEscanos)}</span>
-        <span class="reparto__col mono reparto__num">
-          {conDelta && <span class={`reparto__delta ${clase(delta(f))}`}>{flecha(delta(f))} {signado(delta(f))}</span>}
-        </span>
-        <span class="reparto__col mono reparto__num">{num(f.estimacionPct, 1)}</span>
-        <span class="reparto__col mono reparto__num">{num(f.realPct, 1)}</span>
-      </div>
-    ))}
-  </div>
-
   {pie && <p class="reparto__pie mono">{pie}</p>}
   {lectura && <p class="reparto__lectura">{lectura}</p>}
 </figure>
