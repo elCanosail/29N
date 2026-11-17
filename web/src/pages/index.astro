@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import IntervalBand from '../components/IntervalBand.astro';
 import HorquillasEscanos from '../components/HorquillasEscanos.astro';
 import BarraEscanos from '../components/BarraEscanos.astro';
+import TablaReparto from '../components/TablaReparto.astro';
 import HemicicloEscanos from '../components/HemicicloEscanos.astro';
 import Needle29N from '../components/Needle29N.astro';
 import SerieLinea from '../components/SerieLinea.astro';
@@ -13,7 +14,7 @@ import seriesData from '../data/series.json';
 import encuestasData from '../data/encuestas.json';
 import microdatosPorAnio from '../data/microdatos/por_anio.json';
 import { num, entero } from '../lib/format';
-import { colorPartido, nombre29N } from '../lib/partidos';
+import { colorPartido, nombre29N, sigla29N } from '../lib/partidos';
 
 const meta = forecast.meta;
 const top = forecast.partidos.slice(0, 4);
@@ -143,6 +144,51 @@ const coloresSerie: Record<string, string> = Object.fromEntries(
 );
 
 
+// Cinta de cabecera: las cinco primeras fuerzas con escaños y diferencia frente
+// al 23J. Los números antes que el dibujo; el gráfico confirma lo que se lee.
+const cinta = [...filasReparto]
+  .sort((a, b) => b.estimacionEscanos - a.estimacionEscanos)
+  .slice(0, 5)
+  .map((f) => {
+    const d = f.estimacionEscanos - f.realEscanos;
+    const signo = d > 0.05 ? '▲' : d < -0.05 ? '▼' : '＝';
+    return {
+      etiqueta: f.partido,
+      sigla: sigla29N(f.clave ?? f.partido),
+      color: colorPartido(f.clave ?? f.partido),
+      escanos: Math.round(f.estimacionEscanos),
+      pct: f.estimacionPct,
+      delta: `${signo} ${Math.abs(d) < 0.05 ? '0' : Math.round(Math.abs(d))}`,
+      clase: d > 0.05 ? 'sube' : d < -0.05 ? 'baja' : 'plano',
+    };
+  });
+const restoCinta = [...filasReparto]
+  .sort((a, b) => b.estimacionEscanos - a.estimacionEscanos)
+  .slice(5)
+  .reduce(
+    (acc, f) => ({
+      escanos: acc.escanos + f.estimacionEscanos,
+      pct: acc.pct + f.estimacionPct,
+      real: acc.real + f.realEscanos,
+    }),
+    { escanos: 0, pct: 0, real: 0 },
+  );
+const cintaOtros = {
+  escanos: Math.round(restoCinta.escanos),
+  pct: restoCinta.pct,
+  delta: Math.round(restoCinta.escanos - restoCinta.real),
+};
+
+// Titular de resultado: la cuenta que cualquiera hace al mirar el gráfico.
+const pp = filasReparto.find((f) => f.clave === 'PP')?.estimacionEscanos ?? 0;
+const vox = filasReparto.find((f) => f.clave === 'VOX')?.estimacionEscanos ?? 0;
+const ppvox = Math.round(pp + vox);
+const lecturaHeroe =
+  `PP y VOX suman ${ppvox} escaños; la mayoría absoluta está en 176. ` +
+  (ppvox >= 176
+    ? `Alcanzan la mayoría sin necesidad de otro socio.`
+    : `Necesitan ${176 - ppvox} escaños más de otro grupo.`);
+
 const compromisos = [
   'Todo dato de la web es trazable a su fuente y clicable.',
   'El error del backtest se publica, sin maquillaje.',
@@ -168,12 +214,37 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
       </p>
     </div>
 
+    <ul class="cinta" aria-label="Escaños estimados por partido">
+      {cinta.map((c) => (
+        <li class="cinta__celda">
+          <span class="cinta__sigla" style={`--color-partido:${c.color}`}>{c.sigla}</span>
+          <span class="cinta__num">{c.escanos}</span>
+          <span class="cinta__meta mono">{num(c.pct, 1)} % · <span class={c.clase}>{c.delta}</span></span>
+        </li>
+      ))}
+      <li class="cinta__celda cinta__celda--otros">
+        <span class="cinta__sigla">Otros</span>
+        <span class="cinta__num">{cintaOtros.escanos}</span>
+        <span class="cinta__meta mono">{num(cintaOtros.pct, 1)} % · <span class={cintaOtros.delta > 0 ? 'sube' : cintaOtros.delta < 0 ? 'baja' : 'plano'}>{cintaOtros.delta > 0 ? '▲' : cintaOtros.delta < 0 ? '▼' : '＝'} {Math.abs(cintaOtros.delta)}</span></span>
+      </li>
+    </ul>
+
+    <p class="heroe__lectura">{lecturaHeroe} <span class="heroe__flechas mono">flechas: escaños de más o de menos frente al 23J</span></p>
+
     <HemicicloEscanos
       filas={filasHemiciclo}
       total={350}
       mayoria={176}
       descripcion={descripcionHemiciclo}
       pie={pieHemiciclo}
+    />
+
+    <p class="eyebrow needle__anuncio">El reparto frente al 23J · mismo color, misma escala</p>
+    <h3 class="needle__titulo">Qué cambia, partido a partido</h3>
+    <BarraEscanos
+      filas={filasReparto}
+      descripcion={`Reparto de escaños, estimación 29N frente al resultado real de 23J: ${filasReparto.slice(0, 4).map((f) => `${f.partido} ${num(f.estimacionEscanos, 1)} esc y ${num(f.estimacionPct, 1)} % frente a ${entero(f.realEscanos)} esc y ${num(f.realPct, 1)} %`).join('; ')}. El triángulo indica los escaños de más o de menos frente al 23J real.`}
+      pie={`Media de 10.000 simulaciones D'Hondt provincia a provincia · la marca vertical es la mayoría absoluta (176) · ▲▼ frente al 23J real · en la barra del 23J el bloque de gobierno aparece agrupado a la izquierda, empezando por el PSOE · ${meta.mes_predicho}`}
     />
 
     <p class="eyebrow needle__anuncio">La pregunta del gobierno · probabilidad de mayoría por bloque</p>
@@ -186,24 +257,25 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
       descripcion={`Probabilidad de que cada bloque alcance 176 escaños en 10.000 simulaciones: izquierda ${Math.round(bloquesData.izquierda.p_ge176 * 100)} %, derecha ${Math.round(bloquesData.derecha.p_ge176 * 100)} %, ninguno ${Math.round(bloquesData.p_ninguno * 100)} %.`}
     />
 
-    <details class="heroe__resto">
-      <summary>Ver el detalle: barras del 23J, escaños de diferencia e intervalos del 95 %</summary>
-      <BarraEscanos
-        filas={filasReparto}
-        descripcion={`Reparto de escaños, estimación 29N frente al resultado real de 23J: ${filasReparto.slice(0, 4).map((f) => `${f.partido} ${num(f.estimacionEscanos, 1)} esc y ${num(f.estimacionPct, 1)} % frente a ${entero(f.realEscanos)} esc y ${num(f.realPct, 1)} %`).join('; ')}. El triángulo indica los escaños de más o de menos frente al 23J real. En la barra del 23J, los partidos del acuerdo de gobierno aparecen agrupados a la izquierda, empezando por el PSOE.`}
-        pie={`Estimación: media ponderada de encuestas + swing proporcional provincial + 10.000 simulaciones D'Hondt · ▲▼ = escaños de más o de menos frente al 23J real · ${meta.mes_predicho}`}
-        lectura={`La comparación se hace por familias políticas idénticas a las del modelo (PSOE incluye PSC, PSE-EE, PSdeG, PSIB-PSOE y PSN-PSOE; Frente A incluye IU, Más Madrid, Comuns, Sumar Aragón y Més, y en 23J concurrió como Sumar). La precisión de cada estimación —media nunca sin su intervalo— está en el desglose de abajo.`}
-      />
-      <HorquillasEscanos
-        filas={filasHorquillaHome}
-        conTabla={false}
-        tope={180}
-        descripcion={descripcionHorquillaHome}
-        pie="Banda = intervalo del 95 % de 10.000 simulaciones D'Hondt provincia a provincia · punto = media · trazo = mediana del escenario central · línea discontinua = mayoría absoluta (176)"
-      />
-    </details>
+  </section>
 
-    
+  <!-- 1b. El detalle: la tabla que sostiene el gráfico y la incertidumbre -->
+  <section class="contenedor seccion seccion--compacta" aria-labelledby="detalle-titulo">
+    <p class="eyebrow" id="detalle-titulo">El detalle, partido a partido</p>
+    <h2>Escaños, voto y diferencia frente al 23J</h2>
+    <TablaReparto
+      filas={filasReparto}
+      descripcion="Tabla comparativa de escaños y porcentaje de voto por partido: estimación 29N frente al resultado real del 23J, con la diferencia en escaños."
+      lectura={`La comparación se hace por familias políticas idénticas a las del modelo (PSOE incluye PSC, PSE-EE, PSdeG, PSIB-PSOE y PSN-PSOE; Frente A incluye IU, Más Madrid, Comuns, Sumar Aragón y Més, y en 23J concurrió como Sumar). Las medias nunca van solas: debajo, su intervalo.`}
+    />
+    <p class="eyebrow">La incertidumbre, debajo del reparto</p>
+    <HorquillasEscanos
+      filas={filasHorquillaHome}
+      conTabla={false}
+      tope={180}
+      descripcion={descripcionHorquillaHome}
+      pie="Banda = intervalo del 95 % de 10.000 simulaciones D'Hondt provincia a provincia · punto = media · trazo = mediana del escenario central · línea discontinua = mayoría absoluta (176)"
+    />
   </section>
 
   <!-- 1b. ¿Quién puede gobernar? Va DENTRO del héroe, después de la barra: la
@@ -521,6 +593,64 @@ const anioUltimo = meta.ultimo_mes_con_dato ? meta.ultimo_mes_con_dato.slice(0, 
     line-height: 1.7;
   }
   .metodologia__dato { font-size: 0.8125rem; color: var(--tinta-2); margin: 0 0 var(--s-3); }
+  /* Cinta de cifras: los cinco primeros, con escaños y diferencia. Va antes de
+     los gráficos para que la lectura llegue ya con los números en la cabeza. */
+  .cinta {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 1px;
+    margin: 0 0 var(--s-5);
+    padding: 0;
+    list-style: none;
+    background: var(--regla);
+    border-block: var(--borde-regla);
+  }
+  .cinta__celda {
+    display: grid;
+    gap: 2px;
+    padding: var(--s-3) var(--s-2);
+    background: var(--papel);
+  }
+  .cinta__sigla {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono, monospace);
+    font-size: var(--t-small);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--tinta-2);
+  }
+  .cinta__sigla::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--color-partido, var(--tinta));
+    border-radius: 50%;
+  }
+  .cinta__num {
+    font-family: var(--display, Georgia, serif);
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .cinta__meta { font-size: var(--t-small); color: var(--tinta-3); }
+  .cinta__meta .sube { color: var(--sube, #1a7f37); }
+  .cinta__meta .baja { color: var(--baja, #b42318); }
+  .heroe__flechas { display: block; margin-top: var(--s-2); font-size: 0.72rem; color: var(--tinta-3); letter-spacing: 0.02em; }
+  .heroe__lectura {
+    margin: calc(var(--s-3) * -1) 0 var(--s-5);
+    padding: var(--s-3) 0 0;
+    border-top: var(--borde-regla);
+    font-size: var(--t-lead, 1.05rem);
+    color: var(--tinta);
+    max-width: 62ch;
+  }
+
+  @media (max-width: 720px) {
+    .cinta { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
 </style>
 
 <script>
