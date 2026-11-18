@@ -1,8 +1,8 @@
 {
  "meta": {
-  "n": 130,
+  "n": 133,
   "n_cis": 44,
-  "n_privados": 86,
+  "n_privados": 89,
   "nota_base": "CIS = voto directo sobre censo (microdato); privados = estimación sobre voto válido. No son directamente comparables sin normalizar.",
   "destacados": [
    "PP",
@@ -117,6 +117,51 @@
  },
  "encuestas": [
   {
+   "id": "sondaxe-2026-11-16",
+   "casa": "Sondaxe",
+   "tipo": "agregador",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-11-12/2026-11-16",
+   "fecha_publicacion": "2026-11-18",
+   "n": 1000,
+   "url": "https://www.electografica.com/2026/11/encuesta-sondaxe-261118.html",
+   "metodologia": "Telefónico + online",
+   "base": "valido",
+   "partidos": {
+    "PP": 29.0,
+    "PSOE": 27.0,
+    "VOX": 19.4,
+    "SUMAR": 7.5,
+    "ERC": 2.4,
+    "EH BILDU": 2.1,
+    "JXCAT": 1.0,
+    "PNV": 0.7,
+    "CC": 0.3
+   }
+  },
+  {
+   "id": "40db-2026-11-17",
+   "casa": "40dB",
+   "tipo": "prensa",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-11-13/2026-11-17",
+   "fecha_publicacion": "2026-11-18",
+   "n": 2000,
+   "url": "https://elpais.com/infografias/encuestas40db/2026/11-tracking-electoral/informe_tracking_dia06.pdf",
+   "metodologia": "Online",
+   "base": "valido",
+   "partidos": {
+    "PP": 32.2,
+    "PSOE": 30.7,
+    "VOX": 17.0,
+    "SUMAR": 5.0
+   }
+  },
+  {
    "id": "sondaxe-2026-11-15",
    "casa": "Sondaxe",
    "tipo": "agregador",
@@ -159,6 +204,31 @@
     "PSOE": 30.6,
     "VOX": 17.5,
     "SUMAR": 5.2
+   }
+  },
+  {
+   "id": "sigma-dos-2026-11-16",
+   "casa": "Sigma Dos",
+   "tipo": "prensa",
+   "ambito": "nacional",
+   "eleccion": "generales 2026",
+   "anio": 2026,
+   "fecha_trabajo": "2026-11-11/2026-11-16",
+   "fecha_publicacion": "2026-11-17",
+   "n": 3759,
+   "url": "https://www.elmundo.es/elecciones/elecciones-generales/2026/11/17/6afca438e9cf4a7d7a8b459c.html",
+   "metodologia": "Telefónico + online",
+   "base": "valido",
+   "partidos": {
+    "PP": 30.7,
+    "PSOE": 26.4,
+    "VOX": 19.8,
+    "SUMAR": 6.7,
+    "ERC": 2.4,
+    "EH BILDU": 1.5,
+    "JXCAT": 1.3,
+    "PNV": 0.9,
+    "CC": 0.3
    }
   },
   {
